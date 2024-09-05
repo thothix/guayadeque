@@ -357,12 +357,12 @@ guImage_Item guImage_Items[] = {
     GUIMAGE( guImage_player_tiny_light_stop,        wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_player_tiny_red_stop,          wxBITMAP_TYPE_PNG ),
     //
-    GUIMAGE( guImage_star_normal_tiny,              wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_star_normal_mid,               wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_star_normal_big,               wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_star_highlight_tiny,           wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_star_highlight_mid,            wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_star_highlight_big,            wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_star_normal_tiny_v2,           wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_star_normal_mid_v2,            wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_star_normal_big_v2,            wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_star_highlight_tiny_v2,        wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_star_highlight_mid_v2,         wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_star_highlight_big_v2,         wxBITMAP_TYPE_PNG ),
     //
     GUIMAGE( guImage_tiny_mv_library,               wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_tiny_mv_albumbrowser,          wxBITMAP_TYPE_PNG ),
