@@ -1,3 +1,9 @@
+2024-09-05 0.4.8-rc2
+
+  * sqlite3-3.2 install support
+
+2023-11-23 0.4.8-rc1
+
   * Removed libindicate support
   * Added Best of playlist generator
   * Gstreamer-1.22 and wxwidgets-3.2 support
@@ -12,7 +18,6 @@
   * Better gstreamer integration (formats support, audio pipeline reworked)
   * UI changes
   * Bugfixes
-
 
 2019-06-05 0.4.6
 
@@ -34,7 +39,6 @@
   * Dropped internal wxsqlite
   * Updated to wx3.0
   * Updated to gstreamer 1.0
-
   * Fixed some Config constructor calls
 
 2014-02-20 0.3.7
@@ -263,6 +267,7 @@ grateful and humbled.
   * Fixed bug in smart play mode
 
 2010-01-15 0.2.3
+
   * Added Random as a ordering method for dynamic playlists
   * Added a filter for the random or smart play mode so you can select a
     playlist for the Allow filter and another playlist for the deny filter.
@@ -313,6 +318,7 @@ grateful and humbled.
   * Added posibility in progressbar to show counters instead of percent
 
 2009-11-27 0.2.1
+
   * Fixed bug with lengths of the podcasts in some cases
   * The album sort by year only affects now to the Albums list box
   * Added option to change order of songs in the track editor
@@ -330,6 +336,7 @@ grateful and humbled.
   * Fixed bug deleting old podcasts
 
 2009-11-05 0.2.0
+
   * Fixed LyricWiki lyric search engine
   * Added support for Podcasts
   * Only allow to select one radiostation
@@ -355,6 +362,7 @@ grateful and humbled.
   * Fixed bug in radio stations list box ordering
 
 2009-08-04 0.1.5
+
   * Lyrics panel allow to enter any track name for manual lyrics search
   * Clicking in Songs List box selects the sorting of the tracks
   * Added an option to save/restore playing position when track is bigger than the
@@ -375,8 +383,8 @@ grateful and humbled.
   * Fixed crash when using 'Edit labes' in artists or songs with no artist
     or no songs selected
 
-
 2009-06-25 0.1.1
+
   * Play/Enqueue in RadioStations was not implemented. Fixed now.
   * Added Custom commands that are accesible from contextual menu in Artist,
     Albums, Songs and Playlist 
@@ -403,6 +411,7 @@ grateful and humbled.
     Links Icons
 
 2009-06-09 0.1.0
+
   * Now if Next Track is clicked at the last track in playlist and Play Random 
     is enabled it will add a new random track to the playlist
   * Fixed bug in some listbox that made the context menu to appear twice
@@ -444,6 +453,7 @@ grateful and humbled.
     you should use the v2.1.1 or later
 
 * 2009-05-12 v0.0.3 Beta
+
   * Added Labels in Radio panel. This change needed a database schema change
   so if you had an older version you need to remove  ~/.guayadeque/guayadeque.db
   * Fixed some minor bugs
