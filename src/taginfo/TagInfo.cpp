@@ -154,9 +154,9 @@ guTagInfo * guGetTagInfoHandler( const wxString &filename )
 TagLib::ID3v2::PopularimeterFrame * GetPopM( TagLib::ID3v2::Tag * tag, const TagLib::String &email )
 {
     TagLib::ID3v2::FrameList PopMList = tag->frameList( "POPM" );
-    for( TagLib::ID3v2::FrameList::Iterator it = PopMList.begin(); it != PopMList.end(); ++it )
+    for(auto & it : PopMList)
     {
-        TagLib::ID3v2::PopularimeterFrame * PopMFrame = static_cast<TagLib::ID3v2::PopularimeterFrame *>( * it );
+        auto * PopMFrame = dynamic_cast<TagLib::ID3v2::PopularimeterFrame *>( it );
         //guLogMessage( wxT( "PopM e: '%s'  r: %i  c: %i" ), TStringTowxString( PopMFrame->email() ).c_str(), PopMFrame->rating(), PopMFrame->counter() );
         if( email.isEmpty() || ( PopMFrame->email() == email ) )
         {
@@ -297,7 +297,7 @@ void SetID3v2Image( ID3v2::Tag * tagv2, const wxImage * image )
         wxMemoryOutputStream ImgOutputStream;
         if( image->SaveFile( ImgOutputStream, wxBITMAP_TYPE_JPEG ) )
         {
-            ByteVector ImgData( ( TagLib::uint ) ImgOutputStream.GetSize() );
+            ByteVector ImgData( (uint) ImgOutputStream.GetSize() );
             ImgOutputStream.CopyTo( ImgData.data(), ImgOutputStream.GetSize() );
             PicFrame->setPicture( ImgData );
             tagv2->addFrame( PicFrame );
