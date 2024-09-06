@@ -79,15 +79,15 @@ class guTagInfo
 
   protected :
     bool            ReadExtendedTags( ID3v2::Tag * tag );
-    bool            WriteExtendedTags( ID3v2::Tag * tag, const int changedflag );
+    bool            WriteExtendedTags( ID3v2::Tag * tag, const int changedflag ) const;
     bool            ReadExtendedTags( Ogg::XiphComment * tag );
-    bool            WriteExtendedTags( Ogg::XiphComment * tag, const int changedflag );
+    bool            WriteExtendedTags( Ogg::XiphComment * tag, const int changedflag ) const;
     bool            ReadExtendedTags( MP4::Tag * tag );
-    bool            WriteExtendedTags( MP4::Tag * tag, const int changedflag );
+    bool            WriteExtendedTags( MP4::Tag * tag, const int changedflag ) const;
     bool            ReadExtendedTags( APE::Tag * tag );
-    bool            WriteExtendedTags( APE::Tag * tag, const int changedflag );
+    bool            WriteExtendedTags( APE::Tag * tag, const int changedflag ) const;
     bool            ReadExtendedTags( ASF::Tag * tag );
-    bool            WriteExtendedTags( ASF::Tag * tag, const int changedflag );
+    bool            WriteExtendedTags( ASF::Tag * tag, const int changedflag ) const;
 
   public:
     wxString        m_FileName;
