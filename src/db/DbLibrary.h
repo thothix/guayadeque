@@ -87,7 +87,7 @@ class guTrack
 {
   public:
     guTrackType     m_Type;
-    int             m_SongId;
+    int             m_SongId = 0;
     wxString        m_SongName;
     int             m_AlbumId;
     wxString        m_AlbumName;
@@ -344,9 +344,9 @@ class guDbLibrary : public guDb
 
   public :
                         guDbLibrary();
-                        guDbLibrary( const wxString &DbName );
-                        guDbLibrary( guDb * db );
-                        ~guDbLibrary();
+                        explicit guDbLibrary( const wxString &DbName );
+                        explicit guDbLibrary( guDb * db );
+                        ~guDbLibrary() override;
 
     virtual int         GetDbVersion( void );
 

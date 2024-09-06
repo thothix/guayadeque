@@ -1,6 +1,7 @@
 2024-09-05 0.4.8-rc2
 
   * sqlite3-3.2 install support
+  * Fixed bug reading aac files tags (aac files does not support tags)
 
 2023-11-23 0.4.8-rc1
 

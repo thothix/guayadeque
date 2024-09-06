@@ -306,7 +306,7 @@ bool guTrack::ReadFromFile( const wxString &filename )
       if( m_SongName.IsEmpty() )
         m_SongName = m_FileName.AfterLast( wxT( '/' ) ).BeforeLast( wxT( '.' ) );
 
-      m_SongId = wxNOT_FOUND;;
+      m_SongId = wxNOT_FOUND;
 
       m_Rating   = wxNOT_FOUND;
 
@@ -3330,10 +3330,10 @@ void guDbLibrary::UpdateStaticPlayListFile( const int plid )
     if( !PlaylistPath.IsEmpty() )
     {
         wxFileName FileName( PlaylistPath );
-        if( FileName.Normalize() )
+        if( FileName.Normalize(wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS) )
         {
             guTrackArray Tracks;
-            GetPlayListSongs( plid, guPLAYLIST_TYPE_STATIC, &Tracks, NULL, NULL );
+            GetPlayListSongs( plid, guPLAYLIST_TYPE_STATIC, &Tracks, nullptr, nullptr );
             guPlaylistFile PlayListFile;
             PlayListFile.SetName( FileName.GetFullPath() );
             int Count = Tracks.Count();
@@ -6209,6 +6209,7 @@ bool guDbLibrary::AddCachedPlayedSong( const guCurrentTrack &Song )
 
   int PlayTime = Song.m_PlayTime / 1000;
   int TrackLength = Song.m_Length / 1000;
+
   if( Song.m_Type == guTRACK_TYPE_RADIOSTATION )
   {
       PlayTime = 180;
