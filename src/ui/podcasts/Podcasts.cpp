@@ -213,7 +213,7 @@ void guPodcastChannel::CheckLogo( void )
         wxFileName ImageFile = wxFileName( PodcastsPath + wxT( "/" ) +
                                            m_Title + wxT( "/" ) +
                                            m_Title + wxT( ".jpg" ) );
-        if( ImageFile.Normalize( wxPATH_NORM_ALL|wxPATH_NORM_CASE ) )
+        if( ImageFile.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
         {
             if( !wxFileExists( ImageFile.GetFullPath() ) )
             {
@@ -489,7 +489,7 @@ void guPodcastChannel::CheckDir( void )
 
     // Create the channel dir
     wxFileName ChannelDir = wxFileName( PodcastsPath + wxT( "/" ) + m_Title );
-    if( ChannelDir.Normalize( wxPATH_NORM_ALL | wxPATH_NORM_CASE ) )
+    if( ChannelDir.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
     {
         if( !wxDirExists( ChannelDir.GetFullPath() ) )
         {
@@ -695,7 +695,7 @@ guPodcastDownloadQueueThread::ExitCode guPodcastDownloadQueueThread::Entry()
                                             PodcastItem->m_Channel + wxT( "/" ) +
                                             //PodcastTime.Format( wxT( "%Y%m%d%H%M%S-" ) ) +
                                             Uri.GetPath().AfterLast( wxT( '/' ) ) );
-                if( PodcastFile.Normalize( wxPATH_NORM_ALL|wxPATH_NORM_CASE ) )
+                if( PodcastFile.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
                 {
                     PodcastItem->m_FileName = PodcastFile.GetFullPath();
 
