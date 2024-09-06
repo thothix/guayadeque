@@ -10,7 +10,7 @@ If anyone wishes to continue the development and support of Guayadeque, please f
 
 # General
 
-Guayadeque Music Player 0.4.8 RC2
+Guayadeque Music Player 0.5.0 beta2
 Juan Rios anonbeat@gmail.com
 see LICENSE
 

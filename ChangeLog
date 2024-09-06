@@ -1,14 +1,29 @@
-2024-09-05 0.4.8-rc2
+2024-09-05 0.5.0-beta2
 
-  * sqlite3-3.2 install support
-  * Fixed bug reading aac files tags (aac files does not support tags)
+  * Added sqlite3-3.2 support
+  * Added installation instructions for Ubuntu 24.04
+  * Added installation instructions for Arch Linux and optional dependencies
+  * Improved LastFM Panel functionality
+    - Enhanced artist bio section to support both light and dark themes
+    - Adjusted layout to prevent scrollbar overlap by repositioning controls on the right side of the panel.
+    - Eliminated Events section due to removal of data from the LastFM API
+    - Updated default cover art across all sections
+    - Adjusted layout to allow for longer text in Top Albums, Top Tracks, Similar Artists, and Similar Tracks
+    - Fixed a bug causing exponential increase of '&' symbol for bands with '&' in their name, potentially leading to system crashes
+  * Updated rating system icons
+    - Changed color of rating stars from black/dark gray to yellow/light gray for better visibility
+    - Added black stroke to yellow stars for improved contrast on light themes
+  * Fixed bug that crashed guayadeque when scanning aac files tags (aac files does not support tags)
+  * Removed compiler warnings
+  * General code cleanup and small refactorings
 
-2023-11-23 0.4.8-rc1
+2023-11-23 0.5.0-beta1
 
-  * Removed libindicate support
+  * Added installation instructions for Mageia 9
   * Added Best of playlist generator
-  * Gstreamer-1.22 and wxwidgets-3.2 support
+  * Added Gstreamer-1.22 and wxwidgets-3.2 support
   * Fullscreen cover view on cover panel click
+  * Removed libindicate support
   * Bugfixes
 
 2023-02-24 0.4.7
