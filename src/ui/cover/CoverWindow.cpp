@@ -27,15 +27,21 @@
 
 #define guCOVERWINDOW_RESIZE_TIMER_TIME  250
 #define guCOVERWINDOW_RESIZE_TIMER_ID    10
+#define guCOVERWINDOW_LAST_SIZE          100
 
 namespace Guayadeque {
 
 // -------------------------------------------------------------------------------- //
-guCoverWindow::guCoverWindow( guCoverPanel * parent, wxWindowID id, const wxString & title, const wxPoint & pos, const wxSize & size, long style ) :
-     wxFrame( parent, id, title, pos, size, style ),
+guCoverWindow::guCoverWindow( guCoverPanel * parent,
+                              wxWindowID id,
+                              const wxString & title,
+                              const wxPoint & pos,
+                              const wxSize & size,
+                              long style ) :
+    wxFrame( parent, id, title, pos, size, style ),
     m_ResizeTimer( this, guCOVERWINDOW_RESIZE_TIMER_ID )
 {
-    m_LastSize = 100;
+    m_LastSize = guCOVERWINDOW_LAST_SIZE;
     m_CoverPanel = parent;
 
     m_Panel = new wxPanel(this);
@@ -58,7 +64,7 @@ guCoverWindow::~guCoverWindow()
 {
     guLogDebug("guCoverWindow::~guCoverWindow");
 
-    m_CoverPanel->m_CoverWindow = NULL;
+    m_CoverPanel->m_CoverWindow = nullptr;
 
     m_Panel->Unbind( wxEVT_KEY_UP, &guCoverWindow::OnKey, this);
 
@@ -76,7 +82,7 @@ void guCoverWindow::OnPaint( wxPaintEvent &event )
 	wxCoord Width;
 	wxCoord Height;
 	GetClientSize( &Width, &Height );
-    if( Width && Height )
+    if ( Width && Height )
     {
         wxMutexLocker Lock( m_CoverImageMutex );
         wxPaintDC dc( this );
@@ -102,13 +108,7 @@ void guCoverWindow::OnClick( wxMouseEvent &event )
 void guCoverWindow::OnRightClick( wxMouseEvent &event )
 {
     guLogDebug("guCoverWindow::OnRightClick");
-    if ( IsFullScreen() ) {
-        ShowFullScreen( false );
-    }
-    else
-    {
-        ShowFullScreen( true );
-    }
+    ShowFullScreen(  !IsFullScreen() );
 }
 
 void guCoverWindow::OnKey( wxKeyEvent &event )
@@ -123,13 +123,13 @@ void guCoverWindow::OnSize( wxSizeEvent &event )
     guLogDebug("guCoverWindow::OnSize");
     wxSize Size = event.GetSize();
     int MinSize = wxMin( Size.GetWidth(), Size.GetHeight() );
-    if( MinSize != m_LastSize )
+
+    if ( MinSize != m_LastSize )
     {
         m_LastSize = MinSize;
-        if( m_ResizeTimer.IsRunning() )
-        {
+        if ( m_ResizeTimer.IsRunning() )
             m_ResizeTimer.Stop();
-        }
+
         m_ResizeTimer.Start( guCOVERWINDOW_RESIZE_TIMER_TIME, wxTIMER_ONE_SHOT );
     }
     SetFocus();
@@ -141,7 +141,7 @@ void guCoverWindow::UpdateImage( void )
     guLogDebug("guCoverWindow::UpdateImage");
     wxImage * CoverImage = NULL;
 
-    switch( m_CoverType )
+    switch ( m_CoverType )
     {
         case GU_SONGCOVER_FILE :
             CoverImage = new wxImage( m_CoverPath );
@@ -163,14 +163,14 @@ void guCoverWindow::UpdateImage( void )
             break;
     }
 
-    if( !CoverImage || !CoverImage->IsOk() )
+    if ( !CoverImage || !CoverImage->IsOk() )
     {
         if( CoverImage )
             delete CoverImage;
         CoverImage = new wxImage( guImage( guIMAGE_INDEX_no_cover ) );
     }
 
-    if( CoverImage )
+    if ( CoverImage )
     {
         if( m_LastSize > 0 )
             CoverImage->Rescale( m_LastSize, m_LastSize, wxIMAGE_QUALITY_HIGH );

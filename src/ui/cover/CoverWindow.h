@@ -1,4 +1,3 @@
-
 #ifndef __COVERWINDOW_H__
 #define __COVERWINDOW_H__
 
@@ -20,7 +19,6 @@ namespace Guayadeque {
 
 class guCoverPanel;
 
-// -------------------------------------------------------------------------------- //
 class guCoverWindow : public wxFrame
 {
   protected :
@@ -44,15 +42,19 @@ class guCoverWindow : public wxFrame
     void                UpdateImage( void );
 
   public :
-    guCoverWindow( guCoverPanel * parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 500, 500 ), long style = wxDEFAULT_FRAME_STYLE | wxMAXIMIZE );
+    guCoverWindow( guCoverPanel * parent,
+                   wxWindowID id = wxID_ANY,
+                   const wxString& title = wxEmptyString,
+                   const wxPoint& pos = wxDefaultPosition,
+                   const wxSize& size = wxSize( 500, 500 ),
+                   long style = wxNO_BORDER | wxFRAME_NO_TASKBAR | wxDEFAULT_FRAME_STYLE | wxMAXIMIZE
+                 );
     ~guCoverWindow();
 
     void                OnUpdatedTrack( wxCommandEvent &event );
     void                SetBitmap( const guSongCoverType CoverType, const wxString &CoverPath = wxEmptyString );
-
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //
