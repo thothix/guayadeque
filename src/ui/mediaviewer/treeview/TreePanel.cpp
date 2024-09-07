@@ -331,7 +331,7 @@ void AddTreeViewCommands( wxMenu * Menu, int ItemType )
                     ( ItemType == guLIBRARY_ELEMENT_ARTISTS ) ||
                     ( ItemType == guLIBRARY_ELEMENT_ALBUMARTISTS ) )
                 {
-                    MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, Names[ index ], Commands[ index ] );
+                    MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, _( Names[ index ] ), _( Commands[ index ] ) );
                 }
                 SubMenu->Append( MenuItem );
             }

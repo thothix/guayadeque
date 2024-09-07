@@ -451,7 +451,7 @@ void AddSongsCommands( wxMenu * Menu, int SelCount )
                 {
                     continue;
                 }
-                MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, Names[ index ], Commands[ index ] );
+                MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, _( Names[ index ] ), _( Commands[ index ] ) );
                 SubMenu->Append( MenuItem );
             }
 
@@ -492,7 +492,7 @@ void guSoListBox::AppendFastEditMenu( wxMenu * menu, const int selcount ) const
     wxString MenuText = _( "Edit" );
     MenuText += wxT( " " ) + m_ColumnNames[ ColumnId ];
 
-    MenuItem = new wxMenuItem( menu, ID_TRACKS_EDIT_COLUMN,  MenuText, _( "Edit the clicked column for the selected tracks" ) );
+    MenuItem = new wxMenuItem( menu, ID_TRACKS_EDIT_COLUMN,  _( MenuText ), _( "Edit the clicked column for the selected tracks" ) );
     MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit ) );
     menu->Append( MenuItem );
 
@@ -505,7 +505,7 @@ void guSoListBox::AppendFastEditMenu( wxMenu * menu, const int selcount ) const
         ItemText.Replace( wxT( "&" ), wxT( "&&" ) );
         MenuText += wxT( " '" ) + ItemText + wxT( "'" );
 
-        MenuItem = new wxMenuItem( menu, ID_TRACKS_SET_COLUMN,  MenuText, _( "Set the clicked column for the selected tracks" ) );
+        MenuItem = new wxMenuItem( menu, ID_TRACKS_SET_COLUMN,  _( MenuText ), _( "Set the clicked column for the selected tracks" ) );
         MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit ) );
         menu->Append( MenuItem );
     }
@@ -627,7 +627,7 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
         {
             MenuItem = new wxMenuItem( Menu, ID_PLAYLIST_SMART_PLAYLIST, _( "Create Smart Playlist" ), _( "Create a smart playlist from this track" ) );
             Menu->Append( MenuItem );
-            MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_CREATE_BESTOF, _( "Create Best Of Playlist" ), _( "Create a playlist with the best of this artist" ) );
+            MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_CREATE_BESTOF, _( "Create Best of Playlist" ), _( "Create a playlist with the best of this artist" ) );
             Menu->Append( MenuItem );
         }
 

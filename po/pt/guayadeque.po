@@ -1118,7 +1118,7 @@ msgstr "Ver locais utilizados"
 
 #: FileBrowser.cpp:227 FileBrowser.cpp:587
 msgid "See system files"
-msgstr "Ver sistema de ficheiros"
+msgstr "Ver ficheiros de sistema"
 
 #: FileBrowser.cpp:340
 msgid "Play the selected folder"
@@ -1773,11 +1773,11 @@ msgstr "Ver avaliações da coleção"
 
 #: LocationPanel.cpp:461
 msgid "Play Counts"
-msgstr "Nº de reproduções"
+msgstr "Número de reproduções"
 
 #: LocationPanel.cpp:461 MainFrame.cpp:1259
 msgid "View the library play counts"
-msgstr "Ver n.º de reproduções da coleção"
+msgstr "Ver número de reproduções da coleção"
 
 #: LocationPanel.cpp:466 LocationPanel.cpp:470 MainFrame.cpp:1264
 #: MainFrame.cpp:1268 TreePanel.cpp:89
@@ -3263,7 +3263,7 @@ msgstr "Analisar capas incorporadas nos ficheiros"
 
 #: Preferences.cpp:856
 msgid "Embed rating, play count and labels"
-msgstr "Incorporar avaliação, n.º de reproduções e etiquetas"
+msgstr "Incorporar avaliação, número de reproduções e etiquetas"
 
 #: Preferences.cpp:862
 msgid "Default copy action"
@@ -3311,7 +3311,7 @@ msgstr "Faixas adicionadas à vez"
 
 #: Preferences.cpp:1028
 msgid "Max played tracks kept in playlist"
-msgstr "N.º faixas reproduzidas a manter na lista"
+msgstr "Número de faixas reproduzidas a manter na lista"
 
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
@@ -4293,7 +4293,7 @@ msgstr "Editor de filtros"
 
 #: TreeViewFilterEditor.cpp:70
 msgid "Play Count"
-msgstr "N.º de reproduções"
+msgstr "Número de reproduções"
 
 #: TreeViewFilterEditor.cpp:119
 msgid "Filter:"
@@ -4301,7 +4301,7 @@ msgstr "Filtro:"
 
 #: TreeViewFilterEditor.cpp:123
 msgid "PlayCount"
-msgstr "N.º de reproduções"
+msgstr "Número de reproduções"
 
 #: UserRadio.cpp:55
 msgid "Add Radio"
@@ -4338,3 +4338,29 @@ msgstr "Exportar todas as estações de rádio"
 #: UserRadio.cpp:105
 msgid "User Defined"
 msgstr "Definido pelo utilizador"
+
+#: ui/mediaviewer/library/ArListBox.cpp:216
+#: ui/mediaviewer/library/AAListBox.cpp:207
+#: ui/mediaviewer/library/SoListBox.cpp:630
+#: ui/mediaviewer/library/AlListBox.cpp:344 ui/player/PlayList.cpp:1591
+msgid "Create Best of Playlist"
+msgstr "Criar lista de reprodução do melhor"
+
+msgid "Browse in File Manager"
+msgstr "Abrir no Gerenciador de Ficheiros"
+
+msgid "Burn as AudioCD using Brasero"
+msgstr "Gravar AudioCD usando Brasero"
+
+msgid "Burn as DataCD using Brasero"
+msgstr "Gravar DataCD usando Brasero"
+
+msgid "Open Terminal in directory"
+msgstr "Abrir Terminal no Diretório"
+
+msgid "Edit cover using GIMP"
+msgstr "Editar capa no GIMP"
+
+msgid "To mp3"
+msgstr "Para mp3"
+
