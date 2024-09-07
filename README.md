@@ -10,7 +10,7 @@ If anyone wishes to continue the development and support of Guayadeque, please f
 
 # General
 
-Guayadeque Music Player 0.5.0 beta2
+Guayadeque Music Player 0.5.0 Beta2
 Juan Rios anonbeat@gmail.com
 see LICENSE
 
@@ -50,7 +50,7 @@ sudo apt install libgdk-pixbuf2.0-dev libtag-extras-dev libgstreamer-plugins-bas
 
 ---
 
-### Ubuntu 20.04
+### Ubuntu 20.04 and Linux Mint 20
 
 ```bash
 sudo apt install libgpod-dev libjsoncpp-dev libgdk-pixbuf2.0-dev libtag-extras-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libcurl4-gnutls-dev binutils
@@ -58,7 +58,7 @@ sudo apt install libgpod-dev libjsoncpp-dev libgdk-pixbuf2.0-dev libtag-extras-d
 
 ---
 
-### Ubuntu 22.04
+### Ubuntu 22.04 and Linux Mint 21
 
 ```bash
 sudo apt install libgpod-dev libjsoncpp-dev libgdk-pixbuf2.0-dev libtag-extras-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev gettext binutils
@@ -66,10 +66,10 @@ sudo apt install libgpod-dev libjsoncpp-dev libgdk-pixbuf2.0-dev libtag-extras-d
 
 ---
 
-### Ubuntu 24.04
+### Ubuntu 24.04 and Linux Mint 22
 
 ```bash
-sudo apt install libgpod-dev libjsoncpp-dev libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev gettext binutils
+sudo apt install libgpod-dev libjsoncpp-dev libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev gettext cmake
 ```
 
 ---
