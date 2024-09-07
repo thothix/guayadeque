@@ -237,7 +237,7 @@ void AddAlbumCommands( wxMenu * Menu, int SelCount )
             {
                 if( ( Commands[ index ].Find( guCOMMAND_COVERPATH ) == wxNOT_FOUND ) || ( SelCount == 1 ) )
                 {
-                    MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, Names[ index ], Commands[ index ] );
+                    MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, _( Names[ index ] ), _( Commands[ index ] ) );
                     SubMenu->Append( MenuItem );
                 }
             }

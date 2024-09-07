@@ -317,7 +317,7 @@ void AppendFolderCommands( wxMenu * menu )
         {
             if( ( Commands[ Index ].Find( guCOMMAND_COVERPATH ) == wxNOT_FOUND ) )
             {
-                MenuItem = new wxMenuItem( menu, ID_COMMANDS_BASE + Index, Names[ Index ], Commands[ Index ] );
+                MenuItem = new wxMenuItem( menu, ID_COMMANDS_BASE + Index, _( Names[ Index ] ), _( Commands[ Index ] ) );
                 SubMenu->Append( MenuItem );
             }
         }
@@ -1096,7 +1096,7 @@ void AppendItemsCommands( wxMenu * menu, int selcount, int seltype )
             if( ( Commands[ Index ].Find( guCOMMAND_COVERPATH ) == wxNOT_FOUND ) ||
                 ( ( selcount == 1 ) && ( seltype == guFILEITEM_TYPE_IMAGE ) ) )
             {
-                MenuItem = new wxMenuItem( menu, ID_COMMANDS_BASE + Index, Names[ Index ], Commands[ Index ] );
+                MenuItem = new wxMenuItem( menu, ID_COMMANDS_BASE + Index, _( Names[ Index ] ), _( Commands[ Index ] ) );
                 SubMenu->Append( MenuItem );
             }
         }

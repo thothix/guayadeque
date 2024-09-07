@@ -1,4 +1,12 @@
-2024-09-05 0.5.0-beta2
+2024-09-07 0.5.0 Beta 3
+
+  * Translations
+    - Add some missing translations to commands and Copy to menu
+    - Updates to Portuguese and Brazilian Portuguese translations
+  * Fixed bug that crashed guayadeque when clicking cover panel to open the fullscreen cover window
+  * General code cleanup and small refactorings
+
+2024-09-05 0.5.0 Beta 2
 
   * Added sqlite3-3.2 support
   * Added installation instructions for Ubuntu 24.04
@@ -17,7 +25,7 @@
   * Removed compiler warnings
   * General code cleanup and small refactorings
 
-2023-11-23 0.5.0-beta1
+2023-11-23 0.5.0 Beta 1
 
   * Added installation instructions for Mageia 9
   * Added Best of playlist generator
@@ -187,7 +195,7 @@
   * Now allow to load from command line directories.
   * Now when loading the library if title is empty will be used the filename. 
     If album is empty will be used the dir name. 
-    If Genre or Artist is empty 'Unknown' will be used.
+    If Genre or Artist is empty 'Unknown' will be used. 
   * Fixed Playlists. Now dynamic playlists are loaded more quickly.
   * Added in Preferences -> Playback the option to add in random mode albums 
     instead of tracks.
@@ -482,3 +490,4 @@ grateful and humbled.
   * Fixed bug in ListBox colors
 
 * 2009-03-11 First Public release v0.0.1 Beta
+

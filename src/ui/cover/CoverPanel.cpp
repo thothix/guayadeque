@@ -63,7 +63,7 @@ void guCoverPanel::OnPaint( wxPaintEvent &event )
 	wxCoord Width;
 	wxCoord Height;
 	GetClientSize( &Width, &Height );
-    if( Width && Height )
+    if ( Width && Height )
     {
         wxMutexLocker Lock( m_CoverImageMutex );
         wxPaintDC dc( this );
@@ -80,15 +80,12 @@ void guCoverPanel::OnResizeTimer( wxTimerEvent &event )
 // -------------------------------------------------------------------------------- //
 void guCoverPanel::OnClick( wxMouseEvent &event )
 {
-    if ( m_CoverWindow == NULL ) {
-        m_CoverWindow = new guCoverWindow( this );
-    }
+    if ( m_CoverWindow == NULL )
+        m_CoverWindow = new guCoverWindow( this, wxID_ANY, wxEmptyString );
     else
-    {
         m_CoverWindow->Raise();
-    }
 
-    if( m_CoverWindow )
+    if ( m_CoverWindow )
     {
         m_CoverWindow->SetBitmap( m_CoverType, m_CoverPath );
         m_CoverWindow->ShowFullScreen( true );
@@ -100,13 +97,13 @@ void guCoverPanel::OnSize( wxSizeEvent &event )
 {
     wxSize Size = event.GetSize();
     int MinSize = wxMin( Size.GetWidth(), Size.GetHeight() );
-    if( MinSize != m_LastSize )
+
+    if ( MinSize != m_LastSize )
     {
         m_LastSize = MinSize;
-        if( m_ResizeTimer.IsRunning() )
-        {
+        if ( m_ResizeTimer.IsRunning() )
             m_ResizeTimer.Stop();
-        }
+
         m_ResizeTimer.Start( guCOVERPANEL_RESIZE_TIMER_TIME, wxTIMER_ONE_SHOT );
     }
     event.Skip();
@@ -117,7 +114,7 @@ void guCoverPanel::UpdateImage( void )
 {
     wxImage * CoverImage = NULL;
 
-    switch( m_CoverType )
+    switch ( m_CoverType )
     {
         case GU_SONGCOVER_FILE :
             CoverImage = new wxImage( m_CoverPath );
@@ -139,16 +136,16 @@ void guCoverPanel::UpdateImage( void )
             break;
     }
 
-    if( !CoverImage || !CoverImage->IsOk() )
+    if ( !CoverImage || !CoverImage->IsOk() )
     {
         if( CoverImage )
             delete CoverImage;
         CoverImage = new wxImage( guImage( guIMAGE_INDEX_no_cover ) );
     }
 
-    if( CoverImage )
+    if ( CoverImage )
     {
-        if( m_LastSize > 0 )
+        if ( m_LastSize > 0 )
             CoverImage->Rescale( m_LastSize, m_LastSize, wxIMAGE_QUALITY_HIGH );
         wxMutexLocker Lock( m_CoverImageMutex );
         m_CoverImage = wxBitmap( * CoverImage );
@@ -164,13 +161,13 @@ void guCoverPanel::OnUpdatedTrack( wxCommandEvent &event )
 {
     const guCurrentTrack * CurrentTrack = m_PlayerPanel->GetCurrentTrack();
 
-    if( CurrentTrack )
+    if ( CurrentTrack )
     {
         m_CoverType = CurrentTrack->m_CoverType;
         m_CoverPath = CurrentTrack->m_CoverPath;
-        if ( m_CoverWindow != NULL ) {
+        if ( m_CoverWindow != NULL )
             m_CoverWindow->SetBitmap( m_CoverType, m_CoverPath );
-        }
+
         guLogMessage( wxT( "Changed image to %i '%s'" ), m_CoverType, m_CoverPath.c_str() );
     }
     else

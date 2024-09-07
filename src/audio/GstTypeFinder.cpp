@@ -62,7 +62,6 @@ guGstTypeFinder::guGstTypeFinder()
 // -------------------------------------------------------------------------------- //
 bool guGstTypeFinder::FetchMedia( void )
 {
-
     if( READY )
         return true;
 
@@ -196,6 +195,7 @@ bool guGstTypeFinder::HasPrefixes( void )
     return m_MediaTypePrefixes.Count() > 0;
 }
 
+// -------------------------------------------------------------------------------- //
 void guGstTypeFinder::AddMediaExtension( const wxString &media_type, const wxString &extension )
 {
     AddMediaTypePrefix(media_type);
@@ -209,10 +209,9 @@ void guGstTypeFinder::AddMediaExtension( const wxString &media_type, const wxStr
     }
 }
 
-
+// -------------------------------------------------------------------------------- //
 void guGstTypeFinder::InitMediaTypes( void )
 {
-
     // supported media types
     //
     AddMediaTypePrefix( "audio/" ); // all gstreamer audio
@@ -243,10 +242,8 @@ void guGstTypeFinder::InitMediaTypes( void )
     AddMediaExtension( "audio/x-sid", "psid" ); // PlaySID
     AddMediaExtension( "audio/x-svx", "8svx" ); // 8-Bit Sampled Voice
     AddMediaExtension( "audio/x-vgm", "vgz"  ); // Video Game Music - Sega Megadrive (somtimes only after gunzip)
-
 }
 
 }
 
 // the end :)
-

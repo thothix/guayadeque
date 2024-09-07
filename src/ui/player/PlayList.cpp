@@ -1491,7 +1491,7 @@ void AddPlayListCommands( wxMenu * Menu, int SelCount )
                 {
                     continue;
                 }
-                MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, Names[ index ], Commands[ index ] );
+                MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, _( Names[ index ] ), _( Commands[ index ] ) );
                 SubMenu->Append( MenuItem );
             }
 
@@ -1588,7 +1588,7 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
     {
         MenuItem = new wxMenuItem( Menu, ID_PLAYLIST_SMART_PLAYLIST, _( "Create Smart Playlist" ), _( "Create a smart playlist from this track" ) );
         Menu->Append( MenuItem );
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_CREATE_BESTOF, _( "Create Best Of Playlist" ), _( "Create a playlist with the best of this artist" ) );
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_CREATE_BESTOF, _( "Create Best of Playlist" ), _( "Create a playlist with the best of this artist" ) );
         Menu->Append( MenuItem );
     }
 
