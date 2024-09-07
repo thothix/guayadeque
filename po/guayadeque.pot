@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-07 10:35-0300\n"
+"POT-Creation-Date: 2024-09-07 11:25-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -140,7 +140,7 @@ msgstr ""
 
 #: misc/Accelerators.cpp:130 ui/filebrowser/FileBrowser.cpp:329
 #: ui/filebrowser/FileBrowser.cpp:1108 ui/MainFrame.cpp:1418
-#: ui/MainFrame.cpp:4287 ui/mediaviewer/library/ArListBox.cpp:134
+#: ui/MainFrame.cpp:4283 ui/mediaviewer/library/ArListBox.cpp:134
 #: ui/mediaviewer/library/AAListBox.cpp:131
 #: ui/mediaviewer/library/SoListBox.cpp:462
 #: ui/mediaviewer/library/AlListBox.cpp:249
@@ -1823,7 +1823,7 @@ msgstr ""
 msgid "Filters"
 msgstr ""
 
-#: ui/MainFrame.cpp:331 ui/MainFrame.cpp:1352 ui/MainFrame.cpp:4101
+#: ui/MainFrame.cpp:331 ui/MainFrame.cpp:1352 ui/MainFrame.cpp:4097
 msgid "VU Meters"
 msgstr ""
 
@@ -1907,7 +1907,7 @@ msgstr ""
 msgid "Show/Hide the player playlist panel"
 msgstr ""
 
-#: ui/MainFrame.cpp:1336 ui/MainFrame.cpp:1611 ui/MainFrame.cpp:4119
+#: ui/MainFrame.cpp:1336 ui/MainFrame.cpp:1611 ui/MainFrame.cpp:4115
 msgid "Sources"
 msgstr ""
 
@@ -1927,7 +1927,7 @@ msgstr ""
 msgid "Show/Hide the player vumeter"
 msgstr ""
 
-#: ui/MainFrame.cpp:1360 ui/MainFrame.cpp:4135
+#: ui/MainFrame.cpp:1360 ui/MainFrame.cpp:4131
 msgid "Cover"
 msgstr ""
 
@@ -2104,7 +2104,7 @@ msgid "Select destination directory"
 msgstr ""
 
 #: ui/MainFrame.cpp:2101 ui/MainFrame.cpp:2138 ui/MainFrame.cpp:2182
-#: ui/MainFrame.cpp:2217 ui/MainFrame.cpp:4290
+#: ui/MainFrame.cpp:2217 ui/MainFrame.cpp:4286
 msgid "Copy To..."
 msgstr ""
 
@@ -2175,15 +2175,15 @@ msgstr ""
 msgid "Layout %lu"
 msgstr ""
 
-#: ui/MainFrame.cpp:4257 ui/MainFrame.cpp:4278
+#: ui/MainFrame.cpp:4253 ui/MainFrame.cpp:4274
 msgid "Copy the current selected songs to a directory or device"
 msgstr ""
 
-#: ui/MainFrame.cpp:4287
+#: ui/MainFrame.cpp:4283
 msgid "Add Copy To patterns in preferences"
 msgstr ""
 
-#: ui/MainFrame.cpp:4290
+#: ui/MainFrame.cpp:4286
 msgid "Copy the selected tracks to a folder or device"
 msgstr ""
 
