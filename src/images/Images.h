@@ -192,6 +192,7 @@ typedef enum {
     guIMAGE_INDEX_tiny_mv_albumbrowser,
     guIMAGE_INDEX_tiny_mv_treeview,
     guIMAGE_INDEX_tiny_mv_playlists,
+    guImage_INDEX_tiny_playlist,
     guIMAGE_INDEX_COUNT
 
 } guIMAGE_INDEX;
