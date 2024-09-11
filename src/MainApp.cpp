@@ -59,12 +59,6 @@ guMainApp::guMainApp() : wxApp()
         guLogMessage( wxT( "Created the configuration folder" ) );
     }
 
-    if( !wxDirExists( guPATH_LYRICS ) )
-    {
-        wxMkdir( guPATH_LYRICS, 0770 );
-        guLogMessage( wxT( "Created the lyrics folder" ) );
-    }
-
     if( !wxDirExists( guPATH_COLLECTIONS ) )
     {
         wxMkdir( guPATH_COLLECTIONS, 0770 );

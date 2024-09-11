@@ -2,7 +2,7 @@
 <lyricengine>
     <lyricsources>
         <lyricsource type="embedded" enabled="false" name="Embedded" source=""/>
-        <lyricsource type="file" enabled="false" name="From file" source="~/.guayadeque/lyrics/{a}/{t}.lyric">
+        <lyricsource type="file" enabled="false" name="From file" source="~/.guayadeque/Lyrics/{a}/{t}.lyric">
             <replace>
                 <item replace=" &lt;&gt;:&quot;\/|?*" with="_"/>
             </replace>
@@ -197,7 +197,7 @@
     </lyricsources>
     <lyrictargets>
         <lyrictarget type="embedded" enabled="false" name="Embedded" source=""/>
-        <lyrictarget type="file" enabled="false" name="To file" source="~/.guayadeque/lyrics/{a}/{t}.lyric">
+        <lyrictarget type="file" enabled="false" name="To file" source="~/.guayadeque/Lyrics/{a}/{t}.lyric">
             <replace>
                 <item replace=" &lt;&gt;:&quot;\/|?*" with="_"/>
             </replace>
