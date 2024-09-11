@@ -40,36 +40,38 @@ namespace Guayadeque {
 class guPlayerPanel;
 class guPlayList;
 class guMainFrame;
+class guPlayerPlayList;
 
 // -------------------------------------------------------------------------------- //
 class guPlayList : public guListView
 {
   private :
-    guDbLibrary *   m_Db;
-    guMainFrame *   m_MainFrame;
-    guPlayerPanel * m_PlayerPanel;
-    guTrackArray    m_Items;
-    wxMutex         m_ItemsMutex;
-    bool            m_StartPlaying;
-    long            m_CurItem;
-    unsigned int    m_TotalLen;
-    long            m_MaxPlayedTracks;
-    int             m_MinPlayListTracks;
-    bool            m_DelTracksPLayed;
-    int             m_ItemHeight;
-    wxString        m_LastSearch;
+    guDbLibrary *           m_Db;
+    guMainFrame *           m_MainFrame;
+    guPlayerPanel *         m_PlayerPanel;
+    guPlayerPlayList *      m_PlayerPlayList;
+    guTrackArray            m_Items;
+    wxMutex                 m_ItemsMutex;
+    bool                    m_StartPlaying;
+    long                    m_CurItem;
+    unsigned int            m_TotalLen;
+    long                    m_MaxPlayedTracks;
+    int                     m_MinPlayListTracks;
+    bool                    m_DelTracksPLayed;
+    int                     m_ItemHeight;
+    wxString                m_LastSearch;
 
-    wxBitmap *      m_PlayBitmap;
-    wxBitmap *      m_StopBitmap;
-    wxBitmap *      m_NormalStar;
-    wxBitmap *      m_SelectStar;
-    wxCoord         m_SecondLineOffset;
+    wxBitmap *              m_PlayBitmap;
+    wxBitmap *              m_StopBitmap;
+    wxBitmap *              m_NormalStar;
+    wxBitmap *              m_SelectStar;
+    wxCoord                 m_SecondLineOffset;
 
-    wxTimer *       m_SavePlaylistTimer;
+    wxTimer *               m_SavePlaylistTimer;
 
-    wxArrayString   m_PendingLoadIds;
+    wxArrayString           m_PendingLoadIds;
 
-    int             m_SysFontPointSize;
+    int                     m_SysFontPointSize;
 
     virtual wxCoord             OnMeasureItem( size_t row ) const;
 
@@ -82,7 +84,7 @@ class guPlayList : public guListView
     virtual wxString            GetItemSearchText( const int row );
 
     void                        RemoveSelected();
-    virtual void                MoveSelection( void );
+    virtual void                MoveSelection(guLISTVIEW_NAVIGATION target);
 
     void                        OnClearClicked( wxCommandEvent &event );
     void                        OnRemoveClicked( wxCommandEvent &event );
@@ -93,7 +95,13 @@ class guPlayList : public guListView
     void                        OnEditTracksClicked( wxCommandEvent &event );
     void                        OnSearchClicked( wxCommandEvent &event );
     void                        OnStopAtEnd( wxCommandEvent &event ) { StopAtEnd(); }
+
+    void                        SetTopPlayTracks( wxCommandEvent &event );
+    void                        SetTopTracks( wxCommandEvent &event );
+    void                        SetPrevTracks( wxCommandEvent &event );
     void                        SetNextTracks( wxCommandEvent &event );
+    void                        SetBottomTracks( wxCommandEvent &event );
+
     void                        OnSearchLinkClicked( wxCommandEvent &event );
     void                        OnCommandClicked( wxCommandEvent &event );
     wxString                    GetSearchText( int item ) const;
@@ -120,6 +128,7 @@ class guPlayList : public guListView
     virtual void                GetItemsList( void );
     virtual void                OnMouse( wxMouseEvent &event );
 
+    void                        OnColumnSelected( wxCommandEvent &event );
     void                        OnConfigUpdated( wxCommandEvent &event );
 
     void                        OnDeleteFromLibrary( wxCommandEvent &event );
@@ -138,10 +147,11 @@ class guPlayList : public guListView
     void                        OnSavePlaylistTimer( wxTimerEvent & );
 
   public :
-    guPlayList( wxWindow * parent, guDbLibrary * db, guPlayerPanel * playerpanel = NULL, guMainFrame * mainframe = NULL );
+    guPlayList( wxWindow * parent, guDbLibrary * db, guPlayerPanel * playerpanel = nullptr, guMainFrame * mainframe = nullptr );
     ~guPlayList();
 
     void                        SetPlayerPanel( guPlayerPanel * playerpanel ) { m_PlayerPanel = playerpanel; }
+    void                        SetPlayerPlayList( guPlayerPlayList * playerplaylist ) { m_PlayerPlayList = playerplaylist; }
 
     void                        AddItem( const guTrack &NewItem, const int pos = wxNOT_FOUND );
     //void                        AddItem( const guTrack * NewItem );
@@ -169,7 +179,7 @@ class guPlayList : public guListView
     wxString                    FindCoverFile( const wxString &DirName );
     void                        Randomize( const bool isplaying );
     int                         GetCaps();
-    void                        RemoveItem( int itemnum );
+    void                        RemoveItem( int itemnum, bool lock = true );
 
     void                        UpdatedTracks( const guTrackArray * tracks );
     void                        UpdatedTrack( const guTrack * track );
@@ -181,6 +191,8 @@ class guPlayList : public guListView
 
     void                        MediaViewerCreated( const wxString &uniqueid, guMediaViewer * mediaviewer );
     void                        MediaViewerClosed( guMediaViewer * mediaviewer );
+
+    void                        UpdatePlaylistToolbar( void );
 
   friend class guAddDropFilesThread;
   friend class guPlayListDropTarget;
@@ -194,9 +206,28 @@ class guPlayerPlayList : public guAuiManagedPanel
   protected :
     guPlayList * m_PlayListCtrl;
 
-  public :
+    wxBoxSizer *MainSizer;
+    wxBoxSizer *BigSizer;
+
+    wxBitmapButton *m_TopPlayButton;
+    wxBitmapButton *m_TopButton;
+    wxBitmapButton *m_PrevButton;
+    wxBitmapButton *m_NextButton;
+    wxBitmapButton *m_BottomButton;
+    wxBitmapButton *m_RemoveButton;
+    wxBitmapButton *m_ClearPlaylistButton;
+
+    void OnTopPlayBtnClick(wxCommandEvent &event);
+    void OnTopBtnClick(wxCommandEvent &event);
+    void OnPrevBtnClick(wxCommandEvent &event);
+    void OnNextBtnClick(wxCommandEvent &event);
+    void OnBottomBtnClick(wxCommandEvent &event);
+    void OnRemoveBtnClick(wxCommandEvent &event);
+    void OnClearPlaylistBtnClick(wxCommandEvent &event);
+
+public :
     guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiManager * manager );
-    ~guPlayerPlayList() {}
+    ~guPlayerPlayList();
 
     guPlayList *    GetPlayListCtrl( void ) { return m_PlayListCtrl; }
     void            SetPlayerPanel( guPlayerPanel * player );
@@ -209,9 +240,9 @@ class guPlayerPlayList : public guAuiManagedPanel
 
     void            LoadPlaylistTracks( void ) { m_PlayListCtrl->LoadPlaylistTracks(); }
 
+    void            UpdatePlayListToolbarState(int item, int curItem, int lastItem);
 };
 
 }
-
 #endif
 // -------------------------------------------------------------------------------- //

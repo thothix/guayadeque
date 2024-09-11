@@ -169,7 +169,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
 //	PlayerPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 
 	wxBoxSizer * PlayerMainSizer = new wxBoxSizer( wxVERTICAL );
-
 	wxBoxSizer * PlayerBtnSizer = new wxBoxSizer( wxHORIZONTAL );
 
 	//m_PrevTrackButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_player_normal_prev ), wxDefaultPosition, wxDefaultSize, 0 ); //wxBU_AUTODRAW );
@@ -213,7 +212,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
                                 guImage( m_ForceGapless ? guIMAGE_INDEX_player_highlight_gapless : guIMAGE_INDEX_player_highlight_crossfading ) );
     m_ForceGaplessButton->SetToolTip( m_ForceGapless ? _( "Enable crossfading" ) : _( "Disable crossfading" ) );
     PlayerBtnSizer->Add( m_ForceGaplessButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxLEFT|wxRIGHT, guPLAYER_ICONS_SEPARATOR );
-
     if( !m_EnableVolCtls )
         m_ForceGaplessButton->Hide();
 
@@ -230,7 +228,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     if( !m_EnableVolCtls )
         m_VolumeButton->Hide();
 
-
     m_VolumeBar = new wxSlider( this, wxID_ANY, SavedVol, 0, 100 );
     m_VolumeBar->SetMinSize( wxSize( 100, 40 ) );
     PlayerBtnSizer->Add( m_VolumeBar, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, guPLAYER_ICONS_SEPARATOR );
@@ -240,7 +237,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
         m_VolumeBar->Hide();
     PlayerMainSizer->Add( PlayerBtnSizer, 0, wxEXPAND, 2 );
     //m_VolumeButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_player_normal_vol_mid ), wxDefaultPosition, wxDefaultSize, 0 );
-
 
     wxBoxSizer * PlayerDetailsSizer;
 	PlayerDetailsSizer = new wxBoxSizer( wxHORIZONTAL );
@@ -501,13 +497,9 @@ guPlayerPanel::~guPlayerPanel()
         {
             if( ( m_LastPlayState != guMEDIASTATE_STOPPED ) &&
                 ( m_MediaSong.m_Length >= ( unsigned int ) ( Config->ReadNum( CONFIG_KEY_GENERAL_MIN_SAVE_PLAYL_POST_LENGTH, 10, CONFIG_PATH_GENERAL ) * 60000 ) ) )
-            {
                 Config->WriteNum( CONFIG_KEY_GENERAL_CURRENT_TRACK_POS, m_LastCurPos, CONFIG_PATH_GENERAL );
-            }
             else
-            {
                 Config->WriteNum( CONFIG_KEY_GENERAL_CURRENT_TRACK_POS, 0, CONFIG_PATH_GENERAL );
-            }
         }
         //printf( PlaySmart ? "Smart Enabled" : "Smart Disabled" );  printf( "\n" );
 
@@ -632,9 +624,7 @@ void guPlayerPanel::OnConfigUpdated( wxCommandEvent &event )
         m_SilenceDetector = Config->ReadBool( CONFIG_KEY_PLAYBCK_SILENCE_DETECTOR, false, CONFIG_PATH_PLAYBACK );
         m_SilenceDetectorLevel = Config->ReadNum( CONFIG_KEY_PLAYBCK_SILENCE_LEVEL, -55, CONFIG_PATH_PLAYBACK );
         if( Config->ReadBool( CONFIG_KEY_PLAYBCK_SILENCE_AT_END, false, CONFIG_PATH_PLAYBACK ) )
-        {
             m_SilenceDetectorTime = Config->ReadNum( CONFIG_KEY_PLAYBCK_SILENCE_END_TIME, 45, CONFIG_PATH_PLAYBACK ) * 1000;
-        }
 
         MediaCtrlNeedUpdated = true;
     }
@@ -648,9 +638,7 @@ void guPlayerPanel::OnConfigUpdated( wxCommandEvent &event )
         Layout();
 
         if( m_MediaRecordCtrl )
-        {
             m_MediaRecordCtrl->UpdatedConfig();
-        }
     }
 
     if( Flags & guPREFERENCE_PAGE_FLAG_CROSSFADER )
@@ -1179,8 +1167,8 @@ void guPlayerPanel::OnPlayListUpdated( wxCommandEvent &event )
             OnPlayListDClick( event );
         }
     }
-    if( ( event.GetExtraLong() || event.GetInt() ) &&
-        ( m_PlayMode == guPLAYER_PLAYMODE_SMART ) )
+
+    if( ( event.GetExtraLong() || event.GetInt() ) && ( m_PlayMode == guPLAYER_PLAYMODE_SMART ) )
     {
         if( m_SmartAddTracksThread )
         {
