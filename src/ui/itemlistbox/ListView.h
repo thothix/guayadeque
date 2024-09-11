@@ -45,6 +45,16 @@ class guListViewHeader;
 #define guLISTVIEW_COLUMN_CLICK_EVENTS  0x20000
 #define guLISTVIEW_HIDE_HEADER          0x40000
 
+// Listview Navigation
+enum guLISTVIEW_NAVIGATION
+{
+    guLISTVIEW_NAVIGATION_TOP_PLAYING,
+    guLISTVIEW_NAVIGATION_TOP,
+    guLISTVIEW_NAVIGATION_PREVIOUS,
+    guLISTVIEW_NAVIGATION_NEXT,
+    guLISTVIEW_NAVIGATION_BOTTOM
+};
+
 wxDECLARE_EVENT( guEVT_LISTBOX_ITEM_COL_CLICKED, wxListEvent );
 #define EVT_LISTBOX_ITEM_COL_CLICKED(winid, fn) DECLARE_EVENT_TABLE_ENTRY( guEVT_LISTBOX_ITEM_COL_CLICKED, winid, wxID_ANY, wxListEventHandler(fn), (wxObject *) NULL ),
 
@@ -282,7 +292,6 @@ class guListView : public wxScrolledWindow
 
     //bool                    m_WasLeftUp;
 
-    virtual void        OnKeyDown( wxKeyEvent &event ) { event.Skip(); }
 
     virtual void        GetItemsList( void ) = 0;
     virtual void        DrawItem( wxDC &dc, const wxRect &rect, const int row, const int col ) const;
@@ -292,6 +301,7 @@ class guListView : public wxScrolledWindow
     virtual wxCoord     OnMeasureItem( size_t row ) const;
     virtual wxString    GetItemSearchText( const int row ) { return GetItemName( row ); }
 
+    virtual void        OnKeyDown( wxKeyEvent &event ) { event.Skip(); }
     virtual void        OnBeginDrag( wxCommandEvent &event );
     virtual void        OnDragOver( const wxCoord x, const wxCoord y );
     virtual void        OnDropBegin( void ) {}
@@ -350,10 +360,10 @@ class guListView : public wxScrolledWindow
     virtual void            ReloadItems( bool reset = true ) = 0;
 
     virtual wxArrayInt      GetSelectedItems( bool reallist = true ) const;
-    virtual wxArrayInt      GetSelectedIndexs( bool reallist = true ) const;
     virtual void            GetSelectedItems( guListItems * items, bool convertall = true ) const;
+    virtual wxArrayInt      GetSelectedIndexes( bool reallist = true ) const;
     virtual void            SetSelectedItems( const wxArrayInt &selection );
-    virtual void            SetSelectedIndexs( const wxArrayInt &selection );
+    virtual void            SetSelectedIndexes( const wxArrayInt &selection );
     virtual size_t          GetSelectedCount( void ) const { return m_ListBox->GetSelectedCount(); }
     virtual void            ClearSelectedItems( void ) { SetSelection( wxNOT_FOUND ); }
 
