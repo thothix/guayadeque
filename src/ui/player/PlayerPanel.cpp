@@ -53,9 +53,10 @@ namespace Guayadeque {
 wxArrayInt SupportedPlayCountTypes;
 
 // -------------------------------------------------------------------------------- //
-guPlayerPanel::guPlayerPanel( wxWindow * parent, guDbLibrary * db,
-    guPlayList * playlist, guPlayerFilters * filters )
-       : wxPanel( parent, wxID_ANY, wxDefaultPosition, wxSize( 310, 170 ), wxTAB_TRAVERSAL )
+guPlayerPanel::guPlayerPanel(wxWindow * parent,
+                             guDbLibrary * db,
+                             guPlayList * playlist, guPlayerFilters * filters ) :
+    wxPanel( parent, wxID_ANY, wxDefaultPosition, wxSize( 310, 170 ), wxTAB_TRAVERSAL )
 {
     double SavedVol;
 
@@ -319,15 +320,12 @@ guPlayerPanel::guPlayerPanel( wxWindow * parent, guDbLibrary * db,
     m_BitRateSizer->Add( m_BitRateLabel, 0, wxRIGHT|wxLEFT|wxALIGN_CENTER_VERTICAL, 2 );
 
 	PlayerLabelsSizer->Add( m_BitRateSizer, 0, wxEXPAND, 2 );
-
 	PlayerDetailsSizer->Add( PlayerLabelsSizer, 1, wxEXPAND, 5 );
-
 	PlayerMainSizer->Add( PlayerDetailsSizer, 0, wxEXPAND, 5 );
 
     m_PlayerPositionSlider = new wxSlider( this, wxID_ANY, 0, 0, 1000 );
     m_PlayerPositionSlider->SetMinSize( wxSize( 100, 40 ) );
 	PlayerMainSizer->Add( m_PlayerPositionSlider, 0, wxALL|wxEXPAND, 0 );
-
 
 //	SetSizer( PlayerMainSizer );
 //	Layout();
@@ -335,11 +333,7 @@ guPlayerPanel::guPlayerPanel( wxWindow * parent, guDbLibrary * db,
 //    SetSizeHints( this );
 	//PlayerPanel->Layout();
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 //	m_PlayListCtrl = new guPlayList( this, m_Db );
 //    PlayListSizer->Add( m_PlayListCtrl, 1, wxALL|wxEXPAND, 2 );
 //	wxPanel * PlayListPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
@@ -486,7 +480,6 @@ guPlayerPanel::~guPlayerPanel()
 
     if( m_AudioScrobble )
         delete m_AudioScrobble;
-
     if( m_MediaRecordCtrl )
         delete m_MediaRecordCtrl;
 
@@ -1170,6 +1163,7 @@ void guPlayerPanel::TrackListChanged( void )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::OnPlayListUpdated( wxCommandEvent &event )
 {
+    //guLogDebug( wxT( "OnPlayListUpdated CurItem: %i" ), m_PlayListCtrl->GetCurItem() );
     m_PlayListCtrl->ReloadItems();
     //SetNextTrack( m_PlayListCtrl->GetCurrent() );
     m_PlayListCtrl->RefreshAll( m_PlayListCtrl->GetCurItem() );

@@ -213,14 +213,10 @@ guLyricsPanel::~guLyricsPanel()
     Unbind( wxEVT_MENU, &guLyricsPanel::OnLyricFound, this, ID_LYRICS_LYRICFOUND );
 
     if( m_LyricSearchContext )
-    {
         delete m_LyricSearchContext;
-    }
 
     if( m_CurrentTrack )
-    {
         delete m_CurrentTrack;
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -247,7 +243,6 @@ void guLyricsPanel::OnConfigUpdated( wxCommandEvent &event )
             m_LyricText->SetDefaultStyle( wxTextAttr( m_LyricTitle->GetForegroundColour(),
                                                       m_LyricTitle->GetBackgroundColour(),
                                                       CurrentFont ) );
-
             SetText( m_LyricText->GetValue() );
 
             CurrentFont.SetPointSize( CurrentFont.GetPointSize() + 2 );
@@ -274,9 +269,7 @@ void guLyricsPanel::OnContextMenu( wxContextMenuEvent &event )
         Point.y = Size.y / 2;
     }
     else
-    {
         Point = ScreenToClient( Point );
-    }
 
     CreateContextMenu( &Menu );
     PopupMenu( &Menu, Point.x, Point.y );
@@ -385,9 +378,7 @@ void guLyricsPanel::SetAutoUpdate( const bool autoupdate )
 {
     m_UpdateEnabled = autoupdate;
     if( m_UpdateEnabled != m_UpdateCheckBox->IsChecked() )
-    {
         m_UpdateCheckBox->SetValue( autoupdate );
-    }
 
     if( m_UpdateEnabled )
     {
@@ -435,9 +426,8 @@ void guLyricsPanel::OnReloadBtnClick( wxCommandEvent& event )
         if( m_LyricSearchEngine )
         {
             if( !m_CurrentTrack )
-            {
                 m_CurrentTrack = new guTrack();
-            }
+
             m_CurrentTrack->m_ArtistName = m_ArtistTextCtrl->GetValue();
             m_CurrentTrack->m_SongName = m_TrackTextCtrl->GetValue();
 
@@ -445,9 +435,7 @@ void guLyricsPanel::OnReloadBtnClick( wxCommandEvent& event )
             SetText( _( "Searching..." ) );
 
             if( !m_LyricSearchContext )
-            {
                 m_LyricSearchContext = m_LyricSearchEngine->CreateContext( this, m_CurrentTrack, false );
-            }
 
             m_LyricSearchEngine->SearchStart( m_LyricSearchContext );
         }
@@ -462,9 +450,7 @@ void guLyricsPanel::OnLyricFound( wxCommandEvent &event )
     wxString * LyricText = ( wxString * ) event.GetClientData();
     SetLyricText( LyricText, true );
     if( LyricText )
-    {
         delete LyricText;
-    }
     SetLastSource( event.GetInt() );
 }
 
@@ -501,9 +487,7 @@ void guLyricsPanel::OnSaveBtnClick( wxCommandEvent& event )
         if( m_LyricSearchEngine && m_CurrentTrack && !m_CurrentLyricText.IsEmpty() )
         {
             if( !m_LyricSearchContext )
-            {
                 m_LyricSearchContext = m_LyricSearchEngine->CreateContext( this, m_CurrentTrack, false );
-            }
             m_LyricSearchEngine->SetLyricText( m_LyricSearchContext, m_CurrentLyricText );
         }
     }
@@ -603,15 +587,11 @@ void guLyricsPanel::OnLyricsCopy( wxCommandEvent &event )
         }
 
         if( !wxTheClipboard->AddData( new wxTextDataObject( CopyText ) ) )
-        {
             guLogError( wxT( "Can't copy data to the clipboard" ) );
-        }
         wxTheClipboard->Close();
     }
     else
-    {
         guLogError( wxT( "Could not open the clipboard object" ) );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -635,9 +615,7 @@ void guLyricsPanel::OnLyricsPaste( wxCommandEvent &event )
         wxTheClipboard->Close();
     }
     else
-    {
         guLogError( wxT( "Could not open the clipboard object" ) );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -694,9 +672,7 @@ void guLyricsPanel::OnDropFiles( const wxArrayString &files )
     if( !m_Db->FindTrackFile( files[ 0 ], &Track ) )
     {
         if( !Track.ReadFromFile( files[ 0 ] ) )
-        {
             return;
-        }
     }
 
     if( m_UpdateEnabled )
@@ -730,7 +706,6 @@ void guLyricsPanel::OnDropFiles( const guTrackArray * tracks )
         if( m_UpdateEnabled )
         {
             SetCurrentTrack( &Track );
-
             SetAutoUpdate( false );
         }
         else
@@ -786,16 +761,12 @@ void guLyricsPanel::SetLastSource( const int sourceindex )
     //guLogMessage( wxT( "Setting the lyrics source index to %i" ), sourceindex );
 
     if( sourceindex == wxNOT_FOUND )
-    {
         m_CurrentSourceName = wxEmptyString;
-    }
     else
     {
         guLyricSource * LyricSource = m_LyricSearchEngine->GetSource( sourceindex );
         if( LyricSource )
-        {
             m_LastSourceName = m_CurrentSourceName = LyricSource->Name();
-        }
     }
 
     wxCommandEvent event( wxEVT_MENU, ID_MAINFRAME_UPDATE_SELINFO );
@@ -840,17 +811,11 @@ void guLyricsPanel::UpdatedTrack( const guTrack * track )
 wxString guLyricsPanel::GetLyricSource( void )
 {
     if( !m_CurrentLyricText.IsEmpty() )
-    {
         return _( "Lyrics from " ) + m_CurrentSourceName;
-    }
     else if( m_LyricText->GetValue() == _( "Searching..." ) )
-    {
         return _( "Searching..." );
-    }
     else
-    {
         return _( "No lyrics found" );
-    }
 }
 
 
@@ -896,29 +861,19 @@ wxDragResult guLyricsPanelDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult
     {
         guTrackArray * Tracks;
         if( !DataObject->GetDataHere( ReceivedFormat, &Tracks ) )
-        {
           guLogMessage( wxT( "Error getting tracks data..." ) );
-        }
         else
-        {
             m_LyricsPanel->OnDropFiles( Tracks );
-        }
     }
     else if( ReceivedFormat == wxDataFormat( wxDF_FILENAME ) )
     {
         wxFileDataObject * FileDataObject = ( wxFileDataObject * ) DataObject->GetDataObject( wxDataFormat( wxDF_FILENAME ) );
         if( FileDataObject )
-        {
             m_LyricsPanel->OnDropFiles( FileDataObject->GetFilenames() );
-        }
     }
 
     return def;
 }
-
-
-
-
 
 
 // -------------------------------------------------------------------------------- //
@@ -936,8 +891,6 @@ bool guLyricSearchContext::GetNextSource( guLyricSource * lyricsource, const boo
 }
 
 
-
-
 // -------------------------------------------------------------------------------- //
 // guLyricSourceOption
 // -------------------------------------------------------------------------------- //
@@ -947,9 +900,7 @@ guLyricSourceOption::guLyricSourceOption( wxXmlNode * xmlnode, const wxString &t
     {
         xmlnode->GetAttribute( tag1, &m_Text1 );
         if( !tag2.IsEmpty() )
-        {
             xmlnode->GetAttribute( tag2, &m_Text2 );
-        }
     }
 }
 
@@ -960,9 +911,7 @@ guLyricSourceExtract::guLyricSourceExtract( wxXmlNode * xmlnode )
     if( xmlnode )
     {
         if( xmlnode->HasAttribute( wxT( "tag" ) ) )
-        {
             xmlnode->GetAttribute( wxT( "tag" ), &m_Text1 );
-        }
         else
         {
             xmlnode->GetAttribute( wxT( "begin" ), &m_Text1 );
@@ -981,21 +930,14 @@ guLyricSource::guLyricSource( wxXmlNode * xmlnode )
         wxString TypeStr;
         xmlnode->GetAttribute( wxT( "type" ), &TypeStr );
         if( TypeStr == wxT( "download" ) )
-        {
             m_Type = guLYRIC_SOURCE_TYPE_DOWNLOAD;
-        }
         else if( TypeStr == wxT( "file" ) )
-        {
             m_Type = guLYRIC_SOURCE_TYPE_FILE;
-        }
         else if( TypeStr == wxT( "command" ) )
-        {
             m_Type = guLYRIC_SOURCE_TYPE_COMMAND;
-        }
         else if( TypeStr == wxT( "embedded" ) )
-        {
             m_Type = guLYRIC_SOURCE_TYPE_EMBEDDED;
-        }
+
         wxString EnabledStr;
         xmlnode->GetAttribute( wxT( "enabled" ), &EnabledStr );
         m_Enabled = ( EnabledStr == wxT( "true" ) );
@@ -1006,21 +948,14 @@ guLyricSource::guLyricSource( wxXmlNode * xmlnode )
         {
             wxString NodeName = xmlnode->GetName();
             if( NodeName == wxT( "replace" ) )
-            {
                 ReadReplaceItems( xmlnode->GetChildren() );
-            }
             else if( NodeName == wxT( "extract" ) )
-            {
                 ReadExtractItems( xmlnode->GetChildren() );
-            }
             else if( NodeName == wxT( "exclude" ) )
-            {
                 ReadExcludeItems( xmlnode->GetChildren() );
-            }
             else if( NodeName == wxT( "notfound" ) )
-            {
                 ReadNotFoundItems( xmlnode->GetChildren() );
-            }
+
             xmlnode = xmlnode->GetNext();
         }
     }
@@ -1186,22 +1121,17 @@ void guLyricSearchEngine::Load( void )
                 {
                     //guLogMessage( wxT( "Reading: %s" ), XmlNode->GetName().c_str() );
                     if( XmlNode->GetName() == wxT( "lyricsources" ) )
-                    {
                         ReadSources( XmlNode->GetChildren() );
-                    }
                     else if( XmlNode->GetName() == wxT( "lyrictargets" ) )
-                    {
                         ReadTargets( XmlNode->GetChildren() );
-                    }
+
                     XmlNode = XmlNode->GetNext();
                 }
             }
         }
     }
     else
-    {
         guLogError( wxT( "The lyrics source configuration file was not found" ) );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1422,7 +1352,6 @@ void SaveLyricSource( wxXmlNode * xmlnode, guLyricSource * lyricsource, const wx
     SaveLyricNotFound( LyricSourceNode, lyricsource );
 
     xmlnode->AddChild( LyricSourceNode );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1435,9 +1364,8 @@ bool guLyricSearchEngine::Save( void )
 
     int Count = m_LyricSources.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         SaveLyricSource( SourcesNode, &m_LyricSources[ Index ], wxT( "lyricsource" ) );
-    }
+
     RootNode->AddChild( SourcesNode );
 
     wxXmlNode * TargetsNode = new wxXmlNode( wxXML_ELEMENT_NODE, wxT( "lyrictargets" ) );
@@ -1466,9 +1394,8 @@ void guLyricSearchEngine::SearchStart( guLyricSearchContext * context )
     m_LyricSearchThreadsMutex.Lock();
     guLyricSearchThread * LyricSearchThread = new guLyricSearchThread( context );
     if( LyricSearchThread )
-    {
         m_LyricSearchThreads.Add( LyricSearchThread );
-    }
+
     m_LyricSearchThreadsMutex.Unlock();
 }
 
@@ -1482,9 +1409,7 @@ void guLyricSearchEngine::SetLyricText( guLyricSearchContext * context, const wx
         m_LyricSearchThreadsMutex.Lock();
         guLyricSearchThread * LyricSearchThread = new guLyricSearchThread( context, lyrictext, true );
         if( LyricSearchThread )
-        {
             m_LyricSearchThreads.Add( LyricSearchThread );
-        }
         m_LyricSearchThreadsMutex.Unlock();
     }
 }
@@ -1524,8 +1449,6 @@ void guLyricSearchEngine::RemoveContextThread( guLyricSearchContext * searchcont
 }
 
 
-
-
 // -------------------------------------------------------------------------------- //
 // guLyricSearchThread
 // -------------------------------------------------------------------------------- //
@@ -1549,9 +1472,7 @@ guLyricSearchThread::~guLyricSearchThread()
 {
     guLogDebug( "guLyricSearchThread::~guLyricSearchThread" );
     if( !TestDestroy() )
-    {
         m_LyricSearchContext->m_LyricSearchEngine->SearchFinished( this );
-    }
     if( m_NotifyHere != NULL )
         *m_NotifyHere = false;
 }
@@ -1564,9 +1485,7 @@ bool guLyricSearchThread::CheckNotFound( guLyricSource &lyricsource )
     {
         wxString NotFoundLabel = lyricsource.NotFoundItem( Index );
         if( m_LyricText.Find( NotFoundLabel ) != wxNOT_FOUND )
-        {
             return true;
-        }
         if( TestDestroy() )
             break;
     }
@@ -1614,13 +1533,10 @@ wxString guLyricSearchThread::CheckExtract( const wxString &content, guLyricSour
     {
         guLyricSourceExtract * LyricSourceExtract = lyricsource.ExtractItem( Index );
         if( LyricSourceExtract->IsSingleOption() )
-        {
             RetVal = DoExtractTag( content, LyricSourceExtract->Tag() );
-        }
         else
-        {
             RetVal = DoExtractTags( content, LyricSourceExtract->Begin(), LyricSourceExtract->End() );
-        }
+
         if( TestDestroy() )
             break;
         if( !RetVal.IsEmpty() )
@@ -1670,13 +1586,10 @@ wxString guLyricSearchThread::CheckExclude( const wxString &content, guLyricSour
     {
         guLyricSourceExclude * LyricSourceExclude = lyricsource.ExcludeItem( Index );
         if( LyricSourceExclude->IsSingleOption() )
-        {
             RetVal = DoExcludeTag( RetVal, LyricSourceExclude->Tag() );
-        }
         else
-        {
             RetVal = DoExcludeTags( RetVal, LyricSourceExclude->Begin(), LyricSourceExclude->End() );
-        }
+
         if( TestDestroy() || RetVal.IsEmpty() )
             break;
     }
@@ -1811,9 +1724,7 @@ void guLyricSearchThread::LyricFile( guLyricSource &lyricsource )
             }
         }
 //        else
-//        {
 //            guLogMessage( wxT( "File not found: '%s'" ), FileName.GetFullPath().c_str() );
-//        }
     }
 }
 
@@ -1865,79 +1776,68 @@ void guLyricSearchThread::ProcessSave( guLyricSource &lyricsource )
         for( int Index = 0; Index < Count; Index++ )
         {
             guLyricSource * LyricTarget = LyricSearchEngine->GetTarget( Index );
-            if( LyricTarget->Enabled() )
+            if ( !LyricTarget->Enabled() )
+                continue;
+
+            if ( LyricTarget->Type() == guLYRIC_SOURCE_TYPE_EMBEDDED )
             {
-                if( LyricTarget->Type() == guLYRIC_SOURCE_TYPE_EMBEDDED )
+                if ( !m_LyricSearchContext->m_Track.m_Offset &&  // If its not from a cue file
+                    ( lyricsource.Type() != guLYRIC_SOURCE_TYPE_EMBEDDED ) &&
+                    wxFileExists( m_LyricSearchContext->m_Track.m_FileName ) )
                 {
-                    if( !m_LyricSearchContext->m_Track.m_Offset &&  // If its not from a cue file
-                        ( lyricsource.Type() != guLYRIC_SOURCE_TYPE_EMBEDDED ) &&
-                        wxFileExists( m_LyricSearchContext->m_Track.m_FileName ) )
-                    {
-                        if( !guTagSetLyrics( m_LyricSearchContext->m_Track.m_FileName, m_LyricText ) )
-                        {
-                            guLogMessage( wxT( "Could not save the lyrics to the file '%s'" ), m_LyricSearchContext->m_Track.m_FileName.c_str() );
-                        }
-                    }
+                    if ( !guTagSetLyrics( m_LyricSearchContext->m_Track.m_FileName, m_LyricText ) )
+                        guLogMessage( wxT( "Could not save the lyrics to the file '%s'" ), m_LyricSearchContext->m_Track.m_FileName.c_str() );
                 }
-                else if( LyricTarget->Type() == guLYRIC_SOURCE_TYPE_FILE )
+            }
+            else if ( LyricTarget->Type() == guLYRIC_SOURCE_TYPE_FILE )
+            {
+                wxString TargetFileName = GetSource( * LyricTarget );
+                if ( lyricsource.Type() == guLYRIC_SOURCE_TYPE_FILE )
                 {
-                    wxString TargetFileName = GetSource( * LyricTarget );
-                    //guLogMessage( wxT( "Lyrics Save to File %i : '%s'" ), Index, TargetFileName.c_str() );
-                    if( lyricsource.Type() == guLYRIC_SOURCE_TYPE_FILE )
-                    {
-                        wxString SourceFileName = GetSource( lyricsource );
-                        if( TargetFileName == SourceFileName )
-                        {
-                            continue;
-                        }
-                    }
-                    else if( lyricsource.Type() == guLYRIC_SOURCE_TYPE_EMBEDDED )
-                    {
-                        if( wxFileExists( TargetFileName ) )
-                        {
-                            continue;
-                        }
-                    }
+                    wxString SourceFileName = GetSource( lyricsource );
+                    if ( TargetFileName == SourceFileName )
+                        continue;
+                }
+                else if ( lyricsource.Type() == guLYRIC_SOURCE_TYPE_EMBEDDED )
+                {
+                    if ( wxFileExists( TargetFileName ) )
+                        continue;
+                }
 
-                    wxFileName FileName( TargetFileName );
-                    if( FileName.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
-                    {
-                        FileName.Mkdir( 0770, wxPATH_MKDIR_FULL );
+                //guLogMessage( wxT( "Lyrics Saving to File %i : '%s'" ), Index, TargetFileName.c_str() );
+                wxFileName FileName( TargetFileName );
 
-                        if( !m_LyricText.IsEmpty() )
+                if ( FileName.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
+                {
+                    FileName.Mkdir( 0770, wxPATH_MKDIR_FULL );
+
+                    if ( !m_LyricText.IsEmpty() )
+                    {
+                        wxFile LyricFile( FileName.GetFullPath(), wxFile::write );
+                        if( LyricFile.IsOpened() )
                         {
-                            wxFile LyricFile( FileName.GetFullPath(), wxFile::write );
-                            if( LyricFile.IsOpened() )
-                            {
-                                if( !LyricFile.Write( m_LyricText ) )
-                                {
-                                    guLogError( wxT( "Error writing to lyric file '%s'" ), FileName.GetFullPath().c_str() );
-                                }
-                                LyricFile.Flush();
-                                LyricFile.Close();
-                            }
-                            else
-                            {
-                                guLogError( wxT( "Error saving lyric file '%s'" ), FileName.GetFullPath().c_str() );
-                            }
+                            if ( !LyricFile.Write( m_LyricText ) )
+                                guLogError( wxT( "Error writing to lyric file '%s'" ), FileName.GetFullPath().c_str() );
+                            LyricFile.Flush();
+                            LyricFile.Close();
                         }
                         else
-                        {
-                            wxRemoveFile( FileName.GetFullPath() );
-                        }
+                            guLogError( wxT( "Error saving lyric file '%s'" ), FileName.GetFullPath().c_str() );
                     }
+                    else
+                        wxRemoveFile( FileName.GetFullPath() );
                 }
-                else if( LyricTarget->Type() == guLYRIC_SOURCE_TYPE_COMMAND )
-                {
-                    wxString * CommandText = new wxString( GetSource( * LyricTarget ) );
-                    guLogMessage( wxT( "Trying to execute save command: %s" ), CommandText->c_str() );
+            }
+            else if( LyricTarget->Type() == guLYRIC_SOURCE_TYPE_COMMAND )
+            {
+                wxString * CommandText = new wxString( GetSource( * LyricTarget ) );
+                guLogMessage( wxT( "Trying to execute save command: %s" ), CommandText->c_str() );
 
-                    wxCommandEvent CommandEvent( wxEVT_MENU, ID_MAINFRAME_LYRICSEXECCOMMAND );
-                    CommandEvent.SetClientObject( ( wxClientData * ) this );
-                    CommandEvent.SetClientData( CommandText );
-                    CommandEvent.SetInt( true );
-                    wxPostEvent( guMainFrame::GetMainFrame(), CommandEvent );
-                }
+                wxCommandEvent CommandEvent( wxEVT_MENU, ID_MAINFRAME_LYRICSEXECCOMMAND );
+                CommandEvent.SetClientObject( ( wxClientData * ) this );
+                CommandEvent.SetClientData( CommandText );
+                CommandEvent.SetInt( true );
+                wxPostEvent( guMainFrame::GetMainFrame(), CommandEvent );
             }
         }
     }
@@ -1969,9 +1869,7 @@ guLyricSearchThread::ExitCode guLyricSearchThread::Entry()
     while( m_LyricSearchContext->GetNextSource( &LyricSource, false ) )
     {
         if( LyricSource.Type() == guLYRIC_SOURCE_TYPE_DOWNLOAD )
-        {
             LyricDownload( LyricSource );
-        }
         else if( LyricSource.Type() == guLYRIC_SOURCE_TYPE_EMBEDDED )
         {
             if( wxFileExists( m_LyricSearchContext->m_Track.m_FileName ) )
@@ -1982,13 +1880,9 @@ guLyricSearchThread::ExitCode guLyricSearchThread::Entry()
             }
         }
         else if( LyricSource.Type() == guLYRIC_SOURCE_TYPE_FILE )
-        {
             LyricFile( LyricSource );
-        }
         else if( LyricSource.Type() == guLYRIC_SOURCE_TYPE_COMMAND )
-        {
             LyricCommand( LyricSource );
-        }
 
         if( !TestDestroy() && !m_LyricText.IsEmpty() )
         {
@@ -2017,15 +1911,11 @@ guLyricSearchThread::ExitCode guLyricSearchThread::Entry()
                         ProcessSave( LyricSource );
                     }
                     else
-                    {
                         m_LyricText = wxEmptyString;
-                    }
                 }
             }
             else
-            {
                 m_LyricText = wxEmptyString;
-            }
         }
 
         if( TestDestroy() || !m_LyricText.IsEmpty() )
@@ -2068,9 +1958,7 @@ void guLyricExecCommandTerminate::OnTerminate( int pid, int status )
             }
         }
         else
-        {
             guLogMessage( wxT( "Error getting the exec command input stream" ) );
-        }
     }
     else
         guLogDebug( "guLyricExecCommandTerminate::OnTerminate<%i> skip it", pid );
@@ -2642,9 +2530,7 @@ guLyricSourceOptionEditor::guLyricSourceOptionEditor( wxWindow * parent, guLyric
 }
 
 // -------------------------------------------------------------------------------- //
-guLyricSourceOptionEditor::~guLyricSourceOptionEditor()
-{
-}
+guLyricSourceOptionEditor::~guLyricSourceOptionEditor() {}
 
 // -------------------------------------------------------------------------------- //
 void guLyricSourceOptionEditor::UpdateSourceOption( void )

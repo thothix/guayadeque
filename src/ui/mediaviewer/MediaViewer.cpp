@@ -44,8 +44,12 @@ namespace Guayadeque {
 #define     guMEDIAVIEWER_TIMER_TEXTCHANGED       500
 
 // -------------------------------------------------------------------------------- //
-guMediaViewer::guMediaViewer( wxWindow * parent, guMediaCollection &collection, const int basecommand,
-                guMainFrame * mainframe, const int mode, guPlayerPanel * playerpanel ) :
+guMediaViewer::guMediaViewer( wxWindow * parent,
+                              guMediaCollection &collection,
+                              const int basecommand,
+                              guMainFrame * mainframe,
+                              const int mode,
+                              guPlayerPanel * playerpanel ) :
     wxPanel( parent ),
     m_TextChangedTimer( this, guMEDIAVIEWER_TIMER_TEXTSEARCH )
 {
@@ -83,18 +87,16 @@ guMediaViewer::guMediaViewer( wxWindow * parent, guMediaCollection &collection, 
     m_InstantSearchEnabled = Config->ReadBool( CONFIG_KEY_GENERAL_INSTANT_TEXT_SEARCH, true, CONFIG_PATH_GENERAL );
     m_EnterSelectSearchEnabled = !Config->ReadBool( CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER, false, CONFIG_PATH_GENERAL );
 
-    if( !m_MediaCollection->m_DefaultCopyAction.IsEmpty() )
+    if ( !m_MediaCollection->m_DefaultCopyAction.IsEmpty() )
     {
         wxArrayString Options = Config->ReadAStr( CONFIG_KEY_COPYTO_OPTION, wxEmptyString, CONFIG_PATH_COPYTO );
         int Count = Options.Count();
         if( Count )
         {
-            for( int Index = 0; Index < Count; Index++ )
+            for ( int Index = 0; Index < Count; Index++ )
             {
-                if( Options[ Index ].BeforeFirst( wxT( ':' ) ) == m_MediaCollection->m_DefaultCopyAction )
-                {
+                if ( Options[ Index ].BeforeFirst( wxT( ':' ) ) == m_MediaCollection->m_DefaultCopyAction )
                     m_CopyToPattern = new guCopyToPattern( Options[ Index ] );
-                }
             }
         }
     }
@@ -181,13 +183,10 @@ guMediaViewer::~guMediaViewer()
 void guMediaViewer::InitMediaViewer( const int mode )
 {
     LoadMediaDb();
-
     CreateControls();
 
-    if( mode != wxNOT_FOUND )
-    {
+    if ( mode != wxNOT_FOUND )
         SetViewMode( mode );
-    }
     else
     {
         guConfig * Config = ( guConfig * ) guConfig::Get();
@@ -195,10 +194,9 @@ void guMediaViewer::InitMediaViewer( const int mode )
     }
 
     CreateAcceleratorTable();
-
     m_MainFrame->MediaViewerCreated( m_MediaCollection->m_UniqueId, this );
 
-    if( m_MediaCollection->m_UpdateOnStart )
+    if ( m_MediaCollection->m_UpdateOnStart )
     {
         //UpdateLibrary();
         wxCommandEvent Event( wxEVT_MENU, m_BaseCommand + guCOLLECTION_ACTION_UPDATE_LIBRARY );
@@ -206,9 +204,7 @@ void guMediaViewer::InitMediaViewer( const int mode )
     }
 
     m_SearchTextCtrl->SetFocus();
-
     SetDropTarget( new guMediaViewerDropTarget( this ) );
-
     Layout();
 }
 
@@ -216,7 +212,6 @@ void guMediaViewer::InitMediaViewer( const int mode )
 void guMediaViewer::CreateControls( void )
 {
     wxBoxSizer *  MainSizer = new wxBoxSizer( wxVERTICAL );
-
     wxBoxSizer * TopSizer = new wxBoxSizer( wxHORIZONTAL );
 
     guConfig * Config = ( guConfig * ) guConfig::Get();
@@ -257,7 +252,7 @@ void guMediaViewer::CreateControls( void )
     //m_SearchTextCtrl = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize,  wxTE_PROCESS_ENTER );
     TopSizer->Add( m_SearchTextCtrl, 1, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
 
-//////////////////////////
+    // Filters
     m_FiltersSizer = new wxBoxSizer( wxHORIZONTAL );
 
     m_FilterChoice = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, FilterNames, 0 );
@@ -281,7 +276,7 @@ void guMediaViewer::CreateControls( void )
     m_FiltersSizer->Add( m_EditFilterButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxRIGHT, 5 );
 
     TopSizer->Add( m_FiltersSizer, 0, wxEXPAND, 5 );
-//////////////////////////////
+    // End Filters
 
     MainSizer->Add( TopSizer, 0, wxEXPAND, 5 );
     SetSizer( MainSizer );
@@ -317,10 +312,8 @@ void guMediaViewer::CreateAcceleratorTable( void )
     RealAccelCmds.Add( m_BaseCommand + guCOLLECTION_ACTION_RESCAN_LIBRARY );
     RealAccelCmds.Add( m_BaseCommand + guCOLLECTION_ACTION_SEARCH_COVERS );
 
-    if( guAccelDoAcceleratorTable( AliasAccelCmds, RealAccelCmds, AccelTable ) )
-    {
+    if ( guAccelDoAcceleratorTable( AliasAccelCmds, RealAccelCmds, AccelTable ) )
         SetAcceleratorTable( AccelTable );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -362,21 +355,13 @@ void guMediaViewer::OnViewChanged( wxCommandEvent &event )
 {
     //guLogMessage( wxT( "OnViewChanged... %i" ), event.GetInt() );
     if( event.GetEventObject() == m_LibrarySelButton )
-    {
         SetViewMode( guMEDIAVIEWER_MODE_LIBRARY );
-    }
     else if( event.GetEventObject() == m_AlbumBrowserSelButton )
-    {
         SetViewMode( guMEDIAVIEWER_MODE_ALBUMBROWSER );
-    }
     else if( event.GetEventObject() == m_TreeViewSelButton )
-    {
         SetViewMode( guMEDIAVIEWER_MODE_TREEVIEW );
-    }
     else if( event.GetEventObject() == m_PlaylistsSelButton )
-    {
         SetViewMode( guMEDIAVIEWER_MODE_PLAYLISTS );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -469,9 +454,8 @@ void guMediaViewer::SetViewMode( const int mode )
                     GetSizer()->Add( m_LibPanel, 1, wxEXPAND|wxALL, 5 );
                 }
                 else
-                {
                     m_LibPanel->Show( true );
-                }
+
                 break;
             }
 
@@ -486,9 +470,8 @@ void guMediaViewer::SetViewMode( const int mode )
                     SetFilter( SelectedFilter ? m_DynFilterArray[ SelectedFilter - 1 ] : wxT( "" ) );
                 }
                 else
-                {
                     m_AlbumBrowser->Show( true );
-                }
+
                 break;
             }
 
@@ -500,9 +483,8 @@ void guMediaViewer::SetViewMode( const int mode )
                     GetSizer()->Add( m_TreeViewPanel, 1, wxEXPAND|wxALL, 5 );
                 }
                 else
-                {
                     m_TreeViewPanel->Show( true );
-                }
+
                 break;
             }
 
@@ -514,9 +496,8 @@ void guMediaViewer::SetViewMode( const int mode )
                     GetSizer()->Add( m_PlayListPanel, 1, wxEXPAND|wxALL, 5 );
                 }
                 else
-                {
                     m_PlayListPanel->Show( true );
-                }
+
                 break;
             }
         }
@@ -533,9 +514,7 @@ void guMediaViewer::SetViewMode( const int mode )
         m_PlaylistsSelButton->Enable( m_ViewMode != guMEDIAVIEWER_MODE_PLAYLISTS );
 
         DoTextSearch();
-
         Layout();
-
         Thaw();
     }
 
@@ -656,39 +635,27 @@ void guMediaViewer::SetMenuState( const bool enabled )
 
         MenuItem = MenuBar->FindItem( m_BaseCommand + guCOLLECTION_ACTION_ADD_PATH );
         if( MenuItem )
-        {
             MenuItem->Enable( enabled );
-        }
 
         MenuItem = MenuBar->FindItem( m_BaseCommand + guCOLLECTION_ACTION_IMPORT );
         if( MenuItem )
-        {
             MenuItem->Enable( enabled );
-        }
 
         MenuItem = MenuBar->FindItem( m_BaseCommand + guCOLLECTION_ACTION_UPDATE_LIBRARY );
         if( MenuItem )
-        {
             MenuItem->Enable( enabled );
-        }
 
         MenuItem = MenuBar->FindItem( m_BaseCommand + guCOLLECTION_ACTION_RESCAN_LIBRARY );
         if( MenuItem )
-        {
             MenuItem->Enable( enabled );
-        }
 
         MenuItem = MenuBar->FindItem( m_BaseCommand + guCOLLECTION_ACTION_SEARCH_COVERS );
         if( MenuItem )
-        {
             MenuItem->Enable( enabled );
-        }
 
         MenuItem = MenuBar->FindItem( m_BaseCommand + guCOLLECTION_ACTION_VIEW_PROPERTIES );
         if( MenuItem )
-        {
             MenuItem->Enable( enabled );
-        }
     }
 }
 
@@ -802,15 +769,11 @@ bool guMediaViewer::DoTextSearch( void )
     }
 
     if( RetVal )
-    {
         m_SearchTextCtrl->ShowCancelButton( true );
-    }
     else
     {
         if( SearchText.IsEmpty() )
-        {
             m_SearchTextCtrl->ShowCancelButton( false );
-        }
     }
 
     Thaw();
@@ -908,9 +871,7 @@ void guMediaViewer::OnEditFilterClicked( wxCommandEvent &event )
             SetFilter( m_DynFilterArray[ Selected - 1 ] );
         }
         else    // This should never happen
-        {
             guLogError( wxT( "Empty dynamic playlit?" ) );
-        }
     }
 
     PlayListEditor->Destroy();
@@ -939,9 +900,7 @@ void guMediaViewer::OnFilterSelected( wxCommandEvent &event )
 void guMediaViewer::SetFilter( const wxString &filterstr )
 {
     if( m_AlbumBrowser )
-    {
         m_AlbumBrowser->SetFilter( filterstr );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -994,9 +953,7 @@ void guMediaViewer::CreateCopyToMenu( wxMenu * menu )
 void guMediaViewer::ShowPanel( const int id, const bool enabled )
 {
     if( m_ViewMode == guMEDIAVIEWER_MODE_LIBRARY )
-    {
         m_LibPanel->ShowPanel( m_LibPanel->PanelId( id - guCOLLECTION_ACTION_VIEW_LIB_LABELS ), enabled );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1048,7 +1005,6 @@ void guMediaViewer::EditProperties( void )
 void guMediaViewer::UpgradeLibrary( void )
 {
     m_MediaCollection->m_LastUpdate = 0;
-
     UpdateLibrary();
 }
 
@@ -1074,7 +1030,6 @@ void guMediaViewer::UpdateFinished( void )
         m_UpdateThread = NULL;
 
     SetLastUpdate();
-
     CleanLibrary();
 }
 
@@ -1094,7 +1049,6 @@ void guMediaViewer::CleanLibrary( void )
 void guMediaViewer::CleanFinished( void )
 {
     m_CleanThread = NULL;
-
     LibraryUpdated();
 }
 
@@ -1115,19 +1069,13 @@ void guMediaViewer::SetLastUpdate( void )
 void guMediaViewer::LibraryUpdated( void )
 {
     if( m_LibPanel )
-    {
         m_LibPanel->ReloadControls();
-    }
 
     if( m_AlbumBrowser )
-    {
         m_AlbumBrowser->RefreshAll();
-    }
 
     if( m_TreeViewPanel )
-    {
         m_TreeViewPanel->RefreshAll();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1203,13 +1151,10 @@ void guMediaViewer::ImportFiles( guTrackArray * tracks )
         if( ImportFiles )
         {
             if( ImportFiles->ShowModal() == wxID_OK  )
-            {
                 m_MainFrame->ImportFiles( this, tracks, ImportFiles->GetCopyToOption(), ImportFiles->GetCopyToPath() );
-            }
             else
-            {
                 delete tracks;
-            }
+
             ImportFiles->Destroy();
         }
     }
@@ -1230,9 +1175,7 @@ void AddImportFiles( guTrackArray * tracks, const wxString &filename )
                 tracks->Add( Track );
             }
             else
-            {
                 delete Track;
-            }
         }
     }
     else if( wxDirExists( filename ) )
@@ -1250,10 +1193,8 @@ void AddImportFiles( guTrackArray * tracks, const wxString &filename )
             {
                 do {
                     if( ( FileName[ 0 ] != '.' ) )
-                    {
                         AddImportFiles( tracks, DirName + FileName );
-                    }
-                } while( Dir.GetNext( &FileName ) );
+                } while ( Dir.GetNext( &FileName ) );
             }
         }
     }
@@ -1267,9 +1208,8 @@ void guMediaViewer::ImportFiles( const wxArrayString &files )
     {
         guTrackArray * Tracks = new guTrackArray();
         for( int Index = 0; Index < Count; Index++ )
-        {
             AddImportFiles( Tracks, files[ Index ] );
-        }
+
         ImportFiles( Tracks );
     }
 }
@@ -1289,19 +1229,13 @@ void guMediaViewer::SaveLayout( wxXmlNode * xmlnode )
     XmlNode->SetAttributes( Property );
 
     if( m_LibPanel )
-    {
         m_LibPanel->SaveLayout( XmlNode, wxT( "library" ) );
-    }
 
     if( m_TreeViewPanel )
-    {
         m_TreeViewPanel->SaveLayout( XmlNode, wxT( "tree" ) );
-    }
 
     if( m_PlayListPanel )
-    {
         m_PlayListPanel->SaveLayout( XmlNode, wxT( "playlist" ) );
-    }
 
     xmlnode->AddChild( XmlNode );
 }
@@ -1496,9 +1430,7 @@ void guMediaViewer::DownloadAlbumCover( const int albumid )
                 SetAlbumCover( albumid, CoverName );
 
                 if( CoverEditor->EmbedToFiles() )
-                {
                     EmbedAlbumCover( albumid );
-                }
             }
         }
         CoverEditor->Destroy();
@@ -1519,9 +1451,7 @@ void guMediaViewer::SelectAlbumCover( const int albumid )
                 if( SetAlbumCover( albumid, SelCoverFile->GetAlbumPath(), CoverFile ) )
                 {
                     if( SelCoverFile->EmbedToFiles() )
-                    {
                         EmbedAlbumCover( albumid );
-                    }
                 }
             }
         }
@@ -1598,9 +1528,7 @@ bool guMediaViewer::SetAlbumCover( const int albumid, const wxString &albumpath,
 
     int MaxSize = GetCoverMaxSize();
     if( MaxSize )
-    {
         coverimg->Rescale( MaxSize, MaxSize, wxIMAGE_QUALITY_HIGH );
-    }
 
     if( coverimg->SaveFile( CoverName, wxBITMAP_TYPE_JPEG ) )
     {
@@ -1623,9 +1551,7 @@ bool guMediaViewer::SetAlbumCover( const int albumid, const wxString &albumpath,
         if( CoverImage.IsOk() )
         {
             if( MaxSize )
-            {
                 CoverImage.Rescale( MaxSize, MaxSize, wxIMAGE_QUALITY_HIGH );
-            }
 
             if( ( coverpath == CoverName ) || CoverImage.SaveFile( CoverName, wxBITMAP_TYPE_JPEG ) )
             {
@@ -1634,9 +1560,7 @@ bool guMediaViewer::SetAlbumCover( const int albumid, const wxString &albumpath,
             }
         }
         else
-        {
             guLogError( wxT( "Could not load the image '%s'" ), coverpath.c_str() );
-        }
     }
     else
     {
@@ -1646,9 +1570,7 @@ bool guMediaViewer::SetAlbumCover( const int albumid, const wxString &albumpath,
             return true;
         }
         else
-        {
             guLogError( wxT( "Failed to download file '%s'" ), coverpath.c_str() );
-        }
     }
     return false;
 }
@@ -1661,13 +1583,10 @@ void guMediaViewer::DeleteAlbumCover( const int albumid )
     {
         wxString CoverPath = m_Db->GetCoverPath( CoverId );
         if( !wxRemoveFile( CoverPath ) )
-        {
             guLogError( wxT( "Could not remove the cover file '%s'" ), CoverPath.c_str() );
-        }
     }
 
     SetAlbumCover( albumid, wxEmptyString, false );
-
     AlbumCoverChanged( albumid, true );
 }
 
@@ -1676,9 +1595,7 @@ void guMediaViewer::DeleteAlbumCover( const wxArrayInt &albumids )
 {
     int Count = albumids.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         DeleteAlbumCover( albumids[ Index ] );
-    }
 
     if( Count )
         AlbumCoverChanged( albumids[ 0 ], true );
@@ -1688,14 +1605,10 @@ void guMediaViewer::DeleteAlbumCover( const wxArrayInt &albumids )
 void guMediaViewer::AlbumCoverChanged( const int albumid, const bool deleted )
 {
     if( m_LibPanel )
-    {
         m_LibPanel->AlbumCoverChanged();
-    }
 
     if( m_AlbumBrowser )
-    {
         m_AlbumBrowser->AlbumCoverChanged( albumid );
-    }
 
     wxCommandEvent evt( wxEVT_MENU, ID_ALBUM_COVER_CHANGED );
     evt.SetInt( albumid );
@@ -1719,9 +1632,8 @@ wxImage * guMediaViewer::GetAlbumCover( const int albumid, int &coverid, wxStrin
             if( CoverImage )
             {
                 if( CoverImage->IsOk() )
-                {
                     return CoverImage;
-                }
+
                 delete CoverImage;
             }
         }
@@ -1756,9 +1668,7 @@ bool guMediaViewer::FindMissingCover( const int albumid, const wxString &artistn
                 // Changed to DownloadImage to convert all images to jpg
                 wxString CoverName = albumpath + GetCoverName( albumid ) + wxT( ".jpg" );
                 if( !DownloadImage( AlbumInfo.m_ImageLink, CoverName ) )
-                {
                     guLogWarning( wxT( "Could not download cover file" ) );
-                }
                 else
                 {
 //                    DownloadedCovers++;
@@ -1828,10 +1738,8 @@ bool guIsDirectoryEmpty( const wxString &path )
                         return false;
                 }
                 else
-                {
                     return false;
-                }
-            } while( Dir.GetNext( &FileName ) );
+            } while ( Dir.GetNext( &FileName ) );
         }
     }
 
@@ -1864,10 +1772,8 @@ bool guRmDirRecursive( const wxString &path )
                         return false;
                 }
                 else
-                {
                     return false;
-                }
-            } while( Dir.GetNext( &FileName ) );
+            } while ( Dir.GetNext( &FileName ) );
         }
     }
 
@@ -1894,14 +1800,10 @@ void guMediaViewer::DeleteTracks( const guTrackArray * tracks )
             continue;
 
         if( DeletePaths.Index( wxPathOnly( CurTrack.m_FileName ) ) == wxNOT_FOUND )
-        {
             DeletePaths.Add( wxPathOnly( CurTrack.m_FileName ) );
-        }
 
         if( !wxRemoveFile( CurTrack.m_FileName ) )
-        {
             guLogMessage( wxT( "Error deleting '%s'" ), CurTrack.m_FileName.c_str() );
-        }
         guLogMessage( wxT( "Deleted '%s'" ), CurTrack.m_FileName.c_str() );
     }
 
@@ -1928,9 +1830,8 @@ void guMediaViewer::DeleteTracks( const guTrackArray * tracks )
                     }
                 }
                 else
-                {
                     break;
-                }
+
                 CurPath = CurPath.BeforeLast( wxT( '/' ) );
             }
         }
@@ -2009,9 +1910,7 @@ void guMediaViewer::OnAlbumSetSelection( wxCommandEvent &event )
 void guMediaViewer::OnUpdateLabels( wxCommandEvent &event )
 {
     if( m_LibPanel )
-    {
         m_LibPanel->UpdateLabels();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2021,9 +1920,7 @@ void guMediaViewer::UpdatePlaylists( void )
     wxPostEvent( m_MainFrame, evt );
 
     if( m_PlayListPanel )
-    {
         m_PlayListPanel->UpdatePlaylists();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2048,7 +1945,6 @@ void guMediaViewer::SetTracksRating( guTrackArray &tracks, const int rating )
         }
 
         m_Db->SetTracksRating( &tracks, rating );
-
         UpdatedTracks( guUPDATED_TRACKS_NONE, &tracks );
     }
 }
@@ -2057,9 +1953,7 @@ void guMediaViewer::SetTracksRating( guTrackArray &tracks, const int rating )
 wxString guMediaViewer::AudioPath( void )
 {
     if( m_CopyToPattern && !m_CopyToPattern->m_Path.IsEmpty() )
-    {
         return m_CopyToPattern->m_Path;
-    }
 
     if( m_MediaCollection->m_Paths.Count() )
         return m_MediaCollection->m_Paths[ 0 ];
@@ -2071,9 +1965,7 @@ wxString guMediaViewer::AudioPath( void )
 wxString guMediaViewer::Pattern( void )
 {
     if( m_CopyToPattern )
-    {
         return m_CopyToPattern->m_Pattern;
-    }
 
     return wxEmptyString;
 }
@@ -2088,9 +1980,7 @@ int guMediaViewer::AudioFormats( void )
 int guMediaViewer::TranscodeFormat( void )
 {
     if( m_CopyToPattern )
-    {
         return m_CopyToPattern->m_Format;
-    }
 
     return guTRANSCODE_FORMAT_KEEP;
 }
@@ -2105,9 +1995,7 @@ int guMediaViewer::TranscodeScope( void )
 int guMediaViewer::TranscodeQuality( void )
 {
     if( m_CopyToPattern )
-    {
         return m_CopyToPattern->m_Quality;
-    }
 
     return guTRANSCODE_QUALITY_KEEP;
 }
@@ -2128,9 +2016,7 @@ wxString guMediaViewer::PlaylistPath( void )
 bool guMediaViewer::MoveFiles( void )
 {
     if( m_CopyToPattern )
-    {
         return m_CopyToPattern->m_MoveFiles;
-    }
     return false;
 }
 
@@ -2151,16 +2037,11 @@ void guMediaViewer::OnSmartAddTracks( wxCommandEvent &event )
         guListItems PlayLists;
 
         if( m_SmartPlaylistId == wxNOT_FOUND )
-        {
             m_Db->CreateStaticPlayList( m_SmartPlaylistName, TrackIds );
-        }
         else
-        {
             m_Db->AppendStaticPlayList( m_SmartPlaylistId, TrackIds );
-        }
 
         UpdatePlaylists();
-
         delete Tracks;
     }
 }
@@ -2226,9 +2107,7 @@ void guMediaViewer::CreateBestOfPlaylist( const wxString &artistname )
             const guTopTrackInfo TopTrack = TopTracks[ Index ];
             int TrackId = m_Db->FindTrack( TopTrack.m_ArtistName, TopTrack.m_TrackName );
             if( TrackId != wxNOT_FOUND )
-            {
                 TrackIds.Add( TrackId );
-            }
         }
 
         if( !TrackIds.IsEmpty() )
@@ -2237,14 +2116,10 @@ void guMediaViewer::CreateBestOfPlaylist( const wxString &artistname )
             UpdatePlaylists();
         }
         else
-        {
             wxLogMessage( _( "No tracks found for %s." ), PlaylistName );
-        }
     }
     else
-    {
         wxLogMessage( _( "Best tracks for '%s' not found." ), artistname );
-    }
 
     delete lfm;
 }
@@ -2273,9 +2148,7 @@ guUpdateCoversThread::~guUpdateCoversThread()
     wxPostEvent( m_MediaViewer->GetMainFrame(), event );
 
     if( !TestDestroy() )
-    {
         m_MediaViewer->UpdateCoversFinished();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2352,21 +2225,15 @@ wxDragResult guMediaViewerDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult
     {
         guTrackArray * Tracks;
         if( !DataObject->GetDataHere( ReceivedFormat, &Tracks ) )
-        {
           guLogMessage( wxT( "Error getting tracks data..." ) );
-        }
         else
-        {
             m_MediaViewer->ImportFiles( new guTrackArray( * Tracks ) );
-        }
     }
     else if( ReceivedFormat == wxDataFormat( wxDF_FILENAME ) )
     {
         wxFileDataObject * FileDataObject = ( wxFileDataObject * ) DataObject->GetDataObject( wxDataFormat( wxDF_FILENAME ) );
         if( FileDataObject )
-        {
             m_MediaViewer->ImportFiles( FileDataObject->GetFilenames() );
-        }
     }
 
     return def;
