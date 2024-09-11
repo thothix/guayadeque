@@ -1613,7 +1613,8 @@ msgstr "Odnośniki"
 msgid "Commands"
 msgstr "Polecenia"
 
-#: ui/preferences/Preferences.cpp:293
+#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
+#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621 ui/preferences/Preferences.cpp:293
 msgid "Copy to"
 msgstr "Kopiuj do"
 
@@ -4531,11 +4532,6 @@ msgstr "Strumień:"
 msgid "Select destination directory"
 msgstr "Wybierz katalog docelowy"
 
-#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
-#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621
-msgid "Copy To..."
-msgstr "Kopiuj do..."
-
 #: ui/MainFrame.cpp:3314
 msgid "station"
 msgstr "stacja"
@@ -4594,8 +4590,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Kopiuj zaznaczony utwór do katalogu lub urządzenia"
 
 #: ui/MainFrame.cpp:4618
-msgid "Add Copy To patterns in preferences"
-msgstr "Dodaj kopiowanie do szablonu w preferencjach"
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Dodaj 'Kopiuj do' szablonu w preferencjach"
 
 #: ui/MainFrame.cpp:4621
 msgid "Copy the selected tracks to a folder or device"

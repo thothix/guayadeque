@@ -2284,11 +2284,6 @@ msgstr "Steuerung"
 msgid "Stream:"
 msgstr "Stream:"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "Kopieren nach …"
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "Zielordner auswählen"
@@ -2351,7 +2346,7 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Ausgewählte Tracks in einen Ordner oder auf ein Gerät kopieren "
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
+msgid "Add 'Copy to' patterns in preferences"
 msgstr "Kopieroptionen zu den Voreinstellungen hinzufügen"
 
 #: MainFrame.cpp:4522

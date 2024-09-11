@@ -2280,11 +2280,6 @@ msgstr "Kontrole"
 msgid "Stream:"
 msgstr "Stream:"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "Kopiraj na..."
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "Odaberi krajnju mapu"
@@ -2347,8 +2342,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Kopiraj odabrane pjesme u mapu ili na uređaj"
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
-msgstr "Dodaj kopiraj na uzorke u postavkama"
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Dodaj 'kopiraj na' uzorke u postavkama"
 
 #: MainFrame.cpp:4522
 msgid "Copy the selected tracks to a folder or device"
@@ -3133,7 +3128,8 @@ msgstr "Snimanje"
 msgid "Online"
 msgstr "Online"
 
-#: Preferences.cpp:284
+#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
+#: MainFrame.cpp:4522 Preferences.cpp:284
 msgid "Copy to"
 msgstr "Kopiranje"
 

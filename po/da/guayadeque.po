@@ -1604,7 +1604,8 @@ msgstr "Adresser"
 msgid "Commands"
 msgstr "Kommandoer"
 
-#: ui/preferences/Preferences.cpp:293
+#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
+#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621 ui/preferences/Preferences.cpp:293
 msgid "Copy to"
 msgstr "Kopier til"
 
@@ -4522,11 +4523,6 @@ msgstr "Strøm:"
 msgid "Select destination directory"
 msgstr "Vælg destinationsmappe"
 
-#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
-#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621
-msgid "Copy To..."
-msgstr "Kopier til ..."
-
 #: ui/MainFrame.cpp:3314
 msgid "station"
 msgstr "station"
@@ -4585,8 +4581,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Kopier valgte sange til en mappe eller enhed"
 
 #: ui/MainFrame.cpp:4618
-msgid "Add Copy To patterns in preferences"
-msgstr "Tilføj Kopier til mønstre i præferencer"
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Tilføj 'Kopier til' mønstre i præferencer"
 
 #: ui/MainFrame.cpp:4621
 msgid "Copy the selected tracks to a folder or device"

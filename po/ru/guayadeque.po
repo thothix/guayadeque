@@ -2281,11 +2281,6 @@ msgstr "Управление"
 msgid "Stream:"
 msgstr "Поток:"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "Копировать в..."
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "Выберите каталог назначения"
@@ -2348,7 +2343,7 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Копировать выделенные дорожки в каталог или на внешнее устройство"
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
+msgid "Add 'Copy to' patterns in preferences"
 msgstr "Настроить шаблоны копирования"
 
 #: MainFrame.cpp:4522
@@ -3134,7 +3129,8 @@ msgstr "Запись"
 msgid "Online"
 msgstr "Сетевые сервисы"
 
-#: Preferences.cpp:284
+#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
+#: MainFrame.cpp:4522 Preferences.cpp:284
 msgid "Copy to"
 msgstr "Копировать в:"
 

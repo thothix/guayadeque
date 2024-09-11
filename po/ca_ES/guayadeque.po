@@ -2281,11 +2281,6 @@ msgstr "Controls"
 msgid "Stream:"
 msgstr "Flux de dades:"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "Copia a..."
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "Seleccioneu una carpeta de destí"
@@ -2348,8 +2343,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Copia les cançons seleccionades a una carpeta o dispositiu"
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
-msgstr "Afegir a les preferències patrons de \"Copia a\""
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Afegir a les preferències patrons de 'Copia a'"
 
 #: MainFrame.cpp:4522
 msgid "Copy the selected tracks to a folder or device"
@@ -3134,7 +3129,8 @@ msgstr "Enregistrar"
 msgid "Online"
 msgstr "En línia"
 
-#: Preferences.cpp:284
+#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
+#: MainFrame.cpp:4522 Preferences.cpp:284
 msgid "Copy to"
 msgstr "Copiar a"
 

@@ -2280,11 +2280,6 @@ msgstr "Vezérlés"
 msgid "Stream:"
 msgstr "Stream:"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "Másolás..."
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "Célkönyvtár kiválasztása"
@@ -2347,7 +2342,7 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "A kiválasztott dalok másolása könyvtárba vagy eszközre"
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
+msgid "Add 'Copy to' patterns in preferences"
 msgstr "Másolás hozzáadása a sablonokhoz a beállításokban"
 
 #: MainFrame.cpp:4522
@@ -3133,7 +3128,8 @@ msgstr "Felvétel"
 msgid "Online"
 msgstr "Online"
 
-#: Preferences.cpp:284
+#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
+#: MainFrame.cpp:4522 Preferences.cpp:284
 msgid "Copy to"
 msgstr "Másolás"
 
