@@ -641,7 +641,7 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
         }
 
         MenuItem = new wxMenuItem( Menu, ID_TRACKS_DELETE_DRIVE, _( "Delete from Drive" ), _( "Remove the current selected tracks from drive" ) );
-        MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit_clear ) );
+        MenuItem->SetBitmap( guImage( guIMAGE_INDEX_edit_delete ) );
         Menu->Append( MenuItem );
 
         Menu->AppendSeparator();
@@ -673,19 +673,13 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
             Menu->AppendSeparator();
 
             if( ContextMenuFlags & guCONTEXTMENU_COPY_TO )
-            {
                 m_MediaViewer->CreateCopyToMenu( Menu );
-            }
 
             if( SelCount == 1 && ( ContextMenuFlags & guCONTEXTMENU_LINKS ) )
-            {
                 AddOnlineLinksMenu( Menu );
-            }
 
             if( ContextMenuFlags & guCONTEXTMENU_COMMANDS )
-            {
                 AddSongsCommands( Menu, SelCount );
-            }
         }
     }
 
@@ -697,10 +691,8 @@ void guSoListBox::OnSearchLinkClicked( wxCommandEvent &event )
 {
     unsigned long cookie;
     int Item = GetFirstSelected( cookie );
-    if( Item != wxNOT_FOUND )
-    {
+    if ( Item != wxNOT_FOUND )
         ExecuteOnlineLink( event.GetId(), GetSearchText( Item ) );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -888,7 +880,6 @@ wxVariant guSoListBox::GetLastDataClicked( void )
 // -------------------------------------------------------------------------------- //
 void guSoListBox::UpdatedTracks( const guTrackArray * tracks )
 {
-    int ItemIndex;
     int ItemCount = m_Items.Count();
     bool ClearSelection = false;
 
@@ -897,11 +888,11 @@ void guSoListBox::UpdatedTracks( const guTrackArray * tracks )
 
     int TrackIndex;
     int TrackCount = tracks->Count();
-    for( TrackIndex = 0; TrackIndex < TrackCount; TrackIndex++ )
+    for ( TrackIndex = 0; TrackIndex < TrackCount; TrackIndex++ )
     {
         guTrack &CurTrack = tracks->Item( TrackIndex );
 
-        for( ItemIndex = 0; ItemIndex < ItemCount; ItemIndex++ )
+        for ( int ItemIndex = 0; ItemIndex < ItemCount; ItemIndex++ )
         {
             if( ( ( CurTrack.m_SongId == m_Items[ ItemIndex ].m_SongId ) &&
                     ( ( CurTrack.m_Type == guTRACK_TYPE_JAMENDO ) || ( CurTrack.m_Type == guTRACK_TYPE_MAGNATUNE ) ) ) ||
