@@ -32,7 +32,6 @@
 #include <wx/dcbuffer.h>
 #include <wx/event.h>
 #include <wx/renderer.h>
-
 #include <wx/string.h>
 #include <wx/checklst.h>
 #include <wx/gdicmn.h>
@@ -50,13 +49,11 @@
 
 namespace Guayadeque {
 
-#define guLISTVIEW_ITEM_MARGIN      2
+#define guLISTVIEW_ITEM_MARGIN              2
 
-#define guLISTVIEW_TIMER_TIMEOUT    1000
-#define guLISTVIEW_MIN_COL_SIZE     20
-#define guLISTVIEWHEADER_IMAGE_WIDTH  18
-
-
+#define guLISTVIEW_TIMER_TIMEOUT            1000
+#define guLISTVIEW_MIN_COL_SIZE             20
+#define guLISTVIEWHEADER_IMAGE_WIDTH        18
 
 wxDEFINE_EVENT( guEVT_LISTBOX_ITEM_COL_CLICKED, wxListEvent );
 wxDEFINE_EVENT( guEVT_LISTBOX_ITEM_COL_RCLICKED, wxListEvent );
@@ -101,7 +98,7 @@ class guListViewClientTimer : public wxTimer
 {
   public:
     guListViewClient * m_ListViewClient;
-    //
+
     guListViewClientTimer( guListViewClient * listviewclient )
     {
         m_ListViewClient = listviewclient;
@@ -113,7 +110,7 @@ class guListViewClientTimer : public wxTimer
 
 
 // -------------------------------------------------------------------------------- //
-// guListView
+// guListView - Generic Base Panel
 // -------------------------------------------------------------------------------- //
 guListView::guListView( wxWindow * parent, const int flags, wxWindowID id, const wxPoint &pos, const wxSize &size, long style ) :
     wxScrolledWindow( parent, id, pos, size, style )
@@ -138,17 +135,13 @@ guListView::guListView( wxWindow * parent, const int flags, wxWindowID id, const
     m_DragSelfItems = false;
 
     if( m_AllowDrop )
-    {
         SetDropTarget( new guListViewDropTarget( this ) );
-    }
 
     parent->Bind( wxEVT_SIZE, &guListView::OnChangedSize, this );
     m_ListBox->Bind( wxEVT_KEY_DOWN, &guListView::OnKeyDown, this );
     Bind( wxEVT_CONTEXT_MENU, &guListView::OnContextMenu, this );
     if( m_AllowDrag )
-    {
         Bind( wxEVT_LIST_BEGIN_DRAG, &guListView::OnBeginDrag, this );
-    }
 
     m_ListBox->Bind( wxEVT_LEFT_DOWN, &guListView::OnMouse, this );
     m_ListBox->Bind( wxEVT_LEFT_UP, &guListView::OnMouse, this );
@@ -168,9 +161,7 @@ guListView::~guListView()
     m_ListBox->Unbind( wxEVT_KEY_DOWN, &guListView::OnKeyDown, this );
     Unbind( wxEVT_CONTEXT_MENU, &guListView::OnContextMenu, this );
     if( m_AllowDrag )
-    {
         Unbind( wxEVT_LIST_BEGIN_DRAG, &guListView::OnBeginDrag, this );
-    }
 
     m_ListBox->Unbind( wxEVT_LEFT_DOWN, &guListView::OnMouse, this );
     m_ListBox->Unbind( wxEVT_LEFT_UP, &guListView::OnMouse, this );
@@ -194,24 +185,26 @@ void guListView::OnChangedSize( wxSizeEvent &event )
     wxSize Size = event.GetSize();
     //Size.x -= 4;
     //Size.y -= 4;
+
     //guLogMessage( wxT( "ListView SetSize %i,%i" ), Size.x, Size.y );
     if( m_Header )
     {
         // Calculate the Height
         GetTextExtent( wxT("Hg"), &w, &h, &d );
         h += d + 4;
+
         // Only change size if its different
         if( m_Header->GetSize().GetWidth() != Size.x )
-        {
             m_Header->SetSize( Size.x, h );
-        }
+
         m_Header->RefreshWidth();
     }
     if( m_ListBox )
     {
-        m_ListBox->SetSize( Size.x, Size.y - h );
-        m_ListBox->Move( 0, h );
+        m_ListBox->SetSize( Size.x, Size.y - h);
+        m_ListBox->Move( 0, h);
     }
+
     // continue with default behaivor
     event.Skip();
 }
@@ -283,24 +276,23 @@ wxCoord guListView::OnMeasureItem( size_t n ) const
 // -------------------------------------------------------------------------------- //
 void guListView::SetSelection( int selection )
 {
+    int lastItem = GetItemCount() - 1;
+    if (selection > lastItem)
+        selection = lastItem;
+
     m_ListBox->SetSelection( selection );
 
     wxCommandEvent event( wxEVT_LISTBOX, m_ListBox->GetId() );
     event.SetEventObject( m_ListBox );
     event.SetInt( selection );
-    (void) GetEventHandler()->ProcessEvent( event );
+    GetEventHandler()->ProcessEvent( event );
 }
 
 // -------------------------------------------------------------------------------- //
 void guListView::RefreshAll( int scrollto )
 {
-    if( scrollto != wxNOT_FOUND )
-    {
-        if( !m_ListBox->IsVisible( scrollto ) )
-        {
-            m_ListBox->ScrollToRow( scrollto );
-        }
-    }
+    if ( ( scrollto != wxNOT_FOUND ) && !m_ListBox->IsVisible( scrollto ) )
+        m_ListBox->ScrollToRow( scrollto );
     m_ListBox->RefreshAll();
 }
 
@@ -315,9 +307,6 @@ void guListView::OnBeginDrag( wxCommandEvent &event )
 
         m_DragSelfItems = true;
         wxDragResult Result = source.DoDragDrop();
-        if( Result )
-        {
-        }
 
         m_DragSelfItems = false;
         m_DragOverItem = wxNOT_FOUND;
@@ -372,7 +361,7 @@ wxArrayInt guListView::GetSelectedItems( const bool convertall ) const
 }
 
 // -------------------------------------------------------------------------------- //
-wxArrayInt guListView::GetSelectedIndexs( const bool convertall ) const
+wxArrayInt guListView::GetSelectedIndexes( const bool convertall ) const
 {
     wxArrayInt RetVal;
     unsigned long cookie;
@@ -382,7 +371,7 @@ wxArrayInt guListView::GetSelectedIndexs( const bool convertall ) const
         if( m_ListBox->HasMultipleSelection() )
         {
             item = GetFirstSelected( cookie );
-            while( item != wxNOT_FOUND )
+            while ( item != wxNOT_FOUND )
             {
                 RetVal.Add( item );
                 if( convertall && ( item == 0 ) )
@@ -394,9 +383,7 @@ wxArrayInt guListView::GetSelectedIndexs( const bool convertall ) const
         {
             item = m_ListBox->GetSelection();
             if( item != wxNOT_FOUND )
-            {
                 RetVal.Add( item );
-            }
         }
 
         //
@@ -442,15 +429,16 @@ void guListView::SetSelectedItems( const wxArrayInt &selection )
 }
 
 // -------------------------------------------------------------------------------- //
-void guListView::SetSelectedIndexs( const wxArrayInt &selection )
+void guListView::SetSelectedIndexes( const wxArrayInt &selection )
 {
     // TODO Need to speed up this
-    ClearSelectedItems();
     int ItemCount = GetItemCount();
-    if( ItemCount )
+    ClearSelectedItems();
+
+    if ( ItemCount )
     {
-        int Count;
-        if( ( Count = selection.Count() ) )
+        int Count = selection.Count();
+        if ( Count  )
         {
             bool IsMultiple = m_ListBox->HasMultipleSelection();
             for( int Index = 0; Index < Count; Index++ )
@@ -573,12 +561,9 @@ void guListView::OnDragOver( wxCoord x, wxCoord y )
     //guLogMessage( wxT( ">>guListView::OnDragOver( %u, %u )" ), x, y );
     int HeaderHeight = 0;
     if( m_Header )
-    {
         HeaderHeight = m_Header->GetSize().GetHeight();
-    }
 
     y -= HeaderHeight;
-
     m_DragOverItem = HitTest( x, y );
 
     if( ( int ) m_DragOverItem != wxNOT_FOUND )
@@ -603,7 +588,6 @@ void guListView::OnDragOver( wxCoord x, wxCoord y )
         m_LastDragOverAfter = m_DragOverAfter;
     }
 
-
     // Scroll items if we are in the top or bottom borders
     int Width;
     int Height;
@@ -612,15 +596,11 @@ void guListView::OnDragOver( wxCoord x, wxCoord y )
 
     int Rows = 0;
     if( ( y > ( Height - 10 ) ) && ( int ) GetVisibleRowsEnd() != GetItemCount() )
-    {
         Rows = 1;
-    }
     else
     {
         if( ( y < 10 ) && ( GetVisibleRowsBegin() > 0 ) )
-        {
             Rows = -1;
-        }
     }
     //guLogMessage( wxT( "ScrollLines %i, %i, %i" ), Height, (int) y, Rows );
     //guLogMessage( wxT( "End: %li  Items:%i" ), GetVisibleRowsEnd(), GetItemCount() );
@@ -634,9 +614,7 @@ void guListView::OnMouse( wxMouseEvent &event )
     if( event.Dragging() )
     {
         if( !m_DragCount )
-        {
             m_DragStart = event.GetPosition();
-        }
 
         if( ++m_DragCount == 3 )
         {
@@ -647,11 +625,8 @@ void guListView::OnMouse( wxMouseEvent &event )
         }
         return;
     }
-    else
-    {
-      m_DragCount = 0;
-    }
 
+    m_DragCount = 0;
     event.Skip();
 }
 
@@ -705,8 +680,6 @@ bool  guListView::SetColumnData( const int id, const int index, const int width,
 }
 
 
-
-
 // -------------------------------------------------------------------------------- //
 // guListViewClient
 // -------------------------------------------------------------------------------- //
@@ -717,8 +690,10 @@ BEGIN_EVENT_TABLE(guListViewClient,wxVListBox)
 END_EVENT_TABLE()
 
 // -------------------------------------------------------------------------------- //
-guListViewClient::guListViewClient( wxWindow * parent, const int flags,
-                            guListViewColumnArray * columns, guListViewAttr * attr ) :
+guListViewClient::guListViewClient(wxWindow * parent,
+                                   const int flags,
+                                   guListViewColumnArray * columns,
+                                   guListViewAttr * attr ) :
     wxVListBox( parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, flags|wxHSCROLL|wxVSCROLL|wxNO_BORDER )
 {
     m_Owner = ( guListView * ) parent;
@@ -758,7 +733,7 @@ void guListViewClient::OnMouse( wxMouseEvent &event )
     // when you click over selected items the items was unselected
     // even when you tried to drag then.
     // Here we check if the item was selected and if so wait for the button up
-    // to unselecte the item
+    // to unselect the item
     //guLogMessage( wxT( "ID: %u LD: %i LU: %i SD: %i CD: %i WasLeftUp: %i  Selecting: %i " ), event.GetId(), event.LeftDown(), event.LeftUp(), event.ShiftDown(), event.ControlDown(), m_MouseWasLeftUp, m_MouseSelecting );
     if( !m_MouseWasLeftUp && !event.ShiftDown() && !event.ControlDown() )
     {
@@ -783,14 +758,10 @@ void guListViewClient::OnMouse( wxMouseEvent &event )
             }
         }
         else
-        {
             ResetVals = true;
-        }
     }
     else
-    {
         ResetVals = true;
-    }
 
     // Only when the left or right is down and the click events are enabled
     if( m_ColumnClickEvents &&
@@ -800,13 +771,13 @@ void guListViewClient::OnMouse( wxMouseEvent &event )
         // We want get the left click events, calculate which column clicked on and
         // send a Column_Clicked event
         int Col_Num = wxNOT_FOUND;
+        int Col_Start = 0;
+        int Col_Border = 0;
 
         MouseX += GetScrollPos( wxHORIZONTAL );
 
-        int Col_Start = 0;
-        int Col_Border = 0;
         int Count = m_Columns->Count();
-        for( int Index = 0; Index < Count; Index++ )
+        for ( int Index = 0; Index < Count; Index++ )
         {
             if( ( * m_Columns )[ Index ].m_Enabled )
             {
@@ -822,8 +793,8 @@ void guListViewClient::OnMouse( wxMouseEvent &event )
 
         if( Col_Num != wxNOT_FOUND )
         {
-            wxListEvent le( event.LeftDown() ? guEVT_LISTBOX_ITEM_COL_CLICKED :
-                                               guEVT_LISTBOX_ITEM_COL_RCLICKED, m_Owner->GetId() );
+            wxListEvent le( event.LeftDown() ? guEVT_LISTBOX_ITEM_COL_CLICKED : guEVT_LISTBOX_ITEM_COL_RCLICKED,
+                            m_Owner->GetId() );
             le.SetEventObject( m_Owner );
             le.m_pointDrag.x = MouseX - Col_Start;
             le.m_pointDrag.y = MouseY;
@@ -835,9 +806,13 @@ void guListViewClient::OnMouse( wxMouseEvent &event )
         }
     }
 
-    // The wxVListBox dont handle the right click to select items. We add this functionality
-    if( event.RightDown() && ( Item != wxNOT_FOUND ) && !IsSelected( Item ) )
-        OnLeftDown( event );
+    // FIXME - it runs even if the item is selected - HitTest is returning wrong item
+    // "The wxVListBox dont handle the right click to select items" needs to be removed. It turns impossible
+    // to apply any action in a selection through the context menu
+//    if( event.RightDown() && ( Item != wxNOT_FOUND ) && !IsSelected( Item ) ) {
+//        guLogMessage( wxT( "OnMouse leftDOWN item %d MouseX %d MouseY %d"), Item, MouseX, MouseY);
+//        OnLeftDown(event);
+//    }
 
     if( ResetVals )
     {
@@ -859,9 +834,8 @@ void guListViewClient::OnKeyDown( wxKeyEvent &event )
         if( FindChars.Find( KeyChar ) != wxNOT_FOUND )
         {
             if( m_SearchStrTimer->IsRunning() )
-            {
                 m_SearchStrTimer->Stop();
-            }
+
             m_SearchStrTimer->Start( guLISTVIEW_TIMER_TIMEOUT, wxTIMER_ONE_SHOT );
             m_SearchStr.Append( KeyChar );
             return;
@@ -1014,13 +988,9 @@ void guListViewClient::SetItemHeigth( const int height )
 wxCoord guListViewClient::OnMeasureItem( size_t n ) const
 {
     if( m_ItemHeight != wxNOT_FOUND )
-    {
         return m_ItemHeight;
-    }
     else
-    {
         return m_Owner->OnMeasureItem( n );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1072,10 +1042,8 @@ void guListViewClient::OnDrawBackground( wxDC &dc, const wxRect &rect, size_t n 
             int w = ( * m_Columns )[ index ].m_Width;
             if( w != wxNOT_FOUND )
                 cRect.width = w;
-
             {
                 wxDCClipper clip( dc, cRect );
-
                 DrawBackground( dc, cRect, n, index );
             }
             StartOfs += cRect.width;
@@ -1135,9 +1103,7 @@ void guListViewClient::OnHScroll( wxScrollWinEvent &event )
         m_Owner->Refresh();
     }
     else
-    {
         event.Skip();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1153,9 +1119,8 @@ void guListViewClient::SetHScrollbar( const int width )
 void guListViewClient::SetScrollPos( int orientation, int pos, bool refresh )
 {
     if( orientation == wxHORIZONTAL )
-    {
         m_HScrollPos = pos;
-    }
+
     wxVListBox::SetScrollPos( orientation, pos, refresh );
 }
 
@@ -1171,11 +1136,8 @@ void guListViewClient::AdjustDC( wxDC &dc )
     int org_x = 0;
     int org_y = 0;
     dc.GetDeviceOrigin( &org_x, &org_y );
-
     dc.SetDeviceOrigin( org_x - m_HScrollPos, org_y );
 }
-
-
 
 
 // -------------------------------------------------------------------------------- //
@@ -1267,9 +1229,7 @@ void guListViewHeader::OnPaint( wxPaintEvent &event )
             dc.DestroyClippingRegion();
 
             if( CurCol->m_ImageIndex >= 0 )
-            {
                 dc.DrawBitmap( m_ImageList->GetBitmap( CurCol->m_ImageIndex ), cRect.x + cRect.width + 1, ( cRect.height / 2 ) - 8, true );
-            }
 
             StartOfs += CurCol->m_Width;
             if( StartOfs > w + ScrollPos )
@@ -1356,9 +1316,7 @@ void guListViewHeader::OnMouse( wxMouseEvent &event )
             CaptureMouse();
         }
         else if( m_Owner->IsAllowedColumnSelect() && event.RightDown() )
-        {
             OnEditColumns();
-        }
         else if( col_num >= 0 )
         {
             wxListEvent le( event.LeftDown() ? wxEVT_LIST_COL_CLICK :
@@ -1376,13 +1334,9 @@ void guListViewHeader::OnMouse( wxMouseEvent &event )
     {
         m_IsDragging = wxNOT_FOUND;
         if( hit_border >= 0 )
-        {
             SetCursor( * m_ResizeCursor );
-        }
         else
-        {
             SetCursor( * wxSTANDARD_CURSOR );
-        }
     }
 }
 
@@ -1410,9 +1364,7 @@ int guListViewHeader::RefreshWidth( void )
         for( int index = 0; index < count; index++ )
         {
             if( ( * m_Columns )[ index ].m_Enabled )
-            {
                 m_Width += ( * m_Columns )[ index ].m_Width;
-            }
         }
 
         // Checkif its needed the horizontal scroll bar
@@ -1421,20 +1373,16 @@ int guListViewHeader::RefreshWidth( void )
             //guLogMessage( wxT( "Vertical ScrollBar... %i %i  %i   %i    %i" ), m_Width, w, m_Width - w,
             //   m_ListViewClient->GetScrollPos( wxHORIZONTAL ), ( h / m_ListViewClient->OnGetLineHeight( 0 ) ) );
             if( m_ListViewClient->GetScrollPos( wxHORIZONTAL ) > m_Width - w )
-            {
                 m_ListViewClient->SetScrollPos( wxHORIZONTAL, m_Width - w );
-            }
+
             m_ListViewClient->SetHScrollbar( m_Width - w );
         }
         else
-        {
             m_ListViewClient->SetHScrollbar( 0 );
-        }
     }
     else
-    {
         m_Width = w;
-    }
+
     return m_Width;
 }
 
@@ -1536,9 +1484,7 @@ guListViewColEdit::guListViewColEdit( wxWindow * parent, guListViewColumnArray *
     for( int index = 0; index < count; index++ )
     {
         if( ( * columns )[ index ].m_Enabled )
-        {
             m_ColumnsListBox->Check( index );
-        }
     }
 
     // Bind Events
@@ -1552,7 +1498,6 @@ guListViewColEdit::guListViewColEdit( wxWindow * parent, guListViewColumnArray *
 // -------------------------------------------------------------------------------- //
 guListViewColEdit::~guListViewColEdit()
 {
-
     // Unbind Events
     m_ColumnsListBox->Unbind( wxEVT_LISTBOX, &guListViewColEdit::OnColumnSelected, this );
     m_UpBitmapBtn->Unbind( wxEVT_BUTTON, &guListViewColEdit::OnUpBtnClick, this );
@@ -1641,8 +1586,6 @@ void guListViewColEdit::OnDownBtnClick( wxCommandEvent &event )
 }
 
 
-
-
 // -------------------------------------------------------------------------------- //
 // guListViewClientTimer
 // -------------------------------------------------------------------------------- //
@@ -1663,8 +1606,6 @@ void guListViewClientTimer::Notify()
         m_ListViewClient->m_SearchStr = wxEmptyString;
     }
 }
-
-
 
 
 // -------------------------------------------------------------------------------- //
@@ -1690,9 +1631,7 @@ guListViewDropFilesThread::~guListViewDropFilesThread()
 {
 //    printf( "guListViewDropFilesThread Object destroyed\n" );
     if( !TestDestroy() )
-    {
         m_ListViewDropTarget->ClearPlayListFilesThread();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1717,28 +1656,23 @@ void guListViewDropFilesThread::AddDropFiles( const wxString &dirname )
                     if( ( FileName[ 0 ] != '.' ) )
                     {
                         if( Dir.Exists( DirName + FileName ) )
-                        {
                             AddDropFiles( DirName + FileName );
-                        }
                         else
-                        {
                             m_ListView->OnDropFile( DirName + FileName );
-                        }
                     }
                 } while( Dir.GetNext( &FileName ) && !TestDestroy() );
             }
         }
     }
     else
-    {
         m_ListView->OnDropFile( dirname );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
 guListViewDropFilesThread::ExitCode guListViewDropFilesThread::Entry()
 {
     int Count = m_Files.Count();
+
     for( int index = 0; index < Count; ++index )
     {
         if( TestDestroy() )
@@ -1747,7 +1681,6 @@ guListViewDropFilesThread::ExitCode guListViewDropFilesThread::Entry()
     }
 
     m_ListView->OnDropEnd();
-    //
     m_ListView->m_DragOverItem = wxNOT_FOUND;
 
     return 0;
@@ -1779,14 +1712,11 @@ guListViewDropTarget::~guListViewDropTarget()
 wxDragResult guListViewDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult def )
 {
     //guLogMessage( wxT( "guListViewDropTarget::OnData" ) );
-
     if( def == wxDragError || def == wxDragNone || def == wxDragCancel )
         return def;
 
     if( m_ListView->m_DragSelfItems )
-    {
         return wxDragNone;
-    }
 
     if( !GetData() )
     {
@@ -1802,9 +1732,7 @@ wxDragResult guListViewDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult de
     {
         guTrackArray * Tracks;
         if( !DataObject->GetDataHere( ReceivedFormat, &Tracks ) )
-        {
           guLogMessage( wxT( "Error getting tracks data..." ) );
-        }
         else
         {
             m_ListView->OnDropTracks( Tracks );
@@ -1825,9 +1753,7 @@ wxDragResult guListViewDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult de
         {
             m_ListViewDropFilesThread = new guListViewDropFilesThread( this, m_ListView, FileDataObject->GetFilenames() );
             if( !m_ListViewDropFilesThread )
-            {
                 guLogError( wxT( "Could not create the add files thread." ) );
-            }
         }
         m_DropFilesThreadMutex.Unlock();
     }
@@ -1843,15 +1769,12 @@ bool guListViewDropTarget::OnDrop( wxCoord x, wxCoord y )
     if( m_ListView->m_DragSelfItems )
     {
         if( m_ListView->m_DragSelfItemsEnabled )
-        {
             m_ListView->MoveSelection();
-        }
         m_ListView->RefreshAll();
     }
     else
-    {
         m_ListView->OnDropBegin();
-    }
+
     return true;
 }
 
@@ -1878,7 +1801,6 @@ wxDragResult guListViewDropTarget::OnDragOver( wxCoord x, wxCoord y, wxDragResul
     m_ListView->OnDragOver( x, y );
     return wxDragCopy;
 }
-
 
 
 
