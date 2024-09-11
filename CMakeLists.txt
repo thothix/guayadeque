@@ -9,7 +9,7 @@ project( Guayadeque )
 #   CFLAGS = -O3 -DNDEBUG
 #
 IF( NOT CMAKE_BUILD_TYPE )
-        SET( CMAKE_BUILD_TYPE "Release" )
+    SET( CMAKE_BUILD_TYPE "Release" )
 ENDIF( NOT CMAKE_BUILD_TYPE )
 
 # Adhere to GNU filesystem layout conventions
@@ -20,8 +20,8 @@ MESSAGE( STATUS "Using install prefix ${CMAKE_INSTALL_PREFIX} ..." )
 FIND_PACKAGE(PkgConfig)
 
 SET( SEARCH_LIBS
-        /usr/lib
-        /usr/local/lib )
+     /usr/lib
+     /usr/local/lib )
 
 # [sl 2020-05-23] according to https://cmake.org/cmake/help/v3.0/module/FindwxWidgets.html
 SET(wxWidgets_CONFIG_OPTIONS --toolkit=gtk3)
@@ -95,10 +95,10 @@ INCLUDE(${wxWidgets_USE_FILE})
 IF( NOT _GUREVISION_ )
     # Get the latest abbreviated commit hash of the working branch
     execute_process(
-      COMMAND git log -1 --format=%h
-      WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-      OUTPUT_VARIABLE _GUREVISION_
-      OUTPUT_STRIP_TRAILING_WHITESPACE
+        COMMAND git log -1 --format=%h
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        OUTPUT_VARIABLE _GUREVISION_
+        OUTPUT_STRIP_TRAILING_WHITESPACE
     )
 ENDIF( NOT _GUREVISION_ )
 
@@ -114,19 +114,19 @@ ADD_DEFINITIONS( -DDATADIR=\"${CMAKE_INSTALL_FULL_DATADIR}/guayadeque\" -DDATARO
 # We define the include paths here, our minimal source dir is one,
 # and also the include dirs defined by wxWidgets
 INCLUDE_DIRECTORIES(
-        ${CMAKE_CURRENT_BINARY_DIR}
-        ${wxWidgets_INCLUDE_DIRS}
-        ${GSTREAMER_INCLUDE_DIRS}
-        ${GSTREAMER_TAG_INCLUDE_DIRS}
-        ${SQLITE3_INCLUDE_DIRS}
-        ${LIBCURL_INCLUDE_DIRS}
-        ${LIBTAG_INCLUDE_DIRS}
-        ${LIBDBUS_INCLUDE_DIRS}
-        ${LIBGIO_INCLUDE_DIRS}
-        ${LIBGPOD_INCLUDE_DIRS}
-        ${LIBWXSQLITE3_INCLUDE_DIRS}
-        ${LIBWXSQLITE33_INCLUDE_DIRS}
-	${LIBJSONCPP_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${wxWidgets_INCLUDE_DIRS}
+    ${GSTREAMER_INCLUDE_DIRS}
+    ${GSTREAMER_TAG_INCLUDE_DIRS}
+    ${SQLITE3_INCLUDE_DIRS}
+    ${LIBCURL_INCLUDE_DIRS}
+    ${LIBTAG_INCLUDE_DIRS}
+    ${LIBDBUS_INCLUDE_DIRS}
+    ${LIBGIO_INCLUDE_DIRS}
+    ${LIBGPOD_INCLUDE_DIRS}
+    ${LIBWXSQLITE3_INCLUDE_DIRS}
+    ${LIBWXSQLITE33_INCLUDE_DIRS}
+    ${LIBJSONCPP_INCLUDE_DIRS}
 )
 
 IF( PROFILE )
@@ -151,15 +151,16 @@ INSTALL( FILES defconfig/equalizers.default.conf DESTINATION ${CMAKE_INSTALL_DAT
 INSTALL( FILES defconfig/lyrics_sources.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/guayadeque )
 
 CONFIGURE_FILE(
-  "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-  IMMEDIATE @ONLY)
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+    IMMEDIATE @ONLY)
 
 ADD_CUSTOM_TARGET(uninstall
-  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+    "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
 ADD_CUSTOM_TARGET(debug
-  ${CMAKE_COMMAND} -DMAKE_BUILD_TYPE:STRING=Debug ${PROJECT_SOURCE_DIR})
+    ${CMAKE_COMMAND} -DMAKE_BUILD_TYPE:STRING=Debug ${PROJECT_SOURCE_DIR})
 
 ADD_CUSTOM_TARGET(release
-  ${CMAKE_COMMAND} -DMAKE_BUILD_TYPE:STRING=Release ${PROJECT_SOURCE_DIR})
+    ${CMAKE_COMMAND} -DMAKE_BUILD_TYPE:STRING=Release ${PROJECT_SOURCE_DIR})
+

@@ -1,9 +1,20 @@
+2024-09-10 0.5.0 Beta 4
+
+  * Added a toolbar in the playlist with actions to manage it (reorder and remove tracks, clear the playlist)
+  * Updated some icons in the playlist related actions in the context menus
+  * Lyrics configuration changes:
+    - Removed hardcoded lyrics path configuration. The lyrics to file paths are already defined in the lyrics_source config file.
+    - Capitalize the lyrics "From File" and "To File" path in the default lyrics_source config file. Impact only new instalations
+  * Fixed inconsistence with the right click in the playlist. It doesn't unselect the current selection anymore.
+  This turned impossible to apply any action in the selection through the context menu
+  * General code cleanup and small refactorings
+  * Bugfixes
+
 2024-09-07 0.5.0 Beta 3
 
-  * Translations
-    - Add some missing translations to commands and Copy to menu
-    - Updates to Portuguese and Brazilian Portuguese translations
-  * Fixed bug that crashed guayadeque when clicking cover panel to open the fullscreen cover window
+  * Added some missing translations for 'Commands' and 'Copy to' menus
+  * Updated Portuguese and Brazilian Portuguese translations
+  * Fixed bug that crashed guayadeque when clicking the cover panel to open the fullscreen cover window
   * General code cleanup and small refactorings
 
 2024-09-05 0.5.0 Beta 2
@@ -17,7 +28,8 @@
     - Eliminated Events section due to removal of data from the LastFM API
     - Updated default cover art across all sections
     - Adjusted layout to allow for longer text in Top Albums, Top Tracks, Similar Artists, and Similar Tracks
-    - Fixed a bug causing exponential increase of '&' symbol for bands with '&' in their name, potentially leading to system crashes
+    - Fixed a bug causing exponential increase of '&' symbol for artists with '&' in their name, potentially 
+      leading to system crashes
   * Updated rating system icons
     - Changed color of rating stars from black/dark gray to yellow/light gray for better visibility
     - Added black stroke to yellow stars for improved contrast on light themes
@@ -27,9 +39,9 @@
 
 2023-11-23 0.5.0 Beta 1
 
-  * Added installation instructions for Mageia 9
-  * Added Best of playlist generator
   * Added Gstreamer-1.22 and wxwidgets-3.2 support
+  * Added Best of playlist generator
+  * Added installation instructions for Mageia 9
   * Fullscreen cover view on cover panel click
   * Removed libindicate support
   * Bugfixes
