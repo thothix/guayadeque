@@ -34,7 +34,7 @@ namespace Guayadeque {
 
 #define guPATH_COLLECTIONS                  guPATH_CONFIG wxT( "Collections/" )
 
-#define guPATH_LYRICS                       guPATH_CONFIG wxT( "lyrics/" )
+#define guPATH_LYRICS                       guPATH_CONFIG wxT( "Lyrics/" )
 #define guPATH_LYRICS_SOURCES_FILENAME      guPATH_CONFIG wxT( "lyrics_sources.xml" )
 
 #define guPATH_LAYOUTS                      guPATH_CONFIG wxT( "Layouts/" )
