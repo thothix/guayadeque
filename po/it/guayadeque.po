@@ -2281,11 +2281,6 @@ msgstr "Controlli"
 msgid "Stream:"
 msgstr "Flusso:"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "Invia a..."
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "Seleziona la cartella di destinazione"
@@ -2348,8 +2343,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Copia i brani selezionate in una cartella o supporto"
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
-msgstr "Aggiungi pattern Copia A nella preferenze"
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Aggiungi pattern 'Copia A' nella preferenze"
 
 #: MainFrame.cpp:4522
 msgid "Copy the selected tracks to a folder or device"
@@ -3134,7 +3129,8 @@ msgstr "Registra"
 msgid "Online"
 msgstr "Online"
 
-#: Preferences.cpp:284
+#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
+#: MainFrame.cpp:4522 Preferences.cpp:284
 msgid "Copy to"
 msgstr "Copia a"
 

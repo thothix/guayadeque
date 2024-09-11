@@ -1605,7 +1605,8 @@ msgstr "Pautan"
 msgid "Commands"
 msgstr "Perintah"
 
-#: ui/preferences/Preferences.cpp:293
+#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
+#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621 ui/preferences/Preferences.cpp:293
 msgid "Copy to"
 msgstr "Salin ke"
 
@@ -4523,11 +4524,6 @@ msgstr "Strim:"
 msgid "Select destination directory"
 msgstr "Pilih direktori destinasi"
 
-#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
-#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621
-msgid "Copy To..."
-msgstr "Salin Ke..."
-
 #: ui/MainFrame.cpp:3314
 msgid "station"
 msgstr "stesen"
@@ -4586,8 +4582,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Salin lagu semasa yang dipilih ke dalam direktori atau peranti"
 
 #: ui/MainFrame.cpp:4618
-msgid "Add Copy To patterns in preferences"
-msgstr "Tambah pola Salin Ke dalam keutamaan"
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Tambah pola 'Salin Ke' dalam keutamaan"
 
 #: ui/MainFrame.cpp:4621
 msgid "Copy the selected tracks to a folder or device"

@@ -306,7 +306,7 @@ void guListView::OnBeginDrag( wxCommandEvent &event )
         wxDropSource source( Files, this );
 
         m_DragSelfItems = true;
-        wxDragResult Result = source.DoDragDrop();
+        source.DoDragDrop();    // wxDragResult Result
 
         m_DragSelfItems = false;
         m_DragOverItem = wxNOT_FOUND;

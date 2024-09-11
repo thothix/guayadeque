@@ -1608,7 +1608,8 @@ msgstr "Linky"
 msgid "Commands"
 msgstr "Příkazy"
 
-#: ui/preferences/Preferences.cpp:293
+#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
+#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621 ui/preferences/Preferences.cpp:293
 msgid "Copy to"
 msgstr "Kopírovat do"
 
@@ -4526,11 +4527,6 @@ msgstr "Stream:"
 msgid "Select destination directory"
 msgstr "Označit cílovou složku"
 
-#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
-#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621
-msgid "Copy To..."
-msgstr "Kopírovat do..."
-
 #: ui/MainFrame.cpp:3314
 msgid "station"
 msgstr "stanice"
@@ -4589,8 +4585,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Kopírovat označené skladby do složky/zařízení"
 
 #: ui/MainFrame.cpp:4618
-msgid "Add Copy To patterns in preferences"
-msgstr "Přidat Kopírovat Do Značek v nastavení"
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Přidat 'Kopírovat do' Značek v nastavení"
 
 #: ui/MainFrame.cpp:4621
 msgid "Copy the selected tracks to a folder or device"

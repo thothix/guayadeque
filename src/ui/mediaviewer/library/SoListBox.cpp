@@ -37,6 +37,8 @@
 namespace Guayadeque {
 
 // -------------------------------------------------------------------------------- //
+// guSoListBox - Media Library Songs/Tracks Panel
+// -------------------------------------------------------------------------------- //
 guSoListBox::guSoListBox( wxWindow * parent, guMediaViewer * mediaviewer, wxString confname, long style ) :
     guListView( parent, style|wxLB_MULTIPLE|guLISTVIEW_ALLOWDRAG|guLISTVIEW_COLUMN_CLICK_EVENTS,
         wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL )

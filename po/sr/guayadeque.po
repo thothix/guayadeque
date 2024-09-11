@@ -2280,11 +2280,6 @@ msgstr "Контроле"
 msgid "Stream:"
 msgstr "Ток:"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "Копирај у..."
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "Изабери циљну фасциклу"
@@ -2347,8 +2342,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Копирај изабрану песму у фасциклу или на уређај"
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
-msgstr "Додај \"Копирај у\" шаблон у подешавањима"
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Додај 'Копирај у' шаблон у подешавањима"
 
 #: MainFrame.cpp:4522
 msgid "Copy the selected tracks to a folder or device"
@@ -3133,7 +3128,8 @@ msgstr "Сними"
 msgid "Online"
 msgstr "Онлајн"
 
-#: Preferences.cpp:284
+#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
+#: MainFrame.cpp:4522 Preferences.cpp:284
 msgid "Copy to"
 msgstr "Копирај у"
 

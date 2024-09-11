@@ -124,7 +124,6 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     if ( NeedSaveCollections )
         Config->SaveCollections( &m_Collections );
 
-    //
 //    m_Db->SetLibPath( Config->ReadAStr( wxT( "LibPath" ),
 //                                      wxGetHomeDir() + wxT( "/Music" ),
 //                                      wxT( "libpaths" ) ) );
@@ -139,7 +138,6 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     m_SelLength = 0;
     m_SelSize = 0;
 
-    //
     m_PlayerPanel = NULL;
     m_PlayerPlayList = NULL;
     m_RadioPanel = NULL;
@@ -162,12 +160,10 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     m_LyricSearchEngine = NULL;
     m_LyricSearchContext = NULL;
 
-    //
     wxImage TaskBarIcon( guImage( guIMAGE_INDEX_guayadeque_taskbar ) );
     TaskBarIcon.ConvertAlphaToMask();
     m_AppIcon.CopyFromBitmap( TaskBarIcon );
 
-    //
     m_VolumeMonitor = new guGIO_VolumeMonitor( this );
 
     m_LyricSearchEngine = new guLyricSearchEngine();
@@ -216,17 +212,12 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
 	m_MainNotebook = new guAuiNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize,
                                         wxAUI_NB_DEFAULT_STYLE );
 
-    guMediaViewerLibrary * MediaViewer = new guMediaViewerLibrary( m_MainNotebook,
-                                                                   m_Collections[ 0 ],
-                                                                   ID_COLLECTIONS_BASE,
-                                                                   this,
-                                                                   guMEDIAVIEWER_MODE_NONE,
-                                                                   NULL );
+    guMediaViewerLibrary * MediaViewer = new guMediaViewerLibrary(
+            m_MainNotebook, m_Collections[ 0 ], ID_COLLECTIONS_BASE, this, guMEDIAVIEWER_MODE_NONE, NULL );
     MediaViewer->SetDefault( true );
     m_MediaViewers.Add( MediaViewer );
 
     m_Db = MediaViewer->GetDb();
-
 
     m_VisiblePanels = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_VISIBLE_PANELS, guPANEL_MAIN_VISIBLE_DEFAULT, CONFIG_PATH_MAIN_WINDOW );
     if ( Config->GetIgnoreLayouts() )
@@ -239,7 +230,6 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
 	SetStatusText( _( "Welcome to Guayadeque " ) );
 	SetStatusBarPane( 0 );
 
-    //
     if ( m_VisiblePanels & guPANEL_MAIN_PLAYERVUMETERS )
         ShowMainPanel( guPANEL_MAIN_PLAYERVUMETERS, true );
 
@@ -338,7 +328,7 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
         Perspective += wxT( "name=PlayerSelector;caption=;state=768;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=20;besth=20;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
         Perspective += wxT( "dock_size(5,0,0)=22|dock_size(4,0,1)=302|" );
         m_AuiManager.LoadPerspective( Perspective, true );
-          //m_AuiManager.Update();
+        //m_AuiManager.Update();
     }
 
     wxAuiPaneInfo &PaneInfo = m_AuiManager.GetPane( m_MainNotebook );
@@ -359,7 +349,6 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     if ( m_LocationPanel )
         m_LocationPanel->Unlock();
 
-    //
     m_TaskBarIcon = NULL;
 
     m_DBusServer = new guDBusServer( NULL );
@@ -414,7 +403,6 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     Bind( wxEVT_MENU, &guMainFrame::OnCloseTab, this, ID_MENU_VIEW_CLOSEWINDOW );
     Bind( wxEVT_MENU, &guMainFrame::OnShowCaptions, this, ID_MENU_HIDE_CAPTIONS );
     Bind( wxEVT_MENU, &guMainFrame::OnQuit, this, ID_MENU_QUIT );
-
     Bind( wxEVT_MENU, &guMainFrame::OnChangeVolume, this, ID_MENU_VOLUME_DOWN, ID_MENU_VOLUME_UP );
 
 //    Bind( wxEVT_MENU, &guMainFrame::LibraryUpdated, this, ID_LIBRARY_UPDATED );
@@ -439,7 +427,6 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     Bind( wxEVT_MENU, &guMainFrame::OnPlayerCapsChanged, this, ID_PLAYERPANEL_CAPSCHANGED );
     Bind( wxEVT_MENU, &guMainFrame::OnPlayerVolumeChanged, this, ID_PLAYERPANEL_VOLUMECHANGED );
     Bind( wxEVT_MENU, &guMainFrame::OnPlayerSeeked, this, ID_PLAYERPANEL_SEEKED );
-
 
     Bind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_TRACK );
     Bind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_ALBUM );
@@ -511,10 +498,8 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     Bind( wxEVT_MENU, &guMainFrame::OnViewFullScreen, this, ID_MENU_VIEW_FULLSCREEN );
     Bind( wxEVT_MENU, &guMainFrame::OnViewStatusBar, this, ID_MENU_VIEW_STATUSBAR );
 
-
     Bind( wxEVT_MENU, &guMainFrame::OnMountMonitorUpdated, this, ID_VOLUMEMANAGER_MOUNT_CHANGED );
     Bind( wxEVT_MENU, &guMainFrame::OnAudioCdVolumeUpdated, this, ID_VOLUMEMANAGER_AUDIOCD_CHANGED );
-
 
     Bind( wxEVT_MENU, &guMainFrame::OnGaugeCreate, this, ID_STATUSBAR_GAUGE_CREATE );
     Bind( wxEVT_MENU, &guMainFrame::OnGaugePulse, this, ID_STATUSBAR_GAUGE_PULSE );
@@ -812,7 +797,6 @@ void guMainFrame::OnMountMonitorUpdated( wxCommandEvent &event )
                     event.SetId( MediaViewer->GetBaseCommand() );
                     event.SetInt( 0 );
                     AddPendingEvent( event );
-
                     break;
                 }
             }
@@ -1605,33 +1589,25 @@ void guMainFrame::CreateMenu()
     //
     // Now create the Collections Menu Entry
     m_MenuCollections = new wxMenu();
-
     CreateCollectionsMenu( m_MenuCollections );
-
 	MenuBar->Append( m_MenuCollections, _( "Sources" ) );
 
     //
     // Now create the View Menu Entry
     MenuEntry = new wxMenu();
-
     CreateViewMenu( MenuEntry );
-
 	MenuBar->Append( MenuEntry, _( "View" ) );
 
     //
     // Now create the Controls Menu Entry
     MenuEntry = new wxMenu();
-
     CreateControlsMenu( MenuEntry );
-
 	MenuBar->Append( MenuEntry, _( "Controls" ) );
 
     //
     // Now create the Help Menu Entry
     MenuEntry = new wxMenu();
-
     CreateHelpMenu( MenuEntry );
-
 	MenuBar->Append( MenuEntry, _( "Help" ) );
 
 	SetMenuBar( MenuBar );
@@ -2098,7 +2074,7 @@ void guMainFrame::OnCopyTracksTo( wxCommandEvent &event )
     {
         if ( !m_CopyToThread )
         {
-            int GaugeId = m_MainStatusBar->AddGauge( _( "Copy To..." ), false );
+            int GaugeId = m_MainStatusBar->AddGauge( _( "Copy to" ), false );
             m_CopyToThread = new guCopyToThread( this, GaugeId );
         }
 
@@ -2135,7 +2111,7 @@ void guMainFrame::OnCopyTracksToDevice( wxCommandEvent &event )
 
                     if ( !m_CopyToThread )
                     {
-                        int GaugeId = m_MainStatusBar->AddGauge( _( "Copy To..." ), false );
+                        int GaugeId = m_MainStatusBar->AddGauge( _( "Copy to" ), false );
                         m_CopyToThread = new guCopyToThread( this, GaugeId );
                     }
 
@@ -2179,7 +2155,7 @@ void guMainFrame::ImportFiles( guMediaViewer * mediaviewer, guTrackArray * track
 
         if ( !m_CopyToThread )
         {
-            int GaugeId = m_MainStatusBar->AddGauge( _( "Copy To..." ), false );
+            int GaugeId = m_MainStatusBar->AddGauge( _( "Copy to" ), false );
             m_CopyToThread = new guCopyToThread( this, GaugeId );
         }
 
@@ -2214,7 +2190,7 @@ void guMainFrame::OnCopyPlayListToDevice( wxCommandEvent &event )
 
                 if ( !m_CopyToThread )
                 {
-                    int GaugeId = m_MainStatusBar->AddGauge( _( "Copy To..." ), false );
+                    int GaugeId = m_MainStatusBar->AddGauge( _( "Copy to" ), false );
                     m_CopyToThread = new guCopyToThread( this, GaugeId );
                 }
 
@@ -4280,10 +4256,10 @@ void guMainFrame::CreateCopyToMenu( wxMenu * menu )
     if ( SubMenu->GetMenuItemCount() )
         SubMenu->AppendSeparator();
 
-    MenuItem = new wxMenuItem( SubMenu, ID_MENU_PREFERENCES_COPYTO, _( "Preferences" ), _( "Add Copy To patterns in preferences" ) );
+    MenuItem = new wxMenuItem( SubMenu, ID_MENU_PREFERENCES_COPYTO, _( "Preferences" ), _( "Add 'Copy to' patterns in preferences" ) );
     SubMenu->Append( MenuItem );
 
-    menu->AppendSubMenu( SubMenu, _( "Copy To..." ), _( "Copy the selected tracks to a folder or device" ) );
+    menu->AppendSubMenu( SubMenu, _( "Copy to" ), _( "Copy the selected tracks to a folder or device" ) );
 }
 
 // -------------------------------------------------------------------------------- //

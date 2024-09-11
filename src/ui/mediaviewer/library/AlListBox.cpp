@@ -40,7 +40,7 @@
 namespace Guayadeque {
 
 // -------------------------------------------------------------------------------- //
-// guAlListBox
+// guAlListBox - Albums panel
 // -------------------------------------------------------------------------------- //
 guAlListBox::guAlListBox( wxWindow * parent, guLibPanel * libpanel, guDbLibrary * db, const wxString &label ) :
     guListView( parent, wxLB_MULTIPLE | guLISTVIEW_ALLOWDRAG | guLISTVIEW_HIDE_HEADER )

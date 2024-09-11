@@ -2283,11 +2283,6 @@ msgstr "Kontroller"
 msgid "Stream:"
 msgstr "Akış:"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "-e Kopyala..."
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "Hedef dizin seç"
@@ -2350,8 +2345,8 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Seçili geçerli şarkıları bir konuma ya da aygıta kopyala"
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
-msgstr "Tercihlere kopyalama yolu ekle"
+msgid "Add 'Copy to' patterns in preferences"
+msgstr "Tercihlere 'kopyala' yolu ekle"
 
 #: MainFrame.cpp:4522
 msgid "Copy the selected tracks to a folder or device"
@@ -3136,7 +3131,8 @@ msgstr "Kayıt"
 msgid "Online"
 msgstr "Çevrimiçi"
 
-#: Preferences.cpp:284
+#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
+#: MainFrame.cpp:4522 Preferences.cpp:284
 msgid "Copy to"
 msgstr "Kopyala"
 

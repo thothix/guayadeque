@@ -2282,11 +2282,6 @@ msgstr "コントロール"
 msgid "Stream:"
 msgstr "ストリーム"
 
-#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
-#: MainFrame.cpp:4522
-msgid "Copy To..."
-msgstr "コピー先"
-
 #: MainFrame.cpp:2190
 msgid "Select destination directory"
 msgstr "保存するディレクトリを選択"
@@ -2349,7 +2344,7 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "選択した曲をディレクトリ/デバイスにコピー"
 
 #: MainFrame.cpp:4519
-msgid "Add Copy To patterns in preferences"
+msgid "Add 'Copy to' patterns in preferences"
 msgstr "コピー先のパターンを追加"
 
 #: MainFrame.cpp:4522
@@ -3135,7 +3130,8 @@ msgstr "録音"
 msgid "Online"
 msgstr "オンライン"
 
-#: Preferences.cpp:284
+#: MainFrame.cpp:2174 MainFrame.cpp:2244 MainFrame.cpp:2293 MainFrame.cpp:2330
+#: MainFrame.cpp:4522 Preferences.cpp:284
 msgid "Copy to"
 msgstr "コピー先"
 

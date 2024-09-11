@@ -1607,7 +1607,8 @@ msgstr "Slóð"
 msgid "Commands"
 msgstr "Skipanir"
 
-#: ui/preferences/Preferences.cpp:293
+#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
+#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621 ui/preferences/Preferences.cpp:293
 msgid "Copy to"
 msgstr "Afrita til"
 
@@ -4525,11 +4526,6 @@ msgstr "Streyma:"
 msgid "Select destination directory"
 msgstr "Velja staðsetningu"
 
-#: ui/MainFrame.cpp:2226 ui/MainFrame.cpp:2271 ui/MainFrame.cpp:2319
-#: ui/MainFrame.cpp:2356 ui/MainFrame.cpp:4621
-msgid "Copy To..."
-msgstr "Afrita til..."
-
 #: ui/MainFrame.cpp:3314
 msgid "station"
 msgstr "stöð"
@@ -4588,7 +4584,7 @@ msgid "Copy the current selected songs to a directory or device"
 msgstr "Afritar valdið lag til möppu eða tækis"
 
 #: ui/MainFrame.cpp:4618
-msgid "Add Copy To patterns in preferences"
+msgid "Add 'Copy to' patterns in preferences"
 msgstr "Bæta Vista Við mynstur í stillingum"
 
 #: ui/MainFrame.cpp:4621
