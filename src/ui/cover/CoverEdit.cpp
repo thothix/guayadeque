@@ -55,25 +55,24 @@ enum guCOVER_SEARCH_ENGINE {
 WX_DEFINE_OBJARRAY( guCoverImageArray )
 
 // -------------------------------------------------------------------------------- //
-guCoverEditor::guCoverEditor( wxWindow* parent, const wxString &Artist, const wxString &Album, const wxString &albumpath ) :
-               wxDialog( parent, wxID_ANY, _( "Cover Editor" ), wxDefaultPosition, wxSize( 520, 446 ), wxDEFAULT_DIALOG_STYLE )
+guCoverEditor::guCoverEditor(wxWindow* parent,
+                             const wxString &Artist,
+                             const wxString &Album,
+                             const wxString &albumpath) :
+    wxDialog(parent, wxID_ANY, _("Cover Editor"), wxDefaultPosition, wxSize(520, 446), wxDEFAULT_DIALOG_STYLE)
 {
+    wxStaticText *ArtistStaticText;
+    wxStaticText *AlbumStaticText;
+    wxStaticText *FromStaticText;
+    wxStaticLine *TopStaticLine;
+
     m_AlbumPath = albumpath;
+    guConfig *Config = ( guConfig * ) guConfig::Get();
 
-    wxStaticText* ArtistStaticText;
-    wxStaticText* AlbumStaticText;
-    wxStaticText* FromStaticText;
-    wxStaticLine * TopStaticLine;
+    wxBoxSizer *MainSizer = new wxBoxSizer( wxVERTICAL );
 
-    guConfig * Config = ( guConfig * ) guConfig::Get();
-
-    this->SetSizeHints( wxDefaultSize, wxDefaultSize );
-
-    wxBoxSizer* MainSizer;
-    MainSizer = new wxBoxSizer( wxVERTICAL );
-
-    wxBoxSizer* EditsSizer;
-    EditsSizer = new wxBoxSizer( wxHORIZONTAL );
+    // First line
+    wxBoxSizer *EditsSizer = new wxBoxSizer( wxHORIZONTAL );
 
     ArtistStaticText = new wxStaticText( this, wxID_ANY, _( "Artist:" ), wxDefaultPosition, wxDefaultSize, 0 );
     ArtistStaticText->Wrap( -1 );
@@ -104,11 +103,10 @@ guCoverEditor::guCoverEditor( wxWindow* parent, const wxString &Artist, const wx
     int m_EngineChoiceNChoices = sizeof( m_EngineChoiceChoices ) / sizeof( wxString );
     m_EngineChoice = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_EngineChoiceNChoices, m_EngineChoiceChoices, 0 );
     EditsSizer->Add( m_EngineChoice, 0, wxTOP|wxBOTTOM|wxRIGHT, 5 );
-
     MainSizer->Add( EditsSizer, 0, wxEXPAND, 5 );
 
-
-    wxBoxSizer * TopButtonsSizer = new wxBoxSizer( wxHORIZONTAL );
+    // Second line
+    wxBoxSizer * TopButtonsSizer = new wxBoxSizer(wxHORIZONTAL);
 
     m_EmbedToFilesChkBox = new wxCheckBox( this, wxID_ANY, _( "Embed into tracks" ), wxDefaultPosition, wxDefaultSize, 0 );
     m_EmbedToFilesChkBox->SetValue( Config->ReadBool( CONFIG_KEY_GENERAL_EMBED_TO_FILES, false, CONFIG_PATH_GENERAL ) );
@@ -121,16 +119,13 @@ guCoverEditor::guCoverEditor( wxWindow* parent, const wxString &Artist, const wx
 
     m_CoverDownloadButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_doc_save ), wxDefaultPosition, wxSize( 32, 32 ), wxBU_AUTODRAW );
     TopButtonsSizer->Add( m_CoverDownloadButton, 0, wxALIGN_RIGHT | wxLEFT | wxRIGHT, 5 );
-
     MainSizer->Add( TopButtonsSizer, 0, wxEXPAND, 5 );
 
-
+    // Cover
     TopStaticLine = new wxStaticLine( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
     MainSizer->Add( TopStaticLine, 0, wxEXPAND | wxALL, 5 );
 
-    wxBoxSizer * CoverSizer = new wxBoxSizer( wxHORIZONTAL );
-
-
+    wxBoxSizer *CoverSizer = new wxBoxSizer( wxHORIZONTAL );
     CoverSizer->Add( 0, 0, 1, wxEXPAND, 5 );
 
     m_PrevButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_left ), wxDefaultPosition, wxSize( 32, 96 ), wxBU_AUTODRAW );
@@ -139,27 +134,27 @@ guCoverEditor::guCoverEditor( wxWindow* parent, const wxString &Artist, const wx
     int CoverFrame = Config->ReadNum( CONFIG_KEY_GENERAL_COVER_FRAME, guCOVERFRAME_DEFAULT, CONFIG_PATH_GENERAL );
     wxImage DefaultCover( guImage( CoverFrame ? guIMAGE_INDEX_blank_cd_cover : guIMAGE_INDEX_no_cover ) );
 
-    if( !CoverFrame ) DefaultCover.Rescale( 250, 250, wxIMAGE_QUALITY_HIGH );
+    if (!CoverFrame)
+        DefaultCover.Rescale( 250, 250, wxIMAGE_QUALITY_HIGH );
 
     m_CoverBitmap = new wxStaticBitmap( this, wxID_ANY, DefaultCover, wxDefaultPosition, wxSize( -1,-1 ), 0 );
-    CoverSizer->Add( m_CoverBitmap, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5 );
+    CoverSizer->Add( m_CoverBitmap, 0, wxALL | wxALIGN_CENTER_HORIZONTAL | wxALIGN_CENTER_VERTICAL, 5 );
 
     m_NextButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_right ), wxDefaultPosition, wxSize( 32, 96 ), wxBU_AUTODRAW );
     CoverSizer->Add( m_NextButton, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 
-
     CoverSizer->Add( 0, 0, 1, wxEXPAND, 5 );
-
     MainSizer->Add( CoverSizer, 1, wxEXPAND, 5 );
 
+    // Bellow cover
     m_SizeSizer = new wxBoxSizer( wxVERTICAL );
 
     m_SizeStaticText = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
     m_SizeStaticText->Wrap( -1 );
-    m_SizeSizer->Add( m_SizeStaticText, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
-
+    m_SizeSizer->Add( m_SizeStaticText, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5 );
     MainSizer->Add( m_SizeSizer, 0, wxEXPAND, 5 );
 
+    // Bottom Gauge
     wxBoxSizer* GaugeSizer = new wxBoxSizer( wxHORIZONTAL );
 
     m_Gauge = new guAutoPulseGauge( this, wxID_ANY, MAX_COVERLINKS_ITEMS, wxDefaultPosition, wxSize( -1,7 ), wxGA_HORIZONTAL );
@@ -169,30 +164,35 @@ guCoverEditor::guCoverEditor( wxWindow* parent, const wxString &Artist, const wx
     m_InfoTextCtrl = new wxStaticText( this, wxID_ANY, wxT("00/00"), wxDefaultPosition, wxDefaultSize, 0 );
     m_InfoTextCtrl->Wrap( -1 );
     GaugeSizer->Add( m_InfoTextCtrl, 0, wxRIGHT, 5 );
-
     MainSizer->Add( GaugeSizer, 0, wxEXPAND, 5 );
 
+    // Bottom buttons
     wxStdDialogButtonSizer * ButtonsSizer = new wxStdDialogButtonSizer();
+
     wxButton * ButtonsSizerOK = new wxButton( this, wxID_OK );
     ButtonsSizer->AddButton( ButtonsSizerOK );
+
     wxButton * ButtonsSizerCancel = new wxButton( this, wxID_CANCEL );
     ButtonsSizer->AddButton( ButtonsSizerCancel );
+
     ButtonsSizer->SetAffirmativeButton( ButtonsSizerOK );
     ButtonsSizer->SetCancelButton( ButtonsSizerCancel );
     ButtonsSizer->Realize();
     MainSizer->Add( ButtonsSizer, 0, wxEXPAND|wxALIGN_BOTTOM|wxALL, 5 );
 
+    // Update Main
     this->SetSizer( MainSizer );
     this->Layout();
 
+    // Update initial/default values
+    this->SetSizeHints( wxDefaultSize, wxDefaultSize );
     ButtonsSizerOK->SetDefault();
-
     m_ArtistTextCtrl->SetValue( Artist );
     m_AlbumTextCtrl->SetValue( Album );
     m_CurrentImage = 0;
 
     m_EngineIndex = Config->ReadNum( CONFIG_KEY_GENERAL_COVER_SEARCH_ENGINE, 0, CONFIG_PATH_GENERAL );
-    if( m_EngineIndex >= ( int ) m_EngineChoice->GetCount() )
+    if (  m_EngineIndex >= (int) m_EngineChoice->GetCount() )
         m_EngineIndex = 0;
     m_EngineChoice->SetSelection( m_EngineIndex );
 
@@ -266,10 +266,8 @@ guCoverEditor::~guCoverEditor()
     m_CoverSelectButton->Unbind( wxEVT_BUTTON, &guCoverEditor::OnCoverSelectClick, this );
     m_CoverDownloadButton->Unbind( wxEVT_BUTTON, &guCoverEditor::OnCoverDownloadClick, this );
 
-
     Unbind( wxEVT_MENU, &guCoverEditor::OnAddCoverImage, this, ID_COVEREDITOR_ADDCOVERIMAGE  );
     Unbind( wxEVT_MENU, &guCoverEditor::OnDownloadedLinks, this, ID_COVEREDITOR_DOWNLOADEDLINKS );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -278,14 +276,10 @@ void guCoverEditor::EndDownloadLinksThread( void )
     m_DownloadThreadMutex.Lock();
     if( !m_DownloadThreads.Count() )
     {
-        if( m_Gauge->IsPulsing() )
-        {
+        if ( m_Gauge->IsPulsing() )
             m_Gauge->StopPulse( MAX_COVERLINKS_ITEMS, MAX_COVERLINKS_ITEMS );
-        }
         else
-        {
             m_Gauge->SetValue( MAX_COVERLINKS_ITEMS );
-        }
     }
     m_DownloadThreadMutex.Unlock();
     //m_Gauge->SetValue( 0 );
@@ -302,14 +296,11 @@ void guCoverEditor::OnDownloadedLinks( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guCoverEditor::EndDownloadCoverThread( guDownloadCoverThread * DownloadCoverThread )
 {
-    if( m_Gauge->IsPulsing() )
-    {
+    if ( m_Gauge->IsPulsing() )
         m_Gauge->StopPulse( MAX_COVERLINKS_ITEMS, 1 );
-    }
     else
-    {
         m_Gauge->SetValue( wxMin( m_Gauge->GetValue() + 1, MAX_COVERLINKS_ITEMS ) );
-    }
+
     m_DownloadThreadMutex.Lock();
     m_DownloadThreads.Remove( DownloadCoverThread );
     m_DownloadThreadMutex.Unlock();
@@ -370,22 +361,22 @@ void guCoverEditor::OnMouseWheel( wxMouseEvent &event )
 void guCoverEditor::OnAddCoverImage( wxCommandEvent &event )
 {
     m_DownloadEventsMutex.Lock();
-    guCoverImage * Image = ( guCoverImage * ) event.GetClientData();
-    if( Image )
+    guCoverImage *Image = (guCoverImage *) event.GetClientData();
+    if (Image)
     {
-        if( Image->m_SizeStr.IsEmpty() )
-            Image->m_SizeStr = wxString::Format( wxT( "%ux%u" ), Image->m_Image->GetWidth(), Image->m_Image->GetHeight() );
+        if (Image->m_SizeStr.IsEmpty())
+            Image->m_SizeStr = wxString::Format(wxT( "%ux%u"), Image->m_Image->GetWidth(), Image->m_Image->GetHeight());
         m_AlbumCovers.Add( Image );
         // When it is the first show the image.
-        if( m_AlbumCovers.Count() == 1 )
+        if (m_AlbumCovers.Count() == 1)
             UpdateCoverBitmap();
-        if( ( m_CurrentImage < ( int ) ( m_AlbumCovers.Count() - 1 ) ) && !m_NextButton->IsEnabled() )
+        if ((m_CurrentImage < (int) (m_AlbumCovers.Count() - 1)) && !m_NextButton->IsEnabled())
             m_NextButton->Enable();
         m_InfoTextCtrl->SetLabel( wxString::Format( wxT( "%02u/%02lu" ), m_CurrentImage + 1, m_AlbumCovers.Count() ) );
         //guLogMessage( wxT( "CurImg: %u  Total:%lu" ), m_CurrentImage + 1, m_AlbumCovers.Count() );
     }
-        if( event.GetClientObject() )
-            EndDownloadCoverThread( ( guDownloadCoverThread * ) event.GetClientObject() );
+        if (event.GetClientObject())
+            EndDownloadCoverThread((guDownloadCoverThread *) event.GetClientObject());
     m_DownloadEventsMutex.Unlock();
 }
 
@@ -449,22 +440,19 @@ void guCoverEditor::UpdateCoverBitmap( void )
 // -------------------------------------------------------------------------------- //
 void guCoverEditor::OnCoverLeftDClick( wxMouseEvent &event )
 {
-    if( event.m_x >= 75 && event.m_x <= 225 )
-        EndModal( wxID_OK );
+    if (event.m_x >= 75 && event.m_x <= 225)
+        EndModal(wxID_OK);
 }
 
 // -------------------------------------------------------------------------------- //
 void guCoverEditor::OnCoverLeftClick( wxMouseEvent &event )
 {
     wxCommandEvent CmdEvent;
-    if( event.m_x < 75 )
-    {
-        OnPrevButtonClick( CmdEvent );
-    }
-    else if( event.m_x > 225 )
-    {
-        OnNextButtonClick( CmdEvent );
-    }
+    if (event.m_x < 75)
+        OnPrevButtonClick(CmdEvent);
+    else if (event.m_x > 225)
+        OnNextButtonClick(CmdEvent);
+
     //guLogMessage( wxT( "%i %i" ), event.m_x, event.m_y );
     event.Skip();
 }
@@ -472,8 +460,8 @@ void guCoverEditor::OnCoverLeftClick( wxMouseEvent &event )
 // -------------------------------------------------------------------------------- //
 wxString guCoverEditor::GetSelectedCoverUrl( void )
 {
-    if( m_AlbumCovers.Count() )
-        return m_AlbumCovers[ m_CurrentImage ].m_Link;
+    if (m_AlbumCovers.Count())
+        return m_AlbumCovers[m_CurrentImage].m_Link;
     return wxEmptyString;
 }
 
@@ -578,18 +566,23 @@ void guCoverEditor::OnEngineChanged( wxCommandEvent& event )
 // -------------------------------------------------------------------------------- //
 void guCoverEditor::OnCoverSelectClick( wxCommandEvent & )
 {
-    wxFileDialog * FileDialog = new wxFileDialog( this, _( "Select the cover filename" ),
-        m_AlbumPath, "", wxT( "*.jpg;*.JPG;*.jpeg;*.JPEG;*.png;*,PNG" ),
-        wxFD_OPEN | wxFD_FILE_MUST_EXIST | wxFD_PREVIEW );
-    if( FileDialog )
+    wxFileDialog *FileDialog = new wxFileDialog(
+            this,
+            _( "Select the cover filename" ),
+            m_AlbumPath,
+            "",
+            wxT( "*.jpg;*.JPG;*.jpeg;*.JPEG;*.png;*,PNG" ),
+            wxFD_OPEN | wxFD_FILE_MUST_EXIST | wxFD_PREVIEW );
+
+    if (FileDialog)
     {
-        if( FileDialog->ShowModal() == wxID_OK )
+        if (FileDialog->ShowModal() == wxID_OK)
         {
             wxString CoverFile = FileDialog->GetPath();
-            if( !CoverFile.IsEmpty() )
+            if (!CoverFile.IsEmpty())
             {
                 wxImage * CoverImage = new wxImage( CoverFile );
-                if( CoverImage->IsOk() )
+                if (CoverImage->IsOk())
                 {
                     wxCommandEvent event( wxEVT_MENU, ID_COVEREDITOR_ADDCOVERIMAGE );
                     event.SetClientData( new guCoverImage( CoverFile, "", CoverImage ) );

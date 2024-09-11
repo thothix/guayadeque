@@ -352,7 +352,7 @@ void guSoListBox::ReloadItems( bool reset )
     if( reset )
         SetSelection( -1 );
     else
-        Selection = GetSelectedIndexs( false );
+        Selection = GetSelectedIndexes( false );
 
     m_ItemsMutex.Lock();
 
@@ -368,7 +368,7 @@ void guSoListBox::ReloadItems( bool reset )
 
     if( !reset )
     {
-        SetSelectedIndexs( Selection );
+        SetSelectedIndexes( Selection );
         ScrollToRow( FirstVisible );
     }
     RefreshAll();
