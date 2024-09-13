@@ -65,6 +65,7 @@ guExitConfirmDlg::guExitConfirmDlg( wxWindow * parent ) :
 
     SetSizer( MainSizer );
     Layout();
+    MainSizer->Fit(this);
 
     ButtonsSizerCancel->SetDefault();
 
