@@ -666,6 +666,7 @@ void guPlayList::DrawItem( wxDC &dc, const wxRect &rect, const int row, const in
     wxString TimeStr;
 //    int OffsetSecLine;
 //    wxArrayInt Selection;
+    int first_line_offset = 2;
 
     Item = m_Items[ row ];
     m_Attr.m_Font->SetPointSize( m_SysFontPointSize );
@@ -674,6 +675,7 @@ void guPlayList::DrawItem( wxDC &dc, const wxRect &rect, const int row, const in
 
     dc.SetFont( * m_Attr.m_Font );
     dc.SetBackgroundMode( wxTRANSPARENT );
+
     if( IsSelected( row ) )
         dc.SetTextForeground( m_Attr.m_SelFgColor );
     else if( row == m_CurItem )
@@ -683,7 +685,6 @@ void guPlayList::DrawItem( wxDC &dc, const wxRect &rect, const int row, const in
         //dc.SetTextForeground( row > m_CurItem ? m_Attr.m_TextFgColor : m_PlayedColor );
         dc.SetTextForeground( m_Attr.m_TextFgColor );
     }
-
 
     // Draw the Items Texts
     CutRect = rect;
@@ -696,68 +697,78 @@ void guPlayList::DrawItem( wxDC &dc, const wxRect &rect, const int row, const in
         CutRect.width -= 16;
     }
 
-    // The DB or NODB Tracks
-    if( Item.m_Type != guTRACK_TYPE_RADIOSTATION )
+    // The NODB Tracks...
+    if (Item.m_Type == guTRACK_TYPE_RADIOSTATION)
     {
-        CutRect.width -= ( 50 + 6 + 2 );
-
-        dc.SetClippingRegion( CutRect );
-
-        //dc.DrawText( ( Item.m_Number ? wxString::Format( wxT( "%02u - " ), Item.m_Number ) :
-        //                  wxT( "" ) ) + Item.m_SongName, CutRect.x + 4, CutRect.y + 4 );
-        dc.DrawText( Item.m_SongName, CutRect.x + 4, CutRect.y + 2 );
-
-        //m_Attr.m_Font->SetPointSize( m_SysFontPointSize - 3 );
-        //m_Attr.m_Font->SetStyle( wxFONTSTYLE_ITALIC );
-        m_Attr.m_Font->SetWeight( wxFONTWEIGHT_NORMAL );
-        dc.SetFont( * m_Attr.m_Font );
-
-        dc.DrawText( Item.m_ArtistName + wxT( " - " ) + Item.m_AlbumName, CutRect.x + 4, CutRect.y + m_SecondLineOffset );
-
-        dc.DestroyClippingRegion();
-
-        // Draw the length and rating
-        CutRect = rect;
-        CutRect.x += ( CutRect.width - ( 50 + 6 ) );
-        CutRect.width = ( 50 + 6 );
-
-        dc.SetClippingRegion( CutRect );
-
-        //m_Attr.m_Font->SetPointSize( m_SysFontPointSize - 2 );
-        //m_Attr.m_Font->SetStyle( wxFONTSTYLE_NORMAL );
-        //dc.SetFont( * m_Attr.m_Font );
-
-        int TimeWidth = 56;
-
-        if( Item.m_Type & guTRACK_TYPE_STOP_HERE )
-        {
-            dc.DrawBitmap( * m_StopBitmap, CutRect.x + 40, CutRect.y + 2, true );
-            TimeWidth -= 16;
-        }
-
-        TimeStr = LenToString( Item.m_Length );
-        TextSize = dc.GetTextExtent( TimeStr );
-        TimeWidth -= TextSize.GetWidth();
-        if( TimeWidth < 0 )
-            TimeWidth = 0;
-        dc.DrawText( TimeStr, CutRect.x + ( TimeWidth / 2 ), CutRect.y + 4 );
-        //guLogMessage( wxT( "%i - %i" ), TextSize.GetWidth(), TextSize.GetHeight() );
-
-//        if( Item.m_Type != guTRACK_TYPE_RADIOSTATION )
-//        {
-            // Draw the rating
-            //OffsetSecLine += 2;
-            CutRect.x += 1;
-            CutRect.y += 2;
-            for( int index = 0; index < 5; index++ )
-            {
-               dc.DrawBitmap( ( index >= Item.m_Rating ) ? * m_NormalStar : * m_SelectStar,
-                              CutRect.x + ( 11 * index ), CutRect.y + m_SecondLineOffset + 2, true );
-            }
-//        }
-    }
-    else
         dc.DrawText( Item.m_SongName, CutRect.x + 4, CutRect.y + 13 );
+        return;
+    }
+
+    // The DB Tracks...
+    CutRect.width -= ( 50 + 6 + 2 );
+
+    dc.SetClippingRegion( CutRect );
+
+    // Song and number
+    //dc.DrawText( ( Item.m_Number ? wxString::Format( wxT( "%02u " ), Item.m_Number ) : wxT( "" ) ) +
+    //               Item.m_SongName, CutRect.x + 4, CutRect.y + first_line_offset );
+
+    dc.DrawText(Item.m_SongName, CutRect.x + 24, CutRect.y + first_line_offset);    // Song with Number printed lately
+    //dc.DrawText( Item.m_SongName, CutRect.x + 4, CutRect.y + first_line_offset ); // Only song
+
+    //m_Attr.m_Font->SetPointSize( m_SysFontPointSize - 3 );
+    m_Attr.m_Font->SetWeight( wxFONTWEIGHT_NORMAL );
+    dc.SetFont( * m_Attr.m_Font );
+
+    // Song with Number printed lately
+    dc.DrawText((Item.m_Number ? wxString::Format(wxT("%02u "), Item.m_Number) : wxT("")),
+                CutRect.x + 4, CutRect.y + first_line_offset);
+
+    // Artist and Album
+    m_Attr.m_Font->SetStyle( wxFONTSTYLE_ITALIC );
+    m_Attr.m_Font->SetPointSize( m_SysFontPointSize - 2 );
+    dc.SetFont( * m_Attr.m_Font );
+    dc.DrawText( Item.m_ArtistName + wxT( " - " ) + Item.m_AlbumName, CutRect.x + 4, CutRect.y + m_SecondLineOffset + 2);
+
+    dc.DestroyClippingRegion();
+
+    // Draw the length and rating
+    CutRect = rect;
+    CutRect.x += ( CutRect.width - ( 50 + 6 ) );
+    CutRect.width = ( 50 + 6 );
+
+    dc.SetClippingRegion( CutRect );
+
+    m_Attr.m_Font->SetStyle( wxFONTSTYLE_NORMAL );
+    m_Attr.m_Font->SetPointSize( m_SysFontPointSize );
+    dc.SetFont( * m_Attr.m_Font );
+
+    int TimeWidth = 56;
+
+    if( Item.m_Type & guTRACK_TYPE_STOP_HERE )
+    {
+        dc.DrawBitmap( * m_StopBitmap, CutRect.x + 40, CutRect.y + 2, true );
+        TimeWidth -= 16;
+    }
+
+    // Track length
+    TimeStr = LenToString( Item.m_Length );
+    TextSize = dc.GetTextExtent( TimeStr );
+    TimeWidth -= TextSize.GetWidth();
+    if( TimeWidth < 0 )
+        TimeWidth = 0;
+    dc.DrawText( TimeStr, CutRect.x + TimeWidth, CutRect.y + first_line_offset );
+    //guLogMessage( wxT( "%i - %i - %i" ), TimeWidth, TextSize.GetWidth(), TextSize.GetHeight() );
+
+    // The rating
+    //OffsetSecLine += 2;
+    CutRect.x += 1;
+    CutRect.y += 2;
+    for( int index = 0; index < 5; index++ )
+    {
+       dc.DrawBitmap( ( index >= Item.m_Rating ) ? * m_NormalStar : * m_SelectStar,
+                      CutRect.x + ( 11 * index ), CutRect.y + m_SecondLineOffset + 2, true );
+    }
 }
 
 // -------------------------------------------------------------------------------- //
