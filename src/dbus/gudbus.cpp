@@ -150,22 +150,19 @@ DBusHandlerResult guDBusServer::HandleMessages( guDBusMessage * msg, guDBusMessa
 
     DBusHandlerResult RetVal = DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
 
+    wxMutexLocker Lock(m_ClientsMutex);
+
     int count = m_Clients.Count();
     for( int index = 0; index < count; index++ )
     {
-        m_ClientsMutex.Lock();
         if( m_Clients[ index ]->HandleMessages( msg, reply ) == DBUS_HANDLER_RESULT_HANDLED )
-        {
             RetVal = DBUS_HANDLER_RESULT_HANDLED;
-        }
-        m_ClientsMutex.Unlock();
 
         if( RetVal == DBUS_HANDLER_RESULT_HANDLED )
             break;
     }
 
 //    delete msg;
-//
 //    if( reply )
 //        delete reply;
 

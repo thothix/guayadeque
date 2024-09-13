@@ -276,15 +276,13 @@ void guJamendoDownloadThread::AddAlbum( const int albumid, const bool iscover )
 {
     if( iscover )
     {
-        m_CoversMutex.Lock();
+        wxMutexLocker Lock(m_CoversMutex);
         m_Covers.Add( albumid );
-        m_CoversMutex.Unlock();
     }
     else
     {
-        m_AlbumsMutex.Lock();
+        wxMutexLocker Lock(m_AlbumsMutex);
         m_Albums.Add( albumid );
-        m_AlbumsMutex.Unlock();
     }
 }
 
@@ -294,21 +292,15 @@ void guJamendoDownloadThread::AddAlbums( const wxArrayInt &albumids, const bool 
     int Count = albumids.Count();
     if( iscover )
     {
-        m_CoversMutex.Lock();
+        wxMutexLocker Lock(m_CoversMutex);
         for( int Index = 0; Index < Count; Index++ )
-        {
             m_Covers.Add( albumids[ Index ] );
-        }
-        m_CoversMutex.Unlock();
     }
     else
     {
-        m_AlbumsMutex.Lock();
+        wxMutexLocker Lock(m_AlbumsMutex);
         for( int Index = 0; Index < Count; Index++ )
-        {
             m_Albums.Add( albumids[ Index ] );
-        }
-        m_AlbumsMutex.Unlock();
     }
 }
 
@@ -320,6 +312,7 @@ guJamendoDownloadThread::ExitCode guJamendoDownloadThread::Entry()
     guConfig * Config = ( guConfig * ) guConfig::Get();
     int AudioFormat = Config->ReadNum( CONFIG_KEY_JAMENDO_AUDIOFORMAT, 1, CONFIG_PATH_JAMENDO );
     wxString TorrentCmd = Config->ReadStr( CONFIG_KEY_JAMENDO_TORRENT_COMMAND, wxEmptyString, CONFIG_PATH_JAMENDO );
+
     while( !TestDestroy() )
     {
         m_CoversMutex.Lock();
@@ -336,9 +329,7 @@ guJamendoDownloadThread::ExitCode guJamendoDownloadThread::Entry()
             if( !wxFileExists( CoverFile ) )
             {
                 if( !wxDirExists( wxPathOnly( CoverFile ) + wxT( "/" ) ) )
-                {
                     wxMkdir( wxPathOnly( CoverFile ) + wxT( "/" ), 0770 );
-                }
                 wxString CoverUrl = wxString::Format( guJAMENDO_COVER_DOWNLOAD_URL, m_Covers[ 0 ], 300 );
                 DownloadImage( CoverUrl, CoverFile, 300 );
             }
@@ -358,9 +349,7 @@ guJamendoDownloadThread::ExitCode guJamendoDownloadThread::Entry()
                 wxPostEvent( m_MediaViewer, event );
             }
             else
-            {
                 guLogMessage( wxT( "Could not get the jamendo cover art %s" ), CoverFile.c_str() );
-            }
 
             m_CoversMutex.Lock();
             m_Covers.RemoveAt( 0 );
@@ -370,9 +359,7 @@ guJamendoDownloadThread::ExitCode guJamendoDownloadThread::Entry()
         {
             LoopCount++;
             if( LoopCount > 8 )
-            {
                 break;
-            }
         }
 
         if( TestDestroy() )
@@ -380,9 +367,7 @@ guJamendoDownloadThread::ExitCode guJamendoDownloadThread::Entry()
 
         size_t Elapsed = wxGetLocalTimeMillis().GetLo() - CurTime;
         if( !( Elapsed > 1000 ) )
-        {
             Sleep( 1000 - Elapsed );
-        }
 
         //
         // Album Torrents
@@ -409,9 +394,7 @@ guJamendoDownloadThread::ExitCode guJamendoDownloadThread::Entry()
                 wxString TmpFileName = wxFileName::CreateTempFileName( wxString::Format( wxT( "%u" ), m_Albums[ 0 ] ) );
                 TmpFileName += wxT( ".torrent" );
                 if( DownloadFile( TorrentUrl, TmpFileName ) )
-                {
                     guExecute( TorrentCmd + wxT( " " ) + TmpFileName );
-                }
             }
 
             m_AlbumsMutex.Lock();
@@ -422,9 +405,7 @@ guJamendoDownloadThread::ExitCode guJamendoDownloadThread::Entry()
         {
             LoopCount++;
             if( LoopCount > 8 )
-            {
                 break;
-            }
         }
 
         if( TestDestroy() )
@@ -432,9 +413,7 @@ guJamendoDownloadThread::ExitCode guJamendoDownloadThread::Entry()
 
         Elapsed = wxGetLocalTimeMillis().GetLo() - CurTime;
         if( !( Elapsed > 1000 ) )
-        {
             Sleep( 1000 - Elapsed );
-        }
     }
     return 0;
 }

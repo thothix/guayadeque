@@ -326,27 +326,26 @@ int guPLSoListBox::GetSelectedSongs( guTrackArray * tracks, const bool isdrag ) 
 {
     unsigned long cookie;
     guPLSoListBox * self = wxConstCast( this, guPLSoListBox );
-    self->m_ItemsMutex.Lock();
+
+    wxMutexLocker Lock(self->m_ItemsMutex);
+
     int item = GetFirstSelected( cookie );
     while( item != wxNOT_FOUND )
     {
         tracks->Add( new guTrack( m_Items[ item ] ) );
         item = GetNextSelected( cookie );
     }
-    self->m_ItemsMutex.Unlock();
     return tracks->Count();
 }
 
 // -------------------------------------------------------------------------------- //
 void guPLSoListBox::GetAllSongs( guTrackArray * tracks )
 {
-    m_ItemsMutex.Lock();
+    wxMutexLocker Lock(m_ItemsMutex);
+
     int count = m_Items.Count();
     for( int index = 0; index < count; index++ )
-    {
         tracks->Add( new guTrack( m_Items[ index ] ) );
-    }
-    m_ItemsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //

@@ -100,39 +100,40 @@ guUpdateAlbumDetails::~guUpdateAlbumDetails()
 // -------------------------------------------------------------------------------- //
 guUpdateAlbumDetails::ExitCode guUpdateAlbumDetails::Entry()
 {
-    if( !TestDestroy() )
+    if( TestDestroy() )
+        return 0;
+
+    //guLogMessage( wxT( "Searching details..." ) );
+    guDbLibrary * Db = m_AlbumBrowser->m_Db;
+
+    wxMutexLocker Lock(m_AlbumBrowser->m_AlbumItemsMutex);
+
+    int Count = m_AlbumBrowser->m_AlbumItems.Count();
+    if( Count )
     {
-        //guLogMessage( wxT( "Searching details..." ) );
-        guDbLibrary * Db = m_AlbumBrowser->m_Db;
-        m_AlbumBrowser->m_AlbumItemsMutex.Lock();
-        int Count = m_AlbumBrowser->m_AlbumItems.Count();
-        if( Count )
+        for( int Index = 0; Index < Count; Index++ )
         {
-            for( int Index = 0; Index < Count; Index++ )
+            if( TestDestroy() )
+                break;
+
+            if( m_AlbumBrowser->m_AlbumItems[ Index ].m_AlbumId != ( unsigned int ) wxNOT_FOUND )
             {
+                Db->GetAlbumDetails( m_AlbumBrowser->m_AlbumItems[ Index ].m_AlbumId,
+                    ( int * ) &m_AlbumBrowser->m_AlbumItems[ Index ].m_Year,
+                    ( int * ) &m_AlbumBrowser->m_AlbumItems[ Index ].m_TrackCount );
+
                 if( TestDestroy() )
                     break;
-
-                if( m_AlbumBrowser->m_AlbumItems[ Index ].m_AlbumId != ( unsigned int ) wxNOT_FOUND )
-                {
-                    Db->GetAlbumDetails( m_AlbumBrowser->m_AlbumItems[ Index ].m_AlbumId,
-                        ( int * ) &m_AlbumBrowser->m_AlbumItems[ Index ].m_Year,
-                        ( int * ) &m_AlbumBrowser->m_AlbumItems[ Index ].m_TrackCount );
-
-                    if( TestDestroy() )
-                        break;
-                }
-            }
-
-            if( !TestDestroy() )
-            {
-                wxCommandEvent event( wxEVT_MENU, ID_ALBUMBROWSER_UPDATEDETAILS );
-                //event.SetInt( Index );
-                wxPostEvent( m_AlbumBrowser, event );
-                //guLogMessage( wxT( "Sent Details %i %i for %i" ), m_AlbumBrowser->m_AlbumItems[ Index ].m_Year, m_AlbumBrowser->m_AlbumItems[ Index ].m_TrackCount, Index );
             }
         }
-        m_AlbumBrowser->m_AlbumItemsMutex.Unlock();
+
+        if( !TestDestroy() )
+        {
+            wxCommandEvent event( wxEVT_MENU, ID_ALBUMBROWSER_UPDATEDETAILS );
+            //event.SetInt( Index );
+            wxPostEvent( m_AlbumBrowser, event );
+            //guLogMessage( wxT( "Sent Details %i %i for %i" ), m_AlbumBrowser->m_AlbumItems[ Index ].m_Year, m_AlbumBrowser->m_AlbumItems[ Index ].m_TrackCount, Index );
+        }
     }
     return 0;
 }
@@ -1098,9 +1099,8 @@ void guAlbumBrowser::RefreshCount( void )
 // -------------------------------------------------------------------------------- //
 void guAlbumBrowser::ClearUpdateDetailsThread( void )
 {
-    m_UpdateDetailsMutex.Lock();
+    wxMutexLocker Lock(m_UpdateDetailsMutex);
     m_UpdateDetails = NULL;
-    m_UpdateDetailsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1113,9 +1113,7 @@ void guAlbumBrowser::RefreshPageCount( void )
             m_PagesCount++;
     }
     else
-    {
         m_PagesCount = 0;
-    }
 
     //guLogMessage( wxT( "RefreshPageCount: Albums: %i   Items: %i  Pages: %i"  ), m_AlbumsCount, m_ItemCount, m_PagesCount );
     UpdateNavLabel( 0 );
@@ -1176,11 +1174,11 @@ bool guAlbumBrowser::DoTextSearch( const wxString &searchtext )
 // -------------------------------------------------------------------------------- //
 void guAlbumBrowser::ReloadItems( void )
 {
-    m_AlbumItemsMutex.Lock();
+    wxMutexLocker Lock(m_AlbumItemsMutex);
+
     m_AlbumItems.Empty();
     m_Db->GetAlbums( &m_AlbumItems, m_DynFilter.IsEmpty() ? NULL : &m_DynFilter,
             m_TextSearchFilter, m_ItemStart, m_ItemCount, m_SortSelected );
-    m_AlbumItemsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1192,9 +1190,7 @@ void guAlbumBrowser::RefreshAll( void )
         m_UpdateDetails->Pause();
         m_UpdateDetails->Delete();
     }
-
     m_UpdateDetails = new guUpdateAlbumDetails( this );
-
     m_UpdateDetailsMutex.Unlock();
 
     m_AlbumItemsMutex.Lock();
@@ -1520,15 +1516,14 @@ void guAlbumBrowser::OnAlbumEditTracksClicked( const int albumid )
 // -------------------------------------------------------------------------------- //
 void guAlbumBrowser::OnUpdateDetails( wxCommandEvent &event )
 {
-    m_AlbumItemsMutex.Lock();
+    wxMutexLocker Lock(m_AlbumItemsMutex);
+
     //guLogMessage( wxT( "OnUpdateDetails %i - %li" ), event.GetInt(), m_ItemPanels.GetCount() );
     int Count = m_ItemPanels.GetCount();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_ItemPanels[ Index ]->UpdateDetails();
-    }
+
     Layout();
-    m_AlbumItemsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //

@@ -889,9 +889,11 @@ void guListViewClient::OnPaint( wxPaintEvent &event )
     rectLine.width = clientSize.x;
 
     m_Owner->ItemsLock();
+
     const size_t lineMax = GetVisibleEnd();
     size_t line = GetVisibleRowsBegin();
     m_Owner->ItemsCheckRange( line, lineMax );
+
     // iterate over all visible lines
     for( ; line < lineMax; line++ )
     {
@@ -1741,7 +1743,8 @@ wxDragResult guListViewDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult de
     }
     else if( ReceivedFormat == wxDataFormat( wxDF_FILENAME ) )
     {
-        m_DropFilesThreadMutex.Lock();
+        wxMutexLocker Lock(m_DropFilesThreadMutex);
+
         if( m_ListViewDropFilesThread )
         {
             m_ListViewDropFilesThread->Pause();
@@ -1755,7 +1758,6 @@ wxDragResult guListViewDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult de
             if( !m_ListViewDropFilesThread )
                 guLogError( wxT( "Could not create the add files thread." ) );
         }
-        m_DropFilesThreadMutex.Unlock();
     }
 
     return def;

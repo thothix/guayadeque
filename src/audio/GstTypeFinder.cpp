@@ -68,7 +68,7 @@ bool guGstTypeFinder::FetchMedia( void )
     if( !gst_is_initialized() )
         return false;
 
-    m_MediaMutex.Lock();
+    wxMutexLocker Lock(m_MediaMutex);
 
     GList *iter, *plugin_features = gst_registry_get_feature_list(
             gst_registry_get(),
@@ -98,7 +98,7 @@ bool guGstTypeFinder::FetchMedia( void )
     READY = !m_Media.empty();
     if( READY )
         InitMediaTypes();
-    m_MediaMutex.Unlock();
+
     return READY;
 }
 

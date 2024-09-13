@@ -1048,8 +1048,10 @@ guLyricSearchEngine::guLyricSearchEngine()
 // -------------------------------------------------------------------------------- //
 guLyricSearchEngine::~guLyricSearchEngine()
 {
-    m_LyricSearchThreadsMutex.Lock();
     int Count;
+
+    wxMutexLocker Lock(m_LyricSearchThreadsMutex);
+
     if( ( Count = m_LyricSearchThreads.Count() ) )
     {
         for( int Index = 0; Index < Count; Index++ )
@@ -1059,8 +1061,6 @@ guLyricSearchEngine::~guLyricSearchEngine()
             LyrycSearchThread->Delete();
         }
     }
-    m_LyricSearchThreadsMutex.Unlock();
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1169,37 +1169,33 @@ bool guLyricSearchEngine::GetNextSource( guLyricSearchContext * context, guLyric
 // -------------------------------------------------------------------------------- //
 void guLyricSearchEngine::SourceMoveUp( const int index )
 {
-    m_LyricSearchThreadsMutex.Lock();
+    wxMutexLocker Lock(m_LyricSearchThreadsMutex);
     guLyricSource * LyricSource = m_LyricSources.Detach( index );
     m_LyricSources.Insert( LyricSource, index - 1 );
-    m_LyricSearchThreadsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
 void guLyricSearchEngine::SourceMoveDown( const int index )
 {
-    m_LyricSearchThreadsMutex.Lock();
+    wxMutexLocker Lock(m_LyricSearchThreadsMutex);
     guLyricSource * LyricSource = m_LyricSources.Detach( index );
     m_LyricSources.Insert( LyricSource, index + 1 );
-    m_LyricSearchThreadsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
 void guLyricSearchEngine::TargetMoveUp( const int index )
 {
-    m_LyricSearchThreadsMutex.Lock();
+    wxMutexLocker Lock(m_LyricSearchThreadsMutex);
     guLyricSource * LyricTarget = m_LyricTargets.Detach( index );
     m_LyricTargets.Insert( LyricTarget, index - 1 );
-    m_LyricSearchThreadsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
 void guLyricSearchEngine::TargetMoveDown( const int index )
 {
-    m_LyricSearchThreadsMutex.Lock();
+    wxMutexLocker Lock(m_LyricSearchThreadsMutex);
     guLyricSource * LyricTarget = m_LyricTargets.Detach( index );
     m_LyricTargets.Insert( LyricTarget, index + 1 );
-    m_LyricSearchThreadsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1391,12 +1387,11 @@ void guLyricSearchEngine::SearchStart( guLyricSearchContext * context )
 {
     RemoveContextThread( context );
 
-    m_LyricSearchThreadsMutex.Lock();
+    wxMutexLocker Lock(m_LyricSearchThreadsMutex);
+
     guLyricSearchThread * LyricSearchThread = new guLyricSearchThread( context );
     if( LyricSearchThread )
         m_LyricSearchThreads.Add( LyricSearchThread );
-
-    m_LyricSearchThreadsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1406,18 +1401,18 @@ void guLyricSearchEngine::SetLyricText( guLyricSearchContext * context, const wx
     {
         RemoveContextThread( context );
 
-        m_LyricSearchThreadsMutex.Lock();
+        wxMutexLocker Lock(m_LyricSearchThreadsMutex);
+
         guLyricSearchThread * LyricSearchThread = new guLyricSearchThread( context, lyrictext, true );
         if( LyricSearchThread )
             m_LyricSearchThreads.Add( LyricSearchThread );
-        m_LyricSearchThreadsMutex.Unlock();
     }
 }
 
 // -------------------------------------------------------------------------------- //
 void guLyricSearchEngine::SearchFinished( guLyricSearchThread * searchthread )
 {
-    m_LyricSearchThreadsMutex.Lock();
+    wxMutexLocker Lock(m_LyricSearchThreadsMutex);
 
     wxCommandEvent LyricEvent( wxEVT_MENU, ID_LYRICS_LYRICFOUND );
     LyricEvent.SetInt( searchthread->LyricSearchContext()->m_CurrentIndex );
@@ -1425,14 +1420,13 @@ void guLyricSearchEngine::SearchFinished( guLyricSearchThread * searchthread )
     wxPostEvent( searchthread->LyricSearchContext()->Owner(), LyricEvent );
 
     m_LyricSearchThreads.Remove( searchthread );
-
-    m_LyricSearchThreadsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
 void guLyricSearchEngine::RemoveContextThread( guLyricSearchContext * searchcontext )
 {
-    m_LyricSearchThreadsMutex.Lock();
+    wxMutexLocker Lock(m_LyricSearchThreadsMutex);
+
     int Count = m_LyricSearchThreads.Count();
     for( int Index = 0; Index < Count; Index++ )
     {
@@ -1445,7 +1439,6 @@ void guLyricSearchEngine::RemoveContextThread( guLyricSearchContext * searchcont
             break;
         }
     }
-    m_LyricSearchThreadsMutex.Unlock();
 }
 
 

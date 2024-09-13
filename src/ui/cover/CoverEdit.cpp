@@ -273,7 +273,8 @@ guCoverEditor::~guCoverEditor()
 // -------------------------------------------------------------------------------- //
 void guCoverEditor::EndDownloadLinksThread( void )
 {
-    m_DownloadThreadMutex.Lock();
+    wxMutexLocker Lock(m_DownloadThreadMutex);
+
     if( !m_DownloadThreads.Count() )
     {
         if ( m_Gauge->IsPulsing() )
@@ -281,7 +282,7 @@ void guCoverEditor::EndDownloadLinksThread( void )
         else
             m_Gauge->SetValue( MAX_COVERLINKS_ITEMS );
     }
-    m_DownloadThreadMutex.Unlock();
+
     //m_Gauge->SetValue( 0 );
     //guLogMessage( wxT( "EndDownloadThread called" ) );
     m_DownloadCoversThread = NULL;
@@ -301,9 +302,9 @@ void guCoverEditor::EndDownloadCoverThread( guDownloadCoverThread * DownloadCove
     else
         m_Gauge->SetValue( wxMin( m_Gauge->GetValue() + 1, MAX_COVERLINKS_ITEMS ) );
 
-    m_DownloadThreadMutex.Lock();
+    wxMutexLocker Lock(m_DownloadThreadMutex);
+
     m_DownloadThreads.Remove( DownloadCoverThread );
-    m_DownloadThreadMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -360,13 +361,15 @@ void guCoverEditor::OnMouseWheel( wxMouseEvent &event )
 // -------------------------------------------------------------------------------- //
 void guCoverEditor::OnAddCoverImage( wxCommandEvent &event )
 {
-    m_DownloadEventsMutex.Lock();
+    wxMutexLocker Lock(m_DownloadEventsMutex);
+
     guCoverImage *Image = (guCoverImage *) event.GetClientData();
     if (Image)
     {
         if (Image->m_SizeStr.IsEmpty())
             Image->m_SizeStr = wxString::Format(wxT( "%ux%u"), Image->m_Image->GetWidth(), Image->m_Image->GetHeight());
         m_AlbumCovers.Add( Image );
+
         // When it is the first show the image.
         if (m_AlbumCovers.Count() == 1)
             UpdateCoverBitmap();
@@ -375,9 +378,8 @@ void guCoverEditor::OnAddCoverImage( wxCommandEvent &event )
         m_InfoTextCtrl->SetLabel( wxString::Format( wxT( "%02u/%02lu" ), m_CurrentImage + 1, m_AlbumCovers.Count() ) );
         //guLogMessage( wxT( "CurImg: %u  Total:%lu" ), m_CurrentImage + 1, m_AlbumCovers.Count() );
     }
-        if (event.GetClientObject())
-            EndDownloadCoverThread((guDownloadCoverThread *) event.GetClientObject());
-    m_DownloadEventsMutex.Unlock();
+    if (event.GetClientObject())
+        EndDownloadCoverThread((guDownloadCoverThread *) event.GetClientObject());
 }
 
 // -------------------------------------------------------------------------------- //
@@ -498,8 +500,10 @@ void guCoverEditor::OnTextCtrlEnter( wxCommandEvent& event )
     }
     // Empty already downloaded covers
     m_AlbumCovers.Empty();
+
     // Reset to the 1st Image
 	m_CurrentImage = 0;
+
 	// Set blank Cover Bitmap
 	UpdateCoverBitmap();
 
@@ -518,49 +522,53 @@ void guCoverEditor::OnTextCtrlEnter( wxCommandEvent& event )
 // -------------------------------------------------------------------------------- //
 void guCoverEditor::OnEngineChanged( wxCommandEvent& event )
 {
-    if( m_EngineIndex != m_EngineChoice->GetSelection() )
+    if( m_EngineIndex == m_EngineChoice->GetSelection() )
+        return;
+
+    m_DownloadThreadMutex.Lock();
+
+    int count = m_DownloadThreads.Count();
+    for( int index = 0; index < count; index++ )
     {
-        m_DownloadThreadMutex.Lock();
-        int count = m_DownloadThreads.Count();
-        for( int index = 0; index < count; index++ )
+        guDownloadCoverThread * DownThread = ( guDownloadCoverThread * ) m_DownloadThreads[ index ];
+        if( DownThread )
         {
-            guDownloadCoverThread * DownThread = ( guDownloadCoverThread * ) m_DownloadThreads[ index ];
-            if( DownThread )
-            {
-                DownThread->Pause();
-                DownThread->Delete();
-            }
+            DownThread->Pause();
+            DownThread->Delete();
         }
-        m_DownloadThreads.Empty();
-        m_DownloadThreadMutex.Unlock();
-
-        // If Thread still running delete it
-        if( m_DownloadCoversThread )
-        {
-            m_DownloadCoversThread->Pause();
-            m_DownloadCoversThread->Delete();
-        }
-
-        // Empty already downloaded covers
-        m_AlbumCovers.Empty();
-        // Reset to the 1st Image
-        m_CurrentImage = 0;
-        // Set blank Cover Bitmap
-        UpdateCoverBitmap();
-
-        m_Gauge->StartPulse();
-
-        m_EngineIndex = m_EngineChoice->GetSelection();
-
-        // Start again the cover fetcher thread
-        m_DownloadCoversThread = new guFetchCoverLinksThread( this,
-                     m_ArtistTextCtrl->GetValue().c_str(),
-                     m_AlbumTextCtrl->GetValue().c_str(), m_EngineIndex );
-
-        // Disable buttons till one cover is downloaded
-        m_PrevButton->Disable();
-        m_NextButton->Disable();
     }
+    m_DownloadThreads.Empty();
+    m_DownloadThreadMutex.Unlock();
+
+    // If Thread still running delete it
+    if( m_DownloadCoversThread )
+    {
+        m_DownloadCoversThread->Pause();
+        m_DownloadCoversThread->Delete();
+    }
+
+    // Empty already downloaded covers
+    m_AlbumCovers.Empty();
+
+    // Reset to the 1st Image
+    m_CurrentImage = 0;
+
+    // Set blank Cover Bitmap
+    UpdateCoverBitmap();
+
+    m_Gauge->StartPulse();
+
+    m_EngineIndex = m_EngineChoice->GetSelection();
+
+    // Start again the cover fetcher thread
+    m_DownloadCoversThread = new guFetchCoverLinksThread(
+            this,
+            m_ArtistTextCtrl->GetValue().c_str(),
+            m_AlbumTextCtrl->GetValue().c_str(), m_EngineIndex );
+
+    // Disable buttons till one cover is downloaded
+    m_PrevButton->Disable();
+    m_NextButton->Disable();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -699,9 +707,7 @@ guFetchCoverLinksThread::ExitCode guFetchCoverLinksThread::Entry()
                     guDownloadCoverThread * DownloadThread = new guDownloadCoverThread( m_CoverEditor,
                                               &m_CoverLinks[ m_LastDownload ] );
                     if( !DownloadThread )
-                    {
                         guLogError( wxT( "Could not create the download covers thread" ) );
-                    }
                 }
                 m_CoverEditor->m_DownloadThreadMutex.Unlock();
                 m_LastDownload++;
@@ -764,9 +770,7 @@ guDownloadCoverThread::ExitCode guDownloadCoverThread::Entry()
     if( Image )
     {
         if( !TestDestroy() )
-        {
             CoverImage = new guCoverImage( m_UrlStr, m_SizeStr, Image );
-        }
         else
         {
           //guLogWarning( wxT( "Could not load image from the net index %u." ), LastDownload );

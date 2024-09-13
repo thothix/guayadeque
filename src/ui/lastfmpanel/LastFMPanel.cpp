@@ -2210,7 +2210,8 @@ void  guLastFMPanel::OnAlbumsPrevClicked( wxCommandEvent &event )
 {
     if( m_AlbumsPageStart )
     {
-        m_AlbumsUpdateThreadMutex.Lock();
+        wxMutexLocker Lock(m_AlbumsUpdateThreadMutex);
+
         if( m_AlbumsUpdateThread )
         {
             m_AlbumsUpdateThread->Pause();
@@ -2223,13 +2224,9 @@ void  guLastFMPanel::OnAlbumsPrevClicked( wxCommandEvent &event )
         m_AlbumsNextBtn->Enable( ( ( m_AlbumsPageStart + 1 )  * GULASTFMINFO_MAXITEMS ) < m_AlbumsCount );
 
         for( int index = 0; index < GULASTFMINFO_MAXITEMS; index++ )
-        {
             m_AlbumsInfoCtrls[ index ]->Clear( m_MediaViewer );
-        }
 
         m_AlbumsUpdateThread = new guFetchAlbumInfoThread( this, m_DbCache, m_ArtistName.c_str(), m_AlbumsPageStart );
-
-        m_AlbumsUpdateThreadMutex.Unlock();
     }
 }
 
@@ -2238,7 +2235,8 @@ void  guLastFMPanel::OnAlbumsNextClicked( wxCommandEvent &event )
 {
     if( ( ( m_AlbumsPageStart + 1 ) * GULASTFMINFO_MAXITEMS ) < m_AlbumsCount )
     {
-        m_AlbumsUpdateThreadMutex.Lock();
+        wxMutexLocker Lock(m_AlbumsUpdateThreadMutex);
+
         if( m_AlbumsUpdateThread )
         {
             m_AlbumsUpdateThread->Pause();
@@ -2251,13 +2249,9 @@ void  guLastFMPanel::OnAlbumsNextClicked( wxCommandEvent &event )
         m_AlbumsNextBtn->Enable( ( ( m_AlbumsPageStart + 1 )  * GULASTFMINFO_MAXITEMS ) < m_AlbumsCount );
 
         for( int index = 0; index < GULASTFMINFO_MAXITEMS; index++ )
-        {
             m_AlbumsInfoCtrls[ index ]->Clear( m_MediaViewer );
-        }
 
         m_AlbumsUpdateThread = new guFetchAlbumInfoThread( this, m_DbCache, m_ArtistName.c_str(), m_AlbumsPageStart );
-
-        m_AlbumsUpdateThreadMutex.Unlock();
     }
 }
 
@@ -2292,7 +2286,8 @@ void  guLastFMPanel::OnTopTracksPrevClicked( wxCommandEvent &event )
 {
     if( m_TopTracksPageStart )
     {
-        m_TopTracksUpdateThreadMutex.Lock();
+        wxMutexLocker Lock(m_TopTracksUpdateThreadMutex);
+
         if( m_TopTracksUpdateThread )
         {
             m_TopTracksUpdateThread->Pause();
@@ -2305,13 +2300,9 @@ void  guLastFMPanel::OnTopTracksPrevClicked( wxCommandEvent &event )
         m_TopTracksNextBtn->Enable( ( ( m_TopTracksPageStart + 1 )  * GULASTFMINFO_MAXITEMS ) < m_TopTracksCount );
 
         for( int index = 0; index < GULASTFMINFO_MAXITEMS; index++ )
-        {
             m_TopTrackInfoCtrls[ index ]->Clear( m_MediaViewer );
-        }
 
         m_TopTracksUpdateThread = new guFetchTopTracksInfoThread( this, m_DbCache, m_ArtistName.c_str(), m_TopTracksPageStart );
-
-        m_TopTracksUpdateThreadMutex.Unlock();
     }
 }
 
@@ -2320,7 +2311,8 @@ void  guLastFMPanel::OnTopTracksNextClicked( wxCommandEvent &event )
 {
     if( ( ( m_TopTracksPageStart + 1 ) * GULASTFMINFO_MAXITEMS ) < m_TopTracksCount )
     {
-        m_TopTracksUpdateThreadMutex.Lock();
+        wxMutexLocker Lock(m_TopTracksUpdateThreadMutex);
+
         if( m_TopTracksUpdateThread )
         {
             m_TopTracksUpdateThread->Pause();
@@ -2333,13 +2325,9 @@ void  guLastFMPanel::OnTopTracksNextClicked( wxCommandEvent &event )
         m_TopTracksNextBtn->Enable( ( ( m_TopTracksPageStart + 1 )  * GULASTFMINFO_MAXITEMS ) < m_TopTracksCount );
 
         for( int index = 0; index < GULASTFMINFO_MAXITEMS; index++ )
-        {
             m_TopTrackInfoCtrls[ index ]->Clear( m_MediaViewer );
-        }
 
         m_TopTracksUpdateThread = new guFetchTopTracksInfoThread( this, m_DbCache, m_ArtistName.c_str(), m_TopTracksPageStart );
-
-        m_TopTracksUpdateThreadMutex.Unlock();
     }
 }
 
@@ -2374,7 +2362,8 @@ void  guLastFMPanel::OnSimArtistsPrevClicked( wxCommandEvent &event )
 {
     if( m_SimArtistsPageStart )
     {
-        m_SimArtistsUpdateThreadMutex.Lock();
+        wxMutexLocker Lock(m_SimArtistsUpdateThreadMutex);
+
         if( m_SimArtistsUpdateThread )
         {
             m_SimArtistsUpdateThread->Pause();
@@ -2387,13 +2376,9 @@ void  guLastFMPanel::OnSimArtistsPrevClicked( wxCommandEvent &event )
         m_SimArtistsNextBtn->Enable( ( ( m_SimArtistsPageStart + 1 )  * GULASTFMINFO_MAXITEMS ) < m_SimArtistsCount );
 
         for( int index = 0; index < GULASTFMINFO_MAXITEMS; index++ )
-        {
             m_SimArtistsInfoCtrls[ index ]->Clear( m_MediaViewer );
-        }
 
         m_SimArtistsUpdateThread = new guFetchSimilarArtistInfoThread( this, m_DbCache, m_ArtistName.c_str(), m_SimArtistsPageStart );
-
-        m_SimArtistsUpdateThreadMutex.Unlock();
     }
 }
 
@@ -2402,7 +2387,8 @@ void  guLastFMPanel::OnSimArtistsNextClicked( wxCommandEvent &event )
 {
     if( ( ( m_SimArtistsPageStart + 1 ) * GULASTFMINFO_MAXITEMS ) < m_SimArtistsCount )
     {
-        m_SimArtistsUpdateThreadMutex.Lock();
+        wxMutexLocker Lock(m_SimArtistsUpdateThreadMutex);
+
         if( m_SimArtistsUpdateThread )
         {
             m_SimArtistsUpdateThread->Pause();
@@ -2415,13 +2401,9 @@ void  guLastFMPanel::OnSimArtistsNextClicked( wxCommandEvent &event )
         m_SimArtistsNextBtn->Enable( ( ( m_SimArtistsPageStart + 1 )  * GULASTFMINFO_MAXITEMS ) < m_SimArtistsCount );
 
         for( int index = 0; index < GULASTFMINFO_MAXITEMS; index++ )
-        {
             m_SimArtistsInfoCtrls[ index ]->Clear( m_MediaViewer );
-        }
 
         m_SimArtistsUpdateThread = new guFetchSimilarArtistInfoThread( this, m_DbCache, m_ArtistName.c_str(), m_SimArtistsPageStart );
-
-        m_SimArtistsUpdateThreadMutex.Unlock();
     }
 }
 
@@ -2456,7 +2438,8 @@ void  guLastFMPanel::OnSimTracksPrevClicked( wxCommandEvent &event )
 {
     if( m_SimTracksPageStart )
     {
-        m_SimTracksUpdateThreadMutex.Lock();
+        wxMutexLocker Lock(m_SimTracksUpdateThreadMutex);
+
         if( m_SimTracksUpdateThread )
         {
             m_SimTracksUpdateThread->Pause();
@@ -2469,13 +2452,9 @@ void  guLastFMPanel::OnSimTracksPrevClicked( wxCommandEvent &event )
         m_SimTracksNextBtn->Enable( ( ( m_SimTracksPageStart + 1 )  * GULASTFMINFO_MAXITEMS ) < m_SimTracksCount );
 
         for( int index = 0; index < GULASTFMINFO_MAXITEMS; index++ )
-        {
             m_SimTracksInfoCtrls[ index ]->Clear( m_MediaViewer );
-        }
 
         m_SimTracksUpdateThread = new guFetchSimTracksInfoThread( this, m_DbCache, m_ArtistName.c_str(), m_TrackName.c_str(), m_SimTracksPageStart );
-
-        m_SimTracksUpdateThreadMutex.Unlock();
     }
 }
 
@@ -2484,7 +2463,8 @@ void  guLastFMPanel::OnSimTracksNextClicked( wxCommandEvent &event )
 {
     if( ( ( m_SimTracksPageStart + 1 ) * GULASTFMINFO_MAXITEMS ) < m_SimTracksCount )
     {
-        m_SimTracksUpdateThreadMutex.Lock();
+        wxMutexLocker Lock(m_SimTracksUpdateThreadMutex);
+
         if( m_SimTracksUpdateThread )
         {
             m_SimTracksUpdateThread->Pause();
@@ -2497,13 +2477,9 @@ void  guLastFMPanel::OnSimTracksNextClicked( wxCommandEvent &event )
         m_SimTracksNextBtn->Enable( ( ( m_SimTracksPageStart + 1 )  * GULASTFMINFO_MAXITEMS ) < m_SimTracksCount );
 
         for( int index = 0; index < GULASTFMINFO_MAXITEMS; index++ )
-        {
             m_SimTracksInfoCtrls[ index ]->Clear( m_MediaViewer );
-        }
 
         m_SimTracksUpdateThread = new guFetchSimTracksInfoThread( this, m_DbCache, m_ArtistName.c_str(), m_TrackName.c_str(), m_SimTracksPageStart );
-
-        m_SimTracksUpdateThreadMutex.Unlock();
     }
 }
 
@@ -3215,7 +3191,8 @@ guFetchLastFMInfoThread::guFetchLastFMInfoThread( guLastFMPanel * lastfmpanel ) 
 // -------------------------------------------------------------------------------- //
 guFetchLastFMInfoThread::~guFetchLastFMInfoThread()
 {
-    m_DownloadThreadsMutex.Lock();
+    wxMutexLocker Lock(m_DownloadThreadsMutex);
+
     int count = m_DownloadThreads.Count();
     if( count )
     {
@@ -3225,7 +3202,6 @@ guFetchLastFMInfoThread::~guFetchLastFMInfoThread()
             m_DownloadThreads[ index ]->Delete();
         }
     }
-    m_DownloadThreadsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3242,7 +3218,6 @@ void guFetchLastFMInfoThread::WaitDownloadThreads()
         Sleep( GULASTFM_DOWNLOAD_IMAGE_DELAY );
     }
 }
-
 
 // -------------------------------------------------------------------------------- //
 // guDownloadImageThread
@@ -3274,16 +3249,12 @@ guDownloadImageThread::guDownloadImageThread( guLastFMPanel * lastfmpanel,
 // -------------------------------------------------------------------------------- //
 guDownloadImageThread::~guDownloadImageThread()
 {
-
-  if( !TestDestroy() )
-  {
-    m_MainThread->m_DownloadThreadsMutex.Lock();
     if( !TestDestroy() )
     {
-      m_MainThread->m_DownloadThreads.Remove( this );
+        wxMutexLocker Lock(m_MainThread->m_DownloadThreadsMutex);
+        if( !TestDestroy() )
+            m_MainThread->m_DownloadThreads.Remove( this );
     }
-    m_MainThread->m_DownloadThreadsMutex.Unlock();
-  }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3347,9 +3318,8 @@ guDownloadImageThread::ExitCode guDownloadImageThread::Entry()
     if( !TestDestroy() )
     {
         if( m_pImage )
-        {
             * m_pImage = Image;
-        }
+
         // Updates the entire panel
         m_LastFMPanel->m_UpdateEventsMutex.Lock();
         wxCommandEvent event( wxEVT_MENU, m_CommandId );
@@ -3400,7 +3370,6 @@ guDownloadImageThread::ExitCode guDownloadImageThread::Entry()
         }
     }
     return 0;
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3423,15 +3392,12 @@ guFetchAlbumInfoThread::guFetchAlbumInfoThread( guLastFMPanel * lastfmpanel,
 // -------------------------------------------------------------------------------- //
 guFetchAlbumInfoThread::~guFetchAlbumInfoThread()
 {
-  if( !TestDestroy() )
-  {
-    m_LastFMPanel->m_AlbumsUpdateThreadMutex.Lock();
     if( !TestDestroy() )
     {
-      m_LastFMPanel->m_AlbumsUpdateThread = nullptr;
+        wxMutexLocker Lock(m_LastFMPanel->m_AlbumsUpdateThreadMutex);
+        if( !TestDestroy() )
+            m_LastFMPanel->m_AlbumsUpdateThread = nullptr;
     }
-    m_LastFMPanel->m_AlbumsUpdateThreadMutex.Unlock();
-  }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3459,28 +3425,28 @@ guFetchAlbumInfoThread::ExitCode guFetchAlbumInfoThread::Entry()
                     m_DownloadThreadsMutex.Lock();
                     if( !TestDestroy() )
                     {
-                        auto * LastFMAlbumInfo = new guLastFMAlbumInfo( index - m_Start, nullptr,
-                              new guAlbumInfo( TopAlbums[ index ] ) );
+                        auto * LastFMAlbumInfo = new guLastFMAlbumInfo(
+                                index - m_Start, nullptr,
+                                new guAlbumInfo( TopAlbums[ index ] ) );
                         if( LastFMAlbumInfo )
                         {
                             LastFMAlbumInfo->m_ImageUrl = TopAlbums[ index ].m_ImageLink;
-                          auto DownloadImageThread = new guDownloadImageThread(
-                              m_LastFMPanel,
-                              this,
-                              m_DbCache,
-                              index - m_Start,
-                              TopAlbums[ index ].m_ImageLink.c_str(),
-                              ID_LASTFM_UPDATE_ALBUMINFO,
-                              LastFMAlbumInfo,
-                              &LastFMAlbumInfo->m_Image,
-                              guDBCACHE_TYPE_IMAGE_SIZE_TINY );
+                            auto DownloadImageThread = new guDownloadImageThread(
+                                  m_LastFMPanel,
+                                  this,
+                                  m_DbCache,
+                                  index - m_Start,
+                                  TopAlbums[ index ].m_ImageLink.c_str(),
+                                  ID_LASTFM_UPDATE_ALBUMINFO,
+                                  LastFMAlbumInfo,
+                                  &LastFMAlbumInfo->m_Image,
+                                  guDBCACHE_TYPE_IMAGE_SIZE_TINY );
                             if( !DownloadImageThread )
-                            {
                                 guLogError( wxT( "Could not create the album image download thread %u" ), index );
-                            }
                         }
                     }
                     m_DownloadThreadsMutex.Unlock();
+
                     if( TestDestroy() )
                         break;
                     Sleep( GULASTFM_DOWNLOAD_IMAGE_DELAY );
@@ -3515,15 +3481,12 @@ guFetchTopTracksInfoThread::guFetchTopTracksInfoThread( guLastFMPanel * lastfmpa
 // -------------------------------------------------------------------------------- //
 guFetchTopTracksInfoThread::~guFetchTopTracksInfoThread()
 {
-  if( !TestDestroy() )
-  {
-    m_LastFMPanel->m_TopTracksUpdateThreadMutex.Lock();
     if( !TestDestroy() )
     {
-      m_LastFMPanel->m_TopTracksUpdateThread = nullptr;
+        wxMutexLocker Lock(m_LastFMPanel->m_TopTracksUpdateThreadMutex);
+        if( !TestDestroy() )
+          m_LastFMPanel->m_TopTracksUpdateThread = nullptr;
     }
-    m_LastFMPanel->m_TopTracksUpdateThreadMutex.Unlock();
-  }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3556,23 +3519,22 @@ guFetchTopTracksInfoThread::ExitCode guFetchTopTracksInfoThread::Entry()
                         if( LastFMTopTrackInfo )
                         {
                             LastFMTopTrackInfo->m_ImageUrl = TopTracks[ index ].m_ImageLink;
-                          auto DownloadImageThread = new guDownloadImageThread(
-                              m_LastFMPanel,
-                              this,
-                              m_DbCache,
-                              index - m_Start,
-                              TopTracks[ index ].m_ImageLink.c_str(),
-                              ID_LASTFM_UPDATE_TOPTRACKS,
-                              LastFMTopTrackInfo,
-                              &LastFMTopTrackInfo->m_Image,
-                              guDBCACHE_TYPE_IMAGE_SIZE_TINY );
+                            auto DownloadImageThread = new guDownloadImageThread(
+                                    m_LastFMPanel,
+                                    this,
+                                    m_DbCache,
+                                    index - m_Start,
+                                    TopTracks[ index ].m_ImageLink.c_str(),
+                                    ID_LASTFM_UPDATE_TOPTRACKS,
+                                    LastFMTopTrackInfo,
+                                    &LastFMTopTrackInfo->m_Image,
+                                    guDBCACHE_TYPE_IMAGE_SIZE_TINY );
                             if( !DownloadImageThread )
-                            {
                                 guLogError( wxT( "Could not create the album image download thread %u" ), index );
-                            }
                         }
                     }
                     m_DownloadThreadsMutex.Unlock();
+
                     if( TestDestroy() )
                         break;
                     Sleep( GULASTFM_DOWNLOAD_IMAGE_DELAY );
@@ -3580,12 +3542,10 @@ guFetchTopTracksInfoThread::ExitCode guFetchTopTracksInfoThread::Entry()
             }
         }
         delete LastFM;
-        //
         WaitDownloadThreads();
     }
     return 0;
 }
-
 
 // -------------------------------------------------------------------------------- //
 // guFetchArtistInfoThread
@@ -3607,15 +3567,12 @@ guFetchArtistInfoThread::guFetchArtistInfoThread( guLastFMPanel * lastfmpanel,
 // -------------------------------------------------------------------------------- //
 guFetchArtistInfoThread::~guFetchArtistInfoThread()
 {
-  if( !TestDestroy() )
-  {
-    m_LastFMPanel->m_ArtistsUpdateThreadMutex.Lock();
     if( !TestDestroy() )
     {
-      m_LastFMPanel->m_ArtistsUpdateThread = nullptr;
+        wxMutexLocker Lock(m_LastFMPanel->m_ArtistsUpdateThreadMutex);
+        if( !TestDestroy() )
+            m_LastFMPanel->m_ArtistsUpdateThread = nullptr;
     }
-    m_LastFMPanel->m_ArtistsUpdateThreadMutex.Unlock();
-  }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3633,37 +3590,31 @@ guFetchArtistInfoThread::ExitCode guFetchArtistInfoThread::Entry()
             m_DownloadThreadsMutex.Lock();
             if( !TestDestroy() )
             {
-                auto * LastFMArtistInfo = new guLastFMArtistInfo( 0, nullptr,
-                    new guArtistInfo( ArtistInfo ) );
+                auto * LastFMArtistInfo = new guLastFMArtistInfo( 0, nullptr, new guArtistInfo( ArtistInfo ) );
                 if( LastFMArtistInfo )
                 {
                     LastFMArtistInfo->m_ImageUrl = ArtistInfo.m_ImageLink;
                     auto * DownloadImageThread = new guDownloadImageThread(
-                        m_LastFMPanel,
-                        this,
-                        m_DbCache,
-                        0,
-                        ArtistInfo.m_ImageLink.c_str(),
-                        ID_LASTFM_UPDATE_ARTISTINFO,
-                        LastFMArtistInfo,
-                        &LastFMArtistInfo->m_Image,
-                        guDBCACHE_TYPE_IMAGE_SIZE_MID );
+                            m_LastFMPanel,
+                            this,
+                            m_DbCache,
+                            0,
+                            ArtistInfo.m_ImageLink.c_str(),
+                            ID_LASTFM_UPDATE_ARTISTINFO,
+                            LastFMArtistInfo,
+                            &LastFMArtistInfo->m_Image,
+                            guDBCACHE_TYPE_IMAGE_SIZE_MID );
                     if( !DownloadImageThread )
-                    {
                         guLogError( wxT( "Could not create the artist image download thread" ) );
-                    }
                 }
             }
             m_DownloadThreadsMutex.Unlock();
-
         }
         delete LastFM;
-        //
         WaitDownloadThreads();
     }
     return 0;
 }
-
 
 // -------------------------------------------------------------------------------- //
 // guFetchSimilarArtistInfoThread
@@ -3686,15 +3637,12 @@ guFetchSimilarArtistInfoThread::guFetchSimilarArtistInfoThread( guLastFMPanel * 
 // -------------------------------------------------------------------------------- //
 guFetchSimilarArtistInfoThread::~guFetchSimilarArtistInfoThread()
 {
-  if( !TestDestroy() )
-  {
-    m_LastFMPanel->m_SimArtistsUpdateThreadMutex.Lock();
     if( !TestDestroy() )
     {
-      m_LastFMPanel->m_SimArtistsUpdateThread = nullptr;
+        wxMutexLocker Lock(m_LastFMPanel->m_SimArtistsUpdateThreadMutex);
+        if( !TestDestroy() )
+            m_LastFMPanel->m_SimArtistsUpdateThread = nullptr;
     }
-    m_LastFMPanel->m_SimArtistsUpdateThreadMutex.Unlock();
-  }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3722,8 +3670,10 @@ guFetchSimilarArtistInfoThread::ExitCode guFetchSimilarArtistInfoThread::Entry()
                     m_DownloadThreadsMutex.Lock();
                     if( !TestDestroy() )
                     {
-                        auto * LastFMArtistInfo = new guLastFMSimilarArtistInfo( index - m_Start, nullptr,
-                            new guSimilarArtistInfo( SimilarArtists[ index ] ) );
+                        auto * LastFMArtistInfo = new guLastFMSimilarArtistInfo(
+                                index - m_Start,
+                                nullptr,
+                                new guSimilarArtistInfo( SimilarArtists[ index ] ) );
                         if( LastFMArtistInfo )
                         {
                             LastFMArtistInfo->m_ImageUrl = SimilarArtists[ index ].m_ImageLink;
@@ -3738,9 +3688,7 @@ guFetchSimilarArtistInfoThread::ExitCode guFetchSimilarArtistInfoThread::Entry()
                                 &LastFMArtistInfo->m_Image,
                                 guDBCACHE_TYPE_IMAGE_SIZE_TINY );
                             if( !DownloadImageThread )
-                            {
                                 guLogError( wxT( "Could not create the similar artist image download thread %u" ), index );
-                            }
                         }
                     }
                     m_DownloadThreadsMutex.Unlock();
@@ -3751,7 +3699,6 @@ guFetchSimilarArtistInfoThread::ExitCode guFetchSimilarArtistInfoThread::Entry()
             }
         }
         delete LastFM;
-        //
         WaitDownloadThreads();
     }
     return 0;
@@ -3781,15 +3728,12 @@ guFetchSimTracksInfoThread::guFetchSimTracksInfoThread( guLastFMPanel * lastfmpa
 // -------------------------------------------------------------------------------- //
 guFetchSimTracksInfoThread::~guFetchSimTracksInfoThread()
 {
-  if( !TestDestroy() )
-  {
-    m_LastFMPanel->m_SimTracksUpdateThreadMutex.Lock();
     if( !TestDestroy() )
     {
-      m_LastFMPanel->m_SimTracksUpdateThread = nullptr;
+        wxMutexLocker Lock(m_LastFMPanel->m_SimTracksUpdateThreadMutex);
+        if( !TestDestroy() )
+            m_LastFMPanel->m_SimTracksUpdateThread = nullptr;
     }
-    m_LastFMPanel->m_SimTracksUpdateThreadMutex.Unlock();
-  }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3818,8 +3762,10 @@ guFetchSimTracksInfoThread::ExitCode guFetchSimTracksInfoThread::Entry()
                     m_DownloadThreadsMutex.Lock();
                     if( !TestDestroy() )
                     {
-                        auto * LastFMTrackInfo = new guLastFMTrackInfo( index - m_Start, nullptr,
-                              new guSimilarTrackInfo( SimilarTracks[ index ] ) );
+                        auto * LastFMTrackInfo = new guLastFMTrackInfo(
+                                index - m_Start,
+                                nullptr,
+                                new guSimilarTrackInfo( SimilarTracks[ index ] ) );
                         if( LastFMTrackInfo )
                         {
                             LastFMTrackInfo->m_ImageUrl = SimilarTracks[ index ].m_ImageLink;
@@ -3834,9 +3780,7 @@ guFetchSimTracksInfoThread::ExitCode guFetchSimTracksInfoThread::Entry()
                                     &LastFMTrackInfo->m_Image,
                                     guDBCACHE_TYPE_IMAGE_SIZE_TINY );
                             if( !DownloadImageThread )
-                            {
                                 guLogError( wxT( "Could not create the track image download thread %u" ), index );
-                            }
                         }
                     }
                     m_DownloadThreadsMutex.Unlock();
@@ -3847,7 +3791,6 @@ guFetchSimTracksInfoThread::ExitCode guFetchSimTracksInfoThread::Entry()
             }
         }
         delete LastFM;
-        //
         WaitDownloadThreads();
     }
     return 0;

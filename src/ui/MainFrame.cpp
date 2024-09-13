@@ -2045,7 +2045,7 @@ void guMainFrame::OnCopyTracksTo( wxCommandEvent &event )
         return;
     }
 
-    m_CopyToThreadMutex.Lock();
+    wxMutexLocker Lock(m_CopyToThreadMutex);
 
     guConfig * Config = ( guConfig * ) guConfig::Get();
     wxArrayString CopyToOptions = Config->ReadAStr( CONFIG_KEY_COPYTO_OPTION, wxEmptyString, CONFIG_PATH_COPYTO );
@@ -2087,8 +2087,6 @@ void guMainFrame::OnCopyTracksTo( wxCommandEvent &event )
     }
     else
         delete Tracks;
-
-    m_CopyToThreadMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2107,7 +2105,8 @@ void guMainFrame::OnCopyTracksToDevice( wxCommandEvent &event )
                 if ( MediaViewer )
                 {
                     guLogMessage( wxT( "MediaViewer with collection id '%s' for CopyTracks found" ), m_Collections[ PortableIndex ].m_UniqueId.c_str() );
-                    m_CopyToThreadMutex.Lock();
+
+                    wxMutexLocker Lock(m_CopyToThreadMutex);
 
                     if ( !m_CopyToThread )
                     {
@@ -2116,7 +2115,6 @@ void guMainFrame::OnCopyTracksToDevice( wxCommandEvent &event )
                     }
 
                     m_CopyToThread->AddAction( Tracks, MediaViewer );
-                    m_CopyToThreadMutex.Unlock();
                     return;
                 }
             }
@@ -2151,7 +2149,7 @@ void guMainFrame::ImportFiles( guMediaViewer * mediaviewer, guTrackArray * track
 
     if ( CopyToPattern )
     {
-        m_CopyToThreadMutex.Lock();
+        wxMutexLocker Lock(m_CopyToThreadMutex);
 
         if ( !m_CopyToThread )
         {
@@ -2164,8 +2162,6 @@ void guMainFrame::ImportFiles( guMediaViewer * mediaviewer, guTrackArray * track
                     CopyToPattern->m_Format,
                     CopyToPattern->m_Quality,
                     CopyToPattern->m_MoveFiles );
-
-        m_CopyToThreadMutex.Unlock();
 
         delete CopyToPattern;
     }
@@ -2186,7 +2182,7 @@ void guMainFrame::OnCopyPlayListToDevice( wxCommandEvent &event )
             guMediaViewerPortableDevice * MediaViewer = ( guMediaViewerPortableDevice * ) m_MediaViewers[ PortableIndex ];
             if ( MediaViewer )
             {
-                m_CopyToThreadMutex.Lock();
+                wxMutexLocker Lock(m_CopyToThreadMutex);
 
                 if ( !m_CopyToThread )
                 {
@@ -2195,7 +2191,6 @@ void guMainFrame::OnCopyPlayListToDevice( wxCommandEvent &event )
                 }
 
                 m_CopyToThread->AddAction( PlayListPath, MediaViewer );
-                m_CopyToThreadMutex.Unlock();
             }
         }
         else
@@ -2708,31 +2703,33 @@ void guMainFrame::OnViewFileBrowser( wxCommandEvent &event )
 void guMainFrame::OnViewPortableDevice( wxCommandEvent &event )
 {
     int DeviceIndex = event.GetId() - ID_MENU_VIEW_PORTABLE_DEVICE;
+
     guGIO_Mount * Mount = m_VolumeMonitor->GetMount( DeviceIndex );
-    if ( Mount )
-    {
-        m_CollectionsMutex.Lock();
+    if ( !Mount )
+        return;
 
-        guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE );
-        if ( GetPortableMediaType( Mount->GetMountPath() ) == guPORTABLE_MEDIA_TYPE_IPOD )
-            MediaCollection->m_Type = guMEDIA_COLLECTION_TYPE_IPOD;
-        MediaCollection->m_Name = Mount->GetName();
-        MediaCollection->m_UniqueId = Mount->GetId();
-        MediaCollection->m_Paths.Add( Mount->GetMountPath() );
+    m_CollectionsMutex.Lock();
 
-        m_Collections.Add( MediaCollection );
+    guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE );
+    if ( GetPortableMediaType( Mount->GetMountPath() ) == guPORTABLE_MEDIA_TYPE_IPOD )
+        MediaCollection->m_Type = guMEDIA_COLLECTION_TYPE_IPOD;
+    MediaCollection->m_Name = Mount->GetName();
+    MediaCollection->m_UniqueId = Mount->GetId();
+    MediaCollection->m_Paths.Add( Mount->GetMountPath() );
 
-        m_CollectionsMutex.Unlock();
+    m_Collections.Add( MediaCollection );
+    int collectionsCount = m_Collections.Count();
 
-        guConfig * Config = ( guConfig * ) guConfig::Get();
-        Config->SaveCollections( &m_Collections );
+    m_CollectionsMutex.Unlock();
 
-        event.SetId( ID_COLLECTIONS_BASE + ( ( m_Collections.Count() - 1 ) * guCOLLECTION_ACTION_COUNT ) );
-        event.SetInt( 1 );
-        AddPendingEvent( event );
+    guConfig * Config = ( guConfig * ) guConfig::Get();
+    Config->SaveCollections( &m_Collections );
 
-        guLogMessage( wxT( "Sent Event to open collection" ) );
-    }
+    event.SetId( ID_COLLECTIONS_BASE + ( ( collectionsCount - 1 ) * guCOLLECTION_ACTION_COUNT ) );
+    event.SetInt( 1 );
+    AddPendingEvent( event );
+
+    guLogMessage( wxT( "Sent Event to open collection" ) );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -4267,9 +4264,8 @@ void guMainFrame::CopyToThreadFinished( void )
 {
     if ( m_CopyToThread )
     {
-        m_CopyToThreadMutex.Lock();
+        wxMutexLocker Lock(m_CopyToThreadMutex);
         m_CopyToThread = NULL;
-        m_CopyToThreadMutex.Unlock();
     }
 }
 

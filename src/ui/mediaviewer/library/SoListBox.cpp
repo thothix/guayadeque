@@ -363,7 +363,6 @@ void guSoListBox::ReloadItems( bool reset )
     m_ItemsLast = -1;
 
     GetItemsList();
-
     //SetItemCount( m_Items.Count() );
 
     m_ItemsMutex.Unlock();
@@ -381,19 +380,17 @@ int guSoListBox::GetSelectedSongs( guTrackArray * tracks, const bool isdrag ) co
 {
     unsigned long cookie;
     guSoListBox * self = wxConstCast( this, guSoListBox );
+
     self->m_ItemsMutex.Lock();
     int item = GetFirstSelected( cookie );
     while( item != wxNOT_FOUND )
     {
         guTrack * Track = new guTrack();
         if( m_Db->GetSong( GetItemId( item ), Track ) )
-        {
             tracks->Add( Track );
-        }
         else
-        {
             delete Track;
-        }
+
         item = GetNextSelected( cookie );
     }
     self->m_ItemsMutex.Unlock();
@@ -407,21 +404,17 @@ int guSoListBox::GetSelectedSongs( guTrackArray * tracks, const bool isdrag ) co
 // -------------------------------------------------------------------------------- //
 void guSoListBox::GetAllSongs( guTrackArray * tracks )
 {
-    m_ItemsMutex.Lock();
+    wxMutexLocker Lock(m_ItemsMutex);
+
     int count = GetItemCount();
     for( int index = 0; index < count; index++ )
     {
         guTrack * Track = new guTrack();
         if( m_Db->GetSong( GetItemId( index ), Track ) )
-        {
             tracks->Add( Track );
-        }
         else
-        {
             delete Track;
-        }
     }
-    m_ItemsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //

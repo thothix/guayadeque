@@ -53,7 +53,8 @@ bool guIsGStreamerExt( const wxString &ext )
 // -------------------------------------------------------------------------------- //
 bool guIsValidAudioFile( const wxString &filename )
 {
-    guSupportedFormatsMutex.Lock();
+    wxMutexLocker Lock(guSupportedFormatsMutex);
+
     if( !guSupportedFormats.Count() )
     {
         guSupportedFormats.Add( wxT( "mp3"  ) );
@@ -94,8 +95,6 @@ bool guIsValidAudioFile( const wxString &filename )
     if( (Position == wxNOT_FOUND) && guIsGStreamerExt( file_ext ) )
         Position = INT_MAX;
 
-    guSupportedFormatsMutex.Unlock();
-
     return ( Position != wxNOT_FOUND );
 }
 
@@ -103,9 +102,11 @@ bool guIsValidAudioFile( const wxString &filename )
 guTagInfo * guGetTagInfoHandler( const wxString &filename )
 {
     wxString file_ext = filename.Lower().AfterLast( wxT( '.' ) );
+
     guSupportedFormatsMutex.Lock();
     int FormatIndex = guSupportedFormats.Index( file_ext );
     guSupportedFormatsMutex.Unlock();
+
     switch( FormatIndex )
     {
         case  0 : return new guMp3TagInfo( filename );
@@ -148,7 +149,6 @@ guTagInfo * guGetTagInfoHandler( const wxString &filename )
 
     return nullptr;
 }
-
 
 // -------------------------------------------------------------------------------- //
 TagLib::ID3v2::PopularimeterFrame * GetPopM( TagLib::ID3v2::Tag * tag, const TagLib::String &email )

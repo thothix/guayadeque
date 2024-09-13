@@ -129,13 +129,11 @@ int guTVSoListBox::GetSelectedSongs( guTrackArray * tracks, const bool isdrag ) 
 // -------------------------------------------------------------------------------- //
 void guTVSoListBox::GetAllSongs( guTrackArray * tracks )
 {
-    m_ItemsMutex.Lock();
+    wxMutexLocker Lock(m_ItemsMutex);
+
     int count = m_Items.Count();
     for( int index = 0; index < count; index++ )
-    {
         tracks->Add( new guTrack( m_Items[ index ] ) );
-    }
-    m_ItemsMutex.Unlock();
 }
 
 // -------------------------------------------------------------------------------- //

@@ -186,7 +186,6 @@ char ** GUAYADEQUE_SUPPORTED_MIME_TYPES_WITH_GST = NULL;
 // -------------------------------------------------------------------------------- //
 const char ** guMPRIS2::GetSupportedMimeTypes( void )
 {
-
     if( GUAYADEQUE_SUPPORTED_MIME_TYPES_WITH_GST != NULL )
         return (const char**)GUAYADEQUE_SUPPORTED_MIME_TYPES_WITH_GST;
 
@@ -195,7 +194,7 @@ const char ** guMPRIS2::GetSupportedMimeTypes( void )
 
     static wxMutex mf_mutex;
 
-    mf_mutex.Lock();
+    wxMutexLocker Lock(mf_mutex);
 
     int gsmt_count = 0;
     while( GUAYADEQUE_SUPPORTED_MIME_TYPES[gsmt_count] != NULL )
@@ -203,10 +202,7 @@ const char ** guMPRIS2::GetSupportedMimeTypes( void )
 
     wxArrayString arr = guGstTypeFinder::getGTF().GetMediaTypes();
 
-    long unsigned int mime_ptr_size =
-      sizeof(char*) * arr.Count() +
-      sizeof(char*) * gsmt_count +
-      sizeof(char*);
+    long unsigned int mime_ptr_size = sizeof(char*) * arr.Count() + sizeof(char*) * gsmt_count + sizeof(char*);
 
     char ** all_media = (char **) malloc( mime_ptr_size );
 
@@ -223,10 +219,9 @@ const char ** guMPRIS2::GetSupportedMimeTypes( void )
     }
 
     all_media[arr.Count() + gsmt_count] = NULL;
-
     GUAYADEQUE_SUPPORTED_MIME_TYPES_WITH_GST = all_media;
-    mf_mutex.Unlock();
-    return (const char**)all_media;
+
+    return (const char**) all_media;
 }
 
 // -------------------------------------------------------------------------------- //

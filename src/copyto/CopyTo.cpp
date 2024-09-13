@@ -211,9 +211,7 @@ void guCopyToThread::AddAction( guTrackArray * tracks, guMediaViewer * mediaview
         m_CopyToActionsMutex.Unlock();
 
         if( !IsRunning() )
-        {
             Run();
-        }
     }
 }
 
@@ -229,9 +227,7 @@ void guCopyToThread::AddAction( guTrackArray * tracks, guMediaViewer * mediaview
         m_CopyToActionsMutex.Unlock();
 
         if( !IsRunning() )
-        {
             Run();
-        }
     }
 }
 
@@ -247,9 +243,7 @@ void guCopyToThread::AddAction( wxString * playlistpath, guMediaViewer * mediavi
         m_CopyToActionsMutex.Unlock();
 
         if( !IsRunning() )
-        {
             Run();
-        }
     }
 }
 

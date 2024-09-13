@@ -424,9 +424,8 @@ class guListViewDropTarget : public wxDropTarget
 
     void ClearPlayListFilesThread( void )
     {
-        m_DropFilesThreadMutex.Lock();
+        wxMutexLocker Lock(m_DropFilesThreadMutex);
         m_ListViewDropFilesThread = NULL;
-        m_DropFilesThreadMutex.Unlock();
     }
 
   public:

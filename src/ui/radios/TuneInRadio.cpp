@@ -106,9 +106,9 @@ int guTuneInRadioProvider::GetStations( guRadioStations * stations, const long m
         //AddStations( ItemData->GetUrl(), stations, minbitrate );
         CancellSearchStations();
 
-        m_ReadStationsThreadMutex.Lock();
+        wxMutexLocker Lock(m_ReadStationsThreadMutex);
+
         m_ReadStationsThread = new guTuneInReadStationsThread( this, m_RadioPanel, ItemData->GetUrl(), stations, minbitrate );
-        m_ReadStationsThreadMutex.Unlock();
     }
     return stations->Count();
 }
@@ -116,9 +116,9 @@ int guTuneInRadioProvider::GetStations( guRadioStations * stations, const long m
 // -------------------------------------------------------------------------------- //
 void guTuneInRadioProvider::CancellSearchStations( void )
 {
-    wxMutexLocker MutexLocker( m_ReadStationsThreadMutex );
     if( m_ReadStationsThread )
     {
+        wxMutexLocker MutexLocker( m_ReadStationsThreadMutex );
         m_ReadStationsThread->Pause();
         m_ReadStationsThread->Delete();
         m_ReadStationsThread = NULL;

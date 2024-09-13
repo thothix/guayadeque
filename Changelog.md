@@ -12,7 +12,7 @@ Guayadeque Music Player Changelog
   * Fixed to keep the selections when moving multi-selected tracks in the playlist
   * Fix the 'Confirm Exit' dialog size
 
-0.5.0 Beta 4 - 2024-09-11
+0.5.0 Beta 4 (2024-09-11)
 -------------------------
 
 ### Features
@@ -31,7 +31,7 @@ Guayadeque Music Player Changelog
   * Fixed inconsistency with the right click in the playlist. It doesn't unselect the current selection anymore.
     This turned impossible to apply any action in the selection through the context menu
 
-0.5.0 Beta 3 - 2024-09-07
+0.5.0 Beta 3 (2024-09-07)
 -------------------------
 
 ### Enhancements
@@ -42,8 +42,9 @@ Guayadeque Music Player Changelog
 ### Bugfixes
   * Fixed bug that crashed Guayadeque when clicking the cover panel to open the fullscreen cover window
 
-0.5.0 Beta 2 - 2024-09-05
+0.5.0 Beta 2 (2024-09-05)
 -------------------------
+###### Thanks to @NullPointerArchitect
 
 ### Enhancements
   * Added sqlite3-3.2 support
@@ -66,8 +67,9 @@ Guayadeque Music Player Changelog
 ### Bugfixes
   * Fixed bug that crashed Guayadeque when scanning aac files tags (aac files does not support tags)
 
-0.5.0 Beta 1 - 2023-11-23
+0.5.0 Beta 1 (2023-11-23)
 -------------------------
+###### Thanks to @openmonk
 
 ### Features
   * Added Best of playlist generator
@@ -80,7 +82,7 @@ Guayadeque Music Player Changelog
 ### Removed
   * Removed libindicate support
 
-0.4.7 - 2023-02-24
+0.4.7 (2023-02-24)
 ------------------
 
   * Added to CoverEditor the option to select a cover from a file and also to download it from an url
@@ -90,17 +92,17 @@ Guayadeque Music Player Changelog
   * UI changes
   * Bugfixes
 
-0.4.6 - 2019-06-05
+0.4.6 (2019-06-05)
 ------------------
 
   * Bugfixes
 
-0.4.5 - 2017-01-08
+0.4.5 (2017-01-08)
 ------------------
 
   * Added proxy support. Configure it from Preferences->Online
 
-0.4.3 - 2016-11-17
+0.4.3 (2016-11-17)
 ------------------
 
   * Added audio cd support
@@ -115,7 +117,7 @@ Guayadeque Music Player Changelog
   * Updated to gstreamer 1.0
   * Fixed some Config constructor calls
 
-0.3.7 - 2014-02-20
+0.3.7 (2014-02-20)
 ------------------
 
   * Removed Flac library dependency. Now flac images are read/writen using taglib
@@ -131,7 +133,7 @@ Guayadeque Music Player Changelog
   * Added Seeked mpris2 signal
   * Fixed amazon cover download engine
 
-0.3.5 - 2012-02-03
+0.3.5 (2012-02-03)
 ------------------
 
   * Allow to select tracks from album browser zoon cover mode
@@ -142,7 +144,7 @@ Guayadeque Music Player Changelog
     by any criteria.
   * Added collections support. You can define as many collections as you want.
 
-0.3.1 - 2011-05-13
+0.3.1 (2011-05-13)
 ------------------
 
   * Added {al1}, {au1}, {bl1} and {bu1} to lyrics panel patterns for
@@ -155,7 +157,7 @@ Guayadeque Music Player Changelog
   * Sound menu integration in Ubuntu 11.04 natty
   * Added shortcuts configurable from preferences
 
-0.2.9 - 2011-02-17
+0.2.9 (2011-02-17)
 ------------------
 
   * Added posibility to add more lyrics sources or edit existing ones
@@ -206,7 +208,7 @@ Guayadeque Music Player Changelog
   * Added Jamendo support
   * Added network buffer size option in Preferences under Online
 
-0.2.7 - 2010-08-26
+0.2.7 (2010-08-26)
 ------------------
 
   * Double clicking in audioscroble icon in status bar opens AudioScrobble preferences
@@ -266,7 +268,7 @@ Guayadeque Music Player Changelog
   * Updated the no cover image. Thanks mrmotinjo
   * Fix parsing podcasts that contains comments before the channel tag
 
-0.2.5 - 2010-03-12
+0.2.5 (2010-03-12)
 ------------------
 
   * Fix set volumen on loading when was muted
@@ -354,7 +356,7 @@ grateful and humbled.
   * When some preferences are modified the settings are propagated where its needed
   * Fixed bug in smart play mode
 
-0.2.3 - 2010-01-15
+0.2.3 (2010-01-15)
 ------------------
 
   * Added Random as a ordering method for dynamic playlists
@@ -406,7 +408,7 @@ grateful and humbled.
   * Fixed bug with cmake 2.8.0
   * Added posibility in progressbar to show counters instead of percent
 
-0.2.1 - 2009-11-27
+0.2.1 (2009-11-27)
 ------------------
 
   * Fixed bug with lengths of the podcasts in some cases
@@ -425,7 +427,7 @@ grateful and humbled.
   * Fixed bug creating the podcast default dir
   * Fixed bug deleting old podcasts
 
-0.2.0 - 2009-11-05
+0.2.0 (2009-11-05)
 ------------------
 
   * Fixed LyricWiki lyric search engine
@@ -452,7 +454,7 @@ grateful and humbled.
   * Added LeoLyrics lyric search http://leoslyrics.com/
   * Fixed bug in radio stations list box ordering
 
-0.1.5 - 2009-08-04
+0.1.5 (2009-08-04)
 ------------------
 
   * Lyrics panel allow to enter any track name for manual lyrics search
@@ -475,7 +477,7 @@ grateful and humbled.
   * Fixed crash when using 'Edit labes' in artists or songs with no artist
     or no songs selected
 
-0.1.1 - 2009-06-25
+0.1.1 (2009-06-25)
 ------------------
 
   * Play/Enqueue in RadioStations was not implemented. Fixed now.
@@ -503,7 +505,7 @@ grateful and humbled.
   * Create ~/.guayadeque/LinkIcons dir if doesnt exists to store the
     Links Icons
 
-0.1.0 - 2009-06-09
+0.1.0 (2009-06-09)
 ------------------
 
   * Now if Next Track is clicked at the last track in playlist and Play Random 
@@ -546,14 +548,14 @@ grateful and humbled.
     not all program will read ID3 v2.4 tags. For example if you use easytag
     you should use the v2.1.1 or later
 
-0.0.3 Beta - 2009-05-12
+0.0.3 Beta (2009-05-12)
 -----------------------
 
   * Added Labels in Radio panel. This change needed a database schema change
     so if you had an older version you need to remove  ~/.guayadeque/guayadeque.db
   * Fixed some minor bugs
 
-0.0.2 Beta - 2009-04-06
+0.0.2 Beta (2009-04-06)
 -----------------------
 
   * Fixed manual cover downloader
