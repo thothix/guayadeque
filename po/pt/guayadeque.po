@@ -2503,9 +2503,9 @@ msgstr "Reproduzir ou pausar a faixa atual"
 msgid "Go to the playlist next track"
 msgstr "Ir para a faixa seguinte"
 
-#: PlayerPanel.cpp:192
-msgid "Stop playing"
-msgstr "Parar reprodução"
+#: ui/player/PlayerPanel.cpp:190
+msgid "Stops the current track"
+msgstr "Parar a reprodução"
 
 #: PlayerPanel.cpp:196
 msgid "Record to file"
@@ -2515,9 +2515,9 @@ msgstr "Gravar para ficheiro"
 msgid "Volume"
 msgstr "Volume"
 
-#: PlayerPanel.cpp:210
-msgid "Show the equalizer"
-msgstr "Mostrar equalizador"
+#: ui/player/PlayerPanel.cpp:222
+msgid "Show the equalizer (right click for on/off)"
+msgstr "Mostrar equalizador (botão direito para ligar/desligar)"
 
 #: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
 msgid "Smart Play: "
@@ -2577,6 +2577,14 @@ msgstr "Mostrar taxa de dados da faixa atual"
 #: PlayerPanel.cpp:1365
 msgid "Buffering..."
 msgstr "A processar..."
+
+#: ui/player/PlayerPanel.cpp:2668
+msgid "Smart mode enabled"
+msgstr "Modo inteligente habilitado"
+
+#: ui/player/PlayerPanel.cpp:2686
+msgid "Smart mode disabled"
+msgstr "Modo inteligente desabilitado"
 
 #: PlayerPanel.cpp:2227
 msgid "Repeat Mode: "
