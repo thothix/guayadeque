@@ -513,8 +513,10 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
 
     // Move the Selected Items to the DragOverItem and DragOverFirst
     int     InsertPos;
+    int     cur_selected;
     bool    CurItemSet = false;
     guTrackArray MoveItems;
+    wxArrayInt   target_items;
 
     // How Many elements to move
     wxArrayInt Selection = GetSelectedItems(false);
@@ -532,7 +534,19 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
     else if (target == guLISTVIEW_NAVIGATION_PREVIOUS)
         m_DragOverItem = Selection[0] - 1;
     else if (target == guLISTVIEW_NAVIGATION_NEXT)
-        m_DragOverItem = Selection[0] + 1;
+    {
+        cur_selected = Selection[0];
+        if (selectionCount > 1)
+        {
+            for (int Index = 1; Index < selectionCount; Index++)
+            {
+                if (Selection[Index] != cur_selected + 1)
+                    break;
+                cur_selected = Selection[Index];
+            }
+        }
+        m_DragOverItem = cur_selected + 1;
+    }
     else if (target == guLISTVIEW_NAVIGATION_BOTTOM)
         m_DragOverItem = lastItem;
     else
@@ -569,6 +583,7 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
     for ( int Index = 0; Index < selectionCount; Index++ )
     {
         m_Items.Insert( MoveItems[ Index ], InsertPos );
+        target_items.Add(InsertPos);
         if ( !CurItemSet && ( InsertPos <= m_CurItem ) )
             m_CurItem++;
         InsertPos++;
@@ -576,7 +591,7 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
 
     // PrintItems( m_Items, InsertPos, Selection[ 0 ], m_CurItem );
     ClearSelectedItems();
-    SetSelection(m_DragOverItem);
+    SetSelectedItems(target_items);
     UpdatePlaylistToolbar();
 
     m_DragOverItem = wxNOT_FOUND;
