@@ -318,19 +318,14 @@ void guNewPodcastChannelSelector::LoadPodcastDirectory( void )
         }
     }
     else
-    {
         guLogWarning( wxT( "Could not download the Podcast Directory xml file" ) );
-    }
 
     if( m_Filters.Count() )
-    {
         m_DirectoryTreeCtrl->ExpandAll();
-    }
     else
-    {
         m_DirectoryTreeCtrl->ExpandRoot();
-    }
-    wxSetCursor( * wxSTANDARD_CURSOR );
+
+    wxSetCursor( wxNullCursor );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -338,13 +333,9 @@ void guNewPodcastChannelSelector::OnDirectoryItemChanged( wxTreeEvent &event )
 {
     guNewPodcastItem * ItemData = ( guNewPodcastItem * ) m_DirectoryTreeCtrl->GetItemData( event.GetItem() );
     if( ItemData )
-    {
         m_UrlTextCtrl->SetValue( ItemData->m_Url );
-    }
     else
-    {
         m_UrlTextCtrl->SetValue( wxEmptyString );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -357,9 +348,7 @@ void guNewPodcastChannelSelector::OnDirectoryItemSelected( wxTreeEvent &event )
         EndModal( wxID_OK );
     }
     else
-    {
         event.Skip();
-    }
 }
 
 // -------------------------------------------------------------------------------- //

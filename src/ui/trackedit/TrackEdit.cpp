@@ -1435,24 +1435,19 @@ void guTrackEditor::OnMBrainzAddButtonClicked( wxCommandEvent &event )
         !m_MBQueryTitleTextCtrl->IsEmpty() )
     {
         wxSetCursor( * wxHOURGLASS_CURSOR );
-
         guMusicBrainz * MusicBrainz = new guMusicBrainz();
 
         m_MBAddButton->Enable( false );
-
         if( !m_MBAlbums )
-        {
             m_MBAlbums = new guMBReleaseArray();
-        }
 
         MusicBrainz->GetRecordReleases( m_MBQueryArtistTextCtrl->GetValue(), m_MBQueryTitleTextCtrl->GetValue(), m_MBAlbums );
 
         ReloadMBAlbums();
 
         delete MusicBrainz;
-
         m_MBAddButton->Enable( true );
-        wxSetCursor( * wxSTANDARD_CURSOR );
+        wxSetCursor( wxNullCursor );
     }
     else if( m_MBCurTrack < ( int ) m_Items->Count() )
     {
@@ -1466,9 +1461,7 @@ void guTrackEditor::OnMBrainzAddButtonClicked( wxCommandEvent &event )
             m_MBAddButton->Enable( false );
 
             if( !m_AcousticId )
-            {
                 m_AcousticId = new guAcousticId( this );
-            }
 
             m_MBRecordingId.Clear();
 
@@ -1476,9 +1469,8 @@ void guTrackEditor::OnMBrainzAddButtonClicked( wxCommandEvent &event )
             // It will return on OnAcousticIdMBIdFound or OnAcousticIdError()
         }
         else
-        {
             guLogError( wxT( "Could not find the track '%s'" ), CurTrack.m_FileName.c_str() );
-        }
+
         m_MBCurTrack++;
     }
 }
@@ -1517,34 +1509,26 @@ void guTrackEditor::OnAcousticIdMBIdFound( const wxString &mbid )
     if( MusicBrainz )
     {
         if( !m_MBAlbums )
-        {
             m_MBAlbums = new guMBReleaseArray();
-        }
 
         if( m_MBAlbums )
         {
             m_MBAlbumChoice->Clear();
-
             MusicBrainz->GetRecordReleases( mbid, m_MBAlbums );
-
             ReloadMBAlbums();
         }
         else
-        {
             guLogMessage( wxT( "Could not create the releases musibrainz object." ) );
-        }
 
         delete MusicBrainz;
     }
     else
-    {
         guLogMessage( wxT( "Could not create the MusicBrainz object." ) );
-    }
 
     m_MBAddButton->SetBitmapLabel( guBitmap( guIMAGE_INDEX_tiny_search_again ) );
     m_MBAddButton->Enable( true );
 
-    wxSetCursor( *wxSTANDARD_CURSOR );
+    wxSetCursor( wxNullCursor );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1553,7 +1537,7 @@ void guTrackEditor::OnAcousticIdError( const int status )
     guLogMessage( wxT( "AcousticIdError: %i" ), status );
 
     m_MBAddButton->Enable( true );
-    wxSetCursor( *wxSTANDARD_CURSOR );
+    wxSetCursor( wxNullCursor );
 }
 
 
@@ -1674,13 +1658,13 @@ void guTrackEditor::MBCheckCountAndLengths( void )
 void guTrackEditor::OnMBrainzAlbumChoiceSelected( wxCommandEvent &event )
 {
     m_MBCurAlbum = event.GetInt();
+
     guLogMessage( wxT( "MusicBrainzAlbumSelected... %i" ), m_MBCurAlbum );
     if( m_MBCurAlbum >= 0 )
     {
-        wxSetCursor( * wxHOURGLASS_CURSOR );
-
         if( m_MBAlbums && m_MBAlbums->Count() )
         {
+            wxSetCursor( * wxHOURGLASS_CURSOR );
             guMBRelease &MBRelease = m_MBAlbums->Item( m_MBCurAlbum );
 
             if( !MBRelease.m_Recordings.Count() )
@@ -1689,13 +1673,10 @@ void guTrackEditor::OnMBrainzAlbumChoiceSelected( wxCommandEvent &event )
                 if( MusicBrainz )
                 {
                     MusicBrainz->GetRecordings( MBRelease );
-
                     delete MusicBrainz;
                 }
                 else
-                {
                     guLogMessage( wxT( "Could not create the MusicBrainz object." ) );
-                }
             }
 
             m_MBArtistTextCtrl->SetValue( MBRelease.m_ArtistName );
@@ -1706,14 +1687,11 @@ void guTrackEditor::OnMBrainzAlbumChoiceSelected( wxCommandEvent &event )
             m_MBAlbumTextCtrl->SetValue( MBRelease.m_Title );
 
             MBCheckCountAndLengths();
+            wxSetCursor( wxNullCursor );
         }
-
-        wxSetCursor( * wxSTANDARD_CURSOR );
     }
     else
-    {
         m_MBCopyButton->Enable( false );
-    }
 }
 
 // -------------------------------------------------------------------------------- //

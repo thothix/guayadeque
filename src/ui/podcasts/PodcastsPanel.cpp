@@ -1194,14 +1194,12 @@ void guPodcastPanel::AddChannel( wxCommandEvent &event )
         {
             // If we find an itunes link we replace the itpc to the standard http
             if( PodcastUrl.StartsWith( wxT( "itpc://" ) ) )
-            {
                 PodcastUrl.Replace( wxT( "itpc://" ), wxT( "http://" ) );
-            }
 
             guPodcastChannel PodcastChannel( PodcastUrl );
 
-            wxSetCursor( * wxSTANDARD_CURSOR );
-                    //
+            wxSetCursor( wxNullCursor );
+
             guChannelEditor * ChannelEditor = new guChannelEditor( this, &PodcastChannel );
             if( ChannelEditor->ShowModal() == wxID_OK )
             {
@@ -1222,7 +1220,6 @@ void guPodcastPanel::AddChannel( wxCommandEvent &event )
 
                 PodcastChannel.CheckLogo();
 
-                //
                 //guLogMessage( wxT( "The Channel have DownloadType : %u" ), PodcastChannel.m_DownloadType );
                 m_Db->SavePodcastChannel( &PodcastChannel );
 
@@ -1234,7 +1231,7 @@ void guPodcastPanel::AddChannel( wxCommandEvent &event )
             }
             ChannelEditor->Destroy();
         }
-        wxSetCursor( * wxSTANDARD_CURSOR );
+        wxSetCursor( wxNullCursor );
     }
     NewPodcastChannel->Destroy();
 }
@@ -1252,11 +1249,9 @@ void guPodcastPanel::DeleteChannels( wxCommandEvent &event )
         {
             wxSetCursor( * wxHOURGLASS_CURSOR );
             for( int Index = 0; Index < Count; Index++ )
-            {
                 m_Db->DelPodcastChannel( SelectedItems[ Index ] );
-            }
             m_ChannelsListBox->ReloadItems();
-            wxSetCursor( * wxSTANDARD_CURSOR );
+            wxSetCursor( wxNullCursor );
         }
     }
 }
@@ -1281,14 +1276,11 @@ void guPodcastPanel::ChannelProperties( wxCommandEvent &event )
         if( ChannelDir.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
         {
             if( !wxDirExists( ChannelDir.GetFullPath() ) )
-            {
                 wxMkdir( ChannelDir.GetFullPath(), 0770 );
-            }
         }
 
         PodcastChannel.CheckLogo();
 
-        //
         //guLogMessage( wxT( "The Channel have DownloadType : %u" ), PodcastChannel.m_DownloadType );
 
         m_Db->SavePodcastChannel( &PodcastChannel );
@@ -1299,7 +1291,7 @@ void guPodcastPanel::ChannelProperties( wxCommandEvent &event )
 
         m_ChannelsListBox->ReloadItems();
 
-        wxSetCursor( * wxSTANDARD_CURSOR );
+        wxSetCursor( wxNullCursor );
     }
     ChannelEditor->Destroy();
 }
@@ -1363,11 +1355,9 @@ void guPodcastPanel::UpdateChannels( wxCommandEvent &event )
         for( int Index = 0; Index < Count; Index++ )
         {
             if( m_Db->GetPodcastChannelId( Selected[ Index ], &PodcastChannel ) != wxNOT_FOUND )
-            {
                 ProcessChannel( &PodcastChannel );
-            }
         }
-        wxSetCursor( * wxSTANDARD_CURSOR );
+        wxSetCursor( wxNullCursor );
     }
 }
 
@@ -1395,7 +1385,7 @@ void guPodcastPanel::ProcessChannel( guPodcastChannel * channel )
     m_ChannelsListBox->ReloadItems( false );
     m_PodcastsListBox->ReloadItems( false );
 
-    wxSetCursor( * wxSTANDARD_CURSOR );
+    wxSetCursor( wxNullCursor );
 }
 
 // -------------------------------------------------------------------------------- //

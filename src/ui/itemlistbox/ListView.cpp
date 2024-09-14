@@ -1265,10 +1265,10 @@ void guListViewHeader::OnMouse( wxMouseEvent &event )
     mx = event.GetX() + ScrollPos;
 
     int my = event.GetY();
-
     int col_border = 0;
     int col_start = 0;
     int count = m_Columns->Count();
+
     for( int index = 0; index < count; index++ )
     {
         if( ( * m_Columns )[ index ].m_Enabled )
@@ -1291,7 +1291,6 @@ void guListViewHeader::OnMouse( wxMouseEvent &event )
 
 //    guLogMessage( wxT( "cn:%i  cs:%i  cb:%i  id:%i  mx:%i  my:%i" ), col_num, col_start, col_border, m_IsDragging, mx, my );
 
-    //
     if( m_IsDragging >= 0 )
     {
         if( event.LeftUp() )
@@ -1338,7 +1337,7 @@ void guListViewHeader::OnMouse( wxMouseEvent &event )
         if( hit_border >= 0 )
             SetCursor( * m_ResizeCursor );
         else
-            SetCursor( * wxSTANDARD_CURSOR );
+            SetCursor( wxNullCursor );
     }
 }
 

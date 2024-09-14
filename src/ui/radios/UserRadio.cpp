@@ -45,9 +45,7 @@ guUserRadioProvider::guUserRadioProvider( guRadioPanel * radiopanel, guDbRadios 
 }
 
 // -------------------------------------------------------------------------------- //
-guUserRadioProvider::~guUserRadioProvider()
-{
-}
+guUserRadioProvider::~guUserRadioProvider() {}
 
 // -------------------------------------------------------------------------------- //
 bool guUserRadioProvider::OnContextMenu( wxMenu * menu, const wxTreeItemId &itemid, const bool forstations, const int selcount )
@@ -159,7 +157,6 @@ void guUserRadioProvider::OnRadioEdit( wxCommandEvent &event )
             RadioStation.m_Name = RadioEditor->GetName();
             RadioStation.m_Link = RadioEditor->GetLink();
             m_Db->SetRadioStation( &RadioStation );
-            //
             m_RadioPanel->ReloadStations();
         }
         RadioEditor->Destroy();
@@ -181,13 +178,10 @@ void ReadXmlRadioStation( wxXmlNode * node, guRadioStation * station )
     while( node )
     {
         if( node->GetName() == wxT( "Name" ) )
-        {
             station->m_Name = node->GetNodeContent();
-        }
         else if( node->GetName() == wxT( "Url" ) )
-        {
             station->m_Link = node->GetNodeContent();
-        }
+
         node = node->GetNext();
     }
 }

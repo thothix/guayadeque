@@ -86,8 +86,6 @@ class guRadioStationListBox : public guListView
 };
 
 
-
-
 // -------------------------------------------------------------------------------- //
 // guRadioGenreTreeCtrl
 // -------------------------------------------------------------------------------- //
@@ -126,9 +124,7 @@ void guRadioGenreTreeCtrl::OnConfigUpdated( wxCommandEvent &event )
 {
     int Flags = event.GetInt();
     if( Flags & guPREFERENCE_PAGE_FLAG_ACCELERATORS )
-    {
         CreateAcceleratorTable();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -143,9 +139,7 @@ void guRadioGenreTreeCtrl::CreateAcceleratorTable( void )
     RealAccelCmds.Add( ID_RADIO_SEARCH );
 
     if( guAccelDoAcceleratorTable( AliasAccelCmds, RealAccelCmds, AccelTable ) )
-    {
         SetAcceleratorTable( AccelTable );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -216,9 +210,6 @@ void guRadioGenreTreeCtrl::OnKeyDown( wxKeyEvent &event )
 }
 
 
-
-
-
 // -------------------------------------------------------------------------------- //
 // guRadioStationListBox
 // -------------------------------------------------------------------------------- //
@@ -234,6 +225,7 @@ guRadioStationListBox::guRadioStationListBox( wxWindow * parent, guRadioPanel * 
     m_StationsOrderDesc = m_RadioPanel->GetStationsOrderDesc();
 
     wxArrayString ColumnNames = GetColumnNames();
+
     // Create the Columns
     int count = ColumnNames.Count();
     for( int index = 0; index < count; index++ )
@@ -311,9 +303,7 @@ void guRadioStationListBox::CreateAcceleratorTable( void )
     RealAccelCmds.Add( ID_RADIO_SEARCH );
 
     if( guAccelDoAcceleratorTable( AliasAccelCmds, RealAccelCmds, AccelTable ) )
-    {
         SetAcceleratorTable( AccelTable );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -370,7 +360,6 @@ void guRadioStationListBox::GetItemsList( void )
 // -------------------------------------------------------------------------------- //
 void guRadioStationListBox::ReloadItems( bool reset )
 {
-    //
     wxArrayInt Selection;
     int FirstVisible = GetVisibleRowsBegin();
 
@@ -509,9 +498,8 @@ bool guRadioStationListBox::GetSelected( guRadioStation * radiostation ) const
 
     int Selected = GetSelection();
     if( Selected == wxNOT_FOUND )
-    {
         Selected = 0;
-    }
+
     radiostation->m_Id          = m_Radios[ Selected ].m_Id;
     radiostation->m_SCId        = m_Radios[ Selected ].m_SCId;
     radiostation->m_BitRate     = m_Radios[ Selected ].m_BitRate;
@@ -523,8 +511,6 @@ bool guRadioStationListBox::GetSelected( guRadioStation * radiostation ) const
     radiostation->m_Type        = m_Radios[ Selected ].m_Type;
     return true;
 }
-
-
 
 
 // -------------------------------------------------------------------------------- //
@@ -553,7 +539,6 @@ guRadioPanel::guRadioPanel( wxWindow * parent, guDbLibrary * db, guPlayerPanel *
     m_VisiblePanels = Config->ReadNum( CONFIG_KEY_RADIOS_VISIBLE_PANELS, guPANEL_RADIO_VISIBLE_DEFAULT, CONFIG_PATH_RADIOS );
     m_InstantSearchEnabled = Config->ReadBool( CONFIG_KEY_GENERAL_INSTANT_TEXT_SEARCH, true, CONFIG_PATH_GENERAL );
     m_EnterSelectSearchEnabled = !Config->ReadBool( CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER, false, CONFIG_PATH_GENERAL );
-
 
 	wxBoxSizer * SearchSizer = new wxBoxSizer( wxHORIZONTAL );
     wxPanel * SearchPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
@@ -602,8 +587,6 @@ guRadioPanel::guRadioPanel( wxWindow * parent, guDbLibrary * db, guPlayerPanel *
             MinSize( 50, 50 ).
             CenterPane() );
 
-
-
     wxString RadioLayout = Config->ReadStr( CONFIG_KEY_RADIOS_LAST_LAYOUT, wxEmptyString, CONFIG_PATH_RADIOS );
     if( Config->GetIgnoreLayouts() || RadioLayout.IsEmpty() )
     {
@@ -647,7 +630,6 @@ guRadioPanel::guRadioPanel( wxWindow * parent, guDbLibrary * db, guPlayerPanel *
 
     Bind( wxEVT_MENU, &guRadioPanel::OnRadioStationsAddToUser, this, ID_RADIO_ADD_TO_USER );
 
-
     // Create shoutcast radio provider
     RegisterRadioProvider( new guShoutcastRadioProvider( this, m_Db ) );
     // Create tunein radio provider
@@ -674,7 +656,6 @@ guRadioPanel::~guRadioPanel()
         m_RadioPlayListLoadThread->Delete();
     }
     m_RadioPlayListLoadThreadMutex.Unlock();
-
 
     if( m_RadioProviders )
     {
@@ -806,9 +787,7 @@ int guRadioPanel::GetProviderStations( guRadioStations * stations )
     {
         guRadioProvider * RadioProvider = GetProvider( SelectedItemId );
         if( RadioProvider )
-        {
             return RadioProvider->GetStations( stations, m_MinBitRate );
-        }
     }
     return 0;
 }
@@ -821,9 +800,7 @@ bool guRadioPanel::OnContextMenu( wxMenu * menu, const bool forstations, const i
     {
         guRadioProvider * RadioProvider = GetProvider( SelectedItemId );
         if( RadioProvider )
-        {
             return RadioProvider->OnContextMenu( menu, SelectedItemId, forstations, selcount );
-        }
     }
     return false;
 }
@@ -968,7 +945,7 @@ void guRadioPanel::StartLoadingStations( void )
 // -------------------------------------------------------------------------------- //
 void guRadioPanel::EndLoadingStations( void )
 {
-    wxSetCursor( * wxSTANDARD_CURSOR );
+    wxSetCursor( wxNullCursor );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1155,9 +1132,7 @@ void guRadioPanel::GetRadioCounter( wxLongLong * count )
 void guRadioPanel::OnGoToSearch( wxCommandEvent &event )
 {
     if( !( m_VisiblePanels & guPANEL_RADIO_TEXTSEARCH ) )
-    {
         ShowPanel( guPANEL_RADIO_TEXTSEARCH, true );
-    }
 
     if( FindFocus() != m_InputTextCtrl )
         m_InputTextCtrl->SetFocus();
@@ -1174,7 +1149,6 @@ bool guRadioPanel::SetListViewColumnData( const int id, const int index, const i
 {
     return m_StationsListBox->SetColumnData( id, index, width, enabled, refresh );
 }
-
 
 
 // -------------------------------------------------------------------------------- //
@@ -1273,6 +1247,7 @@ void guShoutcastSearch::OnOkButton( wxCommandEvent &event )
     event.Skip();
 }
 
+
 // -------------------------------------------------------------------------------- //
 // guRadioPlayListLoadThread
 // -------------------------------------------------------------------------------- //
@@ -1297,9 +1272,7 @@ guRadioPlayListLoadThread::guRadioPlayListLoadThread( guRadioPanel * radiopanel,
 guRadioPlayListLoadThread::~guRadioPlayListLoadThread()
 {
     if( !TestDestroy() )
-    {
         m_RadioPanel->EndStationPlayListLoaded();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
