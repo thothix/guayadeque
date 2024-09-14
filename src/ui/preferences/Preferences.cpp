@@ -600,29 +600,29 @@ void guPrefDialog::BuildLibraryPage( void )
     m_PathSelected = wxNOT_FOUND;
     m_CoverSelected = wxNOT_FOUND;
 
-	wxBoxSizer * LibMainFrame = new wxBoxSizer( wxVERTICAL );
-
-	m_LibSplitter = new wxSplitterWindow( m_LibPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxSP_3D );
-	m_LibSplitter->SetMinimumPaneSize( 100 );
-
-	//wxPanel * LibCollectPanel = new wxPanel( m_LibSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	wxScrolledWindow * LibCollectPanel = new wxScrolledWindow( m_LibSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	wxBoxSizer * LibCollectMainSizer = new wxBoxSizer( wxVERTICAL );
-
-	wxStaticBoxSizer * LibCollectSizer = new wxStaticBoxSizer( new wxStaticBox( LibCollectPanel, wxID_ANY, _( " Collections " ) ), wxHORIZONTAL );
-
     m_Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_NORMAL );
     m_Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE );
     m_Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_IPOD );
 
+    wxBoxSizer * LibMainFrame = new wxBoxSizer( wxVERTICAL );
+
+    // Collections panel
+    wxBoxSizer * LibCollectMainSizer = new wxBoxSizer( wxVERTICAL );
+
+    m_LibSplitter = new wxSplitterWindow( m_LibPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxSP_3D );
+    m_LibSplitter->SetMinimumPaneSize( 190 );
+    //wxPanel * LibCollectPanel = new wxPanel( m_LibSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+    wxScrolledWindow * LibCollectPanel = new wxScrolledWindow( m_LibSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	wxStaticBoxSizer * LibCollectSizer = new wxStaticBoxSizer( new wxStaticBox( LibCollectPanel, wxID_ANY, _( " Collections " ) ), wxHORIZONTAL );
+
+    // Collections list
 	m_LibCollectListBox = new wxListBox( LibCollectPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_HSCROLL|wxLB_SINGLE );
 	int Count = m_Collections.Count();
 	for( int Index = 0; Index < Count; Index++ )
-	{
         m_LibCollectListBox->Append( m_Collections[ Index ].m_Name );
-	}
 	LibCollectSizer->Add( m_LibCollectListBox, 1, wxALL|wxEXPAND, 5 );
 
+    // Side buttons
 	wxBoxSizer * LibCollectBtnSizer = new wxBoxSizer( wxVERTICAL );
 
 	m_LibCollectAddBtn = new wxBitmapButton( LibCollectPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_add ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
@@ -642,6 +642,7 @@ void guPrefDialog::BuildLibraryPage( void )
 
 	LibCollectSizer->Add( LibCollectBtnSizer, 0, wxEXPAND, 5 );
 
+    // LibCollectMainSize
 	LibCollectMainSizer->Add( LibCollectSizer, 1, wxEXPAND|wxTOP|wxBOTTOM|wxLEFT, 5 );
 
 	LibCollectPanel->SetSizer( LibCollectMainSizer );
@@ -650,18 +651,19 @@ void guPrefDialog::BuildLibraryPage( void )
 
     LibCollectPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
-
+    // Main Right (path, covers, options
 	m_LibOptPanel = new wxScrolledWindow( m_LibSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxBoxSizer * LibOptMainSizer = new wxBoxSizer( wxVERTICAL );
 
 	m_LibOptSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, wxEmptyString ), wxVERTICAL );
 
+    // Path
 	m_LibOptPathSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, _(" Paths ") ), wxHORIZONTAL );
-
 	m_LibPathListBox = new wxListBox( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_MULTIPLE );
 	m_LibPathListBox->Enable( false );
 	m_LibOptPathSizer->Add( m_LibPathListBox, 1, wxEXPAND|wxALL, 5 );
 
+    // Path buttons
 	wxBoxSizer * LibOptPathBtnSizer = new wxBoxSizer( wxVERTICAL );
 
 	m_LibOptAddPathBtn = new wxBitmapButton( m_LibOptPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_add ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
@@ -673,15 +675,16 @@ void guPrefDialog::BuildLibraryPage( void )
 	LibOptPathBtnSizer->Add( m_LibOptDelPathBtn, 0, wxBOTTOM, 5 );
 
 	m_LibOptPathSizer->Add( LibOptPathBtnSizer, 0, wxEXPAND, 5 );
-
 	m_LibOptSizer->Add( m_LibOptPathSizer, 1, wxEXPAND|wxTOP|wxBOTTOM, 5 );
 
+    // Covers
 	wxStaticBoxSizer* LibOptCoversSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, _(" Words to detect covers ") ), wxHORIZONTAL );
 
 	m_LibCoverListBox = new wxListBox( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_SINGLE );
 	m_LibCoverListBox->Enable( false );
 	LibOptCoversSizer->Add( m_LibCoverListBox, 1, wxEXPAND|wxALL, 5 );
 
+    // Covers buttons
 	wxBoxSizer * LibOptCoverBtnSizer = new wxBoxSizer( wxVERTICAL );
 
 	m_LibOptAddCoverBtn = new wxBitmapButton( m_LibOptPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_add ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
@@ -701,9 +704,9 @@ void guPrefDialog::BuildLibraryPage( void )
 	LibOptCoverBtnSizer->Add( m_LibOptDelCoverBtn, 0, wxBOTTOM, 5 );
 
 	LibOptCoversSizer->Add( LibOptCoverBtnSizer, 0, wxEXPAND, 5 );
-
 	m_LibOptSizer->Add( LibOptCoversSizer, 1, wxEXPAND, 5 );
 
+    // Options
 	m_LibOptionsSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, _( " Options " ) ), wxVERTICAL );
 
 	m_LibOptAutoUpdateChkBox = new wxCheckBox( m_LibOptPanel, wxID_ANY, _( "Update when opened " ), wxDefaultPosition, wxDefaultSize, 0 );
@@ -739,18 +742,17 @@ void guPrefDialog::BuildLibraryPage( void )
     wxArrayString CopyToOptions = m_Config->ReadAStr( CONFIG_KEY_COPYTO_OPTION, wxEmptyString, CONFIG_PATH_COPYTO );
 	Count = CopyToOptions.Count();
 	for( int Index = 0; Index < Count; Index++ )
-	{
 	    CopyToChoices.Add( CopyToOptions[ Index ].BeforeFirst( wxT( ':' ) ) );
-	}
+
 	m_LibOptCopyToChoice = new wxChoice( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, CopyToChoices, 0 );
 	m_LibOptCopyToChoice->SetSelection( 0 );
 	m_LibOptCopyToChoice->Enable( false );
 	LibOptCopyToSizer->Add( m_LibOptCopyToChoice, 1, wxEXPAND, 5 );
 
 	m_LibOptionsSizer->Add( LibOptCopyToSizer, 0, wxEXPAND, 5 );
-
 	m_LibOptSizer->Add( m_LibOptionsSizer, 0, wxEXPAND|wxTOP|wxRIGHT|wxLEFT, 5 );
 
+    // Main - Options
 	LibOptMainSizer->Add( m_LibOptSizer, 1, wxEXPAND|wxTOP|wxBOTTOM|wxRIGHT, 5 );
 
 	m_LibOptPanel->SetSizer( LibOptMainSizer );
@@ -759,14 +761,15 @@ void guPrefDialog::BuildLibraryPage( void )
 
     m_LibOptPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
-	m_LibSplitter->SplitVertically( LibCollectPanel, m_LibOptPanel, 170 );
+    //
+	m_LibSplitter->SplitVertically( LibCollectPanel, m_LibOptPanel, 190 );
 	LibMainFrame->Add( m_LibSplitter, 1, wxEXPAND, 5 );
 
 	m_LibPanel->SetSizer( LibMainFrame );
 	m_LibPanel->Layout();
 	LibMainFrame->FitInside( m_LibPanel );
 
-    //
+    // Binds
 	m_LibSplitter->Bind( wxEVT_IDLE, &guPrefDialog::LibSplitterOnIdle, this );
     m_LibCollectListBox->Bind( wxEVT_LISTBOX, &guPrefDialog::OnLibCollectSelected, this );
     m_LibCollectListBox->Bind( wxEVT_LISTBOX_DCLICK, &guPrefDialog::OnLibCollectDClicked, this );

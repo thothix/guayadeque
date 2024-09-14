@@ -93,7 +93,7 @@ guPlayerPlayList::guPlayerPlayList(wxWindow * parent, guDbLibrary * db, wxAuiMan
     BarSizer->Add(m_ClearPlaylistButton, 0, wxALIGN_LEFT | wxLEFT, 0);
 
     // Update layout
-    MainSizer->Add(BarSizer, 0, wxEXPAND| wxLEFT, 2);
+    MainSizer->Add(BarSizer, 0, wxEXPAND| wxLEFT, 0);
     MainSizer->Add(m_PlayListCtrl, 1, wxEXPAND, 5);
 
     SetSizer(MainSizer);
