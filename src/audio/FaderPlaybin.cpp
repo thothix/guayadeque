@@ -517,11 +517,10 @@ guFaderPlaybin::~guFaderPlaybin()
     m_SharedPointer.reset();
     if( m_RecordBin != NULL )
         guGstPipelineActuator( m_RecordBin ).Disable();
+
     //m_Player->RemovePlayBin( this );
     if( m_SeekTimerId )
-    {
         g_source_remove( m_SeekTimerId );
-    }
 
     if( m_Playbin )
     {
@@ -555,9 +554,7 @@ guFaderPlaybin::~guFaderPlaybin()
     }
 
     if( m_FaderTimeLine )
-    {
         EndFade();
-    }
 
     guGstStateToNullAndUnref( m_RecordBin );
 
@@ -1004,10 +1001,8 @@ bool guFaderPlaybin::Play( void )
         SetValveDrop( false );
         return ( gst_element_set_state( m_Playbin, GST_STATE_PLAYING ) != GST_STATE_CHANGE_FAILURE );
     }
-    else
-    {
-        return false;
-    }
+
+    return false;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1024,7 +1019,6 @@ bool guFaderPlaybin::StartPlay( void )
     DumpFaderPlayBins( m_Player->m_FaderPlayBins, m_Player->m_CurrentPlayBin );
     m_Player->Unlock();
 #endif
-
 
     switch( m_PlayType )
     {
@@ -1118,7 +1112,6 @@ bool guFaderPlaybin::StartPlay( void )
             for( int Index = 0; Index < Count; Index++ )
             {
                 guFaderPlaybin * FaderPlaybin = m_Player->m_FaderPlayBins[ Index ];
-
                 if( FaderPlaybin == this )
                     continue;
 
@@ -1147,9 +1140,7 @@ bool guFaderPlaybin::StartPlay( void )
             m_Player->Unlock();
 
             if( Playing )
-            {
                 m_State = guFADERPLAYBIN_STATE_WAITING_EOS;
-            }
             else
             {
                 if( Play() )
@@ -1215,9 +1206,7 @@ bool guFaderPlaybin::StartPlay( void )
     }
 
     if( NeedReap )
-    {
         m_Player->ScheduleCleanUp();
-    }
 
     return Ret;
 }
@@ -1302,25 +1291,23 @@ bool guFaderPlaybin::Pause( void )
         guLogTrace( "Pause: can not pause while recording" );
         return false;
     }
-    else
-    {
-        guLogDebug( "guFaderPlaybin::Pause ok" );
-        g_timeout_add( 200, GSourceFunc( pause_timeout ), m_Playbin );
-        return true;
-    }
+
+    guLogDebug( "guFaderPlaybin::Pause ok" );
+    g_timeout_add( 200, GSourceFunc( pause_timeout ), m_Playbin );
+    return true;
 }
 
 // -------------------------------------------------------------------------------- //
 bool guFaderPlaybin::Stop( void )
 {
     guLogDebug( wxT( "guFaderPlaybin::Stop (%li)" ), m_Id );
+    if( m_RecordBin == NULL )
+        return ( gst_element_set_state( m_Playbin, GST_STATE_READY ) != GST_STATE_CHANGE_FAILURE );
+
     SetValveDrop( true );
     SetBuffering( false );
     SetVolume( 0 );
-    if( m_RecordBin == NULL )
-        return ( gst_element_set_state( m_Playbin, GST_STATE_READY ) != GST_STATE_CHANGE_FAILURE );
-    else
-        return DisableRecordAndStop(); // async soft-stop
+    return DisableRecordAndStop(); // async soft-stop
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1450,7 +1437,6 @@ bool guFaderPlaybin::EnableRecord( const wxString &recfile, const int format, co
     gfloat OggQuality[] = { 0.9f, 0.7f, 0.5f, 0.3f, 0.1f };
     gint FlacQuality[] = { 8, 7, 5, 3, 1 };
 
-    //
     switch( format )
     {
         case guRECORD_FORMAT_MP3  :
@@ -1499,13 +1485,9 @@ bool guFaderPlaybin::EnableRecord( const wxString &recfile, const int format, co
         {
             m_Encoder = gst_element_factory_make( "flacenc", "rb_flac" );
             if( IsValidElement( m_Encoder ) )
-            {
                 g_object_set( m_Encoder, "quality", FlacQuality[ quality ], NULL );
-            }
             else
-            {
                 m_Encoder = NULL;
-            }
             break;
         }
     }
@@ -1532,21 +1514,15 @@ bool guFaderPlaybin::EnableRecord( const wxString &recfile, const int format, co
                     return true;
                 }
                 else
-                {
                     guLogError( "Record error: unable to add element probe" );
-                }
                 delete p;
             }
         }
         else
-        {
             guLogMessage( "Record error: could not build the recordbin object." );
-        }
     }
     else
-    {
         guLogError( "Record error: could not create the encoder object" );
-    }
 
     return false;
 }
@@ -1591,7 +1567,6 @@ static void guFaderPlaybin__ElementCleanup( GstElement * element )
 // -------------------------------------------------------------------------------- //
 bool guFaderPlaybin::DisableRecord( void )
 {
-
     guLogDebug( "guFaderPlaybin::DisableRecord" );
     if( m_RecordBin == NULL || !guIsGstElementLinked( m_RecordBin ) )
         return true;
@@ -1708,7 +1683,7 @@ bool guFaderPlaybin::SetRecordFileName( const wxString &filename )
         m_Muxer != NULL ? m_Muxer : m_Encoder,
         new_sink,
         m_FileSink
-        };
+    };
     guGstPipelineActuator gpa( &chain );
     guGstResultHandler rh(
         guGstResultHandler::Func( guFaderPlaybin__ElementCleanup ),
@@ -1737,7 +1712,6 @@ void guFaderPlaybin::RefreshPlaybackItems( void )
     // just a stub for now
     guLogDebug( "guFaderPlaybin::RefreshPlaybackItems" );
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guFaderPlaybin::ToggleEqualizer( void )
@@ -1796,7 +1770,6 @@ void guFaderPlaybin::ReconfigureRG( void )
     {
         gpa.Enable( m_ReplayGainLimiter );
         gpa.Enable( m_ReplayGain, GetWeakPtr() );
-
     }
     else
     {
@@ -1810,10 +1783,7 @@ void guFaderPlaybin::SetValveDrop( bool drop )
 {
     guLogDebug( "guFaderPlaybin::SetValveDrop << %i", drop );
     if( m_Valve != NULL )
-    {
         g_object_set( m_Valve, "drop", gboolean( drop ), NULL );
-    }
-
 }
 
 }
