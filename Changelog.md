@@ -1,16 +1,24 @@
-Guayadeque Music Player Changelog
-=================================
+Guayadeque Music Player
+=======================
 
-0.5.0 Beta 5 - 2024-09-12
+Changelog
+=========
+
+0.5.0 (2024-09-15)
 -------------------------
 
 ### Enhancements
   * Updated playlist tracks layout
+  * ChangeLog converted to Markdown and renamed properly
   * Updated Portuguese and Brazilian Portuguese translations
+  * Small UI adjustments
 
 ### Bugfixes
-  * Fixed to keep the selections when moving multi-selected tracks in the playlist
-  * Fix the 'Confirm Exit' dialog size
+  * Fixed playlist to keep the selections when moving multi-selected tracks
+  * Fixed volume after click the player stop button
+  * Fixed the 'Confirm Exit' dialog size
+  * Fixed restoring mouse cursor after access several places in radio and podcasts panels
+  * Reviewed the use of Lock() all over the application
 
 0.5.0 Beta 4 (2024-09-11)
 -------------------------
@@ -19,12 +27,12 @@ Guayadeque Music Player Changelog
   * Added a toolbar in the playlist with actions to manage it (reorder and remove tracks, clear the playlist)
 
 ### Enhancements
-  * Updated some icons in the playlist related actions in the context menus
+  * Updated some context menu icons in actions related to the playlist
   * Lyrics configuration changes:
-    - Removed hardcoded lyrics path configuration. The lyrics to file paths are already defined
-      in the lyrics_source config file
-    - Capitalize the lyrics "From File" and "To File" path in the default lyrics_source config file.
-      This impact only new installations
+    - Removed hardcoded lyrics path configuration. The lyrics file paths are already defined
+      in the lyrics_source configuration
+    - Changed the lyrics "From File" and "To File" path in the default lyrics_source configuration.
+      This impact only new installations (the directory now is called 'Lyrics' by default)
   * General code cleanup and small refactorings
 
 ### Bugfixes
@@ -79,7 +87,7 @@ Guayadeque Music Player Changelog
   * Added Gstreamer-1.22 and wxwidgets-3.2 support
   * Added installation instructions for Mageia 9
 
-### Removed
+### Removes
   * Removed libindicate support
 
 0.4.7 (2023-02-24)
@@ -165,26 +173,26 @@ Guayadeque Music Player Changelog
   * Added more options for Copy To patterns:
 
  Option | Description
- -------| -----------
-  {al}  | artist in lower case
-  {au}  | artist in upper case
-  {a1}  | first letter of artist
-  {aal} | album artist in lower case
-  {aau} | album artist in upper case
-  {aa1} | first letter of album artist
-  {A}   | album artist if not empty or artist otherwise
-  {Al}  | {A} in lower case
-  {Au}  | {A} in upper case
-  {A1}  | first letter of {A}
-  {bl}  | album in lower case
-  {bu}  | album in upper case
-  {b1}  | first letter of album
-  {cl}  | composer in lower case
-  {cu}  | composer in upper case
-  {c1}  | first letter of composer
-  {gl}  | genre in lower case
-  {gu}  | genre in upper case
-  {g1}  | first letter of genre
+:-------|:-----------
+ {al}  | artist in lower case
+ {au}  | artist in upper case
+ {a1}  | first letter of artist
+ {aal} | album artist in lower case
+ {aau} | album artist in upper case
+ {aa1} | first letter of album artist
+ {A}   | album artist if not empty or artist otherwise
+ {Al}  | {A} in lower case
+ {Au}  | {A} in upper case
+ {A1}  | first letter of {A}
+ {bl}  | album in lower case
+ {bu}  | album in upper case
+ {b1}  | first letter of album
+ {cl}  | composer in lower case
+ {cu}  | composer in upper case
+ {c1}  | first letter of composer
+ {gl}  | genre in lower case
+ {gu}  | genre in upper case
+ {g1}  | first letter of genre
 
   * Added Album Artist to Music Brainz tagger feature
   * Added combo boxes to the track editor
@@ -563,8 +571,7 @@ grateful and humbled.
   * Added support to translations
   * Fixed bug in ListBox colors
 
-0.0.1 - 2009-03-11
-------------------
+0.0.1 Beta (2009-03-11)
+-----------------------
 
-  * First Public release Beta
-
+  * First Public release
