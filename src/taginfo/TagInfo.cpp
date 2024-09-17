@@ -496,7 +496,7 @@ bool SetMp4Image( TagLib::MP4::Tag * mp4tag, const wxImage * image )
             wxMemoryOutputStream ImgOutputStream;
             if( image && image->SaveFile( ImgOutputStream, wxBITMAP_TYPE_JPEG ) )
             {
-                ByteVector ImgData( ( TagLib::uint ) ImgOutputStream.GetSize() );
+                ByteVector ImgData( ( uint ) ImgOutputStream.GetSize() );
                 ImgOutputStream.CopyTo( ImgData.data(), ImgOutputStream.GetSize() );
 
                 TagLib::MP4::CoverArtList CoverList;
@@ -548,7 +548,7 @@ wxImage * GetApeItemImage( const TagLib::APE::Item &item )
 {
     if( item.type() == TagLib::APE::Item::Binary )
     {
-        TagLib::ByteVector CoverData = item.value();
+        TagLib::ByteVector CoverData = item.binaryData();
 
         if( CoverData.size() )
         {
