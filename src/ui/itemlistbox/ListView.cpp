@@ -297,25 +297,6 @@ void guListView::RefreshAll( int scrollto )
 }
 
 // -------------------------------------------------------------------------------- //
-void guListView::OnBeginDrag( wxCommandEvent &event )
-{
-    guDataObjectComposite Files;
-
-    if( GetDragFiles( &Files ) )
-    {
-        wxDropSource source( Files, this );
-
-        m_DragSelfItems = true;
-        source.DoDragDrop();    // wxDragResult Result
-
-        m_DragSelfItems = false;
-        m_DragOverItem = wxNOT_FOUND;
-
-        RefreshAll();
-    }
-}
-
-// -------------------------------------------------------------------------------- //
 wxArrayInt guListView::GetSelectedItems( const bool convertall ) const
 {
     wxArrayInt RetVal;
@@ -539,6 +520,25 @@ void guListView::SetImageList( wxImageList * imagelist )
 }
 
 // -------------------------------------------------------------------------------- //
+void guListView::OnBeginDrag( wxCommandEvent &event )
+{
+    guDataObjectComposite Files;
+
+    if( GetDragFiles( &Files ) )
+    {
+        wxDropSource source( Files, this );
+
+        m_DragSelfItems = true;
+        source.DoDragDrop();    // wxDragResult Result
+
+        m_DragSelfItems = false;
+        m_DragOverItem = wxNOT_FOUND;
+
+        RefreshAll();
+    }
+}
+
+// -------------------------------------------------------------------------------- //
 int guListView::GetDragFiles( guDataObjectComposite * files )
 {
     guTrackArray Tracks;
@@ -564,7 +564,7 @@ void guListView::OnDragOver( wxCoord x, wxCoord y )
         HeaderHeight = m_Header->GetSize().GetHeight();
 
     y -= HeaderHeight;
-    m_DragOverItem = HitTest( x, y );
+    m_DragOverItem = VirtualHitTest( y );
 
     if( ( int ) m_DragOverItem != wxNOT_FOUND )
     {
@@ -726,7 +726,7 @@ void guListViewClient::OnMouse( wxMouseEvent &event )
 {
     int MouseX = event.m_x;
     int MouseY = event.m_y;
-    int Item = HitTest( MouseX, MouseY );
+    int Item = VirtualHitTest( MouseY );
     bool ResetVals = false;
 
     // We want to get a better experience for dragging as before
@@ -806,7 +806,6 @@ void guListViewClient::OnMouse( wxMouseEvent &event )
         }
     }
 
-    // FIXME - it runs even if the item is selected - HitTest is returning wrong item
     // "The wxVListBox dont handle the right click to select items" needs to be removed. It turns impossible
     // to apply any action in a selection through the context menu
 //    if( event.RightDown() && ( Item != wxNOT_FOUND ) && !IsSelected( Item ) ) {

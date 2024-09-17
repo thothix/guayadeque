@@ -79,6 +79,7 @@ class guDataObjectComposite : public wxDataObjectComposite
     wxDataObjectSimple * GetDataObject( const wxDataFormat &format ) const { return GetObject( format ); }
 };
 
+
 // -------------------------------------------------------------------------------- //
 // guListViewColumn
 // -------------------------------------------------------------------------------- //
@@ -104,6 +105,7 @@ class guListViewColumn
 
 };
 WX_DECLARE_OBJARRAY(guListViewColumn, guListViewColumnArray);
+
 
 // -------------------------------------------------------------------------------- //
 // guListViewAttr
@@ -156,7 +158,6 @@ class guListViewAttr
 
         m_Font = new wxFont( wxSystemSettings::GetFont( wxSYS_SYSTEM_FONT ) );
     }
-
 };
 
 class guListViewDropTarget;
@@ -206,7 +207,6 @@ private:
 };
 
 class guListViewClientTimer;
-
 
 
 // -------------------------------------------------------------------------------- //
@@ -266,6 +266,7 @@ class guListViewClient : public wxVListBox
     friend class guListViewClientTimer;
 };
 
+
 // -------------------------------------------------------------------------------- //
 class guListView : public wxScrolledWindow
 {
@@ -289,9 +290,7 @@ class guListView : public wxScrolledWindow
     bool                    m_LastDragOverAfter;
     bool                    m_DragSelfItemsEnabled;
     bool                    m_DragSelfItems;
-
     //bool                    m_WasLeftUp;
-
 
     virtual void        GetItemsList( void ) = 0;
     virtual void        DrawItem( wxDC &dc, const wxRect &rect, const int row, const int col ) const;
@@ -333,7 +332,6 @@ class guListView : public wxScrolledWindow
     void                    SetItemHeight( const int height ) { m_ListBox->SetItemHeigth( height ); }
     void                    SetAttr( const guListViewAttr &attr ) { m_Attr = attr; }
 
-
     int                     GetFirstSelected( unsigned long &cookie ) const { return m_ListBox->GetFirstSelected( cookie ); }
     int                     GetNextSelected( unsigned long &cookie ) const { return m_ListBox->GetNextSelected( cookie ); }
     int                     GetSelection() const { return m_ListBox->GetSelection(); }
@@ -355,7 +353,7 @@ class guListView : public wxScrolledWindow
     bool                    IsSelected( size_t row ) const { return m_ListBox->IsSelected( row ); }
     virtual int             GetSelectedSongs( guTrackArray * Songs, const bool isdrag = false ) const { return 0; }
 
-    int                     HitTest( wxCoord x, wxCoord y ) const { return m_ListBox->HitTest( x, y ); }
+    int                     VirtualHitTest( wxCoord y ) const { return m_ListBox->VirtualHitTest( y ); }
 
     virtual void            ReloadItems( bool reset = true ) = 0;
 
@@ -366,7 +364,6 @@ class guListView : public wxScrolledWindow
     virtual void            SetSelectedIndexes( const wxArrayInt &selection );
     virtual size_t          GetSelectedCount( void ) const { return m_ListBox->GetSelectedCount(); }
     virtual void            ClearSelectedItems( void ) { SetSelection( wxNOT_FOUND ); }
-
 
     virtual wxString        GetItemName( const int item ) const = 0;
     virtual int             GetItemId( const int item ) const = 0;
@@ -389,12 +386,11 @@ class guListView : public wxScrolledWindow
 
     bool                    IsAllowedColumnSelect( void ) const { return m_ColSelect; }
 
-
     friend class guListViewClient;
     friend class guListViewDropTarget;
     friend class guListViewDropFilesThread;
-
 };
+
 
 // -------------------------------------------------------------------------------- //
 class guListViewDropFilesThread : public wxThread
@@ -413,6 +409,7 @@ class guListViewDropFilesThread : public wxThread
 
     virtual ExitCode Entry();
 };
+
 
 // -------------------------------------------------------------------------------- //
 class guListViewDropTarget : public wxDropTarget
@@ -438,7 +435,6 @@ class guListViewDropTarget : public wxDropTarget
     virtual void OnLeave();
 
     virtual wxDragResult OnDragOver( wxCoord x, wxCoord y, wxDragResult def );
-
 
     friend class guListViewDropFilesThread;
 };
