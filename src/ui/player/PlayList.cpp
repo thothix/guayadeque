@@ -49,8 +49,8 @@ namespace Guayadeque {
 // -------------------------------------------------------------------------------- //
 // guPlayerPlayList - Playlist Panel
 // -------------------------------------------------------------------------------- //
-guPlayerPlayList::guPlayerPlayList(wxWindow * parent, guDbLibrary * db, wxAuiManager * manager):
-    guAuiManagedPanel(parent, manager)
+guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiManager * manager ) :
+    guAuiManagedPanel( parent, manager )
 {
     MainSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -64,7 +64,7 @@ guPlayerPlayList::guPlayerPlayList(wxWindow * parent, guDbLibrary * db, wxAuiMan
 
     m_TopPlayButton = new wxBitmapButton(this, wxID_ANY, guImage(guImage_INDEX_tiny_playlist), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_TopPlayButton->SetToolTip(_("Set as Next Track"));
-    BarSizer->Add(m_TopPlayButton, 0, wxALIGN_LEFT | wxLEFT, 1);
+    BarSizer->Add(m_TopPlayButton, 0, wxALIGN_LEFT | wxLEFT, 2);
 
     m_TopButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_up), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_TopButton->SetToolTip(_("Move the selected tracks to the top"));
@@ -944,9 +944,7 @@ void guPlayList::AddItem( const guTrack &NewItem, const int pos )
             m_Items.Insert( NewItem, InsertPos );
         }
         else
-        {
             m_Items.Add( NewItem );
-        }
     }
 }
 
@@ -1169,9 +1167,7 @@ guTrack * guPlayList::GetItem( size_t item )
 {
     size_t ItemsCount = m_Items.Count();
     if( ItemsCount && item < ItemsCount )
-    {
       return &m_Items[ item ];
-    }
     return NULL;
 }
 
@@ -1588,9 +1584,7 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
                     JamendoDb->FindTrackId( Id, &Track );
             }
             else if( m_PendingLoadIds.Index( wxT( "Jamendo" ) ) == wxNOT_FOUND )
-            {
                 m_PendingLoadIds.Add( wxT( "Jamendo" ) );
-            }
         }
 
         Track.m_Type     = guTRACK_TYPE_JAMENDO;
@@ -1677,8 +1671,9 @@ void AddPlayListCommands( wxMenu * Menu, int SelCount )
                 if( ( ( Commands[ index ].Find( guCOMMAND_ALBUMPATH ) != wxNOT_FOUND ) ||
                       ( Commands[ index ].Find( guCOMMAND_COVERPATH ) != wxNOT_FOUND ) )
                     && ( SelCount != 1 ) )
+                {
                     continue;
-
+                }
                 MenuItem = new wxMenuItem( Menu, ID_COMMANDS_BASE + index, _( Names[ index ] ), _( Commands[ index ] ) );
                 SubMenu->Append( MenuItem );
             }

@@ -9,7 +9,6 @@ Changelog
 
 ### Enhancements
   * Updated playlist tracks layout
-  * Improved taglib 2.0 compatibility
   * ChangeLog converted to Markdown and renamed properly
   * Updated Portuguese and Brazilian Portuguese translations
   * Small UI adjustments
@@ -19,6 +18,7 @@ Changelog
   * Fixed playlist drag and drop bug introduced by 0.5.0 Beta 4
   * Fixed playlist to keep the selections when moving multi-selected tracks
   * Fixed volume after click the player stop button
+  * Fixed taglib 2.0 compatibility
   * Fixed the 'Confirm Exit' dialog size
   * Fixed restoring mouse cursor after access several places in radio and podcasts panels
   * Reviewed the use of Lock() all over the application
