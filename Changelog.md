@@ -4,16 +4,19 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.5.0 (2024-09-15)
+0.5.0 (2024-09-17)
 -------------------------
 
 ### Enhancements
   * Updated playlist tracks layout
+  * Improved taglib 2.0 compatibility
   * ChangeLog converted to Markdown and renamed properly
   * Updated Portuguese and Brazilian Portuguese translations
   * Small UI adjustments
 
 ### Bugfixes
+  * Fixed playlist drag and drop for wxWidget above 3.2.1
+  * Fixed playlist drag and drop bug introduced by 0.5.0 Beta 4
   * Fixed playlist to keep the selections when moving multi-selected tracks
   * Fixed volume after click the player stop button
   * Fixed the 'Confirm Exit' dialog size

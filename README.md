@@ -84,10 +84,13 @@ sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlit
 
 #### Extra audio playback support
 
-- `libgpod-dev`: Offers comprehensive support for managing and interacting with iPod devices.
 - `gstreamer1.0-libav`: Provides support for a wide range of audio and video codecs, enabling Guayadeque to play more media formats (like `DSD/DSF`).
 - `gstreamer1.0-plugins-bad`: Includes additional GStreamer plugins for enhanced functionality, but may have stability or licensing issues.
 - `gstreamer1.0-plugins-ugly`: Offers support for certain audio and video formats that may have distribution or patent issues in some countries.
+
+#### Other
+
+- `libgpod-dev`: Offers comprehensive support for managing and interacting with iPod devices.
 - `gvfs`: Allows Guayadeque to access and manage files through GVFS (GNOME Virtual File System), which is useful for handling remote or virtual file systems.
 
 ##### Ubuntu, Linux Mint
