@@ -84,6 +84,7 @@ class guPlayList : public guListView
     virtual wxString            GetItemSearchText( const int row );
 
     void                        RemoveSelected();
+    virtual void                MoveSelection( void );
     virtual void                MoveSelection(guLISTVIEW_NAVIGATION target);
 
     void                        OnClearClicked( wxCommandEvent &event );

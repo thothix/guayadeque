@@ -354,6 +354,18 @@ void guPlayList::OnConfigUpdated( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
+bool inline guIsJamendoFile( const wxString &filename )
+{
+    return filename.Find( wxT( "/api.jamendo.com/get2/" ) ) != wxNOT_FOUND;
+}
+
+// -------------------------------------------------------------------------------- //
+bool inline guIsMagnatuneFile( const wxString &filename )
+{
+    return filename.Find( wxT( ".magnatune.com/all/" ) ) != wxNOT_FOUND;
+}
+
+// -------------------------------------------------------------------------------- //
 void guPlayList::OnDropBegin( void )
 {
     if( GetItemCount() )
@@ -368,18 +380,6 @@ void guPlayList::OnDropBegin( void )
             //guLogMessage( wxT( "ClearPlaylist set on config. Playlist cleared" ) );
         }
     }
-}
-
-// -------------------------------------------------------------------------------- //
-bool inline guIsJamendoFile( const wxString &filename )
-{
-    return filename.Find( wxT( "/api.jamendo.com/get2/" ) ) != wxNOT_FOUND;
-}
-
-// -------------------------------------------------------------------------------- //
-bool inline guIsMagnatuneFile( const wxString &filename )
-{
-    return filename.Find( wxT( ".magnatune.com/all/" ) ) != wxNOT_FOUND;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -476,7 +476,7 @@ void guPlayList::RemoveSelected()
     for (int index = count - 1; index >= 0; index--)
         RemoveItem(selected[index], false);
 
-    //guLogMessage( wxT( "+++++ RemoveSelected %i" ), m_DragOverItem );
+    //guLogMessage( wxT( "RemoveSelected %i" ), m_DragOverItem );
     SetItemCount( GetCount() );   // ReloadItems();
 
     //wxCommandEvent CmdEvent( wxEVT_MENU, ID_PLAYER_PLAYLIST_UPDATELIST );
@@ -507,9 +507,15 @@ void guPlayList::RemoveSelected()
 //}
 
 // -------------------------------------------------------------------------------- //
+void guPlayList::MoveSelection( void )
+{
+    MoveSelection(guLISTVIEW_NAVIGATION_ITEM);
+}
+
+// -------------------------------------------------------------------------------- //
 void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
 {
-    // guLogMessage( wxT( "MoveSelection %i" ), m_DragOverItem );
+    //guLogMessage( wxT( "guPlayList::MoveSelection %i" ), m_DragOverItem );
 
     // Move the Selected Items to the DragOverItem and DragOverFirst
     int     InsertPos;
@@ -549,8 +555,9 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
     }
     else if (target == guLISTVIEW_NAVIGATION_BOTTOM)
         m_DragOverItem = lastItem;
-    else
-        m_DragOverItem = 0;
+    else if (target == guLISTVIEW_NAVIGATION_ITEM)
+    {  // Use incoming m_DragOverItem
+    }
 
     // Where is the Items to be moved
     InsertPos = m_DragOverAfter ? m_DragOverItem + 1 : m_DragOverItem;

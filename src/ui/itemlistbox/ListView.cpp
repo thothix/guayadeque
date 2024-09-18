@@ -566,7 +566,7 @@ void guListView::OnDragOver( wxCoord x, wxCoord y )
     y -= HeaderHeight;
     m_DragOverItem = VirtualHitTest( y );
 
-    if( ( int ) m_DragOverItem != wxNOT_FOUND )
+    if( m_DragOverItem != wxNOT_FOUND )
     {
         int ItemHeight = m_ListBox->OnMeasureItem( m_DragOverItem );
         m_DragOverAfter = ( y % ItemHeight ) > ( ItemHeight / 2 );
@@ -574,6 +574,7 @@ void guListView::OnDragOver( wxCoord x, wxCoord y )
 
     //guLogMessage( wxT( "Current: %i   Last: %i" ), m_DragOverItem, m_LastDragOverItem );
 
+    // Update rows' drag selection
     if( ( m_DragOverItem != m_LastDragOverItem ) )
     {
         if( m_DragOverItem != wxNOT_FOUND )
@@ -1765,6 +1766,7 @@ wxDragResult guListViewDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult de
 bool guListViewDropTarget::OnDrop( wxCoord x, wxCoord y )
 {
     //guLogMessage( wxT( "OnDrop %i / %i" ), m_ListView->m_DragSelfItems, m_ListView->m_DragSelfItemsEnabled );
+
     // We are moving items inside this object.
     if( m_ListView->m_DragSelfItems )
     {
@@ -1786,7 +1788,7 @@ void guListViewDropTarget::OnLeave()
     //m_ListView->ScreenToClient( &MouseX, &MouseY );
     wxRect ScreenRect = m_ListView->GetClientScreenRect();
     //guLogMessage( wxT( "guListViewDropTarget::OnLeave  %i, %i -> ( %i, %i, %i, %i )" ), MouseX, MouseY, ScreenRect.x, ScreenRect.y, ScreenRect.x + ScreenRect.width, ScreenRect.y + ScreenRect.height  );
-    if( !ScreenRect.Contains( MouseX, MouseY ) ) //( m_ListView->HitTest( MouseX, MouseY ) == wxNOT_FOUND ) )
+    if( !ScreenRect.Contains( MouseX, MouseY ) ) //( m_ListView->VirtualHitTest(MouseY) == wxNOT_FOUND )
     {
         m_ListView->m_DragOverItem = wxNOT_FOUND;
         //m_ListView->m_DragSelfItems = false;
@@ -1797,11 +1799,10 @@ void guListViewDropTarget::OnLeave()
 // -------------------------------------------------------------------------------- //
 wxDragResult guListViewDropTarget::OnDragOver( wxCoord x, wxCoord y, wxDragResult def )
 {
-    //printf( "guListViewDropTarget::OnDragOver... %d - %d\n", x, y );
+    //printf( "\nguListViewDropTarget::OnDragOver... %d - %d\n", x, y );
     m_ListView->OnDragOver( x, y );
     return wxDragCopy;
 }
-
 
 
 // -------------------------------------------------------------------------------- //
