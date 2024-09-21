@@ -126,13 +126,13 @@ void guCoverWindow::OnSize( wxSizeEvent &event )
 
     if ( MinSize != m_LastSize )
     {
-        m_LastSize = MinSize;
         if ( m_ResizeTimer.IsRunning() )
             m_ResizeTimer.Stop();
 
+        m_LastSize = MinSize;
         m_ResizeTimer.Start( guCOVERWINDOW_RESIZE_TIMER_TIME, wxTIMER_ONE_SHOT );
+        SetFocus();
     }
-    SetFocus();
 }
 
 // -------------------------------------------------------------------------------- //
