@@ -2,7 +2,7 @@
 
 Juan Rios anonbeat@gmail.com  
 Thothix thothix@protonmail.com  
-see [LICENSE](LICENSE.md)
+see [LICENSE](LICENSE)
 
 # NOTICE
 
