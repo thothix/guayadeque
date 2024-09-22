@@ -4,11 +4,12 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.5.1 (2024-xx-xx)
-------------------
+0.5.1 Beta 1 (2024-09-23)
+-------------------------
 
 ### Enhancements
   * Write the partial scanning in the library to speed up following rescans
+  * Updated playlist toolbar icons
 
 ### Bugfixes
   * Fixed compatibility with Gstreamer below 1.20

@@ -1,4 +1,4 @@
-# Guayadeque Music Player 0.5.0
+# Guayadeque Music Player 0.5.1 Beta 1
 
 Juan Rios anonbeat@gmail.com  
 Tiago Barrionuevo thothix@protonmail.com  
