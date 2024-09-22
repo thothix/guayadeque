@@ -1,23 +1,28 @@
+# Guayadeque Music Player 0.5.0
+
+Juan Rios anonbeat@gmail.com  
+Thothix thothix@protonmail.com  
+see LICENSE
+
 # NOTICE
 
-We regret to inform our users that the Guayadeque project has reached the end of its development journey and is no longer actively maintained.\
-After years of dedicated work by the open-source community, this beloved music player and library organizer will no longer receive updates or support.\
-We want to extend our gratitude to all the contributors and users who made Guayadeque a part of their music experience.\
-While it may no longer be actively developed, we hope that it continues to serve its purpose for those who choose to use it.\
-Thank you for your support throughout the years.
+### Guayadeque development is back
 
-If anyone wishes to continue the development and support of Guayadeque, please feel free to contact me.
+The announcement by @anonbeat that Guayadeque project has reached the end of its development and 
+is no longer actively maintained let us very sad cause you know, we Guayadeque users love it so much!
+
+That said, I want to say I am following @anonbeat track and continuing the Guayadeque development.
+The main focus right now is keeping it running in the most recent Linux releases and fixing issues.
+
+We want to thank @anonbeat for his amazing work to bring us the incredible music player that Guayadeque is and
+thank him for his support throughout the years. We can't forget and we want to thank @openmonk for your invaluable contributions to Guayadeque development. 
 
 # General
 
-Guayadeque Music Player 0.5.0\
-Juan Rios anonbeat@gmail.com\
-see LICENSE
+For bugs, suggestions or requests please check github issues and open one if needed.  
+For translations please send an email to thothix@protonmail.com
 
-Please email with bugs, suggestions, requests, translations to anonbeat@gmail.com\
-or post them in our forums http://guayadeque.org
-
-Special Thanks to Mrmotinjo (Stefan Bogdanovic http://evilsun.carbonmade.com)\
+Special Thanks to Mrmotinjo (Stefan Bogdanovic http://evilsun.carbonmade.com)  
 for the icon and splash designed for guayadeque.
 
 ---
@@ -35,7 +40,7 @@ It's been developed in XUbuntu.
 ### Ubuntu (pre 20.0):
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev cmake binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev cmake g++ binutils
 ```
 
 ---
@@ -43,7 +48,7 @@ sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstrea
 ### Ubuntu 20.04, Linux Mint 20
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake g++ binutils
 ```
 
 ---
@@ -51,7 +56,7 @@ sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstrea
 ### Ubuntu 22.04, Linux Mint 21
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev gettext cmake binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev gettext cmake g++ binutils
 ```
 
 ---
@@ -59,14 +64,14 @@ sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstrea
 ### Ubuntu 24.04, Linux Mint 22
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev gettext cmake binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev gettext cmake g++ binutils
 ```
 
 ---
 
 ### Mageia 9
 
-```
+```bash
 sudo urpmi gstreamer1.0-devtools lib64wx_gtk3u_wxsqlite3_3.2-devel lib64taglib-devel lib64sqlite3-devel lib64curl-devel lib64dbus-devel lib64gio2.0_0 lib64jsoncpp-devel cmake binutils
 ```
 
