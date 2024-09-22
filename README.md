@@ -8,14 +8,15 @@ see [LICENSE](LICENSE)
 
 ### Guayadeque development is back
 
-The announcement by @anonbeat that Guayadeque project has reached the end of its development and 
-is no longer actively maintained let us very sad cause you know, we Guayadeque users love it so much!
+The announcement by @anonbeat that Guayadeque project has reached the end of its development and
+was no longer actively maintained let us very sad because you know, we Guayadeque users love it so much!
 
 That said, I want to say I am following @anonbeat track and continuing the Guayadeque development.
 The main focus right now is keeping it running in the most recent Linux releases and fixing issues.
 
 **We want to thank @anonbeat** for his amazing work to bring us the incredible music player that Guayadeque is and
-thank him for his support throughout the years. We can't forget **and we want to thank @openmonk** for your invaluable contributions to Guayadeque development. 
+thank him for his support throughout the years. **We also want to thank @openmonk** for his invaluable
+contributions to Guayadeque development.
 
 # General
 
