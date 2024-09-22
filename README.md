@@ -2,7 +2,7 @@
 
 Juan Rios anonbeat@gmail.com  
 Thothix thothix@protonmail.com  
-see LICENSE
+see [LICENSE](LICENSE.md)
 
 # NOTICE
 
@@ -14,8 +14,8 @@ is no longer actively maintained let us very sad cause you know, we Guayadeque u
 That said, I want to say I am following @anonbeat track and continuing the Guayadeque development.
 The main focus right now is keeping it running in the most recent Linux releases and fixing issues.
 
-We want to thank @anonbeat for his amazing work to bring us the incredible music player that Guayadeque is and
-thank him for his support throughout the years. We can't forget and we want to thank @openmonk for your invaluable contributions to Guayadeque development. 
+**We want to thank @anonbeat** for his amazing work to bring us the incredible music player that Guayadeque is and
+thank him for his support throughout the years. We can't forget **and we want to thank @openmonk** for your invaluable contributions to Guayadeque development. 
 
 # General
 
