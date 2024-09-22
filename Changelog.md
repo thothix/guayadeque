@@ -4,11 +4,12 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.5.0 (2024-09-21)
--------------------------
+0.5.0 (2024-09-22)
+------------------
 
 ### Enhancements
   * Updated playlist tracks layout
+  * Updated Apple deprecated code
   * ChangeLog converted to Markdown and renamed properly
   * Updated Portuguese and Brazilian Portuguese translations
   * Small UI adjustments

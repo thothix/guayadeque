@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-17 21:26-0300\n"
+"POT-Creation-Date: 2024-09-22 01:19-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -453,7 +453,7 @@ msgstr ""
 #: ui/filebrowser/FileBrowser.cpp:567 ui/filebrowser/FileBrowser.cpp:2217
 #: ui/mediaviewer/library/LibPanel.cpp:1176
 #: ui/mediaviewer/library/TaListBox.cpp:206
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1069
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1073
 #: ui/mediaviewer/treeview/TreePanel.cpp:1221 ui/radios/ShoutcastRadio.cpp:367
 #: ui/radios/ShoutcastRadio.cpp:446 ui/podcasts/PodcastsPanel.cpp:1243
 #: ui/podcasts/PodcastsPanel.cpp:1618
@@ -960,8 +960,8 @@ msgstr ""
 #: ui/locationpanel/LocationPanel.cpp:485 ui/MainFrame.cpp:1236
 #: ui/mediaviewer/MediaViewer.cpp:248
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:867
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:765
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:768
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:794
 msgid "Playlists"
 msgstr ""
 
@@ -1634,7 +1634,7 @@ msgstr ""
 #: ui/filebrowser/FileBrowser.cpp:1969 ui/filebrowser/FileBrowser.cpp:2113
 #: ui/mediaviewer/library/LibPanel.cpp:1371
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2508
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1443
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1447
 #: ui/mediaviewer/treeview/TreePanel.cpp:1147
 #: ui/mediaviewer/treeview/TreePanel.cpp:1417 ui/player/PlayList.cpp:2120
 msgid "UnNamed"
@@ -2260,13 +2260,13 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:1301
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2181
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1336
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1340
 #: ui/mediaviewer/treeview/TreePanel.cpp:1312 ui/player/PlayList.cpp:2268
 msgid "Tracks Labels Editor"
 msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:1571
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1610
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1614
 #: ui/mediaviewer/treeview/TreePanel.cpp:1584
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:1090
 msgid "Field Editor"
@@ -3111,26 +3111,26 @@ msgstr ""
 msgid "Set as Deny Filter"
 msgstr ""
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1028
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1165
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1032
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1169
 msgid "Playlist Name: "
 msgstr ""
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1029
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1166
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1033
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1170
 msgid "Enter the new playlist name"
 msgstr ""
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1068
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1072
 msgid "Are you sure to delete the selected Playlist?"
 msgstr ""
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1149
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1222
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1153
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1226
 msgid "Select the playlist file"
 msgstr ""
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1177
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1181
 msgid "New Playlist"
 msgstr ""
 
@@ -4690,11 +4690,11 @@ msgstr ""
 msgid "Randomize the tracks in playlist"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:213 ui/player/PlayerPanel.cpp:3265
+#: ui/player/PlayerPanel.cpp:213 ui/player/PlayerPanel.cpp:3264
 msgid "Enable crossfading"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:213 ui/player/PlayerPanel.cpp:3265
+#: ui/player/PlayerPanel.cpp:213 ui/player/PlayerPanel.cpp:3264
 msgid "Disable crossfading"
 msgstr ""
 
@@ -4702,7 +4702,7 @@ msgstr ""
 msgid "Show the equalizer (right click for on/off)"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:226 ui/player/PlayerPanel.cpp:2932
+#: ui/player/PlayerPanel.cpp:226 ui/player/PlayerPanel.cpp:2931
 msgid "Volume"
 msgstr ""
 
@@ -4742,19 +4742,19 @@ msgstr ""
 msgid "Buffering..."
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2669
+#: ui/player/PlayerPanel.cpp:2668
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2675
+#: ui/player/PlayerPanel.cpp:2674
 msgid "Repeat all"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2680
+#: ui/player/PlayerPanel.cpp:2679
 msgid "Repeat one"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2687
+#: ui/player/PlayerPanel.cpp:2686
 msgid "Smart mode disabled"
 msgstr ""
 

@@ -29,9 +29,9 @@ for the icon and splash designed for guayadeque.
 
 # Build
 
-Need installed cmake, wxWidgets 3.0, gstreamer1.0, sqlite3, libwxsqlite3, taglib, libcurl, libdbus-1, libgio
+Need installed cmake, g++, wxWidgets 3.0/3.2, gstreamer1.0, sqlite3, libwxsqlite3, taglib, jsoncpp, libcurl, libdbus-1, libgio
 
-It's been developed in XUbuntu.
+It's been developed in XUbuntu and Linux Mint.
 
 ---
 
