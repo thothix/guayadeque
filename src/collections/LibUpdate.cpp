@@ -307,7 +307,7 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
                 wxPostEvent( m_MainFrame, evtup );
                 LastIndex = Index + 5;
             }
-            if (Index % 500 == 0)
+            if (Index % 200 == 0)
             {
                 m_Db->ExecuteUpdate( wxT( "COMMIT TRANSACTION;" ) );
                 m_Db->ExecuteUpdate( wxT( "BEGIN TRANSACTION;" ) );
