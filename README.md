@@ -1,7 +1,7 @@
 # Guayadeque Music Player 0.5.0
 
 Juan Rios anonbeat@gmail.com  
-Thothix thothix@protonmail.com  
+Tiago Barrionuevo thothix@protonmail.com  
 see [LICENSE](LICENSE)
 
 # NOTICE
