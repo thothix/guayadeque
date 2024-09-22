@@ -191,7 +191,11 @@ namespace Guayadeque {
 #include "./images/tiny_mv_albumbrowser.h"
 #include "./images/tiny_mv_treeview.h"
 #include "./images/tiny_mv_playlists.h"
-#include "./images/tiny_playlist.h"
+#include "./images/tiny_start.h"
+#include "./images/go_top.h"
+#include "./images/go_up.h"
+#include "./images/go_down.h"
+#include "./images/go_bottom.h"
 
 // -------------------------------------------------------------------------------- //
 typedef struct {
@@ -369,7 +373,11 @@ guImage_Item guImage_Items[] = {
     GUIMAGE( guImage_tiny_mv_albumbrowser,          wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_tiny_mv_treeview,              wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_tiny_mv_playlists,             wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_tiny_playlist,                 wxBITMAP_TYPE_PNG )
+    GUIMAGE( guImage_tiny_start,                    wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_go_top,                        wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_go_up,                         wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_go_down,                       wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_go_bottom,                     wxBITMAP_TYPE_PNG )
 };
 
 

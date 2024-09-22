@@ -62,23 +62,23 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
     wxBoxSizer *BarSizer;
     BarSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    m_TopPlayButton = new wxBitmapButton(this, wxID_ANY, guImage(guImage_INDEX_tiny_playlist), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
+    m_TopPlayButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_start), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_TopPlayButton->SetToolTip(_("Set as Next Track"));
     BarSizer->Add(m_TopPlayButton, 0, wxALIGN_LEFT | wxLEFT, 2);
 
-    m_TopButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_up), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
+    m_TopButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_go_top), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_TopButton->SetToolTip(_("Move the selected tracks to the top"));
     BarSizer->Add(m_TopButton, 0, wxALIGN_LEFT | wxLEFT, 0);
 
-    m_PrevButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_left), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
+    m_PrevButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_go_up), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_PrevButton->SetToolTip(_( "Move the selected tracks up"));
     BarSizer->Add(m_PrevButton, 0,wxALIGN_LEFT | wxLEFT, 0);
 
-    m_NextButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_right), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
+    m_NextButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_go_down), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_NextButton->SetToolTip(_("Move the selected tracks down"));
     BarSizer->Add(m_NextButton, 0,wxALIGN_LEFT | wxLEFT, 0);
 
-    m_BottomButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_down), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
+    m_BottomButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_go_bottom), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_BottomButton->SetToolTip(_("Move the selected tracks to the bottom"));
     BarSizer->Add(m_BottomButton, 0, wxALIGN_LEFT | wxLEFT, 0);
 
