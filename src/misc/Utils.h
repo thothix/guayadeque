@@ -56,6 +56,12 @@ namespace Guayadeque {
 #define guENSURE_BITMAP(x) (x)
 #endif
 
+#if GSTREAMER_VERSION == 120
+#define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_request_pad_simple
+#else
+#define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_get_request_pad
+#endif
+
 class guTrackArray;
 class guMediaViewer;
 
@@ -144,7 +150,6 @@ void                GetMediaViewerTracks( const guTrackArray &sourcetracks, cons
 void                GetMediaViewerTracks( const guTrackArray &sourcetracks, const guMediaViewer * mediaviewer, guTrackArray &tracks );
 void                GetMediaViewersList( const guTrackArray &tracks, wxArrayPtrVoid &MediaViewerPtrs );
 wxString            ExtractString( const wxString &source, const wxString &start, const wxString &end );
-
 }
 
 // -------------------------------------------------------------------------------- //
