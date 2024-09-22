@@ -4,6 +4,12 @@ Guayadeque Music Player
 Changelog
 =========
 
+0.5.1 (2024-xx-xx)
+------------------
+
+### Enhancements
+  * Write the partial scanning in the library to speed up following rescans
+
 0.5.0 (2024-09-22)
 ------------------
 

@@ -177,13 +177,10 @@ void GetCoversFromSamePath( const wxString &path, wxArrayString &files, wxArrayS
     int Count = files.Count();
     for( int Index = 0; Index < Count; Index++ )
     {
-        if( wxPathOnly( files[ Index ] ) == path )
-        {
-            paths.Add( files[ Index ] );
-            positions.Add( Index );
-        }
-        else
+        if( wxPathOnly( files[ Index ] ) != path )
             break;
+        paths.Add( files[ Index ] );
+        positions.Add( Index );
     }
 }
 
@@ -280,11 +277,10 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
         }
     }
     else
-    {
         ScanDirectory( m_ScanPath, true );
-    }
 
     bool EmbeddMetadata = m_MediaViewer->GetMediaCollection()->m_EmbeddMetadata;
+
     // For every new track file update it in the database
     int Count = m_TrackFiles.Count();
     if( Count )
@@ -310,6 +306,11 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
                 evtup.SetExtraLong( Index );
                 wxPostEvent( m_MainFrame, evtup );
                 LastIndex = Index + 5;
+            }
+            if (Index % 500 == 0)
+            {
+                m_Db->ExecuteUpdate( wxT( "COMMIT TRANSACTION;" ) );
+                m_Db->ExecuteUpdate( wxT( "BEGIN TRANSACTION;" ) );
             }
         }
 
