@@ -26,6 +26,7 @@
 #include "RadioTagInfo.h"
 #include "GstPipelineBuilder.h"
 #include "GstPipelineActuator.h"
+#include "Utils.h"
 
 #include <wx/wx.h>
 #include <wx/url.h>
@@ -1382,7 +1383,7 @@ bool guFaderPlaybin::AddRecordElement( GstPad * pad )
         return false;
     }
 
-    m_TeeSrcPad = gst_element_request_pad_simple(m_Tee, "src_%u");
+    m_TeeSrcPad = guGST_ELEMENT_REQUEST_PAD_SIMPLE(m_Tee, "src_%u");
     guLogGstPadData( "guFaderPlaybin::AddRecordElement src request pad", m_TeeSrcPad );
     if( m_TeeSrcPad == NULL )
     {

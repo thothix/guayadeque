@@ -10,6 +10,9 @@ Changelog
 ### Enhancements
   * Write the partial scanning in the library to speed up following rescans
 
+### Bugfixes
+  * Fixed compatibility with Gstreamer below 1.20
+
 0.5.0 (2024-09-22)
 ------------------
 
