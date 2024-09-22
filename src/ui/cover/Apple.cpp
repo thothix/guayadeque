@@ -19,8 +19,9 @@
 //    http://www.gnu.org/copyleft/gpl.html
 //
 // -------------------------------------------------------------------------------- //
-#include "Apple.h"
+#include <memory>
 
+#include "Apple.h"
 #include "CoverEdit.h"
 #include "Utils.h"
 
@@ -31,7 +32,6 @@
 
 #include "json/json.h"
 
-
 #define APPLE_SEARCH_URL       wxT( "https://itunes.apple.com/search?term=" )
 #define APPLE_SEARCH_PARAMS    wxT( "&limit=30" )
 
@@ -39,8 +39,10 @@ namespace Guayadeque {
 
 
 // -------------------------------------------------------------------------------- //
-guAppleCoverFetcher::guAppleCoverFetcher( guFetchCoverLinksThread * mainthread, guArrayStringArray * coverlinks,
-                                    const wxChar * artist, const wxChar * album ) :
+guAppleCoverFetcher::guAppleCoverFetcher( guFetchCoverLinksThread * mainthread,
+                                          guArrayStringArray * coverlinks,
+                                          const wxChar * artist,
+                                          const wxChar * album ) :
     guCoverFetcher( mainthread, coverlinks, artist, album )
 {
 }
@@ -49,9 +51,19 @@ guAppleCoverFetcher::guAppleCoverFetcher( guFetchCoverLinksThread * mainthread, 
 int guAppleCoverFetcher::ExtractImagesInfo( wxString &content )
 {
     int RetVal = 0;
-    Json::Reader reader;
     Json::Value RespObject;
-    reader.parse( std::string( content.mb_str() ), RespObject );
+    //Json::Reader reader;
+    //reader.parse( std::string( content.mb_str() ), RespObject );
+    JSONCPP_STRING err;
+    Json::CharReaderBuilder builder;
+
+    const std::unique_ptr<Json::CharReader> reader(builder.newCharReader());
+    if (!reader->parse(content.c_str(), content.c_str() + content.length(), &RespObject , &err))
+    {
+        guLogMessage( wxT( "guAppleCoverFetcher::ExtractImagesInfo Error: %s" ), err );
+        return EXIT_FAILURE;
+    }
+
     if( RespObject.isMember( "results" ) )
     {
         //guLogMessage( wxT( "Got the results..." ) );
@@ -106,14 +118,10 @@ int guAppleCoverFetcher::AddCoverLinks( int pagenum )
         if( Content.Length() )
         {
             if( !m_MainThread->TestDestroy() )
-            {
                 return ExtractImagesInfo( Content );
-            }
         }
         else
-        {
             guLogError( wxT( "Could not get the remote data from connection" ) );
-        }
     }
     return 0;
 }
