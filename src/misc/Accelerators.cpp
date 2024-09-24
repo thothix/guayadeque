@@ -40,7 +40,7 @@ void guAccelInit( void )
         guAccelCmdIds.Add( ID_MAINFRAME_SETAUDIOSCROBBLE );
         guAccelCmdIds.Add( ID_PLAYER_PLAYLIST_CLEAR );
         guAccelCmdIds.Add( ID_MENU_VIEW_CLOSEWINDOW );
-        // guAccelCmdIds.Add( ID_MENU_COMMUNITY );
+        guAccelCmdIds.Add( ID_MENU_COMMUNITY );
         guAccelCmdIds.Add( ID_PLAYER_PLAYLIST_EDITLABELS );
         guAccelCmdIds.Add( ID_PLAYER_PLAYLIST_EDITTRACKS );
         guAccelCmdIds.Add( ID_TRACKS_ENQUEUE_AFTER_ALL );
@@ -112,7 +112,7 @@ int guAccelGetActionNames( wxArrayString &actionnames )
 	actionnames.Add( _( "Audio Scrobbling" ) );
 	actionnames.Add( _( "Clear Playlist" ) );
 	actionnames.Add( _( "Close Window" ) );
-	// actionnames.Add( _( "Community Forums" ) );
+	actionnames.Add( _( "Community Forums" ) );
 	actionnames.Add( _( "Edit Labels" ) );
 	actionnames.Add( _( "Edit Tracks" ) );
     actionnames.Add( _( "Enqueue" ) );
