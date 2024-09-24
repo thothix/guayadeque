@@ -1,11 +1,14 @@
 [Desktop Entry]
 Version=1.0
 Name=Guayadeque Music Player
+Name[en_US]=Guayadeque Music Player
 Name[fr]=Lecteur de musique Guayadeque
 Name[lt]=Guayadeque muzikos grotuvas
+Name[pt_BR]=Guayadeque Reprodutor de Música
 Comment=Play and organize your music, listen to radios, podcasts and more...
 Comment[fr]=Jouez et organisez votre musique, écouter des radios, des balados, et plus encore...
 Comment[lt]=Groti ir tvarkyti savo muziką, klausytis radijų, tinklalaidžių ir daugiau...
+Comment[pt_BR]=Reproduza e organize suas músicas, escute rádios, podcasts e mais...
 Exec=guayadeque %U
 Terminal=false
 Type=Application
@@ -15,8 +18,6 @@ Icon=guayadeque
 X-GNOME-Autostart-Phase=Desktop
 X-GNOME-Autostart-Notify=true
 X-Ayatana-Desktop-Shortcuts=PlayPause;Stop;Previous;Next;
-
-Name[en_US]=Guayadeque Music Player
 
 GenericName=
 

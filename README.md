@@ -1,8 +1,14 @@
-# Guayadeque Music Player 0.5.1 Beta 1
+# Guayadeque Music Player
+
+Guayadeque is a lightweight and easy-to-use music player that supports
+smart playlists and can easily manage large music collections.
 
 Juan Rios anonbeat@gmail.com  
 Tiago Barrionuevo thothix@protonmail.com  
 see [LICENSE](LICENSE)
+
+- [Github](https://github.com/thothix/guayadeque)
+- [Latest release](https://github.com/thothix/guayadeque/releases/latest)
 
 # NOTICE
 
@@ -70,6 +76,14 @@ sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstrea
 
 ---
 
+### Debian 12
+
+```bash
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake
+```
+
+---
+
 ### Mageia 9
 
 ```bash
@@ -99,7 +113,7 @@ sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlit
 - `libgpod-dev`: Offers comprehensive support for managing and interacting with iPod devices.
 - `gvfs`: Allows Guayadeque to access and manage files through GVFS (GNOME Virtual File System), which is useful for handling remote or virtual file systems.
 
-##### Ubuntu, Linux Mint
+##### Ubuntu, Linux Mint, Debian 12
 
 ```bash
 sudo apt install libgpod-dev gstreamer1.0-libav gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
