@@ -4,15 +4,16 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.5.1 Beta 1 (2024-09-23)
--------------------------
+0.5.1 (2024-09-24)
+------------------
 
 ### Enhancements
-  * Write the partial scanning in the library to speed up following rescans
   * Updated playlist toolbar icons
+  * Changed library scanning to write partially scanned tracks in the library to speed up following rescans
+  * Changed the default lyrics from file/to file to include the album name in the path
 
 ### Bugfixes
-  * Fixed compatibility with Gstreamer below 1.20
+  * Fixed compatibility with Gstreamer versions below v1.20
 
 0.5.0 (2024-09-22)
 ------------------
@@ -103,7 +104,7 @@ Changelog
   * Added Gstreamer-1.22 and wxwidgets-3.2 support
   * Added installation instructions for Mageia 9
 
-### Removes
+### Removed
   * Removed libindicate support
 
 0.4.7 (2023-02-24)
