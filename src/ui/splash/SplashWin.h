@@ -46,12 +46,12 @@ class guSplashFrame : public wxFrame
 
   protected:
 	wxHyperlinkCtrl *   m_Email;
+	wxHyperlinkCtrl *   m_Thanks;
 	wxStaticText *      m_Version;
-    wxHyperlinkCtrl *   m_HomePage;
-    wxHyperlinkCtrl *   m_Donate;
+    //wxHyperlinkCtrl *   m_HomePage;
+    //wxHyperlinkCtrl *   m_Donate;
     wxBitmap *          m_Bitmap;
     wxTimer             m_Timer;
-
 
 	// event handlers, overide them in your derived class
 	void OnSplashClick( wxMouseEvent& event );
@@ -63,7 +63,6 @@ class guSplashFrame : public wxFrame
 
     void OnCloseWindow( wxCloseEvent &event );
     void OnTimeout( wxTimerEvent &event );
-
 };
 
 }

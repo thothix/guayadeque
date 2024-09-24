@@ -9,14 +9,15 @@
 # Bruno Bacelar <mail2buy8@gmail.com>, 2012
 # Humberto Streb <>, 2011
 # Bruno Bacelar <mail2buy8@gmail.com>, 2012
-# Tiago T. Barrionuevo <tiagobar@protonmail.com>, 2024
+# Neliton <nelitonpjr@gmail.com>, 2013
+# Tiago T Barrionuevo <thothix@protonmail.com>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-02 19:20+0100\n"
 "PO-Revision-Date: 2024-09-10 14:48-0300\n"
-"Last-Translator: Neliton <nelitonpjr@gmail.com>\n"
+"Last-Translator: Tiago T Barrionuevo <thothix@protonmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/guayadeque/language/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"

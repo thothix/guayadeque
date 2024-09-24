@@ -143,10 +143,12 @@ namespace Guayadeque {
 // -------------------------------------------------------------------------------- //
 // Splash
 // -------------------------------------------------------------------------------- //
-#define guSPLASH_NAME                       wxT( "J.Rios" )
-#define guSPLASH_EMAIL                      wxT( "anonbeat@gmail.com" )
-#define guSPLASH_HOMEPAGE                   wxT( "http://guayadeque.org" )
-#define guSPLASH_DONATION_LINK              wxT( "https://goo.gl/GHDEEO" )
+#define guSPLASH_NAME                       wxT( "Tiago Barrionuevo" )
+#define guSPLASH_EMAIL                      wxT( "thothix@protonmail.com" )
+#define guSPLASH_THANKS                     wxT( "Our invaluable thanks to J.Rios" )
+#define guSPLASH_THANKS_EMAIL               wxT( "anonbeat@gmail.com" )
+// #define guSPLASH_HOMEPAGE                   wxT( "http://guayadeque.org" )
+// #define guSPLASH_DONATION_LINK              wxT( "https://goo.gl/GHDEEO" )
 
 // -------------------------------------------------------------------------------- //
 // Colors

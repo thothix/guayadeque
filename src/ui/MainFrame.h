@@ -87,14 +87,11 @@ namespace Guayadeque {
 #define     guPANEL_MAIN_TREEVIEW           ( 1 << 15 )
 #define     guPANEL_MAIN_AUDIOCD            ( 1 << 16 )
 
-
 #define     guPANEL_MAIN_SELECTOR           ( guPANEL_MAIN_RADIOS | guPANEL_MAIN_LASTFM | guPANEL_MAIN_LYRICS | guPANEL_MAIN_PODCASTS )
 #define     guPANEL_MAIN_VISIBLE_DEFAULT    ( guPANEL_MAIN_PLAYERPLAYLIST | guPANEL_MAIN_PLAYERFILTERS | \
                                               guPANEL_MAIN_SELECTOR )
-
 #define     guPORTABLEDEVICE_COMMANDS_COUNT 20  // 0 .. 9 Main Window Commands
                                                 // 10 .. 19 -> Library Pane Windows
-
 #define     guWINDOW_STATE_NORMAL           0
 #define     guWINDOW_STATE_FULLSCREEN       ( 1 << 0 )
 #define     guWINDOW_STATE_MAXIMIZED        ( 1 << 1 )
@@ -278,7 +275,7 @@ class guMainFrame : public wxFrame
     void                            OnRandomize( wxCommandEvent &event );
     void                            OnAbout( wxCommandEvent &event );
     void                            OnHelp( wxCommandEvent &event );
-    void                            OnCommunity( wxCommandEvent &event );
+    // void                            OnCommunity( wxCommandEvent &event );
     void                            OnPlayMode( wxCommandEvent &event );
 
     void                            OnCopyTracksTo( wxCommandEvent &event );
@@ -472,7 +469,6 @@ class guMainFrame : public wxFrame
     void                            AddPendingUpdateTrack( const guTrack &track, const wxImage * image, const wxString &lyric, const int changedflags );
     void                            AddPendingUpdateTrack( const wxString &filename, const wxImage * image, const wxString &lyric, const int changedflags );
     void                            CheckPendingUpdates( const guTrack * track, const bool forcesave = false );
-
 };
 
 // -------------------------------------------------------------------------------- //
@@ -502,7 +498,6 @@ class guUpdatePodcastsThread : public wxThread
     ~guUpdatePodcastsThread();
 
     virtual ExitCode Entry();
-
 };
 
 }

@@ -4,13 +4,14 @@
 #
 # Translators:
 # Sérgio Marques <smarquespt@gmail.com>, 2011-2013
+# Tiago T Barrionuevo <thothix@protonmail.com>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-02 19:20+0100\n"
 "PO-Revision-Date: 2024-09-10 14:50-0300\n"
-"Last-Translator: anonbeat <anonbeat@gmail.com>\n"
+"Last-Translator: Tiago T Barrionuevo <thothix@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/guayadeque/language/pt_PT/)\n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"

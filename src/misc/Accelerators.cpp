@@ -40,7 +40,7 @@ void guAccelInit( void )
         guAccelCmdIds.Add( ID_MAINFRAME_SETAUDIOSCROBBLE );
         guAccelCmdIds.Add( ID_PLAYER_PLAYLIST_CLEAR );
         guAccelCmdIds.Add( ID_MENU_VIEW_CLOSEWINDOW );
-        guAccelCmdIds.Add( ID_MENU_COMMUNITY );
+        // guAccelCmdIds.Add( ID_MENU_COMMUNITY );
         guAccelCmdIds.Add( ID_PLAYER_PLAYLIST_EDITLABELS );
         guAccelCmdIds.Add( ID_PLAYER_PLAYLIST_EDITTRACKS );
         guAccelCmdIds.Add( ID_TRACKS_ENQUEUE_AFTER_ALL );
@@ -112,7 +112,7 @@ int guAccelGetActionNames( wxArrayString &actionnames )
 	actionnames.Add( _( "Audio Scrobbling" ) );
 	actionnames.Add( _( "Clear Playlist" ) );
 	actionnames.Add( _( "Close Window" ) );
-	actionnames.Add( _( "Community Forums" ) );
+	// actionnames.Add( _( "Community Forums" ) );
 	actionnames.Add( _( "Edit Labels" ) );
 	actionnames.Add( _( "Edit Tracks" ) );
     actionnames.Add( _( "Enqueue" ) );
@@ -253,9 +253,7 @@ void guAccelOnConfigUpdated( void )
     guConfig * Config = ( guConfig * ) guConfig::Get();
     guAccelKeys = Config->ReadANum( CONFIG_KEY_ACCELERATORS_ACCELKEY, 0, CONFIG_PATH_ACCELERATORS );
     if( guAccelKeys.Count() == 0 )
-    {
         guAccelGetDefaultKeys( guAccelKeys );
-    }
 
     while( guAccelKeys.Count() < guAccelCmdIds.Count() )
         guAccelKeys.Add( 0 );
@@ -273,21 +271,13 @@ wxString guAccelGetKeyCodeString( const int keycode )
         if( Modifier )
         {
             if( Modifier & wxMOD_SHIFT )
-            {
                 KeyStr += wxString( _( "Shift" ) ) + wxT( "-" );
-            }
             if( Modifier & wxMOD_CONTROL )
-            {
                 KeyStr += wxString( _( "Ctrl" ) ) + wxT( "-" );
-            }
             if( Modifier & wxMOD_ALT )
-            {
                 KeyStr += wxString( _( "Alt" ) ) + wxT( "-" );
-            }
             if( Modifier & wxMOD_META )
-            {
                 KeyStr += wxString( _( "Meta" ) ) + wxT( "-" );
-            }
         }
 
         switch( KeyCode )
@@ -404,8 +394,6 @@ wxString guAccelGetKeyCodeString( const int keycode )
             case WXK_DIVIDE :
             case WXK_NUMPAD_DIVIDE :    KeyStr += wxT( "/" ); break;
 
-
-
             case WXK_SELECT :           KeyStr += _( "Select" ); break;
             case WXK_PRINT :            KeyStr += _( "Print" ); break;
             case WXK_EXECUTE :          KeyStr += _( "Execute" ); break;
@@ -417,20 +405,17 @@ wxString guAccelGetKeyCodeString( const int keycode )
             case WXK_CAPITAL :          KeyStr += _( "Capital" ); break;
             case WXK_HOME :             KeyStr += _( "Home" ); break;
 
-
             default :
                 if( wxIsalnum( KeyCode ) || wxIsprint( KeyCode ) ) // ASCII chars...
                 {
                       KeyStr += ( wxChar ) KeyCode;
                       break;
-
                 }
         }
     }
 
     return KeyStr;
 }
-
 
 // -------------------------------------------------------------------------------- //
 wxString guAccelGetKeyCodeMenuString( const int keycode )
@@ -444,21 +429,13 @@ wxString guAccelGetKeyCodeMenuString( const int keycode )
         if( Modifier )
         {
             if( Modifier & wxMOD_SHIFT )
-            {
                 KeyStr += wxT( "Shift-" );
-            }
             if( Modifier & wxMOD_CONTROL )
-            {
                 KeyStr += wxT( "Ctrl-" );
-            }
             if( Modifier & wxMOD_ALT )
-            {
                 KeyStr += wxT( "Alt-" );
-            }
             if( Modifier & wxMOD_META )
-            {
                 KeyStr += wxT( "Meta-" );
-            }
         }
 
         switch( KeyCode )
@@ -575,8 +552,6 @@ wxString guAccelGetKeyCodeMenuString( const int keycode )
             case WXK_DIVIDE :
             case WXK_NUMPAD_DIVIDE :    KeyStr += wxT( "/" ); break;
 
-
-
             case WXK_SELECT :           KeyStr += wxT( "Select" ); break;
             case WXK_PRINT :            KeyStr += wxT( "Print" ); break;
             case WXK_EXECUTE :          KeyStr += wxT( "Execute" ); break;
@@ -587,7 +562,6 @@ wxString guAccelGetKeyCodeMenuString( const int keycode )
             case WXK_MENU :             KeyStr += wxT( "Menu" ); break;
             case WXK_CAPITAL :          KeyStr += wxT( "Capital" ); break;
             case WXK_HOME :             KeyStr += wxT( "Home" ); break;
-
 
             default :
                 if( wxIsalnum( KeyCode ) || wxIsprint( KeyCode ) ) // ASCII chars...
@@ -623,9 +597,7 @@ int guAccelGetCommandKeyCode( const int cmd )
 {
     int CmdIndex = guAccelCmdIds.Index( cmd );
     if( CmdIndex != wxNOT_FOUND )
-    {
         return guAccelKeys[ CmdIndex ];
-    }
     return 0;
 }
 
@@ -647,9 +619,8 @@ int guAccelDoAcceleratorTable( const wxArrayInt &aliascmds, const wxArrayInt &re
     }
 
     if( EntryCount )
-    {
         acceltable = wxAcceleratorTable( EntryCount, AccelEntries );
-    }
+
     return EntryCount;
 }
 

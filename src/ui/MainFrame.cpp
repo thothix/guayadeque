@@ -456,7 +456,7 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     Bind( wxEVT_MENU, &guMainFrame::OnPlayerPlayListUpdateTitle, this, ID_PLAYER_PLAYLIST_UPDATETITLE );
     Bind( wxEVT_MENU, &guMainFrame::OnAbout, this, ID_MENU_ABOUT );
     Bind( wxEVT_MENU, &guMainFrame::OnHelp, this, ID_MENU_HELP );
-    Bind( wxEVT_MENU, &guMainFrame::OnCommunity, this, ID_MENU_COMMUNITY );
+    // Bind( wxEVT_MENU, &guMainFrame::OnCommunity, this, ID_MENU_COMMUNITY );
 
     Bind( wxEVT_MENU, &guMainFrame::OnCopyTracksTo, this, ID_MAINFRAME_COPYTO );
     Bind( wxEVT_MENU, &guMainFrame::OnCopyTracksToDevice, this, ID_MAINFRAME_COPYTODEVICE_TRACKS );
@@ -676,7 +676,7 @@ guMainFrame::~guMainFrame()
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayerPlayListUpdateTitle, this, ID_PLAYER_PLAYLIST_UPDATETITLE );
     Unbind( wxEVT_MENU, &guMainFrame::OnAbout, this, ID_MENU_ABOUT );
     Unbind( wxEVT_MENU, &guMainFrame::OnHelp, this, ID_MENU_HELP );
-    Unbind( wxEVT_MENU, &guMainFrame::OnCommunity, this, ID_MENU_COMMUNITY );
+    // Unbind( wxEVT_MENU, &guMainFrame::OnCommunity, this, ID_MENU_COMMUNITY );
 
     Unbind( wxEVT_MENU, &guMainFrame::OnCopyTracksTo, this, ID_MAINFRAME_COPYTO );
     Unbind( wxEVT_MENU, &guMainFrame::OnCopyTracksToDevice, this, ID_MAINFRAME_COPYTODEVICE_TRACKS );
@@ -959,7 +959,6 @@ void guMainFrame::CreateCollectionsMenu( wxMenu * menu )
 //    menu->Append( MenuItem );
 //    MenuItem->Enable( false );
 
-
     //
     // Radio
     wxMenu * SubMenu = new wxMenu();
@@ -1038,7 +1037,6 @@ void guMainFrame::CreateCollectionsMenu( wxMenu * menu )
 	SubMenu->Append( MenuItem );
 
     menu->AppendSubMenu( SubMenu, _( "Podcasts" ), _( "Set the podcasts visible panels" ) );
-
 
     CollectionBaseCommand = ID_COLLECTIONS_BASE;
     for ( int Index = 0; Index < Count; Index++ )
@@ -1392,16 +1390,13 @@ void guMainFrame::CreateViewMenu( wxMenu * menu )
     MenuItem = new wxMenuItem( menu, ID_MENU_VIEW_CLOSEWINDOW,
                                     wxString( _( "Close Current Tab" ) ) + guAccelGetCommandKeyCodeString( ID_MENU_VIEW_CLOSEWINDOW ),
                                     _( "Close the current selected tab" ), wxITEM_NORMAL );
-
     menu->Append( MenuItem );
-
 
     menu->AppendSeparator();
 
     MenuItem = new wxMenuItem( menu, ID_MENU_PREFERENCES,
                                     wxString( _( "Preferences" ) ) + guAccelGetCommandKeyCodeString( ID_MENU_PREFERENCES ),
                                     _( "View the preferences" ), wxITEM_NORMAL );
-
     menu->Append( MenuItem );
 }
 
@@ -1460,10 +1455,7 @@ void guMainFrame::CreateControlsMenu( wxMenu * menu )
     MenuItem = new wxMenuItem( menu, ID_PLAYER_PLAYLIST_CLEAR,
                                 wxString( _( "Clear Playlist" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_CLEAR ),
                                 _( "Clear the now playing playlist" ), wxITEM_NORMAL );
-
     menu->Append( MenuItem );
-
-
 
     wxMenu * RatingMenu = new wxMenu();
 
@@ -1565,10 +1557,10 @@ void guMainFrame::CreateHelpMenu( wxMenu * menu )
                               _( "Get help using guayadeque" ), wxITEM_NORMAL );
     menu->Append( MenuItem );
 
-    MenuItem = new wxMenuItem( menu, ID_MENU_COMMUNITY,
-                              wxString( _( "Community" ) ) + guAccelGetCommandKeyCodeString( ID_MENU_COMMUNITY ),
-                              _( "Get guayadeque support from guayadeque.org" ), wxITEM_NORMAL );
-    menu->Append( MenuItem );
+//    MenuItem = new wxMenuItem( menu, ID_MENU_COMMUNITY,
+//                              wxString( _( "Community" ) ) + guAccelGetCommandKeyCodeString( ID_MENU_COMMUNITY ),
+//                              _( "Get guayadeque support from guayadeque.org" ), wxITEM_NORMAL );
+//    menu->Append( MenuItem );
 
     menu->AppendSeparator();
     MenuItem = new wxMenuItem( menu, ID_MENU_ABOUT,
@@ -1586,25 +1578,21 @@ void guMainFrame::CreateMenu()
     // Create the main Menu Bar
 	MenuBar = new wxMenuBar( 0 );
 
-    //
     // Now create the Collections Menu Entry
     m_MenuCollections = new wxMenu();
     CreateCollectionsMenu( m_MenuCollections );
 	MenuBar->Append( m_MenuCollections, _( "Sources" ) );
 
-    //
     // Now create the View Menu Entry
     MenuEntry = new wxMenu();
     CreateViewMenu( MenuEntry );
 	MenuBar->Append( MenuEntry, _( "View" ) );
 
-    //
     // Now create the Controls Menu Entry
     MenuEntry = new wxMenu();
     CreateControlsMenu( MenuEntry );
 	MenuBar->Append( MenuEntry, _( "Controls" ) );
 
-    //
     // Now create the Help Menu Entry
     MenuEntry = new wxMenu();
     CreateHelpMenu( MenuEntry );
@@ -1736,7 +1724,6 @@ void guMainFrame::OnUpdateTrack( wxCommandEvent &event )
             m_TaskBarIcon->SetIcon( m_AppIcon, wxT( "Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION ) );
     }
 
-
     if ( m_LastFMPanel )
         m_LastFMPanel->OnUpdatedTrack( event );
 
@@ -1792,7 +1779,6 @@ void guMainFrame::OnPlayerTrackListChanged( wxCommandEvent &event )
 {
     if ( m_MPRIS )
         m_MPRIS->OnTrackListChange();
-
     if ( m_MPRIS2 )
         m_MPRIS2->OnTrackListChange();
 }
@@ -1802,7 +1788,6 @@ void guMainFrame::OnPlayerCapsChanged( wxCommandEvent &event )
 {
     if ( m_MPRIS )
         m_MPRIS->OnPlayerCapsChange();
-
     if ( m_MPRIS2 )
         m_MPRIS2->OnPlayerCapsChange();
 }
@@ -1868,7 +1853,7 @@ void guMainFrame::DoShowCaptions( const bool visible )
         }
     }
     m_AuiManager.Update();
-    //
+
     guConfig * Config = ( guConfig * ) guConfig::Get();
     Config->WriteBool( CONFIG_KEY_MAIN_WINDOW_CAPTIONS, visible, CONFIG_PATH_MAIN_WINDOW );
 }
@@ -2010,10 +1995,10 @@ void guMainFrame::OnHelp( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMainFrame::OnCommunity( wxCommandEvent &event )
-{
-    guWebExecute( wxT( "http://guayadeque.org" ) );
-}
+//void guMainFrame::OnCommunity( wxCommandEvent &event )
+//{
+//    guWebExecute( wxT( "http://guayadeque.org" ) );
+//}
 
 // -------------------------------------------------------------------------------- //
 void guMainFrame::OnPlayerPlayListUpdateTitle( wxCommandEvent &event )
@@ -2274,6 +2259,7 @@ void guMainFrame::InsertTabPanel( wxPanel * panel, const int index, const wxStri
 
         LoadPerspective( Config->ReadStr( CONFIG_KEY_MAIN_WINDOW_NOTEBOOK_LAST_LAYOUT, wxEmptyString, CONFIG_PATH_MAIN_WINDOW_NOTEBOOK ) );
         wxWindow * OldPage = m_MainNotebook->GetPage( 0 );
+
         // Was hidden
         if ( PageIndex == wxNOT_FOUND )
         {
@@ -2984,7 +2970,6 @@ void guMainFrame::OnGaugeCreate( wxCommandEvent &event )
 void guMainFrame::OnPageChanged( wxAuiNotebookEvent& event )
 {
     m_CurrentPage = m_MainNotebook->GetPage( m_MainNotebook->GetSelection() );
-
     OnUpdateSelInfo( event );
 }
 
@@ -3525,9 +3510,7 @@ bool guMainFrame::SaveCurrentLayout( const wxString &layoutname )
     wxXmlAttribute * Property = new wxXmlAttribute( wxT( "name" ), layoutname,
                                new wxXmlAttribute( wxT( "version" ), wxT( "1.0" ),
                                NULL ) );
-
     RootNode->SetAttributes( Property );
-
 
     // MainWindow
     //
@@ -3537,19 +3520,19 @@ bool guMainFrame::SaveCurrentLayout( const wxString &layoutname )
     int Width;
     int Height;
     GetSize( &Width, &Height );
+
     // Pos
     int PosX;
     int PosY;
     GetPosition( &PosX, &PosY );
+
     // State
     int State = guWINDOW_STATE_NORMAL;
 
     if ( IsFullScreen() )
         State |= guWINDOW_STATE_FULLSCREEN;
-
     if ( IsMaximized() )
         State |= guWINDOW_STATE_MAXIMIZED;
-
     if ( !m_MainStatusBar->IsShown() )
         State |= guWINDOW_STATE_NOSTATUSBAR;
 
@@ -3568,9 +3551,7 @@ bool guMainFrame::SaveCurrentLayout( const wxString &layoutname )
                NULL ) ) ) ) ) ) ) );
 
     XmlNode->SetAttributes( Property );
-
     RootNode->AddChild( XmlNode );
-
 
     // Radio
     //
@@ -3938,7 +3919,6 @@ void guMainFrame::LoadTabsPerspective( const wxString &layout )
                 }
             }
         }
-
         Index++;
     }
 
@@ -4047,7 +4027,6 @@ void guMainFrame::OnPlayerShowPanel( wxCommandEvent &event )
 void guMainFrame::ShowMainPanel( const int panelid, const bool show )
 {
     //guLogMessage( wxT( "ShowMainPanel( %08X, %i )" ), panelid, show );
-
     wxString PaneName;
 
     switch ( panelid )
@@ -4113,7 +4092,6 @@ void guMainFrame::ShowMainPanel( const int panelid, const bool show )
 
         default :
             return;
-
     }
 
     wxAuiPaneInfo &PaneInfo = m_AuiManager.GetPane( PaneName );
@@ -4203,7 +4181,6 @@ void guMainFrame::OnPlayerPanelCoverChanged( wxCommandEvent &event )
 {
     if ( m_CoverPanel )
         m_CoverPanel->OnUpdatedTrack( event );
-
     if ( m_MPRIS2 )
         m_MPRIS2->OnPlayerTrackChange();
 }
@@ -4468,7 +4445,6 @@ void guMainFrame::OnRaiseWindow( wxCommandEvent &event )
     //guLogMessage( wxT( "guMainFrame::OnRaiseWindow" ) );
     if ( !IsShown() )
         Show( true );
-
     if ( IsIconized() )
         Iconize( false );
 }
@@ -4522,10 +4498,8 @@ void guMainFrame::MediaViewerClosed( guMediaViewer * mediaviewer )
 {
     if ( m_PlayerPanel )
         m_PlayerPanel->MediaViewerClosed( mediaviewer );
-
     if ( m_PlayerPlayList )
         m_PlayerPlayList->MediaViewerClosed( mediaviewer );
-
     if ( m_LastFMPanel )
         m_LastFMPanel->MediaViewerClosed( mediaviewer );
 }

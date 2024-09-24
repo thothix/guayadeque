@@ -27,7 +27,6 @@ namespace Guayadeque {
 #define guEVT_USER_FIRST    10000
 
 // -------------------------------------------------------------------------------- //
-//
 enum guCommandIds {
     ID_MENU_UPDATE_LIBRARY        =  guEVT_USER_FIRST,
     ID_MENU_UPDATE_LIBRARYFORCED,
@@ -87,7 +86,7 @@ enum guCommandIds {
     ID_MENU_LAYOUT_DUMMY,
     ID_MENU_ABOUT,
     ID_MENU_HELP,
-    ID_MENU_COMMUNITY,
+    // ID_MENU_COMMUNITY,
 
     //
     ID_MAINFRAME_COPYTO,

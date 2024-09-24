@@ -15,6 +15,9 @@ Changelog
 ### Bugfixes
   * Fixed compatibility with Gstreamer versions below v1.20
 
+### Removed
+  * Removed unavailable community and home site links
+
 0.5.0 (2024-09-22)
 ------------------
 

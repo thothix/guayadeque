@@ -66,22 +66,30 @@ guSplashFrame::guSplashFrame( wxWindow * parent, int timeout ) :
     m_Email->SetCanFocus( false );
     MainSizer->Add( m_Email, 0, wxALIGN_RIGHT|wxRIGHT|wxLEFT, 5 );
 
-    m_HomePage = new wxHyperlinkCtrl( this, wxID_ANY, guSPLASH_HOMEPAGE, guSPLASH_HOMEPAGE, wxDefaultPosition, wxDefaultSize, wxHL_ALIGN_RIGHT );
-	m_HomePage->SetHoverColour( FontColor );
-	m_HomePage->SetNormalColour( FontColor );
-	m_HomePage->SetVisitedColour( FontColor );
-	m_HomePage->SetBackgroundColour( * wxWHITE );
-    m_HomePage->SetCanFocus( false );
-    MainSizer->Add( m_HomePage, 0, wxALIGN_RIGHT|wxRIGHT|wxLEFT, 5 );
+    m_Thanks = new wxHyperlinkCtrl( this, wxID_ANY, guSPLASH_THANKS wxT( " " ) guSPLASH_THANKS_EMAIL, wxT( "mailto:" ) guSPLASH_THANKS_EMAIL, wxDefaultPosition, wxDefaultSize, wxHL_ALIGN_RIGHT );
+    m_Thanks->SetHoverColour( FontColor );
+    m_Thanks->SetNormalColour( FontColor );
+    m_Thanks->SetVisitedColour( FontColor );
+    m_Thanks->SetBackgroundColour( * wxWHITE );
+    m_Thanks->SetCanFocus( false );
+    MainSizer->Add( m_Thanks, 0, wxALIGN_RIGHT|wxRIGHT|wxLEFT, 5 );
 
-    m_Donate = new wxHyperlinkCtrl( this, wxID_ANY, _( "Please Donate!" ), guSPLASH_DONATION_LINK );
+//    m_HomePage = new wxHyperlinkCtrl( this, wxID_ANY, guSPLASH_HOMEPAGE, guSPLASH_HOMEPAGE, wxDefaultPosition, wxDefaultSize, wxHL_ALIGN_RIGHT );
+//	m_HomePage->SetHoverColour( FontColor );
+//	m_HomePage->SetNormalColour( FontColor );
+//	m_HomePage->SetVisitedColour( FontColor );
+//	m_HomePage->SetBackgroundColour( * wxWHITE );
+//    m_HomePage->SetCanFocus( false );
+//    MainSizer->Add( m_HomePage, 0, wxALIGN_RIGHT|wxRIGHT|wxLEFT, 5 );
 
-    m_Donate->SetHoverColour( FontColor );
-    m_Donate->SetNormalColour( FontColor );
-    m_Donate->SetVisitedColour( FontColor );
-    m_Donate->SetBackgroundColour( * wxWHITE );
-    m_Donate->SetCanFocus( false );
-    MainSizer->Add( m_Donate, 0, wxALIGN_RIGHT|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
+//    m_Donate = new wxHyperlinkCtrl( this, wxID_ANY, _( "Please Donate!" ), guSPLASH_DONATION_LINK );
+//
+//    m_Donate->SetHoverColour( FontColor );
+//    m_Donate->SetNormalColour( FontColor );
+//    m_Donate->SetVisitedColour( FontColor );
+//    m_Donate->SetBackgroundColour( * wxWHITE );
+//    m_Donate->SetCanFocus( false );
+//    MainSizer->Add( m_Donate, 0, wxALIGN_RIGHT|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
 
 	this->SetSizer( MainSizer );
 	this->Layout();
