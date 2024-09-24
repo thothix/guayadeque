@@ -145,7 +145,7 @@ namespace Guayadeque {
 // -------------------------------------------------------------------------------- //
 #define guSPLASH_NAME                       wxT( "Tiago Barrionuevo" )
 #define guSPLASH_EMAIL                      wxT( "thothix@protonmail.com" )
-#define guSPLASH_THANKS                     wxT( "Our invaluable thanks to J.Rios" )
+#define guSPLASH_THANKS                     wxT( "Our many thanks for J.Rios' invaluable work -" )
 #define guSPLASH_THANKS_EMAIL               wxT( "anonbeat@gmail.com" )
 // #define guSPLASH_HOMEPAGE                   wxT( "http://guayadeque.org" )
 // #define guSPLASH_DONATION_LINK              wxT( "https://goo.gl/GHDEEO" )
