@@ -21,7 +21,6 @@
 // -------------------------------------------------------------------------------- //
 #include "CoverEdit.h"
 
-#include "Amazon.h"
 #include "Apple.h"
 #include "EventCommandIds.h"
 #include "Config.h"
@@ -45,7 +44,6 @@ namespace Guayadeque {
 
 enum guCOVER_SEARCH_ENGINE {
 //    guCOVER_SEARCH_ENGINE_GOOGLE = 0,
-//    guCOVER_SEARCH_ENGINE_AMAZON,
     guCOVER_SEARCH_ENGINE_APPLE,
     guCOVER_SEARCH_ENGINE_LASTFM,
 //    guCOVER_SEARCH_ENGINE_DISCOGS
@@ -94,7 +92,6 @@ guCoverEditor::guCoverEditor(wxWindow* parent,
 
     wxString m_EngineChoiceChoices[] = {
         //wxT( "Google" ),
-        //wxT( "Amazon" ),
         wxT( "Apple" ),
         wxT("Last.fm"),
         //wxT( "Discogs" )
@@ -633,8 +630,11 @@ void guCoverEditor::OnCoverDownloadClick( wxCommandEvent & )
 // -------------------------------------------------------------------------------- //
 // guFetchCoverLinksThread
 // -------------------------------------------------------------------------------- //
-guFetchCoverLinksThread::guFetchCoverLinksThread( guCoverEditor * owner,
-                    const wxChar * artist, const wxChar * album, int engineindex ) :
+guFetchCoverLinksThread::guFetchCoverLinksThread(
+        guCoverEditor * owner,
+        const wxChar * artist,
+        const wxChar * album,
+        int engineindex) :
     wxThread()
 {
     m_CoverEditor   = owner;
@@ -645,32 +645,16 @@ guFetchCoverLinksThread::guFetchCoverLinksThread( guCoverEditor * owner,
     m_LastDownload  = 0;
     m_CurrentPage   = 0;
 
-//    if( m_EngineIndex == guCOVER_SEARCH_ENGINE_GOOGLE )
-//    {
-//        m_CoverFetcher = ( guCoverFetcher * ) new guGoogleCoverFetcher( this, &m_CoverLinks, artist, album );
-//    }
-//    else if( m_EngineIndex == guCOVER_SEARCH_ENGINE_AMAZON )
-    // if( m_EngineIndex == guCOVER_SEARCH_ENGINE_AMAZON )
-    // {
-    //     m_CoverFetcher = ( guCoverFetcher * ) new guAmazonCoverFetcher( this, &m_CoverLinks, artist, album );
-    // }
-    //    else if( m_EngineIndex == guCOVER_SEARCH_ENGINE_APPLE )
+    // if( m_EngineIndex == guCOVER_SEARCH_ENGINE_GOOGLE )
+    //     m_CoverFetcher = ( guCoverFetcher * ) new guGoogleCoverFetcher( this, &m_CoverLinks, artist, album );
     if( m_EngineIndex == guCOVER_SEARCH_ENGINE_APPLE )
-    {
         m_CoverFetcher = ( guCoverFetcher * ) new guAppleCoverFetcher( this, &m_CoverLinks, artist, album );
-    }
     else if( m_EngineIndex == guCOVER_SEARCH_ENGINE_LASTFM )
-    {
         m_CoverFetcher = ( guCoverFetcher * ) new guLastFMCoverFetcher( this, &m_CoverLinks, artist, album );
-    }
-//    else if( m_EngineIndex == guCOVER_SEARCH_ENGINE_DISCOGS )
-//    {
-//        m_CoverFetcher = ( guCoverFetcher * ) new guDiscogsCoverFetcher( this, &m_CoverLinks, artist, album );
-//    }
+    // else if( m_EngineIndex == guCOVER_SEARCH_ENGINE_DISCOGS )
+    //     m_CoverFetcher = ( guCoverFetcher * ) new guDiscogsCoverFetcher( this, &m_CoverLinks, artist, album );
     // else if( m_EngineIndex == guCOVER_SEARCH_ENGINE_YAHOO )
-    // {
     //     m_CoverFetcher = ( guCoverFetcher * ) new guYahooCoverFetcher( this, &m_CoverLinks, artist, album );
-    // }
 
     if( Create() == wxTHREAD_NO_ERROR )
     {
