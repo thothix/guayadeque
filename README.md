@@ -3,7 +3,6 @@
 Guayadeque is a lightweight and easy-to-use music player that supports
 smart playlists and can easily manage large music collections.
 
-Juan Rios anonbeat@gmail.com  
 Tiago Barrionuevo thothix@protonmail.com  
 see [LICENSE](LICENSE)
 

@@ -39,22 +39,20 @@
 #include <vorbisfile.h>
 #include <wavpackfile.h>
 #include <trueaudiofile.h>
-
 #include <xiphcomment.h>
 
 #ifdef TAGLIB_WITH_APE_SUPPORT
-#include <apefile.h>
+    #include <apefile.h>
 #endif
-#include <mp4tag.h>
 #include <apetag.h>
-#include <id3v2tag.h>
 #include <asftag.h>
+#include <gst/gst.h>
+#include <id3v2tag.h>
+#include <mp4tag.h>
 
 #include <wx/string.h>
 #include <wx/arrstr.h>
 #include <wx/image.h>
-
-#include <gst/gst.h>
 
 namespace Guayadeque {
 
@@ -127,7 +125,6 @@ class guTagInfo
     virtual bool        CanHandleLyrics( void );
     virtual wxString    GetLyrics( void );
     virtual bool        SetLyrics( const wxString &lyrics );
-
 };
 
 bool guIsValidAudioFile( const wxString &filename );
@@ -152,7 +149,6 @@ class guMp3TagInfo : public guTagInfo
     virtual bool        CanHandleLyrics( void );
     virtual wxString    GetLyrics( void );
     virtual bool        SetLyrics( const wxString &lyrics );
-
 };
 
 // -------------------------------------------------------------------------------- //
@@ -349,7 +345,6 @@ class guGStreamerTagInfo : public guTagInfo
     virtual int         GetGstIntTag( const gchar * tag );
     virtual bool        GetGstBoolTag( const gchar * tag );
     virtual GDateTime * GetGstTimeTag( const gchar * tag );
-
 };
 
 class guImagePtrArray;
