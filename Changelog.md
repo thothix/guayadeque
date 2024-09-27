@@ -4,6 +4,17 @@ Guayadeque Music Player
 Changelog
 =========
 
+0.5.2 (2024-xx-xx)
+------------------
+
+### Enhancements
+  * General code cleanup and small refactorings
+
+### Bugfixes
+
+### Removed
+  * Removed disabled code for Amazon cover fetcher
+
 0.5.1 (2024-09-24)
 ------------------
 
@@ -16,7 +27,7 @@ Changelog
   * Fixed compatibility with Gstreamer versions below v1.20
 
 ### Removed
-  * Removed unavailable community and home site links
+  * Removed unavailable community and home site links, updated splash screen
 
 0.5.0 (2024-09-22)
 ------------------

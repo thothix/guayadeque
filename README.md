@@ -47,7 +47,7 @@ It's been developed in XUbuntu and Linux Mint.
 ### Ubuntu (pre 20.0):
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev cmake g++ binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake g++ binutils
 ```
 
 ---

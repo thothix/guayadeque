@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-24 14:17-0300\n"
+"POT-Creation-Date: 2024-09-27 11:08-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -569,7 +569,7 @@ msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:114 ui/trackedit/TrackEdit.cpp:162
 #: ui/trackedit/TrackEdit.cpp:387 ui/trackedit/TrackEdit.cpp:428
-#: ui/trackedit/TrackEdit.cpp:487 ui/cover/CoverEdit.cpp:77
+#: ui/trackedit/TrackEdit.cpp:487 ui/cover/CoverEdit.cpp:75
 #: ui/lastfmpanel/LastFMPanel.cpp:1644
 msgid "Artist:"
 msgstr ""
@@ -1114,7 +1114,7 @@ msgid "Copy the album name to all the tracks you are editing"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:186 ui/trackedit/TrackEdit.cpp:453
-#: ui/trackedit/TrackEdit.cpp:509 ui/cover/CoverEdit.cpp:84
+#: ui/trackedit/TrackEdit.cpp:509 ui/cover/CoverEdit.cpp:82
 msgid "Album:"
 msgstr ""
 
@@ -3441,23 +3441,23 @@ msgstr ""
 msgid "Cover:"
 msgstr ""
 
-#: ui/cover/SelCoverFile.cpp:72 ui/cover/CoverEdit.cpp:111
+#: ui/cover/SelCoverFile.cpp:72 ui/cover/CoverEdit.cpp:108
 msgid "Embed into tracks"
 msgstr ""
 
-#: ui/cover/SelCoverFile.cpp:122 ui/cover/CoverEdit.cpp:579
+#: ui/cover/SelCoverFile.cpp:122 ui/cover/CoverEdit.cpp:576
 msgid "Select the cover filename"
 msgstr ""
 
-#: ui/cover/CoverEdit.cpp:62
+#: ui/cover/CoverEdit.cpp:60
 msgid "Cover Editor"
 msgstr ""
 
-#: ui/cover/CoverEdit.cpp:91
+#: ui/cover/CoverEdit.cpp:89
 msgid "From:"
 msgstr ""
 
-#: ui/cover/CoverEdit.cpp:609
+#: ui/cover/CoverEdit.cpp:606
 msgid "Cover Url"
 msgstr ""
 
