@@ -82,14 +82,13 @@ guSplashFrame::guSplashFrame( wxWindow * parent, int timeout ) :
 //    m_HomePage->SetCanFocus( false );
 //    MainSizer->Add( m_HomePage, 0, wxALIGN_RIGHT|wxRIGHT|wxLEFT, 5 );
 
-//    m_Donate = new wxHyperlinkCtrl( this, wxID_ANY, _( "Please Donate!" ), guSPLASH_DONATION_LINK );
-//
-//    m_Donate->SetHoverColour( FontColor );
-//    m_Donate->SetNormalColour( FontColor );
-//    m_Donate->SetVisitedColour( FontColor );
-//    m_Donate->SetBackgroundColour( * wxWHITE );
-//    m_Donate->SetCanFocus( false );
-//    MainSizer->Add( m_Donate, 0, wxALIGN_RIGHT|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
+    m_Donate = new wxHyperlinkCtrl( this, wxID_ANY, _( "Please Donate!" ), guSPLASH_DONATION_LINK );
+    m_Donate->SetHoverColour( FontColor );
+    m_Donate->SetNormalColour( FontColor );
+    m_Donate->SetVisitedColour( FontColor );
+    m_Donate->SetBackgroundColour( * wxWHITE );
+    m_Donate->SetCanFocus( false );
+    MainSizer->Add( m_Donate, 0, wxALIGN_RIGHT|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
 
 	this->SetSizer( MainSizer );
 	this->Layout();
