@@ -49,7 +49,7 @@ class guSplashFrame : public wxFrame
 	wxHyperlinkCtrl *   m_Thanks;
 	wxStaticText *      m_Version;
     //wxHyperlinkCtrl *   m_HomePage;
-    //wxHyperlinkCtrl *   m_Donate;
+    wxHyperlinkCtrl *   m_Donate;
     wxBitmap *          m_Bitmap;
     wxTimer             m_Timer;
 
