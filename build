@@ -5,9 +5,9 @@ cd $(readlink -f $(dirname $0))
 
 ./buildt
 rm CMakeCache.txt
+
 cmake ${1} . \
  -DCMAKE_BUILD_TYPE='Release' \
  -DCMAKE_INSTALL_PREFIX=/usr \
- -DCMAKE_CXX_STANDARD="11" \
+ -DCMAKE_CXX_STANDARD="17" \
  && make ${2}
-

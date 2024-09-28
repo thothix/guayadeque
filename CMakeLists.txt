@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.11)
+# set(CMAKE_CXX_STANDARD 11)
 
 project(Guayadeque)
 
@@ -14,6 +15,7 @@ endif()
 # Adhere to GNU filesystem layout conventions
 include(GNUInstallDirs)
 
+message(STATUS "Building through C++ ${CMAKE_CXX_STANDARD} ...")
 message(STATUS "Using install prefix ${CMAKE_INSTALL_PREFIX} ...")
 
 find_package(PkgConfig REQUIRED)
@@ -55,7 +57,7 @@ if (NOT LIBTAG_FOUND)
     if (NOT LIBTAG_FOUND)
         pkg_check_modules(LIBTAG taglib>=1.6)
         if (NOT LIBTAG_FOUND)
-            message(FATAL_ERROR "taglib 1.6 not found!")
+            message(FATAL_ERROR "taglib 1.6/2.0 not found!")
         endif()
     else()
         add_definitions(-DTAGLIB_WITH_MP4_COVERS=1)
