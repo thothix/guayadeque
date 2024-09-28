@@ -8,6 +8,9 @@ Changelog
 ------------------
 
 ### Enhancements
+  * Removed deprecated C++17 register warning
+  * Updated default compiler standard to C++17
+  * Updated splash screen
   * General code cleanup and small refactorings
 
 ### Bugfixes
