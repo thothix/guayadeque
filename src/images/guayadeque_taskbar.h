@@ -1,24 +1,22 @@
-// -------------------------------------------------------------------------------- //
-//    Copyright (C) 2008-2023 J.Rios anonbeat@gmail.com
-//
-//    This Program is free software; you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation; either version 3, or (at your option)
-//    any later version.
-//
-//    This Program is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with this program; see the file LICENSE.  If not, write to
-//    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-//    Boston, MA 02110-1301 USA.
-//
-//    http://www.gnu.org/copyleft/gpl.html
-//
-// -------------------------------------------------------------------------------- //
+/*
+   Copyright (C) 2008-2023 J.Rios <anonbeat@gmail.com>
+   Copyright (C) 2024 Tiago T Barrionuevo <thothix@protonmail.com>
+
+   This file is part of Guayadeque Music Player.
+
+   Guayadeque is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   Guayadeque is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with Guayadeque. If not, see <https://www.gnu.org/licenses/>.
+*/
 const unsigned char guImage_guayadeque_taskbar[] = {
 0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
 0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x18, 0x00, 0x00, 0x00, 0x18,

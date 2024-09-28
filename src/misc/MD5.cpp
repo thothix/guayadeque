@@ -1,9 +1,8 @@
 // -------------------------------------------------------------------------------- //
-//
 // Name:        md5.cpp
 // Author:      Kai Krahn
 // Created:     11.11.07 12:35
-
+//
 // Description: wxWidgets md5 implementation
 //
 // This code implements the MD5 message-digest algorithm.
@@ -18,7 +17,6 @@
 //
 // This code is provided "as is" and comes without any warranty!
 // -------------------------------------------------------------------------------- //
-
 #include <wx/sstream.h>
 #include <wx/wfstream.h>
 #include <wx/filename.h>
