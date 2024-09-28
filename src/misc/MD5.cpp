@@ -26,19 +26,24 @@
 #include <memory.h>		 /* for memcpy() */
 #include "MD5.h"
 
-#ifndef HIGHFIRST
-#ifdef wxBYTE_ORDER
-    #if wxBYTE_ORDER == wxBIG_ENDIAN
-        #define HIGHFIRST
-    #endif
-#endif
+#if __cplusplus < 201703L
+    #define guREGISTER register
+#else
+    #define guREGISTER
 #endif
 
-//---------------------------------------------------------------------------
 #ifndef HIGHFIRST
-  #define byteReverse( buf, len )	/* Nothing */
-#else
+    #ifdef wxBYTE_ORDER
+        #if wxBYTE_ORDER == wxBIG_ENDIAN
+            #define HIGHFIRST
+        #endif
+    #endif
+#endif
+
 // -------------------------------------------------------------------------------- //
+#ifndef HIGHFIRST
+    #define byteReverse( buf, len )	/* Nothing */
+#else
 void byteReverse( unsigned char * buf, unsigned longs )
 {
     uint32 t;
@@ -50,6 +55,7 @@ void byteReverse( unsigned char * buf, unsigned longs )
     } while ( --longs );
 }
 #endif
+
 
 // -------------------------------------------------------------------------------- //
 guMD5CTX::guMD5CTX()
@@ -68,7 +74,6 @@ void guMD5CTX::Init()
     m_Count[ 0 ] = 0;
     m_Count[ 1 ] = 0;
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guMD5CTX::Update( const unsigned char * buf, unsigned len )
@@ -100,8 +105,8 @@ void guMD5CTX::Update( const unsigned char * buf, unsigned len )
         buf += t;
         len -= t;
     }
-    /* Process data in 64-byte chunks */
 
+    /* Process data in 64-byte chunks */
     while( len >= 64 )
     {
         memcpy( m_Buffer, buf, 64 );
@@ -112,10 +117,8 @@ void guMD5CTX::Update( const unsigned char * buf, unsigned len )
     }
 
     /* Handle any remaining bytes of data. */
-
     memcpy( m_Buffer, buf, len );
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guMD5CTX::Final( unsigned char digest[ 16 ] )
@@ -162,7 +165,6 @@ void guMD5CTX::Final( unsigned char digest[ 16 ] )
     //memset( ctx, 0, sizeof( ctx ) );        /* In case it's sensitive */
 }
 
-
 // -------------------------------------------------------------------------------- //
 /** The four core functions - F1 is optimized somewhat */
 
@@ -176,11 +178,10 @@ void guMD5CTX::Final( unsigned char digest[ 16 ] )
 #define MD5STEP( f, w, x, y, z, data, s ) \
 	( w += f( x, y, z ) + data,  w = w<<s | w>>( 32-s ),  w += x )
 
-
 // -------------------------------------------------------------------------------- //
 void guMD5CTX::Transform( uint32 in[ 16 ] )
 {
-    register uint32 a, b, c, d;
+    guREGISTER uint32 a, b, c, d;
 
     a = m_State[ 0 ];
     b = m_State[ 1 ];
@@ -261,6 +262,7 @@ void guMD5CTX::Transform( uint32 in[ 16 ] )
     m_State[ 3 ] += d;
 }
 
+
 // -------------------------------------------------------------------------------- //
 wxString guMD5::MD5( const unsigned char * Data, unsigned int Len )
 {
@@ -284,7 +286,6 @@ wxString guMD5::MD5File( const wxString &FileName )
 #define ChunkSize 1024
 
     m_Context.Init();
-
     wxString RetVal = wxEmptyString;
 
     if( wxFileExists( FileName ) )
@@ -305,7 +306,6 @@ wxString guMD5::MD5File( const wxString &FileName )
             m_Context.Update( m_Buffer, Cnt );
         }
         delete [] m_Buffer;
-
         delete InStream;
     }
 
