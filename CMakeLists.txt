@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.11)
-# set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 3.10)
 
 project(Guayadeque)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set Release type for builds where CMAKE_BUILD_TYPE is unset.
 # This is usually a good default as this implictly enables

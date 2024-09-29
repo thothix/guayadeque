@@ -4,16 +4,15 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.5.2 (2024-xx-xx)
+0.5.2 (2024-09-28)
 ------------------
 
 ### Enhancements
-  * Removed deprecated C++17 register warning
   * Updated default compiler standard to C++17
+  * Removed deprecated C++17 register warning
   * Updated splash screen
+  * Updated copyright headers for the entire project
   * General code cleanup and small refactorings
-
-### Bugfixes
 
 ### Removed
   * Removed disabled code for Amazon cover fetcher
