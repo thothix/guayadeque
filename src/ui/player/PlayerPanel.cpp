@@ -2577,29 +2577,30 @@ void guPlayerPanel::OnStopButtonClick( wxCommandEvent& event )
     if( State != guMEDIASTATE_STOPPED )
     {
         m_MediaCtrl->Stop();
-         //UpdatePositionLabel( 0 );
- //        if( m_MediaSong.m_Length )
- //    m_PlayerPositionSlider->SetValue( 0 );
- //    ResetVumeterLevel();
-    }
-    else
-    {
-        m_MediaSong = guCurrentTrack();
-        m_MediaSong.SetCoverImage( new wxImage( guImage( guIMAGE_INDEX_no_cover ) ) );
+        //UpdatePositionLabel(0);
+        //if (m_MediaSong.m_Length)
+        //    m_PlayerPositionSlider->SetValue(0);
+        //ResetVumeterLevel();
 
-        SetTitleLabel( wxEmptyString );
-        SetAlbumLabel( wxEmptyString );
-        SetArtistLabel( wxEmptyString );
-        SetRatingLabel( 0 );
-        SetBitRateLabel( 0 );
-        UpdatePositionLabel(0);
-        SetCodecLabel( * wxEmptyString, * wxEmptyString);
-        m_YearLabel->SetLabel( wxEmptyString );
-        UpdateCover(false, false);
-        UpdateCoverImage(false);
-        m_PlayListCtrl->ClearItems();
+        SavePlayedTrack(true);
     }
-    SavePlayedTrack( true );
+    // DISABLED: If we want to clear the playlist, we have the Clear Playlist action!
+//    else
+//    {
+//        m_MediaSong = guCurrentTrack();
+//        m_MediaSong.SetCoverImage(new wxImage(guImage(guIMAGE_INDEX_no_cover)));
+//        SetTitleLabel(wxEmptyString);
+//        SetAlbumLabel(wxEmptyString);
+//        SetArtistLabel(wxEmptyString);
+//        SetRatingLabel(0);
+//        SetBitRateLabel(0);
+//        UpdatePositionLabel(0);
+//        SetCodecLabel(* wxEmptyString, * wxEmptyString);
+//        m_YearLabel->SetLabel(wxEmptyString);
+//        UpdateCover(false, false);
+//        UpdateCoverImage(false);
+//        m_PlayListCtrl->ClearItems();
+//    }
 }
 
 // -------------------------------------------------------------------------------- //
