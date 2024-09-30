@@ -62,7 +62,6 @@ guTreeViewTreeCtrl::guTreeViewTreeCtrl( wxWindow * parent, guDbLibrary * db, guT
     m_TreeViewPanel = treeviewpanel;
     m_ConfigPath = treeviewpanel->ConfigPath();
 
-
     guConfig * Config = ( guConfig * ) guConfig::Get();
     Config->RegisterObject( this );
 
@@ -76,11 +75,9 @@ guTreeViewTreeCtrl::guTreeViewTreeCtrl( wxWindow * parent, guDbLibrary * db, guT
     }
 
     if( ( m_CurrentFilter < 0 ) || ( m_CurrentFilter >= ( int ) m_FilterEntries.Count() ) )
-    {
         m_CurrentFilter = 0;
-    }
 
-    m_ImageList = new wxImageList();
+    m_ImageList = new wxImageList(24, 24);
     m_ImageList->Add( wxBitmap( guImage( guIMAGE_INDEX_track ) ) );
     m_ImageList->Add( wxBitmap( guImage( guIMAGE_INDEX_filter ) ) );
     AssignImageList( m_ImageList );
@@ -129,9 +126,7 @@ void guTreeViewTreeCtrl::OnConfigUpdated( wxCommandEvent &event )
 {
     int Flags = event.GetInt();
     if( Flags & guPREFERENCE_PAGE_FLAG_ACCELERATORS )
-    {
         CreateAcceleratorTable();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -187,9 +182,10 @@ void AddTreeItems( wxTreeCtrl * treectrl, wxTreeItemId &curitem, wxSQLite3Result
     }
 
     if( curfilter < ( int ) filters.Count() - 1 )
-    {
-        AddTreeItems( treectrl, LastTreeItemId[ curfilter ], dbres, filters, lastdata, curfilter + 1, respos + ( ( filters[ curfilter ] < guLIBRARY_ELEMENT_YEARS ) ? 2 : 1 ) );
-    }
+        AddTreeItems(treectrl,
+                     LastTreeItemId[ curfilter ],
+                     dbres, filters, lastdata, curfilter + 1,
+                     respos + ((filters[curfilter] < guLIBRARY_ELEMENT_YEARS) ? 2 : 1));
 }
 
 // -------------------------------------------------------------------------------- //

@@ -96,7 +96,7 @@ guRadioGenreTreeCtrl::guRadioGenreTreeCtrl( wxWindow * parent, guRadioPanel * ra
     guConfig * Config = ( guConfig * ) guConfig::Get();
     Config->RegisterObject( this );
 
-    m_ImageList = NULL;
+    m_ImageList = nullptr;
 
     m_RootId   = AddRoot( wxT( "Radios" ), -1, -1, NULL );
 
@@ -143,7 +143,7 @@ void guRadioGenreTreeCtrl::CreateAcceleratorTable( void )
 // -------------------------------------------------------------------------------- //
 void guRadioGenreTreeCtrl::ReloadProviders( guRadioProviderArray * radioproviders )
 {
-    m_ImageList = new wxImageList();
+    m_ImageList = new wxImageList(24, 24);
     DeleteChildren( m_RootId );
     int Count = m_RadioPanel->GetProviderCount();
     for( int Index = 0; Index < Count; Index++ )
