@@ -74,7 +74,7 @@ guPLNamesTreeCtrl::guPLNamesTreeCtrl( wxWindow * parent, guDbLibrary * db, guPla
     Config->RegisterObject( this );
 
     m_PlayListPanel = playlistpanel;
-    m_ImageList = new wxImageList();
+    m_ImageList = new wxImageList(24, 24);
     m_ImageList->Add( wxBitmap( guImage( guIMAGE_INDEX_track ) ) );
     m_ImageList->Add( wxBitmap( guImage( guIMAGE_INDEX_system_run ) ) );
 

@@ -75,7 +75,7 @@ guLocationTreeCtrl::guLocationTreeCtrl( wxWindow * parent, guMainFrame * mainfra
     m_MainFrame = mainframe;
     m_LockCount = 0;
 
-    m_ImageList = new wxImageList();
+    m_ImageList = new wxImageList(24, 24);
     m_ImageList->Add( guImage( guIMAGE_INDEX_loc_library ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_loc_portable_device ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_loc_net_radio ) );
