@@ -535,7 +535,6 @@ void guLibPanel::LoadLastLayout( void )
         LibraryLayout += wxT( "dock_size(1,0,1)=190|dock_size(5,0,0)=52|" );
     }
 
-    //m_AuiManager.LoadPerspective( LibraryLayout, true );
     LoadPerspective( LibraryLayout, m_VisiblePanels );
 }
 

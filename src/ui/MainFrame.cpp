@@ -645,7 +645,6 @@ guMainFrame::~guMainFrame()
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayerVolumeChanged, this, ID_PLAYERPANEL_VOLUMECHANGED );
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayerSeeked, this, ID_PLAYERPANEL_SEEKED );
 
-
     Unbind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_TRACK );
     Unbind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_ALBUM );
     Unbind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_ALBUMARTIST );
@@ -715,7 +714,6 @@ guMainFrame::~guMainFrame()
 
     Unbind( wxEVT_MENU, &guMainFrame::OnViewFullScreen, this, ID_MENU_VIEW_FULLSCREEN );
     Unbind( wxEVT_MENU, &guMainFrame::OnViewStatusBar, this, ID_MENU_VIEW_STATUSBAR );
-
 
     Unbind( wxEVT_MENU, &guMainFrame::OnMountMonitorUpdated, this, ID_VOLUMEMANAGER_MOUNT_CHANGED );
 
@@ -2337,7 +2335,6 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                         }
 #endif
                     }
-
                     m_MediaViewers.Add( MediaViewer );
                 }
 
@@ -2345,7 +2342,6 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                     MediaViewer->SetViewMode( guMEDIAVIEWER_MODE_LIBRARY );
 
                 InsertTabPanel( MediaViewer, 5, Collection.m_Name, Collection.m_UniqueId );
-
             }
             else
             {
@@ -2367,7 +2363,6 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                              ( ( CollectionCmdId - guCOLLECTION_ACTION_VIEW_ALBUMBROWSER ) + 1 ) );
             else
                 guLogMessage( wxT( "Got a command %i %i  %i?" ), CollectionIndex, CollectionCmdId, IsEnabled );
-
             break;
         }
 
@@ -2383,10 +2378,8 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
         {
             if ( MediaViewer )
                 MediaViewer->ShowPanel( CollectionCmdId, IsEnabled );
-
             break;
         }
-
 
         case guCOLLECTION_ACTION_UPDATE_LIBRARY :
         case guCOLLECTION_ACTION_RESCAN_LIBRARY :
@@ -2396,16 +2389,13 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
         {
             if ( MediaViewer )
                 MediaViewer->HandleCommand( CollectionCmdId );
-
             break;
         }
 
         case guCOLLECTION_ACTION_VIEW_PROPERTIES :
         {
             if ( MediaViewer )
-            {
                 MediaViewer->EditProperties();
-            }
             else if ( Collection.m_Type == guMEDIA_COLLECTION_TYPE_NORMAL )
             {
                 wxCommandEvent CmdEvent( wxEVT_MENU, ID_MENU_PREFERENCES );
