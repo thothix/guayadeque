@@ -108,7 +108,6 @@ static bool tick_timeout( guMediaCtrl * mediactrl )
 }
 
 
-
 // -------------------------------------------------------------------------------- //
 guMediaCtrl::guMediaCtrl( guPlayerPanel * playerpanel )
 {
@@ -150,7 +149,6 @@ guMediaCtrl::~guMediaCtrl()
     }
 
     CleanUp();
-
     gst_deinit();
 }
 
@@ -160,9 +158,7 @@ void guMediaCtrl::CleanUp( void )
     Lock();
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         delete m_FaderPlayBins[ Index ];
-    }
 
     Unlock();
 }
@@ -185,7 +181,6 @@ void guMediaCtrl::UpdatePosition( void )
 	    m_CurrentPlayBin->Lock();
 
         Pos = m_CurrentPlayBin->Position();
-
         Pos /= GST_MSECOND;
 
 		Duration = -1;
@@ -237,9 +232,8 @@ wxFileOffset guMediaCtrl::Position( void )
     wxFileOffset Pos = 0;
     Lock();
     if( m_CurrentPlayBin )
-    {
         Pos = m_CurrentPlayBin->Position();
-    }
+
     Unlock();
     return Pos;
 }
@@ -250,9 +244,8 @@ wxFileOffset guMediaCtrl::Length( void )
     Lock();
     wxFileOffset Len = 0;
     if( m_CurrentPlayBin )
-    {
         Len = m_CurrentPlayBin->Length();
-    }
+
     Unlock();
     return Len;
 }
@@ -265,9 +258,8 @@ bool guMediaCtrl::SetVolume( double volume )
     Lock();
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_FaderPlayBins[ Index ]->SetVolume( volume );
-    }
+
     Unlock();
     return true;
 }
@@ -343,8 +335,6 @@ guMediaState guMediaCtrl::GetState( void )
             case guFADERPLAYBIN_STATE_ERROR :
                 State = guMEDIASTATE_ERROR;
 
-
-
             default :
                 break;
         }
@@ -368,9 +358,7 @@ long guMediaCtrl::Load( const wxString &uri, guFADERPLAYBIN_PLAYTYPE playtype, c
 #endif
 
     if( IsBuffering() )
-    {
         playtype = guFADERPLAYBIN_PLAYTYPE_REPLACE;
-    }
 
     switch( playtype )
     {
@@ -493,9 +481,8 @@ bool guMediaCtrl::Play( void )
         {
             Lock();
             if( m_CurrentPlayBin != FaderPlaybin )
-            {
                 m_CurrentPlayBin = FaderPlaybin;
-            }
+
             Unlock();
             FaderPlaybin->StartFade( 0.0, 1.0, ( !m_ForceGapless && m_FadeOutTime ) ? guFADERPLAYBIN_FAST_FADER_TIME : guFADERPLAYBIN_SHORT_FADER_TIME );
             FaderPlaybin->m_State = guFADERPLAYBIN_STATE_FADEIN;
@@ -619,8 +606,6 @@ bool guMediaCtrl::Pause( void )
 // -------------------------------------------------------------------------------- //
 bool guMediaCtrl::Stop( void )
 {
-    guLogDebug( wxT( "***************************************************************************** guMediaCtrl::Stop" ) );
-
     guFaderPlaybin * FaderPlayBin = NULL;
 	wxArrayPtrVoid  ToFade;
 
@@ -750,9 +735,8 @@ bool guMediaCtrl::Seek( wxFileOffset where, const bool accurate )
     bool Result = false;
     Lock();
     if( m_CurrentPlayBin )
-    {
         Result = m_CurrentPlayBin->Seek( where, accurate );
-    }
+
     Unlock();
     return Result;
 }
@@ -785,8 +769,6 @@ void guMediaCtrl::UpdatedConfig( void )
     guMediaEvent e( guEVT_PIPELINE_CHANGED );
     e.SetClientData( NULL );
     SendEvent( e ); // returns in ::RefreshPlaybackItems
-
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -794,9 +776,7 @@ void guMediaCtrl::ScheduleCleanUp( void )
 {
     //Lock();
     if( !m_CleanUpId )
-    {
         m_CleanUpId = g_timeout_add( 4000, GSourceFunc( cleanup_mediactrl ), this );
-    }
     //Unlock();
 }
 
@@ -907,9 +887,8 @@ void guMediaCtrl::DisableRecord( void )
     m_IsRecording = false;
     Lock();
     if( m_CurrentPlayBin )
-    {
         m_CurrentPlayBin->DisableRecord();
-    }
+
     Unlock();
 }
 
@@ -935,7 +914,6 @@ void guMediaCtrl::DoCleanUp( void )
     DumpFaderPlayBins( m_FaderPlayBins, m_CurrentPlayBin );
 #endif
 
-
 	m_CleanUpId = 0;
 
 	int Count = m_FaderPlayBins.Count();
@@ -948,9 +926,7 @@ void guMediaCtrl::DoCleanUp( void )
 			ToDelete.Add( FaderPlaybin );
 			m_FaderPlayBins.RemoveAt( Index );
 			if( FaderPlaybin == m_CurrentPlayBin )
-			{
 			    m_CurrentPlayBin = NULL;
-			}
 		}
 	}
 	if( !m_FaderPlayBins.Count() )
