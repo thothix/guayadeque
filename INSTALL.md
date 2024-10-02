@@ -1,6 +1,4 @@
-<img style="float: left;" src=https://raw.githubusercontent.com/thothix/guayadeque/master/defconfig/guayadeque.png>
-
-# Guayadeque Music Player
+# <img style="float: left;" src=https://raw.githubusercontent.com/thothix/guayadeque/master/defconfig/guayadeque.png> Guayadeque Music Player
 
 Guayadeque is a lightweight and easy-to-use music player and music collection organizer
 that can easily manage large music collections and supports smart playlists.
@@ -21,8 +19,6 @@ Need installed cmake, g++, wxWidgets 3.0/3.2, gstreamer1.0, sqlite3, libwxsqlite
 
 It's been developed in XUbuntu and Linux Mint.
 
----
-
 ## Dependencies
 
 ### Ubuntu (pre 20.0):
@@ -31,15 +27,11 @@ It's been developed in XUbuntu and Linux Mint.
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake g++ binutils
 ```
 
----
-
 ### Ubuntu 20.04, Linux Mint 20
 
 ```bash
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake g++ binutils
 ```
-
----
 
 ### Ubuntu 22.04, Linux Mint 21
 
@@ -47,15 +39,11 @@ sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstrea
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev gettext cmake g++ binutils
 ```
 
----
-
 ### Ubuntu 24.04, Linux Mint 22
 
 ```bash
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev gettext cmake g++ binutils
 ```
-
----
 
 ### Debian 12
 
@@ -63,15 +51,11 @@ sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstrea
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake
 ```
 
----
-
 ### Mageia 9
 
 ```bash
 sudo urpmi gstreamer1.0-devtools lib64wx_gtk3u_wxsqlite3_3.2-devel lib64taglib-devel lib64sqlite3-devel lib64curl-devel lib64dbus-devel lib64gio2.0_0 lib64jsoncpp-devel cmake binutils
 ```
-
----
 
 ### Arch Linux
 
@@ -116,8 +100,6 @@ sudo pacman -S libgpod gst-libav gst-plugins-bad gst-plugins-ugly gvfs
 ./build
 sudo make install
 ```
-
----
 
 ### Faster build on multi-core systems
 
