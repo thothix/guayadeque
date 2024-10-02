@@ -4,6 +4,19 @@ Guayadeque Music Player
 Changelog
 =========
 
+0.5.3 (2024-10-02)
+------------------
+
+### Enhancements
+  * The playlist isn't cleared anymore if the stop button is clicked twice.  
+    If we want to clear the playlist, we have the Clear Playlist (menu and playlist toolbar)
+  * Splitted README installation instructions to INSTALL 
+  * General code cleanup and small refactorings
+
+### Bugfixes
+  * Fixed the display of several icons that were not shown (Source panel, Radio panel->Genres,
+    File Browser->Directories, Library->Treeview/Playlists)
+
 0.5.2 (2024-09-28)
 ------------------
 
