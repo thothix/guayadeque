@@ -25,8 +25,6 @@ The main focus right now is keeping it running in the most recent Linux releases
 thank him for his support throughout the years. **We also want to thank @openmonk** for his invaluable
 contributions to Guayadeque development.
 
----
-
 # General
 
 For installation instructions please see [INSTALL.md](INSTALL.md)
@@ -36,8 +34,6 @@ For translations please send an email to [<thothix@protonmail.com>](mailto:thoth
 
 Special Thanks to Mrmotinjo (Stefan Bogdanovic http://evilsun.carbonmade.com)  
 for the icon and splash designed for guayadeque.
-
----
 
 # Features
 
@@ -73,8 +69,6 @@ Main features include:
 - Partial GNOME session support to detect when GNOME session is about to close and save
   the play list so it can continue next time with the same tracks.
 - and many more.
-
----
 
 # Copyright
 
