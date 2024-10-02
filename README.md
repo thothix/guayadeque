@@ -1,9 +1,13 @@
+<img style="float: left;" src=https://raw.githubusercontent.com/thothix/guayadeque/master/defconfig/guayadeque.png>
+
 # Guayadeque Music Player
 
-Guayadeque is a lightweight and easy-to-use music player that supports
-smart playlists and can easily manage large music collections.
+Guayadeque is a lightweight and easy-to-use music player and music collection organizer
+that can easily manage large music collections and supports smart playlists.
+In the technical side, it's written in C++, uses the wxWidget toolkit and the
+Gstreamer media framework.
 
-Tiago Barrionuevo <thothix@protonmail.com>  
+Tiago T Barrionuevo [<thothix@protonmail.com>](mailto:thothix@protonmail.com)  
 see [LICENSE](LICENSE)
 
 - [Github](https://github.com/thothix/guayadeque)
@@ -23,134 +27,71 @@ The main focus right now is keeping it running in the most recent Linux releases
 thank him for his support throughout the years. **We also want to thank @openmonk** for his invaluable
 contributions to Guayadeque development.
 
+---
+
 # General
 
-For bugs, suggestions or requests please check github issues and open one if needed.  
-For translations please send an email to thothix@protonmail.com
+For installation instructions please see [INSTALL.md](INSTALL.md)
+
+For bugs, suggestions or requests please check [Github issues](https://github.com/thothix/guayadeque/issues) and open one if needed.  
+For translations please send an email to [<thothix@protonmail.com>](mailto:thothix@protonmail.com?subject=Guayadeque%20Translations)
 
 Special Thanks to Mrmotinjo (Stefan Bogdanovic http://evilsun.carbonmade.com)  
 for the icon and splash designed for guayadeque.
 
 ---
 
-# Build
+# Features
 
-Need installed cmake, g++, wxWidgets 3.0/3.2, gstreamer1.0, sqlite3, libwxsqlite3, taglib, jsoncpp, libcurl, libdbus-1, libgio
+Main features include:
 
-It's been developed in XUbuntu and Linux Mint.
-
----
-
-## Dependencies
-
-### Ubuntu (pre 20.0):
-
-```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake g++ binutils
-```
-
----
-
-### Ubuntu 20.04, Linux Mint 20
-
-```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake g++ binutils
-```
-
----
-
-### Ubuntu 22.04, Linux Mint 21
-
-```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev gettext cmake g++ binutils
-```
-
----
-
-### Ubuntu 24.04, Linux Mint 22
-
-```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev gettext cmake g++ binutils
-```
+- Play mp3, ogg, flac, wav, wma, mpc, mp4, ape, ...
+- Read and write tags in all supported formats.
+- Smart play mode that add tracks that fit your music taste using the tracks in the playlist.
+- Allow to catalogue your music using labels. Any track, artist or album can have as many
+  labels you want.
+- Allow fast access to any music file by genre, artist, album
+- Audio equalizer
+- Configurable cross fader engine
+- Configurable Silence detector to avoid listening to silence between tracks
+- Dynamic and static playlists management.
+- Tracks tag editor with automatically fetching of tags information for easily completion.
+- Ability to download covers manually or automatically
+- Lyrics downloads from different lyrics providers.
+- You can rate the tracks from 0 to 5 stars.
+- Desktop notifications.
+- MPRIS D-Bus interface support so it can easily controlled from music applets for example.
+- Allow to resume play status and position when closed and reopened.
+- Allow to subscribe to podcasts and download all new episodes automatically or manually.
+- Play and Record shoutcast radios
+- Suggest music using last.fm service.
+- Last.fm audioscrobbling support.
+- Easily expandable contextual links support. With it you can find information about 
+  a track, an artist or an album on your favourite site.
+- Easily expandable contextual commands support. For example you can right click on
+  any album and click in option to record the album in a burning application.
+- Option to copy the selection you want to a directory or device like USB players and IPod
+  using a configurable pattern.
+- Partial GNOME session support to detect when GNOME session is about to close and save
+  the play list so it can continue next time with the same tracks.
+- and many more.
 
 ---
 
-### Debian 12
+# Copyright
 
-```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev cmake
-```
+Copyright (C) 2008-2023 J.Rios <anonbeat@gmail.com>\
+Copyright (C) 2024 Tiago T Barrionuevo <thothix@protonmail.com>
 
----
+Guayadeque is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-### Mageia 9
+Guayadeque is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-```bash
-sudo urpmi gstreamer1.0-devtools lib64wx_gtk3u_wxsqlite3_3.2-devel lib64taglib-devel lib64sqlite3-devel lib64curl-devel lib64dbus-devel lib64gio2.0_0 lib64jsoncpp-devel cmake binutils
-```
-
----
-
-### Arch Linux
-
-```bash
-sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlite3 taglib curl dbus gdk-pixbuf2 jsoncpp cmake
-```
-
----
-
-### Optional dependencies
-
-#### Extra audio playback support
-
-- `gstreamer1.0-libav`: Provides support for a wide range of audio and video codecs, enabling Guayadeque to play more media formats (like `DSD/DSF`).
-- `gstreamer1.0-plugins-bad`: Includes additional GStreamer plugins for enhanced functionality, but may have stability or licensing issues.
-- `gstreamer1.0-plugins-ugly`: Offers support for certain audio and video formats that may have distribution or patent issues in some countries.
-
-#### Other
-
-- `libgpod-dev`: Offers comprehensive support for managing and interacting with iPod devices.
-- `gvfs`: Allows Guayadeque to access and manage files through GVFS (GNOME Virtual File System), which is useful for handling remote or virtual file systems.
-
-##### Ubuntu, Linux Mint, Debian 12
-
-```bash
-sudo apt install libgpod-dev gstreamer1.0-libav gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
-```
-
-##### Arch Linux
-
-```bash
-sudo pacman -S libgpod gst-libav gst-plugins-bad gst-plugins-ugly gvfs
-```
-
----
-
-## Build
-
-### Normal build
-
-```bash
-./build
-sudo make install
-```
-
----
-
-### Faster build on multi-core systems
-
-#### Old cmake versions
-
-```bash
-./build -j$(nproc) -j$(nproc)
-sudo make install
-```
-
-#### New cmake versions
-
-```bash
-./build "" -j$(nproc)
-sudo make install
-```
-
----
+You should have received a copy of the GNU General Public License
+along with Guayadeque. If not, see https://www.gnu.org/licenses/.
