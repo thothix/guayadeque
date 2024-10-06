@@ -43,8 +43,6 @@ namespace Guayadeque {
 WX_DEFINE_OBJARRAY( guCopyToPatternArray )
 
 // -------------------------------------------------------------------------------- //
-// guCopyToPattern
-// -------------------------------------------------------------------------------- //
 guCopyToPattern::guCopyToPattern()
 {
     m_Format = guTRANSCODE_FORMAT_KEEP;
@@ -80,7 +78,6 @@ guCopyToPattern::guCopyToPattern( const wxString &pattern )
     }
 }
 
-
 // -------------------------------------------------------------------------------- //
 guCopyToPattern::~guCopyToPattern()
 {
@@ -95,6 +92,7 @@ wxString guCopyToPattern::ToString( void )
 }
 
 #define PREFERENCES_SCROLL_STEP     20
+
 
 // -------------------------------------------------------------------------------- //
 // guPrefDialog
@@ -118,7 +116,6 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     if( !m_Config )
         guLogError( wxT( "Invalid m_Config object in preferences dialog" ) );
 
-
     wxPoint WindowPos;
     WindowPos.x = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_POSX, -1, CONFIG_PATH_PREFERENCES );
     WindowPos.y = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_POSY, -1, CONFIG_PATH_PREFERENCES );
@@ -129,7 +126,6 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     //wxDialog( parent, wxID_ANY, _( "Songs Editor" ), wxDefaultPosition, wxSize( 625, 440 ), wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER )
     Create( parent, wxID_ANY, _( "Preferences" ), WindowPos, WindowSize, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER | wxMAXIMIZE_BOX );
 
-    //
     m_MainLangChoices.Add( _( "Default" ) );
     m_MainLangChoices.Add( _( "Czech" ) );
     m_MainLangChoices.Add( _( "Danish" ) );
@@ -195,7 +191,6 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     m_LFMLangNames.Add( _( "Italian" ) );        m_LFMLangIds.Add( wxT( "it" ) );
     m_LFMLangNames.Add( _( "Portuguese" ) );     m_LFMLangIds.Add( wxT( "pt" ) );
     m_LFMLangNames.Add( _( "Spanish" ) );        m_LFMLangIds.Add( wxT( "es" ) );
-
 
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 
@@ -391,12 +386,8 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
 
     m_MainNotebook->Bind( wxEVT_LISTBOOK_PAGE_CHANGED, &guPrefDialog::OnPageChanged, this );
 
-    //
-    //
-    //
     m_PathSelected = wxNOT_FOUND;
     m_FilterSelected = wxNOT_FOUND;
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -411,7 +402,6 @@ guPrefDialog::~guPrefDialog()
     Config->WriteNum( CONFIG_KEY_PREFERENCES_WIDTH, WindowSize.x, CONFIG_PATH_PREFERENCES );
     Config->WriteNum( CONFIG_KEY_PREFERENCES_HEIGHT, WindowSize.y, CONFIG_PATH_PREFERENCES );
     m_Config->WriteNum( CONFIG_KEY_PREFERENCES_LAST_PAGE, m_MainNotebook->GetSelection(), CONFIG_PATH_PREFERENCES );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -547,9 +537,15 @@ void guPrefDialog::BuildGeneralPage( void )
     m_EnterSearchChkBox->Enable( m_InstantSearchChkBox->IsChecked() );
 	BehaviSizer->Add( m_EnterSearchChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
-	m_ShowCDFrameChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _( "Show CD cover frame in player" ), wxDefaultPosition, wxDefaultSize, 0 );
+    bool show_cover = m_Config->ReadBool(CONFIG_KEY_GENERAL_SHOW_PLAYER_COVER, true, CONFIG_PATH_GENERAL);
+    m_ShowPlayerCoverChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _( "Show album cover in the player" ), wxDefaultPosition, wxDefaultSize, 0 );
+    m_ShowPlayerCoverChkBox->SetValue(show_cover);
+    BehaviSizer->Add( m_ShowPlayerCoverChkBox, 0, wxLEFT | wxRIGHT, 5 );
+
+    m_ShowCDFrameChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _( "Show CD cover frame in the player" ), wxDefaultPosition, wxDefaultSize, 0 );
     m_ShowCDFrameChkBox->SetValue( m_Config->ReadNum( CONFIG_KEY_GENERAL_COVER_FRAME, 1, CONFIG_PATH_GENERAL ) );
-	BehaviSizer->Add( m_ShowCDFrameChkBox, 0, wxLEFT | wxRIGHT, 5 );
+    m_ShowCDFrameChkBox->Enable(show_cover);
+	BehaviSizer->Add( m_ShowCDFrameChkBox, 0, wxLEFT | wxRIGHT, 20 );
 
 	GenMainSizer->Add( BehaviSizer, 0, wxEXPAND|wxALL, 5 );
 
@@ -579,6 +575,7 @@ void guPrefDialog::BuildGeneralPage( void )
 	if( m_SoundMenuChkBox )
         m_SoundMenuChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnActivateSoundMenuIntegration, this );
     m_InstantSearchChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnActivateInstantSearch, this );
+    m_ShowPlayerCoverChkBox->Bind(wxEVT_CHECKBOX, &guPrefDialog::OnShowPlayerCoverChecked, this);
 
     m_ShowSplashChkBox->SetFocus();
 }
@@ -874,9 +871,7 @@ void guPrefDialog::BuildPlaybackPage( void )
 	PlayReplaySizer->Add( m_PlayPreAmpLevelSlider, 1, wxRIGHT|wxEXPAND, 5 );
 
 	PlayGenSizer->Add( PlayReplaySizer, 1, wxEXPAND, 5 );
-
 	PlayMainSizer->Add( PlayGenSizer, 0, wxEXPAND|wxALL, 5 );
-
 
     wxStaticBoxSizer * SmartPlayListSizer = new wxStaticBoxSizer( new wxStaticBox( m_PlayPanel, wxID_ANY, _( " Random / Smart play modes " ) ), wxVERTICAL );
 
@@ -1004,10 +999,6 @@ void guPrefDialog::BuildPlaybackPage( void )
 	m_PlayPanel->Layout();
 	PlayMainSizer->FitInside( m_PlayPanel );
 
-
-    //
-    //
-    //
     m_RndPlayChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnRndPlayClicked, this );
     m_DelPlayChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnDelPlayedTracksChecked, this );
     m_PlayReplayModeChoice->Bind( wxEVT_CHOICE, &guPrefDialog::OnReplayGainModeChanged, this );
@@ -1099,9 +1090,6 @@ void guPrefDialog::BuildCrossfaderPage( void )
 	m_XFadePanel->Layout();
 	XFadeMainSizer->FitInside( m_XFadePanel );
 
-    //
-    //
-    //
     m_XFadeOutLenSlider->Bind( wxEVT_SCROLL_CHANGED, &guPrefDialog::OnCrossFadeChanged, this );
     m_XFadeOutLenSlider->Bind( wxEVT_SCROLL_THUMBTRACK, &guPrefDialog::OnCrossFadeChanged, this );
     m_XFadeInLenSlider->Bind( wxEVT_SCROLL_CHANGED, &guPrefDialog::OnCrossFadeChanged, this );
@@ -1111,7 +1099,6 @@ void guPrefDialog::BuildCrossfaderPage( void )
     m_XFadeInTrigerSlider->Bind( wxEVT_SCROLL_CHANGED, &guPrefDialog::OnCrossFadeChanged, this );
     m_XFadeInTrigerSlider->Bind( wxEVT_SCROLL_THUMBTRACK, &guPrefDialog::OnCrossFadeChanged, this );
 
-    //
     wxScrollEvent ScrollEvent;
     OnCrossFadeChanged( ScrollEvent );
 }
@@ -1217,12 +1204,8 @@ void guPrefDialog::BuildRecordPage( void )
 	m_RecordPanel->Layout();
 	RecMainSizer->FitInside( m_RecordPanel );
 
-    //
-    //
-    //
     m_RecordChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnRecEnableClicked, this );
     m_RecDelTracks->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnRecDelTracksClicked, this );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1314,15 +1297,11 @@ void guPrefDialog::BuildAudioScrobblePage( void )
 	m_LastFMPanel->Layout();
 	ASMainSizer->FitInside( m_LastFMPanel );
 
-    //
-    //
-    //
     m_LastFMUserNameTextCtrl->Bind( wxEVT_TEXT, &guPrefDialog::OnLastFMASUserNameChanged, this );
     m_LastFMPasswdTextCtrl->Bind( wxEVT_TEXT, &guPrefDialog::OnLastFMASUserNameChanged, this );
 
     m_LibreFMUserNameTextCtrl->Bind( wxEVT_TEXT, &guPrefDialog::OnLibreFMASUserNameChanged, this );
     m_LibreFMPasswdTextCtrl->Bind( wxEVT_TEXT, &guPrefDialog::OnLibreFMASUserNameChanged, this );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1444,7 +1423,6 @@ void guPrefDialog::BuildLyricsPage( void )
 
 	LyricsMainSizer->Add( LyricsDisGenreSizer, 0, wxEXPAND|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
 
-
     // Font
     //
 	wxStaticBoxSizer * LyricsFontSizer = new wxStaticBoxSizer( new wxStaticBox( m_LyricsPanel, wxID_ANY, _(" Font ") ), wxHORIZONTAL );
@@ -1496,7 +1474,6 @@ void guPrefDialog::BuildLyricsPage( void )
     m_LirycsDisGenresListBox->Bind( wxEVT_LISTBOX, &guPrefDialog::OnLyricDisGenreSelected, this );
     m_LyricsDisGenreAddButton->Bind( wxEVT_BUTTON, &guPrefDialog::OnLyricDisGenreAddBtnClick, this );
     m_LyricsDisGenreDelButton->Bind( wxEVT_BUTTON, &guPrefDialog::OnLyricDisGenreDelBtnClick, this );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1568,7 +1545,6 @@ void guPrefDialog::BuildOnlinePage( void )
 
     OnlineMainSizer->Add( OnlineProxyMainSizer, 0, wxEXPAND|wxALL, 5 );
 
-
     wxStaticBoxSizer * OnlineFiltersSizer = new wxStaticBoxSizer( new wxStaticBox( m_OnlinePanel, wxID_ANY, _(" Filters ") ), wxHORIZONTAL );
 
     m_OnlineFiltersListBox = new wxListBox( m_OnlinePanel, wxID_ANY, wxDefaultPosition, wxSize( -1, 100 ), 0, NULL, 0 );
@@ -1630,9 +1606,6 @@ void guPrefDialog::BuildOnlinePage( void )
     m_OnlinePanel->Layout();
     OnlineMainSizer->FitInside( m_OnlinePanel );
 
-    //
-    //
-    //
     m_OnlineProxyEnableChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnOnlineProxyEnabledChanged, this );
     m_OnlineFiltersListBox->Bind( wxEVT_LISTBOX, &guPrefDialog::OnFiltersListBoxSelected, this );
     m_OnlineAddBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnOnlineAddBtnClick, this );
@@ -1966,7 +1939,6 @@ void guPrefDialog::BuildMagnatunePage( void )
     m_MagNoRadioItem->Bind( wxEVT_RADIOBUTTON, &guPrefDialog::OnMagNoRadioItemChanged, this );
     m_MagStRadioItem->Bind( wxEVT_RADIOBUTTON, &guPrefDialog::OnMagNoRadioItemChanged, this );
     m_MagDlRadioItem->Bind( wxEVT_RADIOBUTTON, &guPrefDialog::OnMagNoRadioItemChanged, this );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2077,9 +2049,6 @@ void guPrefDialog::BuildLinksPage( void )
 	m_LinksPanel->Layout();
 	LinksMainSizer->FitInside( m_LinksPanel );
 
-    //
-    //
-    //
     m_LinksListBox->Bind( wxEVT_LISTBOX, &guPrefDialog::OnLinksListBoxSelected, this );
     m_LinksAddBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnLinksAddBtnClick, this );
     m_LinksDelBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnLinksDelBtnClick, this );
@@ -2197,9 +2166,6 @@ void guPrefDialog::BuildCommandsPage( void )
 	m_CmdPanel->Layout();
 	CmdMainSizer->FitInside( m_CmdPanel );
 
-    //
-    //
-    //
     m_CmdListBox->Bind( wxEVT_LISTBOX, &guPrefDialog::OnCmdListBoxSelected, this );
     m_CmdAddBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnCmdAddBtnClick, this );
     m_CmdDelBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnCmdDelBtnClick, this );
@@ -2208,7 +2174,6 @@ void guPrefDialog::BuildCommandsPage( void )
     m_CmdTextCtrl->Bind( wxEVT_TEXT, &guPrefDialog::OnCmdTextChanged, this );
     m_CmdNameTextCtrl->Bind( wxEVT_TEXT, &guPrefDialog::OnCmdTextChanged, this );
     m_CmdAcceptBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnCmdSaveBtnClick, this );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2496,7 +2461,6 @@ void guPrefDialog::SaveSettings( void )
     if( !m_Config )
         guLogError( wxT( "Invalid m_Config object in preferences dialog" ) );
 
-
     // Save all configurations
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_GENERAL )
     {
@@ -2512,6 +2476,7 @@ void guPrefDialog::SaveSettings( void )
         m_Config->WriteBool( CONFIG_KEY_GENERAL_DROP_FILES_CLEAR_PLAYLIST, m_DropFilesChkBox->GetValue(), CONFIG_PATH_GENERAL );
         m_Config->WriteBool( CONFIG_KEY_GENERAL_INSTANT_TEXT_SEARCH, m_InstantSearchChkBox->GetValue(), CONFIG_PATH_GENERAL );
         m_Config->WriteBool( CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER, m_EnterSearchChkBox->GetValue(), CONFIG_PATH_GENERAL );
+        m_Config->WriteBool( CONFIG_KEY_GENERAL_SHOW_PLAYER_COVER, m_ShowPlayerCoverChkBox->GetValue(), CONFIG_PATH_GENERAL );
         m_Config->WriteNum( CONFIG_KEY_GENERAL_COVER_FRAME, m_ShowCDFrameChkBox->GetValue(), CONFIG_PATH_GENERAL );
         m_Config->WriteBool( CONFIG_KEY_PLAYLIST_SAVE_ON_CLOSE, m_SavePlayListChkBox->GetValue(), CONFIG_PATH_PLAYLIST );
         m_Config->WriteBool( CONFIG_KEY_GENERAL_SAVE_CURRENT_TRACK_POSITION, m_SavePosCheckBox->GetValue(), CONFIG_PATH_GENERAL );
@@ -2803,7 +2768,11 @@ void guPrefDialog::OnDelPlayedTracksChecked( wxCommandEvent& event )
     m_MaxTracksPlayed->Enable( !m_DelPlayChkBox->IsChecked() );
 }
 
-// -------------------------------------------------------------------------------- //
+void guPrefDialog::OnShowPlayerCoverChecked(wxCommandEvent& event)
+{
+    m_ShowCDFrameChkBox->Enable(event.IsChecked());
+}
+
 void guPrefDialog::OnLibOptionsLoadControls( void )
 {
     bool CollectSelected = ( m_CollectSelected != wxNOT_FOUND ) &&

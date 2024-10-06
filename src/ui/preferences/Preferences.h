@@ -136,6 +136,7 @@ class guPrefDialog : public wxDialog
     wxCheckBox *                m_DropFilesChkBox;
     wxCheckBox *                m_InstantSearchChkBox;
     wxCheckBox *                m_EnterSearchChkBox;
+    wxCheckBox *                m_ShowPlayerCoverChkBox;
     wxCheckBox *                m_ShowCDFrameChkBox;
     wxCheckBox *                m_EnqueueChkBox;
     wxChoice *                  m_AlYearOrderChoice;
@@ -365,7 +366,6 @@ class guPrefDialog : public wxDialog
     int                         m_LyricSourceSelected;
     int                         m_LyricTargetSelected;
 
-
     void                        BuildGeneralPage( void );
     void                        BuildLibraryPage( void );
     void                        BuildPlaybackPage( void );
@@ -389,6 +389,7 @@ class guPrefDialog : public wxDialog
     void OnActivateInstantSearch( wxCommandEvent &event );
     void OnRndPlayClicked( wxCommandEvent &event );
     void OnDelPlayedTracksChecked( wxCommandEvent &event );
+    void OnShowPlayerCoverChecked( wxCommandEvent &event );
 
     void OnLibCollectSelected( wxCommandEvent &event );
     void OnLibCollectDClicked( wxCommandEvent &event );
@@ -432,7 +433,6 @@ class guPrefDialog : public wxDialog
     void OnLyricDisGenreSelected( wxCommandEvent &event );
     void OnLyricDisGenreAddBtnClick( wxCommandEvent &event );
     void OnLyricDisGenreDelBtnClick( wxCommandEvent &event );
-
 
     void OnPlayLevelEnabled( wxCommandEvent &event );
     void OnReplayGainModeChanged( wxCommandEvent &event );
@@ -497,17 +497,14 @@ class guPrefDialog : public wxDialog
 
     void LibSplitterOnIdle( wxIdleEvent &event );
 
-
   public:
     guPrefDialog( wxWindow * parent, guDbLibrary * db, int pagenum = guPREFERENCE_PAGE_LASTUSED );
     ~guPrefDialog();
 
     void SaveSettings( void );
     int  GetVisiblePanels( void ) { return m_VisiblePanels; }
-
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

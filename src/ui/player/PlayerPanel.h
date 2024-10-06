@@ -246,6 +246,7 @@ class guPlayerPanel : public wxPanel
     wxStaticText *              m_CodecLabel;
     wxBoxSizer *                m_PosLabelSizer;
     wxStaticText *              m_PositionLabel;
+    wxBoxSizer *                m_PlayerDetailsSizer;
     wxSlider *                  m_PlayerPositionSlider;
 
     guDbLibrary *               m_Db;
@@ -446,7 +447,7 @@ class guPlayerPanel : public wxPanel
     void                        OnVolCtlToggle( wxCommandEvent &event );
     void                        OnForceGaplessClick( wxCommandEvent &event );
     void                        OnPlayModeButtonClicked( wxCommandEvent &event );
-
+    void                        OnShowPlayerCoverToggle( wxCommandEvent &event );
 
     void                        SetArtistLabel( const wxString &artistname );
     void                        SetAlbumLabel( const wxString &albumname );
