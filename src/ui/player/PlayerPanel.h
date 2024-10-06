@@ -343,6 +343,7 @@ class guPlayerPanel : public wxPanel
     void                        OnMediaLoaded( guMediaEvent &event );
     void                        OnMediaPlayStarted( void );
     void                        SavePlayedTrack( const bool forcesave = false );
+    void                        ResetPlayerTrack(void);
     void                        OnMediaFinished( guMediaEvent &event );
     void                        OnMediaFadeOutFinished( guMediaEvent &event );
     void                        OnMediaFadeInStarted( guMediaEvent &event );

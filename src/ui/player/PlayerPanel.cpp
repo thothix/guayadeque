@@ -1458,18 +1458,15 @@ void guPlayerPanel::OnMediaError( guMediaEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::OnMediaState( guMediaEvent &event )
 {
-    guLogDebug( wxT( "OnMediaState: %i %li %li" ), event.GetInt(), m_CurTrackId, m_NextTrackId );
     GstState State = ( GstState ) event.GetInt();
+    guLogDebug( wxT( "OnMediaState: State: %i - m_LastPlayState: %i - m_CurTrackId: %li  - m_NextTrackId: %li" ), State, m_LastPlayState, m_CurTrackId, m_NextTrackId );
 
-    if( State == GST_STATE_PLAYING && m_NextTrackId )
-    {
+    if (m_NextTrackId && (State == GST_STATE_PLAYING || State == GST_STATE_READY))
         OnMediaPlayStarted();
-    }
-
 
     if( State != m_LastPlayState )
     {
-        if( State == GST_STATE_PLAYING ) //guMEDIASTATE_PLAYING )
+        if (State == GST_STATE_PLAYING)
         {
             m_PlayButton->SetBitmapLabel( guImage( guIMAGE_INDEX_player_normal_pause ) );
             m_PlayButton->SetBitmapHover( guImage( guIMAGE_INDEX_player_highlight_pause ) );
@@ -1487,7 +1484,7 @@ void guPlayerPanel::OnMediaState( guMediaEvent &event )
         }
         m_PlayButton->Refresh();
         m_LastPlayState = State;
-        //
+
         wxCommandEvent event( wxEVT_MENU, ID_PLAYERPANEL_STATUSCHANGED );
         wxPostEvent( m_MainFrame, event );
     }
@@ -1942,11 +1939,11 @@ void guPlayerPanel::SetCurrentCoverImage( wxImage * coverimage, const guSongCove
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::UpdateCoverImage( const bool show_notify )
 {
-    if (!m_PlayerCoverBitmap)
-        return;
-
-    m_PlayerCoverBitmap->SetBitmap( wxBitmap( * m_MediaSong.m_CoverImage ) );
-    m_PlayerCoverBitmap->Refresh();
+    if (m_PlayerCoverBitmap)
+    {
+        m_PlayerCoverBitmap->SetBitmap( wxBitmap( * m_MediaSong.m_CoverImage ) );
+        m_PlayerCoverBitmap->Refresh();
+    }
 
     if (show_notify)
         SendNotifyInfo( m_MediaSong.m_CoverImage );
@@ -1963,14 +1960,11 @@ void guPlayerPanel::UpdateCover( const bool shownotify, const bool deleted )
 //        m_UpdateCoverThread->Pause();
 //        m_UpdateCoverThread->Delete();
 //    }
-
     //guLogMessage( wxT( "UpdateCover: '%s'  /// '%s'  %i" ), m_MediaSong.m_ArtistName.c_str(), m_MediaSong.m_AlbumName.c_str(), deleted );
 
     guUpdatePlayerCoverThread * UpdateCoverThread = new guUpdatePlayerCoverThread( m_Db, m_MainFrame, this, &m_MediaSong, shownotify, deleted );
     if( !UpdateCoverThread )
-    {
         guLogError( wxT( "Could not create the UpdateCover thread." ) );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2002,7 +1996,6 @@ void guPlayerPanel::SavePlayedTrack( const bool forcesave )
             if( !m_MediaSong.m_SongName.IsEmpty() &&    // Check if we have no missing data
                 !m_MediaSong.m_ArtistName.IsEmpty() )
             {
-                //
                 m_AudioScrobble->SendPlayedTrack( m_MediaSong );
             }
         }
@@ -2100,9 +2093,7 @@ void guPlayerPanel::OnMediaFinished( guMediaEvent &event )
                 if( Tracks.Count() )
                 {
                     AddToPlayList( Tracks, false );
-
                     OnMediaFinished( event );
-
                     return;
                 }
             }
@@ -2157,7 +2148,6 @@ void guPlayerPanel::SetPlayMode( int playmode )
     if( m_PlayMode != playmode )
     {
         m_PlayMode = playmode;
-
         PlayModeChanged();
     }
 }
@@ -2215,37 +2205,10 @@ void guPlayerPanel::OnPrevTrackButtonClick( wxCommandEvent& event )
             if( m_MediaSong.m_Loaded )
             {
                 SavePlayedTrack();
-
-                guCurrentTrack CurrentTrack;
-                CurrentTrack.m_Rating = 0;
-                CurrentTrack.m_Year = 0;
-                m_MediaSong = CurrentTrack;
-                m_LastCurPos = 0;
-                m_LastLength = 0;
-                UpdateLabels();
-                UpdatePositionLabel( 0 );
-
-                if (m_PlayerCoverBitmap)
-                {
-                    m_MediaSong.m_CoverType = GU_SONGCOVER_NONE;
-                    m_MediaSong.m_CoverPath = wxEmptyString;
-
-                    wxImage *CoverImage = new wxImage(guImage(guIMAGE_INDEX_no_cover));
-
-                    // Cover
-                    if (CoverImage)
-                    {
-                        if (CoverImage->IsOk())
-                        {
-                            m_PlayerCoverBitmap->SetBitmap(wxBitmap(*CoverImage));
-                            m_PlayerCoverBitmap->Refresh();
-                        }
-                        delete CoverImage;
-                    }
-                }
+                //ResetPlayerTrack();
             }
             //guLogDebug( wxT( "Prev Track when not playing.." ) );
-//            m_MediaCtrl->SetCurrentState( GST_STATE_READY );
+            //m_MediaCtrl->SetCurrentState( GST_STATE_READY );
         }
         m_PlayListCtrl->RefreshAll( m_PlayListCtrl->GetCurItem() );
     }
@@ -2255,15 +2218,14 @@ void guPlayerPanel::OnPrevTrackButtonClick( wxCommandEvent& event )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::OnNextTrackButtonClick( wxCommandEvent& event )
 {
-    bool ForceSkip = ( event.GetId() == ID_PLAYERPANEL_NEXTTRACK ) ||
-                      ( event.GetEventObject() == m_NextTrackButton );
+    bool ForceSkip = ( event.GetId() == ID_PLAYERPANEL_NEXTTRACK ) || ( event.GetEventObject() == m_NextTrackButton );
 
     if( wxGetKeyState( WXK_SHIFT ) && m_MainFrame->IsActive() && ForceSkip )
     {
         OnNextAlbumButtonClick( event );
         return;
     }
-    guLogDebug( wxT( "OnNextTrackButtonClick Cur: %i    %li   %i" ), m_PlayListCtrl->GetCurItem(), m_NextTrackId, event.GetInt() );
+    guLogDebug( wxT( "OnNextTrackButtonClick Cur: %i   %li   %i" ), m_PlayListCtrl->GetCurItem(), m_NextTrackId, event.GetInt() );
     guMediaState State;
     guTrack * NextItem;
 
@@ -2272,7 +2234,6 @@ void guPlayerPanel::OnNextTrackButtonClick( wxCommandEvent& event )
     {
         State = m_MediaCtrl->GetState();
         guLogDebug( wxT( "OnNextTrackButtonClick : State = %i" ), State );
-
         SetNextTrack( NextItem );
 
         if( State == guMEDIASTATE_PLAYING || State == guMEDIASTATE_ERROR )
@@ -2299,46 +2260,16 @@ void guPlayerPanel::OnNextTrackButtonClick( wxCommandEvent& event )
         else
         {
             if( State == guMEDIASTATE_PAUSED )
-            {
                 m_MediaCtrl->Stop();
-            }
+
             if( m_MediaSong.m_Loaded )
             {
                 SavePlayedTrack();
-
-                guCurrentTrack CurrentTrack;
-                CurrentTrack.m_Rating = 0;
-                CurrentTrack.m_Year = 0;
-                CurrentTrack.m_Length = 0;
-                m_MediaSong = CurrentTrack;
-                m_LastCurPos = 0;
-                m_LastLength = 0;
-                UpdateLabels();
-                UpdatePositionLabel( 0 );
-
-                if (m_PlayerCoverBitmap)
-                {
-                    m_MediaSong.m_CoverType = GU_SONGCOVER_NONE;
-                    m_MediaSong.m_CoverPath = wxEmptyString;
-
-                    wxImage *CoverImage = new wxImage(guImage(guIMAGE_INDEX_no_cover));
-
-                    // Cover
-                    if (CoverImage)
-                    {
-                        if (CoverImage->IsOk())
-                        {
-                            m_PlayerCoverBitmap->SetBitmap(wxBitmap(*CoverImage));
-                            m_PlayerCoverBitmap->Refresh();
-                        }
-                        delete CoverImage;
-                    }
-                }
+                //ResetPlayerTrack();
             }
             //guLogDebug( wxT( "Next Track when not playing.." ) );
-//            m_MediaCtrl->SetCurrentState( GST_STATE_READY );
+            //m_MediaCtrl->SetCurrentState( GST_STATE_READY );
         }
-
         m_PlayListCtrl->RefreshAll( m_PlayListCtrl->GetCurItem() );
     }
     else
@@ -2357,25 +2288,52 @@ void guPlayerPanel::OnNextTrackButtonClick( wxCommandEvent& event )
                     m_PlayerFilters->GetDenyFilterId() ) )
             {
                 AddToPlayList( Tracks, false );
-
                 OnNextTrackButtonClick( event );
             }
         }
         else
         {
             if( m_MediaSong.m_Offset )
-            {
                 OnStopButtonClick( event );
-            }
             else
-            {
                 SavePlayedTrack();
-            }
         }
     }
 }
 
 // -------------------------------------------------------------------------------- //
+void guPlayerPanel::ResetPlayerTrack()
+{
+    guCurrentTrack CurrentTrack;
+
+    CurrentTrack.m_Rating = 0;
+    CurrentTrack.m_Year = 0;
+    CurrentTrack.m_Length = 0;
+    m_MediaSong = CurrentTrack;
+    m_LastCurPos = 0;
+    m_LastLength = 0;
+
+    UpdateLabels();
+    UpdatePositionLabel( 0 );
+
+    if (m_PlayerCoverBitmap)
+    {
+        m_MediaSong.m_CoverType = GU_SONGCOVER_NONE;
+        m_MediaSong.m_CoverPath = wxEmptyString;
+        wxImage *CoverImage = new wxImage(guImage(guIMAGE_INDEX_no_cover));
+
+        if (CoverImage)
+        {
+            if (CoverImage->IsOk())
+            {
+                m_PlayerCoverBitmap->SetBitmap(wxBitmap(*CoverImage));
+                m_PlayerCoverBitmap->Refresh();
+            }
+            delete CoverImage;
+        }
+    }
+}
+
 void guPlayerPanel::OnNextAlbumButtonClick( wxCommandEvent& event )
 {
     guLogDebug( wxT( "OnNextAlbumButtonClick Cur: %i    %li" ), m_PlayListCtrl->GetCurItem(), m_NextTrackId );
@@ -2385,7 +2343,6 @@ void guPlayerPanel::OnNextAlbumButtonClick( wxCommandEvent& event )
     if( NextAlbumTrack )
     {
         State = m_MediaCtrl->GetState();
-
         SetNextTrack( NextAlbumTrack );
 
         if( State == guMEDIASTATE_PLAYING )
@@ -2419,7 +2376,6 @@ void guPlayerPanel::OnNextAlbumButtonClick( wxCommandEvent& event )
                     m_PlayerFilters->GetDenyFilterId() ) )
             {
                 AddToPlayList( Tracks, false );
-
                 OnNextAlbumButtonClick( event );
             }
         }
@@ -2436,7 +2392,6 @@ void guPlayerPanel::OnPrevAlbumButtonClick( wxCommandEvent& event )
     if( NextAlbumTrack )
     {
         State = m_MediaCtrl->GetState();
-
         SetNextTrack( NextAlbumTrack );
 
         if( State == guMEDIASTATE_PLAYING )
@@ -2497,9 +2452,7 @@ void guPlayerPanel::OnPlayButtonClick( wxCommandEvent& event )
             //ResetVumeterLevel();
         }
         else if( State == guMEDIASTATE_PAUSED )
-        {
             m_MediaCtrl->Play();
-        }
         else if( State == guMEDIASTATE_STOPPED )
         {
             //guLogDebug( wxT( "Loading '%s'" ), m_NextSong.m_FileName.c_str() );
@@ -2524,7 +2477,6 @@ void guPlayerPanel::OnPlayButtonClick( wxCommandEvent& event )
                     m_PlayerFilters->GetDenyFilterId() ) )
             {
                 AddToPlayList( Tracks, false );
-
                 OnPlayButtonClick( event );
             }
         }
@@ -3259,6 +3211,7 @@ void guPlayerPanel::CheckStartPlaying( void )
 {
     guConfig * Config = ( guConfig * ) guConfig::Get();
     guLogDebug( wxT( "CheckStartPlaying: %i" ), m_PlayListCtrl->StartPlaying() );
+
     // There was a track passed as argument that we will play
     if( m_PlayListCtrl->StartPlaying() )
     {
@@ -3277,13 +3230,15 @@ void guPlayerPanel::CheckStartPlaying( void )
                 OnPlayListDClick( event );
             }
             else
-            {
                 SetNextTrack( m_PlayListCtrl->GetCurrent() );
-            }
         }
-        else if( m_PlayListCtrl->GetCurItem() != wxNOT_FOUND )
+        else
         {
+            if( m_PlayListCtrl->GetCurItem() == wxNOT_FOUND )
+                m_PlayListCtrl->SetCurrent( 0, false );
+
             SetNextTrack( m_PlayListCtrl->GetCurrent() );
+            LoadMedia( guFADERPLAYBIN_PLAYTYPE_PRELOAD );
         }
     }
 }
