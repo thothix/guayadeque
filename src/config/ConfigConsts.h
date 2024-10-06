@@ -95,6 +95,7 @@ namespace Guayadeque {
 #define CONFIG_KEY_GENERAL_BROWSER_COMMAND               "BrowserCommand"
 #define CONFIG_KEY_GENERAL_BUFFER_SIZE                   "BufferSize"
 #define CONFIG_KEY_GENERAL_CLOSE_TO_TASKBAR              "CloseToTaskBar"
+#define CONFIG_KEY_GENERAL_SHOW_PLAYER_COVER             "ShowPlayerCover"
 #define CONFIG_KEY_GENERAL_COVER_FRAME                   "CoverFrame"
 #define CONFIG_KEY_GENERAL_COVER_SEARCH_ENGINE           "CoverSearchEngine"
 #define CONFIG_KEY_GENERAL_CURRENT_TRACK_POS             "CurrentTrackPos"
