@@ -425,16 +425,23 @@ long guMediaCtrl::Load( const wxString &uri, guFADERPLAYBIN_PLAYTYPE playtype, c
                 m_FaderPlayBins.Insert( FaderPlaybin, 0 );
                 Unlock();
 
-                guMediaEvent event( guEVT_MEDIA_LOADED );
-                event.SetInt( true );
-                SendEvent( event );
+                if ( playtype == guFADERPLAYBIN_PLAYTYPE_PRELOAD )
+                {
+                    guMediaEvent event( guEVT_MEDIA_CHANGED_STATE );
+                    event.SetInt( GST_STATE_READY );
+                    SendEvent( event );
+                }
+                else
+                {
+                    guMediaEvent event( guEVT_MEDIA_LOADED );
+                    event.SetInt( true );
+                    SendEvent( event );
+                }
 
                 return FaderPlaybin->GetId();
             }
 //            else
-//            {
 //                RemovePlayBin( FaderPlaybin );
-//            }
         }
         delete FaderPlaybin;
     }
