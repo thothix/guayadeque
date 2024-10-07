@@ -12,6 +12,7 @@ Changelog
     the cover panel visible
 
 ### Enhancements
+  * Added collate accents on media search
   * Preload the current track in the player at startup and some other use cases
 
 0.5.3 (2024-10-02)

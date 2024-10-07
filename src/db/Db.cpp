@@ -21,143 +21,141 @@
 
 #include "Utils.h"
 
+#include <unicode/unistr.h>
+#include <unicode/translit.h>
+
 //#define DBLIBRARY_SHOW_QUERIES      1
 //#define DBLIBRARY_SHOW_TIMES        1
 //#define DBLIBRARY_MIN_TIME          50
 
 namespace Guayadeque {
 
-// -------------------------------------------------------------------------------- //
 guDb::guDb()
 {
     m_Db = NULL;
 }
 
-// -------------------------------------------------------------------------------- //
 guDb::guDb( const wxString &dbname )
 {
+    m_DbFoldAllCollation = guDbFoldAllCollation();
+    m_DbFoldAllContainsFunction = guDbFoldAllContainsFunction();
     Open( dbname );
 }
 
-// -------------------------------------------------------------------------------- //
 guDb::~guDb()
 {
     if( m_Db )
     {
         Close();
-
         delete m_Db;
     }
 }
 
-// -------------------------------------------------------------------------------- //
 int guDb::Open( const wxString &dbname )
 {
-  m_DbName = dbname;
-  m_Db = new wxSQLite3Database();
-  if( m_Db )
-  {
-    m_Db->Open( dbname );
+    m_DbName = dbname;
+    m_Db = new wxSQLite3Database();
 
-    if( m_Db->IsOpen() )
+    if (m_Db)
     {
-      SetInitParams();
-      return true;
+        m_Db->Open(dbname);
+
+        if (m_Db->IsOpen())
+        {
+            SetInitParams();
+            return true;
+        }
     }
-  }
-  return false;
+    return false;
 }
 
-// -------------------------------------------------------------------------------- //
 int guDb::Close()
 {
-  if( m_Db->IsOpen() )
-    m_Db->Close();
-  return 1;
+    if (m_Db->IsOpen())
+        m_Db->Close();
+    return 1;
 }
 
-// -------------------------------------------------------------------------------- //
 wxSQLite3ResultSet guDb::ExecuteQuery( const wxString &query )
 {
 #ifdef  DBLIBRARY_SHOW_QUERIES
-  guLogMessage( wxT( "ExecQuery:\n%s" ), query.c_str() );
+    guLogMessage( wxT( "ExecQuery:\n%s" ), query.c_str() );
 #endif
 #ifdef DBLIBRARY_SHOW_TIMES
-  wxLongLong time = wxGetLocalTimeMillis();
+      wxLongLong time = wxGetLocalTimeMillis();
 #endif
-  wxSQLite3ResultSet RetVal;
-  try {
-    RetVal = m_Db->ExecuteQuery( query );
-  }
-  catch( wxSQLite3Exception &e )
-  {
-    guLogError( wxT( "guDbLibrary::ExecuteQuery exception '%s'\n%u: %s" ),
-        query.c_str(), e.GetErrorCode(), e.GetMessage().c_str() );
-  }
-  catch(...)
-  {
-    guLogError( wxT( "Other exception found while executing:\n'%s'" ), query.c_str() );
-  }
+    wxSQLite3ResultSet RetVal;
+    try {
+        RetVal = m_Db->ExecuteQuery( query );
+    }
+    catch( wxSQLite3Exception &e )
+    {
+        guLogError( wxT( "guDbLibrary::ExecuteQuery exception '%s'\n%u: %s" ),
+            query.c_str(), e.GetErrorCode(), e.GetMessage().c_str() );
+    }
+    catch(...)
+    {
+        guLogError( wxT( "Other exception found while executing:\n'%s'" ), query.c_str() );
+    }
 #ifdef DBLIBRARY_SHOW_TIMES
-  time = wxGetLocalTimeMillis() - time;
-  if( time > DBLIBRARY_MIN_TIME )
-    guLogWarning( wxT( "Query: %u ms\n%s" ), time.GetLo(), query.c_str() );
+    time = wxGetLocalTimeMillis() - time;
+    if( time > DBLIBRARY_MIN_TIME )
+        guLogWarning( wxT( "Query: %u ms\n%s" ), time.GetLo(), query.c_str() );
 #endif
-  return RetVal;
+    return RetVal;
 }
 
-// -------------------------------------------------------------------------------- //
 int guDb::ExecuteUpdate( const wxString &query )
 {
 #ifdef  DBLIBRARY_SHOW_QUERIES
-  guLogMessage( wxT( "ExecUpdate:\n%s" ), query.c_str() );
+    guLogMessage( wxT( "ExecUpdate:\n%s" ), query.c_str() );
 #endif
 #ifdef DBLIBRARY_SHOW_TIMES
-  wxLongLong time = wxGetLocalTimeMillis();
+    wxLongLong time = wxGetLocalTimeMillis();
 #endif
-  int RetVal = 0;
-  try {
-    RetVal = m_Db->ExecuteUpdate( query );
-  }
-  catch( wxSQLite3Exception &e )
-  {
-    guLogError( wxT( "guDbLibrary::ExecuteUpdate exception '%s'\n%u: %s" ),
-        query.c_str(), e.GetErrorCode(), e.GetMessage().c_str() );
-  }
-  catch(...)
-  {
-    guLogError( wxT( "Other exception found while executing:\n'%s'" ), query.c_str() );
-  }
+    int RetVal = 0;
+
+    try {
+        RetVal = m_Db->ExecuteUpdate( query );
+    }
+    catch( wxSQLite3Exception &e )
+    {
+        guLogError( wxT( "guDbLibrary::ExecuteUpdate exception '%s'\n%u: %s" ),
+            query.c_str(), e.GetErrorCode(), e.GetMessage().c_str() );
+    }
+    catch(...)
+    {
+        guLogError( wxT( "Other exception found while executing:\n'%s'" ), query.c_str() );
+    }
 #ifdef DBLIBRARY_SHOW_TIMES
-  time = wxGetLocalTimeMillis() - time;
-  if( time > DBLIBRARY_MIN_TIME )
-    guLogWarning( wxT( "Query: %u ms\n%s" ), time.GetLo(), query.c_str() );
+    time = wxGetLocalTimeMillis() - time;
+    if( time > DBLIBRARY_MIN_TIME )
+        guLogWarning( wxT( "Query: %u ms\n%s" ), time.GetLo(), query.c_str() );
 #endif
-  return RetVal;
+    return RetVal;
 }
 
-// -------------------------------------------------------------------------------- //
 wxSQLite3ResultSet guDb::ExecuteQuery( const wxSQLite3StatementBuffer &query )
 {
-  return m_Db->ExecuteQuery( query );
+    return m_Db->ExecuteQuery(query);
 }
 
-// -------------------------------------------------------------------------------- //
 int guDb::ExecuteUpdate( const wxSQLite3StatementBuffer &query )
 {
-  return m_Db->ExecuteUpdate( query );
+    return m_Db->ExecuteUpdate(query);
 }
 
-// -------------------------------------------------------------------------------- //
 void guDb::SetInitParams( void )
 {
-  wxString query;
-  query = wxT( "PRAGMA legacy_file_format=false; PRAGMA page_size=4096; PRAGMA cache_size=4096; PRAGMA count_changes=1; PRAGMA synchronous='OFF'; PRAGMA short_column_names=0; PRAGMA full_column_names=0;" );
-  //query = wxT( "PRAGMA legacy_file_format=false; PRAGMA page_size=102400; PRAGMA cache_size=204800; PRAGMA count_changes=1; PRAGMA synchronous='OFF'; PRAGMA short_column_names=0; PRAGMA full_column_names=0;" );
-  //query = wxT( "PRAGMA page_size=10240; PRAGMA cache_size=65536; PRAGMA count_changes=1; PRAGMA synchronous='OFF'; PRAGMA short_column_names=0; PRAGMA full_column_names=0;" );
-  ExecuteUpdate( query );
+    wxString query;
+    query = wxT("PRAGMA legacy_file_format=false; PRAGMA page_size=4096; PRAGMA cache_size=4096; PRAGMA count_changes=1; PRAGMA synchronous='OFF'; PRAGMA short_column_names=0; PRAGMA full_column_names=0;");
+    //query = wxT("PRAGMA legacy_file_format=false; PRAGMA page_size=102400; PRAGMA cache_size=204800; PRAGMA count_changes=1; PRAGMA synchronous='OFF'; PRAGMA short_column_names=0; PRAGMA full_column_names=0;");
+    //query = wxT("PRAGMA page_size=10240; PRAGMA cache_size=65536; PRAGMA count_changes=1; PRAGMA synchronous='OFF'; PRAGMA short_column_names=0; PRAGMA full_column_names=0;");
+    ExecuteUpdate(query);
+
+    m_Db->SetCollation(wxT("NOCASENOACCENTS"), &m_DbFoldAllCollation);
+    m_Db->CreateFunction(wxString("CONTAINS_FA"), 2, m_DbFoldAllContainsFunction, true);
 }
 
 }
 
-// -------------------------------------------------------------------------------- //

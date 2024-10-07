@@ -33,6 +33,8 @@ if (NOT wxWidgets_FOUND)
     message(FATAL_ERROR "wxWidgets not found!")
 endif()
 
+find_package(ICU 66.0 COMPONENTS uc i18n REQUIRED)
+
 pkg_check_modules(GSTREAMER gstreamer-1.0>=1.20)
 if (NOT GSTREAMER_FOUND)
     pkg_check_modules(GSTREAMER gstreamer-1.0>=1.0)
@@ -135,6 +137,7 @@ include_directories(
     ${LIBWXSQLITE3_INCLUDE_DIRS}
     ${LIBWXSQLITE33_INCLUDE_DIRS}
     ${LIBJSONCPP_INCLUDE_DIRS}
+    ${LIBICU_INCLUDE_DIRS}
 )
 
 if (PROFILE)
