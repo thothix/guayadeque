@@ -269,7 +269,7 @@ class guMediaVieweriPodDevice : public guMediaViewerPortableDeviceBase
 
     virtual void            EditProperties( void );
 
-    virtual int             CopyTo( const guTrack * track, wxString &filename );
+    virtual int             CopyTo( const guTrack * track, wxString &filename ); using guMediaViewer::CopyTo;
 
     virtual wxImage *       GetAlbumCover( const int albumid, int &coverid, wxString &coverpath,
                                            const wxString &artistname = wxEmptyString, const wxString &albumname = wxEmptyString );
