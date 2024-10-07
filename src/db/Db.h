@@ -22,24 +22,23 @@
 
 #include "Utils.h"
 
-// wxWidgets
+//#include <sqlite3.h>
+#include <unicode/translit.h>
+#include <unicode/unistr.h>
+#include <unicode/ustream.h>
 #include <wx/string.h>
 #include <wx/utils.h>
-
-// wxSqlite3
 #include <wx/wxsqlite3.h>
 
 namespace Guayadeque {
 
-// -------------------------------------------------------------------------------- //
 void inline escape_query_str( wxString * Str )
 {
-  Str->Replace( wxT( "'" ), wxT( "''" ) );
-  //Str->Replace( _T( "\"" ), _T( "\"\"" ) );
-  //Str->Replace( _T( "\\" ), _T( "\\\\" ) );
+    Str->Replace( wxT( "'" ), wxT( "''" ) );
+    //Str->Replace( _T( "\"" ), _T( "\"\"" ) );
+    //Str->Replace( _T( "\\" ), _T( "\\\\" ) );
 }
 
-// -------------------------------------------------------------------------------- //
 wxString inline escape_query_str( const wxString &str )
 {
     wxString QueryStr = str;
@@ -48,33 +47,91 @@ wxString inline escape_query_str( const wxString &str )
     return QueryStr;
 }
 
-// -------------------------------------------------------------------------------- //
+class guFoldAllTransliterator
+{
+    public:
+        icu::Transliterator  *accentsConverter;
+
+        guFoldAllTransliterator()
+        {
+            UErrorCode error = U_ZERO_ERROR;
+            accentsConverter = icu::Transliterator::createInstance("NFD; [:M:] Remove; Lower; NFC", UTRANS_FORWARD, error);
+        }
+
+        icu::UnicodeString   WxStrToICU(const wxString& wxs)
+        {
+            return icu::UnicodeString::fromUTF32((const UChar32*)wxs.wc_str(), wxs.Length());
+        }
+
+        void Fold(icu::UnicodeString& what)
+        {
+            accentsConverter->transliterate(what);
+        }
+};
+
+class guDbFoldAllCollation : public wxSQLite3Collation
+{
+    public:
+        guFoldAllTransliterator  transliterator;
+
+        guDbFoldAllCollation() : wxSQLite3Collation()
+        {
+            transliterator = guFoldAllTransliterator();
+        }
+
+        int Compare(const wxString& text1, const wxString& text2)
+        {
+            guLogDebug("guDbFoldAllCollation::Compare %s %s", text1, text2);
+            icu::UnicodeString t1 = transliterator.WxStrToICU(text1), t2 = transliterator.WxStrToICU(text2);
+            transliterator.Fold(t1);
+            transliterator.Fold(t2);
+            return t1.compare(t2);
+        }
+};
+
+class guDbFoldAllContainsFunction : public wxSQLite3ScalarFunction
+{
+    public:
+        guFoldAllTransliterator  transliterator;
+
+        void Execute( wxSQLite3FunctionContext &    ctx )
+        {
+            guLogDebug("guDbFoldAllContainsFunction::Execute %s %s", ctx.GetString(0), ctx.GetString(1));
+            icu::UnicodeString t1 = transliterator.WxStrToICU(ctx.GetString(0)),
+                               t2 = transliterator.WxStrToICU(ctx.GetString(1));
+            transliterator.Fold(t1);
+            transliterator.Fold(t2);
+            ctx.SetResult( t1.indexOf(t2) );
+            return;
+        }
+};
+
 class guDb
 {
-  protected :
-    wxString                m_DbName;
-    wxSQLite3Database  *    m_Db;
+    protected :
+        wxString                       m_DbName;
+        wxSQLite3Database            * m_Db;
+        guDbFoldAllCollation           m_DbFoldAllCollation;
+        guDbFoldAllContainsFunction    m_DbFoldAllContainsFunction;
 
-  public :
-    guDb( void );
-    guDb( const wxString &dbname );
-    virtual ~guDb();
+    public :
+        guDb( void );
+        guDb( const wxString &dbname );
+        virtual ~guDb();
 
-    int                 Open( const wxString &dbname );
-    int                 Close( void );
-    wxSQLite3Database * GetDb( void ) { return m_Db; }
+        int                 Open( const wxString &dbname );
+        int                 Close( void );
+        wxSQLite3Database * GetDb( void ) { return m_Db; }
 
-    wxSQLite3ResultSet  ExecuteQuery( const wxString &query );
-    int                 ExecuteUpdate( const wxString &query );
-    wxSQLite3ResultSet  ExecuteQuery( const wxSQLite3StatementBuffer &query );
-    int                 ExecuteUpdate( const wxSQLite3StatementBuffer &query );
-    int                 GetLastRowId( void ) { return m_Db->GetLastRowId().GetLo(); }
+        wxSQLite3ResultSet  ExecuteQuery( const wxString &query );
+        int                 ExecuteUpdate( const wxString &query );
+        wxSQLite3ResultSet  ExecuteQuery( const wxSQLite3StatementBuffer &query );
+        int                 ExecuteUpdate( const wxSQLite3StatementBuffer &query );
+        int                 GetLastRowId( void ) { return m_Db->GetLastRowId().GetLo(); }
 
-    virtual void        SetInitParams( void );
-
+        virtual void        SetInitParams( void );
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 21:03-0300\n"
+"POT-Creation-Date: 2024-10-07 00:14-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -460,21 +460,21 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: db/DbLibrary.cpp:286 db/DbLibrary.cpp:298 db/DbLibrary.cpp:1769
-#: db/DbLibrary.cpp:1781 db/DbLibrary.cpp:1854 db/DbLibrary.cpp:1866
+#: db/DbLibrary.cpp:284 db/DbLibrary.cpp:296 db/DbLibrary.cpp:1767
+#: db/DbLibrary.cpp:1779 db/DbLibrary.cpp:1852 db/DbLibrary.cpp:1864
 #: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1439
 msgid "Unknown"
 msgstr ""
 
-#: db/DbLibrary.cpp:639
+#: db/DbLibrary.cpp:637
 msgid "Recently added tracks"
 msgstr ""
 
-#: db/DbLibrary.cpp:647
+#: db/DbLibrary.cpp:645
 msgid "Last played tracks"
 msgstr ""
 
-#: db/DbLibrary.cpp:654
+#: db/DbLibrary.cpp:652
 msgid "Best rated tracks"
 msgstr ""
 
