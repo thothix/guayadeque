@@ -3207,7 +3207,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Durante la ricerca, accoda i risultati premendo Invio"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Mostra la cover CD  del nel player"
 
 #: Preferences.cpp:687

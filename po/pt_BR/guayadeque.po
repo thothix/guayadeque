@@ -2657,6 +2657,10 @@ msgstr "Mover as faixas selecionadas para baixo"
 msgid "Move the selected tracks to the bottom"
 msgstr "Mover as faixas selecionadas para o final"
 
+#: ui/player/PlayList.cpp:1725
+msgid "Move the selected tracks to be played next"
+msgstr "Mover as faixas selecionadas para tocar em seguida"
+
 #: PlayList.cpp:1567
 msgid "Set the current selected tracks rating"
 msgstr "Avaliar as faixas selecionadas"
@@ -3250,8 +3254,12 @@ msgstr "Pesquisa de texto instantânea"
 msgid "When searching, pressing enter queues the result"
 msgstr "Ao pesquisar, digitar Enter adiciona o resultado à fila de reprodução"
 
-#: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+#: ui/preferences/Preferences.cpp:544
+msgid "Show album cover in the player"
+msgstr "Exibir capa do álbum no reprodutor"
+
+#: ui/preferences/Preferences.cpp:548
+msgid "Show CD cover frame in the player"
 msgstr "Exibir caixa do CD no reprodutor"
 
 #: Preferences.cpp:687

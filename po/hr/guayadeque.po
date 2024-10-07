@@ -3206,7 +3206,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Nakon unosa teksta treba pritisnuti enter za pretraživanje"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Prikaži CD okvir u playeru"
 
 #: Preferences.cpp:687

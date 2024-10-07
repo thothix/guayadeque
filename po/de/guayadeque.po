@@ -3209,7 +3209,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Bestätigen der Eingabetaste reiht Suchergebnisse in Wiedergabeliste ein"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Extra Rahmen für CD-Cover anzeigen"
 
 #: Preferences.cpp:687

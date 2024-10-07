@@ -2613,6 +2613,22 @@ msgstr "Éditer le morceau sélectionné"
 msgid "Set as Next Track"
 msgstr "Définir comme Morceau suiv."
 
+#: ui/player/PlayList.cpp:70
+msgid "Move the selected tracks to the top"
+msgstr "Déplacer les morceaux sélectionnés en début de liste"
+
+#: ui/player/PlayList.cpp:74
+msgid "Move the selected tracks up"
+msgstr "Déplacer les morceaux sélectionnés d'un rang vers le haut "
+
+#: ui/player/PlayList.cpp:78
+msgid "Move the selected tracks down"
+msgstr "Déplacer les morceaux sélectionnés d'un rang vers le bas"
+
+#: ui/player/PlayList.cpp:82
+msgid "Move the selected tracks to the bottom"
+msgstr "Déplacer les morceaux sélectionnés en fin de liste"
+
 #: PlayList.cpp:1549
 msgid "Move the selected tracks to be played next"
 msgstr "Déplacer les morceaux sélectionnés pour être les suivants dans la file"
@@ -3205,9 +3221,13 @@ msgstr "Texte de recherche : instantané"
 msgid "When searching, pressing enter queues the result"
 msgstr "Pendant la recherche, l'appui sur \"entrée\" ajoute le résultat à la file de lecture"
 
+#: ui/preferences/Preferences.cpp:544
+msgid "Show album cover in the player"
+msgstr "Afficher la pochette de l'album dans le lecteur"
+
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
-msgstr "Afficher la fenêtre de la Pochette dans le lecteur"
+msgid "Show CD cover frame in the player"
+msgstr "Afficher la fenêtre de la pochette dans le lecteur"
 
 #: Preferences.cpp:687
 msgid " On Close "

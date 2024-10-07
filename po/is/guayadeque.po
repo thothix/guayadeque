@@ -1690,7 +1690,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Þegar leitað er, ýtt á enter bætir við völdum hlut"
 
 #: ui/preferences/Preferences.cpp:557
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Sýna geisladiskahulstur í spilara"
 
 #: ui/preferences/Preferences.cpp:563

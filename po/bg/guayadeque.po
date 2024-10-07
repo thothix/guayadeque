@@ -3206,7 +3206,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "При търсене, натискането на enter добавя резултата в опашката"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Показване на рамка на обложката"
 
 #: Preferences.cpp:687

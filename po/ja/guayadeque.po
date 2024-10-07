@@ -3208,7 +3208,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Enterで検索結果をキューに入れる"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "プレイヤーのCDカバーフレームを表示"
 
 #: Preferences.cpp:687
