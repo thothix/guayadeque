@@ -1687,7 +1687,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Under søgning, tryk på retur sætter resultatet i kø"
 
 #: ui/preferences/Preferences.cpp:557
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Vis cd-omslagsramme i afspiller"
 
 #: ui/preferences/Preferences.cpp:563

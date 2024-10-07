@@ -1696,7 +1696,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Podczas wyszukiwania, wciśnięcie enter kolejkuje wyniki"
 
 #: ui/preferences/Preferences.cpp:557
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Wyświetl ramkę z okładką w odtwarzaczu"
 
 #: ui/preferences/Preferences.cpp:563

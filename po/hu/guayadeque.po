@@ -3206,7 +3206,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Keresésnél ENTER megnyomására az eredmény sorbaállításra kerül"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "CD borító keret mutatása a lejátszóban"
 
 #: Preferences.cpp:687

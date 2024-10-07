@@ -3209,7 +3209,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Arama yaparken, sonuçları kuyruğa eklemesi için enter tuşuna bas"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Albüm kapağı çerçevesini göster"
 
 #: Preferences.cpp:687

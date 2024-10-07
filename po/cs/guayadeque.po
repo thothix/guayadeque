@@ -1691,7 +1691,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Když Hledate, zmačkněte enter pro frontu výsledků"
 
 #: ui/preferences/Preferences.cpp:557
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Zobrazit Obal v CD-rámu v přehravači"
 
 #: ui/preferences/Preferences.cpp:563

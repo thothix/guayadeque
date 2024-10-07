@@ -3207,7 +3207,7 @@ msgid "When searching, pressing enter queues the result"
 msgstr "Tijdens het zoeken zorgt enter ervoor dat het resultaat in de wachtrij komt"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in player"
+msgid "Show CD cover frame in the player"
 msgstr "Toon de albumhoes in de speler"
 
 #: Preferences.cpp:687
