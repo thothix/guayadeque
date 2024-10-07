@@ -164,7 +164,7 @@ Changelog
 0.4.5 (2017-01-08)
 ------------------
 
-  * Added proxy support. Configure it from Preferences->Online
+  * Added proxy support. Configure it from Preferences -> Online
 
 0.4.3 (2016-11-17)
 ------------------
@@ -270,7 +270,7 @@ Changelog
   * Fixed bug not preserving the directory selected for podcasts, recordings or saving lyrics
   * Added Magnatune support
   * Added Jamendo support
-  * Added network buffer size option in Preferences under Online
+  * Added network buffer size option in Preferences -> Online
 
 0.2.7 (2010-08-26)
 ------------------
@@ -286,7 +286,7 @@ Changelog
   * Added Now Playing searchs to the shoutcast radios
   * Added in Radio tab the now playing and stream format info
   * Added in Radio tab the option to reorder columns
-  * Added option in preferences library tab to add playlists when doing a library scanning
+  * Added option in Preferences -> Library tab to add playlists when doing a library scanning
   * Added Thailand translation. Thanks to mr_hangman
   * Added Norwegian translation. Thanks to jente_14
   * Added icelandic translation. Thanks to Hreinsi
@@ -314,7 +314,7 @@ Changelog
   * Added a year listbox to filter in library tab
   * Added File Browser. You can navigate throught your files and play them
     directly from Guayadeque.
-  * Now the lyrics can be saved to a directory you can configure from preferences -> lyrics
+  * Now the lyrics can be saved to a directory you can configure from Preferences -> Lyrics
   * Changed the close buttons of the panes
   * Added search text for player playlist
   * Now allow to load from command line directories.
@@ -578,7 +578,7 @@ grateful and humbled.
   * Fixed a bug when dragging tracks in the playlist and the list were
     scrolled down.
   * The Links now have names. So you can have multiple links with same host.
-    Edit the names in Preferences->Links
+    Edit the names in Preferences -> Links
   * Added Edit Labels Option to Playlist tracks
   * Added the year to the player information
   * Added the links also to the library panel context menu
