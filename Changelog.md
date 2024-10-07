@@ -4,6 +4,16 @@ Guayadeque Music Player
 Changelog
 =========
 
+0.5.4 Beta 1 (2024-10-07)
+------------------
+
+### Features
+  * Added option in Preferences -> General to hide the player album cover. It's useful if you already have
+    the cover panel visible
+
+### Enhancements
+  * Preload the current track in the player at startup and some other use cases
+
 0.5.3 (2024-10-02)
 ------------------
 
@@ -183,7 +193,7 @@ Changelog
   * Removed bug that crashed Guayadeque when used del in a dynamic playlist
   * Added TuneIn radio support
   * Added option to rename podcast channel name
-  * Added option in Preferences -> Playback the option to write the complete output pipeline
+  * Added option in Preferences -> Playback to write the complete output pipeline
   * Added Seeked mpris2 signal
   * Fixed amazon cover download engine
 
