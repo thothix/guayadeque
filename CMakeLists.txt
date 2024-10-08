@@ -146,6 +146,12 @@ if (PROFILE)
     message("Adding profiling code.")
 endif()
 
+# optionally enable better RNG
+option(WANT_SRANDOM "Enable srandom for better RNG by setting POSIX_C_SOURCE" OFF)
+if (WANT_SRANDOM)
+    add_definitions(-D__POSIX_C_SOURCE=1)
+endif()
+
 add_subdirectory(src)
 add_subdirectory(po)
 
