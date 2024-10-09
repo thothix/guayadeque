@@ -12,6 +12,7 @@ CMakeLists.txt.user
 
 # CMake
 cmake-build-*/
+.cmake/*
 
 # Idea
 .idea/*
