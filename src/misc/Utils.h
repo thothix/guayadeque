@@ -20,6 +20,10 @@
 #ifndef _UTILS_H
 #define _UTILS_H
 
+#ifdef MT19937_RANDOM
+#include <random>
+#endif
+
 #include <wx/wx.h>
 #include <wx/file.h>
 #include <wx/wfstream.h>
@@ -43,9 +47,17 @@ namespace Guayadeque {
     #define guLogError      wxLogError
 #endif
 
-#ifdef __POSIX_C_SOURCE
-#define guRandomInit() (srandom( time( NULL ) ))
-#define guRandom(x) (random() % x)
+#ifdef MT19937_RANDOM
+
+extern std::mt19937 rng_generator;
+
+void inline guRandomInit(void) {
+    rng_generator.seed( time( NULL ) );
+}
+
+std::uint_fast32_t inline guRandom(std::uint_fast32_t x) {
+    return (rng_generator() % x);
+}
 #else
 #define guRandomInit() (srand( time( NULL ) ))
 #define guRandom(x) (rand() % x)

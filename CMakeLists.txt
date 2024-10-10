@@ -147,9 +147,9 @@ if (PROFILE)
 endif()
 
 # optionally enable better RNG
-option(WANT_SRANDOM "Enable srandom for better RNG by setting POSIX_C_SOURCE" OFF)
-if (WANT_SRANDOM)
-    add_definitions(-D__POSIX_C_SOURCE=1)
+option(WANT_MT19937_RANDOM "Enable mt19936 RNG for better shuffle etc" OFF)
+if (WANT_MT19937_RANDOM)
+    add_definitions(-DMT19937_RANDOM=1)
 endif()
 
 add_subdirectory(src)
