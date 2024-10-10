@@ -35,8 +35,21 @@
 
 namespace Guayadeque {
 
+// -------------------------------------------------------------------------------- //
 #ifdef CXX11_RNG
-std::mt19937 rng_generator;
+    #include <random>
+
+    std::mt19937 rng_default_generator;
+
+    std::mt19937 guSRandom()
+    {
+        std::random_device rd;      // uses /dev/urandom
+
+        std::mt19937::result_type seed = rd();
+
+        std::mt19937 gen(seed);
+        return gen;
+    }
 #endif
 
 // -------------------------------------------------------------------------------- //
@@ -879,5 +892,3 @@ wxString ExtractString( const wxString &source, const wxString &start, const wxS
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
