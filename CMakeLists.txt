@@ -83,6 +83,8 @@ if (ENABLE_IPOD)
     else()
         add_definitions(-DWITH_LIBGPOD_SUPPORT=1)
     endif()
+else()
+    message(" *** iPod support disabled!")
 endif()
 
 pkg_check_modules(LIBWXSQLITE3 wxsqlite3)

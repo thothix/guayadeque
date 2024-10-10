@@ -33,6 +33,8 @@
 #include <wx/protocol/http.h>
 #include <wx/zstream.h>
 
+#include <chrono>
+
 namespace Guayadeque {
 
 #ifdef CXX11_RNG
@@ -875,6 +877,26 @@ wxString ExtractString( const wxString &source, const wxString &start, const wxS
         }
     }
     return wxEmptyString;
+}
+
+std::mt19937 guSRandom()
+{
+    std::random_device rd;      // uses /dev/urandom
+
+    // Seed value designed specifically to be different across app executions
+    std::mt19937::result_type seed = rd() ^ (
+            (std::mt19937::result_type)
+                    std::chrono::duration_cast<std::chrono::seconds>(
+                            std::chrono::system_clock::now().time_since_epoch()
+                    ).count() +
+            (std::mt19937::result_type)
+                    std::chrono::duration_cast<std::chrono::microseconds>(
+                            std::chrono::high_resolution_clock::now().time_since_epoch()
+                    ).count() );
+
+
+    std::mt19937 gen(seed);
+    return gen;
 }
 
 wxString GetPathAddTrailSep(wxString path)
