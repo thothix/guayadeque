@@ -35,6 +35,10 @@
 
 namespace Guayadeque {
 
+#ifdef MT19937_RANDOM
+std::mt19937 rng_generator;
+#endif
+
 // -------------------------------------------------------------------------------- //
 bool IsColorDark( const wxColour &color )
 {
