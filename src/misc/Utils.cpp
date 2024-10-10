@@ -35,7 +35,7 @@
 
 namespace Guayadeque {
 
-#ifdef MT19937_RANDOM
+#ifdef CXX11_RNG
 std::mt19937 rng_generator;
 #endif
 
