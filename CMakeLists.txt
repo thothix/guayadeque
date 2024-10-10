@@ -146,10 +146,10 @@ if (PROFILE)
     message("Adding profiling code.")
 endif()
 
-# optionally enable better RNG
-option(WANT_MT19937_RANDOM "Enable mt19936 RNG for better shuffle etc" OFF)
-if (WANT_MT19937_RANDOM)
-    add_definitions(-DMT19937_RANDOM=1)
+# enable better RNG
+option(CXX11_RNG "Enable CXX11 compliant random generator for better RNG" ON)
+if (CXX11_RNG)
+    add_definitions(-DCXX11_RNG=1)
 endif()
 
 add_subdirectory(src)

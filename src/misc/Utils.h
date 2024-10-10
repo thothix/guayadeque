@@ -20,7 +20,7 @@
 #ifndef _UTILS_H
 #define _UTILS_H
 
-#ifdef MT19937_RANDOM
+#ifdef CXX11_RNG
 #include <random>
 #endif
 
@@ -47,7 +47,7 @@ namespace Guayadeque {
     #define guLogError      wxLogError
 #endif
 
-#ifdef MT19937_RANDOM
+#ifdef CXX11_RNG
 
 extern std::mt19937 rng_generator;
 
