@@ -37,10 +37,6 @@
 
 namespace Guayadeque {
 
-#ifdef CXX11_RNG
-std::mt19937 rng_generator;
-#endif
-
 // -------------------------------------------------------------------------------- //
 bool IsColorDark( const wxColour &color )
 {

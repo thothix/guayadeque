@@ -20,61 +20,42 @@
 #ifndef _UTILS_H
 #define _UTILS_H
 
-#ifdef CXX11_RNG
-#include <random>
-#endif
-
 #include <wx/wx.h>
 #include <wx/file.h>
 #include <wx/wfstream.h>
 #include <wx/mstream.h>
 #include <wx/xml/xml.h>
 
+#ifdef CXX11_RNG
+	#include <random>
+#endif
+
 namespace Guayadeque {
 
 #ifdef NDEBUG
     #define guLogDebug(...)
     #define guLogTrace(...) guLogMsgIfDebug( __VA_ARGS__ )
-    #define guLogMessage    wxLogMessage
-    #define guLogWarning    wxLogWarning
-    #define guLogError      wxLogError
 #else
     #define GU_DEBUG
     #define guLogDebug(...) guLogMsgIfDebug( __VA_ARGS__ )
     #define guLogTrace      wxLogMessage
-    #define guLogMessage    wxLogMessage
-    #define guLogWarning    wxLogWarning
-    #define guLogError      wxLogError
 #endif
-
-#ifdef CXX11_RNG
-
-extern std::mt19937 rng_generator;
-
-void inline guRandomInit(void) {
-    rng_generator.seed( time( NULL ) );
-}
-
-std::uint_fast32_t inline guRandom(std::uint_fast32_t x) {
-    return (rng_generator() % x);
-}
-#else
-#define guRandomInit() (srand( time( NULL ) ))
-#define guRandom(x) (rand() % x)
-#endif
+#define guLogMessage    wxLogMessage
+#define guLogWarning    wxLogWarning
+#define guLogError      wxLogError
 
 #define guDEFAULT_BROWSER_USER_AGENT    wxT( "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/55.0.2883.87 Chrome/55.0.2883.87 Safari/537.36" )
 
 #if wxCHECK_VERSION(3, 2, 0)
-#define guENSURE_BITMAP(x) (x.GetBitmap(x.GetDefaultSize()))
+    #define guENSURE_BITMAP(x) (x.GetBitmap(x.GetDefaultSize()))
 #else
-#define guENSURE_BITMAP(x) (x)
+    #define guENSURE_BITMAP(x) (x)
 #endif
 
-#if GSTREAMER_VERSION == 120
-#define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_request_pad_simple
+#if GSTREAMER_VERSION == 120        // Version >= 1.20
+    #define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_request_pad_simple
 #else
-#define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_get_request_pad
+    #define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_get_request_pad
 #endif
 
 enum guFILEITEM_TYPE {
@@ -97,59 +78,8 @@ WX_DECLARE_OBJARRAY(guFileItem, guFileItemArray);
 
 class guTrackArray;
 class guMediaViewer;
-
-static bool guDebugMode     = std::getenv( "GU_DEBUG" ) != NULL;
-static bool guGatherStats   = std::getenv( "GU_STATS" ) != NULL;
-
-template<typename... Args>
-static void guLogMsgIfDebug( Args... what )
-{
-    if( guDebugMode )
-        guLogMessage( what... );
-}
-
-template<typename... Args>
-static void guLogStats( Args... what )
-{
-    if( guGatherStats )
-        guLogMessage( what... );
-}
-
-// -------------------------------------------------------------------------------- //
-void inline         guImageResize( wxImage * image, int maxsize, bool forceresize = false )
-{
-    int w = image->GetWidth();
-    int h = image->GetHeight();
-
-    double ratio = wxMin( static_cast<double>( maxsize ) / h,
-                          static_cast<double>( maxsize ) / w );
-
-    if( forceresize || ( ratio < 1 ) )
-    {
-        image->Rescale( ( w * ratio ) + .5, ( h * ratio ) + .5, wxIMAGE_QUALITY_HIGH );
-    }
-}
-
-// -------------------------------------------------------------------------------- //
-time_t inline         GetFileLastChangeTime( const wxString &filename )
-{
-    wxStructStat St;
-    if( wxStat( filename, &St ) )
-        return -1;
-    return St.st_ctime;
-}
-
-// -------------------------------------------------------------------------------- //
-bool inline         IsFileSymbolicLink( const wxString &filename )
-{
-    wxStructStat St;
-    wxLstat( filename, &St );
-    return S_ISLNK( St.st_mode );
-}
-
 class guTrack;
 
-// -------------------------------------------------------------------------------- //
 bool                IsColorDark( const wxColour &color );
 wxString            LenToString( wxUint64 len );
 wxString            SizeToString( wxFileOffset size );
@@ -176,9 +106,9 @@ wxString            guExpandTrackMacros( const wxString &pattern, guTrack * trac
 bool                guIsValidImageFile( const wxString &filename );
 bool                guRemoveDir( const wxString &path );
 void                GetMediaViewerTracks( const guTrackArray &sourcetracks, const wxArrayInt &sourceflags,
-                                 const guMediaViewer * mediaviewer, guTrackArray &tracks, wxArrayInt &changedflags );
+                                          const guMediaViewer * mediaviewer, guTrackArray &tracks, wxArrayInt &changedflags );
 void                GetMediaViewerTracks( const guTrackArray &sourcetracks, const int flags,
-                                 const guMediaViewer * mediaviewer, guTrackArray &tracks, wxArrayInt &changedflags );
+                                          const guMediaViewer * mediaviewer, guTrackArray &tracks, wxArrayInt &changedflags );
 void                GetMediaViewerTracks( const guTrackArray &sourcetracks, const guMediaViewer * mediaviewer, guTrackArray &tracks );
 void                GetMediaViewersList( const guTrackArray &tracks, wxArrayPtrVoid &MediaViewerPtrs );
 wxString            ExtractString( const wxString &source, const wxString &start, const wxString &end );
@@ -194,6 +124,65 @@ int wxCMPFUNC_CONV CompareFileTimeA( guFileItem ** item1, guFileItem ** item2 );
 int wxCMPFUNC_CONV CompareFileTimeD( guFileItem ** item1, guFileItem ** item2 );
 int wxCMPFUNC_CONV CompareFileTypeA( guFileItem ** item1, guFileItem ** item2 );
 int wxCMPFUNC_CONV CompareFileTypeD( guFileItem ** item1, guFileItem ** item2 );
+
+#ifdef CXX11_RNG
+    std::mt19937        guSRandom();
+    extern std::mt19937 rng_default_generator;
+
+    // As the new CXX11 random generators needs an object to seed instead of simply initialize the library, we use a
+    // default object created below but you can create a new one in local scope, just use the guSRandom()
+#define guRandomInit() (rng_default_generator = guSRandom())
+#define guRandom(x)    (rng_default_generator() % x)
+#else
+    // rand() in CXX11 or greater is equal to random()
+    #define guRandomInit() (srand(time(NULL)))
+    #define guRandom(x) (rand() % x)
+#endif
+
+static bool         guDebugMode     = std::getenv( "GU_DEBUG" ) != nullptr;
+static bool         guGatherStats   = std::getenv( "GU_STATS" ) != nullptr;
+
+template<typename... Args>
+static void guLogMsgIfDebug( Args... what )
+{
+    if( guDebugMode )
+        guLogMessage( what... );
+}
+
+template<typename... Args>
+static void guLogStats( Args... what )
+{
+    if( guGatherStats )
+        guLogMessage( what... );
+}
+
+void inline guImageResize( wxImage * image, int maxsize, bool forceresize = false )
+{
+    int w = image->GetWidth();
+    int h = image->GetHeight();
+
+    double ratio = wxMin( static_cast<double>( maxsize ) / h,
+                          static_cast<double>( maxsize ) / w );
+
+    if( forceresize || ( ratio < 1 ) )
+        image->Rescale( ( w * ratio ) + .5, ( h * ratio ) + .5, wxIMAGE_QUALITY_HIGH );
+}
+
+time_t inline GetFileLastChangeTime( const wxString &filename )
+{
+    wxStructStat St;
+    if( wxStat( filename, &St ) )
+        return -1;
+    return St.st_ctime;
+}
+
+bool inline IsFileSymbolicLink( const wxString &filename )
+{
+    wxStructStat St;
+    wxLstat( filename, &St );
+    return S_ISLNK( St.st_mode );
+}
+
 }
 
 #endif
