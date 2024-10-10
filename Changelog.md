@@ -4,7 +4,7 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.5.4 Beta 1 (2024-10-07)
+0.5.4 (2024-10-xx)
 ------------------
 
 ### Features
@@ -14,6 +14,7 @@ Changelog
 ### Enhancements
   * Added collate accents on media search
   * Preload the current track in the player at startup and some other use cases
+  * Added CXX11 random number generator support and set it as default
 
 0.5.3 (2024-10-02)
 ------------------

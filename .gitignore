@@ -1,18 +1,21 @@
+Version.h
+src/guayadeque
+po/*/*.mo
+Testing/*
+
+# CMake
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
-Makefile
+CMakeLists.txt.user
 cmake_install.cmake
 cmake_uninstall.cmake
-install_manifest.txt
-po/*/*.mo
-src/guayadeque
-Version.h
-CMakeLists.txt.user
-
-# CMake
 cmake-build-*/
 .cmake/*
+
+# make
+Makefile
+install_manifest.txt
 
 # Idea
 .idea/*
@@ -35,12 +38,6 @@ cmake-build-*/
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
-
-# .idea/artifacts
-# .idea/compiler.xml
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
 
 # File-based project format
 *.iws
