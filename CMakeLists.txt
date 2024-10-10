@@ -33,7 +33,7 @@ if (NOT wxWidgets_FOUND)
     message(FATAL_ERROR "wxWidgets not found!")
 endif()
 
-find_package(ICU 66.0 COMPONENTS uc i18n REQUIRED)
+find_package(ICU 60.0 COMPONENTS uc i18n REQUIRED)
 
 pkg_check_modules(GSTREAMER gstreamer-1.0>=1.20)
 if (NOT GSTREAMER_FOUND)
