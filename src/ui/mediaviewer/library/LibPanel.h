@@ -26,6 +26,7 @@
 #include "AuiManagerPanel.h"
 #include "CoListBox.h"
 #include "DbLibrary.h"
+#include "DiBrowser.h"
 #include "GeListBox.h"
 #include "PcListBox.h"
 #include "PlayerPanel.h"
@@ -55,7 +56,8 @@ enum guLibraryElement {
     guLIBRARY_ELEMENT_YEARS,
     guLIBRARY_ELEMENT_RATINGS,
     guLIBRARY_ELEMENT_PLAYCOUNT,
-    guLIBRARY_ELEMENT_TRACKS
+    guLIBRARY_ELEMENT_TRACKS,
+    guLIBRARY_ELEMENT_DIRECTORIES
 };
 
 #define     guPANEL_LIBRARY_TEXTSEARCH      ( 1 << 0 )
@@ -69,19 +71,23 @@ enum guLibraryElement {
 #define     guPANEL_LIBRARY_PLAYCOUNT       ( 1 << 8 )
 #define     guPANEL_LIBRARY_COMPOSERS       ( 1 << 9 )
 #define     guPANEL_LIBRARY_ALBUMARTISTS    ( 1 << 10 )
+#define     guPANEL_LIBRARY_DIRECTORIES     ( 1 << 11 )
 
-#define     guPANEL_LIBRARY_VISIBLE_DEFAULT ( guPANEL_LIBRARY_GENRES | guPANEL_LIBRARY_ARTISTS | guPANEL_LIBRARY_ALBUMS )
+#define     guPANEL_LIBRARY_VISIBLE_DEFAULT ( guPANEL_LIBRARY_DIRECTORIES | guPANEL_LIBRARY_GENRES | guPANEL_LIBRARY_ARTISTS | guPANEL_LIBRARY_ALBUMS )
 
 class guLibPanel;
 class guImagePtrArray;
 class guMediaViewer;
+class guMainFrame;
 
 // -------------------------------------------------------------------------------- //
 class guLibPanel : public guAuiManagerPanel
 {
   protected :
     guMediaViewer *         m_MediaViewer;
+    guMainFrame *           m_MainFrame;
 
+    guDiBrowser *           m_DirectoryListCtrl;
     guGeListBox *           m_GenreListCtrl;
     guTaListBox *           m_LabelsListCtrl;
     guArListBox *           m_ArtistListCtrl;
@@ -93,7 +99,6 @@ class guLibPanel : public guAuiManagerPanel
     guCoListBox *           m_ComposerListCtrl;
     guAAListBox *           m_AlbumArtistListCtrl;
 
-    //
     guDbLibrary *           m_Db;
     bool                    m_UpdateLock;
     guPlayerPanel *         m_PlayerPanel;
@@ -116,6 +121,16 @@ class guLibPanel : public guAuiManagerPanel
     virtual void            OnLabelQueueClicked( wxCommandEvent &event );
     virtual void            OnLabelCopyToClicked( wxCommandEvent &event );
     virtual void            OnLabelSavePlayListClicked( wxCommandEvent &event );
+
+    // DirectoryBrowser Events
+    void                    OnDirItemChanged( wxTreeEvent &event );
+    void                    OnTreeItemCollapsing(wxTreeEvent &event );
+//    virtual void            OnFileListActivated( wxCommandEvent &event );
+//    virtual void            OnFileListSelected( wxCommandEvent &event );
+//    virtual void            OnFilePlayClicked( wxCommandEvent &event );
+//    virtual void            OnFileQueueClicked( wxCommandEvent &event );
+//    virtual void            OnFileCopyToClicked( wxCommandEvent &event );
+//    virtual void            OnFileSavePlayListClicked( wxCommandEvent &event );
 
     // GenreListBox Events
     virtual void            OnGenreListActivated( wxCommandEvent &event );
@@ -219,12 +234,11 @@ class guLibPanel : public guAuiManagerPanel
     virtual void            OnSongEditField( wxCommandEvent &event );
     virtual void            OnSongCopyToClicked( wxCommandEvent &event );
 
-    //
     void                    OnSelChangedTimer( wxTimerEvent &event );
     void                    DoSelectionChanged( void );
 
-
     void                    ReloadLabels( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_LABELS ) m_LabelsListCtrl->ReloadItems( reset ); }
+    void                    ReloadDirectory( bool reset = true ) { if(m_VisiblePanels & guPANEL_LIBRARY_DIRECTORIES ) m_DirectoryListCtrl->ReloadItems(); }
     void                    ReloadGenres( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_GENRES ) m_GenreListCtrl->ReloadItems( reset ); }
     void                    ReloadAlbumArtists( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_ALBUMARTISTS ) m_AlbumArtistListCtrl->ReloadItems( reset ); }
     void                    ReloadArtists( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_ARTISTS ) m_ArtistListCtrl->ReloadItems( reset ); }
@@ -236,7 +250,6 @@ class guLibPanel : public guAuiManagerPanel
     void                    ReloadSongs( bool reset = true ) { m_SongListCtrl->ReloadItems( reset ); }
 
     virtual void            UpdatePlaylists( void );
-
     virtual void            DoEditTracks( guTrackArray &tracks );
 
     //virtual void            UpdateTracks( const guTrackArray &tracks, const wxArrayInt &changedflags );
@@ -250,7 +263,6 @@ class guLibPanel : public guAuiManagerPanel
     virtual void            CreateBestOfPlaylist( const guTrack &track );
 
     virtual void            OnGoToSearch( wxCommandEvent &event );
-
 //    void                    OnConfigUpdated( wxCommandEvent &event );
 
     void                    PlayAllTracks( const bool enqueue );
@@ -264,13 +276,15 @@ class guLibPanel : public guAuiManagerPanel
     guLibPanel( wxWindow * parent, guMediaViewer * mediaviewer );
     ~guLibPanel();
 
-    virtual void            InitPanelData( void );
+    void                    AfterCreate();
+    virtual void            InitPanelData();
 
     virtual void            NormalizeTracks( guTrackArray * tracks, const bool isdrag = false );
 
 //    virtual wxString        GetName( void );
     virtual guDbLibrary *   GetDb( void ) { return m_Db; }
-    void                    SetPlayerPanel( guPlayerPanel * playerpanel ) { m_PlayerPanel = playerpanel; }
+    virtual guPlayerPanel * GetPlayerPanel(void) { return m_PlayerPanel; };
+    void                    SetPlayerPanel( guPlayerPanel * playerpanel );
 //    virtual wxArrayString   GetLibraryPaths( void );
     virtual wxString        GetPlaylistPath( void ) { return wxEmptyString; }
     void                    SetBaseCommand( int basecmd ) { m_BaseCommand = basecmd; InitPanelData(); }
@@ -280,6 +294,7 @@ class guLibPanel : public guAuiManagerPanel
 
     wxString                ConfigPath( void ) { return m_ConfigPath; }
     guMediaViewer *         GetMediaViewer( void ) { return m_MediaViewer; }
+    guMainFrame *           GetMainFrame( void ) { return m_MainFrame; }
 
     void                    SetSelection( const int type, const int id );
     void                    SelectTrack( const int trackid );
@@ -295,6 +310,7 @@ class guLibPanel : public guAuiManagerPanel
     void                    SelectAlbumArtists( wxArrayInt * ids );
     void                    SelectComposers( wxArrayInt * ids );
     void                    SelectAlbums( wxArrayInt * albums );
+    void                    SelectDirectory();
 
     void                    UpdatedTracks( const guTrackArray * tracks );
     void                    UpdatedTrack( const guTrack * track );
@@ -329,4 +345,3 @@ class guLibPanel : public guAuiManagerPanel
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

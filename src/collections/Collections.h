@@ -27,6 +27,11 @@
 
 namespace Guayadeque {
 
+#define GU_COLLECTION_DUMMY_ROOTDIR     "/$GUAYADEQUE$COLLECTION_DUMMY_ROOTDIR/"
+
+#define guCOLLECTION_UPDATE_ON_START  "UpdateOnStart"
+#define guCOLLECTION_DIRECTORY_PATH   "DirectoryPath"
+
 enum guMediaCollectionType {
     guMEDIA_COLLECTION_TYPE_NORMAL,
     guMEDIA_COLLECTION_TYPE_JAMENDO,
@@ -51,6 +56,7 @@ class guMediaCollection
     bool            m_EmbeddMetadata;
     wxString        m_DefaultCopyAction;
     int             m_LastUpdate;
+    wxString        m_DirectoryPath;
 
     guMediaCollection( const int type = guMEDIA_COLLECTION_TYPE_NORMAL );
     ~guMediaCollection();

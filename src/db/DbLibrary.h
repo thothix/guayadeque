@@ -34,7 +34,6 @@
 
 namespace Guayadeque {
 
-
 #define GU_TRACKS_QUERYSTR   wxT( "SELECT song_id, song_name, song_genreid, song_genre, song_artistid, song_artist, " \
                "song_albumartistid, song_albumartist, song_composerid, song_composer, song_albumid, song_album, " \
                "song_pathid, song_path, song_filename, song_format, song_disk, song_number, song_year, song_comment, " \
@@ -319,13 +318,14 @@ class guDbLibrary : public guDb
     bool                m_NeedUpdate;
 
     // Library Filter Options
-    wxArrayInt         m_GeFilters;
+    wxString           m_DiFilters; // Directory
+    wxArrayString      m_TeFilters; // Text string filters
     wxArrayInt         m_LaFilters; // Label
+    wxArrayInt         m_GeFilters; // Genres
     wxArrayInt         m_CoFilters; // Composers
     wxArrayInt         m_AAFilters; // AlbumArtist
     wxArrayInt         m_ArFilters; // Artist
     wxArrayInt         m_AlFilters; // Album
-    wxArrayString      m_TeFilters; // Text string filters
     wxArrayInt         m_YeFilters; // Year
     wxArrayInt         m_RaFilters; // Ratting
     wxArrayInt         m_PcFilters; // PlayCount
@@ -426,7 +426,6 @@ class guDbLibrary : public guDb
     bool                GetTracksOrderDesc( void ) const { return m_TracksOrderDesc; }
     void                SetTracksOrderDesc( const bool orderdesc ) { m_TracksOrderDesc = orderdesc; }
 
-
     void                UpdateSongs( const guTrackArray * Songs, const wxArrayInt &changedflags );
     void                UpdateTracksWithValue( guTrackArray * tracks, const int fieldid, void * value );
     void                UpdateTrackLength( const int trackid, const int length );
@@ -481,6 +480,7 @@ class guDbLibrary : public guDb
     wxString            GetPlayListQuery( const int plid );
     int                 GetPlayListType( const int plid );
 
+    bool                DirectoryHasPath();
 //    void                SetLibPath( const wxArrayString &NewPaths );
     int                 ReadFileTags( const wxString &filename, const bool allowrating = false );
     void                UpdateImageFile( const char * filename, const char * saveto,
@@ -488,7 +488,8 @@ class guDbLibrary : public guDb
 
     int                 GetFiltersCount() const;
     void                SetTeFilters( const wxArrayString &tefilters, const bool locked );
-    void                SetGeFilters( const wxArrayInt &filters, const bool locked  );
+    void                SetDiFilters( const wxString &filters, const bool locked );
+    void                SetGeFilters( const wxArrayInt &filters, const bool locked );
     void                SetLaFilters( const wxArrayInt &filters, const bool locked );
     void                SetArFilters( const wxArrayInt &filters, const bool locked );
     void                SetAlFilters( const wxArrayInt &filters, const bool locked );
@@ -562,6 +563,7 @@ wxString guListItemsGetName( const guListItems &Items, int m_Id );
 wxArrayInt GetArraySameItems( const wxArrayInt &Source, const wxArrayInt &Oper );
 wxArrayInt GetArrayDiffItems( const wxArrayInt &Source, const wxArrayInt &Oper );
 wxString TextFilterToSQL( const wxArrayString &TeFilters );
+wxString DirectoryFilterToSQL( const wxString &DiFilter );
 wxString LabelFilterToSQL( const wxArrayInt &LaFilters );
 
 // -------------------------------------------------------------------------------- //
@@ -632,4 +634,3 @@ void inline guDbLibrary::FillTrackFromDb( guTrack * Song, wxSQLite3ResultSet * d
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

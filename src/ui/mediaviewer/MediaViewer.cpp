@@ -194,6 +194,18 @@ void guMediaViewer::InitMediaViewer( const int mode )
     CreateAcceleratorTable();
     m_MainFrame->MediaViewerCreated( m_MediaCollection->m_UniqueId, this );
 
+    // FIXME: Setting DirectoryPath is not working with added "Collection root item"
+    if (!m_MediaCollection->m_DirectoryPath)
+        m_MediaCollection->m_DirectoryPath = m_MediaCollection->m_Paths[0];
+
+    if (m_LibPanel)
+    {
+        //m_LibPanel->m_DirectoryListCtrl->ExpandPath(m_MediaCollection->m_DirectoryPath);
+        //m_LibPanel->m_DirectoryListCtrl->DefaultPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_MediaCollection->m_DirectoryPath);
+        //m_LibPanel->m_DirectoryListCtrl->SelectPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_MediaCollection->m_DirectoryPath);
+        m_LibPanel->m_DirectoryListCtrl->SetPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_MediaCollection->m_DirectoryPath, this);
+    }
+
     if ( m_MediaCollection->m_UpdateOnStart )
     {
         //UpdateLibrary();
@@ -416,28 +428,20 @@ void guMediaViewer::SetViewMode( const int mode )
         switch( m_ViewMode )
         {
             case guMEDIAVIEWER_MODE_LIBRARY :
-            {
                 m_LibPanel->Hide();
                 break;
-            }
 
             case guMEDIAVIEWER_MODE_ALBUMBROWSER :
-            {
                 m_AlbumBrowser->Hide();
                 break;
-            }
 
             case guMEDIAVIEWER_MODE_TREEVIEW :
-            {
                 m_TreeViewPanel->Hide();
                 break;
-            }
 
             case guMEDIAVIEWER_MODE_PLAYLISTS :
-            {
                 m_PlayListPanel->Hide();
                 break;
-            }
         }
 
         m_ViewMode = mode;
@@ -542,6 +546,13 @@ void guMediaViewer::SetMenuState( const bool enabled )
         {
             MenuItem->Enable( enabled );
             MenuItem->Check( IsEnabled );
+        }
+
+        MenuItem = MenuBar->FindItem(m_BaseCommand + guCOLLECTION_ACTION_VIEW_LIB_DIRECTORIES );
+        if( MenuItem )
+        {
+            MenuItem->Enable( IsEnabled );
+            MenuItem->Check( IsEnabled && (VisiblePanels & guPANEL_LIBRARY_DIRECTORIES ) );
         }
 
         MenuItem = MenuBar->FindItem( m_BaseCommand + guCOLLECTION_ACTION_VIEW_LIB_LABELS );
@@ -2238,5 +2249,3 @@ wxDragResult guMediaViewerDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

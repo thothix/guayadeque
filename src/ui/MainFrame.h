@@ -118,7 +118,6 @@ class guMainFrame : public wxFrame
   private :
     static guMainFrame *            m_MainFrame;
 
-  private:
     wxAuiManager                    m_AuiManager;
     unsigned int                    m_VisiblePanels;
 
@@ -234,6 +233,12 @@ class guMainFrame : public wxFrame
     wxArrayInt                      m_PendingUpdateFlags;
     wxMutex                         m_PendingUpdateMutex;
 
+    void                            InitAttributes(guDbCache * dbcache);
+    bool                            LoadMediaCollections(guConfig * Config);
+    void                            CreateControls(guConfig * Config);
+    void                            BindControls();
+    void                            UnbindControls();
+
     void                            OnUpdatePodcasts( wxCommandEvent &event );
     void                            OnUpdateTrack( wxCommandEvent &event );
     void                            OnPlayerStatusChanged( wxCommandEvent &event );
@@ -242,8 +247,6 @@ class guMainFrame : public wxFrame
     void                            OnPlayerVolumeChanged( wxCommandEvent &event );
     void                            OnAudioScrobbleUpdate( wxCommandEvent &event );
     void                            OnPlayerSeeked( wxCommandEvent &event );
-
-    guMediaViewer *                 FindCollectionMediaViewer( void * windowptr );
 
     void                            CreateCollectionsMenu( wxMenu * menu );
     void                            CreateCollectionMenu( wxMenu * menu, const guMediaCollection &collection,
@@ -453,7 +456,9 @@ class guMainFrame : public wxFrame
     void                            SaveCollections( void );
     void                            GetCollectionsCoverNames( wxArrayString &covernames );
 
+    guMediaViewer *                 FindCollectionMediaViewer( void * windowptr );
     guMediaViewer *                 FindCollectionMediaViewer( const wxString &uniqueid );
+
     int                             GetMediaViewerIndex( guMediaViewer * mediaviewer );
     guMediaCollection *             FindCollection( const wxString &uniqueid );
 

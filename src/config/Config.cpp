@@ -417,53 +417,31 @@ void LoadCollection( wxXmlNode * xmlnode, guMediaCollection * collection )
     {
         wxString Name = xmlnode->GetName();
         if( Name == wxT( "paths" ) )
-        {
             LoadCollectionWordList( xmlnode->GetChildren(), &collection->m_Paths );
-        }
         else if( Name == wxT( "covers" ) )
-        {
             LoadCollectionWordList( xmlnode->GetChildren(), &collection->m_CoverWords );
-        }
         else if( Name == wxT( "UniqueId" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &collection->m_UniqueId );
-        }
         else if( Name == wxT( "Type" ) )
-        {
             collection->m_Type = LoadCollectionInt( xmlnode );
-        }
         else if( Name == wxT( "Name" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &collection->m_Name );
-        }
         else if( Name == wxT( "LastUpdate" ) )
-        {
             collection->m_LastUpdate = LoadCollectionInt( xmlnode );
-        }
-        else if( Name == wxT( "UpdateOnStart" ) )
-        {
+        else if (Name == wxT(guCOLLECTION_UPDATE_ON_START))
             collection->m_UpdateOnStart = LoadCollectionInt( xmlnode );
-        }
         else if( Name == wxT( "ScanPlaylists" ) )
-        {
             collection->m_ScanPlaylists = LoadCollectionInt( xmlnode );
-        }
         else if( Name == wxT( "ScanFollowSymLinks" ) )
-        {
             collection->m_ScanFollowSymLinks = LoadCollectionInt( xmlnode );
-        }
         else if( Name == wxT( "ScanEmbeddedCovers" ) )
-        {
             collection->m_ScanEmbeddedCovers = LoadCollectionInt( xmlnode );
-        }
         else if( Name == wxT( "EmbeddMetadata" ) )
-        {
             collection->m_EmbeddMetadata = LoadCollectionInt( xmlnode );
-        }
         else if( Name == wxT( "DefaultCopyAction" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &collection->m_DefaultCopyAction );
-        }
+        else if (Name == wxT(guCOLLECTION_DIRECTORY_PATH))
+            xmlnode->GetAttribute( wxT( "value" ), &collection->m_DirectoryPath );
 
         xmlnode = xmlnode->GetNext();
     }
@@ -513,13 +491,14 @@ void SaveCollection( wxXmlNode * xmlnode, guMediaCollection * collection )
     WriteStr( XmlNode, wxT( "UniqueId" ), collection->m_UniqueId );
     WriteStr( XmlNode, wxT( "Type" ), wxString::Format( wxT( "%i" ), collection->m_Type ) );
     WriteStr( XmlNode, wxT( "Name" ), collection->m_Name );
-    WriteStr( XmlNode, wxT( "UpdateOnStart" ), wxString::Format( wxT( "%i" ), collection->m_UpdateOnStart ) );
+    WriteStr( XmlNode, wxT(guCOLLECTION_UPDATE_ON_START), wxString::Format( wxT( "%i" ), collection->m_UpdateOnStart ) );
     WriteStr( XmlNode, wxT( "ScanPlaylists" ), wxString::Format( wxT( "%i" ), collection->m_ScanPlaylists ) );
     WriteStr( XmlNode, wxT( "ScanFollowSymLinks" ), wxString::Format( wxT( "%i" ), collection->m_ScanFollowSymLinks ) );
     WriteStr( XmlNode, wxT( "ScanEmbeddedCovers" ), wxString::Format( wxT( "%i" ), collection->m_ScanEmbeddedCovers ) );
     WriteStr( XmlNode, wxT( "EmbeddMetadata" ), wxString::Format( wxT( "%i" ), collection->m_EmbeddMetadata ) );
     WriteStr( XmlNode, wxT( "DefaultCopyAction" ), collection->m_DefaultCopyAction );
     WriteStr( XmlNode, wxT( "LastUpdate" ), wxString::Format( wxT( "%i" ), collection->m_LastUpdate ) );
+    WriteStr( XmlNode, wxT(guCOLLECTION_DIRECTORY_PATH), collection->m_DirectoryPath );
 
     wxXmlNode * ParentNode = new wxXmlNode( wxXML_ELEMENT_NODE, wxT( "paths" ) );
     int Count = collection->m_Paths.Count();
@@ -538,8 +517,6 @@ void SaveCollection( wxXmlNode * xmlnode, guMediaCollection * collection )
     }
 
     XmlNode->AddChild( ParentNode );
-
-
     xmlnode->AddChild( XmlNode );
 }
 

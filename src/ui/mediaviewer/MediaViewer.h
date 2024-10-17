@@ -65,7 +65,8 @@ enum guMediaViewerSelect {
     guMEDIAVIEWER_SELECT_ALBUMARTIST,
     guMEDIAVIEWER_SELECT_COMPOSER,
     guMEDIAVIEWER_SELECT_YEAR,
-    guMEDIAVIEWER_SELECT_GENRE
+    guMEDIAVIEWER_SELECT_GENRE,
+    guMEDIAVIEWER_SELECT_DIRECTORY
 };
 
 #define     guCONTEXTMENU_EDIT_TRACKS       ( 1 << 0 )
@@ -80,8 +81,6 @@ enum guMediaViewerSelect {
                                               guCONTEXTMENU_EMBED_COVERS | guCONTEXTMENU_COPY_TO |\
                                               guCONTEXTMENU_LINKS | guCONTEXTMENU_COMMANDS |\
                                               guCONTEXTMENU_DELETEFROMLIBRARY )
-
-
 
 class guMainFrame;
 class guLibUpdateThread;

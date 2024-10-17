@@ -36,13 +36,11 @@
 #include "TagInfo.h"
 #include "TaskBar.h"
 #include "TrackChangeInfo.h"
-#include "Transcode.h"
 #include "Utils.h"
 #include "Version.h"
 
 #include <wx/event.h>
 #include <wx/statline.h>
-#include <wx/notebook.h>
 #include <wx/datetime.h>
 #include <wx/tokenzr.h>
 #include <wx/txtstrm.h>
@@ -52,18 +50,16 @@ namespace Guayadeque {
 // The default update podcasts timeout is 30 minutes
 #define guPODCASTS_UPDATE_TIMEOUT   ( 30 * 60 * 1000 )
 
-guMainFrame * guMainFrame::m_MainFrame = NULL;
+guMainFrame * guMainFrame::m_MainFrame = nullptr;
 
 // -------------------------------------------------------------------------------- //
-guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
+guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
 {
-    SetMainFrame();
+    InitAttributes(dbcache);
 
-    //
     // Init the Config Object
-    //
     guConfig * Config = ( guConfig * ) guConfig::Get();
-    if ( !Config )
+    if (!Config)
     {
         guLogError( wxT( "Could not open the guayadeque configuration object" ) );
         return;
@@ -73,97 +69,22 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     // Init the Accelerators
     guAccelInit();
 
-    m_Db = NULL;
-    m_DbCache = dbcache;
-    m_DbPodcasts = NULL;
-//    m_JamendoDb = NULL;
-//    m_MagnatuneDb = NULL;
-    m_CopyToThread = NULL;
-    m_LoadLayoutPending = wxNOT_FOUND;
-    m_MenuLayoutLoad = NULL;
+    // Load collections
+    bool NeedSaveCollections = LoadMediaCollections(Config);
+    if (NeedSaveCollections)
+        Config->SaveCollections(&m_Collections);
 
-    bool NeedSaveCollections = false;
-    m_CollectionsMutex.Lock();
-    if ( !Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_NORMAL ) )
-    {
-        guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_NORMAL );
-        MediaCollection->m_Name = _( "My Music" );
-        MediaCollection->m_Paths.Add( wxGetHomeDir() + wxT( "/Music" ) );
-        MediaCollection->m_CoverWords.Add( wxT( "cover" ) );
-        MediaCollection->m_CoverWords.Add( wxT( "front" ) );
-        MediaCollection->m_CoverWords.Add( wxT( "folder" ) );
-        m_Collections.Add( MediaCollection );
-        NeedSaveCollections = true;
-    }
+    //m_Db->SetLibPath( Config->ReadAStr( wxT( "LibPath" ),
+    //                                  wxGetHomeDir() + wxT( "/Music" ),
+    //                                  wxT( "libpaths" ) ) );
 
-    if ( !Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_JAMENDO ) )
-    {
-        guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_JAMENDO );
-        MediaCollection->m_Name = wxT( "Jamendo" );
-        MediaCollection->m_UniqueId = wxT( "Jamendo" );
-        m_Collections.Add( MediaCollection );
-        NeedSaveCollections = true;
-    }
-
-    if ( !Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_MAGNATUNE ) )
-    {
-        guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_MAGNATUNE );
-        MediaCollection->m_Name = wxT( "Magnatune" );
-        MediaCollection->m_UniqueId = wxT( "Magnatune" );
-        m_Collections.Add( MediaCollection );
-        NeedSaveCollections = true;
-    }
-
-    Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE );
-    Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_IPOD );
-
-    m_CollectionsMutex.Unlock();
-
-    if ( NeedSaveCollections )
-        Config->SaveCollections( &m_Collections );
-
-//    m_Db->SetLibPath( Config->ReadAStr( wxT( "LibPath" ),
-//                                      wxGetHomeDir() + wxT( "/Music" ),
-//                                      wxT( "libpaths" ) ) );
-
-//    m_LibUpdateThread = NULL;
-//    m_LibCleanThread = NULL;
-    m_UpdatePodcastsTimer = NULL;
-    m_DownloadThread = NULL;
-    m_NotifySrv = NULL;
-
-    m_SelCount = 0;
-    m_SelLength = 0;
-    m_SelSize = 0;
-
-    m_PlayerPanel = NULL;
-    m_PlayerPlayList = NULL;
-    m_RadioPanel = NULL;
-    m_LastFMPanel = NULL;
-    m_LyricsPanel = NULL;
-    m_PodcastsPanel = NULL;
-    m_PlayerVumeters = NULL;
-    m_FileBrowserPanel = NULL;
-    m_VolumeMonitor = NULL;
-    m_LocationPanel = NULL;
-    m_CoverPanel = NULL;
-    m_AudioCdPanel = NULL;
-
-    m_MenuPlayerPlayList = NULL;
-    m_MenuPlayerFilters = NULL;
-    m_MenuPlayerVumeters = NULL;
-    m_MenuMainLocations = NULL;
-    m_MenuMainShowCover = NULL;
-
-    m_LyricSearchEngine = NULL;
-    m_LyricSearchContext = NULL;
-
+    // Taskbar
     wxImage TaskBarIcon( guImage( guIMAGE_INDEX_guayadeque_taskbar ) );
     TaskBarIcon.ConvertAlphaToMask();
     m_AppIcon.CopyFromBitmap( TaskBarIcon );
 
+    // Volume and Lyrics
     m_VolumeMonitor = new guGIO_VolumeMonitor( this );
-
     m_LyricSearchEngine = new guLyricSearchEngine();
 
     //
@@ -211,7 +132,12 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
                                         wxAUI_NB_DEFAULT_STYLE );
 
     guMediaViewerLibrary * MediaViewer = new guMediaViewerLibrary(
-            m_MainNotebook, m_Collections[ 0 ], ID_COLLECTIONS_BASE, this, guMEDIAVIEWER_MODE_NONE, NULL );
+            m_MainNotebook,
+            m_Collections[ 0 ],
+            ID_COLLECTIONS_BASE,
+            this,
+            guMEDIAVIEWER_MODE_NONE,
+            nullptr);
     MediaViewer->SetDefault( true );
     m_MediaViewers.Add( MediaViewer );
 
@@ -258,13 +184,168 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
         CaptionVisible( true ).
         Bottom().Layer( 0 ).Row( 0 ).Position( 0 ) );
 
-
     if ( m_VisiblePanels & guPANEL_MAIN_SHOWCOVER )
         ShowMainPanel( guPANEL_MAIN_SHOWCOVER, true );
 
     CreateMenu();
 
-    if ( m_LocationPanel )
+    CreateControls(Config);
+}
+
+// -------------------------------------------------------------------------------- //
+guMainFrame::~guMainFrame()
+{
+    guConfig * Config = ( guConfig * ) guConfig::Get();
+    if (Config)
+    {
+        wxPoint MainWindowPos = GetPosition();
+        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_POSX, MainWindowPos.x, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
+        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_POSY, MainWindowPos.y, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
+        wxSize MainWindowSize = GetSize();
+        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_WIDTH, MainWindowSize.x, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
+        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_HEIGHT, MainWindowSize.y, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
+
+        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_VISIBLE_PANELS, m_VisiblePanels, CONFIG_PATH_MAIN_WINDOW );
+
+        wxAuiPaneInfo &PaneInfo = m_AuiManager.GetPane( wxT( "PlayerPlayList" ) );
+        PaneInfo.Caption( _( "Now Playing" ) );
+        Config->WriteStr( CONFIG_KEY_MAIN_WINDOW_LAST_LAYOUT, m_AuiManager.SavePerspective(), CONFIG_PATH_MAIN_WINDOW );
+        Config->WriteStr( CONFIG_KEY_MAIN_WINDOW_NOTEBOOK_LAYOUT, m_MainNotebook->SavePerspective(), CONFIG_PATH_MAIN_WINDOW );
+
+        Config->WriteBool( CONFIG_KEY_MAIN_WINDOW_FULLSCREEN, IsFullScreen() , CONFIG_PATH_MAIN_WINDOW );
+        Config->WriteBool( CONFIG_KEY_MAIN_WINDOW_STATUS_BAR, m_MainStatusBar->IsShown() , CONFIG_PATH_MAIN_WINDOW );
+    }
+
+    if (m_TaskBarIcon)
+        delete m_TaskBarIcon;
+    if (m_MPRIS)
+        delete m_MPRIS;
+    if (m_MPRIS2)
+        delete m_MPRIS2;
+    if (m_GSession)
+        delete m_GSession;
+    if (m_MMKeys)
+        delete m_MMKeys;
+    if (m_NotifySrv)
+    {
+        m_PlayerPanel->SetNotifySrv( NULL );
+        delete m_NotifySrv;
+    }
+    if (m_DBusServer)
+        delete m_DBusServer;
+    if (m_VolumeMonitor)
+        delete m_VolumeMonitor;
+
+    m_AuiManager.UnInit();
+
+    if (m_CopyToThread)
+    {
+        m_CopyToThreadMutex.Lock();
+        m_CopyToThread->Pause();
+        m_CopyToThread->Delete();
+        m_CopyToThread = NULL;
+        m_CopyToThreadMutex.Unlock();
+    }
+    if (m_LyricSearchContext)
+        delete m_LyricSearchContext;
+    if (m_LyricSearchEngine)
+        delete m_LyricSearchEngine;
+
+    UnbindControls();
+}
+
+//extern void wxClearGtkSystemObjects();
+
+void guMainFrame::InitAttributes(guDbCache * dbcache)
+{
+    m_Db = nullptr;
+    m_DbCache = dbcache;
+    m_DbPodcasts = NULL;
+//    m_JamendoDb = NULL;
+//    m_MagnatuneDb = NULL;
+    m_CopyToThread = NULL;
+    m_LoadLayoutPending = wxNOT_FOUND;
+    m_MenuLayoutLoad = NULL;
+//    m_LibUpdateThread = NULL;
+//    m_LibCleanThread = NULL;
+    m_UpdatePodcastsTimer = NULL;
+    m_DownloadThread = NULL;
+    m_NotifySrv = NULL;
+    m_TaskBarIcon = NULL;
+
+    m_SelCount = 0;
+    m_SelLength = 0;
+    m_SelSize = 0;
+
+    m_PlayerPanel = NULL;
+    m_PlayerPlayList = NULL;
+    m_RadioPanel = NULL;
+    m_LastFMPanel = NULL;
+    m_LyricsPanel = NULL;
+    m_PodcastsPanel = NULL;
+    m_PlayerVumeters = NULL;
+    m_FileBrowserPanel = NULL;
+    m_VolumeMonitor = NULL;
+    m_LocationPanel = NULL;
+    m_CoverPanel = NULL;
+    m_AudioCdPanel = NULL;
+
+    m_MenuPlayerPlayList = NULL;
+    m_MenuPlayerFilters = NULL;
+    m_MenuPlayerVumeters = NULL;
+    m_MenuMainLocations = NULL;
+    m_MenuMainShowCover = NULL;
+    m_LyricSearchEngine = NULL;
+    m_LyricSearchContext = NULL;
+
+    SetMainFrame();
+}
+
+bool guMainFrame::LoadMediaCollections(guConfig * Config)
+{
+    bool NeedSaveCollections = false;
+
+    wxMutexLocker Lock(m_CollectionsMutex);
+
+    if ( !Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_NORMAL ) )
+    {
+        guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_NORMAL );
+        MediaCollection->m_Name = _( "My Music" );
+        MediaCollection->m_Paths.Add( wxGetHomeDir() + wxT( "/Music" ) );
+        MediaCollection->m_CoverWords.Add( wxT( "cover" ) );
+        MediaCollection->m_CoverWords.Add( wxT( "front" ) );
+        MediaCollection->m_CoverWords.Add( wxT( "folder" ) );
+        m_Collections.Add( MediaCollection );
+        NeedSaveCollections = true;
+    }
+
+    if ( !Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_JAMENDO ) )
+    {
+        guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_JAMENDO );
+        MediaCollection->m_Name = wxT( "Jamendo" );
+        MediaCollection->m_UniqueId = wxT( "Jamendo" );
+        m_Collections.Add( MediaCollection );
+        NeedSaveCollections = true;
+    }
+
+    if ( !Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_MAGNATUNE ) )
+    {
+        guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_MAGNATUNE );
+        MediaCollection->m_Name = wxT( "Magnatune" );
+        MediaCollection->m_UniqueId = wxT( "Magnatune" );
+        m_Collections.Add( MediaCollection );
+        NeedSaveCollections = true;
+    }
+
+    Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE );
+    Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_IPOD );
+
+    return NeedSaveCollections;
+}
+
+void guMainFrame::CreateControls(guConfig * Config)
+{
+    if (m_LocationPanel)
         m_LocationPanel->Lock();
 
     m_NBPerspective = Config->ReadStr( CONFIG_KEY_MAIN_WINDOW_NOTEBOOK_LAYOUT, wxEmptyString, CONFIG_PATH_MAIN_WINDOW );
@@ -304,8 +385,8 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     }
 
     m_AuiManager.AddPane( m_MainNotebook, wxAuiPaneInfo().Name( wxT( "PlayerSelector" ) ).
-        CaptionVisible( false ).CloseButton( false ).DestroyOnClose( false ).
-        CenterPane() );
+            CaptionVisible( false ).CloseButton( false ).DestroyOnClose( false ).
+            CenterPane() );
 
     //m_AuiManager.Update();
     wxString Perspective = Config->ReadStr( CONFIG_KEY_MAIN_WINDOW_LAST_LAYOUT, wxEmptyString, CONFIG_PATH_MAIN_WINDOW );
@@ -337,17 +418,13 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
                                               guPANEL_MAIN_PLAYERVUMETERS |
                                               guPANEL_MAIN_LOCATIONS |
                                               guPANEL_MAIN_SHOWCOVER );
-
         // Reset the Menu entry for all elements
 //        ResetViewMenuState();
     }
-
     m_CurrentPage = m_MainNotebook->GetPage( m_MainNotebook->GetSelection() );
 
-    if ( m_LocationPanel )
+    if (m_LocationPanel)
         m_LocationPanel->Unlock();
-
-    m_TaskBarIcon = NULL;
 
     m_DBusServer = new guDBusServer( NULL );
     guDBusServer::Set( m_DBusServer );
@@ -388,13 +465,20 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     if ( Config->ReadBool( CONFIG_KEY_MAIN_WINDOW_FULLSCREEN, IsFullScreen(), CONFIG_PATH_MAIN_WINDOW ) != IsFullScreen() )
         ShowFullScreen( !IsFullScreen(), wxFULLSCREEN_NOSTATUSBAR | wxFULLSCREEN_NOBORDER | wxFULLSCREEN_NOCAPTION );
 
-//    // Load the layouts menu
-//    CreateLayoutMenus();
+    //// Load the layouts menu
+    //CreateLayoutMenus();
 
+    BindControls();
+}
+
+void guMainFrame::BindControls()
+{
     // Bind events
+    Bind( wxEVT_CLOSE_WINDOW, &guMainFrame::OnCloseWindow, this );
     Bind( wxEVT_IDLE, &guMainFrame::OnIdle, this );
     Bind( wxEVT_SIZE, &guMainFrame::OnSize, this );
     Bind( wxEVT_ICONIZE, &guMainFrame::OnIconize, this );
+    //Bind( wxEVT_ICONIZE, &guMainFrame::OnIconizeWindow, this );
 
     Bind( wxEVT_MENU, &guMainFrame::OnPlayStream, this, ID_MENU_PLAY_STREAM );
     Bind( wxEVT_MENU, &guMainFrame::OnUpdatePodcasts, this, ID_MENU_UPDATE_PODCASTS );
@@ -402,17 +486,15 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     Bind( wxEVT_MENU, &guMainFrame::OnShowCaptions, this, ID_MENU_HIDE_CAPTIONS );
     Bind( wxEVT_MENU, &guMainFrame::OnQuit, this, ID_MENU_QUIT );
     Bind( wxEVT_MENU, &guMainFrame::OnChangeVolume, this, ID_MENU_VOLUME_DOWN, ID_MENU_VOLUME_UP );
-
-//    Bind( wxEVT_MENU, &guMainFrame::LibraryUpdated, this, ID_LIBRARY_UPDATED );
-//    Bind( wxEVT_MENU, &guMainFrame::OnJamendoUpdated, this, ID_JAMENDO_UPDATE_FINISHED );
-//    Bind( wxEVT_MENU, &guMainFrame::OnMagnatuneUpdated, this, ID_MAGNATUNE_UPDATE_FINISHED );
-//    Bind( wxEVT_MENU, &guMainFrame::DoLibraryClean, this, ID_LIBRARY_DOCLEANDB );
-//    Bind( wxEVT_MENU, &guMainFrame::LibraryCleanFinished, this, ID_LIBRARY_CLEANFINISHED );
-//    Bind( wxEVT_MENU, &guMainFrame::LibraryReloadControls, this, ID_LIBRARY_RELOADCONTROLS );
-
     Bind( wxEVT_MENU, &guMainFrame::OnAudioScrobbleUpdate, this, ID_AUDIOSCROBBLE_UPDATED );
-    Bind( wxEVT_CLOSE_WINDOW, &guMainFrame::OnCloseWindow, this );
-    //Bind( wxEVT_ICONIZE, &guMainFrame::OnIconizeWindow, this );
+
+    //Bind( wxEVT_MENU, &guMainFrame::LibraryUpdated, this, ID_LIBRARY_UPDATED );
+    //Bind( wxEVT_MENU, &guMainFrame::OnJamendoUpdated, this, ID_JAMENDO_UPDATE_FINISHED );
+    //Bind( wxEVT_MENU, &guMainFrame::OnMagnatuneUpdated, this, ID_MAGNATUNE_UPDATE_FINISHED );
+    //Bind( wxEVT_MENU, &guMainFrame::DoLibraryClean, this, ID_LIBRARY_DOCLEANDB );
+    //Bind( wxEVT_MENU, &guMainFrame::LibraryCleanFinished, this, ID_LIBRARY_CLEANFINISHED );
+    //Bind( wxEVT_MENU, &guMainFrame::LibraryReloadControls, this, ID_LIBRARY_RELOADCONTROLS );
+
     Bind( wxEVT_MENU, &guMainFrame::OnPreferences, this, ID_MENU_PREFERENCES );
     Bind( wxEVT_MENU, &guMainFrame::OnPreferences, this, ID_MENU_PREFERENCES_COMMANDS );
     Bind( wxEVT_MENU, &guMainFrame::OnPreferences, this, ID_MENU_PREFERENCES_COPYTO );
@@ -433,7 +515,6 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     Bind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_ARTIST );
     Bind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_YEAR );
     Bind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_GENRE );
-
     Bind( wxEVT_MENU, &guMainFrame::OnSelectLocation, this, ID_MAINFRAME_SELECT_LOCATION );
 
     Bind( wxEVT_MENU, &guMainFrame::OnSetAllowDenyFilter, this, ID_MAINFRAME_SET_ALLOW_PLAYLIST );
@@ -452,15 +533,12 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     Bind( wxEVT_MENU, &guMainFrame::OnPlayMode, this, ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST );
     Bind( wxEVT_MENU, &guMainFrame::OnPlayMode, this, ID_PLAYER_PLAYMODE_REPEAT_TRACK );
     Bind( wxEVT_MENU, &guMainFrame::OnPlayerPlayListUpdateTitle, this, ID_PLAYER_PLAYLIST_UPDATETITLE );
-    Bind( wxEVT_MENU, &guMainFrame::OnAbout, this, ID_MENU_ABOUT );
-    Bind( wxEVT_MENU, &guMainFrame::OnHelp, this, ID_MENU_HELP );
-    // Bind( wxEVT_MENU, &guMainFrame::OnCommunity, this, ID_MENU_COMMUNITY );
 
     Bind( wxEVT_MENU, &guMainFrame::OnCopyTracksTo, this, ID_MAINFRAME_COPYTO );
     Bind( wxEVT_MENU, &guMainFrame::OnCopyTracksToDevice, this, ID_MAINFRAME_COPYTODEVICE_TRACKS );
     Bind( wxEVT_MENU, &guMainFrame::OnCopyPlayListToDevice, this, ID_MAINFRAME_COPYTODEVICE_PLAYLIST );
 
-//    Bind( wxEVT_MENU, &guMainFrame::OnUpdateLabels, this, ID_LABEL_UPDATELABELS );
+    //Bind( wxEVT_MENU, &guMainFrame::OnUpdateLabels, this, ID_LABEL_UPDATELABELS );
 
     Bind( wxEVT_MENU, &guMainFrame::OnCreateNewLayout, this, ID_MENU_LAYOUT_CREATE );
     Bind( wxEVT_MENU, &guMainFrame::OnLoadLayout, this, ID_MENU_LAYOUT_LOAD, ID_MENU_LAYOUT_LOAD + 99 );
@@ -539,80 +617,20 @@ guMainFrame::guMainFrame( wxWindow * parent, guDbCache * dbcache )
     Bind( wxEVT_MENU, &guMainFrame::OnUpdateRadio, this, ID_RADIO_DOUPDATE );
 
     Bind( wxEVT_MENU, &guMainFrame::OnMediaViewerClosed, this, ID_MAINFRAME_MEDIAVIEWER_CLOSED );
+
+    // Help menu
+    Bind( wxEVT_MENU, &guMainFrame::OnAbout, this, ID_MENU_ABOUT );
+    Bind( wxEVT_MENU, &guMainFrame::OnHelp, this, ID_MENU_HELP );
+    // Bind( wxEVT_MENU, &guMainFrame::OnCommunity, this, ID_MENU_COMMUNITY );
 }
 
-// -------------------------------------------------------------------------------- //
-guMainFrame::~guMainFrame()
+void guMainFrame::UnbindControls()
 {
-    guConfig * Config = ( guConfig * ) guConfig::Get();
-    if ( Config )
-    {
-        wxPoint MainWindowPos = GetPosition();
-        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_POSX, MainWindowPos.x, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
-        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_POSY, MainWindowPos.y, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
-        wxSize MainWindowSize = GetSize();
-        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_WIDTH, MainWindowSize.x, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
-        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_HEIGHT, MainWindowSize.y, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
-
-        Config->WriteNum( CONFIG_KEY_MAIN_WINDOW_VISIBLE_PANELS, m_VisiblePanels, CONFIG_PATH_MAIN_WINDOW );
-
-        wxAuiPaneInfo &PaneInfo = m_AuiManager.GetPane( wxT( "PlayerPlayList" ) );
-        PaneInfo.Caption( _( "Now Playing" ) );
-        Config->WriteStr( CONFIG_KEY_MAIN_WINDOW_LAST_LAYOUT, m_AuiManager.SavePerspective(), CONFIG_PATH_MAIN_WINDOW );
-        Config->WriteStr( CONFIG_KEY_MAIN_WINDOW_NOTEBOOK_LAYOUT, m_MainNotebook->SavePerspective(), CONFIG_PATH_MAIN_WINDOW );
-
-        Config->WriteBool( CONFIG_KEY_MAIN_WINDOW_FULLSCREEN, IsFullScreen() , CONFIG_PATH_MAIN_WINDOW );
-        Config->WriteBool( CONFIG_KEY_MAIN_WINDOW_STATUS_BAR, m_MainStatusBar->IsShown() , CONFIG_PATH_MAIN_WINDOW );
-    }
-
-    if ( m_TaskBarIcon )
-        delete m_TaskBarIcon;
-
-    // destroy the mpris object
-    if ( m_MPRIS )
-        delete m_MPRIS;
-
-    if ( m_MPRIS2 )
-        delete m_MPRIS2;
-
-    if ( m_GSession )
-        delete m_GSession;
-
-    if ( m_MMKeys )
-        delete m_MMKeys;
-
-    if ( m_NotifySrv )
-    {
-        m_PlayerPanel->SetNotifySrv( NULL );
-        delete m_NotifySrv;
-    }
-
-    if ( m_DBusServer )
-        delete m_DBusServer;
-
-    if ( m_VolumeMonitor )
-        delete m_VolumeMonitor;
-
-    m_AuiManager.UnInit();
-
-    if ( m_CopyToThread )
-    {
-        m_CopyToThreadMutex.Lock();
-        m_CopyToThread->Pause();
-        m_CopyToThread->Delete();
-        m_CopyToThread = NULL;
-        m_CopyToThreadMutex.Unlock();
-    }
-
-    if ( m_LyricSearchContext )
-        delete m_LyricSearchContext;
-
-    if ( m_LyricSearchEngine )
-        delete m_LyricSearchEngine;
-
     // Unbind events
+    Unbind( wxEVT_CLOSE_WINDOW, &guMainFrame::OnCloseWindow, this );
     Unbind( wxEVT_IDLE, &guMainFrame::OnIdle, this );
     Unbind( wxEVT_SIZE, &guMainFrame::OnSize, this );
+    Unbind( wxEVT_ICONIZE, &guMainFrame::OnIconize, this );
 
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayStream, this, ID_MENU_PLAY_STREAM );
     Unbind( wxEVT_MENU, &guMainFrame::OnUpdatePodcasts, this, ID_MENU_UPDATE_PODCASTS );
@@ -620,18 +638,16 @@ guMainFrame::~guMainFrame()
     Unbind( wxEVT_MENU, &guMainFrame::OnShowCaptions, this, ID_MENU_HIDE_CAPTIONS );
     Unbind( wxEVT_MENU, &guMainFrame::OnQuit, this, ID_MENU_QUIT );
 
-    Unbind( wxEVT_MENU, &guMainFrame::OnChangeVolume, this, ID_MENU_VOLUME_DOWN, ID_MENU_VOLUME_UP );
-
-//    Unbind( wxEVT_MENU, &guMainFrame::LibraryUpdated, this, ID_LIBRARY_UPDATED );
-//    Unbind( wxEVT_MENU, &guMainFrame::OnJamendoUpdated, this, ID_JAMENDO_UPDATE_FINISHED );
-//    Unbind( wxEVT_MENU, &guMainFrame::OnMagnatuneUpdated, this, ID_MAGNATUNE_UPDATE_FINISHED );
-//    Unbind( wxEVT_MENU, &guMainFrame::DoLibraryClean, this, ID_LIBRARY_DOCLEANDB );
-//    Unbind( wxEVT_MENU, &guMainFrame::LibraryCleanFinished, this, ID_LIBRARY_CLEANFINISHED );
-//    Unbind( wxEVT_MENU, &guMainFrame::LibraryReloadControls, this, ID_LIBRARY_RELOADCONTROLS );
-
-    Unbind( wxEVT_MENU, &guMainFrame::OnAudioScrobbleUpdate, this, ID_AUDIOSCROBBLE_UPDATED );
-    Unbind( wxEVT_CLOSE_WINDOW, &guMainFrame::OnCloseWindow, this );
     //Unbind( wxEVT_ICONIZE, &guMainFrame::OnIconizeWindow, this );
+    //Unbind( wxEVT_MENU, &guMainFrame::LibraryUpdated, this, ID_LIBRARY_UPDATED );
+    //Unbind( wxEVT_MENU, &guMainFrame::OnJamendoUpdated, this, ID_JAMENDO_UPDATE_FINISHED );
+    //Unbind( wxEVT_MENU, &guMainFrame::OnMagnatuneUpdated, this, ID_MAGNATUNE_UPDATE_FINISHED );
+    //Unbind( wxEVT_MENU, &guMainFrame::DoLibraryClean, this, ID_LIBRARY_DOCLEANDB );
+    //Unbind( wxEVT_MENU, &guMainFrame::LibraryCleanFinished, this, ID_LIBRARY_CLEANFINISHED );
+    //Unbind( wxEVT_MENU, &guMainFrame::LibraryReloadControls, this, ID_LIBRARY_RELOADCONTROLS );
+
+    Unbind( wxEVT_MENU, &guMainFrame::OnChangeVolume, this, ID_MENU_VOLUME_DOWN, ID_MENU_VOLUME_UP );
+    Unbind( wxEVT_MENU, &guMainFrame::OnAudioScrobbleUpdate, this, ID_AUDIOSCROBBLE_UPDATED );
     Unbind( wxEVT_MENU, &guMainFrame::OnPreferences, this, ID_MENU_PREFERENCES );
     Unbind( wxEVT_MENU, &guMainFrame::OnPreferences, this, ID_MENU_PREFERENCES_COMMANDS );
     Unbind( wxEVT_MENU, &guMainFrame::OnPreferences, this, ID_MENU_PREFERENCES_COPYTO );
@@ -644,7 +660,6 @@ guMainFrame::~guMainFrame()
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayerCapsChanged, this, ID_PLAYERPANEL_CAPSCHANGED );
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayerVolumeChanged, this, ID_PLAYERPANEL_VOLUMECHANGED );
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayerSeeked, this, ID_PLAYERPANEL_SEEKED );
-
 
     Unbind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_TRACK );
     Unbind( wxEVT_MENU, &guMainFrame::OnSetSelection, this, ID_MAINFRAME_SELECT_ALBUM );
@@ -672,16 +687,14 @@ guMainFrame::~guMainFrame()
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayMode, this, ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST );
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayMode, this, ID_PLAYER_PLAYMODE_REPEAT_TRACK );
     Unbind( wxEVT_MENU, &guMainFrame::OnPlayerPlayListUpdateTitle, this, ID_PLAYER_PLAYLIST_UPDATETITLE );
-    Unbind( wxEVT_MENU, &guMainFrame::OnAbout, this, ID_MENU_ABOUT );
-    Unbind( wxEVT_MENU, &guMainFrame::OnHelp, this, ID_MENU_HELP );
-    // Unbind( wxEVT_MENU, &guMainFrame::OnCommunity, this, ID_MENU_COMMUNITY );
 
     Unbind( wxEVT_MENU, &guMainFrame::OnCopyTracksTo, this, ID_MAINFRAME_COPYTO );
     Unbind( wxEVT_MENU, &guMainFrame::OnCopyTracksToDevice, this, ID_MAINFRAME_COPYTODEVICE_TRACKS );
     Unbind( wxEVT_MENU, &guMainFrame::OnCopyPlayListToDevice, this, ID_MAINFRAME_COPYTODEVICE_PLAYLIST );
 
-//    Unbind( wxEVT_MENU, &guMainFrame::OnUpdateLabels, this, ID_LABEL_UPDATELABELS );
+    //    Unbind( wxEVT_MENU, &guMainFrame::OnUpdateLabels, this, ID_LABEL_UPDATELABELS );
 
+    // View menu
     Unbind( wxEVT_MENU, &guMainFrame::OnCreateNewLayout, this, ID_MENU_LAYOUT_CREATE );
     Unbind( wxEVT_MENU, &guMainFrame::OnLoadLayout, this, ID_MENU_LAYOUT_LOAD, ID_MENU_LAYOUT_LOAD + 99 );
     Unbind( wxEVT_MENU, &guMainFrame::OnDeleteLayout, this, ID_MENU_LAYOUT_DELETE, ID_MENU_LAYOUT_DELETE + 99 );
@@ -715,7 +728,6 @@ guMainFrame::~guMainFrame()
 
     Unbind( wxEVT_MENU, &guMainFrame::OnViewFullScreen, this, ID_MENU_VIEW_FULLSCREEN );
     Unbind( wxEVT_MENU, &guMainFrame::OnViewStatusBar, this, ID_MENU_VIEW_STATUSBAR );
-
 
     Unbind( wxEVT_MENU, &guMainFrame::OnMountMonitorUpdated, this, ID_VOLUMEMANAGER_MOUNT_CHANGED );
 
@@ -759,9 +771,12 @@ guMainFrame::~guMainFrame()
     Unbind( wxEVT_MENU, &guMainFrame::OnUpdateRadio, this, ID_RADIO_DOUPDATE );
 
     Unbind( wxEVT_MENU, &guMainFrame::OnMediaViewerClosed, this, ID_MAINFRAME_MEDIAVIEWER_CLOSED );
-}
 
-extern void wxClearGtkSystemObjects();
+    // Help menu
+    Unbind( wxEVT_MENU, &guMainFrame::OnAbout, this, ID_MENU_ABOUT );
+    Unbind( wxEVT_MENU, &guMainFrame::OnHelp, this, ID_MENU_HELP );
+    // Unbind( wxEVT_MENU, &guMainFrame::OnCommunity, this, ID_MENU_COMMUNITY );
+}
 
 //// -------------------------------------------------------------------------------- //
 //void guMainFrame::OnSysColorChanged( wxSysColourChangedEvent &event )
@@ -815,13 +830,24 @@ void guMainFrame::OnAudioCdVolumeUpdated( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 guMediaViewer * guMainFrame::FindCollectionMediaViewer( const wxString &uniqueid )
 {
-    //guLogMessage( wxT( "FindCollectionMediaViewer( '%s' )" ), uniqueid.c_str() );
-    int Count = m_MediaViewers.Count();
-    for ( int Index = 0; Index < Count; Index++ )
+    size_t Count = m_MediaViewers.Count();
+    //guLogMessage( wxT( "FindCollectionMediaViewer( '%s' ) - m_MediaViewers count %llu" ), uniqueid.c_str(), Count );
+    for ( size_t Index = 0; Index < Count; Index++ )
     {
-        //guLogMessage( wxT( "Collection[ %i/%i ] -> '%s'" ), Index, Count, m_MediaViewers[ Index ]->GetMediaCollection()->m_UniqueId.c_str() );
         if ( m_MediaViewers[ Index ]->GetMediaCollection()->m_UniqueId == uniqueid )
             return m_MediaViewers[ Index ];
+    }
+    return nullptr;
+}
+
+// -------------------------------------------------------------------------------- //
+guMediaViewer * guMainFrame::FindCollectionMediaViewer(void * windowptr)
+{
+    size_t Count = m_MediaViewers.Count();
+    for (size_t Index = 0; Index < Count; Index++)
+    {
+        if (m_MediaViewers[Index] == windowptr)
+            return (guMediaViewer *) windowptr;
     }
     return nullptr;
 }
@@ -867,18 +893,6 @@ guMediaCollection * guMainFrame::FindCollection( const wxString &uniqueid )
 }
 
 // -------------------------------------------------------------------------------- //
-guMediaViewer * guMainFrame::FindCollectionMediaViewer( void * windowptr )
-{
-    int Count = m_MediaViewers.Count();
-    for ( int Index = 0; Index < Count; Index++ )
-    {
-        if ( m_MediaViewers[ Index ] == windowptr )
-            return ( guMediaViewer * ) windowptr;
-    }
-    return NULL;
-}
-
-// -------------------------------------------------------------------------------- //
 int FindCollectionUniqueId( guMediaCollectionArray * collections, const wxString &uniqueid )
 {
     int Count = collections->Count();
@@ -901,7 +915,7 @@ wxString guMainFrame::GetCollectionIconString( const wxString &uniqueid )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMainFrame::CollectionsUpdated( void )
+void guMainFrame::CollectionsUpdated()
 {
     CreateCollectionsMenu( m_MenuCollections );
 
@@ -915,15 +929,11 @@ void guMainFrame::CollectionsUpdated( void )
 // -------------------------------------------------------------------------------- //
 void guMainFrame::CreateCollectionsMenu( wxMenu * menu )
 {
-    wxMutexLocker Locker( m_CollectionsMutex );
+    int CollectionBaseCommand = ID_COLLECTIONS_BASE;
     wxMenuItem * MenuItem;
 
-    int CollectionBaseCommand = ID_COLLECTIONS_BASE;
-
     while ( menu->GetMenuItemCount() )
-    {
         menu->Destroy( menu->FindItemByPosition( 0 ) );
-    }
 
 //    MenuItem = new wxMenuItem( menu, -1, _( "Local Music" ), wxEmptyString, wxITEM_NORMAL );
 //    menu->Append( MenuItem );
@@ -933,7 +943,8 @@ void guMainFrame::CreateCollectionsMenu( wxMenu * menu )
     menu->Append( MenuItem );
     menu->AppendSeparator();
 
-    //CollectionBaseCommand = ID_COLLECTIONS_BASE;
+    wxMutexLocker Locker( m_CollectionsMutex );
+
     int Count = m_Collections.Count();
     for ( int Index = 0; Index < Count; Index++ )
     {
@@ -942,15 +953,6 @@ void guMainFrame::CreateCollectionsMenu( wxMenu * menu )
 
         CollectionBaseCommand += guCOLLECTION_ACTION_COUNT;
     }
-
-    //
-    // File Browser
-    m_MenuFileBrowser = new wxMenuItem( menu, ID_MENU_VIEW_FILEBROWSER,
-                                        wxString( _( "File Browser" ) ) + guAccelGetCommandKeyCodeString( ID_MENU_VIEW_FILEBROWSER ),
-                                        _( "Show/Hide the file browser panel" ), wxITEM_CHECK );
-    menu->Append( m_MenuFileBrowser );
-    m_MenuFileBrowser->Check( m_FileBrowserPanel );
-
     menu->AppendSeparator();
 
 //    MenuItem = new wxMenuItem( menu, -1, _( "Online Music" ), wxEmptyString, wxITEM_NORMAL );
@@ -1116,42 +1118,45 @@ bool guMainFrame::IsCollectionPresent( const wxString &uniqueid )
 bool guMainFrame::IsCollectionActive( const wxString &uniqueid )
 {
     guMediaViewer * MediaViewer = FindCollectionMediaViewer( uniqueid );
-    return MediaViewer && ( MediaViewer->GetViewMode() != guMEDIAVIEWER_MODE_NONE );
+
+    bool is_active = MediaViewer && ( MediaViewer->GetViewMode() != guMEDIAVIEWER_MODE_NONE );
+    return is_active;
 }
 
 // -------------------------------------------------------------------------------- //
 void guMainFrame::CreateCollectionMenu( wxMenu * menu, const guMediaCollection &collection, const int basecommand, int collectiontype )
 {
-    wxMenu * Menu = new wxMenu();
+    bool IsEnabled;
+    bool IsPresent = true;
+    auto * Menu = new wxMenu();
 
     //guLogMessage( wxT( "CreateCollectionMenu( '%s' : '%s' )" ), collection.m_UniqueId.c_str(), collection.m_Name.c_str() );
 
     guMediaViewer * MediaViewer = FindCollectionMediaViewer( collection.m_UniqueId );
     int ViewMode = MediaViewer ? MediaViewer->GetViewMode() : guMEDIAVIEWER_MODE_NONE;
-    bool IsEnabled;
-    bool IsPresent = true;
+
     if ( ( collectiontype == guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE ) ||
         ( collectiontype == guMEDIA_COLLECTION_TYPE_IPOD ) )
     {
-        guGIO_Mount * Mount = NULL;
+        guGIO_Mount * Mount = nullptr;
         if ( m_VolumeMonitor )
             Mount = m_VolumeMonitor->GetMountById( collection.m_UniqueId );
         if ( !Mount )
             IsPresent = false;
     }
+
     IsEnabled = IsPresent && ( ViewMode != guMEDIAVIEWER_MODE_NONE );
     int VisiblePanels = 0;
     if ( MediaViewer && ( ViewMode == guMEDIAVIEWER_MODE_LIBRARY ) )
         VisiblePanels = MediaViewer->GetLibPanel()->VisiblePanels();
 
-    wxMenuItem * MenuItem = new wxMenuItem( menu, basecommand, _( "Show" ), _( "Open the music collection" ), wxITEM_CHECK );
+    auto * MenuItem = new wxMenuItem( menu, basecommand, _( "Show" ), _( "Open the music collection" ), wxITEM_CHECK );
     Menu->Append( MenuItem );
     MenuItem->Check( IsEnabled );
     MenuItem->Enable( IsPresent );
 
     Menu->AppendSeparator();
 
-    //
     //
     if ( IsEnabled )
     {
@@ -1163,6 +1168,11 @@ void guMainFrame::CreateCollectionMenu( wxMenu * menu, const guMediaCollection &
         MenuItem->Check( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );
 
         SubMenu->AppendSeparator();
+
+        MenuItem = new wxMenuItem(SubMenu, basecommand + guCOLLECTION_ACTION_VIEW_LIB_DIRECTORIES, _("Directories" ), _("View the library directories" ), wxITEM_CHECK );
+        SubMenu->Append( MenuItem );
+        MenuItem->Enable( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );
+        MenuItem->Check(VisiblePanels & guPANEL_LIBRARY_DIRECTORIES );
 
         MenuItem = new wxMenuItem( SubMenu, basecommand + guCOLLECTION_ACTION_VIEW_LIB_LABELS, _( "Labels" ), _( "View the library labels" ), wxITEM_CHECK );
         SubMenu->Append( MenuItem );
@@ -1179,11 +1189,6 @@ void guMainFrame::CreateCollectionMenu( wxMenu * menu, const guMediaCollection &
         MenuItem->Enable( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );
         MenuItem->Check( VisiblePanels & guPANEL_LIBRARY_ARTISTS );
 
-        MenuItem = new wxMenuItem( SubMenu, basecommand + guCOLLECTION_ACTION_VIEW_LIB_COMPOSERS, _( "Composers" ), _( "View the library composers" ), wxITEM_CHECK );
-        SubMenu->Append( MenuItem );
-        MenuItem->Enable( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );
-        MenuItem->Check( VisiblePanels & guPANEL_LIBRARY_COMPOSERS );
-
         MenuItem = new wxMenuItem( SubMenu, basecommand + guCOLLECTION_ACTION_VIEW_LIB_ALBUMARTISTS, _( "Album Artists" ), _( "View the library album artists" ), wxITEM_CHECK );
         SubMenu->Append( MenuItem );
         MenuItem->Enable( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );
@@ -1193,6 +1198,11 @@ void guMainFrame::CreateCollectionMenu( wxMenu * menu, const guMediaCollection &
         SubMenu->Append( MenuItem );
         MenuItem->Enable( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );
         MenuItem->Check( VisiblePanels & guPANEL_LIBRARY_ALBUMS );
+
+        MenuItem = new wxMenuItem( SubMenu, basecommand + guCOLLECTION_ACTION_VIEW_LIB_COMPOSERS, _( "Composers" ), _( "View the library composers" ), wxITEM_CHECK );
+        SubMenu->Append( MenuItem );
+        MenuItem->Enable( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );
+        MenuItem->Check( VisiblePanels & guPANEL_LIBRARY_COMPOSERS );
 
         MenuItem = new wxMenuItem( SubMenu, basecommand + guCOLLECTION_ACTION_VIEW_LIB_YEARS, _( "Years" ), _( "View the library years" ), wxITEM_CHECK );
         SubMenu->Append( MenuItem );
@@ -1344,6 +1354,14 @@ void guMainFrame::CreateViewMenu( wxMenu * menu )
 
 
     menu->AppendSeparator();
+
+    //
+    // File Browser
+    m_MenuFileBrowser = new wxMenuItem( menu, ID_MENU_VIEW_FILEBROWSER,
+                                        wxString( _( "File Browser" ) ) + guAccelGetCommandKeyCodeString( ID_MENU_VIEW_FILEBROWSER ),
+                                        _( "Show/Hide the file browser panel" ), wxITEM_CHECK );
+    menu->Append( m_MenuFileBrowser );
+    m_MenuFileBrowser->Check( m_FileBrowserPanel );
 
     //
     // Last.fm
@@ -1683,9 +1701,7 @@ void guMainFrame::OnCloseWindow( wxCloseEvent &event )
             {
                 int Result = ExitConfirmDlg->ShowModal();
                 if ( ExitConfirmDlg->GetConfirmChecked() )
-                {
                     Config->WriteBool( CONFIG_KEY_GENERAL_SHOW_CLOSE_CONFIRM, false, CONFIG_PATH_GENERAL );
-                }
                 ExitConfirmDlg->Destroy();
 
                 if ( Result != wxID_OK )
@@ -1700,31 +1716,26 @@ void guMainFrame::OnCloseWindow( wxCloseEvent &event )
 // -------------------------------------------------------------------------------- //
 void guMainFrame::OnUpdateTrack( wxCommandEvent &event )
 {
-    guTrack * Track = ( guTrack * ) event.GetClientData();
-    if ( Track )
-    {
-        SetTitle( Track->m_SongName + wxT( " / " ) + Track->m_ArtistName +
-            wxT( " - Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION ) );
+    wxString title, tooltip;
+    guTrack * Track = (guTrack *) event.GetClientData();
 
-        if ( m_TaskBarIcon )
-        {
-            m_TaskBarIcon->SetIcon( m_AppIcon, wxT( "Guayadeque Music Player " ID_GUAYADEQUE_VERSION \
-                                                    "-" ID_GUAYADEQUE_REVISION "\r" ) +
-                                               Track->m_ArtistName + wxT( "\n" ) +
-                                               Track->m_SongName );
-        }
-    }
-    else
-    {
-        SetTitle( wxT( "Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION ) );
+    title = wxT("Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION);
+    if (m_TaskBarIcon)
+        tooltip = wxT("Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION);
 
-        if ( m_TaskBarIcon )
-            m_TaskBarIcon->SetIcon( m_AppIcon, wxT( "Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION ) );
+    if (Track)
+    {
+        title = Track->m_SongName + wxT( " / " ) + Track->m_ArtistName + wxT(" - ") + title;
+        if (m_TaskBarIcon)
+            tooltip += (wxT("\r") + Track->m_ArtistName + wxT("\n") + Track->m_SongName);
     }
+
+    SetTitle(title);
+    if ( m_TaskBarIcon )
+        m_TaskBarIcon->SetIcon(m_AppIcon, tooltip);
 
     if ( m_LastFMPanel )
         m_LastFMPanel->OnUpdatedTrack( event );
-
     if ( m_LyricsPanel )
         m_LyricsPanel->OnSetCurrentTrack( event );
 
@@ -1745,7 +1756,6 @@ void guMainFrame::OnUpdateTrack( wxCommandEvent &event )
 
     if ( m_MPRIS )
         m_MPRIS->OnPlayerTrackChange();
-
     if ( m_MPRIS2 )
         m_MPRIS2->OnPlayerTrackChange();
 
@@ -2287,7 +2297,6 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
 {
     int CollectionIndex = ( event.GetId() - ID_COLLECTIONS_BASE ) / guCOLLECTION_ACTION_COUNT;
     int CollectionCmdId = ( event.GetId() - ID_COLLECTIONS_BASE ) % guCOLLECTION_ACTION_COUNT;
-
     bool IsEnabled = event.IsChecked();
 
     guLogMessage( wxT( "OnCollectionCommand %i  %i %i  %i" ), event.GetId(), CollectionIndex, CollectionCmdId, IsEnabled );
@@ -2337,15 +2346,14 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                         }
 #endif
                     }
-
                     m_MediaViewers.Add( MediaViewer );
+                    MediaViewer->GetLibPanel()->AfterCreate();
                 }
 
                 if ( MediaViewer->IsDefault() && ( MediaViewer->GetViewMode() == guMEDIAVIEWER_MODE_NONE ) )
                     MediaViewer->SetViewMode( guMEDIAVIEWER_MODE_LIBRARY );
 
                 InsertTabPanel( MediaViewer, 5, Collection.m_Name, Collection.m_UniqueId );
-
             }
             else
             {
@@ -2354,6 +2362,7 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
             }
 
             CollectionsUpdated();
+
             break;
         }
 
@@ -2363,14 +2372,15 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
         case guCOLLECTION_ACTION_VIEW_PLAYLISTS :
         {
             if ( MediaViewer )
-                MediaViewer->SetViewMode( ( CollectionCmdId == guCOLLECTION_ACTION_VIEW_LIBRARY ) ? guMEDIAVIEWER_MODE_LIBRARY :
-                             ( ( CollectionCmdId - guCOLLECTION_ACTION_VIEW_ALBUMBROWSER ) + 1 ) );
+                MediaViewer->SetViewMode((CollectionCmdId == guCOLLECTION_ACTION_VIEW_LIBRARY)
+                                            ? guMEDIAVIEWER_MODE_LIBRARY
+                                            : ((CollectionCmdId - guCOLLECTION_ACTION_VIEW_ALBUMBROWSER) + 1));
             else
                 guLogMessage( wxT( "Got a command %i %i  %i?" ), CollectionIndex, CollectionCmdId, IsEnabled );
-
             break;
         }
 
+        case guCOLLECTION_ACTION_VIEW_LIB_DIRECTORIES :
         case guCOLLECTION_ACTION_VIEW_LIB_LABELS :
         case guCOLLECTION_ACTION_VIEW_LIB_GENRES :
         case guCOLLECTION_ACTION_VIEW_LIB_ARTISTS :
@@ -2383,10 +2393,8 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
         {
             if ( MediaViewer )
                 MediaViewer->ShowPanel( CollectionCmdId, IsEnabled );
-
             break;
         }
-
 
         case guCOLLECTION_ACTION_UPDATE_LIBRARY :
         case guCOLLECTION_ACTION_RESCAN_LIBRARY :
@@ -2396,16 +2404,13 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
         {
             if ( MediaViewer )
                 MediaViewer->HandleCommand( CollectionCmdId );
-
             break;
         }
 
         case guCOLLECTION_ACTION_VIEW_PROPERTIES :
         {
             if ( MediaViewer )
-            {
                 MediaViewer->EditProperties();
-            }
             else if ( Collection.m_Type == guMEDIA_COLLECTION_TYPE_NORMAL )
             {
                 wxCommandEvent CmdEvent( wxEVT_MENU, ID_MENU_PREFERENCES );
@@ -2789,6 +2794,7 @@ void guMainFrame::OnSetSelection( wxCommandEvent &event )
             case ID_MAINFRAME_SELECT_ARTIST      : Type = guMEDIAVIEWER_SELECT_ARTIST; break;
             case ID_MAINFRAME_SELECT_YEAR        : Type = guMEDIAVIEWER_SELECT_YEAR; break;
             case ID_MAINFRAME_SELECT_GENRE       : Type = guMEDIAVIEWER_SELECT_GENRE; break;
+            case ID_MAINFRAME_SELECT_DIRECTORY   : Type = guMEDIAVIEWER_SELECT_DIRECTORY; break;
         }
 
         if ( Type != wxNOT_FOUND )
@@ -3170,6 +3176,7 @@ void guMainFrame::OnIdle( wxIdleEvent& WXUNUSED( event ) )
 
     m_MainStatusBar->Show( Config->ReadBool( CONFIG_KEY_MAIN_WINDOW_STATUS_BAR, true, CONFIG_PATH_MAIN_WINDOW ) );
 
+    // PODCASTS
     // If the Podcasts update is enable launch it...
     if ( Config->ReadBool( CONFIG_KEY_PODCASTS_UPDATE, true, CONFIG_PATH_PODCASTS ) )
     {

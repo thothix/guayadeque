@@ -415,6 +415,11 @@ void CreateMenuCollection( wxMenu * menu, const wxString &uniqueid, const int co
 
         SubMenu->AppendSeparator();
 
+        MenuItem = new wxMenuItem(SubMenu, basecommand + guCOLLECTION_ACTION_VIEW_LIB_DIRECTORIES, _("Directories" ), _("View the library Directories" ), wxITEM_CHECK );
+        SubMenu->Append( MenuItem );
+        MenuItem->Enable( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );
+        MenuItem->Check(VisiblePanels & guPANEL_LIBRARY_DIRECTORIES );
+
         MenuItem = new wxMenuItem( SubMenu, basecommand + guCOLLECTION_ACTION_VIEW_LIB_LABELS, _( "Labels" ), _( "View the library labels" ), wxITEM_CHECK );
         SubMenu->Append( MenuItem );
         MenuItem->Enable( ViewMode == guMEDIAVIEWER_MODE_LIBRARY );

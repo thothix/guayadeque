@@ -47,6 +47,8 @@ namespace Guayadeque {
 #define     guPANEL_TIMER_TEXTCHANGED       500
 
 // -------------------------------------------------------------------------------- //
+// guLibPanel - Library Panel
+// -------------------------------------------------------------------------------- //
 guLibPanel::guLibPanel( wxWindow * parent, guMediaViewer * mediaviewer ) :
     guAuiManagerPanel( parent ),
     m_SelChangedTimer( this, guPANEL_TIMER_SELECTION )
@@ -54,6 +56,7 @@ guLibPanel::guLibPanel( wxWindow * parent, guMediaViewer * mediaviewer ) :
     guConfig *          Config = ( guConfig * ) guConfig::Get();
 
     m_MediaViewer = mediaviewer;
+    m_MainFrame = mediaviewer->GetMainFrame();
     m_Db = mediaviewer->GetDb();
     m_PlayerPanel = mediaviewer->GetPlayerPanel();
     m_ConfigPath = mediaviewer->ConfigPath() + wxT( "/library" );
@@ -75,6 +78,9 @@ guLibPanel::~guLibPanel()
     Config->WriteStr( wxT( "Layout" ), m_AuiManager.SavePerspective(), m_ConfigPath );
 
     Unbind( wxEVT_TIMER, &guLibPanel::OnSelChangedTimer, this, guPANEL_TIMER_SELECTION );
+
+    m_DirectoryListCtrl->Unbind(wxEVT_TREE_SEL_CHANGED, &guLibPanel::OnDirItemChanged, this);
+    m_DirectoryListCtrl->Unbind(wxEVT_TREE_ITEM_COLLAPSING, &guLibPanel::OnTreeItemCollapsing, this);
 
     m_GenreListCtrl->Unbind( wxEVT_LISTBOX, &guLibPanel::OnGenreListSelected, this );
     m_GenreListCtrl->Unbind( wxEVT_LISTBOX_DCLICK, &guLibPanel::OnGenreListActivated, this );
@@ -188,11 +194,12 @@ guLibPanel::~guLibPanel()
 // -------------------------------------------------------------------------------- //
 void guLibPanel::CreateControls( void )
 {
+    wxPanel *           FilePanel;
     wxPanel *           GenrePanel;
     wxPanel *           LabelsPanel;
     wxPanel *           AlbumPanel;
     wxPanel *           ArtistPanel;
-
+	wxBoxSizer *        FileSizer;
 	wxBoxSizer *        GenreSizer;
 	wxBoxSizer *        LabelsSizer;
 	wxBoxSizer *        ArtistSizer;
@@ -201,11 +208,13 @@ void guLibPanel::CreateControls( void )
 	wxBoxSizer *        SongListSizer;
 
     guConfig *          Config = ( guConfig * ) guConfig::Get();
-
     bool ShowCloseButton = Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_CLOSE_BUTTON, true, CONFIG_PATH_GENERAL );
 
-	GenreSizer = new wxBoxSizer( wxVERTICAL );
+    //
+    // Genres
+    //
 	GenrePanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+    GenreSizer = new wxBoxSizer( wxVERTICAL );
 
 	m_GenreListCtrl = new guGeListBox( GenrePanel, this, m_Db, _( "Genres" ) );
 	GenreSizer->Add( m_GenreListCtrl, 1, wxEXPAND, LISTCTRL_BORDER );
@@ -214,14 +223,16 @@ void guLibPanel::CreateControls( void )
 	GenrePanel->Layout();
 	GenreSizer->Fit( GenrePanel );
 
-    m_AuiManager.AddPane( GenrePanel, wxAuiPaneInfo().Name( wxT( "Genres" ) ).Caption( _( "Genres" ) ).
-            MinSize( 50, 50 ).Row( 1 ).
-            Position( 1 ).Hide().
-            CloseButton( ShowCloseButton ).
-            Dockable( true ).Top() );
+    m_AuiManager.AddPane( GenrePanel,
+                          wxAuiPaneInfo().Name( wxT( "Genres" ) ).Caption( _( "Genres" ) ).
+                                MinSize( 50, 50 ).Row( 1 ).
+                                Position( 1 ).Hide().
+                                CloseButton( ShowCloseButton ).
+                                Dockable( true ).Top() );
 
-
-
+    //
+    // Labels
+    //
 	LabelsPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	LabelsSizer = new wxBoxSizer( wxVERTICAL );
 
@@ -238,8 +249,9 @@ void guLibPanel::CreateControls( void )
             CloseButton( ShowCloseButton ).
             Dockable( true ).Top() );
 
-
-
+    //
+    // Artists
+    //
 	ArtistPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	ArtistSizer = new wxBoxSizer( wxVERTICAL );
 
@@ -256,7 +268,9 @@ void guLibPanel::CreateControls( void )
             CloseButton( ShowCloseButton ).
             Dockable( true ).Top() );
 
-
+    //
+    // Albums
+    //
 	AlbumPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	AlbumSizer = new wxBoxSizer( wxVERTICAL );
 
@@ -272,7 +286,6 @@ void guLibPanel::CreateControls( void )
             Position( 3 ).Hide().
             CloseButton( ShowCloseButton ).
             Dockable( true ).Top() );
-
 
 	//
 	// Years
@@ -389,7 +402,34 @@ void guLibPanel::CreateControls( void )
             MinSize( 50, 50 ).
             CenterPane() );
 
+    //
+    // Directories
+    //
+    wxString LastPath = Config->ReadStr( CONFIG_KEY_FILE_BROWSER_PATH, wxEmptyString, CONFIG_PATH_FILE_BROWSER );
+    //guLogMessage( wxT( "LibPanel->guDiBrowser - Lastpath: %s - m_MediaViewer %p" ), LastPath, m_MediaViewer);
+
+    FilePanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+    FileSizer = new wxBoxSizer( wxVERTICAL );
+
+    m_DirectoryListCtrl = new guDiBrowser(FilePanel, this, m_Db, m_MediaViewer, LastPath );
+    FileSizer->Add( m_DirectoryListCtrl, 1, wxEXPAND, LISTCTRL_BORDER );
+
+    FilePanel->SetSizer( FileSizer );
+    FilePanel->Layout();
+    FileSizer->Fit( FilePanel );
+
+    m_AuiManager.AddPane( FilePanel,
+                          wxAuiPaneInfo().Name( wxT( "Directories" ) ).Caption( _( "Directories" ) ).
+                                  MinSize( 60, 50 ).Row( 0 ).Layer( 0 ).Position( 0 ).
+                                  Position( 1 ).Hide().
+                                  CloseButton( ShowCloseButton ).
+                                  Dockable( true ).Top() );
+
+    //
     Bind( wxEVT_TIMER, &guLibPanel::OnSelChangedTimer, this, guPANEL_TIMER_SELECTION );
+
+    m_DirectoryListCtrl->Bind(wxEVT_TREE_SEL_CHANGED, &guLibPanel::OnDirItemChanged, this);
+    m_DirectoryListCtrl->Bind(wxEVT_TREE_ITEM_COLLAPSING, &guLibPanel::OnTreeItemCollapsing, this);
 
     m_GenreListCtrl->Bind( wxEVT_LISTBOX, &guLibPanel::OnGenreListSelected, this );
     m_GenreListCtrl->Bind( wxEVT_LISTBOX_DCLICK, &guLibPanel::OnGenreListActivated, this );
@@ -539,12 +579,27 @@ void guLibPanel::LoadLastLayout( void )
     LoadPerspective( LibraryLayout, m_VisiblePanels );
 }
 
-// -------------------------------------------------------------------------------- //
-void guLibPanel::InitPanelData( void )
+void guLibPanel::SetPlayerPanel(guPlayerPanel * playerpanel)
 {
-    guLogMessage( wxT( "guLibPanel::IniPanelData( %i )" ), m_BaseCommand );
+    m_PlayerPanel = playerpanel;
+
+    // We need to initialize the Directories Panel here because the collections aren't active
+    // in the LibPanel creation
+    AfterCreate();
+}
+
+void guLibPanel::AfterCreate()
+{
+    m_DirectoryListCtrl->CollectionsUpdated();
+}
+
+// -------------------------------------------------------------------------------- //
+void guLibPanel::InitPanelData()
+{
+    guLogMessage( wxT( "guLibPanel::InitPanelData( %i )" ), m_BaseCommand );
 
     m_PanelNames.Empty();
+    m_PanelNames.Add( wxT( "Directories" ) );
     m_PanelNames.Add( wxT( "Labels" ) );
     m_PanelNames.Add( wxT( "Genres" ) );
     m_PanelNames.Add( wxT( "Artists" ) );
@@ -556,6 +611,7 @@ void guLibPanel::InitPanelData( void )
     m_PanelNames.Add( wxT( "Plays" ) );
 
     m_PanelIds.Empty();
+    m_PanelIds.Add( guPANEL_LIBRARY_DIRECTORIES );
     m_PanelIds.Add( guPANEL_LIBRARY_LABELS );
     m_PanelIds.Add( guPANEL_LIBRARY_GENRES );
     m_PanelIds.Add( guPANEL_LIBRARY_ARTISTS );
@@ -567,6 +623,7 @@ void guLibPanel::InitPanelData( void )
     m_PanelIds.Add( guPANEL_LIBRARY_PLAYCOUNT );
 
     m_PanelCmdIds.Empty();
+    m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_DIRECTORIES );
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_LABELS );
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_GENRES );
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_ARTISTS );
@@ -579,11 +636,12 @@ void guLibPanel::InitPanelData( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guLibPanel::ReloadControls( void )
+void guLibPanel::ReloadControls()
 {
 //    guLogMessage( wxT( "ReloadControls...%08X" ), m_VisiblePanels );
     //m_Db->LoadCache();
     m_UpdateLock = true;
+    ReloadDirectory();
     ReloadLabels( false );
     ReloadGenres( false );
     ReloadAlbumArtists( false );
@@ -665,6 +723,49 @@ bool guLibPanel::DoTextSearch( const wxString &searchtext )
         return false;
     }
 }
+
+
+// -------------------------------------------------------------------------------- //
+// Directory Browse Events
+// -------------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------------- //
+void guLibPanel::OnTreeItemCollapsing(wxTreeEvent &event )
+{
+    wxString path = m_DirectoryListCtrl->GetPath();
+    wxTreeItemId collection_id = m_DirectoryListCtrl->GetCollectionId().GetID();
+    wxTreeItemId ev_item = event.GetItem();
+    //guLogMessage(wxT("guLibPanel::OnTreeItemCollapsing %s - event_id %d - collection_id %d"), path, event.GetId(), root_id);
+
+    // Collection root needs to be selected to work properly!
+    if (path == GU_COLLECTION_DUMMY_ROOTDIR || ev_item == collection_id)
+    {
+        event.SetId(wxEVT_TREE_SEL_CHANGED);
+        wxPostEvent(this, event);
+    }
+}
+
+// -------------------------------------------------------------------------------- //
+void guLibPanel::OnDirItemChanged( wxTreeEvent &event )
+{
+    guLogMessage(wxT("guLibPanel::OnDirItemChanged..."));
+
+    if (m_UpdateLock)
+        return;
+
+    wxString CurPath = m_DirectoryListCtrl->GetPath();
+    //guLogMessage(wxT("guLibPanel::OnDirItemChanged('%s')"), CurPath.c_str());
+    m_DirectoryListCtrl->LoadPath(CurPath);
+
+    event.SetId(wxEVT_TREE_SEL_CHANGED);
+    wxPostEvent(this, event);
+
+    m_SelChangedObject = guPANEL_LIBRARY_DIRECTORIES;
+    if (m_SelChangedTimer.IsRunning())
+        m_SelChangedTimer.Stop();
+    m_SelChangedTimer.Start(guPANEL_TIMER_SELCHANGED, wxTIMER_ONE_SHOT);
+}
+
 
 // -------------------------------------------------------------------------------- //
 // GenreListBox Events
@@ -1748,6 +1849,7 @@ void guLibPanel::SetSelection( const int type, const int id )
         case guMEDIAVIEWER_SELECT_ALBUMARTIST   : SelectAlbumArtist( id ); break;
         case guMEDIAVIEWER_SELECT_COMPOSER      : SelectComposer( id ); break;
         case guMEDIAVIEWER_SELECT_YEAR          : SelectYear( id ); break;
+        case guMEDIAVIEWER_SELECT_DIRECTORY     : SelectDirectory(); break;
         case guMEDIAVIEWER_SELECT_GENRE         :
         {
             wxArrayInt Genres;
@@ -1977,6 +2079,25 @@ void guLibPanel::SelectAlbums( wxArrayInt * albums )
     ReloadAlbums();
     m_UpdateLock = false;
     m_AlbumListCtrl->SetSelectedItems( * albums );
+}
+
+// -------------------------------------------------------------------------------- //
+//void guLibPanel::SelectDirectory(const wxString &directory)
+void guLibPanel::SelectDirectory()
+{
+    wxArrayString Words;
+    m_UpdateLock = true;
+    m_LastTextFilter = wxEmptyString;
+    m_Db->SetTeFilters(Words, false);
+    ClearSearchText();
+    ReloadLabels();
+    ReloadGenres();
+    ReloadAlbumArtists();
+    ReloadArtists();
+    ReloadComposers();
+    ReloadAlbums();
+    m_UpdateLock = false;
+    m_DirectoryListCtrl->CollectionsUpdated();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2463,7 +2584,27 @@ void guLibPanel::DoSelectionChanged( void )
     switch ( m_SelChangedObject )
     {
         case guPANEL_LIBRARY_TEXTSEARCH :
+            break;
+
+        case guPANEL_LIBRARY_DIRECTORIES :
         {
+            m_Db->SetDiFilters( m_DirectoryListCtrl->GetPath(), m_UpdateLock );
+
+            if( !m_UpdateLock )
+            {
+                m_UpdateLock = true;
+                ReloadLabels();
+                ReloadGenres();
+                ReloadComposers();
+                ReloadAlbumArtists();
+                ReloadArtists();
+                ReloadAlbums();
+                ReloadYears();
+                ReloadRatings();
+                ReloadPlayCounts();
+                ReloadSongs();
+                m_UpdateLock = false;
+            }
             break;
         }
 
@@ -2482,8 +2623,6 @@ void guLibPanel::DoSelectionChanged( void )
                 ReloadRatings();
                 ReloadPlayCounts();
                 ReloadSongs();
-                //
-                //
                 m_UpdateLock = false;
             }
             break;
@@ -2500,8 +2639,8 @@ void guLibPanel::DoSelectionChanged( void )
                 ReloadComposers();
                 ReloadAlbumArtists();
                 ReloadArtists();
-                ReloadYears();
                 ReloadAlbums();
+                ReloadYears();
                 ReloadRatings();
                 ReloadPlayCounts();
                 ReloadSongs();
@@ -2712,5 +2851,3 @@ void guLibPanel::UpdatedTrack( const guTrack * track )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
