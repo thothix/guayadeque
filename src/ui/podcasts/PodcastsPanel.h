@@ -94,7 +94,7 @@ class guDbPodcasts : public guDb
     //void                    SetPodcastChannelFilters( const wxArrayInt &filters );
     //void                    SetPodcastOrder( int order );
     int                     GetPendingPodcasts( guPodcastItemArray * items );
-    int                     GetPodcastFiles( const wxArrayInt &channelid, guDataObjectComposite * files );
+    size_t                  GetPodcastFiles( const wxArrayInt &channelid, guDataObjectComposite * files );
 
     void                    UpdateItemPaths( const wxString &oldpath, const wxString &newpath );
 
@@ -109,7 +109,7 @@ class guChannelsListBox : public guListBox
     virtual void    GetItemsList( void );
     virtual void    CreateContextMenu( wxMenu * Menu ) const;
 
-    virtual int     GetDragFiles( guDataObjectComposite * files );
+    virtual size_t  GetDragFiles( guDataObjectComposite * files );
     virtual void    OnKeyDown( wxKeyEvent &event );
 
   public :

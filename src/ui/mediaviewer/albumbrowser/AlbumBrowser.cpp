@@ -622,12 +622,13 @@ void guAlbumBrowserItemPanel::OnMouse( wxMouseEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-int guAlbumBrowserItemPanel::GetDragFiles( guDataObjectComposite * files )
+size_t guAlbumBrowserItemPanel::GetDragFiles( guDataObjectComposite * files )
 {
     guTrackArray Tracks;
     wxArrayString Filenames;
-    int Count = m_AlbumBrowser->GetAlbumTracks( m_AlbumBrowserItem->m_AlbumId, &Tracks );
-    for( int Index = 0; Index < Count; Index++ )
+
+    size_t Count = m_AlbumBrowser->GetAlbumTracks( m_AlbumBrowserItem->m_AlbumId, &Tracks );
+    for( size_t Index = 0; Index < Count; Index++ )
     {
         if( Tracks[ Index ].m_Offset )
             continue;

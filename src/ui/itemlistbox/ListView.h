@@ -306,7 +306,7 @@ class guListView : public wxScrolledWindow
     virtual void        OnDropFile( const wxString &filename ) {}
     virtual void        OnDropTracks( const guTrackArray * tracks ) {}
     virtual void        OnDropEnd( void ) {}
-    virtual int         GetDragFiles( guDataObjectComposite * files );
+    virtual size_t      GetDragFiles( guDataObjectComposite * files );
 
     virtual void        MoveSelection( void ) {}
     //virtual void        OnSysColorChanged( wxSysColourChangedEvent &event );

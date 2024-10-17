@@ -24,6 +24,7 @@
 #include "AuiNotebook.h"
 #include "DbLibrary.h"
 #include "PlayerPanel.h"
+#include "Utils.h"
 
 #include <wx/colour.h>
 #include <wx/dirctrl.h>
@@ -39,47 +40,32 @@
 
 namespace Guayadeque {
 
-#define     guPANEL_FILEBROWSER_DIRCTRL             ( 1 << 0 )
-#define     guPANEL_FILEBROWSER_FILECTRL            ( 1 << 1 )
-#define     guPANEL_FILEBROWSER_FILEDETAILS         ( 1 << 2 )
+#define guPANEL_FILEBROWSER_DIRCTRL             ( 1 << 0 )
+#define guPANEL_FILEBROWSER_FILECTRL            ( 1 << 1 )
+#define guPANEL_FILEBROWSER_FILEDETAILS         ( 1 << 2 )
 
-#define     guPANEL_FILEBROWSER_VISIBLE_DEFAULT     ( guPANEL_FILEBROWSER_DIRCTRL | guPANEL_FILEBROWSER_FILECTRL |\
+#define guPANEL_FILEBROWSER_VISIBLE_DEFAULT     ( guPANEL_FILEBROWSER_DIRCTRL | guPANEL_FILEBROWSER_FILECTRL |\
                                                       guPANEL_FILEBROWSER_FILEDETAILS )
-enum guFILEITEM_TYPE {
-    guFILEITEM_TYPE_FOLDER = 0,
-    guFILEITEM_TYPE_AUDIO,
-    guFILEITEM_TYPE_IMAGE,
-    guFILEITEM_TYPE_FILE
-};
+#define guFILEBROWSER_SHOWPATH_SYSTEM           0
+#define guFILEBROWSER_SHOWPATH_LOCATIONS        1
 
-#define     guFILEBROWSER_SHOWPATH_SYSTEM           0
-#define     guFILEBROWSER_SHOWPATH_LOCATIONS        1
-
-#define guDIR_IMAGE_INDEX_FOLDER        0
-#define guDIR_IMAGE_INDEX_OTHER         7
-#define guDIR_IMAGE_INDEX_LIBRARY       9
-#define guDIR_IMAGE_INDEX_PODCASTS      10
-#define guDIR_IMAGE_INDEX_RECORDS       11
-#define guDIR_IMAGE_INDEX_AUDIO         12
-#define guDIR_IMAGE_INDEX_IMAGE         13
-
+#define guFILEBROWSER_IMAGE_INDEX_FOLDER        0
+#define guFILEBROWSER_IMAGE_INDEX_OTHER         7
+#define guFILEBROWSER_IMAGE_INDEX_LIBRARY       9
+#define guFILEBROWSER_IMAGE_INDEX_PODCASTS      10
+#define guFILEBROWSER_IMAGE_INDEX_RECORDS       11
+#define guFILEBROWSER_IMAGE_INDEX_AUDIO         12
+#define guFILEBROWSER_IMAGE_INDEX_IMAGE         13
 
 #define guFILEBROWSER_COLUMN_NAME       0
 #define guFILEBROWSER_COLUMN_SIZE       1
 #define guFILEBROWSER_COLUMN_TIME       2
-
 #define guFILEBROWSER_COLUMN_COUNT      3
 
 // -------------------------------------------------------------------------------- //
-class guFileItem
-{
-  public :
-    int             m_Type;
-    wxString        m_Name;
-    wxFileOffset    m_Size;
-    int             m_Time;
-};
-WX_DECLARE_OBJARRAY(guFileItem, guFileItemArray);
+guMediaViewer * FindMediaViewerByPath( guMainFrame * mainframe, const wxString curpath );
+void AppendFolderCommands( wxMenu * menu );
+bool RemoveDirItems( const wxString &path, wxArrayString * deletefiles );
 
 class guFileBrowserDirCtrl;
 
@@ -97,18 +83,18 @@ class guGenericDirCtrl : public wxGenericDirCtrl
     void            OnEndRenameDir( wxTreeEvent &event );
 
   public :
-    guGenericDirCtrl() : wxGenericDirCtrl() { m_FileBrowserDirCtrl = NULL; }
-    guGenericDirCtrl( wxWindow * parent, guMainFrame * mainframe, const int showpaths  );
-    ~guGenericDirCtrl();
+    guGenericDirCtrl() : wxGenericDirCtrl() { m_FileBrowserDirCtrl = nullptr; }
+    guGenericDirCtrl(wxWindow * parent, guMainFrame * mainframe, int showpaths);
+    ~guGenericDirCtrl() override;
 
     void            OnConfigUpdated( wxCommandEvent &event );
 
-    virtual void    SetupSections();
+    void            SetupSections() override;
 
-    void            FolderRename( void );
+    void            FolderRename();
 
     void            SetShowPaths( int showpaths ) { m_ShowPaths = showpaths; }
-    int             GetShowPaths( void ) { return m_ShowPaths; }
+    int             GetShowPaths() { return m_ShowPaths; }
 
     DECLARE_EVENT_TABLE()
 };
@@ -136,29 +122,23 @@ class guFileBrowserDirCtrl : public wxPanel
 
   public :
     guFileBrowserDirCtrl( wxWindow * parent, guMainFrame * mainframe, guDbLibrary * db, const wxString &dirpath );
-    ~guFileBrowserDirCtrl();
+    ~guFileBrowserDirCtrl() override;
 
-    wxString            GetPath( void )
-    {
-        wxString DirPath = m_DirCtrl->GetPath();
-        if( !DirPath.EndsWith( wxT( "/" ) ) )
-            DirPath.Append( wxT( "/" ) );
-        return DirPath;
-    }
+    wxString            GetPath() { return GetPathAddTrailSep(m_DirCtrl->GetPath()); }
 
     void                SetPath( const wxString &path, guMediaViewer * mediaviewer );
     void                SetMediaViewer( guMediaViewer * mediaviewer );
 
     void                RenamedDir( const wxString &oldname, const wxString &newname );
-    void                FolderRename( void ) { m_DirCtrl->FolderRename(); }
-    void                FolderNew( void );
-    void                FolderDelete( void );
+    void                FolderRename() { m_DirCtrl->FolderRename(); }
+    void                FolderNew();
+    void                FolderDelete();
     bool                ExpandPath( const wxString &path ) { return m_DirCtrl->ExpandPath( path ); }
     bool                CollapsePath( const wxString &path ) { return m_DirCtrl->CollapsePath( path ); }
 
-    void                CollectionsUpdated( void );
+    void                CollectionsUpdated();
 
-    int                 GetShowPaths( void ) { return m_DirCtrl->GetShowPaths(); }
+    int                 GetShowPaths() { return m_DirCtrl->GetShowPaths(); }
 
   friend class guFileBrowserFileCtrl;
   friend class guFileBrowser;
@@ -177,44 +157,44 @@ class guFilesListBox : public guListView
     bool                        m_OrderDesc;
     guMediaViewer *             m_MediaViewer;
 
-    virtual void                CreateContextMenu( wxMenu * Menu ) const;
-    virtual wxString            OnGetItemText( const int row, const int column ) const;
-    virtual void                DrawItem( wxDC &dc, const wxRect &rect, const int row, const int col ) const;
-    virtual void                GetItemsList( void );
-    virtual int                 GetSelectedSongs( guTrackArray * tracks, const bool isdrag = false ) const;
+    void                        CreateContextMenu( wxMenu * Menu ) const override;
+    wxString                    OnGetItemText( const int row, const int column ) const override;
+    void                        DrawItem( wxDC &dc, const wxRect &rect, const int row, const int col ) const override;
+    void                        GetItemsList() override;
+    int                         GetSelectedSongs( guTrackArray * tracks, const bool isdrag = false ) const override;
     int                         GetAllSongs( guTrackArray * tracks ) const;
     int                         GetTracksFromFiles( const wxArrayString &files, guTrackArray * tracks ) const;
 
-    virtual int                 GetDragFiles( guDataObjectComposite * files );
+    size_t                      GetDragFiles( guDataObjectComposite * files ) override;
 
     wxArrayString               GetColumnNames( void );
 
-    int                         GetPathSordedItems( const wxString &path, guFileItemArray * items,
-                                                    const int order, const bool orderdesc,
-                                                    const bool recursive = false ) const;
+    size_t                      GetPathSortedItems(const wxString &path, guFileItemArray * items,
+                                                   const int order, const bool orderdesc,
+                                                   const bool recursive = false) const;
 
     void                        OnConfigUpdated( wxCommandEvent &event );
     void                        CreateAcceleratorTable();
 
   public :
     guFilesListBox( wxWindow * parent, guDbLibrary * db );
-    ~guFilesListBox();
+    ~guFilesListBox() override;
 
-    virtual void                ReloadItems( bool reset = true );
+    void                        ReloadItems( bool reset = true ) override;
 
-    virtual wxString inline     GetItemName( const int item ) const;
-    virtual int inline          GetItemId( const int item ) const;
+    wxString inline             GetItemName( int item ) const override;
+    int inline                  GetItemId( int item ) const override;
 
     void                        SetOrder( int order );
     void                        SetPath( const wxString &path, guMediaViewer * mediaviewer );
-    wxString                    GetPath( const int item, const bool absolute = true ) const;
-    int                         GetType( const int item ) const;
+    wxString                    GetPath(int item, bool absolute = true ) const;
+    int                         GetType( int item ) const;
     void                        SetTreeImageList( wxImageList * imagelist ) { m_TreeImageList = imagelist; }
 
     bool                        GetCounters( wxLongLong * count, wxLongLong * len, wxLongLong * size );
 
-    wxArrayString               GetSelectedFiles( const bool recursive = false ) const;
-    wxArrayString               GetAllFiles( const bool recursive = false ) const;
+    wxArrayString               GetSelectedFiles( bool recursive = false ) const;
+    wxArrayString               GetAllFiles( bool recursive = false ) const;
 
   friend class guFileBrowserFileCtrl;
 };
@@ -231,7 +211,7 @@ class guFileBrowserFileCtrl : public wxPanel
 
   public :
     guFileBrowserFileCtrl( wxWindow * parent, guDbLibrary * db, guFileBrowserDirCtrl * dirctrl );
-    ~guFileBrowserFileCtrl();
+    ~guFileBrowserFileCtrl() override;
 
     void                    SetPath( const wxString &path, guMediaViewer * mediaviewer );
     const wxString          GetPath( const int item, const bool absolute = true ) const { return m_FilesListBox->GetPath( item, absolute ); }
@@ -299,22 +279,26 @@ class guFileBrowser : public guAuiManagerPanel
 
   public :
     guFileBrowser( wxWindow * parent, guMainFrame * mainframe, guDbLibrary * db, guPlayerPanel * playerpanel );
-    ~guFileBrowser();
+    ~guFileBrowser() override;
 
     //virtual void            InitPanelData();
+    bool    GetCounters(wxLongLong * count, wxLongLong * len, wxLongLong * size) { return m_FilesCtrl->GetCounters(count, len, size); }
 
-    bool                    GetCounters( wxLongLong * count, wxLongLong * len, wxLongLong * size )
+    bool    GetListViewColumnData(const int id, int * index, int * width, bool * enabled) override
     {
-        return m_FilesCtrl->GetCounters( count, len, size );
+        return m_FilesCtrl->GetColumnData(id, index, width, enabled);
     }
 
-    virtual bool            GetListViewColumnData( const int id, int * index, int * width, bool * enabled ) { return m_FilesCtrl->GetColumnData( id, index, width, enabled ); }
-    virtual bool            SetListViewColumnData( const int id, const int index, const int width, const bool enabled, const bool refresh = false ) { return m_FilesCtrl->SetColumnData( id, index, width, enabled, refresh ); }
+    bool    SetListViewColumnData(const int id, const int index, const int width, const bool enabled, const bool refresh = false) override
+    {
+        return m_FilesCtrl->SetColumnData(id, index, width, enabled, refresh);
+    }
 
-    virtual void            CollectionsUpdated( void ) { m_DirCtrl->CollectionsUpdated(); }
+    virtual void CollectionsUpdated() {
+        m_DirCtrl->CollectionsUpdated();
+    }
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

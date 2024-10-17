@@ -60,6 +60,24 @@ namespace Guayadeque {
 #define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_get_request_pad
 #endif
 
+enum guFILEITEM_TYPE {
+    guFILEITEM_TYPE_FOLDER = 0,
+    guFILEITEM_TYPE_AUDIO,
+    guFILEITEM_TYPE_IMAGE,
+    guFILEITEM_TYPE_FILE
+};
+
+class guFileItem
+{
+public :
+    int             m_Type;
+    wxString        m_Name;
+    wxFileOffset    m_Size;
+    int             m_Time;
+};
+WX_DECLARE_OBJARRAY(guFileItem, guFileItemArray);
+
+
 class guTrackArray;
 class guMediaViewer;
 
@@ -112,7 +130,6 @@ bool inline         IsFileSymbolicLink( const wxString &filename )
     return S_ISLNK( St.st_mode );
 }
 
-
 class guTrack;
 
 // -------------------------------------------------------------------------------- //
@@ -148,7 +165,18 @@ void                GetMediaViewerTracks( const guTrackArray &sourcetracks, cons
 void                GetMediaViewerTracks( const guTrackArray &sourcetracks, const guMediaViewer * mediaviewer, guTrackArray &tracks );
 void                GetMediaViewersList( const guTrackArray &tracks, wxArrayPtrVoid &MediaViewerPtrs );
 wxString            ExtractString( const wxString &source, const wxString &start, const wxString &end );
+wxString            GetPathAddTrailSep(wxString path);
+void                AddPathTrailSep(wxString &path);
+wxString            GetPathRemoveTrailSep(wxString path);
+void                RemovePathTrailSep(wxString &path);
+int wxCMPFUNC_CONV CompareFileNameA( guFileItem ** item1, guFileItem ** item2 );
+int wxCMPFUNC_CONV CompareFileNameD( guFileItem ** item1, guFileItem ** item2 );
+int wxCMPFUNC_CONV CompareFileSizeA( guFileItem ** item1, guFileItem ** item2 );
+int wxCMPFUNC_CONV CompareFileSizeD( guFileItem ** item1, guFileItem ** item2 );
+int wxCMPFUNC_CONV CompareFileTimeA( guFileItem ** item1, guFileItem ** item2 );
+int wxCMPFUNC_CONV CompareFileTimeD( guFileItem ** item1, guFileItem ** item2 );
+int wxCMPFUNC_CONV CompareFileTypeA( guFileItem ** item1, guFileItem ** item2 );
+int wxCMPFUNC_CONV CompareFileTypeD( guFileItem ** item1, guFileItem ** item2 );
 }
 
-// -------------------------------------------------------------------------------- //
 #endif

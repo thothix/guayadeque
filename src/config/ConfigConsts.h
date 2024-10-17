@@ -28,12 +28,10 @@ namespace Guayadeque {
 #define CONFIG_PATH_ACCELERATORS                         "accelerators"
 #define CONFIG_KEY_ACCELERATORS_ACCELKEY                 "AccelKey"
 
-
 // AudioCd
 #define CONFIG_PATH_AUDIOCD                              "audiocd"
 #define CONFIG_KEY_AUDIOCD_ORDER                         "Order"
 #define CONFIG_KEY_AUDIOCD_ORDERDESC                     "OrderDesc"
-
 
 // Commands
 #define CONFIG_PATH_COMMANDS_EXECS                       "commands/execs"
@@ -41,11 +39,9 @@ namespace Guayadeque {
 #define CONFIG_KEY_COMMANDS_EXEC                         "Exec"
 #define CONFIG_KEY_COMMANDS_NAME                         "Name"
 
-
 // CopyTo
 #define CONFIG_PATH_COPYTO                               "copyto/options"
 #define CONFIG_KEY_COPYTO_OPTION                         "Option"
-
 
 // Crossfader
 #define CONFIG_PATH_CROSSFADER                           "crossfader"
@@ -55,8 +51,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_CROSSFADER_FADEIN_VOL_START           "FadeInVolStar"
 #define CONFIG_KEY_CROSSFADER_FADEIN_VOL_TRIGER          "FadeInVolTriger"
 
-
-
 // Equalizer
 #define CONFIG_PATH_EQUALIZER                            "equalizer"
 #define CONFIG_KEY_EQUALIZER_POS_X                       "PosX"
@@ -65,7 +59,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_EQUALIZER_HEIGHT                      "Height"
 #define CONFIG_KEY_EQUALIZER_LAST_PRESET                 "LastEqPreset"
 #define CONFIG_KEY_EQUALIZER_BAND                        "Band"
-
 
 // File Browser
 #define CONFIG_PATH_FILE_BROWSER                         "filebrowser"
@@ -79,7 +72,6 @@ namespace Guayadeque {
 #define CONFIG_PATH_FILE_BROWSER_COLUMNS_WIDTHS          "filebrowser/columns/widths"
 #define CONFIG_PATH_FILE_BROWSER_COLUMNS_SHOWS           "filebrowser/columns/shows"
 
-
 // File Renamer
 #define CONFIG_PATH_FILE_RENAMER                         "filebrowser/filerenamer"
 #define CONFIG_KEY_FILE_RENAMER_POS_X                    "PosX"
@@ -87,7 +79,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_FILE_RENAMER_SIZE_WIDTH               "SizeWidth"
 #define CONFIG_KEY_FILE_RENAMER_SIZE_HEIGHT              "SizeHeight"
 #define CONFIG_KEY_FILE_RENAMER_PATTERN                  "Pattern"
-
 
 // General
 #define CONFIG_PATH_GENERAL                              "general"
@@ -128,7 +119,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_GENERAL_START_MINIMIZED               "StartMinimized"
 #define CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER             "TextSearchEnterRelax"
 
-
 // Import Files
 #define CONFIG_PATH_IMPORT_FILES_POSITION                "positions/import_files/position"
 #define CONFIG_KEY_IMPORT_FILES_POS_X                    "PosX"
@@ -136,17 +126,14 @@ namespace Guayadeque {
 #define CONFIG_KEY_IMPORT_FILES_WIDTH                    "Width"
 #define CONFIG_KEY_IMPORT_FILES_HEIGHT                   "Height"
 
-
 // Jamendo
 #define CONFIG_PATH_JAMENDO                              "jamendo"
 #define CONFIG_KEY_JAMENDO_AUDIOFORMAT                   "AudioFormat"
 #define CONFIG_KEY_JAMENDO_TORRENT_COMMAND               "TorrentCommand"
 #define CONFIG_KEY_JAMENDO_LAST_UPDATE                   "LastUpdate"
 #define CONFIG_KEY_JAMENDO_NEED_UPGRADE                  "NeedUpgrade"
-
 #define CONFIG_PATH_JAMENDO_GENRES                       "jamendo/genres"
 #define CONFIG_KEY_JAMENDO_GENRES_GENRE                  "Genre"
-
 
 // LastFm
 #define CONFIG_PATH_LASTFM                               "lastfm"
@@ -155,7 +142,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_LASTFM_ENABLED                        "SubmitEnabled"
 #define CONFIG_KEY_LASTFM_SESSIONKEY                     "SessionKey"
 #define CONFIG_KEY_LASTFM_LANGUAGE                       "Language"
-
 #define CONFIG_KEY_LASTFM_SHOW_LONG_BIO                  "ShowLongBioText"
 #define CONFIG_KEY_LASTFM_SHOW_ARTIST_INFO               "ShowArtistInfo"
 #define CONFIG_KEY_LASTFM_SHOW_ALBUMS                    "ShowAlbums"
@@ -165,14 +151,11 @@ namespace Guayadeque {
 #define CONFIG_KEY_LASTFM_SHOW_EVENTS                    "ShowEvents"
 #define CONFIG_KEY_LASTFM_FOLLOW_PLAYER                  "FollowPlayer"
 
-
 // LibreFm
 #define CONFIG_PATH_LIBREFM                              "librefm"
 #define CONFIG_KEY_LIBREFM_USERNAME                      "UserName"
 #define CONFIG_KEY_LIBREFM_PASSWORD                      "Password"
 #define CONFIG_KEY_LIBREFM_ENABLED                       "SubmitEnabled"
-
-
 
 // Lyrics
 #define CONFIG_PATH_LYRICS                               "lyrics"
@@ -181,7 +164,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_LYRICS_FOLLOW_PLAYER                  "FollowPlayer"
 #define CONFIG_KEY_LYRICS_TEXT_ALIGN                     "TextAlign"
 #define CONFIG_KEY_LYRICS_FONT                           "Font"
-
 
 // Magnatune
 #define CONFIG_PATH_MAGNATUNE                            "magnatune"
@@ -192,11 +174,9 @@ namespace Guayadeque {
 #define CONFIG_KEY_MAGNATUNE_NEED_UPGRADE                "NeedUpgrade"
 #define CONFIG_KEY_MAGNATUNE_AUDIO_FORMAT                "AudioFormat"
 #define CONFIG_KEY_MAGNATUNE_DOWNLOAD_FORMAT             "DownloadFormat"
-
 #define CONFIG_PATH_MAGNATUNE_GENRES                     "magnatune/genres"
 #define CONFIG_PATH_MAGNATUNE_GENRELIST                  "magnatune/genrelist"
 #define CONFIG_KEY_MAGNATUNE_GENRES_GENRE                "Genre"
-
 
 // Main Sources
 #define CONFIG_PATH_MAIN_SOURCES                         "mainsources"
@@ -204,7 +184,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_MAIN_SOURCES_ONLINE_MUSIC             "OnlineMusic"
 #define CONFIG_KEY_MAIN_SOURCES_PORTABLE_DEVICES         "PortableDevices"
 #define CONFIG_KEY_MAIN_SOURCES_CONTEXT                  "ContextExpanded"
-
 
 // MainWindow
 #define CONFIG_PATH_MAIN_WINDOW                          "mainwindow"
@@ -214,20 +193,16 @@ namespace Guayadeque {
 #define CONFIG_KEY_MAIN_WINDOW_FULLSCREEN                "ShowFullScreen"
 #define CONFIG_KEY_MAIN_WINDOW_STATUS_BAR                "ShowStatusBar"
 #define CONFIG_KEY_MAIN_WINDOW_CAPTIONS                  "ShowCaptions"
-
 #define CONFIG_PATH_MAIN_WINDOW_FULLSCREEN               "mainwindow/fullscreen"
 #define CONFIG_KEY_MAIN_WINDOW_FULLSCREEN_LAST_LAYOUT    "LastLayout"
 #define CONFIG_KEY_MAIN_WINDOW_FULLSCREEN_VISIBLE_PANELS "VisiblePanels"
-
 #define CONFIG_PATH_MAIN_WINDOW_POSITIONS                "mainwindow/positions"
 #define CONFIG_KEY_MAIN_WINDOW_POSITIONS_POSX            "PosX"
 #define CONFIG_KEY_MAIN_WINDOW_POSITIONS_POSY            "PosY"
 #define CONFIG_KEY_MAIN_WINDOW_POSITIONS_WIDTH           "Width"
 #define CONFIG_KEY_MAIN_WINDOW_POSITIONS_HEIGHT          "Height"
-
 #define CONFIG_PATH_MAIN_WINDOW_NOTEBOOK                 "mainwindow/notebook"
 #define CONFIG_KEY_MAIN_WINDOW_NOTEBOOK_LAST_LAYOUT      "LastLayout"
-
 
 // Playback
 #define CONFIG_PATH_PLAYBACK                             "playback"
@@ -246,13 +221,11 @@ namespace Guayadeque {
 #define CONFIG_KEY_PLAYBCK_SILENCE_AT_END                "SilenceAtEnd"
 #define CONFIG_KEY_PLAYBCK_SILENCE_END_TIME              "SilenceEndTime"
 
-
 // Playlist
 #define CONFIG_PATH_PLAYLIST                             "playlist"
 #define CONFIG_KEY_PLAYLIST_SAVE_ON_CLOSE                "SaveOnClose"
 #define CONFIG_PATH_PLAYLIST_NOWPLAYING                  "playlist/nowplaying"
 #define CONFIG_KEY_PLAYLIST_CURITEM                      "CurItem"
-
 
 // Podcasts
 #define CONFIG_PATH_PODCASTS                             "podcasts"
@@ -268,7 +241,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_PODCASTS_LASTLAYOUT                   "LastLayout"
 #define CONFIG_KEY_PODCASTS_ORDER                        "Order"
 #define CONFIG_KEY_PODCASTS_ORDERDESC                    "OrderDesc"
-
 
 // Positions
 #define CONFIG_PATH_POSITIONS                            "positions"
@@ -297,7 +269,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_PREFERENCES_HEIGHT                    "Height"
 #define CONFIG_KEY_PREFERENCES_LAST_PAGE                 "LastPage"
 
-
 // Radios
 #define CONFIG_PATH_RADIOS                               "radios"
 #define CONFIG_KEY_RADIOS_STATIONS_ORDER                 "StationsOrder"
@@ -305,7 +276,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_RADIOS_MIN_BITRATE                    "MinBitrate"
 #define CONFIG_KEY_RADIOS_VISIBLE_PANELS                 "VisiblePanels"
 #define CONFIG_KEY_RADIOS_LAST_LAYOUT                    "LastLayout"
-
 
 // Record
 #define CONFIG_PATH_RECORD                               "record"
@@ -317,11 +287,9 @@ namespace Guayadeque {
 #define CONFIG_KEY_RECORD_DELETE                         "DeleteTracks"
 #define CONFIG_KEY_RECORD_DELETE_TIME                    "DeleteTime"
 
-
 // Search Filters
 #define CONFIG_PATH_SEARCH_FILTERS                       "searchfilters"
 #define CONFIG_KEY_SEARCH_FILTERS_FILTER                 "Filter"
-
 
 // Search Links
 #define CONFIG_PATH_SEARCHLINKS_LINKS                    "searchlinks/links"
@@ -336,8 +304,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_PROXY_PORT                           "port"
 #define CONFIG_KEY_PROXY_USERNAME                       "username"
 #define CONFIG_KEY_PROXY_PASSWORD                       "password"
-
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

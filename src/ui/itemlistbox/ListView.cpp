@@ -537,7 +537,7 @@ void guListView::OnBeginDrag( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-int guListView::GetDragFiles( guDataObjectComposite * files )
+size_t guListView::GetDragFiles( guDataObjectComposite * files )
 {
     guTrackArray Tracks;
     wxArrayString Filenames;

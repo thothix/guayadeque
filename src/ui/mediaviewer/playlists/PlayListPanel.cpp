@@ -709,8 +709,6 @@ wxDragResult guPLNamesDropTarget::OnDragOver( wxCoord x, wxCoord y, wxDragResult
 }
 
 
-
-
 // -------------------------------------------------------------------------------- //
 // guPlayListPanel
 // -------------------------------------------------------------------------------- //
@@ -741,7 +739,6 @@ guPlayListPanel::~guPlayListPanel()
 
     Config->WriteNum( wxT( "VisiblePanels" ), m_VisiblePanels, m_ConfigPath );
     Config->WriteStr( wxT( "LastLayout" ), m_AuiManager.SavePerspective(), m_ConfigPath );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -796,7 +793,6 @@ void guPlayListPanel::CreateControls( void )
     }
 
     m_AuiManager.LoadPerspective( PlayListLayout, true );
-
 
     Bind( wxEVT_TREE_SEL_CHANGED, &guPlayListPanel::OnPLNamesSelected, this );
     Bind( wxEVT_TREE_ITEM_ACTIVATED, &guPlayListPanel::OnPLNamesActivated, this );

@@ -30,6 +30,8 @@
 namespace Guayadeque {
 
 // -------------------------------------------------------------------------------- //
+// guGeListBox - Genres List
+// -------------------------------------------------------------------------------- //
 guGeListBox::guGeListBox( wxWindow * parent, guLibPanel * libpanel, guDbLibrary * db, const wxString &label ) :
      guAccelListBox( parent, db, label )
 {
@@ -149,5 +151,3 @@ void guGeListBox::CreateContextMenu( wxMenu * Menu ) const
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

@@ -805,26 +805,26 @@ int guDbPodcasts::GetPendingPodcasts( guPodcastItemArray * items )
 }
 
 // -------------------------------------------------------------------------------- //
-int guDbPodcasts::GetPodcastFiles( const wxArrayInt &channels, guDataObjectComposite * files )
+size_t guDbPodcasts::GetPodcastFiles( const wxArrayInt &channels, guDataObjectComposite * files )
 {
-  int Count = 0;
-  wxString query;
-  wxArrayString Filenames;
-  wxSQLite3ResultSet dbRes;
+    size_t Count = 0;
+    wxString query;
+    wxArrayString Filenames;
+    wxSQLite3ResultSet dbRes;
 
-  query = wxT( "SELECT podcastitem_file FROM podcastitems WHERE " ) +
+    query = wxT( "SELECT podcastitem_file FROM podcastitems WHERE " ) +
           ArrayToFilter( channels, wxT( "podcastitem_chid" ) );
 
-  dbRes = ExecuteQuery( query );
+    dbRes = ExecuteQuery( query );
 
-  while( dbRes.NextRow() )
-  {
-      Filenames.Add( guFileDnDEncode( dbRes.GetString( 0 ) ) );
-      Count++;
-  }
-  files->SetFiles( Filenames );
-  dbRes.Finalize();
-  return Count;
+    while( dbRes.NextRow() )
+    {
+        Filenames.Add( guFileDnDEncode( dbRes.GetString( 0 ) ) );
+        Count++;
+    }
+    files->SetFiles( Filenames );
+    dbRes.Finalize();
+    return Count;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1726,7 +1726,7 @@ int guChannelsListBox::GetSelectedSongs( guTrackArray * Songs, const bool isdrag
 }
 
 // -------------------------------------------------------------------------------- //
-int guChannelsListBox::GetDragFiles( guDataObjectComposite * files )
+size_t guChannelsListBox::GetDragFiles( guDataObjectComposite * files )
 {
     return ( ( guDbPodcasts * ) m_Db )->GetPodcastFiles( GetSelectedItems(), files );
 }

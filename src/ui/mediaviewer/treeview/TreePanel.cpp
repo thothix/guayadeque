@@ -62,7 +62,6 @@ guTreeViewTreeCtrl::guTreeViewTreeCtrl( wxWindow * parent, guDbLibrary * db, guT
     m_TreeViewPanel = treeviewpanel;
     m_ConfigPath = treeviewpanel->ConfigPath();
 
-
     guConfig * Config = ( guConfig * ) guConfig::Get();
     Config->RegisterObject( this );
 
@@ -76,9 +75,7 @@ guTreeViewTreeCtrl::guTreeViewTreeCtrl( wxWindow * parent, guDbLibrary * db, guT
     }
 
     if( ( m_CurrentFilter < 0 ) || ( m_CurrentFilter >= ( int ) m_FilterEntries.Count() ) )
-    {
         m_CurrentFilter = 0;
-    }
 
     m_ImageList = new wxImageList();
     m_ImageList->Add( wxBitmap( guImage( guIMAGE_INDEX_track ) ) );
@@ -94,7 +91,6 @@ guTreeViewTreeCtrl::guTreeViewTreeCtrl( wxWindow * parent, guDbLibrary * db, guT
     Bind( wxEVT_MENU, &guTreeViewTreeCtrl::OnSearchLinkClicked, this, ID_LINKS_BASE, ID_LINKS_BASE + guLINKS_MAXCOUNT );
     Bind( wxEVT_TREE_ITEM_MENU, &guTreeViewTreeCtrl::OnContextMenu, this );
     Bind( wxEVT_MENU, &guTreeViewTreeCtrl::OnCommandClicked, this, ID_COMMANDS_BASE, ID_COMMANDS_BASE + guCOMMANDS_MAXCOUNT );
-
     Bind( guConfigUpdatedEvent, &guTreeViewTreeCtrl::OnConfigUpdated, this, ID_CONFIG_UPDATED );
 
     CreateAcceleratorTable();
