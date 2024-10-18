@@ -107,7 +107,7 @@ public :
 
     wxString                GetPath();
     void                    SetPath(const wxString &path, guMediaViewer * mediaviewer);
-    void                    LoadPath(const wxString &path);
+    void                    LoadPath(const wxString &path, guMediaViewer * mediaviewer);
     wxString                DefaultPath(const wxString &path = wxEmptyString);
     void                    SelectPath(const wxString &path, bool select = true) { m_DirCtrl->SelectPath(path, select); }
     bool                    ExpandPath(const wxString &path) { return m_DirCtrl->ExpandPath(path); }
@@ -116,9 +116,18 @@ public :
     void                    CollectionsUpdated();
 
     virtual void            ReloadItems();
+    size_t                  GetAllSongs(guTrackArray * tracks) const;
     wxArrayString           GetAllFiles(const bool recursive = false) const;
+    size_t                  GetTracksFromFiles(const wxArrayString &files, guTrackArray * tracks) const;
 
+    void                    OnFolderPlay(wxCommandEvent &event);
     void                    OnFolderEnqueue(wxCommandEvent &event);
+    void                    OnFolderCopy( wxCommandEvent &event );
+    void                    OnFolderEditTracks( wxCommandEvent &event );
+    void                    OnFolderSaveToPlayList( wxCommandEvent &event );
+    void                    OnFolderUpdate( wxCommandEvent &event );
+    void                    OnFolderCopyTo( wxCommandEvent &event );
+    void                    OnFolderCommand( wxCommandEvent &event );
 
     friend class guFileBrowserFileCtrl;
     friend class guFileBrowser;

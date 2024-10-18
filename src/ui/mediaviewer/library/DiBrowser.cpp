@@ -23,6 +23,7 @@
 #include "EventCommandIds.h"
 #include "Config.h"
 #include "Images.h"
+#include "PlayListAppend.h"
 #include "Utils.h"
 #include "LibPanel.h"
 #include "MediaViewer.h"
@@ -145,15 +146,18 @@ guDiBrowser::guDiBrowser(wxWindow *parent, guLibPanel *libpanel, guDbLibrary *db
 
     CreateAcceleratorTable();
 
+    // Binds
     m_DirCtrl->Bind(wxEVT_TREE_ITEM_MENU, &guDiBrowser::OnContextMenu, this);
     Bind(guConfigUpdatedEvent, &guDiBrowser::OnConfigUpdated, this, ID_CONFIG_UPDATED);
 
-    //----
+    Bind(wxEVT_MENU, &guDiBrowser::OnFolderPlay, this, ID_FILESYSTEM_FOLDER_PLAY);
     Bind(wxEVT_MENU, &guDiBrowser::OnFolderEnqueue, this, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALL, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ARTIST);
-//    Bind( wxEVT_MENU, &guFileBrowser::OnFolderPlay, this, ID_FILESYSTEM_FOLDER_PLAY );
-//    Bind( wxEVT_MENU, &guFileBrowser::OnFolderEditTracks, this, ID_FILESYSTEM_FOLDER_EDITTRACKS );
-//    Bind( wxEVT_MENU, &guFileBrowser::OnFolderSaveToPlayList, this, ID_FILESYSTEM_FOLDER_SAVEPLAYLIST );
-//    Bind( wxEVT_MENU, &guFileBrowser::OnFolderUpdate, this, ID_FILESYSTEM_FOLDER_UPDATE );
+    Bind(wxEVT_MENU, &guDiBrowser::OnFolderCopy, this, ID_FILESYSTEM_FOLDER_COPY);
+    Bind(wxEVT_MENU, &guDiBrowser::OnFolderEditTracks, this, ID_FILESYSTEM_FOLDER_EDITTRACKS);
+    Bind(wxEVT_MENU, &guDiBrowser::OnFolderSaveToPlayList, this, ID_FILESYSTEM_FOLDER_SAVEPLAYLIST);
+    Bind(wxEVT_MENU, &guDiBrowser::OnFolderUpdate, this, ID_FILESYSTEM_FOLDER_UPDATE);
+    m_DirCtrl->Bind( wxEVT_MENU, &guDiBrowser::OnFolderCopyTo, this, ID_COPYTO_BASE, ID_COPYTO_BASE + guCOPYTO_MAXCOUNT );
+    m_DirCtrl->Bind( wxEVT_MENU, &guDiBrowser::OnFolderCommand, this, ID_COMMANDS_BASE, ID_COMMANDS_BASE + guCOMMANDS_MAXCOUNT );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -162,7 +166,14 @@ guDiBrowser::~guDiBrowser()
     auto *Config = (guConfig *) guConfig::Get();
     Config->UnRegisterObject( this );
 
-    Unbind(wxEVT_MENU, &guDiBrowser::OnFolderEnqueue, this, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALL, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ARTIST );
+    Unbind(wxEVT_MENU, &guDiBrowser::OnFolderPlay, this, ID_FILESYSTEM_FOLDER_PLAY);
+    Unbind(wxEVT_MENU, &guDiBrowser::OnFolderEnqueue, this, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALL, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ARTIST);
+    Unbind(wxEVT_MENU, &guDiBrowser::OnFolderCopy, this, ID_FILESYSTEM_FOLDER_COPY);
+    Unbind(wxEVT_MENU, &guDiBrowser::OnFolderEditTracks, this, ID_FILESYSTEM_FOLDER_EDITTRACKS);
+    Unbind(wxEVT_MENU, &guDiBrowser::OnFolderSaveToPlayList, this, ID_FILESYSTEM_FOLDER_SAVEPLAYLIST);
+    Unbind(wxEVT_MENU, &guDiBrowser::OnFolderUpdate, this, ID_FILESYSTEM_FOLDER_UPDATE);
+    m_DirCtrl->Unbind( wxEVT_MENU, &guDiBrowser::OnFolderCopyTo, this, ID_COPYTO_BASE, ID_COPYTO_BASE + guCOPYTO_MAXCOUNT );
+    m_DirCtrl->Unbind( wxEVT_MENU, &guDiBrowser::OnFolderCommand, this, ID_COMMANDS_BASE, ID_COMMANDS_BASE + guCOMMANDS_MAXCOUNT );
 
     m_DirCtrl->Unbind(wxEVT_TREE_ITEM_MENU, &guDiBrowser::OnContextMenu, this );
     Unbind(guConfigUpdatedEvent, &guDiBrowser::OnConfigUpdated, this, ID_CONFIG_UPDATED );
@@ -196,6 +207,7 @@ void guDiBrowser::OnContextMenu(wxTreeEvent &event)
     MenuItem->SetBitmap(guImage(guIMAGE_INDEX_tiny_add));
     Menu.Append(MenuItem);
 
+    // Enqueue After
     wxMenu *EnqueueMenu = new wxMenu();
 
     MenuItem = new wxMenuItem(EnqueueMenu, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_TRACK,
@@ -221,6 +233,7 @@ void guDiBrowser::OnContextMenu(wxTreeEvent &event)
 
     Menu.Append(wxID_ANY, _("Enqueue After"), EnqueueMenu);
     Menu.AppendSeparator();
+    // END Enqueue After
 
     MenuItem = new wxMenuItem(&Menu, ID_FILESYSTEM_FOLDER_EDITTRACKS,
                               wxString(_("Edit Tracks")) +
@@ -245,35 +258,10 @@ void guDiBrowser::OnContextMenu(wxTreeEvent &event)
     Menu.Append(MenuItem);
     //MenuItem->Enable( false );
 
-    MenuItem = new wxMenuItem(&Menu, ID_FILESYSTEM_FOLDER_PASTE,
-                              _("Paste"),
-                              _("Paste to the selected folder"));
-    Menu.Append(MenuItem);
-    wxTheClipboard->UsePrimarySelection(false);
-    if (wxTheClipboard->Open()) {
-        if (wxTheClipboard->IsSupported(wxDF_FILENAME)) {
-            wxFileDataObject data;
-            MenuItem->Enable(wxTheClipboard->GetData(data));
-        }
-        wxTheClipboard->Close();
-    }
-
     MenuItem = new wxMenuItem(&Menu, ID_FILESYSTEM_FOLDER_UPDATE,
                               _("Update"),
                               _("Update the selected folder"));
     MenuItem->SetBitmap(guImage(guIMAGE_INDEX_tiny_reload));
-    Menu.Append(MenuItem);
-    Menu.AppendSeparator();
-
-    MenuItem = new wxMenuItem(&Menu, ID_FILESYSTEM_FOLDER_NEW, _("New Folder"), _("Create a new folder"));
-    Menu.Append(MenuItem);
-
-    MenuItem = new wxMenuItem(&Menu, ID_FILESYSTEM_FOLDER_RENAME, _("Rename"), _("Rename the selected folder"));
-    MenuItem->SetBitmap(guImage(guIMAGE_INDEX_tiny_edit));
-    Menu.Append(MenuItem);
-
-    MenuItem = new wxMenuItem(&Menu, ID_FILESYSTEM_FOLDER_DELETE, _("Remove"), _("Remove the selected folder"));
-    MenuItem->SetBitmap(guImage(guIMAGE_INDEX_tiny_edit_clear));
     Menu.Append(MenuItem);
     Menu.AppendSeparator();
 
@@ -338,16 +326,16 @@ void guDiBrowser::SetPath(const wxString &path, guMediaViewer * mediaviewer )
 {
     guLogMessage(wxT("guDiBrowser::SetPath( %s )"), path.c_str());
     SetMediaViewer(mediaviewer);
-
     m_CurDir = GetPathAddTrailSep(path);
     m_DirCtrl->SetPath(m_CurDir);
     ReloadItems();
 }
 
 // -------------------------------------------------------------------------------- //
-void guDiBrowser::LoadPath(const wxString &path)
+void guDiBrowser::LoadPath(const wxString &path, guMediaViewer * mediaviewer)
 {
     guLogMessage(wxT("guDiBrowser::SetPath( %s )"), path.c_str());
+    SetMediaViewer(mediaviewer);
     m_CurDir = GetPathAddTrailSep(path);
     ReloadItems();
 }
@@ -405,6 +393,13 @@ guMediaViewer * guDiBrowser::FindMediaViewerByPath(const wxString cur_path)
 }
 
 // -------------------------------------------------------------------------------- //
+void guDiBrowser::OnFolderPlay(wxCommandEvent &event)
+{
+    wxArrayString Files = GetAllFiles(true);
+    m_LibPanel->GetPlayerPanel()->SetPlayList(Files);
+}
+
+// -------------------------------------------------------------------------------- //
 void guDiBrowser::OnFolderEnqueue(wxCommandEvent &event)
 {
     wxArrayString Files = GetAllFiles(true);
@@ -416,14 +411,198 @@ void guDiBrowser::OnFolderEnqueue(wxCommandEvent &event)
 }
 
 // -------------------------------------------------------------------------------- //
+void guDiBrowser::OnFolderCopy( wxCommandEvent &event )
+{
+    //guLogMessage( wxT( "OnFolderCopy" ) );
+    wxTheClipboard->UsePrimarySelection( false );
+    if (!wxTheClipboard->Open())
+    {
+        guLogError(wxT("Could not open the clipboard object"));
+        return;
+    }
+
+    wxTheClipboard->Clear();
+    wxFileDataObject * FileObject = new wxFileDataObject();
+    wxTextDataObject * TextObject = new wxTextDataObject();
+    wxDataObjectComposite * CompositeObject = new wxDataObjectComposite();
+
+    wxString Path = m_DirCtrl->GetPath();
+    Path.Replace( wxT( "#" ), wxT( "%23" ) );
+
+    TextObject->SetText( Path );
+    FileObject->AddFile( Path );
+
+    CompositeObject->Add( FileObject );
+    CompositeObject->Add( TextObject );
+
+    if( !wxTheClipboard->AddData( CompositeObject ) )
+    {
+        delete FileObject;
+        delete TextObject;
+        delete CompositeObject;
+        guLogError( wxT( "Can't copy the folder to the clipboard" ) );
+    }
+    guLogMessage( wxT( "Copied the data to the clipboard..." ) );
+    wxTheClipboard->Close();
+}
+
+// -------------------------------------------------------------------------------- //
+void guDiBrowser::OnFolderEditTracks(wxCommandEvent &event)
+{
+    guTrackArray Tracks;
+    guImagePtrArray Images;
+    wxArrayString Lyrics;
+    wxArrayInt ChangedFlags;
+
+    GetAllSongs(&Tracks);
+    if (!Tracks.Count())
+        return;
+
+    auto * TrackEditor = new guTrackEditor(this, m_Db ? m_Db : m_DefaultDb, &Tracks, &Images, &Lyrics, &ChangedFlags);
+    if (!TrackEditor)
+        return;
+
+    if (TrackEditor->ShowModal() == wxID_OK)
+    {
+        guUpdateTracks(Tracks, Images, Lyrics, ChangedFlags);
+        if (m_Db)
+            m_Db->UpdateSongs(&Tracks, ChangedFlags);
+        else
+            m_DefaultDb->UpdateSongs(&Tracks, ChangedFlags);
+
+        // Update the track in database, playlist, etc
+        m_MainFrame->UpdatedTracks(guUPDATED_TRACKS_PLAYER_PLAYLIST, &Tracks);
+    }
+    guImagePtrArrayClean(&Images);
+    TrackEditor->Destroy();
+}
+
+// -------------------------------------------------------------------------------- //
+void guDiBrowser::OnFolderSaveToPlayList(wxCommandEvent &event)
+{
+    guTrackArray Tracks;
+
+    GetAllSongs(&Tracks);
+
+    wxArrayInt TrackIds;
+    size_t Count = Tracks.Count();
+    for (size_t Index = 0; Index < Count; Index++)
+        TrackIds.Add(Tracks[Index].m_SongId);
+
+    if (m_Db && TrackIds.Count())
+    {
+        guListItems PlayLists;
+        m_Db->GetPlayLists( &PlayLists,guPLAYLIST_TYPE_STATIC );
+        auto * PlayListAppendDlg = new guPlayListAppend( m_MainFrame, m_Db, &TrackIds, &PlayLists );
+        if( PlayListAppendDlg->ShowModal() == wxID_OK )
+        {
+            int Selected = PlayListAppendDlg->GetSelectedPlayList();
+            if( Selected == -1 )
+            {
+                wxString PLName = PlayListAppendDlg->GetPlaylistName();
+                if( PLName.IsEmpty() )
+                    PLName = _( "UnNamed" );
+
+                m_Db->CreateStaticPlayList( PLName, TrackIds );
+            }
+            else
+            {
+                int PLId = PlayLists[ Selected ].m_Id;
+                wxArrayInt OldSongs;
+                m_Db->GetPlayListSongIds( PLId, &OldSongs );
+                if( PlayListAppendDlg->GetSelectedPosition() == 0 ) // BEGIN
+                {
+                    m_Db->UpdateStaticPlayList( PLId, TrackIds );
+                    m_Db->AppendStaticPlayList( PLId, OldSongs );
+                }
+                else                                                // END
+                    m_Db->AppendStaticPlayList( PLId, TrackIds );
+            }
+            m_MediaViewer->UpdatePlaylists();
+        }
+        PlayListAppendDlg->Destroy();
+    }
+}
+
+// -------------------------------------------------------------------------------- //
+void guDiBrowser::OnFolderUpdate(wxCommandEvent &event)
+{
+    if (m_MediaViewer)
+        m_MediaViewer->UpdateLibrary(m_DirCtrl->GetPath());
+}
+
+// -------------------------------------------------------------------------------- //
+void guDiBrowser::OnFolderCopyTo( wxCommandEvent &event )
+{
+    guTrackArray * Tracks = new guTrackArray();
+    GetAllSongs( Tracks );
+
+    int Index = event.GetId() - ID_COPYTO_BASE;
+    if( Index >= guCOPYTO_DEVICE_BASE )
+    {
+        Index -= guCOPYTO_DEVICE_BASE;
+        event.SetId( ID_MAINFRAME_COPYTODEVICE_TRACKS );
+    }
+    else
+        event.SetId( ID_MAINFRAME_COPYTO );
+
+    event.SetInt( Index );
+    event.SetClientData( ( void * ) Tracks );
+    wxPostEvent( m_MainFrame, event );
+}
+
+// -------------------------------------------------------------------------------- //
+void guDiBrowser::OnFolderCommand( wxCommandEvent &event )
+{
+    int CommandId = event.GetId();
+
+    guConfig * Config = ( guConfig * ) guConfig::Get();
+    if( Config )
+    {
+        wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+
+        CommandId -= ID_COMMANDS_BASE;
+        wxString CurCmd = Commands[ CommandId ];
+        if( CurCmd.Find( guCOMMAND_ALBUMPATH ) != wxNOT_FOUND )
+        {
+            wxString DirPath = m_DirCtrl->GetPath();
+            DirPath.Replace( wxT( " " ), wxT( "\\ " ) );
+            CurCmd.Replace( guCOMMAND_ALBUMPATH, DirPath );
+        }
+
+        if( CurCmd.Find( guCOMMAND_TRACKPATH ) != wxNOT_FOUND )
+        {
+            wxString SongList;
+            wxArrayString Files = GetAllFiles( true );
+            int Count = Files.Count();
+            for( int Index = 0; Index < Count; Index++ )
+            {
+                SongList += wxT( " \"" ) + Files[ Index ] + wxT( "\"" );
+            }
+            CurCmd.Replace( guCOMMAND_TRACKPATH, SongList.Trim( false ) );
+        }
+
+        //guLogMessage( wxT( "Execute Command '%s'" ), CurCmd.c_str() );
+        guExecute( CurCmd );
+    }
+}
+
+// -------------------------------------------------------------------------------- //
+size_t guDiBrowser::GetAllSongs(guTrackArray * tracks) const
+{
+    wxArrayString Files = GetAllFiles(true);
+    return GetTracksFromFiles(Files, tracks);
+}
+
+// -------------------------------------------------------------------------------- //
 wxArrayString guDiBrowser::GetAllFiles(const bool recursive ) const
 {
     wxArrayString Files;
-    int Count = m_Files.Count();
+    size_t Count = m_Files.Count();
     if (!Count)
         return Files;
 
-    for (int Index = 0; Index < Count; Index++)
+    for (size_t Index = 0; Index < Count; Index++)
     {
         if (m_Files[Index].m_Name != wxT(".."))
         {
@@ -432,8 +611,8 @@ wxArrayString guDiBrowser::GetAllFiles(const bool recursive ) const
                 guFileItemArray DirFiles;
                 if (GetPathSortedItems(m_CurDir + m_Files[Index].m_Name, &DirFiles, true))
                 {
-                    int FileIndex;
-                    int FileCount = DirFiles.Count();
+                    size_t FileIndex;
+                    size_t FileCount = DirFiles.Count();
                     for (FileIndex = 0; FileIndex < FileCount; FileIndex++)
                         Files.Add(DirFiles[FileIndex].m_Name);
                 }
@@ -443,6 +622,49 @@ wxArrayString guDiBrowser::GetAllFiles(const bool recursive ) const
         }
     }
     return Files;
+}
+
+// -------------------------------------------------------------------------------- //
+size_t guDiBrowser::GetTracksFromFiles(const wxArrayString &files, guTrackArray * tracks) const
+{
+    size_t Count = files.Count();
+    if( Count )
+    {
+        for (size_t Index = 0; Index < Count; Index++)
+        {
+            wxString FileName = files[Index];
+            //guLogMessage( wxT( "GetTracksFromFiles: %s" ), FileName.c_str() );
+            wxURI Uri(FileName);
+
+            if (  Uri.IsReference())
+            {
+                if (guIsValidAudioFile(FileName))
+                {
+                    guTrack * Track = new guTrack();
+                    Track->m_FileName = FileName;
+
+                    if( !m_Db || !m_Db->FindTrackFile( FileName, Track ) )
+                    {
+                        guPodcastItem PodcastItem;
+                        auto * MainFrame = (guMainFrame *) guMainFrame::GetMainFrame();
+                        guDbPodcasts * DbPodcasts = MainFrame->GetPodcastsDb();
+                        if (DbPodcasts->GetPodcastItemFile(FileName, &PodcastItem))
+                        {
+                            delete Track;
+                            continue;
+                        }
+
+                        if( Track->ReadFromFile( FileName ) )
+                            Track->m_Type = guTRACK_TYPE_NOTDB;
+                        else
+                            guLogError( wxT( "Could not read tags from file '%s'" ), FileName.c_str() );
+                    }
+                    tracks->Add( Track );
+                }
+            }
+        }
+    }
+    return tracks->Count();
 }
 
 // -------------------------------------------------------------------------------- //

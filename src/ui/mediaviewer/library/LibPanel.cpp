@@ -754,7 +754,8 @@ void guLibPanel::OnDirItemChanged( wxTreeEvent &event )
 
     wxString CurPath = m_DirectoryListCtrl->GetPath();
     //guLogMessage(wxT("guLibPanel::OnDirItemChanged('%s')"), CurPath.c_str());
-    m_DirectoryListCtrl->LoadPath(CurPath);
+
+    m_DirectoryListCtrl->LoadPath(CurPath, m_MediaViewer);
 
     event.SetId(wxEVT_TREE_SEL_CHANGED);
     wxPostEvent(this, event);
