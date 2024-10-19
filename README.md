@@ -1,4 +1,4 @@
-# Guayadeque Music Player
+# <img style="float: left;" src=https://raw.githubusercontent.com/thothix/guayadeque/master/defconfig/guayadeque.png> Guayadeque Music Player
 
 Guayadeque is a lightweight and easy-to-use music player and music collection organizer
 that can easily manage large music collections and supports smart playlists.
