@@ -389,7 +389,6 @@ class guPrefDialog : public wxDialog
     void OnActivateInstantSearch( wxCommandEvent &event );
     void OnRndPlayClicked( wxCommandEvent &event );
     void OnDelPlayedTracksChecked( wxCommandEvent &event );
-    void OnShowPlayerCoverChecked( wxCommandEvent &event );
 
     void OnLibCollectSelected( wxCommandEvent &event );
     void OnLibCollectDClicked( wxCommandEvent &event );

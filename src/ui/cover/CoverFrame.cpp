@@ -129,42 +129,13 @@ void guCoverFrame::SetBitmap( const guSongCoverType CoverType, const wxString &C
     {
         CoverImage = guImage( guIMAGE_INDEX_podcast );
     }
-    //
+
     if( CoverImage.IsOk() )
     {
-        guConfig * Config = ( guConfig * ) guConfig::Get();
-        int CoverFrame = Config->ReadNum( CONFIG_KEY_GENERAL_COVER_FRAME, guCOVERFRAME_DEFAULT, CONFIG_PATH_GENERAL );
-        if( CoverFrame == guCOVERFRAME_DEFAULT )
-        {
-            wxBitmap * BlankCD = new wxBitmap( guImage( guIMAGE_INDEX_blank_cd_cover ) );
-            if( BlankCD )
-            {
-                if( BlankCD->IsOk() )
-                {
-                    // 38,6
-                    wxMemoryDC MemDC;
-                    MemDC.SelectObject( * BlankCD );
-                    CoverImage.Rescale( 250, 250, wxIMAGE_QUALITY_HIGH );
-                    MemDC.DrawBitmap( wxBitmap( CoverImage ), 34, 4, false );
-                    m_CoverBitmap->SetBitmap( * BlankCD );
-                    //m_CoverBitmap->SetBitmap( wxBitmap( CoverImage ) );
-                    m_CoverBitmap->Refresh();
-                }
-                SetSize( BlankCD->GetWidth(), BlankCD->GetHeight() );
-
-                delete BlankCD;
-            }
-        }
-        else //if( CoverFrame == guCOVERFRAME_NONE )
-        {
-            CoverImage.Rescale( 300, 300, wxIMAGE_QUALITY_HIGH );
-            m_CoverBitmap->SetBitmap( CoverImage );
-            m_CoverBitmap->Refresh();
-            SetSize( 300, 300 );
-        }
-//        else    // guCOVERFRAME_CUSTOM
-//        {
-//        }
+        CoverImage.Rescale( 300, 300, wxIMAGE_QUALITY_HIGH );
+        m_CoverBitmap->SetBitmap( CoverImage );
+        m_CoverBitmap->Refresh();
+        SetSize( 300, 300 );
         Layout();
     }
 }

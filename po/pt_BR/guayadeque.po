@@ -3259,8 +3259,8 @@ msgid "Show album cover in the player"
 msgstr "Exibir capa do álbum no reprodutor"
 
 #: ui/preferences/Preferences.cpp:548
-msgid "Show CD cover frame in the player"
-msgstr "Exibir caixa do CD no reprodutor"
+msgid "Show CD cover frame in the cover editor"
+msgstr "Exibir caixa do CD no editor de capas"
 
 #: Preferences.cpp:687
 msgid " On Close "

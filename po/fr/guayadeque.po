@@ -3226,8 +3226,8 @@ msgid "Show album cover in the player"
 msgstr "Afficher la pochette de l'album dans le lecteur"
 
 #: Preferences.cpp:681
-msgid "Show CD cover frame in the player"
-msgstr "Afficher la fenêtre de la pochette dans le lecteur"
+msgid "Show CD cover frame in the cover editor"
+msgstr "Afficher la fenêtre de la pochette dans le Éditeur de pochettes"
 
 #: Preferences.cpp:687
 msgid " On Close "

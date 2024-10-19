@@ -1690,8 +1690,8 @@ msgid "When searching, pressing enter queues the result"
 msgstr "En búsqueda Enter pone resultados en cola"
 
 #: ui/preferences/Preferences.cpp:557
-msgid "Show CD cover frame in the player"
-msgstr "Mostrar marco de CD en el reproductor"
+msgid "Show CD cover frame in the cover editor"
+msgstr "Mostrar marco de CD en el editor de carátuas"
 
 #: ui/preferences/Preferences.cpp:563
 msgid " On Close "

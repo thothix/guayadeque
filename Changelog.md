@@ -19,7 +19,12 @@ Changelog
   * Added collate accents on media search
   * Preload the current track in the player at startup and some other situations
   * Added CXX11 random number generator support and set it as default
-  * Portuguese, Brazilian Portuguese and French translations updates
+  * Translation updates
+  * General code cleanup and small refactorings
+
+### Removed
+  * Player cover zoom doesn't show the CD frame anymore. CD frame is used now only in the cover editor.
+    The Preferences -> General option "Show CD cover frame in the player" was renamed to "Show CD cover frame in the cover editor"
 
 0.5.3 (2024-10-02)
 ------------------

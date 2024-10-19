@@ -542,10 +542,9 @@ void guPrefDialog::BuildGeneralPage( void )
     m_ShowPlayerCoverChkBox->SetValue(show_cover);
     BehaviSizer->Add( m_ShowPlayerCoverChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
-    m_ShowCDFrameChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _( "Show CD cover frame in the player" ), wxDefaultPosition, wxDefaultSize, 0 );
+    m_ShowCDFrameChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _( "Show CD cover frame in the cover editor" ), wxDefaultPosition, wxDefaultSize, 0 );
     m_ShowCDFrameChkBox->SetValue( m_Config->ReadNum( CONFIG_KEY_GENERAL_COVER_FRAME, 1, CONFIG_PATH_GENERAL ) );
-    m_ShowCDFrameChkBox->Enable(show_cover);
-	BehaviSizer->Add( m_ShowCDFrameChkBox, 0, wxLEFT | wxRIGHT, 20 );
+	BehaviSizer->Add( m_ShowCDFrameChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
 	GenMainSizer->Add( BehaviSizer, 0, wxEXPAND|wxALL, 5 );
 
@@ -575,7 +574,6 @@ void guPrefDialog::BuildGeneralPage( void )
 	if( m_SoundMenuChkBox )
         m_SoundMenuChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnActivateSoundMenuIntegration, this );
     m_InstantSearchChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnActivateInstantSearch, this );
-    m_ShowPlayerCoverChkBox->Bind(wxEVT_CHECKBOX, &guPrefDialog::OnShowPlayerCoverChecked, this);
 
     m_ShowSplashChkBox->SetFocus();
 }
@@ -2766,11 +2764,6 @@ void guPrefDialog::OnRndPlayClicked( wxCommandEvent& event )
 void guPrefDialog::OnDelPlayedTracksChecked( wxCommandEvent& event )
 {
     m_MaxTracksPlayed->Enable( !m_DelPlayChkBox->IsChecked() );
-}
-
-void guPrefDialog::OnShowPlayerCoverChecked(wxCommandEvent& event)
-{
-    m_ShowCDFrameChkBox->Enable(event.IsChecked());
 }
 
 void guPrefDialog::OnLibOptionsLoadControls( void )
