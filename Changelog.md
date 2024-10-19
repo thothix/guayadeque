@@ -4,17 +4,22 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.5.4 (2024-10-xx)
+0.6.0 (2024-10-xx)
 ------------------
 
 ### Features
+  * Added a new Directory Panel in the Collections/Library. 
+    - Now it's possible to navigate throughout the collection's directories while filtering the corresponding 
+    Genres, Composers, Artists, Albums, Songs and so on
+    - The panel can be enabled/disabled in Sources -> "Collection Name" -> Library -> Directories menu item
   * Added option in Preferences -> General to hide the player album cover. It's useful if you already have
     the cover panel visible
 
 ### Enhancements
   * Added collate accents on media search
-  * Preload the current track in the player at startup and some other use cases
+  * Preload the current track in the player at startup and some other situations
   * Added CXX11 random number generator support and set it as default
+  * Portuguese, Brazilian Portuguese and French translations updates
 
 0.5.3 (2024-10-02)
 ------------------
