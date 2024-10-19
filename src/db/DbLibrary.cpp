@@ -991,10 +991,8 @@ bool guDbLibrary::CheckDbVersion( void )
 // -------------------------------------------------------------------------------- //
 int guDbLibrary::GetGenreId( wxString &genrename )
 {
-  if( m_LastGenre == genrename )
-  {
+  if (m_LastGenre == genrename)
       return m_LastGenreId;
-  }
 
   wxString query;
   wxSQLite3ResultSet dbRes;
@@ -1002,28 +1000,21 @@ int guDbLibrary::GetGenreId( wxString &genrename )
 
   m_LastGenre = genrename;
 
-  query = wxString::Format( wxT( "SELECT song_genreid FROM songs " \
-                                 "WHERE song_genre = '%s' LIMIT 1;" ),
-                        escape_query_str( genrename ).c_str() );
+  query = wxString::Format(wxT("SELECT song_genreid FROM songs WHERE song_genre = '%s' LIMIT 1;"),
+                           escape_query_str( genrename ).c_str() );
 
   dbRes = ExecuteQuery( query );
   if( dbRes.NextRow() )
-  {
     RetVal = m_LastGenreId = dbRes.GetInt( 0 );
-  }
   else
   {
     query = wxT( "SELECT MAX(song_genreid) FROM songs;" );
 
     dbRes = ExecuteQuery( query );
     if( dbRes.NextRow() )
-    {
       RetVal = m_LastGenreId = dbRes.GetInt( 0 ) + 1;
-    }
     else
-    {
-        RetVal = m_LastGenreId = 1;
-    }
+      RetVal = m_LastGenreId = 1;
   }
   dbRes.Finalize();
 
@@ -1033,10 +1024,8 @@ int guDbLibrary::GetGenreId( wxString &genrename )
 // -------------------------------------------------------------------------------- //
 int guDbLibrary::GetComposerId( wxString &composername, bool create )
 {
-  if( m_LastComposer == composername )
-  {
+  if (m_LastComposer == composername)
       return m_LastComposerId;
-  }
 
   wxString query;
   wxSQLite3ResultSet dbRes;
@@ -1045,9 +1034,8 @@ int guDbLibrary::GetComposerId( wxString &composername, bool create )
 
   m_LastComposer = composername;
 
-  query = wxString::Format( wxT( "SELECT song_composerid FROM songs " \
-                                 "WHERE song_composer = '%s' LIMIT 1;" ),
-            escape_query_str( composername ).c_str() );
+  query = wxString::Format(wxT("SELECT song_composerid FROM songs WHERE song_composer = '%s' LIMIT 1;"),
+                           escape_query_str( composername ).c_str() );
 
   dbRes = ExecuteQuery( query );
 
@@ -2803,16 +2791,16 @@ void guDbLibrary::GetComposers( guListItems * Items, const bool FullList )
         query += wxT("WHERE song_composer > '' ");
         order_by = wxT("ORDER BY song_composer");
 
-        if ((DirectoryHasPath() || m_TeFilters.Count() || m_LaFilters.Count() || m_GeFilters.Count()))
-            query = wxT(" AND ") + FiltersSQL(guLIBRARY_FILTER_COMPOSERS);
+        if (DirectoryHasPath() || m_TeFilters.Count() || m_LaFilters.Count() || m_GeFilters.Count())
+            query += wxT("AND ") + FiltersSQL(guLIBRARY_FILTER_COMPOSERS);
     }
 
     query += (group_by + order_by);
 
-    dbRes = ExecuteQuery( query );
+    dbRes = ExecuteQuery(query);
 
-    while( dbRes.NextRow() )
-        Items->Add( new guListItem( dbRes.GetInt( 0 ), dbRes.GetString( 1 ) ) );
+    while (dbRes.NextRow())
+        Items->Add(new guListItem(dbRes.GetInt(0), dbRes.GetString(1)));
 
     dbRes.Finalize();
 }
