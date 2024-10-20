@@ -342,18 +342,21 @@ void guDiBrowser::LoadPath(const wxString &path, guMediaViewer * mediaviewer, bo
     SetMediaViewer(mediaviewer);
     m_CurDir = GetPathAddTrailSep(path);
     if (recreate)
+    {
         m_DirCtrl->ReCreateTree();
-    m_DirCtrl->ExpandPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_CurDir);
+        m_DirCtrl->ExpandPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_CurDir);
+    }
     ReloadItems();
 }
 
 // -------------------------------------------------------------------------------- //
 void guDiBrowser::CollectionsUpdated()
 {
-    wxString cur_path = GetPath();
-    guLogMessage(wxT( "guDiBrowser::CollectionsUpdated( %s )" ), cur_path.c_str() );
-    m_DirCtrl->ReCreateTree();
-    SetPath(cur_path, FindMediaViewerByPath(cur_path));
+    LoadPath(GetPath(), m_MediaViewer, true);
+//    wxString cur_path = GetPath();
+//    guLogMessage(wxT( "guDiBrowser::CollectionsUpdated( %s )" ), cur_path.c_str() );
+//    m_DirCtrl->ReCreateTree();
+//    SetPath(cur_path, FindMediaViewerByPath(cur_path));
 }
 
 // -------------------------------------------------------------------------------- //
