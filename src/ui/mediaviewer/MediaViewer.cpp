@@ -200,10 +200,8 @@ void guMediaViewer::InitMediaViewer( const int mode )
 
     if (m_LibPanel)
     {
-        //m_LibPanel->m_DirectoryListCtrl->ExpandPath(m_MediaCollection->m_DirectoryPath);
-        //m_LibPanel->m_DirectoryListCtrl->DefaultPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_MediaCollection->m_DirectoryPath);
-        //m_LibPanel->m_DirectoryListCtrl->SelectPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_MediaCollection->m_DirectoryPath);
-        m_LibPanel->m_DirectoryListCtrl->SetPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_MediaCollection->m_DirectoryPath, this);
+        m_LibPanel->m_DirectoryListCtrl->GetDirCtrl()->ExpandPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_MediaCollection->m_DirectoryPath);
+        m_LibPanel->m_DirectoryListCtrl->GetDirCtrl()->GetTreeCtrl()->Expand(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_MediaCollection->m_DirectoryPath);
     }
 
     if ( m_MediaCollection->m_UpdateOnStart )

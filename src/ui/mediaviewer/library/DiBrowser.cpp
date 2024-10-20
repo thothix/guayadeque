@@ -76,6 +76,8 @@ void guDiGenericDirCtrl::SetupSections()
     const guMediaCollectionArray & Collections = m_MainFrame->GetMediaCollections();
     int Count = Collections.Count();
 
+    //ShowHidden(true);
+
     for (int Index = 0; Index < Count; Index++)
     {
         const guMediaCollection & Collection = Collections[Index];
@@ -98,10 +100,12 @@ void guDiGenericDirCtrl::SetupSections()
                 auto *dir_item = new wxDirItemData(LibName, wxFileNameFromPath(LibName), true);
                 wxTreeItemId treeid = AppendItem(m_CollectionId, wxFileNameFromPath(LibName), guDIBROWSER_IMAGE_INDEX_LIBRARY, -1, dir_item);
                 GetTreeCtrl()->SetItemHasChildren(treeid);
+                GetTreeCtrl()->Expand(treeid);
                 guLogMessage(wxT("Add section - %s"), LibName);
             }
         }
     }
+    //GetTreeCtrl()->ExpandAll();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -332,11 +336,14 @@ void guDiBrowser::SetPath(const wxString &path, guMediaViewer * mediaviewer )
 }
 
 // -------------------------------------------------------------------------------- //
-void guDiBrowser::LoadPath(const wxString &path, guMediaViewer * mediaviewer)
+void guDiBrowser::LoadPath(const wxString &path, guMediaViewer * mediaviewer, bool recreate)
 {
     guLogMessage(wxT("guDiBrowser::SetPath( %s )"), path.c_str());
     SetMediaViewer(mediaviewer);
     m_CurDir = GetPathAddTrailSep(path);
+    if (recreate)
+        m_DirCtrl->ReCreateTree();
+    m_DirCtrl->ExpandPath(GetPathRemoveTrailSep(GU_COLLECTION_DUMMY_ROOTDIR) + m_CurDir);
     ReloadItems();
 }
 
