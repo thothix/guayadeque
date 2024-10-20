@@ -107,7 +107,7 @@ public :
 
     wxString                GetPath();
     void                    SetPath(const wxString &path, guMediaViewer * mediaviewer);
-    void                    LoadPath(const wxString &path, guMediaViewer * mediaviewer);
+    void                    LoadPath(const wxString &path, guMediaViewer * mediaviewer, bool recreate = false);
     wxString                DefaultPath(const wxString &path = wxEmptyString);
     void                    SelectPath(const wxString &path, bool select = true) { m_DirCtrl->SelectPath(path, select); }
     bool                    ExpandPath(const wxString &path) { return m_DirCtrl->ExpandPath(path); }

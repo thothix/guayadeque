@@ -66,6 +66,8 @@ guLibPanel::guLibPanel( wxWindow * parent, guMediaViewer * mediaviewer ) :
 
     CreateControls();
     LoadLastLayout();
+
+    m_DirectoryListCtrl->LoadPath(m_DirectoryListCtrl->GetPath(), m_MediaViewer, true);
 }
 
 // -------------------------------------------------------------------------------- //
