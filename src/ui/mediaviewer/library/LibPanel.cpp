@@ -555,14 +555,17 @@ void guLibPanel::LoadLastLayout( void )
     if( Config->GetIgnoreLayouts() || LibraryLayout.IsEmpty() )
     {
         m_VisiblePanels = guPANEL_LIBRARY_VISIBLE_DEFAULT;
-        LibraryLayout  = wxT( "layout2|name=Genres;caption=" ) + wxString( _( "Genres" ) );
+        LibraryLayout  = wxT( "layout2|" );
+        LibraryLayout += wxT( "name=Directories;caption=" ) + wxString( _( "Directories" ) );
         LibraryLayout += wxT( ";state=2099196;dir=1;layer=0;row=1;pos=1;prop=113793;bestw=50;besth=50;minw=50;minh=50;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
+        LibraryLayout += wxT( "name=Genres;caption=" ) + wxString( _( "Genres" ) );
+        LibraryLayout += wxT( ";state=2099196;dir=1;layer=0;row=1;pos=2;prop=113793;bestw=50;besth=50;minw=50;minh=50;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
         LibraryLayout += wxT( "name=Labels;caption=" ) + wxString( _( "Labels" ) );
         LibraryLayout += wxT( ";state=2099198;dir=1;layer=0;row=1;pos=0;prop=66995;bestw=50;besth=50;minw=50;minh=50;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
         LibraryLayout += wxT( "name=Artists;caption=" ) + wxString( _( "Artists" ) );
-        LibraryLayout += wxT( ";state=2099196;dir=1;layer=0;row=1;pos=2;prop=80788;bestw=50;besth=50;minw=50;minh=50;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
+        LibraryLayout += wxT( ";state=2099196;dir=1;layer=0;row=1;pos=3;prop=80788;bestw=50;besth=50;minw=50;minh=50;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
         LibraryLayout += wxT( "name=Albums;caption=" ) + wxString( _( "Albums" ) );
-        LibraryLayout += wxT( ";state=2099196;dir=1;layer=0;row=1;pos=3;prop=138424;bestw=50;besth=50;minw=50;minh=50;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
+        LibraryLayout += wxT( ";state=2099196;dir=1;layer=0;row=1;pos=4;prop=138424;bestw=50;besth=50;minw=50;minh=50;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
         LibraryLayout += wxT( "name=Years;caption=" ) + wxString( _( "Years" ) );
         LibraryLayout += wxT( ";state=2099198;dir=1;layer=0;row=2;pos=0;prop=100000;bestw=50;besth=50;minw=50;minh=50;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
         LibraryLayout += wxT( "name=Ratings;caption=" ) + wxString( _( "Ratings" ) );
