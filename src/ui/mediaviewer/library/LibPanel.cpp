@@ -405,7 +405,8 @@ void guLibPanel::CreateControls( void )
     //
     // Directories
     //
-    wxString LastPath = Config->ReadStr( CONFIG_KEY_FILE_BROWSER_PATH, wxEmptyString, CONFIG_PATH_FILE_BROWSER );
+    //wxString LastPath = Config->ReadStr( CONFIG_KEY_FILE_BROWSER_PATH, wxEmptyString, CONFIG_PATH_FILE_BROWSER );
+    wxString LastPath = m_MediaViewer->GetMediaCollection()->m_DirectoryPath;
     //guLogMessage( wxT( "LibPanel->guDiBrowser - Lastpath: %s - m_MediaViewer %p" ), LastPath, m_MediaViewer);
 
     FilePanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
@@ -598,7 +599,6 @@ void guLibPanel::InitPanelData()
     guLogMessage( wxT( "guLibPanel::InitPanelData( %i )" ), m_BaseCommand );
 
     m_PanelNames.Empty();
-    m_PanelNames.Add( wxT( "Directories" ) );
     m_PanelNames.Add( wxT( "Labels" ) );
     m_PanelNames.Add( wxT( "Genres" ) );
     m_PanelNames.Add( wxT( "Artists" ) );
@@ -608,9 +608,9 @@ void guLibPanel::InitPanelData()
     m_PanelNames.Add( wxT( "Years" ) );
     m_PanelNames.Add( wxT( "Ratings" ) );
     m_PanelNames.Add( wxT( "Plays" ) );
+    m_PanelNames.Add( wxT( "Directories" ) );
 
     m_PanelIds.Empty();
-    m_PanelIds.Add( guPANEL_LIBRARY_DIRECTORIES );
     m_PanelIds.Add( guPANEL_LIBRARY_LABELS );
     m_PanelIds.Add( guPANEL_LIBRARY_GENRES );
     m_PanelIds.Add( guPANEL_LIBRARY_ARTISTS );
@@ -620,9 +620,9 @@ void guLibPanel::InitPanelData()
     m_PanelIds.Add( guPANEL_LIBRARY_YEARS );
     m_PanelIds.Add( guPANEL_LIBRARY_RATINGS );
     m_PanelIds.Add( guPANEL_LIBRARY_PLAYCOUNT );
+    m_PanelIds.Add( guPANEL_LIBRARY_DIRECTORIES );
 
     m_PanelCmdIds.Empty();
-    m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_DIRECTORIES );
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_LABELS );
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_GENRES );
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_ARTISTS );
@@ -632,6 +632,7 @@ void guLibPanel::InitPanelData()
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_YEARS );
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_RATINGS );
     m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_PLAYCOUNT );
+    m_PanelCmdIds.Add( m_BaseCommand + guLIBRARY_ELEMENT_DIRECTORIES );
 }
 
 // -------------------------------------------------------------------------------- //

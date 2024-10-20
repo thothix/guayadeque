@@ -237,8 +237,8 @@ class guLibPanel : public guAuiManagerPanel
     void                    OnSelChangedTimer( wxTimerEvent &event );
     void                    DoSelectionChanged( void );
 
-    void                    ReloadLabels( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_LABELS ) m_LabelsListCtrl->ReloadItems( reset ); }
     void                    ReloadDirectory( bool reset = true ) { if(m_VisiblePanels & guPANEL_LIBRARY_DIRECTORIES ) m_DirectoryListCtrl->ReloadItems(); }
+    void                    ReloadLabels( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_LABELS ) m_LabelsListCtrl->ReloadItems( reset ); }
     void                    ReloadGenres( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_GENRES ) m_GenreListCtrl->ReloadItems( reset ); }
     void                    ReloadAlbumArtists( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_ALBUMARTISTS ) m_AlbumArtistListCtrl->ReloadItems( reset ); }
     void                    ReloadArtists( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_ARTISTS ) m_ArtistListCtrl->ReloadItems( reset ); }
