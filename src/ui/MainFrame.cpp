@@ -2295,11 +2295,12 @@ void guMainFrame::InsertTabPanel( wxPanel * panel, const int index, const wxStri
 // -------------------------------------------------------------------------------- //
 void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
 {
-    int CollectionIndex = ( event.GetId() - ID_COLLECTIONS_BASE ) / guCOLLECTION_ACTION_COUNT;
-    int CollectionCmdId = ( event.GetId() - ID_COLLECTIONS_BASE ) % guCOLLECTION_ACTION_COUNT;
+    int eventId = event.GetId();
+    int CollectionIndex = ( eventId - ID_COLLECTIONS_BASE ) / guCOLLECTION_ACTION_COUNT;
+    int CollectionCmdId = ( eventId - ID_COLLECTIONS_BASE ) % guCOLLECTION_ACTION_COUNT;
     bool IsEnabled = event.IsChecked();
 
-    guLogMessage( wxT( "OnCollectionCommand %i  %i %i  %i" ), event.GetId(), CollectionIndex, CollectionCmdId, IsEnabled );
+    guLogMessage( wxT( "OnCollectionCommand %i  %i %i  %i" ), eventId, CollectionIndex, CollectionCmdId, IsEnabled );
 
     guMediaCollection &Collection = m_Collections[ CollectionIndex ];
     guMediaViewer * MediaViewer = FindCollectionMediaViewer( Collection.m_UniqueId );
@@ -2319,21 +2320,21 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                     switch ( Collection.m_Type )
                     {
                         case guMEDIA_COLLECTION_TYPE_NORMAL :
-                            MediaViewer = ( guMediaViewer * ) new guMediaViewerLibrary( m_MainNotebook, Collection, event.GetId(), this, -1, m_PlayerPanel );
+                            MediaViewer = ( guMediaViewer * ) new guMediaViewerLibrary( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel );
                             break;
 
                         case guMEDIA_COLLECTION_TYPE_JAMENDO :
-                            MediaViewer = ( guMediaViewer * ) new guMediaViewerJamendo( m_MainNotebook, Collection, event.GetId(), this, -1, m_PlayerPanel );
+                            MediaViewer = ( guMediaViewer * ) new guMediaViewerJamendo( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel );
                             break;
 
                         case guMEDIA_COLLECTION_TYPE_MAGNATUNE :
-                            MediaViewer = ( guMediaViewer * ) new guMediaViewerMagnatune( m_MainNotebook, Collection, event.GetId(), this, -1, m_PlayerPanel );
+                            MediaViewer = ( guMediaViewer * ) new guMediaViewerMagnatune( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel );
                             break;
 
                         case guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE :
                         {
                             guGIO_Mount * Mount = m_VolumeMonitor->GetMountById( Collection.m_UniqueId );
-                            MediaViewer = ( guMediaViewer * ) new guMediaViewerPortableDevice( m_MainNotebook, Collection, event.GetId(), this, -1, m_PlayerPanel, Mount );
+                            MediaViewer = ( guMediaViewer * ) new guMediaViewerPortableDevice( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel, Mount );
                             break;
                         }
 
@@ -2341,13 +2342,14 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                         case guMEDIA_COLLECTION_TYPE_IPOD :
                         {
                             guGIO_Mount * Mount = m_VolumeMonitor->GetMountById( Collection.m_UniqueId );
-                            MediaViewer = ( guMediaViewer * ) new guMediaVieweriPodDevice( m_MainNotebook, Collection, event.GetId(), this, -1, m_PlayerPanel, Mount );
+                            MediaViewer = ( guMediaViewer * ) new guMediaVieweriPodDevice( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel, Mount );
                             break;
                         }
 #endif
                     }
                     m_MediaViewers.Add( MediaViewer );
-                    MediaViewer->GetLibPanel()->AfterCreate();
+                    if (MediaViewer->GetLibPanel())
+                        MediaViewer->GetLibPanel()->AfterCreate();
                 }
 
                 if ( MediaViewer->IsDefault() && ( MediaViewer->GetViewMode() == guMEDIAVIEWER_MODE_NONE ) )

@@ -9,8 +9,8 @@ Changelog
 
 ### Features
   * Added a new Directory Panel in the Collections/Library. 
-    - Now it's possible to navigate throughout the collection's directories while filtering the corresponding 
-    Genres, Composers, Artists, Albums, Songs and so on
+    - Now it's possible to navigate throughout the collection's directories in a new panel while filtering the
+    corresponding Genres, Composers, Artists, Albums, Songs and so on
     - The panel can be enabled/disabled in Sources -> "Collection Name" -> Library -> Directories menu item
   * Added option in Preferences -> General to hide the player album cover. It's useful if you already have
     the cover panel visible
@@ -19,6 +19,7 @@ Changelog
   * Added collate accents on media search
   * Preload the current track in the player at startup and some other situations
   * Added CXX11 random number generator support and set it as default
+  * File Browser menu entry moved from "Sources" to "View"
   * Translation updates
   * General code cleanup and small refactorings
 
