@@ -21,7 +21,7 @@ Changelog
   * Added CXX11 random number generator support and set it as default
   * Moved the player randomize button to the playlist toolbar
     - The randomize action shuffles the playlist songs (it doesn't play songs in a random way) so it belongs to the playlist.
-    As a result we have a cleaner player with less buttons
+    As a result we have a cleaner player with fewer buttons
   * File Browser menu entry moved from "Sources" to "View"
   * Some small context menus refactoring
 
