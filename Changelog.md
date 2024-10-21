@@ -10,22 +10,25 @@ Changelog
 ### Features
   * Added a new Directory Panel in the Collections/Library. 
     - Now it's possible to navigate throughout the collection's directories in a new panel while filtering the
-    corresponding Genres, Composers, Artists, Albums, Songs and so on
+    corresponding Genres, Artists, Albums, Songs and so on
     - The panel can be enabled/disabled in Sources -> "Collection Name" -> Library -> Directories menu item
   * Added option in Preferences -> General to hide the player album cover. It's useful if you already have
-    the cover panel visible
+    the cover panel visible and make more room to the player information
 
 ### Enhancements
   * Added collate accents on media search
   * Preload the current track in the player at startup and some other situations
   * Added CXX11 random number generator support and set it as default
   * File Browser menu entry moved from "Sources" to "View"
-  * Translation updates
-  * General code cleanup and small refactorings
+  * Some small context menus refactoring
 
 ### Removed
   * Player cover zoom doesn't show the CD frame anymore. CD frame is used now only in the cover editor.
     The Preferences -> General option "Show CD cover frame in the player" was renamed to "Show CD cover frame in the cover editor"
+
+### Other
+  * Updated French, Portuguese and Brazilian Portuguese translations
+  * General code cleanup and small refactorings
 
 0.5.3 (2024-10-02)
 ------------------
@@ -142,7 +145,7 @@ Changelog
   * General code cleanup and small refactorings
 
 ### Bugfixes
-  * Fixed bug that crashed Guayadeque when scanning aac files tags (aac files does not support tags)
+  * Fixed bug that crashed Guayadeque when scanning AAC files tags (AAC files does not support tags right now)
 
 0.5.0 Beta 1 (2023-11-23)
 -------------------------

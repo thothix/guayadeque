@@ -551,8 +551,38 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
 
     Menu->Append( wxID_ANY, _( "Enqueue After" ), EnqueueMenu );
 
-    if( SelCount )
+    if ( SelCount )
     {
+        if ( SelCount == 1 )
+        {
+            Menu->AppendSeparator();
+
+            wxMenu *SubMenu;
+            SubMenu = new wxMenu();
+
+            MenuItem = new wxMenuItem(Menu, ID_TRACKS_BROWSE_GENRE, _("Genre"),
+                                      _("Selects the genre of the current song"));
+            SubMenu->Append(MenuItem);
+
+            MenuItem = new wxMenuItem(Menu, ID_TRACKS_BROWSE_ARTIST, _("Artist"),
+                                      _("Selects the artist of the current song"));
+            SubMenu->Append(MenuItem);
+
+            MenuItem = new wxMenuItem(Menu, ID_TRACKS_BROWSE_ALBUMARTIST, _("Album Artist"),
+                                      _("Selects the album artist of the current song"));
+            SubMenu->Append(MenuItem);
+
+            MenuItem = new wxMenuItem(Menu, ID_TRACKS_BROWSE_COMPOSER, _("Composer"),
+                                      _("Selects the composer of the current song"));
+            SubMenu->Append(MenuItem);
+
+            MenuItem = new wxMenuItem(Menu, ID_TRACKS_BROWSE_ALBUM, _("Album"),
+                                      _("Select the album of the current song"));
+            SubMenu->Append(MenuItem);
+
+            Menu->AppendSubMenu(SubMenu, _("Select"), _("Search in the library"));
+        }
+
         Menu->AppendSeparator();
 
         MenuItem = new wxMenuItem( Menu, ID_TRACKS_EDITLABELS,
@@ -569,9 +599,9 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
             MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit ) );
             Menu->Append( MenuItem );
 
-            Menu->AppendSeparator();
-
-            AppendFastEditMenu( Menu, SelCount );
+            //Menu->AppendSeparator();
+            if ( SelCount == 1 )
+                AppendFastEditMenu( Menu, SelCount );
 
             wxMenu * RatingMenu = new wxMenu();
 
@@ -605,7 +635,7 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
                                     _( "Set the rating to 5" ), wxITEM_NORMAL );
             RatingMenu->Append( MenuItem );
 
-            Menu->AppendSubMenu( RatingMenu, _( "Set Rating" ), _( "Set the current track rating" ) );
+            Menu->AppendSubMenu( RatingMenu, _( "Set Rating" ), _( "Set the current selected tracks rating" ) );
         }
 
         Menu->AppendSeparator();
@@ -636,28 +666,6 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
         MenuItem = new wxMenuItem( Menu, ID_TRACKS_DELETE_DRIVE, _( "Delete from Drive" ), _( "Remove the current selected tracks from drive" ) );
         MenuItem->SetBitmap( guImage( guIMAGE_INDEX_edit_delete ) );
         Menu->Append( MenuItem );
-
-        Menu->AppendSeparator();
-
-        wxMenu *     SubMenu;
-        SubMenu = new wxMenu();
-
-        MenuItem = new wxMenuItem( Menu, ID_TRACKS_BROWSE_GENRE, _( "Genre" ), _( "Selects the genre of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_TRACKS_BROWSE_ARTIST, _( "Artist" ), _( "Selects the artist of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_TRACKS_BROWSE_ALBUMARTIST, _( "Album Artist" ), _( "Selects the album artist of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_TRACKS_BROWSE_COMPOSER, _( "Composer" ), _( "Selects the composer of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_TRACKS_BROWSE_ALBUM, _( "Album" ), _( "Select the album of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        Menu->AppendSubMenu( SubMenu, _( "Select" ), _( "Search in the library" ) );
 
         if( ( ContextMenuFlags & guCONTEXTMENU_COPY_TO ) ||
             ( ContextMenuFlags & guCONTEXTMENU_LINKS ) ||

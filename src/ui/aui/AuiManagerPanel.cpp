@@ -20,8 +20,6 @@
 #include "AuiManagerPanel.h"
 
 #include "AuiDockArt.h"
-#include "AuiNotebook.h"
-#include "EventCommandIds.h"
 #include "MainFrame.h"
 #include "Settings.h"
 #include "Utils.h"
@@ -34,7 +32,7 @@ namespace Guayadeque {
 guAuiManagerPanel::guAuiManagerPanel( wxWindow * parent ) :
     wxPanel( parent, wxID_ANY,  wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL | wxNO_BORDER )
 {
-    m_MenuBar = NULL;
+    m_MenuBar = nullptr;
 
     m_AuiManager.SetManagedWindow( this );
     m_AuiManager.SetArtProvider( new guAuiDockArt() );
@@ -65,7 +63,6 @@ guAuiManagerPanel::guAuiManagerPanel( wxWindow * parent ) :
 guAuiManagerPanel::~guAuiManagerPanel()
 {
     m_AuiManager.Unbind( wxEVT_AUI_PANE_CLOSE, &guAuiManagerPanel::OnPaneClose, this );
-
     m_AuiManager.UnInit();
 }
 
@@ -73,12 +70,12 @@ guAuiManagerPanel::~guAuiManagerPanel()
 void guAuiManagerPanel::ShowPanel( const int panelid, bool show )
 {
     int PanelIndex = m_PanelIds.Index( panelid );
-    if( PanelIndex != wxNOT_FOUND )
+    if ( PanelIndex != wxNOT_FOUND )
     {
         wxString PaneName = m_PanelNames[ PanelIndex ];
 
         wxAuiPaneInfo &PaneInfo = m_AuiManager.GetPane( PaneName );
-        if( PaneInfo.IsOk() )
+        if ( PaneInfo.IsOk() )
         {
             if( show )
                 PaneInfo.Show();
@@ -88,23 +85,21 @@ void guAuiManagerPanel::ShowPanel( const int panelid, bool show )
             m_AuiManager.Update();
         }
 
-        if( show )
+        if ( show )
             m_VisiblePanels |= panelid;
         else
             m_VisiblePanels ^= panelid;
 
-        if( !m_MenuBar )
+        if ( !m_MenuBar )
         {
             guMainFrame * MainFrame = ( guMainFrame * ) guMainFrame::GetMainFrame();
             m_MenuBar = MainFrame->GetMenuBar();
         }
-        if( m_MenuBar )
+        if ( m_MenuBar )
         {
             wxMenuItem * MenuItem = m_MenuBar->FindItem( m_PanelCmdIds[ PanelIndex ] );
-            if( MenuItem )
-            {
+            if ( MenuItem )
                 MenuItem->Check( show );
-            }
         }
 
         guLogMessage( wxT( "Id: %i Pane: %s Show:%i  Flags:%08X" ), panelid, PaneName.c_str(), show, m_VisiblePanels );
@@ -116,7 +111,7 @@ void guAuiManagerPanel::OnPaneClose( wxAuiManagerEvent &event )
 {
     wxAuiPaneInfo * PaneInfo = event.GetPane();
     int PanelIndex = m_PanelNames.Index( PaneInfo->name );
-    if( PanelIndex != wxNOT_FOUND )
+    if ( PanelIndex != wxNOT_FOUND )
     {
         guLogMessage( wxT( "OnPaneClose: %s  %i" ), m_PanelNames[ PanelIndex ].c_str(), m_PanelCmdIds[ PanelIndex ] );
         ShowPanel( m_PanelIds[ PanelIndex ], false );
@@ -129,13 +124,11 @@ void guAuiManagerPanel::OnPaneClose( wxAuiManagerEvent &event )
 void guAuiManagerPanel::LoadPerspective( const wxString &layoutstr, const unsigned int visiblepanels )
 {
     int Count = m_PanelIds.Count();
-    for( int Index = 0; Index < Count; Index++ )
+    for ( int Index = 0; Index < Count; Index++ )
     {
         int PanelId = m_PanelIds[ Index ];
-        if( ( visiblepanels & PanelId ) != ( m_VisiblePanels & PanelId ) )
-        {
+        if ( ( visiblepanels & PanelId ) != ( m_VisiblePanels & PanelId ) )
             ShowPanel( PanelId, ( visiblepanels & PanelId ) );
-        }
     }
 
     m_AuiManager.LoadPerspective( layoutstr, true );
@@ -144,17 +137,18 @@ void guAuiManagerPanel::LoadPerspective( const wxString &layoutstr, const unsign
 // -------------------------------------------------------------------------------- //
 void guAuiManagerPanel::SaveLayout( wxXmlNode * xmlnode, const wxString &name )
 {
-    wxXmlNode * XmlNode = new wxXmlNode( wxXML_ELEMENT_NODE, name );
+    auto * XmlNode = new wxXmlNode( wxXML_ELEMENT_NODE, name );
 
-    wxXmlAttribute * Property = new wxXmlAttribute( wxT( "panels" ), wxString::Format( wxT( "%d" ), VisiblePanels() ),
-               new wxXmlAttribute( wxT( "layout" ), SavePerspective(),
-               NULL ) );
+    wxXmlAttribute * Property = new wxXmlAttribute(
+            wxT( "panels" ),
+            wxString::Format( wxT( "%d" ), VisiblePanels() ),
+            new wxXmlAttribute( wxT( "layout" ), SavePerspective(), NULL ) );
 
     XmlNode->SetAttributes( Property );
 
     wxXmlNode * Columns = new wxXmlNode( wxXML_ELEMENT_NODE, wxT( "columns" ) );
     int Count = GetListViewColumnCount();
-    for( int Index = 0; Index < Count; Index++ )
+    for ( int Index = 0; Index < Count; Index++ )
     {
         int  ColumnPos;
         int  ColumnWidth;
@@ -170,31 +164,28 @@ void guAuiManagerPanel::SaveLayout( wxXmlNode * xmlnode, const wxString &name )
                    new wxXmlAttribute( wxT( "enabled" ), wxString::Format( wxT( "%d" ), ColumnEnabled ),
                    NULL ) ) ) );
         Column->SetAttributes( Property );
-
         Columns->AddChild( Column );
     }
 
     XmlNode->AddChild( Columns );
-
     xmlnode->AddChild( XmlNode );
 }
 
 // -------------------------------------------------------------------------------- //
 void guAuiManagerPanel::LoadLayout( wxXmlNode * xmlnode )
 {
-    wxString Field;
     long VisiblePanels;
-    wxString LayoutStr;
+    wxString Field, LayoutStr;
 
     xmlnode->GetAttribute( wxT( "panels" ), &Field );
     Field.ToLong( &VisiblePanels );
     xmlnode->GetAttribute( wxT( "layout" ), &LayoutStr );
 
     wxXmlNode * Columns = xmlnode->GetChildren();
-    if( Columns && ( Columns->GetName() == wxT( "columns" ) ) )
+    if ( Columns && ( Columns->GetName() == wxT( "columns" ) ) )
     {
         wxXmlNode * Column = Columns->GetChildren();
-        while( Column && ( Column->GetName() == wxT( "column" ) ) )
+        while ( Column && ( Column->GetName() == wxT( "column" ) ) )
         {
             long ColumnId;
             long ColumnPos;
@@ -220,5 +211,3 @@ void guAuiManagerPanel::LoadLayout( wxXmlNode * xmlnode )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

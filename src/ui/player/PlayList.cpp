@@ -1740,7 +1740,7 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
         MenuItem = new wxMenuItem( RatingMenu, ID_PLAYERPANEL_SETRATING_5, wxT( "★★★★★" ), _( "Set the rating to 5" ), wxITEM_NORMAL );
         RatingMenu->Append( MenuItem );
 
-        Menu->AppendSubMenu( RatingMenu, _( "Rating" ), _( "Set the current selected tracks rating" ) );
+        Menu->AppendSubMenu( RatingMenu, _( "Set Rating" ), _( "Set the current selected tracks rating" ) );
         Menu->AppendSeparator();
     }
 
@@ -1749,6 +1749,36 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
                             _( "Search a track in the playlist by name" ) );
     MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_search ) );
     Menu->Append( MenuItem );
+
+    if( SelCount == 1 )
+    {
+        wxMenu *     SubMenu;
+        SubMenu = new wxMenu();
+
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_TITLE, _( "Track" ), _( "Selects the current selected track in the library" ) );
+        SubMenu->Append( MenuItem );
+
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_ARTIST, _( "Artist" ), _( "Selects the artist of the current song" ) );
+        SubMenu->Append( MenuItem );
+
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_ALBUMARTIST, _( "Album Artist" ), _( "Select the album artist of the current song" ) );
+        SubMenu->Append( MenuItem );
+
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_COMPOSER, _( "Composer" ), _( "Select the composer of the current song" ) );
+        SubMenu->Append( MenuItem );
+
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_ALBUM, _( "Album" ), _( "Select the album of the current song" ) );
+        SubMenu->Append( MenuItem );
+
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_YEAR, _( "Year" ), _( "Select the year of the current song" ) );
+        SubMenu->Append( MenuItem );
+
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_GENRE, _( "Genre" ), _( "Select the genre of the current song" ) );
+        SubMenu->Append( MenuItem );
+
+        Menu->AppendSubMenu( SubMenu, _( "Select" ), _( "Search in the library" ) );
+        Menu->AppendSeparator();
+    }
 
     Menu->AppendSeparator();
 
@@ -1809,38 +1839,6 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
                             _( "Remove the selected tracks from drive" ) );
         MenuItem->SetBitmap( guImage( guIMAGE_INDEX_edit_delete ) );
         Menu->Append( MenuItem );
-    }
-
-    Menu->AppendSeparator();
-
-    if( SelCount == 1 )
-    {
-        wxMenu *     SubMenu;
-        SubMenu = new wxMenu();
-
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_TITLE, _( "Track" ), _( "Selects the current selected track in the library" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_ARTIST, _( "Artist" ), _( "Selects the artist of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_ALBUMARTIST, _( "Album Artist" ), _( "Select the album artist of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_COMPOSER, _( "Composer" ), _( "Select the composer of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_ALBUM, _( "Album" ), _( "Select the album of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_YEAR, _( "Year" ), _( "Select the year of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SELECT_GENRE, _( "Genre" ), _( "Select the genre of the current song" ) );
-        SubMenu->Append( MenuItem );
-
-        Menu->AppendSubMenu( SubMenu, _( "Select" ), _( "Search in the library" ) );
-        Menu->AppendSeparator();
     }
 
     m_MainFrame->CreateCopyToMenu( Menu );
