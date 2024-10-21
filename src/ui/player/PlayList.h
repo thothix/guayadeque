@@ -213,6 +213,7 @@ class guPlayerPlayList : public guAuiManagedPanel
     wxBitmapButton *m_PrevButton;
     wxBitmapButton *m_NextButton;
     wxBitmapButton *m_BottomButton;
+    wxBitmapButton *m_ShuffleButton;
     wxBitmapButton *m_RemoveButton;
     wxBitmapButton *m_ClearPlaylistButton;
 
@@ -221,6 +222,7 @@ class guPlayerPlayList : public guAuiManagedPanel
     void OnPrevBtnClick(wxCommandEvent &event);
     void OnNextBtnClick(wxCommandEvent &event);
     void OnBottomBtnClick(wxCommandEvent &event);
+    void OnShuffleBtnClick(wxCommandEvent &event);
     void OnRemoveBtnClick(wxCommandEvent &event);
     void OnClearPlaylistBtnClick(wxCommandEvent &event);
 

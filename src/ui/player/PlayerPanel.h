@@ -228,7 +228,6 @@ class guPlayerPanel : public wxPanel
     //guToggleRoundButton *       m_SmartPlayButton;
     //guToggleRoundButton *       m_RepeatPlayButton;
     guRoundButton *             m_PlayModeButton;
-    guRoundButton *             m_RandomPlayButton;
     //
     guRoundButton *             m_EqualizerButton;
     guRoundButton *             m_VolumeButton;

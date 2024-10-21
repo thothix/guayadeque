@@ -82,6 +82,10 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
 
     BarSizer->Add( 10, 0, 0 );
 
+    m_ShuffleButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_shuffle), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
+    m_ShuffleButton->SetToolTip(_("Randomize the tracks in playlist"));
+    BarSizer->Add(m_ShuffleButton, 0, wxALIGN_LEFT | wxLEFT, 0);
+
     m_RemoveButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_del), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_RemoveButton->SetToolTip(_("Remove the selected tracks from playlist"));
     BarSizer->Add(m_RemoveButton, 0, wxALIGN_LEFT | wxLEFT, 0);
@@ -103,6 +107,7 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
     m_PrevButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnPrevBtnClick, this);
     m_NextButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnNextBtnClick, this);
     m_BottomButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnBottomBtnClick, this);
+    m_ShuffleButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnShuffleBtnClick, this);
     m_RemoveButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnRemoveBtnClick, this);
     m_ClearPlaylistButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnClearPlaylistBtnClick, this);
 }
@@ -160,6 +165,14 @@ void guPlayerPlayList::OnRemoveBtnClick(wxCommandEvent& event)
 void guPlayerPlayList::OnClearPlaylistBtnClick(wxCommandEvent& event)
 {
     m_PlayListCtrl->OnClearClicked(event);
+}
+
+void guPlayerPlayList::OnShuffleBtnClick( wxCommandEvent &event )
+{
+    const guMediaState state = m_PlayListCtrl->m_PlayerPanel->GetState();
+    m_PlayListCtrl->Randomize( state == guMEDIASTATE_PLAYING );
+    wxCommandEvent evt( wxEVT_MENU, ID_PLAYERPANEL_TRACKLISTCHANGED );
+    wxPostEvent( this, evt );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2888,5 +2901,3 @@ void guPlayList::OnSavePlaylistTimer( wxTimerEvent & )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

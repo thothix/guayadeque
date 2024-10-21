@@ -195,6 +195,7 @@ typedef enum {
     guIMAGE_INDEX_go_up,
     guIMAGE_INDEX_go_down,
     guIMAGE_INDEX_go_bottom,
+    guIMAGE_INDEX_tiny_shuffle,
     guIMAGE_INDEX_COUNT
 
 } guIMAGE_INDEX;

@@ -194,6 +194,7 @@ namespace Guayadeque {
 #include "./images/go_up.h"
 #include "./images/go_down.h"
 #include "./images/go_bottom.h"
+#include "./images/tiny_shuffle.h"
 
 // -------------------------------------------------------------------------------- //
 typedef struct {
@@ -375,7 +376,8 @@ guImage_Item guImage_Items[] = {
     GUIMAGE( guImage_go_top,                        wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_go_up,                         wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_go_down,                       wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_go_bottom,                     wxBITMAP_TYPE_PNG )
+    GUIMAGE( guImage_go_bottom,                     wxBITMAP_TYPE_PNG ),
+    GUIMAGE( guImage_tiny_shuffle,                  wxBITMAP_TYPE_PNG )
 };
 
 

@@ -182,11 +182,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     UpdatePlayModeButton();
     PlayerBtnSizer->Add( m_PlayModeButton, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, guPLAYER_ICONS_SEPARATOR );
 
-    //m_RandomPlayButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_player_normal_random ), wxDefaultPosition, wxDefaultSize, 0 );
-    m_RandomPlayButton = new guRoundButton( this, guImage( guIMAGE_INDEX_player_normal_random ), guImage( guIMAGE_INDEX_player_highlight_random ) );
-	m_RandomPlayButton->SetToolTip( _( "Randomize the tracks in playlist" ) );
-	PlayerBtnSizer->Add( m_RandomPlayButton, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, guPLAYER_ICONS_SEPARATOR );
-
     m_ForceGaplessButton = new guRoundButton( this,
                                 guImage( m_ForceGapless ? guIMAGE_INDEX_player_normal_gapless : guIMAGE_INDEX_player_normal_crossfading ),
                                 guImage( m_ForceGapless ? guIMAGE_INDEX_player_highlight_gapless : guIMAGE_INDEX_player_highlight_crossfading ) );
@@ -373,7 +368,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
         m_VolumeBar->Bind( wxEVT_MOUSEWHEEL, &guPlayerPanel::OnVolumeMouseWheel, this );
     }
     //m_SmartPlayButton->Bind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnSmartPlayButtonClick, this );
-    m_RandomPlayButton->Bind( wxEVT_BUTTON, &guPlayerPanel::OnRandomPlayButtonClick, this );
     //m_RepeatPlayButton->Bind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnRepeatPlayButtonClick, this );
     if( m_EqualizerButton != NULL )
     {
@@ -381,8 +375,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
         m_EqualizerButton->Bind( wxEVT_COMMAND_RIGHT_CLICK, &guPlayerPanel::OnEqualizerRightButtonClicked, this );
     }
     m_PlayModeButton->Bind( wxEVT_BUTTON, &guPlayerPanel::OnPlayModeButtonClicked, this );
-
-    Bind( wxEVT_MENU, &guPlayerPanel::OnRandomPlayButtonClick, this, ID_PLAYER_PLAYLIST_RANDOMPLAY );
 
     m_TitleLabel->Bind( wxEVT_LEFT_DCLICK, &guPlayerPanel::OnTitleNameDClicked, this );
 	m_AlbumLabel->Bind( wxEVT_LEFT_DCLICK, &guPlayerPanel::OnAlbumNameDClicked, this );
@@ -502,7 +494,6 @@ guPlayerPanel::~guPlayerPanel()
     if( m_VolumeButton != NULL )
         m_VolumeButton->Unbind( wxEVT_MOUSEWHEEL, &guPlayerPanel::OnVolumeMouseWheel, this );
     //m_SmartPlayButton->Unbind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnSmartPlayButtonClick, this );
-    m_RandomPlayButton->Unbind( wxEVT_BUTTON, &guPlayerPanel::OnRandomPlayButtonClick, this );
     //m_RepeatPlayButton->Unbind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnRepeatPlayButtonClick, this );
     if( m_EqualizerButton != NULL )
     {
@@ -510,8 +501,6 @@ guPlayerPanel::~guPlayerPanel()
         m_EqualizerButton->Unbind( wxEVT_COMMAND_RIGHT_CLICK, &guPlayerPanel::OnEqualizerRightButtonClicked, this );
     }
     m_PlayModeButton->Unbind( wxEVT_BUTTON, &guPlayerPanel::OnPlayModeButtonClicked, this );
-
-    Unbind( wxEVT_MENU, &guPlayerPanel::OnRandomPlayButtonClick, this, ID_PLAYER_PLAYLIST_RANDOMPLAY );
 
     m_TitleLabel->Unbind( wxEVT_LEFT_DCLICK, &guPlayerPanel::OnTitleNameDClicked, this );
     m_AlbumLabel->Unbind( wxEVT_LEFT_DCLICK, &guPlayerPanel::OnAlbumNameDClicked, this );
