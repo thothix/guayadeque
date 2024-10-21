@@ -402,10 +402,10 @@ void guMainFrame::CreateControls(guConfig * Config)
         Perspective += wxT( "name=PlayerFilters;caption=" ) + wxString( _( "Filters" ) );
         Perspective += wxT( ";state=2098172;dir=4;layer=0;row=1;pos=3;prop=44139;bestw=138;besth=63;minw=50;minh=50;maxw=-1;maxh=-1;floatx=81;floaty=863;floatw=146;floath=87|" );
         Perspective += wxT( "name=PlayerPlayList;caption=" ) + wxString( _( "Now Playing" ) );
-        Perspective += wxT( ";state=2099196;dir=4;layer=0;row=1;pos=2;prop=195862;bestw=100;besth=100;minw=100;minh=100;maxw=-1;maxh=-1;floatx=81;floaty=534;floatw=300;floath=265|" );
+        Perspective += wxT( ";state=2099196;dir=4;layer=0;row=1;pos=2;prop=195862;bestw=100;besth=100;minw=100;minh=100;maxw=-1;maxh=-1;floatx=81;floaty=534;floatw=317;floath=696|" );
         Perspective += wxT( "name=PlayerPanel;caption=;state=1020;dir=4;layer=0;row=1;pos=0;prop=122068;bestw=356;besth=177;minw=100;minh=100;maxw=-1;maxh=-1;floatx=83;floaty=746;floatw=364;floath=201|" );
         Perspective += wxT( "name=PlayerSelector;caption=;state=768;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=20;besth=20;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|" );
-        Perspective += wxT( "dock_size(5,0,0)=22|dock_size(4,0,1)=302|" );
+        Perspective += wxT( "dock_size(5,0,0)=22|dock_size(4,0,1)=317|" );
         m_AuiManager.LoadPerspective( Perspective, true );
         //m_AuiManager.Update();
     }
