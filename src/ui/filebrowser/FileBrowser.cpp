@@ -288,14 +288,14 @@ void guFileBrowserDirCtrl::CreateAcceleratorTable( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void AppendFolderCommands( wxMenu * menu )
+void guFileBrowserDirCtrl::AppendFolderCommands( wxMenu * menu )
 {
     wxMenu * SubMenu;
     wxMenuItem * MenuItem;
 
     SubMenu = new wxMenu();
 
-    guConfig * Config = ( guConfig * ) guConfig::Get();
+    auto * Config = ( guConfig * ) guConfig::Get();
     wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
     wxArrayString Names = Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
     int Count = Commands.Count();
@@ -2018,34 +2018,34 @@ void guFileBrowser::OnFolderCommand( wxCommandEvent &event )
     int CommandId = event.GetId();
 
     guConfig * Config = ( guConfig * ) guConfig::Get();
-    if( Config )
+    if (!Config)
+        return;
+
+    wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+
+    CommandId -= ID_COMMANDS_BASE;
+    wxString CurCmd = Commands[ CommandId ];
+    if( CurCmd.Find( guCOMMAND_ALBUMPATH ) != wxNOT_FOUND )
     {
-        wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-
-        CommandId -= ID_COMMANDS_BASE;
-        wxString CurCmd = Commands[ CommandId ];
-        if( CurCmd.Find( guCOMMAND_ALBUMPATH ) != wxNOT_FOUND )
-        {
-            wxString DirPath = m_DirCtrl->GetPath();
-            DirPath.Replace( wxT( " " ), wxT( "\\ " ) );
-            CurCmd.Replace( guCOMMAND_ALBUMPATH, DirPath );
-        }
-
-        if( CurCmd.Find( guCOMMAND_TRACKPATH ) != wxNOT_FOUND )
-        {
-            wxString SongList;
-            wxArrayString Files = m_FilesCtrl->GetAllFiles( true );
-            int Count = Files.Count();
-            for( int Index = 0; Index < Count; Index++ )
-            {
-                SongList += wxT( " \"" ) + Files[ Index ] + wxT( "\"" );
-            }
-            CurCmd.Replace( guCOMMAND_TRACKPATH, SongList.Trim( false ) );
-        }
-
-        //guLogMessage( wxT( "Execute Command '%s'" ), CurCmd.c_str() );
-        guExecute( CurCmd );
+        wxString DirPath = m_DirCtrl->GetPath();
+        DirPath.Replace( wxT( " " ), wxT( "\\ " ) );
+        CurCmd.Replace( guCOMMAND_ALBUMPATH, DirPath );
     }
+
+    if( CurCmd.Find( guCOMMAND_TRACKPATH ) != wxNOT_FOUND )
+    {
+        wxString SongList;
+        wxArrayString Files = m_FilesCtrl->GetAllFiles( true );
+        int Count = Files.Count();
+        for( int Index = 0; Index < Count; Index++ )
+        {
+            SongList += wxT( " \"" ) + Files[ Index ] + wxT( "\"" );
+        }
+        CurCmd.Replace( guCOMMAND_TRACKPATH, SongList.Trim( false ) );
+    }
+
+    //guLogMessage( wxT( "Execute Command '%s'" ), CurCmd.c_str() );
+    guExecute( CurCmd );
 }
 
 // -------------------------------------------------------------------------------- //

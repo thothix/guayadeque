@@ -287,9 +287,7 @@ bool guCopyToThread::TranscodeFile( const guTrack * track, const wxString &targe
                 // TODO : Make a better aproach to be sure its running
                 Sleep( 1000 );
                 while( TranscodeThread->IsTranscoding() )
-                {
                     Sleep( 200 );
-                }
 
                 FileSize = guGetFileSize( OutFile );
                 m_SizeCounter += FileSize;
@@ -345,14 +343,12 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
 
         guTrack * CurTrack = copytoaction.Track( Index );
 
-        //
         m_CurrentFile++;
 
         wxCommandEvent event( wxEVT_MENU, ID_STATUSBAR_GAUGE_SETMAX );
         event.SetInt( m_GaugeId );
         event.SetExtraLong( m_FileCount );
         wxPostEvent( m_MainFrame, event );
-
 
         event.SetId( ID_STATUSBAR_GAUGE_UPDATE );
         event.SetInt( m_GaugeId );
@@ -384,7 +380,6 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
         else
 #endif
         {
-
             FileName = guExpandTrackMacros( FilePattern, CurTrack, m_CurrentFile - 1 );
 
             // TODO : Check target file system and filter the appropiate characters for every file system
@@ -439,9 +434,7 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                     if( FileFormat == copytoaction.Format() )
                     {
                         if( !CurTrack->m_Offset && ( copytoaction.Quality() == guTRANSCODE_QUALITY_KEEP ) )
-                        {
                             ActionIsCopy = true;
-                        }
                         else
                         {
                             int FileBitrate = 0;
@@ -469,19 +462,13 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                             }
 
                             if( CurTrack->m_Offset || ( CurTrack->m_Bitrate > FileBitrate ) )
-                            {
                                 ActionIsCopy = false;
-                            }
                             else
-                            {
                                 ActionIsCopy = true;
-                            }
                         }
                     }
                     else
-                    {
                         ActionIsCopy = false;
-                    }
                 }
                 else
                 {
@@ -515,7 +502,6 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                                     copytoaction.Format( guTRANSCODE_FORMAT_FLAC );
                                     break;
 
-
                                 default :
                                     copytoaction.Format( guTRANSCODE_FORMAT_MP3 );
                             }
@@ -526,9 +512,7 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                         //guLogMessage( wxT( "Its a supported format" ) );
                         // The file is supported and we dont need to trasncode in all cases so copy the file
                         if( MediaViewer->TranscodeScope() != guPORTABLEMEDIA_TRANSCODE_SCOPE_ALWAYS )
-                        {
                             ActionIsCopy = true;
-                        }
                         else
                         {
                             //guLogMessage( wxT( "TranscodeFOrmat: %u      FileFormat: %i" ), m_Device->TranscodeFormat(), FileFormat );
@@ -562,23 +546,15 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                                     }
 
                                     if( CurTrack->m_Bitrate > FileBitrate )
-                                    {
                                         ActionIsCopy = false;
-                                    }
                                     else
-                                    {
                                         ActionIsCopy = true;
-                                    }
                                 }
                                 else
-                                {
                                     ActionIsCopy = true;
-                                }
                             }
                             else
-                            {
                                 ActionIsCopy = false;
-                            }
                         }
                     }
                 }
@@ -591,9 +567,7 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                 m_SizeCounter += CurTrack->m_FileSize;
             }
             else
-            {
                 Result = TranscodeFile( CurTrack, FileName, copytoaction.Format(), copytoaction.Quality() );
-            }
 
             // Add the file to the files to add list so the library update it when this job is done
             m_FilesToAdd.Add( FileName );
@@ -610,13 +584,9 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                     if( !wxFileExists( NewCoverFile ) )
                     {
                         if( !wxCopyFile( CoverPath, NewCoverFile ) )
-                        {
                             guLogMessage( wxT( "Could not copy the cover %s" ), NewCoverFile.c_str() );
-                        }
                         else
-                        {
                             m_CoversToAdd.Add( NewCoverFile );
-                        }
                     }
                 }
                 else
@@ -640,24 +610,19 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                                 {
                                     int DevCoverSize = copytoaction.CoverSize();
                                     if( DevCoverSize && ( ( CoverImage->GetWidth() != DevCoverSize ) || ( CoverImage->GetHeight() != DevCoverSize ) ) )
-                                    {
                                         CoverImage->Rescale( DevCoverSize, DevCoverSize, wxIMAGE_QUALITY_HIGH );
-                                    }
 
                                     bool CoverAdded = false;
                                     if( DevCoverFormats & guPORTABLEMEDIA_COVER_FORMAT_EMBEDDED )
                                     {
                                         if( !guTagSetPicture( FileName, CoverImage ) )
-                                        {
                                             guLogMessage( wxT( "Couldnt set the picture to '%s'" ), FileName.c_str() );
-                                        }
                                     }
 
                                     wxString DevCoverName = copytoaction.CoverName();
                                     if( DevCoverName.IsEmpty() )
-                                    {
                                         DevCoverName = wxT( "cover" );
-                                    }
+
                                     DevCoverName = wxPathOnly( FileName ) + wxT( "/" ) + DevCoverName;
 
                                     if( DevCoverFormats & guPORTABLEMEDIA_COVER_FORMAT_JPEG )
@@ -665,9 +630,7 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                                         if( !wxFileExists( DevCoverName + wxT( ".jpg" ) ) )
                                         {
                                             if( !CoverImage->SaveFile( DevCoverName + wxT( ".jpg" ), wxBITMAP_TYPE_JPEG ) )
-                                            {
                                                 guLogError( wxT( "Could not copy the cover to '%s'" ), DevCoverName.c_str() );
-                                            }
                                             else
                                             {
                                                 m_CoversToAdd.Add( DevCoverName + wxT( ".jpg" ) );
@@ -681,9 +644,7 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                                         if( !wxFileExists( DevCoverName + wxT( ".png" ) ) )
                                         {
                                             if( !CoverImage->SaveFile( DevCoverName + wxT( ".png" ), wxBITMAP_TYPE_PNG ) )
-                                            {
                                                 guLogError( wxT( "Could not copy the cover to '%s'" ), DevCoverName.c_str() );
-                                            }
                                             else if( !CoverAdded )
                                             {
                                                 m_CoversToAdd.Add( DevCoverName + wxT( ".png" ) );
@@ -697,9 +658,7 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                                         if( !wxFileExists( DevCoverName + wxT( ".gif" ) ) )
                                         {
                                             if( !CoverImage->SaveFile( DevCoverName + wxT( ".gif" ), wxBITMAP_TYPE_GIF ) )
-                                            {
                                                 guLogError( wxT( "Could not copy the cover to '%s'" ), DevCoverName.c_str() );
-                                            }
                                             else if( !CoverAdded )
                                             {
                                                 m_CoversToAdd.Add( DevCoverName + wxT( ".gif" ) );
@@ -713,9 +672,7 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                                         if( !wxFileExists( DevCoverName + wxT( ".bmp" ) ) )
                                         {
                                             if( !CoverImage->SaveFile( DevCoverName + wxT( ".bmp" ), wxBITMAP_TYPE_BMP ) )
-                                            {
                                                 guLogError( wxT( "Could not copy the cover to '%s'" ), DevCoverName.c_str() );
-                                            }
                                             else if( !CoverAdded )
                                             {
                                                 m_CoversToAdd.Add( DevCoverName + wxT( ".bmp" ) );
@@ -724,7 +681,6 @@ void guCopyToThread::DoCopyToAction( guCopyToAction &copytoaction )
                                         }
                                     }
                                 }
-
                                 delete CoverImage;
                             }
                         }
@@ -883,7 +839,7 @@ guCopyToThread::ExitCode guCopyToThread::Entry()
                     wxImage IconImg = guImage( guIMAGE_INDEX_guayadeque );
                     NotifySrv->Notify( wxEmptyString, _( "Finished copying files" ), FinishMsg, &IconImg );
                 }
-                //
+
                 TimeCounter = wxNOT_FOUND;
             }
         }
@@ -892,23 +848,19 @@ guCopyToThread::ExitCode guCopyToThread::Entry()
             if( IdleTime == wxNOT_FOUND )
             {
                 IdleTime = wxGetLocalTime();
-
                 m_FileCount = 0;
                 m_CurrentFile = 0;
             }
 
             // we have been waiting in idle for more than 10 seconds now
             if( wxGetLocalTime() - IdleTime > 10 )
-            {
                 break;
-            }
+
             Sleep( 1000 );
         }
     }
 
-    return 0;
+    return nullptr;
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

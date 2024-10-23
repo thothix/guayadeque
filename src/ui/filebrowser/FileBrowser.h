@@ -119,6 +119,7 @@ class guFileBrowserDirCtrl : public wxPanel
 
     void                OnConfigUpdated( wxCommandEvent &event );
     void                CreateAcceleratorTable();
+    static void         AppendFolderCommands( wxMenu * menu );
 
   public :
     guFileBrowserDirCtrl( wxWindow * parent, guMainFrame * mainframe, guDbLibrary * db, const wxString &dirpath );

@@ -131,24 +131,24 @@ static bool seek_timeout( guTranscodeThread * transcodethread )
 // -------------------------------------------------------------------------------- //
 // guTranscodeThread
 // -------------------------------------------------------------------------------- //
-guTranscodeThread::guTranscodeThread( const guTrack * track, const wxChar * target,
-        const int format, const int quality )
+guTranscodeThread::guTranscodeThread(
+        const guTrack * track, const wxChar * target, const int format, const int quality )
 {
     m_Track = track;
     m_Target = wxString( target );
-    m_TempName = wxFileName::CreateTempFileName( wxT( "guayadeque" ) ) + wxT( "." ) + m_Target.AfterLast( '.' );
-    guLogMessage( wxT( "The temporary filename is %s" ), m_TempName.c_str() );
     m_Format = format;
     m_Quality = quality;
+    m_TempName = wxFileName::CreateTempFileName( wxT( "guayadeque" ) ) + wxT( "." ) + m_Target.AfterLast( '.' );
     m_StartPos = track->m_Offset;
     m_Length = track->m_Length;
     m_SeekTimerId = 0;
+
+    guLogMessage( wxT( "The temporary filename is %s" ), m_TempName.c_str() );
     guLogMessage( wxT( "Transcode %i - %i '%s' => '%s'\n:::: %i => %i" ),
                     format, quality, track->m_FileName.c_str(), target, m_StartPos, m_Length );
 
     m_Running = false;
     m_HasError = false;
-
 
     if( m_Format == guTRANSCODE_FORMAT_KEEP )
     {
@@ -446,152 +446,123 @@ bool SetStateAndWait( GstElement * element, GstState state )
 }
 
 // -------------------------------------------------------------------------------- //
-void guTranscodeThread::BuildPipeline( void )
+void guTranscodeThread::BuildPipeline()
 {
-  m_Pipeline = gst_pipeline_new( "guTransPipeline" );
-  if( GST_IS_ELEMENT( m_Pipeline ) )
-  {
     GstElement * src;
-    if( m_Track->m_Type == guTRACK_TYPE_AUDIOCD )
+    GstElement * dec;
+    GstElement * conv;
+    GstElement * enc = nullptr;
+    GstElement * mux = nullptr;
+    GstElement * filesink;
+
+    m_HasError = true;
+    m_Pipeline = gst_pipeline_new( "guTransPipeline" );
+
+    if (!GST_IS_ELEMENT(m_Pipeline))
     {
+        guLogError(wxT("Error creating the transcode pipeline"));
+        return;
+    }
+
+    if (m_Track->m_Type == guTRACK_TYPE_AUDIOCD)
         src = gst_element_make_from_uri( GST_URI_SRC, "cdda://", "guTransSource", NULL );
-    }
     else
-    {
         src = gst_element_factory_make( "giosrc", "guTransSource" );
-    }
-    if( GST_IS_ELEMENT( src ) )
+
+    if (GST_IS_ELEMENT(src))
     {
-      if( m_Track->m_Type != guTRACK_TYPE_AUDIOCD )
-      {
-        wxString Location;
-        wxURI URI( m_Track->m_FileName );
-        if( URI.IsReference() )
+        if ( m_Track->m_Type != guTRACK_TYPE_AUDIOCD )
         {
-            Location = wxT( "file://" ) + m_Track->m_FileName;
-        }
-        else
-        {
-            if( !URI.HasScheme() )
-            {
-                Location = wxT( "http://" ) + m_Track->m_FileName;
-            }
+            wxString Location;
+            wxURI URI( m_Track->m_FileName );
+            if ( URI.IsReference() )
+                Location = wxT( "file://" ) + m_Track->m_FileName;
             else
             {
-              Location = m_Track->m_FileName;
+                if ( !URI.HasScheme() )
+                    Location = wxT( "http://" ) + m_Track->m_FileName;
+                else
+                    Location = m_Track->m_FileName;
             }
+            Location.Replace( " ", "%20", true );
+
+            guLogMessage( wxT( "Transode source location: '%s'" ), Location.c_str() );
+            g_object_set( G_OBJECT( src ), "location", ( const char * ) Location.mb_str( wxConvFile ), NULL );
         }
 
-        Location.Replace( " ", "%20", true );
-
-        guLogMessage( wxT( "Transode source location: '%s'" ), Location.c_str() );
-        g_object_set( G_OBJECT( src ), "location", ( const char * ) Location.mb_str( wxConvFile ), NULL );
-      }
-
-      GstElement * dec;
-      dec = gst_element_factory_make( "decodebin", "guTransDecoder" );
-      if( GST_IS_ELEMENT( dec ) )
-      {
-        GstElement * conv;
-        conv = gst_element_factory_make( "audioconvert", "guTransAudioConv" );
-        if( GST_IS_ELEMENT( conv ) )
+        dec = gst_element_factory_make( "decodebin", "guTransDecoder" );
+        if ( GST_IS_ELEMENT( dec ) )
         {
-          GstElement * enc = NULL;
-          GstElement * mux = NULL;
-
-          if( BuildEncoder( &enc, &mux ) )
-          {
-            GstElement * filesink;
-            filesink = gst_element_factory_make( "filesink", "guTransFileSink" );
-            if( GST_IS_ELEMENT( filesink ) )
+            conv = gst_element_factory_make( "audioconvert", "guTransAudioConv" );
+            if ( GST_IS_ELEMENT( conv ) )
             {
-              g_object_set( filesink, "location", ( const char * ) m_TempName.mb_str( wxConvFile ), NULL );
-
-              if( mux )
-              {
-                gst_bin_add_many( GST_BIN( m_Pipeline ), src, dec, conv, enc, mux, filesink, NULL );
-              }
-              else
-              {
-                gst_bin_add_many( GST_BIN( m_Pipeline ), src, dec, conv, enc, filesink, NULL );
-              }
-
-              g_object_set( m_Pipeline, "async-handling", true, NULL );
-
-              GstBus * bus = gst_pipeline_get_bus( GST_PIPELINE( m_Pipeline ) );
-              gst_bus_add_watch( bus, ( GstBusFunc ) gst_bus_async_callback, this );
-              gst_object_unref( G_OBJECT( bus ) );
-
-              if( gst_element_link( src, dec ) )
-              {
-                g_signal_connect( dec, "pad-added", G_CALLBACK( on_pad_added ), conv );
-
-                if( mux )
+                if ( BuildEncoder( &enc, &mux ) )
                 {
-                    gst_element_link_many( conv, enc, mux, filesink, NULL );
+                    filesink = gst_element_factory_make( "filesink", "guTransFileSink" );
+                    if ( GST_IS_ELEMENT( filesink ) )
+                    {
+                        g_object_set( filesink, "location", ( const char * ) m_TempName.mb_str( wxConvFile ), NULL );
+
+                        if ( mux )
+                            gst_bin_add_many( GST_BIN( m_Pipeline ), src, dec, conv, enc, mux, filesink, NULL );
+                        else
+                            gst_bin_add_many( GST_BIN( m_Pipeline ), src, dec, conv, enc, filesink, NULL );
+
+                        g_object_set( m_Pipeline, "async-handling", true, NULL );
+
+                        GstBus * bus = gst_pipeline_get_bus( GST_PIPELINE( m_Pipeline ) );
+                        gst_bus_add_watch( bus, ( GstBusFunc ) gst_bus_async_callback, this );
+                        gst_object_unref( G_OBJECT( bus ) );
+
+                        if ( gst_element_link( src, dec ) )
+                        {
+                            g_signal_connect( dec, "pad-added", G_CALLBACK( on_pad_added ), conv );
+
+                            if ( mux )
+                                gst_element_link_many( conv, enc, mux, filesink, NULL );
+                            else
+                                gst_element_link_many( conv, enc, filesink, NULL );
+
+                            if ( m_Track->m_Type == guTRACK_TYPE_AUDIOCD )
+                            {
+                                g_object_set( src, "mode", 0, NULL );
+                                g_object_set( src, "track", m_Track->m_Number, NULL );
+                            }
+
+                            SetStateAndWait( m_Pipeline, GST_STATE_READY );
+
+                            m_HasError = false;
+                            return;
+                        }
+                        else
+                            guLogError( wxT( "couldnt link the source and the decoder" ) );
+
+                        gst_object_unref( filesink );
+                    }
+                    else
+                        guLogError( wxT( "Error creating the transcode filesink" ) );
+
+                    gst_object_unref( enc );
+                    if( mux )
+                        gst_object_unref( mux );
                 }
                 else
-                {
-                    gst_element_link_many( conv, enc, filesink, NULL );
-                }
-
-                if( m_Track->m_Type == guTRACK_TYPE_AUDIOCD )
-                {
-                  g_object_set( src, "mode", 0, NULL );
-                  g_object_set( src, "track", m_Track->m_Number, NULL );
-                }
-
-                SetStateAndWait( m_Pipeline, GST_STATE_READY );
-
-                return;
-              }
-              else
-              {
-                  guLogError( wxT( "couldnt link the source and the decoder" ) );
-              }
-
-              gst_object_unref( filesink );
+                    guLogError( wxT( "Error creating the transcode encoder" ) );
+                gst_object_unref( conv );
             }
             else
-            {
-              guLogError( wxT( "Error creating the transcode filesink" ) );
-            }
-            gst_object_unref( enc );
-            if( mux )
-            {
-              gst_object_unref( mux );
-            }
-          }
-          else
-          {
-            guLogError( wxT( "Error creating the transcode encoder" ) );
-          }
-          gst_object_unref( conv );
+                guLogError( wxT( "Error creating the transcode converter" ) );
+            gst_object_unref( dec );
         }
         else
-        {
-          guLogError( wxT( "Error creating the transcode converter" ) );
-        }
-        gst_object_unref( dec );
-      }
-      else
-      {
-        guLogError( wxT( "Error creating the transcode decoder" ) );
-      }
-      gst_object_unref( src );
+            guLogError( wxT( "Error creating the transcode decoder" ) );
+        gst_object_unref( src );
     }
     else
-    {
         guLogError( wxT( "Error creating the transcode source" ) );
-    }
+
     gst_object_unref( m_Pipeline );
-    m_Pipeline = NULL;
-  }
-  else
-  {
-    guLogError( wxT( "Error creating the transcode pipeline" ) );
-  }
-  m_HasError = true;
+    m_Pipeline = nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
