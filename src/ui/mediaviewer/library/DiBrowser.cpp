@@ -153,15 +153,14 @@ guDiBrowser::guDiBrowser(wxWindow *parent, guLibPanel *libpanel, guDbLibrary *db
     // Binds
     m_DirCtrl->Bind(wxEVT_TREE_ITEM_MENU, &guDiBrowser::OnContextMenu, this);
     Bind(guConfigUpdatedEvent, &guDiBrowser::OnConfigUpdated, this, ID_CONFIG_UPDATED);
-
     Bind(wxEVT_MENU, &guDiBrowser::OnFolderPlay, this, ID_FILESYSTEM_FOLDER_PLAY);
     Bind(wxEVT_MENU, &guDiBrowser::OnFolderEnqueue, this, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALL, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ARTIST);
     Bind(wxEVT_MENU, &guDiBrowser::OnFolderCopy, this, ID_FILESYSTEM_FOLDER_COPY);
     Bind(wxEVT_MENU, &guDiBrowser::OnFolderEditTracks, this, ID_FILESYSTEM_FOLDER_EDITTRACKS);
     Bind(wxEVT_MENU, &guDiBrowser::OnFolderSaveToPlayList, this, ID_FILESYSTEM_FOLDER_SAVEPLAYLIST);
     Bind(wxEVT_MENU, &guDiBrowser::OnFolderUpdate, this, ID_FILESYSTEM_FOLDER_UPDATE);
-    m_DirCtrl->Bind( wxEVT_MENU, &guDiBrowser::OnFolderCopyTo, this, ID_COPYTO_BASE, ID_COPYTO_BASE + guCOPYTO_MAXCOUNT );
-    m_DirCtrl->Bind( wxEVT_MENU, &guDiBrowser::OnFolderCommand, this, ID_COMMANDS_BASE, ID_COMMANDS_BASE + guCOMMANDS_MAXCOUNT );
+    Bind( wxEVT_MENU, &guDiBrowser::OnFolderCopyTo, this, ID_COPYTO_BASE, ID_COPYTO_BASE + guCOPYTO_MAXCOUNT );
+    Bind( wxEVT_MENU, &guDiBrowser::OnFolderCommand, this, ID_COMMANDS_BASE, ID_COMMANDS_BASE + guCOMMANDS_MAXCOUNT );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -170,17 +169,16 @@ guDiBrowser::~guDiBrowser()
     auto *Config = (guConfig *) guConfig::Get();
     Config->UnRegisterObject( this );
 
+    m_DirCtrl->Unbind(wxEVT_TREE_ITEM_MENU, &guDiBrowser::OnContextMenu, this );
+    Unbind(guConfigUpdatedEvent, &guDiBrowser::OnConfigUpdated, this, ID_CONFIG_UPDATED );
     Unbind(wxEVT_MENU, &guDiBrowser::OnFolderPlay, this, ID_FILESYSTEM_FOLDER_PLAY);
     Unbind(wxEVT_MENU, &guDiBrowser::OnFolderEnqueue, this, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALL, ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ARTIST);
     Unbind(wxEVT_MENU, &guDiBrowser::OnFolderCopy, this, ID_FILESYSTEM_FOLDER_COPY);
     Unbind(wxEVT_MENU, &guDiBrowser::OnFolderEditTracks, this, ID_FILESYSTEM_FOLDER_EDITTRACKS);
     Unbind(wxEVT_MENU, &guDiBrowser::OnFolderSaveToPlayList, this, ID_FILESYSTEM_FOLDER_SAVEPLAYLIST);
     Unbind(wxEVT_MENU, &guDiBrowser::OnFolderUpdate, this, ID_FILESYSTEM_FOLDER_UPDATE);
-    m_DirCtrl->Unbind( wxEVT_MENU, &guDiBrowser::OnFolderCopyTo, this, ID_COPYTO_BASE, ID_COPYTO_BASE + guCOPYTO_MAXCOUNT );
-    m_DirCtrl->Unbind( wxEVT_MENU, &guDiBrowser::OnFolderCommand, this, ID_COMMANDS_BASE, ID_COMMANDS_BASE + guCOMMANDS_MAXCOUNT );
-
-    m_DirCtrl->Unbind(wxEVT_TREE_ITEM_MENU, &guDiBrowser::OnContextMenu, this );
-    Unbind(guConfigUpdatedEvent, &guDiBrowser::OnConfigUpdated, this, ID_CONFIG_UPDATED );
+    Unbind( wxEVT_MENU, &guDiBrowser::OnFolderCopyTo, this, ID_COPYTO_BASE, ID_COPYTO_BASE + guCOPYTO_MAXCOUNT );
+    Unbind( wxEVT_MENU, &guDiBrowser::OnFolderCommand, this, ID_COMMANDS_BASE, ID_COMMANDS_BASE + guCOMMANDS_MAXCOUNT );
 }
 
 wxString guDiBrowser::DefaultPath(const wxString &path)
@@ -189,6 +187,65 @@ wxString guDiBrowser::DefaultPath(const wxString &path)
     if (!path.IsEmpty())
         m_DirCtrl->SetDefaultPath(path);
     return result;
+}
+
+// -------------------------------------------------------------------------------- //
+void guDiBrowser::CreateAcceleratorTable()
+{
+    wxAcceleratorTable AccelTable;
+    wxArrayInt AliasAccelCmds;
+    wxArrayInt RealAccelCmds;
+
+    AliasAccelCmds.Add( ID_PLAYER_PLAYLIST_SAVE );
+    AliasAccelCmds.Add( ID_PLAYER_PLAYLIST_EDITTRACKS );
+    AliasAccelCmds.Add( ID_TRACKS_PLAY );
+    AliasAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_ALL );
+    AliasAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_TRACK );
+    AliasAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_ALBUM );
+    AliasAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_ARTIST );
+
+    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_SAVEPLAYLIST );
+    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_EDITTRACKS );
+    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_PLAY );
+    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALL );
+    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_TRACK );
+    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALBUM );
+    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ARTIST );
+
+    if (guAccelDoAcceleratorTable(AliasAccelCmds, RealAccelCmds, AccelTable))
+        SetAcceleratorTable(AccelTable);
+}
+
+// -------------------------------------------------------------------------------- //
+void guDiBrowser::AppendFolderCommands( wxMenu * menu )
+{
+    wxMenuItem * MenuItem;
+    wxMenu * SubMenu = new wxMenu();
+
+    guConfig * Config = ( guConfig * ) guConfig::Get();
+    wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+    wxArrayString Names = Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
+
+    int Count = Commands.Count();
+    if( Count )
+    {
+        for( int Index = 0; Index < Count; Index++ )
+        {
+            if( ( Commands[ Index ].Find( guCOMMAND_COVERPATH ) == wxNOT_FOUND ) )
+            {
+                MenuItem = new wxMenuItem( menu, ID_COMMANDS_BASE + Index, _( Names[ Index ] ), _( Commands[ Index ] ) );
+                SubMenu->Append( MenuItem );
+            }
+        }
+
+        SubMenu->AppendSeparator();
+    }
+    else
+    {
+        MenuItem = new wxMenuItem( SubMenu, ID_MENU_PREFERENCES_COMMANDS, _( "Preferences" ), _( "Add commands in preferences" ) );
+        SubMenu->Append( MenuItem );
+    }
+    menu->AppendSubMenu( SubMenu, _( "Commands" ) );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -275,33 +332,6 @@ void guDiBrowser::OnContextMenu(wxTreeEvent &event)
 
     PopupMenu(&Menu, Point);
     event.Skip();
-}
-
-// -------------------------------------------------------------------------------- //
-void guDiBrowser::CreateAcceleratorTable(void )
-{
-    wxAcceleratorTable AccelTable;
-    wxArrayInt AliasAccelCmds;
-    wxArrayInt RealAccelCmds;
-
-    AliasAccelCmds.Add( ID_PLAYER_PLAYLIST_SAVE );
-    AliasAccelCmds.Add( ID_PLAYER_PLAYLIST_EDITTRACKS );
-    AliasAccelCmds.Add( ID_TRACKS_PLAY );
-    AliasAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_ALL );
-    AliasAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_TRACK );
-    AliasAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_ALBUM );
-    AliasAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_ARTIST );
-
-    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_SAVEPLAYLIST );
-    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_EDITTRACKS );
-    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_PLAY );
-    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALL );
-    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_TRACK );
-    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ALBUM );
-    RealAccelCmds.Add( ID_FILESYSTEM_FOLDER_ENQUEUE_AFTER_ARTIST );
-
-    if (guAccelDoAcceleratorTable(AliasAccelCmds, RealAccelCmds, AccelTable))
-        SetAcceleratorTable(AccelTable);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -544,7 +574,7 @@ void guDiBrowser::OnFolderUpdate(wxCommandEvent &event)
 // -------------------------------------------------------------------------------- //
 void guDiBrowser::OnFolderCopyTo( wxCommandEvent &event )
 {
-    guTrackArray * Tracks = new guTrackArray();
+    auto * Tracks = new guTrackArray();
     GetAllSongs( Tracks );
 
     int Index = event.GetId() - ID_COPYTO_BASE;
@@ -566,35 +596,35 @@ void guDiBrowser::OnFolderCommand( wxCommandEvent &event )
 {
     int CommandId = event.GetId();
 
-    guConfig * Config = ( guConfig * ) guConfig::Get();
-    if( Config )
+    auto * Config = ( guConfig * ) guConfig::Get();
+    if (!Config)
+        return;
+
+    wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+
+    CommandId -= ID_COMMANDS_BASE;
+    wxString CurCmd = Commands[ CommandId ];
+    if( CurCmd.Find( guCOMMAND_ALBUMPATH ) != wxNOT_FOUND )
     {
-        wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-
-        CommandId -= ID_COMMANDS_BASE;
-        wxString CurCmd = Commands[ CommandId ];
-        if( CurCmd.Find( guCOMMAND_ALBUMPATH ) != wxNOT_FOUND )
-        {
-            wxString DirPath = m_DirCtrl->GetPath();
-            DirPath.Replace( wxT( " " ), wxT( "\\ " ) );
-            CurCmd.Replace( guCOMMAND_ALBUMPATH, DirPath );
-        }
-
-        if( CurCmd.Find( guCOMMAND_TRACKPATH ) != wxNOT_FOUND )
-        {
-            wxString SongList;
-            wxArrayString Files = GetAllFiles( true );
-            int Count = Files.Count();
-            for( int Index = 0; Index < Count; Index++ )
-            {
-                SongList += wxT( " \"" ) + Files[ Index ] + wxT( "\"" );
-            }
-            CurCmd.Replace( guCOMMAND_TRACKPATH, SongList.Trim( false ) );
-        }
-
-        //guLogMessage( wxT( "Execute Command '%s'" ), CurCmd.c_str() );
-        guExecute( CurCmd );
+        wxString DirPath = m_DirCtrl->GetPath();
+        DirPath.Replace( wxT( " " ), wxT( "\\ " ) );
+        CurCmd.Replace( guCOMMAND_ALBUMPATH, DirPath );
     }
+
+    if( CurCmd.Find( guCOMMAND_TRACKPATH ) != wxNOT_FOUND )
+    {
+        wxString SongList;
+        wxArrayString Files = GetAllFiles( true );
+        int Count = Files.Count();
+        for( int Index = 0; Index < Count; Index++ )
+        {
+            SongList += wxT( " \"" ) + Files[ Index ] + wxT( "\"" );
+        }
+        CurCmd.Replace( guCOMMAND_TRACKPATH, SongList.Trim( false ) );
+    }
+
+    //guLogMessage( wxT( "Execute Command '%s'" ), CurCmd.c_str() );
+    guExecute( CurCmd );
 }
 
 // -------------------------------------------------------------------------------- //

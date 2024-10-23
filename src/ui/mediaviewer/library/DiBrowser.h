@@ -89,6 +89,7 @@ protected :
     void                    OnContextMenu(wxTreeEvent &event);
     void                    OnConfigUpdated(wxCommandEvent &event);
     void                    CreateAcceleratorTable();
+    static void             AppendFolderCommands( wxMenu * menu );
 
     virtual void            GetItemsList();
 
