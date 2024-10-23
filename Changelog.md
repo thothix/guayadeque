@@ -4,7 +4,7 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.6.0 (2024-10-xx)
+0.6.0 Beta 6 (2024-10-22)
 ------------------
 
 ### Features

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 11:17-0300\n"
+"POT-Creation-Date: 2024-10-22 21:20-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,12 +49,12 @@ msgid "Edit Labels"
 msgstr ""
 
 #: misc/Accelerators.cpp:115 ui/filebrowser/FileBrowser.cpp:367
-#: ui/filebrowser/FileBrowser.cpp:997 ui/mediaviewer/library/DiBrowser.cpp:243
+#: ui/filebrowser/FileBrowser.cpp:997 ui/mediaviewer/library/DiBrowser.cpp:300
 msgid "Edit Tracks"
 msgstr ""
 
 #: misc/Accelerators.cpp:116 ui/filebrowser/FileBrowser.cpp:338
-#: ui/filebrowser/FileBrowser.cpp:961 ui/mediaviewer/library/DiBrowser.cpp:209
+#: ui/filebrowser/FileBrowser.cpp:961 ui/mediaviewer/library/DiBrowser.cpp:266
 #: ui/mediaviewer/library/YeListBox.cpp:111
 #: ui/mediaviewer/library/CoListBox.cpp:111
 #: ui/mediaviewer/library/ArListBox.cpp:155
@@ -105,7 +105,7 @@ msgstr ""
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:332
 #: ui/filebrowser/FileBrowser.cpp:955 ui/taskbar/TaskBar.cpp:114
-#: ui/MainFrame.cpp:1456 ui/mediaviewer/library/DiBrowser.cpp:203
+#: ui/MainFrame.cpp:1456 ui/mediaviewer/library/DiBrowser.cpp:260
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
 #: ui/mediaviewer/library/ArListBox.cpp:148
@@ -143,7 +143,8 @@ msgstr ""
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:317
 #: ui/filebrowser/FileBrowser.cpp:940 ui/MainFrame.cpp:1414
-#: ui/MainFrame.cpp:4240 ui/mediaviewer/library/ArListBox.cpp:132
+#: ui/MainFrame.cpp:4240 ui/mediaviewer/library/DiBrowser.cpp:245
+#: ui/mediaviewer/library/ArListBox.cpp:132
 #: ui/mediaviewer/library/AAListBox.cpp:129
 #: ui/mediaviewer/library/SoListBox.cpp:455
 #: ui/mediaviewer/library/AlListBox.cpp:247
@@ -185,7 +186,7 @@ msgid "Save Layout"
 msgstr ""
 
 #: misc/Accelerators.cpp:142 ui/filebrowser/FileBrowser.cpp:374
-#: ui/filebrowser/FileBrowser.cpp:1005 ui/mediaviewer/library/DiBrowser.cpp:251
+#: ui/filebrowser/FileBrowser.cpp:1005 ui/mediaviewer/library/DiBrowser.cpp:308
 #: ui/mediaviewer/library/YeListBox.cpp:158
 #: ui/mediaviewer/library/CoListBox.cpp:158
 #: ui/mediaviewer/library/ArListBox.cpp:208
@@ -300,7 +301,7 @@ msgstr ""
 #: ui/locationpanel/LocationPanel.cpp:371
 #: ui/locationpanel/LocationPanel.cpp:511 ui/filebrowser/FileBrowser.cpp:405
 #: ui/jamendo/Jamendo.cpp:1114 ui/MainFrame.cpp:991 ui/MainFrame.cpp:1029
-#: ui/MainFrame.cpp:1265 ui/mediaviewer/library/DiBrowser.cpp:266
+#: ui/MainFrame.cpp:1265 ui/mediaviewer/library/DiBrowser.cpp:323
 #: ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1610
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
@@ -1347,6 +1348,7 @@ msgid "See system files"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:317 ui/filebrowser/FileBrowser.cpp:940
+#: ui/mediaviewer/library/DiBrowser.cpp:245
 #: ui/mediaviewer/library/ArListBox.cpp:132
 #: ui/mediaviewer/library/AAListBox.cpp:129
 #: ui/mediaviewer/library/SoListBox.cpp:455
@@ -1356,6 +1358,7 @@ msgid "Add commands in preferences"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:320 ui/filebrowser/FileBrowser.cpp:943
+#: ui/mediaviewer/library/DiBrowser.cpp:248
 #: ui/mediaviewer/library/ArListBox.cpp:135
 #: ui/mediaviewer/library/AAListBox.cpp:132
 #: ui/mediaviewer/library/SoListBox.cpp:458
@@ -1365,16 +1368,16 @@ msgstr ""
 msgid "Commands"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:333 ui/mediaviewer/library/DiBrowser.cpp:204
+#: ui/filebrowser/FileBrowser.cpp:333 ui/mediaviewer/library/DiBrowser.cpp:261
 msgid "Play the selected folder"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:339 ui/mediaviewer/library/DiBrowser.cpp:210
+#: ui/filebrowser/FileBrowser.cpp:339 ui/mediaviewer/library/DiBrowser.cpp:267
 msgid "Add the selected folder to playlist"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:346 ui/filebrowser/FileBrowser.cpp:969
-#: ui/mediaviewer/library/DiBrowser.cpp:218
+#: ui/mediaviewer/library/DiBrowser.cpp:275
 #: ui/mediaviewer/library/YeListBox.cpp:120
 #: ui/mediaviewer/library/CoListBox.cpp:120
 #: ui/mediaviewer/library/ArListBox.cpp:164
@@ -1399,7 +1402,7 @@ msgid "Current Track"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:347 ui/filebrowser/FileBrowser.cpp:970
-#: ui/mediaviewer/library/DiBrowser.cpp:220
+#: ui/mediaviewer/library/DiBrowser.cpp:277
 #: ui/mediaviewer/library/YeListBox.cpp:121
 #: ui/mediaviewer/library/ArListBox.cpp:165
 #: ui/mediaviewer/library/TaListBox.cpp:141
@@ -1422,7 +1425,7 @@ msgid "Add current selected tracks to playlist after the current track"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:352 ui/filebrowser/FileBrowser.cpp:976
-#: ui/mediaviewer/library/DiBrowser.cpp:225
+#: ui/mediaviewer/library/DiBrowser.cpp:282
 #: ui/mediaviewer/library/YeListBox.cpp:127
 #: ui/mediaviewer/library/CoListBox.cpp:127
 #: ui/mediaviewer/library/ArListBox.cpp:171
@@ -1447,7 +1450,7 @@ msgid "Current Album"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:353 ui/filebrowser/FileBrowser.cpp:977
-#: ui/mediaviewer/library/DiBrowser.cpp:227
+#: ui/mediaviewer/library/DiBrowser.cpp:284
 #: ui/mediaviewer/library/YeListBox.cpp:128
 #: ui/mediaviewer/library/ArListBox.cpp:172
 #: ui/mediaviewer/library/TaListBox.cpp:148
@@ -1470,7 +1473,7 @@ msgid "Add current selected tracks to playlist after the current album"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:983
-#: ui/mediaviewer/library/DiBrowser.cpp:232
+#: ui/mediaviewer/library/DiBrowser.cpp:289
 #: ui/mediaviewer/library/YeListBox.cpp:134
 #: ui/mediaviewer/library/CoListBox.cpp:134
 #: ui/mediaviewer/library/ArListBox.cpp:178
@@ -1495,7 +1498,7 @@ msgid "Current Artist"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:984
-#: ui/mediaviewer/library/DiBrowser.cpp:234
+#: ui/mediaviewer/library/DiBrowser.cpp:291
 #: ui/mediaviewer/library/YeListBox.cpp:135
 #: ui/mediaviewer/library/ArListBox.cpp:179
 #: ui/mediaviewer/library/TaListBox.cpp:155
@@ -1518,7 +1521,7 @@ msgid "Add current selected tracks to playlist after the current artist"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:363 ui/filebrowser/FileBrowser.cpp:989
-#: ui/mediaviewer/library/DiBrowser.cpp:238
+#: ui/mediaviewer/library/DiBrowser.cpp:295
 #: ui/mediaviewer/library/YeListBox.cpp:140
 #: ui/mediaviewer/library/CoListBox.cpp:140
 #: ui/mediaviewer/library/ArListBox.cpp:184
@@ -1542,21 +1545,21 @@ msgstr ""
 msgid "Enqueue After"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:368 ui/mediaviewer/library/DiBrowser.cpp:245
+#: ui/filebrowser/FileBrowser.cpp:368 ui/mediaviewer/library/DiBrowser.cpp:302
 msgid "Edit the tracks in the selected folder"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:375 ui/mediaviewer/library/DiBrowser.cpp:253
+#: ui/filebrowser/FileBrowser.cpp:375 ui/mediaviewer/library/DiBrowser.cpp:310
 msgid "Add the tracks in the selected folder to a playlist"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:381 ui/filebrowser/FileBrowser.cpp:1013
-#: ui/mediaviewer/library/DiBrowser.cpp:259
+#: ui/mediaviewer/library/DiBrowser.cpp:316
 msgid "Copy"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:382 ui/filebrowser/FileBrowser.cpp:1013
-#: ui/mediaviewer/library/DiBrowser.cpp:260
+#: ui/mediaviewer/library/DiBrowser.cpp:317
 msgid "Copy the selected folder to clipboard"
 msgstr ""
 
@@ -1564,7 +1567,7 @@ msgstr ""
 msgid "Paste to the selected folder"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:406 ui/mediaviewer/library/DiBrowser.cpp:267
+#: ui/filebrowser/FileBrowser.cpp:406 ui/mediaviewer/library/DiBrowser.cpp:324
 msgid "Update the selected folder"
 msgstr ""
 
@@ -1651,7 +1654,7 @@ msgid "Delete the selected files"
 msgstr ""
 
 #: ui/filebrowser/FileBrowser.cpp:1746 ui/filebrowser/FileBrowser.cpp:1878
-#: ui/mediaviewer/library/DiBrowser.cpp:514
+#: ui/mediaviewer/library/DiBrowser.cpp:544
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1441
@@ -4899,13 +4902,13 @@ msgstr ""
 msgid "Good"
 msgstr ""
 
-#: copyto/CopyTo.cpp:879
+#: copyto/CopyTo.cpp:835
 #, c-format
 msgid ""
 "Copied %u files (%s)\n"
 "in %s seconds"
 msgstr ""
 
-#: copyto/CopyTo.cpp:884
+#: copyto/CopyTo.cpp:840
 msgid "Finished copying files"
 msgstr ""
