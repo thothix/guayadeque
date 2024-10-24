@@ -56,7 +56,7 @@ guSplashFrame::guSplashFrame( wxWindow * parent, int timeout ) :
 
     MainSizer->Add( 0, 0, 1, wxEXPAND, 5 );
 
-    m_Email = new wxHyperlinkCtrl( this, wxID_ANY, guSPLASH_NAME wxT( " " ) guSPLASH_EMAIL, wxT( "mailto:" ) guSPLASH_EMAIL, wxDefaultPosition, wxDefaultSize, wxHL_ALIGN_RIGHT );
+    m_Email = new wxHyperlinkCtrl( this, wxID_ANY, guSPLASH_NAME wxT( " <" ) guSPLASH_EMAIL wxT( ">" ), wxT( "mailto:" ) guSPLASH_EMAIL, wxDefaultPosition, wxDefaultSize, wxHL_ALIGN_RIGHT );
 	m_Email->SetHoverColour( FontColor );
 	m_Email->SetNormalColour( FontColor );
 	m_Email->SetVisitedColour( FontColor );
@@ -64,7 +64,7 @@ guSplashFrame::guSplashFrame( wxWindow * parent, int timeout ) :
     m_Email->SetCanFocus( false );
     MainSizer->Add( m_Email, 0, wxALIGN_RIGHT|wxRIGHT|wxLEFT, 5 );
 
-    m_Thanks = new wxHyperlinkCtrl( this, wxID_ANY, guSPLASH_THANKS wxT( "\n" ) guSPLASH_THANKS_EMAIL, wxT( "mailto:" ) guSPLASH_THANKS_EMAIL, wxDefaultPosition, wxDefaultSize, wxHL_ALIGN_RIGHT );
+    m_Thanks = new wxHyperlinkCtrl( this, wxID_ANY, guSPLASH_THANKS wxT( "\n<" ) guSPLASH_THANKS_EMAIL wxT( ">" ), wxT( "mailto:" ) guSPLASH_THANKS_EMAIL, wxDefaultPosition, wxDefaultSize, wxHL_ALIGN_RIGHT );
     m_Thanks->SetHoverColour( FontColor );
     m_Thanks->SetNormalColour( FontColor );
     m_Thanks->SetVisitedColour( FontColor );
