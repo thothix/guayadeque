@@ -78,7 +78,7 @@ sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlit
 - `libgpod-dev`: Offers comprehensive support for managing and interacting with iPod devices.
 - `gvfs`: Allows Guayadeque to access and manage files through GVFS (GNOME Virtual File System), which is useful for handling remote or virtual file systems.
 
-##### Ubuntu, Linux Mint, Debian 12
+##### Ubuntu, Linux Mint, Debian
 
 ```bash
 sudo apt install libgpod-dev gstreamer1.0-libav gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly

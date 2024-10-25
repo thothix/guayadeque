@@ -4,47 +4,57 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.6.0 Beta 6 (2024-10-22)
+0.6.0 (2024-10-25)
 ------------------
 
 ### Features
-  * Added a new Directory Panel in the Collections/Library. 
-    - Now it's possible to navigate throughout the collection's directories in a new panel while filtering the
-    corresponding Genres, Artists, Albums, Songs and so on
-    - The panel can be enabled/disabled in Sources -> "Collection Name" -> Library -> Directories menu item
-  * Added option in Preferences -> General to hide the player album cover. It's useful if you already have
-    the cover panel visible and make more room to the player information
+  * Added a new Directory Panel in the Collections/Library 
+    - Now it's possible to navigate throughout the collection's directories tree
+      while filtering the corresponding Genres, Artists, Albums, Songs and so on
+    - It also restricts the search to the selected directory meanwhile it updates
+      the search if the directory is changed
+    - The panel can be shown/hidden in Sources -> "Collection Name" -> Library ->
+      Directories menu item
+  * Added option in Preferences -> General to hide the player album cover. It's
+    useful if you already have the cover panel visible and make more room to the
+    player information
 
 ### Enhancements
-  * Added collate accents on media search
+  * Added collate accents on media search.
+    The search function make use of Unicode Collation to match accented characters
   * Preload the current track in the player at startup and some other situations
-  * Added CXX11 random number generator support and set it as default
-  * Moved the player randomize button to the playlist toolbar
-    - The randomize action shuffles the playlist songs (it doesn't play songs in a random way) so it belongs to the playlist.
-    As a result we have a cleaner player with fewer buttons
+  * Added CXX11 random number generator support and set it as default.
+    There's a new build option CXX11_RNG for srand() compatibility but it'll be 
+    removed in the future.
+  * Moved the player randomize button to the playlist toolbar and replaced the
+    icons by a new one.
+    - The randomize action shuffles the playlist songs (it doesn't play songs in
+      a random way) so it belongs to the playlist. As a result we have a cleaner
+      player with fewer buttons
   * File Browser menu entry moved from "Sources" to "View"
   * Some small context menus refactoring
-
-### Removed
-  * Player cover zoom doesn't show the CD frame anymore. CD frame is used now only in the cover editor.
-    The Preferences -> General option "Show CD cover frame in the player" was renamed to "Show CD cover frame in the cover editor"
-
-### Other
   * Updated French, Portuguese and Brazilian Portuguese translations
   * General code cleanup and small refactorings
+
+### Removed
+  * Player cover zoom doesn't show the CD frame anymore. CD frame is used now
+    only in the cover editor.
+    The Preferences -> General option "Show CD cover frame in the player" was
+    renamed to "Show CD cover frame in the cover editor"
 
 0.5.3 (2024-10-02)
 ------------------
 
 ### Enhancements
   * The playlist isn't cleared anymore if the stop button is clicked twice.  
-    If we want to clear the playlist, we have the Clear Playlist (menu and playlist toolbar)
-  * Splitted README installation instructions to INSTALL 
+    If we want to clear the playlist, we have the Clear Playlist option
+    (menu and playlist toolbar)
+  * Splitted README installation instructions to INSTALL
   * General code cleanup and small refactorings
 
 ### Bugfixes
-  * Fixed the display of several icons that were not shown (Source panel, Radio panel->Genres,
-    File Browser->Directories, Library->Treeview/Playlists)
+  * Fixed the display of several icons that were not shown (Source panel,
+    Radio panel->Genres, File Browser->Directories, Library->Treeview/Playlists)
 
 0.5.2 (2024-09-28)
 ------------------
@@ -64,7 +74,8 @@ Changelog
 
 ### Enhancements
   * Updated playlist toolbar icons
-  * Changed library scanning to write partially scanned tracks in the library to speed up following rescans
+  * Changed library scanning to write partially scanned tracks in the library to
+    speed up following rescans
   * Changed the default lyrics from file/to file to include the album name in the path
 
 ### Bugfixes
@@ -98,20 +109,23 @@ Changelog
 -------------------------
 
 ### Features
-  * Added a toolbar in the playlist with actions to manage it (reorder and remove tracks, clear the playlist)
+  * Added a toolbar in the playlist with actions to manage it (reorder and remove
+    tracks, clear the playlist)
 
 ### Enhancements
   * Updated some context menu icons in actions related to the playlist
   * Lyrics configuration changes:
-    - Removed hardcoded lyrics path configuration. The lyrics file paths are already defined
-      in the lyrics_source configuration
-    - Changed the lyrics "From File" and "To File" path in the default lyrics_source configuration.
-      This impact only new installations (the directory now is called 'Lyrics' by default)
+    - Removed hardcoded lyrics path configuration. The lyrics file paths are already
+      defined in the lyrics_source configuration
+    - Changed the lyrics "From File" and "To File" path in the default lyrics_source
+      configuration. This impact only new installations (the directory now is
+      called 'Lyrics' by default)
   * General code cleanup and small refactorings
 
 ### Bugfixes
-  * Fixed inconsistency with the right click in the playlist. It doesn't unselect the current selection anymore.
-    This turned impossible to apply any action in the selection through the context menu
+  * Fixed inconsistency with the right click in the playlist. It doesn't unselect
+    the current selection anymore. This turned impossible to apply any action in
+    the selection through the context menu
 
 0.5.0 Beta 3 (2024-09-07)
 -------------------------
@@ -123,7 +137,8 @@ Changelog
   * General code cleanup and small refactorings
 
 ### Bugfixes
-  * Fixed bug that crashed Guayadeque when clicking the cover panel to open the fullscreen cover window
+  * Fixed bug that crashed Guayadeque when clicking the cover panel to open the
+    fullscreen cover window
 
 0.5.0 Beta 2 (2024-09-05)
 -------------------------
@@ -135,20 +150,24 @@ Changelog
   * Added installation instructions for Arch Linux and optional dependencies
   * Improved LastFM Panel functionality
     - Enhanced artist bio section to support both light and dark themes
-    - Adjusted layout to prevent scrollbar overlap by repositioning controls on the right side of the panel.
+    - Adjusted layout to prevent scrollbar overlap by repositioning controls on
+      the right side of the panel.
     - Eliminated Events section due to removal of data from the LastFM API
     - Updated default cover art across all sections
-    - Adjusted layout to allow for longer text in Top Albums, Top Tracks, Similar Artists, and Similar Tracks
-    - Fixed a bug causing exponential increase of '&' symbol for artists with '&' in their name, potentially
-      leading to system crashes
+    - Adjusted layout to allow for longer text in Top Albums, Top Tracks, Similar
+      Artists, and Similar Tracks
+    - Fixed a bug causing exponential increase of '&' symbol for artists with '&'
+      in their name, potentially leading to system crashes
   * Updated rating system icons
-    - Changed color of rating stars from black/dark gray to yellow/light gray for better visibility
+    - Changed color of rating stars from black/dark gray to yellow/light gray 
+      for better visibility
     - Added black stroke to yellow stars for improved contrast on light themes
   * Removed all compiler warnings
   * General code cleanup and small refactorings
 
 ### Bugfixes
-  * Fixed bug that crashed Guayadeque when scanning AAC files tags (AAC files does not support tags right now)
+  * Fixed bug that crashed Guayadeque when scanning AAC files tags (AAC files
+    does not support tags right now)
 
 0.5.0 Beta 1 (2023-11-23)
 -------------------------
@@ -168,7 +187,8 @@ Changelog
 0.4.7 (2023-02-24)
 ------------------
 
-  * Added to CoverEditor the option to select a cover from a file and also to download it from an url
+  * Added to CoverEditor the option to select a cover from a file and also to 
+    download it from an url
   * Enable last.fm cover download
   * Updated lyric sources
   * Better gstreamer integration (formats support, audio pipeline reworked)
@@ -375,9 +395,8 @@ I would like to thank everyone who participated in the Icon development poll
 at OMG! UK.  Every icon and every artist was appreciated and the resulting
 artwork and design was fantastic.  The 1800 votes cast was a surprise, but
 shows how effective a good blog can be. Mrmotinjo (Stefan Bogdanovic
-http://evilsun.carbonmade.com ) won with his icon
-creation and will forever be linked to Guayadeque and for this we are
-grateful and humbled.
+http://evilsun.carbonmade.com ) won with his icon creation and will forever be
+linked to Guayadeque and for this we are grateful and humbled.
 
   * Tracks changes propagates thought the playlist, library, current track, etc
   * The player slider handles wheel events
