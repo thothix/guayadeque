@@ -3169,7 +3169,7 @@ msgid "Restore position for tracks longer than"
 msgstr "เล่นต่อจากตำแหน่งที่เล่นค้างไว้ถ้าเพลงนั้นยาวกว่า"
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "เวลาอย่างต่ำในการจำตำแหน่งที่เล่นค้างไว้ (นาที)"
 
 #: Preferences.cpp:635

@@ -3170,7 +3170,7 @@ msgid "Restore position for tracks longer than"
 msgstr "Povrati poziciju za numere duže od"
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "postavi minimalnu dužinu u minutima za čuvanje pozicije numere"
 
 #: Preferences.cpp:635

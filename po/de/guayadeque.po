@@ -3173,7 +3173,7 @@ msgid "Restore position for tracks longer than"
 msgstr "Letzte Wiedergabeposition merken, wenn Titel länger ist als "
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "Minimaldauer in Minuten festlegen, um Wiedergabeposition eines Tracks zu merken"
 
 #: Preferences.cpp:635

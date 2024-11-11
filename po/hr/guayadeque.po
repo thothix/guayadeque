@@ -3170,7 +3170,7 @@ msgid "Restore position for tracks longer than"
 msgstr "Sačuvaj poziciju za pjesme duže od "
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "Postavi najkraće trajanje u minutama za spremanje pozicije u pjesmi"
 
 #: Preferences.cpp:635

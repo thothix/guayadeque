@@ -3172,7 +3172,7 @@ msgid "Restore position for tracks longer than"
 msgstr "これ以上長いと再生位置を記憶する"
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "再生位置を記憶する最小の秒数をセット"
 
 #: Preferences.cpp:635

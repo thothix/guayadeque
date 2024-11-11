@@ -3171,7 +3171,7 @@ msgid "Restore position for tracks longer than"
 msgstr "Recupera la posició per a pistes més llargues de"
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "definiu la durada mínima en minuts per desar la posició de la pista"
 
 #: Preferences.cpp:635
