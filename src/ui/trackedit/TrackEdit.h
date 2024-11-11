@@ -34,17 +34,23 @@
 
 namespace Guayadeque {
 
+#define guTRACKEDIT_TIMER_SELECTION_ID        10
+#define guTRACKEDIT_TIMER_SELECTION_TIME      50
+#define guTRACKEDIT_TIMER_TEXTCHANGED_TIME    500
+#define guTRACKEDIT_TIMER_ARTIST_ID           11
+#define guTRACKEDIT_TIMER_ALBUMARTIST_ID      12
+#define guTRACKEDIT_TIMER_ALBUM_ID            13
+#define guTRACKEDIT_TIMER_COMPOSER_ID         14
+#define guTRACKEDIT_TIMER_GENRE_ID            15
+
 WX_DEFINE_ARRAY_PTR( wxImage *, guImagePtrArray );
 
 extern const wxEventType guTrackEditEvent;
 
 class guTrackEditor;
-
-// -------------------------------------------------------------------------------- //
-void guImagePtrArrayClean( guImagePtrArray * images );
-
-// -------------------------------------------------------------------------------- //
 class guTrackEditorGetComboDataThread;
+
+void guImagePtrArrayClean( guImagePtrArray * images );
 
 // -------------------------------------------------------------------------------- //
 // Class guTrackEditor

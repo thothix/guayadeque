@@ -33,15 +33,6 @@
 
 namespace Guayadeque {
 
-#define guTRACKEDIT_TIMER_SELECTION_ID        10
-#define guTRACKEDIT_TIMER_SELECTION_TIME      50
-#define guTRACKEDIT_TIMER_TEXTCHANGED_TIME    500
-#define guTRACKEDIT_TIMER_ARTIST_ID           11
-#define guTRACKEDIT_TIMER_ALBUMARTIST_ID      12
-#define guTRACKEDIT_TIMER_ALBUM_ID            13
-#define guTRACKEDIT_TIMER_COMPOSER_ID         14
-#define guTRACKEDIT_TIMER_GENRE_ID            15
-
 const wxEventType guTrackEditEvent = wxNewEventType();
 
 // -------------------------------------------------------------------------------- //
@@ -55,7 +46,7 @@ void guImagePtrArrayClean( guImagePtrArray * images )
             if( ( * images )[ Index ] )
             {
                 delete ( * images )[ Index ];
-                ( * images )[ Index ] = NULL;
+                ( * images )[ Index ] = nullptr;
             }
         }
     }
@@ -85,9 +76,9 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     wxStaticText *      MBAlbumStaticText;
     wxStaticLine *      MBrainzStaticLine;
 
-    m_LyricSearchEngine = NULL;
-    m_LyricSearchContext = NULL;
-    m_GetComboDataThread = NULL;
+    m_LyricSearchEngine = nullptr;
+    m_LyricSearchContext = nullptr;
+    m_GetComboDataThread = nullptr;
 
     guConfig * Config = ( guConfig * ) guConfig::Get();
     wxPoint WindowPos;
@@ -153,6 +144,19 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     DataFlexSizer->SetFlexibleDirection( wxBOTH );
     DataFlexSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
+    // Title
+    m_TiCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+    m_TiCopyButton->SetToolTip( _( "Copy the title to all the tracks you are editing" ) );
+    DataFlexSizer->Add( m_TiCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
+
+    TiStaticText = new wxStaticText( DetailPanel, wxID_ANY, _( "Title:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    TiStaticText->Wrap( -1 );
+    DataFlexSizer->Add( TiStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxTOP|wxRIGHT, 5 );
+
+    m_TitleTextCtrl = new wxTextCtrl( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+    DataFlexSizer->Add( m_TitleTextCtrl, 0, wxEXPAND|wxTOP|wxRIGHT, 5 );
+
+    // Artist
     m_ArCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_ArCopyButton->SetToolTip( _( "Copy the artist name to all the tracks you are editing" ) );
     DataFlexSizer->Add( m_ArCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -165,6 +169,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     m_ArtistComboBox = new wxComboBox( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, DummyArray, wxCB_DROPDOWN );
     DataFlexSizer->Add( m_ArtistComboBox, 1, wxEXPAND|wxTOP|wxRIGHT, 5 );
 
+    // Album Artist
     m_AACopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_AACopyButton->SetToolTip( _( "Copy the album artist name to all the tracks you are editing" ) );
     DataFlexSizer->Add( m_AACopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -177,6 +182,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     m_AlbumArtistComboBox = new wxComboBox( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, DummyArray, wxCB_DROPDOWN );
     DataFlexSizer->Add( m_AlbumArtistComboBox, 1, wxEXPAND|wxTOP|wxRIGHT, 5 );
 
+    // Album
     m_AlCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_AlCopyButton->SetToolTip( _( "Copy the album name to all the tracks you are editing" ) );
     DataFlexSizer->Add( m_AlCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -188,17 +194,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     m_AlbumComboBox = new wxComboBox( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, DummyArray, wxCB_DROPDOWN );
     DataFlexSizer->Add( m_AlbumComboBox, 1, wxEXPAND|wxTOP|wxRIGHT, 5 );
 
-    m_TiCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-    m_TiCopyButton->SetToolTip( _( "Copy the title to all the tracks you are editing" ) );
-    DataFlexSizer->Add( m_TiCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
-
-    TiStaticText = new wxStaticText( DetailPanel, wxID_ANY, _( "Title:" ), wxDefaultPosition, wxDefaultSize, 0 );
-    TiStaticText->Wrap( -1 );
-    DataFlexSizer->Add( TiStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxTOP|wxRIGHT, 5 );
-
-    m_TitleTextCtrl = new wxTextCtrl( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-    DataFlexSizer->Add( m_TitleTextCtrl, 0, wxEXPAND|wxTOP|wxRIGHT, 5 );
-
+    // Compositor
     m_CoCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_CoCopyButton->SetToolTip( _( "Copy the composer to all the tracks you are editing" ) );
     DataFlexSizer->Add( m_CoCopyButton, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -211,6 +207,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     m_CompComboBox = new wxComboBox( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, DummyArray, wxCB_DROPDOWN );
     DataFlexSizer->Add( m_CompComboBox, 1, wxEXPAND|wxTOP|wxRIGHT, 5 );
 
+    // Comment
     m_CommentCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_CommentCopyButton->SetToolTip( _( "Copy the comment to all the tracks you are editing" ) );
     DataFlexSizer->Add( m_CommentCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -223,7 +220,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     m_CommentText = new wxTextCtrl( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( -1, 54 ), wxTE_MULTILINE );
     DataFlexSizer->Add( m_CommentText, 1, wxEXPAND|wxTOP|wxRIGHT, 5 );
 
-
+    // Number
     m_NuCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_NuCopyButton->SetToolTip( _( "Copy the number to all the tracks you are editing" ) );
     DataFlexSizer->Add( m_NuCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -231,9 +228,6 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     NuStaticText = new wxStaticText( DetailPanel, wxID_ANY, _( "Number:" ), wxDefaultPosition, wxDefaultSize, 0 );
     NuStaticText->Wrap( -1 );
     DataFlexSizer->Add( NuStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxTOP|wxRIGHT, 5 );
-
-//  m_NumberTextCtrl = new wxTextCtrl( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-//  DataFlexSizer->Add( m_NumberTextCtrl, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT, 5 );
 
     wxBoxSizer* DiskSizer;
     DiskSizer = new wxBoxSizer( wxHORIZONTAL );
@@ -247,6 +241,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
 
     DiskSizer->Add( 0, 0, 1, wxEXPAND, 5 );
 
+    // Disk
     m_DiCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_DiCopyButton->SetToolTip( _( "Copy the disk to all the tracks you are editing" ) );
     DiskSizer->Add( m_DiCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -261,6 +256,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
 
     DataFlexSizer->Add( DiskSizer, 1, wxEXPAND, 5 );
 
+    // Genre
     m_GeCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_GeCopyButton->SetToolTip( _( "Copy the genre name to all songs you are editing" ) );
     DataFlexSizer->Add( m_GeCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -272,6 +268,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     m_GenreComboBox = new wxComboBox( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, DummyArray, wxCB_DROPDOWN );
     DataFlexSizer->Add( m_GenreComboBox, 1, wxEXPAND|wxTOP|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
 
+    // Year
     m_YeCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
     m_YeCopyButton->SetToolTip( _( "Copy the year to all songs you are editing" ) );
     DataFlexSizer->Add( m_YeCopyButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
@@ -280,12 +277,13 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     YeStaticText->Wrap( -1 );
     DataFlexSizer->Add( YeStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxTOP|wxRIGHT, 5 );
 
+    m_YearTextCtrl = new wxTextCtrl( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+
+    // Rating
     wxBoxSizer * RatingSizer;
     RatingSizer = new wxBoxSizer( wxHORIZONTAL );
 
-    m_YearTextCtrl = new wxTextCtrl( DetailPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
     RatingSizer->Add( m_YearTextCtrl, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxRIGHT, 5 );
-
     RatingSizer->Add( 0, 0, 1, wxEXPAND, 5 );
 
     m_RaCopyButton = new wxBitmapButton( DetailPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
@@ -303,6 +301,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
 
     MainDetailSizer->Add( DataFlexSizer, 0, wxEXPAND, 5 );
 
+    // More detail
     wxBoxSizer* MoreDetailsSizer;
     MoreDetailsSizer = new wxBoxSizer( wxHORIZONTAL );
 
@@ -335,7 +334,6 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     PictureBitmapSizer->Add( m_PictureBitmap, 0, wxALL|wxALIGN_CENTER_VERTICAL|wxALIGN_CENTER_HORIZONTAL, 5 );
 
     PictureSizer->Add( PictureBitmapSizer, 0, wxALIGN_CENTER_HORIZONTAL, 5 );
-
 
     wxBoxSizer* PictureButtonSizer;
     PictureButtonSizer = new wxBoxSizer( wxHORIZONTAL );
@@ -402,7 +400,6 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
 
     LyricsSizer->Add( LyricsTopSizer, 0, wxEXPAND, 5 );
 
-
     m_LyricsTextCtrl = new wxTextCtrl( LyricsPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_CENTRE|wxTE_DONTWRAP|wxTE_MULTILINE );
     LyricsSizer->Add( m_LyricsTextCtrl, 1, wxALL|wxEXPAND, 5 );
 
@@ -445,6 +442,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
 
     MBrainzSizer->Add( MBQuerySizer, 0, wxEXPAND, 5 );
 
+    // Album
     wxBoxSizer* MBrainzTopSizer;
     MBrainzTopSizer = new wxBoxSizer( wxHORIZONTAL );
 
@@ -473,6 +471,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
 
     MBrainzSizer->Add( MBrainzTopSizer, 0, wxEXPAND, 5 );
 
+    // Details
     wxStaticBoxSizer* MBDetailSizer;
     MBDetailSizer = new wxStaticBoxSizer( new wxStaticBox( MBrainzPanel, wxID_ANY, _( " Details " ) ), wxVERTICAL );
 
@@ -482,50 +481,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     MBDetailFlexGridSizer->SetFlexibleDirection( wxBOTH );
     MBDetailFlexGridSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-    m_MBArtistStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _( "Artist:" ), wxDefaultPosition, wxDefaultSize, 0 );
-    m_MBArtistStaticText->Wrap( -1 );
-    MBDetailFlexGridSizer->Add( m_MBArtistStaticText, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
-
-    m_MBArtistTextCtrl = new wxTextCtrl( MBrainzPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
-    MBDetailFlexGridSizer->Add( m_MBArtistTextCtrl, 1, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-
-    m_MBArCopyButton = new wxBitmapButton( MBrainzPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-    m_MBArCopyButton->SetToolTip( _( "Copy the artist to the edited tracks" ) );
-    MBDetailFlexGridSizer->Add( m_MBArCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
-
-    m_MBAlbumArtistStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _( "A. Artist:" ), wxDefaultPosition, wxDefaultSize, 0 );
-    m_MBAlbumArtistStaticText->Wrap( -1 );
-    MBDetailFlexGridSizer->Add( m_MBAlbumArtistStaticText, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
-
-    m_MBAlbumArtistTextCtrl = new wxTextCtrl( MBrainzPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
-    MBDetailFlexGridSizer->Add( m_MBAlbumArtistTextCtrl, 1, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-
-    m_MBAlArCopyButton = new wxBitmapButton( MBrainzPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-    m_MBAlArCopyButton->SetToolTip( _( "Copy the album artist to the edited tracks" ) );
-    MBDetailFlexGridSizer->Add( m_MBAlArCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
-
-    m_MBAlbumStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _("Album:"), wxDefaultPosition, wxDefaultSize, 0 );
-    m_MBAlbumStaticText->Wrap( -1 );
-    MBDetailFlexGridSizer->Add( m_MBAlbumStaticText, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
-
-    m_MBAlbumTextCtrl = new wxTextCtrl( MBrainzPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
-    MBDetailFlexGridSizer->Add( m_MBAlbumTextCtrl, 1, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-
-    m_MBAlCopyButton = new wxBitmapButton( MBrainzPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-    m_MBAlCopyButton->SetToolTip( _( "Copy the album to the edited tracks" ) );
-    MBDetailFlexGridSizer->Add( m_MBAlCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
-
-    m_MBYearStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _( "Year:" ), wxDefaultPosition, wxDefaultSize, 0 );
-    m_MBYearStaticText->Wrap( -1 );
-    MBDetailFlexGridSizer->Add( m_MBYearStaticText, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
-
-    m_MBYearTextCtrl = new wxTextCtrl( MBrainzPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
-    MBDetailFlexGridSizer->Add( m_MBYearTextCtrl, 0, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-
-    m_MBDaCopyButton = new wxBitmapButton( MBrainzPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-    m_MBDaCopyButton->SetToolTip( _( "Copy the date to the edited tracks" ) );
-    MBDetailFlexGridSizer->Add( m_MBDaCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
-
+    // Title
     m_MBTitleStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _( "Title:" ), wxDefaultPosition, wxDefaultSize, 0 );
     m_MBTitleStaticText->Wrap( -1 );
     MBDetailFlexGridSizer->Add( m_MBTitleStaticText, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
@@ -537,6 +493,55 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     m_MBTiCopyButton->SetToolTip( _( "Copy the song names to the edited tracks" ) );
     MBDetailFlexGridSizer->Add( m_MBTiCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
 
+    // Artist
+    m_MBArtistStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _( "Artist:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    m_MBArtistStaticText->Wrap( -1 );
+    MBDetailFlexGridSizer->Add( m_MBArtistStaticText, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
+
+    m_MBArtistTextCtrl = new wxTextCtrl( MBrainzPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
+    MBDetailFlexGridSizer->Add( m_MBArtistTextCtrl, 1, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
+
+    m_MBArCopyButton = new wxBitmapButton( MBrainzPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+    m_MBArCopyButton->SetToolTip( _( "Copy the artist to the edited tracks" ) );
+    MBDetailFlexGridSizer->Add( m_MBArCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
+
+    // Album Artist
+    m_MBAlbumArtistStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _( "A. Artist:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    m_MBAlbumArtistStaticText->Wrap( -1 );
+    MBDetailFlexGridSizer->Add( m_MBAlbumArtistStaticText, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
+
+    m_MBAlbumArtistTextCtrl = new wxTextCtrl( MBrainzPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
+    MBDetailFlexGridSizer->Add( m_MBAlbumArtistTextCtrl, 1, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
+
+    m_MBAlArCopyButton = new wxBitmapButton( MBrainzPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+    m_MBAlArCopyButton->SetToolTip( _( "Copy the album artist to the edited tracks" ) );
+    MBDetailFlexGridSizer->Add( m_MBAlArCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
+
+    // Album
+    m_MBAlbumStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _("Album:"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_MBAlbumStaticText->Wrap( -1 );
+    MBDetailFlexGridSizer->Add( m_MBAlbumStaticText, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
+
+    m_MBAlbumTextCtrl = new wxTextCtrl( MBrainzPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
+    MBDetailFlexGridSizer->Add( m_MBAlbumTextCtrl, 1, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
+
+    m_MBAlCopyButton = new wxBitmapButton( MBrainzPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+    m_MBAlCopyButton->SetToolTip( _( "Copy the album to the edited tracks" ) );
+    MBDetailFlexGridSizer->Add( m_MBAlCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
+
+    // Year
+    m_MBYearStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _( "Year:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    m_MBYearStaticText->Wrap( -1 );
+    MBDetailFlexGridSizer->Add( m_MBYearStaticText, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
+
+    m_MBYearTextCtrl = new wxTextCtrl( MBrainzPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
+    MBDetailFlexGridSizer->Add( m_MBYearTextCtrl, 0, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
+
+    m_MBDaCopyButton = new wxBitmapButton( MBrainzPanel, wxID_ANY, guImage( guIMAGE_INDEX_tiny_edit_copy ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+    m_MBDaCopyButton->SetToolTip( _( "Copy the date to the edited tracks" ) );
+    MBDetailFlexGridSizer->Add( m_MBDaCopyButton, 0, wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
+
+    // Size and number
     m_MBLengthStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, _("Length:"), wxDefaultPosition, wxDefaultSize, 0 );
     m_MBLengthStaticText->Wrap( -1 );
     MBDetailFlexGridSizer->Add( m_MBLengthStaticText, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxALIGN_CENTER_VERTICAL, 5 );
@@ -578,8 +583,8 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     MBrainzSizer->Fit( MBrainzPanel );
     m_MainNotebook->AddPage( MBrainzPanel, wxT( "MusicBrainz" ), false );
 
-
     DetailSizer->Add( m_MainNotebook, 1, wxEXPAND | wxALL, 5 );
+    // End MusicBrainz
 
     MainDetailPanel->SetSizer( DetailSizer );
     MainDetailPanel->Layout();
@@ -605,9 +610,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
 
     MainDetailPanel->SetScrollRate( 20, 20 );
 
-
     ButtonsSizerOK->SetDefault();
-
 
     // --------------------------------------------------------------------
     m_NormalColor = wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOWTEXT );
@@ -705,7 +708,6 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     Bind( wxEVT_TIMER, &guTrackEditor::OnComposerChangedTimeout, this, guTRACKEDIT_TIMER_COMPOSER_ID );
     Bind( wxEVT_TIMER, &guTrackEditor::OnGenreChangedTimeout, this, guTRACKEDIT_TIMER_GENRE_ID );
 
-    //
     // Force the 1st listbox item to be selected
     m_SongListBox->SetSelection( 0 );
 //    wxCommandEvent event( wxEVT_LISTBOX, m_SongListBox->GetId() );
@@ -713,6 +715,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
 //    event.SetExtraLong( 1 );
 //    event.SetInt( 0 );
 //    wxPostEvent( m_SongListBox, event );
+
     m_CurItem = 0;
     ReadItemData();
 }
