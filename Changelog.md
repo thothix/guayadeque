@@ -4,6 +4,21 @@ Guayadeque Music Player
 Changelog
 =========
 
+0.6.1 (2024-11-11)
+------------------
+
+### Enhancements
+  * Metadata fixes and changes:
+    * guayadeque.appdata.xml renamed to org.guayadeque.guayadeque.metainfo.xml and
+      moved from /usr/share/appdata to /usr/share/metainfo
+    * guayadeque.desktop renamed to org.guayadeque.guayadeque.desktop
+  * Added RADIOS.md for radios related information
+  * Small UI adjustments (Songs Editor)
+   
+### Bugfixes
+
+### Removed
+
 0.6.0 (2024-10-25)
 ------------------
 
