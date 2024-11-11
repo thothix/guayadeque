@@ -3173,7 +3173,7 @@ msgid "Restore position for tracks longer than"
 msgstr "'dan ucun parçaların konumunu koru"
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "Parça konumunu kaydetmek için minimum süre dakikasını ayarla"
 
 #: Preferences.cpp:635

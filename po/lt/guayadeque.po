@@ -1646,7 +1646,7 @@ msgid "Restore position for tracks longer than"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:501
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:505

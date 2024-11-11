@@ -3171,7 +3171,7 @@ msgid "Restore position for tracks longer than"
 msgstr "Afspeelpositie opslaan voor nummers langer dan"
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "bepaal de minimumduur in minuten om afspeelpositie op te slaan"
 
 #: Preferences.cpp:635

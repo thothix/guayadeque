@@ -1650,7 +1650,7 @@ msgid "Restore position for tracks longer than"
 msgstr "Obnovit pozici pro skladby delší než"
 
 #: ui/preferences/Preferences.cpp:501
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "Nastavit minimální délku skladby v minutách pro ukládaní pozice skladby"
 
 #: ui/preferences/Preferences.cpp:505

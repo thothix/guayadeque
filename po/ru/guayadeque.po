@@ -3171,7 +3171,7 @@ msgid "Restore position for tracks longer than"
 msgstr "Восстановить воспроизведение если композиция более"
 
 #: Preferences.cpp:625
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "минимальная длина в минутах для сохранения позиции воспроизведения"
 
 #: Preferences.cpp:635

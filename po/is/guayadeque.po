@@ -1649,7 +1649,7 @@ msgid "Restore position for tracks longer than"
 msgstr "Endursetja stöðu laga lengri enn"
 
 #: ui/preferences/Preferences.cpp:501
-msgid "set the minimun length in minutes to save track position"
+msgid "set the minimum length in minutes to save track position"
 msgstr "setja lámarks lengd í mínutum fyrir laga staðsetningu"
 
 #: ui/preferences/Preferences.cpp:505

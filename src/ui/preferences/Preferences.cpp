@@ -485,7 +485,7 @@ void guPrefDialog::BuildGeneralPage( void )
 
 	m_MinLenSpinCtrl = new wxSpinCtrl( m_GenPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 9999, 10 );
     m_MinLenSpinCtrl->SetValue( m_Config->ReadNum( CONFIG_KEY_GENERAL_MIN_SAVE_PLAYL_POST_LENGTH, 10, CONFIG_PATH_GENERAL ) );
-	m_MinLenSpinCtrl->SetToolTip( _( "set the minimun length in minutes to save track position" ) );
+	m_MinLenSpinCtrl->SetToolTip( _( "set the minimum length in minutes to save track position" ) );
 
 	StartPlayingSizer->Add( m_MinLenSpinCtrl, 0, wxALIGN_CENTER_VERTICAL, 5 );
 
