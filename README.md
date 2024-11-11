@@ -29,6 +29,8 @@ contributions to Guayadeque development.
 
 For installation instructions please see [INSTALL.md](INSTALL.md)
 
+For Radios information and advices please see [RADIOS.md](RADIOS.md)
+
 For bugs, suggestions or requests please check [Github issues](https://github.com/thothix/guayadeque/issues) and open one if needed.  
 For translations please send an email to [<thothix@protonmail.com>](mailto:thothix@protonmail.com?subject=Guayadeque%20Translations)
 
