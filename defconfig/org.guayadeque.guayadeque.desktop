@@ -1,42 +1,34 @@
 [Desktop Entry]
 Version=1.0
+Type=Application
+GenericName=Guayadeque
 Name=Guayadeque Music Player
-Name[en_US]=Guayadeque Music Player
-Name[fr]=Lecteur de musique Guayadeque
-Name[lt]=Guayadeque muzikos grotuvas
-Name[pt_BR]=Guayadeque Reprodutor de Música
+Name[pt_BR]=org.guayadeque.guayadeque.desktop
 Comment=Play and organize your music, listen to radios, podcasts and more...
-Comment[fr]=Jouez et organisez votre musique, écouter des radios, des balados, et plus encore...
-Comment[lt]=Groti ir tvarkyti savo muziką, klausytis radijų, tinklalaidžių ir daugiau...
 Comment[pt_BR]=Reproduza e organize suas músicas, escute rádios, podcasts e mais...
 Exec=guayadeque %U
-Terminal=false
-Type=Application
-Categories=GNOME;GTK;AudioVideo;Audio;Player;
-MimeType=application/ogg;application/x-flac;audio/mp4;audio/mpeg;audio/mpegurl;audio/ogg;audio/x-ape;audio/x-flac;audio/x-m4a;audio/x-mod;audio/x-mp3;audio/x-mpeg;audio/x-mpegurl;audio/x-ms-asf;audio/x-ms-asx;audio/x-ms-wax;audio/x-ms-wma;
 Icon=guayadeque
+Terminal=false
+Categories=GNOME;GTK;Audio;AudioVideo;Player;
+Keywords=Audio;Player;Sound;
+MimeType=application/ogg;application/x-flac;audio/mp4;audio/mpeg;audio/mpegurl;audio/ogg;audio/x-ape;audio/x-flac;audio/x-m4a;audio/x-mod;audio/x-mp3;audio/x-mpeg;audio/x-mpegurl;audio/x-ms-asf;audio/x-ms-asx;audio/x-ms-wax;audio/x-ms-wma;
+StartupWMClass=guayadeque
 X-GNOME-Autostart-Phase=Desktop
 X-GNOME-Autostart-Notify=true
 X-Ayatana-Desktop-Shortcuts=PlayPause;Stop;Previous;Next;
 
-GenericName=
-
 [X-PlayPause Shortcut Group]
 Name=Play - Pause
 Exec=dbus-send --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Play
-TargetEnvironment=Unity
 
 [X-Stop Shortcut Group]
 Name=Stop (+shift Stop at End)
 Exec=dbus-send --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Stop
-TargetEnvironment=Unity
 
 [X-Previous Shortcut Group]
 Name=Prev. (+shift Prev. Album)
 Exec=dbus-send --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Prev
-TargetEnvironment=Unity
 
 [X-Next Shortcut Group]
 Name=Next (+shift Next Album)
 Exec=dbus-send --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Next
-TargetEnvironment=Unity
