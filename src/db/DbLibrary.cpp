@@ -603,7 +603,7 @@ bool guDbLibrary::CheckDbVersion( void )
       query.Add( wxT( "CREATE INDEX IF NOT EXISTS song_composerid on songs( song_composerid ASC )" ) );
       //query.Add( wxT( "CREATE INDEX IF NOT EXISTS song_composerid_desc ON songs( song_composerid DESC )" ) );
       query.Add( wxT( "CREATE INDEX IF NOT EXISTS song_number ON songs( song_number )" ) );
-      query.Add( wxT( "CREATE INDEX IF NOT EXISTS song_path ON songs( song_path ASC )" ) );
+      //query.Add( wxT( "CREATE INDEX IF NOT EXISTS song_path ON songs( song_path ASC )" ) );
       query.Add( wxT( "CREATE INDEX IF NOT EXISTS song_path_filename ON songs( song_path, song_filename )" ) );
       query.Add( wxT( "CREATE INDEX IF NOT EXISTS song_format ON songs( song_format ASC )" ) );
       query.Add( wxT( "CREATE INDEX IF NOT EXISTS song_genre ON songs( song_genre,song_composer,song_artist,song_album,song_disk,song_albumid,song_number )" ) );
