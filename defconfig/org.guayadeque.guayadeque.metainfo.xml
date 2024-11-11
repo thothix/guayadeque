@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.guayadeque.guayadeque</id>
+  <launchable type="desktop-id">org.guayadeque.guayadeque.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+ and BSD-3-Clause</project_license>
+  <name>Guayadeque</name>
+  <summary>Music player and organizer</summary>
+  <provides>
+    <binary>guayadeque</binary>
+  </provides>
+  <description>
+    <p>
+      Guayadeque is a music management program designed for all music enthusiasts. It
+      is Full Featured Linux media player that can easily manage large collections
+      and uses the Gstreamer media framework.
+      Guayadeque is intended to be your audio program for listening to a music library,
+      Jamendo, Magnatunes, podcasts or internet radio.
+    </p>
+  </description>
+  <developer id="com.protonmail.thothix">
+    <name>Tiago T Barrionuevo</name>>
+  </developer>
+  <update_contact>thothix@protonmail.com</update_contact>
+  <content_rating type="oars-1.1" />
+  ​<translation type="gettext">guayadeque</translation>
+  <url type="homepage">https://github.com/thothix/guayadeque</url>
+  <url type="bugtracker">https://github.com/thothix/guayadeque/issues</url>
+  <url type="donation">https://tinyurl.com/ms4tbevb</url>
+  <url type="help">https://github.com/thothix/guayadeque/wiki</url>
+  <releases>
+    <release version="0.6.0" date="2024-10-25"/>
+    <release version="0.5.3" date="2024-10-02"/>
+    <release version="0.5.2" date="2024-09-28"/>
+    <release version="0.5.1" date="2024-09-24"/>
+    <release version="0.5.0" date="2024-09-22"/>
+    <release version="0.4.7" date="2023-02-24"/>
+  </releases>
+</component>
