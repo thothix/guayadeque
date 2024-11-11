@@ -8,16 +8,16 @@ Changelog
 ------------------
 
 ### Enhancements
-  * Metadata fixes and changes:
+  * Metadata fixes and changes to the current standards:
     * guayadeque.appdata.xml renamed to org.guayadeque.guayadeque.metainfo.xml and
       moved from /usr/share/appdata to /usr/share/metainfo
     * guayadeque.desktop renamed to org.guayadeque.guayadeque.desktop
   * Added RADIOS.md for radios related information
+  * Added missing license headers
   * Small UI adjustments (Songs Editor)
    
-### Bugfixes
-
 ### Removed
+  * Removed deprecated collection database index
 
 0.6.0 (2024-10-25)
 ------------------
