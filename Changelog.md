@@ -15,8 +15,7 @@ Changelog
       - Updated project_license to use SPDX-License-Identifier.
     * guayadeque.desktop renamed to org.guayadeque.guayadeque.desktop.
     * guayadeque.png destination changed from "pixmaps/" to "icons/hicolor/64x64/apps/"
-
-    * Added RADIOS.md for radios related information.
+  * Added RADIOS.md for radios related information.
   * Added missing license headers.
   * Small UI adjustments (Songs Editor).
 
