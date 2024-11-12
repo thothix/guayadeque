@@ -11,10 +11,12 @@ Changelog
   * Metadata fixes and changes to the current standards:
     * guayadeque.appdata.xml:
       - Renamed to org.guayadeque.guayadeque.metainfo.xml.
-      - Moved from /usr/share/appdata to /usr/share/metainfo.
+      - Destination changed from /usr/share/appdata to /usr/share/metainfo.
       - Updated project_license to use SPDX-License-Identifier.
     * guayadeque.desktop renamed to org.guayadeque.guayadeque.desktop.
-  * Added RADIOS.md for radios related information.
+    * guayadeque.png destination changed from "pixmaps/" to "icons/hicolor/64x64/apps/"
+
+    * Added RADIOS.md for radios related information.
   * Added missing license headers.
   * Small UI adjustments (Songs Editor).
 
