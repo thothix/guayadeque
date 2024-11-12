@@ -3,7 +3,7 @@
   <id>org.guayadeque.guayadeque</id>
   <launchable type="desktop-id">org.guayadeque.guayadeque.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0+ and BSD-3-Clause</project_license>
+  <project_license>GPL-3.0-or-later AND BSD-3-Clause</project_license>
   <name>Guayadeque</name>
   <summary>Music player and organizer</summary>
   <provides>
