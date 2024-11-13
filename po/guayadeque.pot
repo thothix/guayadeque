@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 12:57-0300\n"
+"POT-Creation-Date: 2024-11-13 17:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -445,15 +445,15 @@ msgstr ""
 msgid "Capital"
 msgstr ""
 
-#: MainApp.cpp:332
+#: MainApp.cpp:349
 msgid "Another program instance is already running."
 msgstr ""
 
-#: MainApp.cpp:332
+#: MainApp.cpp:349
 msgid "Do you want to continue with the program?"
 msgstr ""
 
-#: MainApp.cpp:333 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:350 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:543 ui/filebrowser/FileBrowser.cpp:1977
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
@@ -3889,7 +3889,7 @@ msgstr ""
 msgid "Playback"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:234
+#: ui/preferences/Preferences.cpp:234 ui/preferences/Preferences.cpp:1022
 msgid "Crossfader"
 msgstr ""
 
@@ -4135,10 +4135,6 @@ msgstr ""
 
 #: ui/preferences/Preferences.cpp:976
 msgid "GConf Defined"
-msgstr ""
-
-#: ui/preferences/Preferences.cpp:1022
-msgid " Crossfader "
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1029
@@ -4512,15 +4508,15 @@ msgstr ""
 msgid "Enter the genre to disable"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:3557 ui/preferences/Preferences.cpp:3585
+#: ui/preferences/Preferences.cpp:3555 ui/preferences/Preferences.cpp:3586
 msgid "Filter: "
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:3557
+#: ui/preferences/Preferences.cpp:3556
 msgid "Enter the text to filter"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:3585
+#: ui/preferences/Preferences.cpp:3586
 msgid "Edit the text to filter"
 msgstr ""
 
@@ -4528,7 +4524,7 @@ msgstr ""
 msgid "Select path"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:4292
+#: ui/preferences/Preferences.cpp:4290
 msgid "Key used by '"
 msgstr ""
 

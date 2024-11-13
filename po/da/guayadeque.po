@@ -1874,10 +1874,6 @@ msgstr "Automatisk"
 msgid "GConf Defined"
 msgstr "GConf-defineret"
 
-#: ui/preferences/Preferences.cpp:1041
-msgid " Crossfader "
-msgstr " Glidende overgang "
-
 #: ui/preferences/Preferences.cpp:1048
 msgid "Fade-out length:"
 msgstr "Varighed ved nummerslut:"

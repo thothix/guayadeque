@@ -3349,10 +3349,6 @@ msgstr "Αυτόματο"
 msgid "GConf Defined"
 msgstr "Καθορισμένο από το GConf"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr "Αμφισοσταθμιστής Έντασης"
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Διάρκεια του fade out:"

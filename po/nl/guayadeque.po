@@ -3346,10 +3346,6 @@ msgstr "Automatisch"
 msgid "GConf Defined"
 msgstr "Gedefinieerd door GConf"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr "Crossfader"
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Duur van fade-out:"

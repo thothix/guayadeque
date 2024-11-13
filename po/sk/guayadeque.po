@@ -3353,10 +3353,6 @@ msgstr "Automaticky"
 msgid "GConf Defined"
 msgstr "Definované v GConf"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr "Prelínač skladieb"
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Dĺžka plynulého zoslabenia:"

@@ -1877,10 +1877,6 @@ msgstr "Automático"
 msgid "GConf Defined"
 msgstr "Definido con GConf"
 
-#: ui/preferences/Preferences.cpp:1041
-msgid " Crossfader "
-msgstr "Solapamiento "
-
 #: ui/preferences/Preferences.cpp:1048
 msgid "Fade-out length:"
 msgstr "Duración de salida:"

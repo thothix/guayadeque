@@ -3345,10 +3345,6 @@ msgstr "Automatski"
 msgid "GConf Defined"
 msgstr "Određeno u GConf"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr "Crossfader"
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Fade-out trajanje:"

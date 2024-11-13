@@ -1874,10 +1874,6 @@ msgstr "Automatiškai"
 msgid "GConf Defined"
 msgstr "Apibrėžtas GConf"
 
-#: ui/preferences/Preferences.cpp:1041
-msgid " Crossfader "
-msgstr ""
-
 #: ui/preferences/Preferences.cpp:1048
 msgid "Fade-out length:"
 msgstr ""

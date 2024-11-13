@@ -3332,6 +3332,14 @@ msgstr "Eliminar da lista de reprodução, as faixas reproduzidas"
 msgid "Show notifications"
 msgstr "Mostrar notificações"
 
+#: ui/preferences/Preferences.cpp:833
+msgid "Enable equalizer"
+msgstr "Habilitar Equalizador"
+
+#: ui/preferences/Preferences.cpp:837
+msgid "Enable volume and fader"
+msgstr "Habilitar volume e fader/transição suave"
+
 #: Preferences.cpp:971
 msgid "ReplayGain mode:"
 msgstr "Modo ReplayGain:"
@@ -3391,10 +3399,6 @@ msgstr "Automático"
 #: Preferences.cpp:1106
 msgid "GConf Defined"
 msgstr "Definido por GConf"
-
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr "Crossfader "
 
 #: Preferences.cpp:1163
 msgid "Fade-out length:"

@@ -1883,10 +1883,6 @@ msgstr "Automatyczny"
 msgid "GConf Defined"
 msgstr "Zdefiniowany przez GConf"
 
-#: ui/preferences/Preferences.cpp:1041
-msgid " Crossfader "
-msgstr " Przenikanie "
-
 #: ui/preferences/Preferences.cpp:1048
 msgid "Fade-out length:"
 msgstr "Długość wyciszenia:"

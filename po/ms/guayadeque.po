@@ -1875,10 +1875,6 @@ msgstr "Automatik"
 msgid "GConf Defined"
 msgstr "GConf Ditakrif"
 
-#: ui/preferences/Preferences.cpp:1041
-msgid " Crossfader "
-msgstr "Peresap Silang"
-
 #: ui/preferences/Preferences.cpp:1048
 msgid "Fade-out length:"
 msgstr "Tempoh resap-hilang:"

@@ -3345,10 +3345,6 @@ msgstr "Automatikus"
 msgid "GConf Defined"
 msgstr "GConf alapján"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr " Kereszthalkító "
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Lehalkítás hossza:"
