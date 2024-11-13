@@ -108,7 +108,7 @@ class guCopyToPattern
 
     ~guCopyToPattern();
 
-    wxString    ToString( void );
+    wxString    ToString();
 };
 WX_DECLARE_OBJARRAY( guCopyToPattern, guCopyToPatternArray );
 
@@ -366,21 +366,21 @@ class guPrefDialog : public wxDialog
     int                         m_LyricSourceSelected;
     int                         m_LyricTargetSelected;
 
-    void                        BuildGeneralPage( void );
-    void                        BuildLibraryPage( void );
-    void                        BuildPlaybackPage( void );
-    void                        BuildCrossfaderPage( void );
-    void                        BuildRecordPage( void );
-    void                        BuildAudioScrobblePage( void );
-    void                        BuildLyricsPage( void );
-    void                        BuildOnlinePage( void );
-    void                        BuildPodcastsPage( void );
-    void                        BuildJamendoPage( void );
-    void                        BuildMagnatunePage( void );
-    void                        BuildLinksPage( void );
-    void                        BuildCommandsPage( void );
-    void                        BuildCopyToPage( void );
-    void                        BuildAcceleratorsPage( void );
+    void                        BuildGeneralPage();
+    void                        BuildLibraryPage();
+    void                        BuildPlaybackPage();
+    void                        BuildCrossfaderPage();
+    void                        BuildRecordPage();
+    void                        BuildAudioScrobblePage();
+    void                        BuildLyricsPage();
+    void                        BuildOnlinePage();
+    void                        BuildPodcastsPage();
+    void                        BuildJamendoPage();
+    void                        BuildMagnatunePage();
+    void                        BuildLinksPage();
+    void                        BuildCommandsPage();
+    void                        BuildCopyToPage();
+    void                        BuildAcceleratorsPage();
 
     // Event Handlers
     void OnPageChanged( wxCommandEvent &event );
@@ -406,7 +406,7 @@ class guPrefDialog : public wxDialog
     void OnLibUpCoverBtnClick( wxCommandEvent &event );
     void OnLibDownCoverBtnClick( wxCommandEvent &event );
     void OnLibDelCoverBtnClick( wxCommandEvent &event );
-    void OnLibOptionsLoadControls( void );
+    void OnLibOptionsLoadControls();
     void OnLibAutoUpdateChanged( wxCommandEvent& event );
     void OnLibCreatePlayListsChanged( wxCommandEvent& event );
     void OnLibFollowSymLinksChanged( wxCommandEvent& event );
@@ -488,7 +488,7 @@ class guPrefDialog : public wxDialog
 	void OnCopyToQualityChanged( wxCommandEvent &event );
 	void OnCopyToMoveFilesChanged( wxCommandEvent &event );
 	void OnCopyToSaveBtnClick( wxCommandEvent &event );
-	void UpdateCopyToOptions( void );
+	void UpdateCopyToOptions();
 
 	void OnAccelSelected( wxListEvent &event );
     void OnAccelKeyDown( wxKeyEvent &event );
@@ -500,8 +500,8 @@ class guPrefDialog : public wxDialog
     guPrefDialog( wxWindow * parent, guDbLibrary * db, int pagenum = guPREFERENCE_PAGE_LASTUSED );
     ~guPrefDialog();
 
-    void SaveSettings( void );
-    int  GetVisiblePanels( void ) { return m_VisiblePanels; }
+    void SaveSettings();
+    int  GetVisiblePanels() { return m_VisiblePanels; }
 };
 
 }

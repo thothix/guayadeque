@@ -606,7 +606,7 @@ void guPrefDialog::BuildLibraryPage()
 	wxStaticBoxSizer * LibCollectSizer = new wxStaticBoxSizer( new wxStaticBox( LibCollectPanel, wxID_ANY, _( " Collections " ) ), wxHORIZONTAL );
 
     // Collections list
-	m_LibCollectListBox = new wxListBox( LibCollectPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_HSCROLL|wxLB_SINGLE );
+	m_LibCollectListBox = new wxListBox( LibCollectPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_HSCROLL|wxLB_SINGLE );
 	int Count = m_Collections.Count();
 	for( int Index = 0; Index < Count; Index++ )
         m_LibCollectListBox->Append( m_Collections[ Index ].m_Name );
@@ -649,7 +649,7 @@ void guPrefDialog::BuildLibraryPage()
 
     // Path
 	m_LibOptPathSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, _(" Paths ") ), wxHORIZONTAL );
-	m_LibPathListBox = new wxListBox( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_MULTIPLE );
+	m_LibPathListBox = new wxListBox( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_MULTIPLE );
 	m_LibPathListBox->Enable( false );
 	m_LibOptPathSizer->Add( m_LibPathListBox, 1, wxEXPAND|wxALL, 5 );
 
@@ -670,7 +670,7 @@ void guPrefDialog::BuildLibraryPage()
     // Covers
 	wxStaticBoxSizer* LibOptCoversSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, _(" Words to detect covers ") ), wxHORIZONTAL );
 
-	m_LibCoverListBox = new wxListBox( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_SINGLE );
+	m_LibCoverListBox = new wxListBox( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE );
 	m_LibCoverListBox->Enable( false );
 	LibOptCoversSizer->Add( m_LibCoverListBox, 1, wxEXPAND|wxALL, 5 );
 
@@ -1019,7 +1019,7 @@ void guPrefDialog::BuildCrossfaderPage()
     //
 	wxBoxSizer * XFadeMainSizer = new wxBoxSizer( wxVERTICAL );
 
-	wxStaticBoxSizer * XFadesbSizer = new wxStaticBoxSizer( new wxStaticBox( m_XFadePanel, wxID_ANY, _(" Crossfader ") ), wxVERTICAL );
+	wxStaticBoxSizer * XFadesbSizer = new wxStaticBoxSizer( new wxStaticBox( m_XFadePanel, wxID_ANY, wxString::Format(wxT(" %s "), _("Crossfader")) ), wxVERTICAL );
 
     wxFlexGridSizer * XFadeFlexSizer = new wxFlexGridSizer( 3, 0, 0 );
 	XFadeFlexSizer->AddGrowableCol( 2 );
@@ -1394,7 +1394,7 @@ void guPrefDialog::BuildLyricsPage()
     //
   	wxStaticBoxSizer * LyricsDisGenreSizer = new wxStaticBoxSizer( new wxStaticBox( m_LyricsPanel, wxID_ANY, _( " Disabled Genres " ) ), wxHORIZONTAL );
 
-    m_LirycsDisGenresListBox = new wxListBox( m_LyricsPanel, wxID_ANY, wxDefaultPosition, wxSize( -1, 100 ), 0, NULL, 0 );
+    m_LirycsDisGenresListBox = new wxListBox( m_LyricsPanel, wxID_ANY, wxDefaultPosition, wxSize( -1, 100 ), 0, nullptr, 0 );
     m_LirycsDisGenresListBox->Append( m_Config->ReadAStr( CONFIG_KEY_LYRICS_DISGENRE, wxEmptyString, CONFIG_PATH_LYRICS_DISGENRES ) );
     LyricsDisGenreSizer->Add( m_LirycsDisGenresListBox, 1, wxALL|wxEXPAND, 5 );
 
@@ -1535,7 +1535,7 @@ void guPrefDialog::BuildOnlinePage()
 
     wxStaticBoxSizer * OnlineFiltersSizer = new wxStaticBoxSizer( new wxStaticBox( m_OnlinePanel, wxID_ANY, _(" Filters ") ), wxHORIZONTAL );
 
-    m_OnlineFiltersListBox = new wxListBox( m_OnlinePanel, wxID_ANY, wxDefaultPosition, wxSize( -1, 100 ), 0, NULL, 0 );
+    m_OnlineFiltersListBox = new wxListBox( m_OnlinePanel, wxID_ANY, wxDefaultPosition, wxSize( -1, 100 ), 0, nullptr, 0 );
     m_OnlineFiltersListBox->Append( m_Config->ReadAStr( CONFIG_KEY_SEARCH_FILTERS_FILTER, wxEmptyString, CONFIG_PATH_SEARCH_FILTERS ) );
     OnlineFiltersSizer->Add( m_OnlineFiltersListBox, 1, wxALL|wxEXPAND, 5 );
 
@@ -1946,7 +1946,7 @@ void guPrefDialog::BuildLinksPage()
 
 	wxBoxSizer * LinksListBoxSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	m_LinksListBox = new wxListBox( m_LinksPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0 );
+	m_LinksListBox = new wxListBox( m_LinksPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, 0 );
     wxArrayString SearchLinks = m_Config->ReadAStr( CONFIG_KEY_SEARCHLINKS_LINK, wxEmptyString, CONFIG_PATH_SEARCHLINKS_LINKS );
 	m_LinksListBox->Append( SearchLinks );
     m_LinksNames = m_Config->ReadAStr( CONFIG_KEY_SEARCHLINKS_NAME, wxEmptyString, CONFIG_PATH_SEARCHLINKS_NAMES );
@@ -2065,7 +2065,7 @@ void guPrefDialog::BuildCommandsPage()
 
 	wxBoxSizer * CmdListBoxSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	m_CmdListBox = new wxListBox( m_CmdPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0 );
+	m_CmdListBox = new wxListBox( m_CmdPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, 0 );
     wxArrayString Commands = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
 	m_CmdListBox->Append( Commands );
     m_CmdNames = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
@@ -2181,7 +2181,7 @@ void guPrefDialog::BuildCopyToPage()
 
 	wxBoxSizer * CopyToListBoxSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	m_CopyToListBox = new wxListBox( m_CopyPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0 );
+	m_CopyToListBox = new wxListBox( m_CopyPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, 0 );
 
 	m_CopyToOptions = new guCopyToPatternArray();
 
@@ -3214,12 +3214,12 @@ void guPrefDialog::OnLyricUpBtnClick( wxCommandEvent &event )
 
     event.SetInt( m_LyricSourceSelected );
     OnLyricSourceSelected( event );
-
 }
+
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnLyricDownBtnClick( wxCommandEvent &event )
 {
-    wxString LyricSource = m_LyricsSrcListBox->GetString( m_LyricSourceSelected );
+    wxString LyricSource  = m_LyricsSrcListBox->GetString( m_LyricSourceSelected );
     bool     LyricChecked = m_LyricsSrcListBox->IsChecked( m_LyricSourceSelected );
 
     m_LyricSearchEngine->SourceMoveDown( m_LyricSourceSelected );
@@ -3320,8 +3320,8 @@ void guPrefDialog::OnLyricSaveUpBtnClick( wxCommandEvent &event )
 
     event.SetInt( m_LyricTargetSelected );
     OnLyricSourceSelected( event );
-
 }
+
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnLyricSaveDownBtnClick( wxCommandEvent &event )
 {
@@ -3532,21 +3532,17 @@ void guPrefDialog::OnRecDelTracksClicked( wxCommandEvent& event )
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnLastFMASUserNameChanged( wxCommandEvent &event )
 {
-    if( m_LastFMUserNameTextCtrl->GetValue().IsEmpty() ||
-        m_LastFMPasswdTextCtrl->GetValue().IsEmpty() )
+    if (m_LastFMUserNameTextCtrl->GetValue().IsEmpty() || m_LastFMPasswdTextCtrl->GetValue().IsEmpty())
         m_LastFMASEnableChkBox->Disable();
     else
         m_LastFMASEnableChkBox->Enable();
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::OnLibreFMASUserNameChanged( wxCommandEvent &event )
+void guPrefDialog::OnLibreFMASUserNameChanged(wxCommandEvent &event)
 {
-    if( m_LibreFMUserNameTextCtrl->GetValue().IsEmpty() ||
-        m_LibreFMPasswdTextCtrl->GetValue().IsEmpty() )
-    {
+    if (m_LibreFMUserNameTextCtrl->GetValue().IsEmpty() || m_LibreFMPasswdTextCtrl->GetValue().IsEmpty())
         m_LibreFMASEnableChkBox->Disable();
-    }
     else
         m_LibreFMASEnableChkBox->Enable();
 }
@@ -3554,8 +3550,13 @@ void guPrefDialog::OnLibreFMASUserNameChanged( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnOnlineAddBtnClick( wxCommandEvent& event )
 {
-    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Filter: " ), _( "Enter the text to filter" ), wxEmptyString );
-    if( EntryDialog )
+    auto *EntryDialog = new wxTextEntryDialog(
+            this,
+            _("Filter: "),
+            _("Enter the text to filter"),
+            wxEmptyString);
+
+    if (EntryDialog)
     {
         if( EntryDialog->ShowModal() == wxID_OK )
         {
@@ -3841,7 +3842,6 @@ void guPrefDialog::OnLinksSaveBtnClick( wxCommandEvent &event )
     }
     m_LinksAcceptBtn->Disable();
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnCmdListBoxSelected( wxCommandEvent &event )
@@ -4269,9 +4269,7 @@ void guPrefDialog::OnAccelKeyDown( wxKeyEvent &event )
 
             /*
             if( wxIsalnum( KeyCode ) || wxIsprint( KeyCode ) )
-            {
                 return;
-            }
             */
         }
 
@@ -4307,5 +4305,3 @@ void guPrefDialog::OnAccelDefaultClicked( wxCommandEvent &event )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
