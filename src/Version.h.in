@@ -22,10 +22,9 @@
 
 namespace Guayadeque {
 
-#define ID_GUAYADEQUE_VERSION	"0.6.1"
+#define ID_GUAYADEQUE_VERSION	"0.6.2-beta1"
 #define ID_GUAYADEQUE_REVISION	"${_GUREVISION_}"
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //
