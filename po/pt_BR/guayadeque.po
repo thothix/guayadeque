@@ -1903,7 +1903,7 @@ msgstr "Tipo:"
 
 #: LyricsPanel.cpp:2116
 msgid "Embedded"
-msgstr "Incorporar"
+msgstr "Incorporado"
 
 #: LyricsPanel.cpp:2117
 msgid "File"
@@ -4435,3 +4435,9 @@ msgstr "Editar capa no GIMP"
 
 msgid "To mp3"
 msgstr "Para mp3"
+
+msgid "From file"
+msgstr "De arquivo"
+
+msgid "To file"
+msgstr "Para arquivo"

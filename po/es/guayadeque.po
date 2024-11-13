@@ -4866,3 +4866,9 @@ msgstr "GiBytes"
 #: onlinelinks/OnlineLinks.cpp:71
 msgid "Add search links in preferences"
 msgstr "Añadir enlaces de búsqueda en preferencias"
+
+msgid "From file"
+msgstr "Del archivo"
+
+msgid "To file"
+msgstr "Al archivo"

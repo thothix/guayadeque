@@ -4337,3 +4337,27 @@ msgstr "Alle Internet-Radiostationen exportieren"
 #: UserRadio.cpp:105
 msgid "User Defined"
 msgstr "Benutzerdefiniert"
+
+msgid "Browse in File Manager"
+msgstr "Suche im Dateimanager"
+
+msgid "Burn as AudioCD using Brasero"
+msgstr "Als AudioCD mit Brasero brennen"
+
+msgid "Burn as DataCD using Brasero"
+msgstr "Als Daten-CD mit Brasero brennen"
+
+msgid "Open Terminal in directory"
+msgstr "Terminal im Ordner öffnen"
+
+msgid "Edit cover using GIMP"
+msgstr "Cover mit GIMP bearbeiten"
+
+msgid "To mp3"
+msgstr "Auf mp3"
+
+msgid "From file"
+msgstr "Aus einer Datei"
+
+msgid "To file"
+msgstr "In Datei"
