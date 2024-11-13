@@ -1877,10 +1877,6 @@ msgstr "Sjálfvirkt"
 msgid "GConf Defined"
 msgstr "Skilgreina GConf"
 
-#: ui/preferences/Preferences.cpp:1041
-msgid " Crossfader "
-msgstr " Krossvíxlun "
-
 #: ui/preferences/Preferences.cpp:1048
 msgid "Fade-out length:"
 msgstr "Deyfa út lengd:"

@@ -3346,10 +3346,6 @@ msgstr "Автоматично"
 msgid "GConf Defined"
 msgstr "Визначено GConf"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr " Перехресне затухання"
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Довжина згасання:"

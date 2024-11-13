@@ -3227,7 +3227,7 @@ msgstr "Afficher la pochette de l'album dans le lecteur"
 
 #: Preferences.cpp:681
 msgid "Show CD cover frame in the cover editor"
-msgstr "Afficher la fenêtre de la pochette dans l'éditeur de pochettes"
+msgstr "Afficher le cadre de pochette dans l'éditeur de pochette"
 
 #: Preferences.cpp:687
 msgid " On Close "
@@ -3305,6 +3305,14 @@ msgstr "Supprimer les morceaux lus de la file"
 msgid "Show notifications"
 msgstr "Afficher les notifications"
 
+#: ui/preferences/Preferences.cpp:833
+msgid "Enable equalizer"
+msgstr "Activer l'égaliseur"
+
+#: ui/preferences/Preferences.cpp:837
+msgid "Enable volume and fader"
+msgstr "Activer le réglage de volume et le fader"
+
 #: Preferences.cpp:971
 msgid "ReplayGain mode:"
 msgstr "Mode Gain :"
@@ -3364,10 +3372,6 @@ msgstr "Automatique"
 #: Preferences.cpp:1106
 msgid "GConf Defined"
 msgstr "Défini dans GConf"
-
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr " Fondu enchaîné"
 
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
@@ -4377,4 +4381,4 @@ msgid "From file"
 msgstr "Depuis un fichier"
 
 msgid "To file"
-msgstr "En fichier"
+msgstr "Dans un fichier"

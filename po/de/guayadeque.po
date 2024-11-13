@@ -3208,9 +3208,13 @@ msgstr "Sofortsuche"
 msgid "When searching, pressing enter queues the result"
 msgstr "Bestätigen der Eingabetaste reiht Suchergebnisse in Wiedergabeliste ein"
 
+#: ui/preferences/Preferences.cpp:541
+msgid "Show album cover in the player"
+msgstr "Albumcover im Player anzeigen"
+
 #: Preferences.cpp:681
-msgid "Show CD cover frame in the player"
-msgstr "Extra Rahmen für CD-Cover anzeigen"
+msgid "Show CD cover frame in the cover editor"
+msgstr "CD-Cover-Rahmen im Cover-Editor anzeigen"
 
 #: Preferences.cpp:687
 msgid " On Close "
@@ -3286,7 +3290,15 @@ msgstr "Tracks nach Wiedergabe aus Wiedergabeliste löschen"
 
 #: Preferences.cpp:965
 msgid "Show notifications"
-msgstr "Benachrichtigungen einbelenden"
+msgstr "Benachrichtigungen einblenden"
+
+#: ui/preferences/Preferences.cpp:833
+msgid "Enable equalizer"
+msgstr "Equalizer aktivieren"
+
+#: ui/preferences/Preferences.cpp:837
+msgid "Enable volume and fader"
+msgstr "Lautstärke und Fader aktivieren"
 
 #: Preferences.cpp:971
 msgid "ReplayGain mode:"
@@ -3347,10 +3359,6 @@ msgstr "Automatisch"
 #: Preferences.cpp:1106
 msgid "GConf Defined"
 msgstr "GConf Defined"
-
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr "Crossfader"
 
 #: Preferences.cpp:1163
 msgid "Fade-out length:"

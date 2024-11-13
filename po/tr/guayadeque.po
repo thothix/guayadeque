@@ -3348,10 +3348,6 @@ msgstr "Otomatik"
 msgid "GConf Defined"
 msgstr " GConf Tanımlandı"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr " Çapraz Geçiş "
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Fade-out uzunluğu:"

@@ -3346,10 +3346,6 @@ msgstr "Автоматический выбор"
 msgid "GConf Defined"
 msgstr "Определяемый GConf"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr "Перекрестное затухание"
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Время затухания"

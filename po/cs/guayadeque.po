@@ -1878,10 +1878,6 @@ msgstr "Automatické"
 msgid "GConf Defined"
 msgstr "Gconf definované"
 
-#: ui/preferences/Preferences.cpp:1041
-msgid " Crossfader "
-msgstr " Crossfader "
-
 #: ui/preferences/Preferences.cpp:1048
 msgid "Fade-out length:"
 msgstr "Délka plynulého zeslabení:"

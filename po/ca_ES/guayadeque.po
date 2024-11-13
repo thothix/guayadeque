@@ -3346,10 +3346,6 @@ msgstr "Automàtic"
 msgid "GConf Defined"
 msgstr "GConf Definit"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr "Encadenat"
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "Fosa de sortida:"

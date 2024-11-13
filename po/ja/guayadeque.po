@@ -3347,10 +3347,6 @@ msgstr "自動"
 msgid "GConf Defined"
 msgstr "GConfの設定"
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr " クロスフェーダー "
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr "フェードアウト 長さ:"

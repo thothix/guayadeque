@@ -3345,10 +3345,6 @@ msgstr ""
 msgid "GConf Defined"
 msgstr ""
 
-#: Preferences.cpp:1156
-msgid " Crossfader "
-msgstr ""
-
 #: Preferences.cpp:1163
 msgid "Fade-out length:"
 msgstr ""
