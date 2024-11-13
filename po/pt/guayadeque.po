@@ -4429,3 +4429,9 @@ msgstr "Editar capa no GIMP"
 
 msgid "To mp3"
 msgstr "Para mp3"
+
+msgid "From file"
+msgstr "De ficheiro"
+
+msgid "To file"
+msgstr "Para ficheiro"
