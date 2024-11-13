@@ -39,6 +39,7 @@
 namespace Guayadeque {
 
 #define guPREFERENCES_LISTBOX_HEIGHT    110
+#define PREFERENCES_SCROLL_STEP          20
 
 WX_DEFINE_OBJARRAY( guCopyToPatternArray )
 
@@ -84,14 +85,12 @@ guCopyToPattern::~guCopyToPattern()
 }
 
 // -------------------------------------------------------------------------------- //
-wxString guCopyToPattern::ToString( void )
+wxString guCopyToPattern::ToString()
 {
     return wxString::Format( wxT( "%s:%s:%i:%i:%i:%s" ),
         escape_configlist_str( m_Name ).c_str(), escape_configlist_str( m_Pattern ).c_str(),
         m_Format, m_Quality, m_MoveFiles, escape_configlist_str( m_Path ).c_str() );
 }
-
-#define PREFERENCES_SCROLL_STEP     20
 
 
 // -------------------------------------------------------------------------------- //
@@ -107,10 +106,10 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     m_CopyToSelected = wxNOT_FOUND;
     m_LibPathsChanged = false;
     m_VisiblePanels = 0;
-    m_CopyToOptions = NULL;
-    m_LyricSearchEngine = NULL;
+    m_CopyToOptions = nullptr;
+    m_LyricSearchEngine = nullptr;
     m_LyricSourceSelected = wxNOT_FOUND;
-    m_LibOptCopyToChoice = NULL;
+    m_LibOptCopyToChoice = nullptr;
 
     m_Config = ( guConfig * ) guConfig::Get();
     if( !m_Config )
@@ -292,9 +291,7 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
 	m_AccelPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
     if( pagenum == guPREFERENCE_PAGE_LASTUSED )
-    {
         pagenum = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_LAST_PAGE, guPREFERENCE_PAGE_GENERAL, CONFIG_PATH_PREFERENCES );
-    }
 
     switch( pagenum )
     {
@@ -436,7 +433,7 @@ void guPrefDialog::OnPageChanged( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildGeneralPage( void )
+void guPrefDialog::BuildGeneralPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_GENERAL )
         return;
@@ -507,7 +504,7 @@ void guPrefDialog::BuildGeneralPage( void )
     m_TaskIconChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_TASK_BAR_ICON, false, CONFIG_PATH_GENERAL ) );
 	BehaviSizer->Add( m_TaskIconChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
-    m_SoundMenuChkBox = NULL;
+    m_SoundMenuChkBox = nullptr;
 
     guMPRIS2 * MPRIS2 = guMPRIS2::Get();
     bool IsSoundMenuAvailable = MPRIS2->Indicators_Sound_Available();
@@ -579,7 +576,7 @@ void guPrefDialog::BuildGeneralPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildLibraryPage( void )
+void guPrefDialog::BuildLibraryPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_LIBRARY )
         return;
@@ -791,7 +788,7 @@ void guPrefDialog::BuildLibraryPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildPlaybackPage( void )
+void guPrefDialog::BuildPlaybackPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_PLAYBACK )
         return;
@@ -1010,7 +1007,7 @@ void guPrefDialog::BuildPlaybackPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildCrossfaderPage( void )
+void guPrefDialog::BuildCrossfaderPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_CROSSFADER )
         return;
@@ -1102,7 +1099,7 @@ void guPrefDialog::BuildCrossfaderPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildRecordPage( void )
+void guPrefDialog::BuildRecordPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_RECORD )
         return;
@@ -1207,7 +1204,7 @@ void guPrefDialog::BuildRecordPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildAudioScrobblePage( void )
+void guPrefDialog::BuildAudioScrobblePage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_AUDIOSCROBBLE )
         return;
@@ -1246,20 +1243,18 @@ void guPrefDialog::BuildAudioScrobblePage( void )
 	// Password is saved in md5 form so we cant load it back
     ASLoginSizer->Add( m_LastFMPasswdTextCtrl, 0, wxALL, 5 );
 
-    if( m_LastFMPasswdTextCtrl->IsEmpty() || m_LastFMUserNameTextCtrl->IsEmpty() )
-    {
+    if (m_LastFMPasswdTextCtrl->IsEmpty() || m_LastFMUserNameTextCtrl->IsEmpty())
         m_LastFMASEnableChkBox->Disable();
-    }
 
-	LastFMASSizer->Add( ASLoginSizer, 1, wxEXPAND, 5 );
+    LastFMASSizer->Add( ASLoginSizer, 1, wxEXPAND, 5 );
 
-	ASMainSizer->Add( LastFMASSizer, 0, wxEXPAND|wxALL, 5 );
+    ASMainSizer->Add( LastFMASSizer, 0, wxEXPAND|wxALL, 5 );
 
-	wxStaticBoxSizer * LibreFMASSizer = new wxStaticBoxSizer( new wxStaticBox( m_LastFMPanel, wxID_ANY, _(" Libre.fm audioscrobble ") ), wxVERTICAL );
+    wxStaticBoxSizer * LibreFMASSizer = new wxStaticBoxSizer( new wxStaticBox( m_LastFMPanel, wxID_ANY, _(" Libre.fm audioscrobble ") ), wxVERTICAL );
 
-	m_LibreFMASEnableChkBox = new wxCheckBox( m_LastFMPanel, wxID_ANY, _( "Enabled" ), wxDefaultPosition, wxDefaultSize, 0 );
+    m_LibreFMASEnableChkBox = new wxCheckBox( m_LastFMPanel, wxID_ANY, _( "Enabled" ), wxDefaultPosition, wxDefaultSize, 0 );
     m_LibreFMASEnableChkBox->SetValue( m_Config->ReadBool( wxT( "SubmitEnabled" ), false, CONFIG_PATH_LIBREFM ) );
-	LibreFMASSizer->Add( m_LibreFMASEnableChkBox, 0, wxALL, 5 );
+    LibreFMASSizer->Add( m_LibreFMASEnableChkBox, 0, wxALL, 5 );
 
     wxFlexGridSizer * LibreFMASLoginSizer = new wxFlexGridSizer( 2, 0, 0 );
 	LibreFMASLoginSizer->SetFlexibleDirection( wxBOTH );
@@ -1283,9 +1278,7 @@ void guPrefDialog::BuildAudioScrobblePage( void )
 	LibreFMASLoginSizer->Add( m_LibreFMPasswdTextCtrl, 0, wxALL, 5 );
 
 	if( m_LibreFMPasswdTextCtrl->IsEmpty() || m_LibreFMUserNameTextCtrl->IsEmpty() )
-    {
         m_LibreFMASEnableChkBox->Disable();
-    }
 
 	LibreFMASSizer->Add( LibreFMASLoginSizer, 0, wxEXPAND, 5 );
 
@@ -1303,7 +1296,7 @@ void guPrefDialog::BuildAudioScrobblePage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildLyricsPage( void )
+void guPrefDialog::BuildLyricsPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_LYRICS )
         return;
@@ -1325,16 +1318,14 @@ void guPrefDialog::BuildLyricsPage( void )
     for( int Index = 0; Index < Count; Index++ )
     {
         guLyricSource * LyricSource = m_LyricSearchEngine->GetSource( Index );
-        LyricSourcesNames.Add( LyricSource->Name() );
-        LyricSourcesEnabled.Add( LyricSource->Enabled() );
+        LyricSourcesNames.Add(_(LyricSource->Name()));
+        LyricSourcesEnabled.Add(LyricSource->Enabled());
     }
 
 	m_LyricsSrcListBox = new wxCheckListBox( m_LyricsPanel, wxID_ANY, wxDefaultPosition, wxSize( -1, guPREFERENCES_LISTBOX_HEIGHT ), LyricSourcesNames, 0 );
 	LyricsSrcSizer->Add( m_LyricsSrcListBox, 1, wxALL|wxEXPAND, 5 );
 	for( int Index = 0; Index < Count; Index++ )
-	{
         m_LyricsSrcListBox->Check( Index, LyricSourcesEnabled[ Index ] );
-	}
 
 	wxBoxSizer * LyricsSrcBtnSizer = new wxBoxSizer( wxVERTICAL );
 
@@ -1368,14 +1359,13 @@ void guPrefDialog::BuildLyricsPage( void )
     for( int Index = 0; Index < Count; Index++ )
     {
         guLyricSource * LyricTarget = m_LyricSearchEngine->GetTarget( Index );
-        LyricTargetsNames.Add( LyricTarget->Name() );
-        LyricTargetsEnabled.Add( LyricTarget->Enabled() );
+        LyricTargetsNames.Add(_(LyricTarget->Name()));
+        LyricTargetsEnabled.Add(LyricTarget->Enabled());
     }
 	m_LyricsSaveListBox = new wxCheckListBox( m_LyricsPanel, wxID_ANY, wxDefaultPosition, wxSize( -1, guPREFERENCES_LISTBOX_HEIGHT ), LyricTargetsNames, 0 );
 	for( int Index = 0; Index < Count; Index++ )
-	{
         m_LyricsSaveListBox->Check( Index, LyricTargetsEnabled[ Index ] );
-	}
+
 	LyricsSaveSizer->Add( m_LyricsSaveListBox, 1, wxALL|wxEXPAND, 5 );
 
 	wxBoxSizer * LyricsSaveBtnSizer = new wxBoxSizer( wxVERTICAL );
@@ -1475,7 +1465,7 @@ void guPrefDialog::BuildLyricsPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildOnlinePage( void )
+void guPrefDialog::BuildOnlinePage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_ONLINE )
         return;
@@ -1615,7 +1605,7 @@ void guPrefDialog::BuildOnlinePage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildPodcastsPage( void )
+void guPrefDialog::BuildPodcastsPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_PODCASTS )
         return;
@@ -1692,7 +1682,7 @@ void guPrefDialog::BuildPodcastsPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildJamendoPage( void )
+void guPrefDialog::BuildJamendoPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_JAMENDO )
         return;
@@ -1784,7 +1774,7 @@ void guPrefDialog::BuildJamendoPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildMagnatunePage( void )
+void guPrefDialog::BuildMagnatunePage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_MAGNATUNE )
         return;
@@ -1817,11 +1807,11 @@ void guPrefDialog::BuildMagnatunePage( void )
 
     m_MagGenresListBox = new wxCheckListBox( m_MagnatunePanel, wxID_ANY, wxDefaultPosition, wxSize( -1, guPREFERENCES_LISTBOX_HEIGHT ), MagnatuneGenres, 0 );
     int Count = m_LastMagnatuneGenres.Count();
-    for( int Index = 0; Index < Count; Index++ )
+    for ( int Index = 0; Index < Count; Index++ )
     {
-    int Pos = MagnatuneGenres.Index( m_LastMagnatuneGenres[ Index ] );
-    if( Pos != wxNOT_FOUND )
-        m_MagGenresListBox->Check( Pos );
+        int Pos = MagnatuneGenres.Index( m_LastMagnatuneGenres[ Index ] );
+        if ( Pos != wxNOT_FOUND )
+            m_MagGenresListBox->Check( Pos );
     }
     MagGenresSizer->Add( m_MagGenresListBox, 1, wxALL|wxEXPAND, 5 );
 
@@ -1940,7 +1930,7 @@ void guPrefDialog::BuildMagnatunePage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildLinksPage( void )
+void guPrefDialog::BuildLinksPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_LINKS )
         return;
@@ -2059,7 +2049,7 @@ void guPrefDialog::BuildLinksPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildCommandsPage( void )
+void guPrefDialog::BuildCommandsPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_COMMANDS )
         return;
@@ -2175,7 +2165,7 @@ void guPrefDialog::BuildCommandsPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildCopyToPage( void )
+void guPrefDialog::BuildCopyToPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_COPYTO )
         return;
@@ -2363,7 +2353,7 @@ void guPrefDialog::BuildCopyToPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildAcceleratorsPage( void )
+void guPrefDialog::BuildAcceleratorsPage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_ACCELERATORS )
         return;
@@ -2374,18 +2364,14 @@ void guPrefDialog::BuildAcceleratorsPage( void )
 
     m_AccelKeys = m_Config->ReadANum( CONFIG_KEY_ACCELERATORS_ACCELKEY, 0, CONFIG_PATH_ACCELERATORS );
 	if( !m_AccelKeys.Count() )
-	{
 	    guAccelGetDefaultKeys( m_AccelKeys );
-	}
 
 	while( m_AccelKeys.Count() < m_AccelActionNames.Count() )
         m_AccelKeys.Add( 0 );
 
     int Count = m_AccelActionNames.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_AccelKeyNames.Add( guAccelGetKeyCodeString( m_AccelKeys[ Index ] ) );
-    }
 
     //
     // Accelerators Panel
@@ -2410,13 +2396,10 @@ void guPrefDialog::BuildAcceleratorsPage( void )
     wxColour EveBgColor  = wxSystemSettings::GetColour( wxSYS_COLOUR_LISTBOX );
     wxColour OddBgColor;
     if( EveBgColor.Red() > 0x0A && EveBgColor.Green() > 0x0A && EveBgColor.Blue() > 0x0A )
-    {
         OddBgColor.Set( EveBgColor.Red() - 0xA, EveBgColor.Green() - 0x0A, EveBgColor.Blue() - 0x0A );
-    }
     else
-    {
         OddBgColor.Set( EveBgColor.Red() + 0xA, EveBgColor.Green() + 0x0A, EveBgColor.Blue() + 0x0A );
-    }
+
     for( int Index = 0; Index < Count; Index++ )
     {
         long NewItem = m_AccelListCtrl->InsertItem( Index, m_AccelActionNames[ Index ], 0 );
@@ -2453,7 +2436,7 @@ void guPrefDialog::BuildAcceleratorsPage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::SaveSettings( void )
+void guPrefDialog::SaveSettings()
 {
     m_Config = ( guConfig * ) guConfig::Get();
     if( !m_Config )
@@ -2675,9 +2658,8 @@ void guPrefDialog::SaveSettings( void )
         {
             wxURI Uri( SearchLinks[ index ] );
             if( !wxDirExists( guPATH_LINKICONS ) )
-            {
                 wxMkdir( guPATH_LINKICONS, 0770 );
-            }
+
             wxString IconFile = guPATH_LINKICONS + Uri.GetServer() + wxT( ".ico" );
             if( !wxFileExists( IconFile ) )
             {
@@ -2687,13 +2669,9 @@ void guPrefDialog::SaveSettings( void )
                     if( Image.IsOk() )
                     {
                         if( Image.GetWidth() > 25 || Image.GetHeight() > 25 )
-                        {
                             Image.Rescale( 25, 25, wxIMAGE_QUALITY_HIGH );
-                        }
                         if( Image.IsOk() )
-                        {
                             Image.SaveFile( IconFile, wxBITMAP_TYPE_ICO );
-                        }
                     }
                 }
                 else
@@ -2766,7 +2744,7 @@ void guPrefDialog::OnDelPlayedTracksChecked( wxCommandEvent& event )
     m_MaxTracksPlayed->Enable( !m_DelPlayChkBox->IsChecked() );
 }
 
-void guPrefDialog::OnLibOptionsLoadControls( void )
+void guPrefDialog::OnLibOptionsLoadControls()
 {
     bool CollectSelected = ( m_CollectSelected != wxNOT_FOUND ) &&
                            ( m_Collections[ m_CollectSelected ].m_Type == guMEDIA_COLLECTION_TYPE_NORMAL );
@@ -2781,15 +2759,11 @@ void guPrefDialog::OnLibOptionsLoadControls( void )
         guMediaCollection &CurCollection = m_Collections[ m_CollectSelected ];
         int Count = CurCollection.m_Paths.Count();
         for( int Index = 0; Index < Count; Index++ )
-        {
             m_LibPathListBox->Append( CurCollection.m_Paths[ Index ] );
-        }
 
         Count = CurCollection.m_CoverWords.Count();
         for( int Index = 0; Index < Count; Index++ )
-        {
             m_LibCoverListBox->Append( CurCollection.m_CoverWords[ Index ] );
-        }
 
         m_LibOptAutoUpdateChkBox->SetValue( CurCollection.m_UpdateOnStart );
         m_LibOptCreatePlayListChkBox->SetValue( CurCollection.m_ScanPlaylists );
@@ -3238,7 +3212,6 @@ void guPrefDialog::OnLyricUpBtnClick( wxCommandEvent &event )
     m_LyricsSrcListBox->Check( m_LyricSourceSelected, LyricChecked );
     m_LyricsSrcListBox->SetSelection( m_LyricSourceSelected );
 
-
     event.SetInt( m_LyricSourceSelected );
     OnLyricSourceSelected( event );
 
@@ -3345,7 +3318,6 @@ void guPrefDialog::OnLyricSaveUpBtnClick( wxCommandEvent &event )
     m_LyricsSaveListBox->Check( m_LyricTargetSelected, LyricChecked );
     m_LyricsSaveListBox->SetSelection( m_LyricTargetSelected );
 
-
     event.SetInt( m_LyricTargetSelected );
     OnLyricSourceSelected( event );
 
@@ -3419,13 +3391,9 @@ void guPrefDialog::OnFiltersListBoxSelected( wxCommandEvent &event )
 {
     m_FilterSelected = event.GetInt();
     if( m_FilterSelected != wxNOT_FOUND )
-    {
         m_OnlineDelBtn->Enable();
-    }
     else
-    {
         m_OnlineDelBtn->Disable();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3566,13 +3534,9 @@ void guPrefDialog::OnLastFMASUserNameChanged( wxCommandEvent &event )
 {
     if( m_LastFMUserNameTextCtrl->GetValue().IsEmpty() ||
         m_LastFMPasswdTextCtrl->GetValue().IsEmpty() )
-    {
         m_LastFMASEnableChkBox->Disable();
-    }
     else
-    {
         m_LastFMASEnableChkBox->Enable();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3584,9 +3548,7 @@ void guPrefDialog::OnLibreFMASUserNameChanged( wxCommandEvent &event )
         m_LibreFMASEnableChkBox->Disable();
     }
     else
-    {
         m_LibreFMASEnableChkBox->Enable();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3598,9 +3560,7 @@ void guPrefDialog::OnOnlineAddBtnClick( wxCommandEvent& event )
         if( EntryDialog->ShowModal() == wxID_OK )
         {
             if( m_OnlineFiltersListBox->FindString( EntryDialog->GetValue(), true ) == wxNOT_FOUND )
-            {
                 m_OnlineFiltersListBox->Append( EntryDialog->GetValue() );
-            }
         }
         EntryDialog->Destroy();
     }
@@ -3628,9 +3588,7 @@ void guPrefDialog::OnOnlineListBoxDClicked( wxCommandEvent &event )
             if( EntryDialog->ShowModal() == wxID_OK )
             {
                 if( m_OnlineFiltersListBox->FindString( EntryDialog->GetValue(), true ) == wxNOT_FOUND )
-                {
                     m_OnlineFiltersListBox->SetString( index, EntryDialog->GetValue() );
-                }
             }
             EntryDialog->Destroy();
         }
@@ -3690,7 +3648,6 @@ void guPrefDialog::OnOnlineMinBitRateChanged( wxScrollEvent &event )
         }
 
         m_LastMinBitRate = CurPosition;
-
         m_RadioMinBitRateSlider->SetValue( CurPosition );
     }
 }
@@ -3710,9 +3667,7 @@ void guPrefDialog::OnJamendoSelectAll( wxCommandEvent& event )
 {
     int Count = m_JamGenresListBox->GetCount();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_JamGenresListBox->Check( Index );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3720,9 +3675,7 @@ void guPrefDialog::OnJamendoSelectNone( wxCommandEvent& event )
 {
     int Count = m_JamGenresListBox->GetCount();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_JamGenresListBox->Check( Index, false );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3730,9 +3683,7 @@ void guPrefDialog::OnJamendoInvertSelection( wxCommandEvent& event )
 {
     int Count = m_JamGenresListBox->GetCount();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_JamGenresListBox->Check( Index, !m_JamGenresListBox->IsChecked( Index ) );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3740,9 +3691,7 @@ void guPrefDialog::OnMagnatuneSelectAll( wxCommandEvent& event )
 {
     int Count = m_MagGenresListBox->GetCount();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_MagGenresListBox->Check( Index );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3750,9 +3699,7 @@ void guPrefDialog::OnMagnatuneSelectNone( wxCommandEvent& event )
 {
     int Count = m_MagGenresListBox->GetCount();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_MagGenresListBox->Check( Index, false );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3760,9 +3707,7 @@ void guPrefDialog::OnMagnatuneInvertSelection( wxCommandEvent& event )
 {
     int Count = m_MagGenresListBox->GetCount();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_MagGenresListBox->Check( Index, !m_MagGenresListBox->IsChecked( Index ) );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -4168,9 +4113,8 @@ void guPrefDialog::OnCopyToPathBtnClick( wxCommandEvent &event )
     if( DirDialog )
     {
         if( DirDialog->ShowModal() == wxID_OK )
-        {
             m_CopyToPathTextCtrl->SetValue( DirDialog->GetPath() + wxT( "/" ) );
-        }
+
         DirDialog->Destroy();
     }
 }
@@ -4182,9 +4126,7 @@ void guPrefDialog::OnCopyToFormatChanged( wxCommandEvent &event )
     if( m_CopyToSelected != wxNOT_FOUND )
     {
         if( !m_CopyToPatternTextCtrl->IsEmpty() )
-        {
             m_CopyToAcceptBtn->Enable();
-        }
     }
 }
 
@@ -4195,22 +4137,15 @@ void guPrefDialog::OnCopyToQualityChanged( wxCommandEvent &event )
     if( m_CopyToSelected != wxNOT_FOUND )
     {
         if( !m_CopyToPatternTextCtrl->IsEmpty() )
-        {
             m_CopyToAcceptBtn->Enable();
-        }
     }
 }
 
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnCopyToMoveFilesChanged( wxCommandEvent &event )
 {
-    if( m_CopyToSelected != wxNOT_FOUND )
-    {
-        if( !m_CopyToPatternTextCtrl->IsEmpty() )
-        {
-            m_CopyToAcceptBtn->Enable();
-        }
-    }
+    if (m_CopyToSelected != wxNOT_FOUND && !m_CopyToPatternTextCtrl->IsEmpty())
+        m_CopyToAcceptBtn->Enable();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -4236,7 +4171,7 @@ void guPrefDialog::OnCopyToSaveBtnClick( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::UpdateCopyToOptions( void )
+void guPrefDialog::UpdateCopyToOptions()
 {
     if( m_LibOptCopyToChoice )
     {
@@ -4249,18 +4184,14 @@ void guPrefDialog::UpdateCopyToOptions( void )
         {
             int Count = m_CopyToOptions->Count();
             for( int Index = 0; Index < Count; Index++ )
-            {
                 m_LibOptCopyToChoice->Append( m_CopyToOptions->Item( Index ).m_Name );
-            }
         }
         else
         {
             wxArrayString CopyToOptions = m_Config->ReadAStr( CONFIG_KEY_COPYTO_OPTION, wxEmptyString, CONFIG_PATH_COPYTO );
             int Count = CopyToOptions.Count();
             for( int Index = 0; Index < Count; Index++ )
-            {
                 m_LibOptCopyToChoice->Append( CopyToOptions[ Index ].BeforeFirst( wxT( ':' ) ) );
-            }
         }
 
         m_LibOptCopyToChoice->SetStringSelection( CurSelected );
@@ -4279,9 +4210,7 @@ void guPrefDialog::OnAccelSelected( wxListEvent &event )
     m_AccelCurIndex = event.GetIndex();
     //guLogMessage( wxT( "Selected Accel %i" ), m_AccelCurIndex );
     if( m_AccelCurIndex != wxNOT_FOUND )
-    {
         m_AccelLastKey = m_AccelKeys[ m_AccelCurIndex ];
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -4351,9 +4280,7 @@ void guPrefDialog::OnAccelKeyDown( wxKeyEvent &event )
         if( ( KeyIndex == wxNOT_FOUND ) || ( KeyIndex == m_AccelCurIndex ) )
         {
             if( m_AccelItemNeedClear )
-            {
                 m_AccelItemNeedClear = false;
-            }
             m_AccelKeys[ m_AccelCurIndex ] = AccelCurKey;
             m_AccelListCtrl->SetItem( m_AccelCurIndex, 1, guAccelGetKeyCodeString( AccelCurKey ) );
         }
@@ -4376,9 +4303,7 @@ void guPrefDialog::OnAccelDefaultClicked( wxCommandEvent &event )
 
     int Count = m_AccelKeys.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_AccelListCtrl->SetItem( Index, 1, guAccelGetKeyCodeString( m_AccelKeys[ Index ] ) );
-    }
 }
 
 }
