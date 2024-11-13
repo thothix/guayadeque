@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lyricengine>
     <lyricsources>
-        <lyricsource type="embedded" enabled="false" name="Embedded" source=""/>
+        <lyricsource type="embedded" enabled="true" name="Embedded" source=""/>
         <lyricsource type="file" enabled="false" name="From file" source="~/.guayadeque/Lyrics/{a}/{b}/{t}.lyric">
             <replace>
                 <item replace=" &lt;&gt;:&quot;\/|?*" with="_"/>
