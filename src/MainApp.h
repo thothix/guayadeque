@@ -46,6 +46,7 @@ class guMainApp : public wxApp
     void OnFatalException();
     wxLocale * GetLocale() { return &m_Locale; }
 
+    void checkConfigFile();
 };
 
 }

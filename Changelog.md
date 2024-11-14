@@ -4,6 +4,14 @@ Guayadeque Music Player
 Changelog
 =========
 
+Unreleased (2024-11-xx)
+------------------
+
+### Enhancements
+  * Lyrics preferences: Change source embedded default to true.
+  * Added translation to lyrics source and target options.
+  * Translation updates (French, German, Portuguese and Brazilian Portuguese).
+
 0.6.1 (2024-11-12)
 ------------------
 

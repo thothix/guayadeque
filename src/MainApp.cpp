@@ -43,9 +43,9 @@ namespace Guayadeque {
 // -------------------------------------------------------------------------------- //
 guMainApp::guMainApp() : wxApp()
 {
-//    m_Db = NULL;
-    m_DbCache = NULL;
-    m_SingleInstanceChecker = NULL;
+    m_DbCache = nullptr;
+    m_SingleInstanceChecker = nullptr;
+    bool hasNewConfig = false;
 
 #if wxUSE_ON_FATAL_EXCEPTION    // Thanks TheBigRed
         wxHandleFatalExceptions();
@@ -104,52 +104,44 @@ guMainApp::guMainApp() : wxApp()
     if( !wxFileExists( guPATH_CONFIG_FILENAME ) )
     {
         if( wxFileExists( wxT( DATADIR "/guayadeque.default.conf" ) ) )
-        {
             wxCopyFile( wxT( DATADIR "/guayadeque.default.conf" ),
                         guPATH_CONFIG_FILENAME, false );
-        }
         else if( wxFileExists( wxT( "/usr/local/share/guayadeque/guayadeque.default.conf" ) ) )
-        {
             wxCopyFile( wxT( "/usr/local/share/guayadeque/guayadeque.default.conf" ),
                         guPATH_CONFIG_FILENAME, false );
-        }
+
+        hasNewConfig = true;
         guLogMessage( wxT( "Created the default configuration file" ) );
     }
 
     if( !wxFileExists( guPATH_EQUALIZERS_FILENAME ) )
     {
         if( wxFileExists( wxT( DATADIR "/equalizers.default.conf" ) ) )
-        {
             wxCopyFile( wxT( DATADIR "/equalizers.default.conf" ),
                         guPATH_EQUALIZERS_FILENAME, false );
-        }
         else if( wxFileExists( wxT( "/usr/local/share/guayadeque/equalizers.default.conf" ) ) )
-        {
             wxCopyFile( wxT( "/usr/local/share/guayadeque/equalizers.default.conf" ),
                         guPATH_EQUALIZERS_FILENAME, false );
-        }
         guLogMessage( wxT( "Created the default equalizers file" ) );
     }
 
     if( !wxFileExists( guPATH_LYRICS_SOURCES_FILENAME ) )
     {
         if( wxFileExists( wxT( DATADIR "/lyrics_sources.xml" ) ) )
-        {
             wxCopyFile( wxT( DATADIR "/lyrics_sources.xml" ),
                         guPATH_LYRICS_SOURCES_FILENAME, false );
-        }
         else if( wxFileExists( wxT( "/usr/local/share/guayadeque/lyrics_sources.xml" ) ) )
-        {
             wxCopyFile( wxT( "/usr/local/share/guayadeque/lyrics_sources.xml" ),
                         guPATH_LYRICS_SOURCES_FILENAME, false );
-        }
         guLogMessage( wxT( "Created the default lyrics sources file" ) );
     }
 
     m_Config = new guConfig();
     m_Config->Set( m_Config );
 
-}
+    if (hasNewConfig)
+        checkConfigFile();
+    }
 
 // -------------------------------------------------------------------------------- //
 guMainApp::~guMainApp()
@@ -168,6 +160,45 @@ guMainApp::~guMainApp()
       delete m_Config;
 }
 
+// -------------------------------------------------------------------------------- //
+void guMainApp::checkConfigFile()
+{
+    wxString current_desktop, current_terminal;
+    wxString xdg_current_desktop = std::getenv("XDG_CURRENT_DESKTOP");
+
+    guLogMessage( wxT("checkConfigFile - XDG Desktop: %s"), xdg_current_desktop);
+    xdg_current_desktop = xdg_current_desktop.Lower();
+
+    // TODO: Add other desktops than Gnome and KDE
+    if (xdg_current_desktop.Contains("kde") || xdg_current_desktop.Contains("plasma"))
+    {
+        current_desktop = "kde";
+        current_terminal = wxString::Format(wxT("%s %s"), "konsole --workdir", guCOMMAND_ALBUMPATH);
+    }
+    else
+    {
+        current_desktop = "gnome";
+        current_terminal = wxString::Format(wxT("%s=%s"), "gnome-terminal --working-directory", guCOMMAND_ALBUMPATH);
+    }
+
+    // The .config defaults are already set to Gnome
+    if (current_desktop != "gnome")
+    {
+        wxArrayString Commands = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+        size_t count = Commands.Count();
+        if (count)
+        {
+            for (size_t index = 0; index < count; index++)
+            {
+                if (Commands[index].Find("gnome-terminal") != wxNOT_FOUND)
+                    Commands[index] = current_terminal;
+            }
+            m_Config->WriteAStr( CONFIG_KEY_COMMANDS_EXEC, Commands, CONFIG_PATH_COMMANDS_EXECS );
+            m_Config->Flush();
+        }
+    }
+    guLogMessage( wxT("checkConfigFile - Current Desktop: %s"), current_desktop);
+}
 
 // -------------------------------------------------------------------------------- //
 // Its done this way to avoid the warning of temporary address
