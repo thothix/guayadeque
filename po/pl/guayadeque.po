@@ -1985,7 +1985,7 @@ msgid " Targets "
 msgstr " Cele "
 
 #: ui/preferences/Preferences.cpp:1434
-msgid " Disabled Genres "
+msgid "Disabled Genres"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1456

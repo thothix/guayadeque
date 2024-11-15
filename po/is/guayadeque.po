@@ -1979,7 +1979,7 @@ msgid " Targets "
 msgstr " Ákvörðunarstaður "
 
 #: ui/preferences/Preferences.cpp:1434
-msgid " Disabled Genres "
+msgid "Disabled Genres"
 msgstr "Aftengja Flokka"
 
 #: ui/preferences/Preferences.cpp:1456

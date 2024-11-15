@@ -1392,7 +1392,7 @@ void guPrefDialog::BuildLyricsPage()
 
     // Disabled Genres
     //
-  	wxStaticBoxSizer * LyricsDisGenreSizer = new wxStaticBoxSizer( new wxStaticBox( m_LyricsPanel, wxID_ANY, _( " Disabled Genres " ) ), wxHORIZONTAL );
+  	wxStaticBoxSizer * LyricsDisGenreSizer = new wxStaticBoxSizer( new wxStaticBox( m_LyricsPanel, wxID_ANY, wxString::Format(wxT(" %s "), _("Disabled Genres"))), wxHORIZONTAL );
 
     m_LirycsDisGenresListBox = new wxListBox( m_LyricsPanel, wxID_ANY, wxDefaultPosition, wxSize( -1, 100 ), 0, nullptr, 0 );
     m_LirycsDisGenresListBox->Append( m_Config->ReadAStr( CONFIG_KEY_LYRICS_DISGENRE, wxEmptyString, CONFIG_PATH_LYRICS_DISGENRES ) );
