@@ -8,8 +8,8 @@ Unreleased (2024-11-xx)
 ------------------
 
 ### Features
-  * Detects the desktop manager and set a proper default terminal (KDE and 
-    Gnome by now) at first run after installation.
+  * Detects the desktop manager and check/set the proper default commands (KDE, xfce 
+    and Gnome by now) at Guayadeque initialization.
 
 ### Enhancements
   * Lyrics preferences: Change source embedded default to true.
