@@ -45,7 +45,6 @@ guMainApp::guMainApp() : wxApp()
 {
     m_DbCache = nullptr;
     m_SingleInstanceChecker = nullptr;
-    bool hasNewConfig = false;
 
 #if wxUSE_ON_FATAL_EXCEPTION    // Thanks TheBigRed
         wxHandleFatalExceptions();
@@ -110,7 +109,6 @@ guMainApp::guMainApp() : wxApp()
             wxCopyFile( wxT( "/usr/local/share/guayadeque/guayadeque.default.conf" ),
                         guPATH_CONFIG_FILENAME, false );
 
-        hasNewConfig = true;
         guLogMessage( wxT( "Created the default configuration file" ) );
     }
 
@@ -139,9 +137,8 @@ guMainApp::guMainApp() : wxApp()
     m_Config = new guConfig();
     m_Config->Set( m_Config );
 
-    if (hasNewConfig)
-        checkConfigFile();
-    }
+    checkDesktopConfig();
+}
 
 // -------------------------------------------------------------------------------- //
 guMainApp::~guMainApp()
@@ -161,24 +158,34 @@ guMainApp::~guMainApp()
 }
 
 // -------------------------------------------------------------------------------- //
-void guMainApp::checkConfigFile()
+void guMainApp::checkDesktopConfig()
 {
-    wxString current_desktop, current_terminal;
+    wxString current_desktop, terminal, cdaudio, cddata, converter;
     wxString xdg_current_desktop = std::getenv("XDG_CURRENT_DESKTOP");
 
-    guLogMessage( wxT("checkConfigFile - XDG Desktop: %s"), xdg_current_desktop);
+    guLogMessage( wxT("checkDesktopConfig - XDG Desktop: %s"), xdg_current_desktop);
     xdg_current_desktop = xdg_current_desktop.Lower();
 
     // TODO: Add other desktops than Gnome and KDE
     if (xdg_current_desktop.Contains("kde") || xdg_current_desktop.Contains("plasma"))
     {
         current_desktop = "kde";
-        current_terminal = wxString::Format(wxT("%s %s"), "konsole --workdir", guCOMMAND_ALBUMPATH);
+        terminal = wxString::Format(wxT("%s %s"), "konsole --workdir", guCOMMAND_ALBUMPATH);
+        cdaudio = wxString::Format(wxT("%s %s"), "k3b --audiocd", guCOMMAND_TRACKPATH);
+        cddata = wxString::Format(wxT("%s %s"), "k3b --data", guCOMMAND_TRACKPATH);
+        converter = wxString::Format(wxT("%s %s"), "soundkonverter", guCOMMAND_TRACKPATH);
+    }
+    else if (xdg_current_desktop.Contains("xfce"))
+    {
+        current_desktop = "xfce";
+        terminal = wxString::Format(wxT("%s=%s"), "xfce4-terminal --working-directory", guCOMMAND_ALBUMPATH);
+        cdaudio = wxString::Format(wxT("%s %s"), "xfburn -a", guCOMMAND_TRACKPATH);
+        cddata = wxString::Format(wxT("%s %s"), "xfburn -d", guCOMMAND_TRACKPATH);
     }
     else
     {
         current_desktop = "gnome";
-        current_terminal = wxString::Format(wxT("%s=%s"), "gnome-terminal --working-directory", guCOMMAND_ALBUMPATH);
+        //terminal = wxString::Format(wxT("%s=%s"), "gnome-terminal --working-directory", guCOMMAND_ALBUMPATH);
     }
 
     // The .config defaults are already set to Gnome
@@ -188,16 +195,30 @@ void guMainApp::checkConfigFile()
         size_t count = Commands.Count();
         if (count)
         {
+            bool updated = false;
             for (size_t index = 0; index < count; index++)
             {
-                if (Commands[index].Find("gnome-terminal") != wxNOT_FOUND)
-                    Commands[index] = current_terminal;
+                if (!terminal.IsEmpty() && Commands[index].Find("gnome-terminal") != wxNOT_FOUND)
+                {
+                    Commands[index] = terminal;
+                    updated = true;
+                }
+
+                if (!cdaudio.IsEmpty() && Commands[index].Find("brasero -a") != wxNOT_FOUND)
+                    Commands[index] = cdaudio;
+                if (!cddata.IsEmpty() && Commands[index].Find("brasero {") != wxNOT_FOUND)
+                    Commands[index] = cddata;
+                if (!converter.IsEmpty() && Commands[index].Find("soundconverter") != wxNOT_FOUND)
+                    Commands[index] = converter;
             }
-            m_Config->WriteAStr( CONFIG_KEY_COMMANDS_EXEC, Commands, CONFIG_PATH_COMMANDS_EXECS );
-            m_Config->Flush();
+            if (updated)
+            {
+                m_Config->WriteAStr( CONFIG_KEY_COMMANDS_EXEC, Commands, CONFIG_PATH_COMMANDS_EXECS );
+                m_Config->Flush();
+            }
         }
     }
-    guLogMessage( wxT("checkConfigFile - Current Desktop: %s"), current_desktop);
+    guLogMessage( wxT("checkDesktopConfig - Current Desktop: %s"), current_desktop);
 }
 
 // -------------------------------------------------------------------------------- //
