@@ -1977,7 +1977,7 @@ msgid " Targets "
 msgstr "Sasaran"
 
 #: ui/preferences/Preferences.cpp:1434
-msgid " Disabled Genres "
+msgid "Disabled Genres"
 msgstr "Lumpuhkan Genre"
 
 #: ui/preferences/Preferences.cpp:1456

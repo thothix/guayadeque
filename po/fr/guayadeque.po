@@ -3311,7 +3311,7 @@ msgstr "Activer l'égaliseur"
 
 #: ui/preferences/Preferences.cpp:837
 msgid "Enable volume and fader"
-msgstr "Activer le réglage de volume et le fader"
+msgstr "Activer le réglage de volume et le fondu enchaîné"
 
 #: Preferences.cpp:971
 msgid "ReplayGain mode:"
@@ -3461,6 +3461,10 @@ msgstr "Nom d'utilisateur :"
 msgid "Password:"
 msgstr "Mot de passe :"
 
+#: ui/preferences/Preferences.cpp:1395
+msgid "Disabled Genres"
+msgstr "Genres désactivés"
+
 #: Preferences.cpp:1396
 msgid " Libre.fm audioscrobble "
 msgstr " Scrobbler Audio Libre.fm"
@@ -3472,6 +3476,10 @@ msgstr "Rejoignez le groupe d'utilisateurs Last.fm Guayadeque"
 #: Preferences.cpp:1467
 msgid " Sources "
 msgstr " Sources "
+
+#: ui/preferences/Preferences.cpp:1483
+msgid "Proxy Enabled"
+msgstr "Proxy activé"
 
 #: Preferences.cpp:1511
 msgid " Targets "
@@ -3700,7 +3708,7 @@ msgstr "Touche"
 
 #: Preferences.cpp:2935 Preferences.cpp:2955
 msgid "Collection: "
-msgstr "Collection : "
+msgstr "Collection: "
 
 #: Preferences.cpp:2935 Preferences.cpp:2955
 msgid "Enter the collection name"
@@ -3712,15 +3720,19 @@ msgstr "Modifier l'emplacement de la Bibliothèque"
 
 #: Preferences.cpp:3139 Preferences.cpp:3159
 msgid "Word: "
-msgstr "Mot : "
+msgstr "Mot: "
 
 #: Preferences.cpp:3139 Preferences.cpp:3159
 msgid "Enter the text to find covers"
 msgstr "Texte de recherche des Pochettes"
 
+#: ui/preferences/Preferences.cpp:3363
+msgid "Enter the genre to disable"
+msgstr "Entrer le genre à désactiver"
+
 #: Preferences.cpp:3648 Preferences.cpp:3678
 msgid "Filter: "
-msgstr "Filtre : "
+msgstr "Filtre: "
 
 #: Preferences.cpp:3648
 msgid "Enter the text to filter"
@@ -4124,7 +4136,7 @@ msgstr "Commentaire :"
 
 #: TrackEdit.cpp:216
 msgid "Copy the number to all the tracks you are editing"
-msgstr "Copier le numéro de piste  vers tous les morceaux en cours d'édition"
+msgstr "Copier le numéro de piste vers tous les morceaux en cours d'édition"
 
 #: TrackEdit.cpp:219 TrackEdit.cpp:543
 msgid "Number:"

@@ -2409,7 +2409,7 @@ msgstr "Fehlerpfad hinzufügen"
 msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
-msgstr "Album konnte nicht in der  Musiksammlung gefunden werden.\nSie sollten die Musiksammlung aktualisieren."
+msgstr "Album konnte nicht in der Musiksammlung gefunden werden.\nSie sollten die Musiksammlung aktualisieren."
 
 #: MediaViewer.cpp:2160
 msgid " smart playlist"
@@ -2844,7 +2844,7 @@ msgstr "Neuer Kanal"
 
 #: PodcastsPanel.cpp:1745
 msgid "Add a new podcast channel"
-msgstr "Neuen Podcast-Kanal  hinzufügen"
+msgstr "Neuen Podcast-Kanal hinzufügen"
 
 #: PodcastsPanel.cpp:1751
 msgid "delete this podcast channels and all its items"
@@ -3448,17 +3448,25 @@ msgstr "Benutzername:"
 msgid "Password:"
 msgstr "Passwort:"
 
+#: ui/preferences/Preferences.cpp:1395
+msgid "Disabled Genres"
+msgstr "Deaktivierte Genres"
+
 #: Preferences.cpp:1396
 msgid " Libre.fm audioscrobble "
 msgstr " Libre.fm Audioscrobble "
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
-msgstr "Der Guayadeque-Gruppe auf Last.fm  beitreten"
+msgstr "Der Guayadeque-Gruppe auf Last.fm beitreten"
 
 #: Preferences.cpp:1467
 msgid " Sources "
 msgstr "Quellen"
+
+#: ui/preferences/Preferences.cpp:1483
+msgid "Proxy Enabled"
+msgstr "Proxy Aktiviert"
 
 #: Preferences.cpp:1511
 msgid " Targets "
@@ -3704,6 +3712,10 @@ msgstr "Wort:"
 #: Preferences.cpp:3139 Preferences.cpp:3159
 msgid "Enter the text to find covers"
 msgstr "Schlüsselwort für die CD-Cover-Suche eingeben"
+
+#: ui/preferences/Preferences.cpp:3363
+msgid "Enter the genre to disable"
+msgstr "Geben Sie das zu deaktivierende Genre ein"
 
 #: Preferences.cpp:3648 Preferences.cpp:3678
 msgid "Filter: "

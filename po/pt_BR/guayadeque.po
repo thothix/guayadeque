@@ -3494,6 +3494,10 @@ msgstr "Nome de usuário:"
 msgid "Password:"
 msgstr "Senha:"
 
+#: ui/preferences/Preferences.cpp:1395
+msgid "Disabled Genres"
+msgstr "Gêneros desabilitados"
+
 #: Preferences.cpp:1396
 msgid " Libre.fm audioscrobble "
 msgstr " Filtro colaborativo da Libre.fm "
@@ -3505,6 +3509,10 @@ msgstr "Participe do grupo de usuários do Guayadeque"
 #: Preferences.cpp:1467
 msgid " Sources "
 msgstr " Fontes "
+
+#: ui/preferences/Preferences.cpp:1483
+msgid "Proxy Enabled"
+msgstr "Proxy habilitado"
 
 #: Preferences.cpp:1511
 msgid " Targets "
@@ -3767,6 +3775,10 @@ msgstr "Palavra:"
 #: Preferences.cpp:3139 Preferences.cpp:3159
 msgid "Enter the text to find covers"
 msgstr "Digite o texto para encontrar capas"
+
+#: ui/preferences/Preferences.cpp:3363
+msgid "Enter the genre to disable"
+msgstr "Informe o gênero a desabilitar"
 
 #: Preferences.cpp:3648 Preferences.cpp:3678
 msgid "Filter: "
@@ -4421,6 +4433,7 @@ msgstr "Definido pelo usuário"
 #: ui/mediaviewer/library/AlListBox.cpp:344 ui/player/PlayList.cpp:1591
 msgid "Create Best of Playlist"
 msgstr "Criar lista de reprodução melhor de"
+
 
 msgid "Browse in File Manager"
 msgstr "Abrir no Gerenciador de Arquivos"

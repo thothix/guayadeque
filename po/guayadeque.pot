@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-13 17:41-0300\n"
+"POT-Creation-Date: 2024-11-15 17:39-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -445,15 +445,15 @@ msgstr ""
 msgid "Capital"
 msgstr ""
 
-#: MainApp.cpp:349
+#: MainApp.cpp:387
 msgid "Another program instance is already running."
 msgstr ""
 
-#: MainApp.cpp:349
+#: MainApp.cpp:387
 msgid "Do you want to continue with the program?"
 msgstr ""
 
-#: MainApp.cpp:350 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:388 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:543 ui/filebrowser/FileBrowser.cpp:1977
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
@@ -4244,7 +4244,7 @@ msgid " Targets "
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1395
-msgid " Disabled Genres "
+msgid "Disabled Genres"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1416
