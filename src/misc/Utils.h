@@ -58,6 +58,8 @@ namespace Guayadeque {
     #define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_get_request_pad
 #endif
 
+#define guDESKTOP_MANAGERS  { wxT("gnome"), wxT("kde"), wxT("xfce") }
+
 enum guFILEITEM_TYPE {
     guFILEITEM_TYPE_FOLDER = 0,
     guFILEITEM_TYPE_AUDIO,
@@ -74,7 +76,6 @@ public :
     int             m_Time;
 };
 WX_DECLARE_OBJARRAY(guFileItem, guFileItemArray);
-
 
 class guTrackArray;
 class guMediaViewer;

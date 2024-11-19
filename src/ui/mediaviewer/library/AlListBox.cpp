@@ -31,8 +31,6 @@
 #include "Settings.h"
 #include "LibPanel.h"
 
-#include <wx/renderer.h>
-
 #define ALLISTBOX_ITEM_SIZE  40
 
 namespace Guayadeque {
@@ -225,9 +223,13 @@ void AddAlbumCommands( wxMenu * Menu, int SelCount )
     {
         SubMenu = new wxMenu();
 
-        guConfig * Config = ( guConfig * ) guConfig::Get();
-        wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-        wxArrayString Names = Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
+        guConfig * Config = (guConfig *) guConfig::Get();
+
+        wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+        wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+        wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+        wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, current_desktop);
+        wxArrayString Names = Config->ReadAStr(CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
         int count = Commands.Count();
         if( count )
         {
@@ -408,10 +410,12 @@ void guAlListBox::OnCommandClicked( wxCommandEvent &event )
     wxArrayInt Selection = GetSelectedItems();
     if( Selection.Count() )
     {
-        guConfig * Config = ( guConfig * ) guConfig::Get();
+        guConfig * Config = (guConfig *) guConfig::Get();
         if( Config )
         {
-            wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+            wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+            wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+            wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
 
             //guLogMessage( wxT( "CommandId: %u" ), index );
             int CommandIndex = event.GetId() - ID_COMMANDS_BASE;

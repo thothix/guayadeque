@@ -47,95 +47,95 @@ guMainApp::guMainApp() : wxApp()
     m_SingleInstanceChecker = nullptr;
 
 #if wxUSE_ON_FATAL_EXCEPTION    // Thanks TheBigRed
-        wxHandleFatalExceptions();
+    wxHandleFatalExceptions();
 #endif
 
-    if( !wxDirExists( guPATH_CONFIG ) )
+    if (!wxDirExists(guPATH_CONFIG))
     {
-        wxMkdir( guPATH_CONFIG, 0770 );
-        guLogMessage( wxT( "Created the configuration folder" ) );
+        wxMkdir(guPATH_CONFIG, 0770);
+        guLogMessage(wxT("Created the configuration folder"));
     }
 
-    if( !wxDirExists( guPATH_COLLECTIONS ) )
+    if (!wxDirExists(guPATH_COLLECTIONS))
     {
-        wxMkdir( guPATH_COLLECTIONS, 0770 );
-        guLogMessage( wxT( "Created the collections folder" ) );
+        wxMkdir(guPATH_COLLECTIONS, 0770);
+        guLogMessage(wxT("Created the collections folder"));
     }
 
-    if( !wxDirExists( guPATH_RADIOS ) )
+    if (!wxDirExists(guPATH_RADIOS))
     {
-        wxMkdir( guPATH_RADIOS, 0770 );
-        guLogMessage( wxT( "Created the Radios folder" ) );
+        wxMkdir(guPATH_RADIOS, 0770);
+        guLogMessage(wxT("Created the Radios folder"));
     }
 
-    if( !wxDirExists( guPATH_JAMENDO ) )
+    if (!wxDirExists(guPATH_JAMENDO))
     {
-        wxMkdir( guPATH_JAMENDO, 0770 );
-        wxMkdir( guPATH_JAMENDO_COVERS, 0770 );
-        guLogMessage( wxT( "Created the Jamendo folder" ) );
+        wxMkdir(guPATH_JAMENDO, 0770);
+        wxMkdir(guPATH_JAMENDO_COVERS, 0770);
+        guLogMessage(wxT("Created the Jamendo folder"));
     }
 
-    if( !wxDirExists( guPATH_MAGNATUNE ) )
+    if (!wxDirExists(guPATH_MAGNATUNE))
     {
-        wxMkdir( guPATH_MAGNATUNE, 0770 );
-        wxMkdir( guPATH_MAGNATUNE_COVERS, 0770 );
-        guLogMessage( wxT( "Created the Magnatune folder" ) );
+        wxMkdir(guPATH_MAGNATUNE, 0770);
+        wxMkdir(guPATH_MAGNATUNE_COVERS, 0770);
+        guLogMessage(wxT("Created the Magnatune folder"));
     }
 
-    if( !wxDirExists( guPATH_PODCASTS ) )
+    if (!wxDirExists(guPATH_PODCASTS))
     {
-        wxMkdir( guPATH_PODCASTS, 0770 );
-        guLogMessage( wxT( "Created the Podcasts folder" ) );
+        wxMkdir(guPATH_PODCASTS, 0770);
+        guLogMessage(wxT("Created the Podcasts folder"));
     }
 
-    if( !wxDirExists( guPATH_DEVICES ) )
+    if (!wxDirExists(guPATH_DEVICES))
     {
-        wxMkdir( guPATH_DEVICES, 0770 );
-        guLogMessage( wxT( "Created the Devices folder" ) );
+        wxMkdir(guPATH_DEVICES, 0770);
+        guLogMessage(wxT("Created the Devices folder"));
     }
 
-    if( !wxDirExists( guPATH_LAYOUTS ) )
+    if (!wxDirExists(guPATH_LAYOUTS))
     {
-        wxMkdir( guPATH_LAYOUTS, 0770 );
-        guLogMessage( wxT( "Created the Layouts folder" ) );
+        wxMkdir(guPATH_LAYOUTS, 0770);
+        guLogMessage(wxT("Created the Layouts folder"));
     }
 
-    if( !wxFileExists( guPATH_CONFIG_FILENAME ) )
+    if (!wxFileExists(guPATH_CONFIG_FILENAME))
     {
-        if( wxFileExists( wxT( DATADIR "/guayadeque.default.conf" ) ) )
-            wxCopyFile( wxT( DATADIR "/guayadeque.default.conf" ),
-                        guPATH_CONFIG_FILENAME, false );
-        else if( wxFileExists( wxT( "/usr/local/share/guayadeque/guayadeque.default.conf" ) ) )
-            wxCopyFile( wxT( "/usr/local/share/guayadeque/guayadeque.default.conf" ),
-                        guPATH_CONFIG_FILENAME, false );
+        if (wxFileExists(wxT(DATADIR "/guayadeque.default.conf")))
+            wxCopyFile(wxT(DATADIR "/guayadeque.default.conf"),
+                       guPATH_CONFIG_FILENAME, false);
+        else if (wxFileExists(wxT("/usr/local/share/guayadeque/guayadeque.default.conf")))
+            wxCopyFile(wxT("/usr/local/share/guayadeque/guayadeque.default.conf"),
+                       guPATH_CONFIG_FILENAME, false);
 
-        guLogMessage( wxT( "Created the default configuration file" ) );
+        guLogMessage(wxT("Created the default configuration file"));
     }
 
-    if( !wxFileExists( guPATH_EQUALIZERS_FILENAME ) )
+    if (!wxFileExists(guPATH_EQUALIZERS_FILENAME))
     {
-        if( wxFileExists( wxT( DATADIR "/equalizers.default.conf" ) ) )
-            wxCopyFile( wxT( DATADIR "/equalizers.default.conf" ),
-                        guPATH_EQUALIZERS_FILENAME, false );
-        else if( wxFileExists( wxT( "/usr/local/share/guayadeque/equalizers.default.conf" ) ) )
-            wxCopyFile( wxT( "/usr/local/share/guayadeque/equalizers.default.conf" ),
-                        guPATH_EQUALIZERS_FILENAME, false );
-        guLogMessage( wxT( "Created the default equalizers file" ) );
+        if (wxFileExists(wxT(DATADIR "/equalizers.default.conf")))
+            wxCopyFile(wxT(DATADIR "/equalizers.default.conf"),
+                       guPATH_EQUALIZERS_FILENAME, false);
+        else if (wxFileExists(wxT("/usr/local/share/guayadeque/equalizers.default.conf")))
+            wxCopyFile(wxT("/usr/local/share/guayadeque/equalizers.default.conf"),
+                       guPATH_EQUALIZERS_FILENAME, false);
+        guLogMessage(wxT("Created the default equalizers file"));
     }
 
-    if( !wxFileExists( guPATH_LYRICS_SOURCES_FILENAME ) )
+    if (!wxFileExists(guPATH_LYRICS_SOURCES_FILENAME))
     {
-        if( wxFileExists( wxT( DATADIR "/lyrics_sources.xml" ) ) )
-            wxCopyFile( wxT( DATADIR "/lyrics_sources.xml" ),
-                        guPATH_LYRICS_SOURCES_FILENAME, false );
-        else if( wxFileExists( wxT( "/usr/local/share/guayadeque/lyrics_sources.xml" ) ) )
-            wxCopyFile( wxT( "/usr/local/share/guayadeque/lyrics_sources.xml" ),
-                        guPATH_LYRICS_SOURCES_FILENAME, false );
-        guLogMessage( wxT( "Created the default lyrics sources file" ) );
+        if (wxFileExists(wxT(DATADIR "/lyrics_sources.xml")))
+            wxCopyFile(wxT(DATADIR "/lyrics_sources.xml"),
+                       guPATH_LYRICS_SOURCES_FILENAME, false);
+        else if (wxFileExists(wxT("/usr/local/share/guayadeque/lyrics_sources.xml")))
+            wxCopyFile(wxT("/usr/local/share/guayadeque/lyrics_sources.xml"),
+                       guPATH_LYRICS_SOURCES_FILENAME, false);
+        guLogMessage(wxT("Created the default lyrics sources file"));
     }
 
     m_Config = new guConfig();
-    m_Config->Set( m_Config );
+    m_Config->Set(m_Config);
 
     checkDesktopConfig();
 }
@@ -143,82 +143,86 @@ guMainApp::guMainApp() : wxApp()
 // -------------------------------------------------------------------------------- //
 guMainApp::~guMainApp()
 {
-    if( m_SingleInstanceChecker )
+    if (m_SingleInstanceChecker)
         delete m_SingleInstanceChecker;
 
-    if( m_DbCache )
+    if (m_DbCache)
     {
         m_DbCache->Close();
         delete m_DbCache;
     }
 
     // config
-    if( m_Config )
-      delete m_Config;
+    if (m_Config)
+        delete m_Config;
 }
 
 // -------------------------------------------------------------------------------- //
 void guMainApp::checkDesktopConfig()
 {
-    wxString current_desktop, terminal, cdaudio, cddata, converter;
     wxString xdg_current_desktop = std::getenv("XDG_CURRENT_DESKTOP");
 
-    guLogMessage( wxT("checkDesktopConfig - XDG Desktop: %s"), xdg_current_desktop);
+    guLogMessage( wxT("XDG Current Desktop: %s"), xdg_current_desktop);
     xdg_current_desktop = xdg_current_desktop.Lower();
 
-    // TODO: Add other desktops than Gnome and KDE
+    // Get the preferences desktop
+    wxString preference_desktop = m_Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, m_desktop, CONFIG_PATH_GENERAL);
+
+    // Get the actual desktop
     if (xdg_current_desktop.Contains("kde") || xdg_current_desktop.Contains("plasma"))
-    {
-        current_desktop = "kde";
-        terminal = wxString::Format(wxT("%s %s"), "konsole --workdir", guCOMMAND_ALBUMPATH);
-        cdaudio = wxString::Format(wxT("%s %s"), "k3b --audiocd", guCOMMAND_TRACKPATH);
-        cddata = wxString::Format(wxT("%s %s"), "k3b --data", guCOMMAND_TRACKPATH);
-        converter = wxString::Format(wxT("%s %s"), "soundkonverter", guCOMMAND_TRACKPATH);
-    }
+        m_desktop = "kde";
     else if (xdg_current_desktop.Contains("xfce"))
-    {
-        current_desktop = "xfce";
-        terminal = wxString::Format(wxT("%s=%s"), "xfce4-terminal --working-directory", guCOMMAND_ALBUMPATH);
-        cdaudio = wxString::Format(wxT("%s %s"), "xfburn -a", guCOMMAND_TRACKPATH);
-        cddata = wxString::Format(wxT("%s %s"), "xfburn -d", guCOMMAND_TRACKPATH);
-    }
-    else
-    {
-        current_desktop = "gnome";
-        //terminal = wxString::Format(wxT("%s=%s"), "gnome-terminal --working-directory", guCOMMAND_ALBUMPATH);
-    }
+        m_desktop = "xfce";
+    else        // cinnamon, mate, ...
+        m_desktop = "gnome";
 
-    // The .config defaults are already set to Gnome
-    if (current_desktop != "gnome")
+    if (m_desktop == preference_desktop)
+        return;
+
+    m_Config->WriteStr(CONFIG_KEY_GENERAL_DESKTOP, m_desktop, CONFIG_PATH_GENERAL);
+    m_Config->Flush();
+    guLogMessage( wxT("checkDesktopConfig - Current Desktop Changed to: %s"), m_desktop);
+
+    // Old commands config
+    wxArrayString Commands = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+    size_t count = Commands.Count();
+
+    // Returns if already converted (no old config)
+    if (!count)
+        return;
+
+    // Convert from "command/execs" to "command/desktop/execs"
+    wxArrayString Names = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
+
+    m_Config->DeleteCategory(CONFIG_PATH_COMMANDS);
+
+    // Read the current/New default .conf
+    auto default_config = new guConfig(wxT(DATADIR "/guayadeque.default.conf"));
+    wxArrayString desktops = guDESKTOP_MANAGERS;
+
+    for (size_t ix_desktop = 0; ix_desktop < desktops.Count(); ix_desktop++)
     {
-        wxArrayString Commands = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-        size_t count = Commands.Count();
-        if (count)
+        wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, desktops[ix_desktop]);
+        wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, desktops[ix_desktop]);
+
+        if (m_desktop == desktops[ix_desktop])
         {
-            bool updated = false;
-            for (size_t index = 0; index < count; index++)
-            {
-                if (!terminal.IsEmpty() && Commands[index].Find("gnome-terminal") != wxNOT_FOUND)
-                {
-                    Commands[index] = terminal;
-                    updated = true;
-                }
-
-                if (!cdaudio.IsEmpty() && Commands[index].Find("brasero -a") != wxNOT_FOUND)
-                    Commands[index] = cdaudio;
-                if (!cddata.IsEmpty() && Commands[index].Find("brasero {") != wxNOT_FOUND)
-                    Commands[index] = cddata;
-                if (!converter.IsEmpty() && Commands[index].Find("soundconverter") != wxNOT_FOUND)
-                    Commands[index] = converter;
-            }
-            if (updated)
-            {
-                m_Config->WriteAStr( CONFIG_KEY_COMMANDS_EXEC, Commands, CONFIG_PATH_COMMANDS_EXECS );
-                m_Config->Flush();
-            }
+            // Import the current commands to current desktop
+            m_Config->WriteAStr(CONFIG_KEY_COMMANDS_EXEC, Commands, category_execs);
+            m_Config->WriteAStr(CONFIG_KEY_COMMANDS_NAME, Names, category_names);
+        }
+        else
+        {
+            // Import other desktops from the (new) default.conf
+            wxArrayString template_cmds = default_config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+            wxArrayString template_names = default_config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
+            m_Config->WriteAStr(CONFIG_KEY_COMMANDS_EXEC, template_cmds, category_execs);
+            m_Config->WriteAStr(CONFIG_KEY_COMMANDS_NAME, template_names, category_names);
         }
     }
-    guLogMessage( wxT("checkDesktopConfig - Current Desktop: %s"), current_desktop);
+
+    m_Config->Flush();
+    guLogMessage( wxT("checkDesktopConfig - Commands upgraded to desktop: %s"), m_desktop);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -505,5 +509,3 @@ void guMainApp::OnFatalException()
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

@@ -92,6 +92,7 @@ enum guPreference_Page {
     guPREFERENCE_PAGE_ACCELERATORS
 };
 
+
 // -------------------------------------------------------------------------------- //
 class guCopyToPattern
 {
@@ -105,7 +106,6 @@ class guCopyToPattern
 
     guCopyToPattern();
     guCopyToPattern( const wxString &pattern );
-
     ~guCopyToPattern();
 
     wxString    ToString();
@@ -252,6 +252,7 @@ class guPrefDialog : public wxDialog
     wxListBox *                 m_OnlineFiltersListBox;
     wxBitmapButton *            m_OnlineAddBtn;
     wxBitmapButton *            m_OnlineDelBtn;
+
     // Proxy
     wxCheckBox *                m_OnlineProxyEnableChkBox;
     wxTextCtrl *                m_OnlineProxyHostTextCtrl;
@@ -347,7 +348,6 @@ class guPrefDialog : public wxDialog
     wxArrayInt                  m_AccelKeys;
     int                         m_AccelCurIndex;
     int                         m_AccelLastKey;
-
 
     guConfig *                  m_Config;
     guMediaCollectionArray      m_Collections;

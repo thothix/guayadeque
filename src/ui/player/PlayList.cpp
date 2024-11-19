@@ -31,7 +31,6 @@
 #include "PlayerPanel.h"
 #include "PlayListAppend.h"
 #include "PlayListFile.h"
-#include "Shoutcast.h"
 #include "TagInfo.h"
 #include "TrackEdit.h"
 #include "Utils.h"
@@ -1671,9 +1670,13 @@ void AddPlayListCommands( wxMenu * Menu, int SelCount )
         wxMenu * SubMenu = new wxMenu();
         wxASSERT( SubMenu );
 
-        guConfig * Config = ( guConfig * ) guConfig::Get();
-        wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-        wxArrayString Names = Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
+        guConfig * Config = (guConfig *) guConfig::Get();
+
+        wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+        wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+        wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+        wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, current_desktop);
+        wxArrayString Names = Config->ReadAStr(CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
         int count = Commands.Count();
         if( count )
         {
@@ -2477,10 +2480,12 @@ void guPlayList::OnCommandClicked( wxCommandEvent &event )
     wxArrayInt Selection = GetSelectedItems( false );
     if( Selection.Count() )
     {
-        guConfig * Config = ( guConfig * ) guConfig::Get();
+        guConfig * Config = (guConfig *) guConfig::Get();
         if( Config )
         {
-            wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+            wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+            wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+            wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
             wxASSERT( Commands.Count() > 0 );
 
             int CommandIndex = event.GetId() - ID_COMMANDS_BASE;
