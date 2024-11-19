@@ -3973,7 +3973,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr ""
 
 #: ui/taskbar/TaskBar.cpp:173
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "&Kartoti grojaraštį"
 
 #: ui/taskbar/TaskBar.cpp:173 ui/MainFrame.cpp:1608
@@ -3981,7 +3981,7 @@ msgid "Repeat the tracks in the playlist"
 msgstr "Kartoti takelius grojaraštyje"
 
 #: ui/taskbar/TaskBar.cpp:177
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "&Kartoti takelį"
 
 #: ui/taskbar/TaskBar.cpp:177 ui/MainFrame.cpp:1614
@@ -3989,7 +3989,7 @@ msgid "Repeat the current track in the playlist"
 msgstr "Kartoti dabartinį takelį grojaraštyje"
 
 #: ui/taskbar/TaskBar.cpp:181
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr ""
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
@@ -3997,7 +3997,7 @@ msgid "Randomize the playlist"
 msgstr "Išdėstyti grojaraštį atsitiktine tvarka"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr ""
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1634

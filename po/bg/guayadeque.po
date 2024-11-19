@@ -2233,7 +2233,7 @@ msgid "Decrement the volume level"
 msgstr "Намали нивото на звука"
 
 #: MainFrame.cpp:1591 TaskBar.cpp:183
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr "Принудителен режим без тишина между песните"
 
 #: MainFrame.cpp:1592 TaskBar.cpp:183
@@ -4015,15 +4015,15 @@ msgid "&Smart Play"
 msgstr "&Интелигентно Възпроизвеждане"
 
 #: TaskBar.cpp:169
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "&Повтаряне на плейлист"
 
 #: TaskBar.cpp:173
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "&Повтаряне на песен"
 
 #: TaskBar.cpp:177
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "&Разбъркай"
 
 #: TaskBar.cpp:187

@@ -3974,7 +3974,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Kemas kini senarai main berdasarkan statistik Last.fm"
 
 #: ui/taskbar/TaskBar.cpp:173
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "&Ulang Senarai Main"
 
 #: ui/taskbar/TaskBar.cpp:173 ui/MainFrame.cpp:1608
@@ -3982,7 +3982,7 @@ msgid "Repeat the tracks in the playlist"
 msgstr "Ulang trek di dalam senarai main"
 
 #: ui/taskbar/TaskBar.cpp:177
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "&Ulang Trek"
 
 #: ui/taskbar/TaskBar.cpp:177 ui/MainFrame.cpp:1614
@@ -3990,7 +3990,7 @@ msgid "Repeat the current track in the playlist"
 msgstr "Ulang trek semasa di dalam senarai main"
 
 #: ui/taskbar/TaskBar.cpp:181
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "R&awak"
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
@@ -3998,7 +3998,7 @@ msgid "Randomize the playlist"
 msgstr "Rawakkan senarai main"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr "Paksa Mod Tanpa Sela"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1634

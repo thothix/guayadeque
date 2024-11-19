@@ -2251,7 +2251,7 @@ msgid "Decrement the volume level"
 msgstr "Reduzir o volume"
 
 #: MainFrame.cpp:1591 TaskBar.cpp:183
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr "Forçar modo sem intervalo"
 
 #: MainFrame.cpp:1592 TaskBar.cpp:183
@@ -4113,15 +4113,15 @@ msgid "&Smart Play"
 msgstr "&Reprodução inteligente"
 
 #: TaskBar.cpp:169
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "R&epetir fila de reprodução"
 
 #: TaskBar.cpp:173
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "Re&petir faixa"
 
 #: TaskBar.cpp:177
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "Emb&aralhar"
 
 #: TaskBar.cpp:187

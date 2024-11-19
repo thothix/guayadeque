@@ -1546,7 +1546,7 @@ void guMainFrame::CreateControlsMenu( wxMenu * menu )
     menu->AppendSeparator();
 
     m_MenuForceGapless = new wxMenuItem( menu, ID_MAINFRAME_SETFORCEGAPLESS,
-                                wxString( _( "Force Gapless Mode" ) ) + guAccelGetCommandKeyCodeString( ID_MAINFRAME_SETFORCEGAPLESS ),
+                                wxString( _( "Force &Gapless Mode" ) ) + guAccelGetCommandKeyCodeString( ID_MAINFRAME_SETFORCEGAPLESS ),
                                 _( "Set playback in gapless mode" ), wxITEM_CHECK );
     menu->Append( m_MenuForceGapless );
     m_MenuForceGapless->Check( m_PlayerPanel->GetForceGapless() );
