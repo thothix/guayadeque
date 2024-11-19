@@ -318,16 +318,12 @@ bool guConfig::WriteStr( const wxString &keyname, const wxString &value, const w
     wxMutexLocker Locker( m_ConfigMutex );
 
     wxXmlNode * CatNode = category.IsEmpty() ? m_RootNode : CreateCategoryNode( m_RootNode, category );
-
     wxXmlNode * XmlNode = FindNodeByName( CatNode->GetChildren(), keyname );
     if( !XmlNode )
     {
         XmlNode = new wxXmlNode( wxXML_ELEMENT_NODE, keyname );
-
         wxXmlAttribute * Properties = new wxXmlAttribute( wxT( "value" ), value, NULL );
-
         XmlNode->SetAttributes( Properties );
-
         CatNode->AddChild( XmlNode );
     }
     else
@@ -336,13 +332,10 @@ bool guConfig::WriteStr( const wxString &keyname, const wxString &value, const w
         if( !Property )
         {
             Property = new wxXmlAttribute( wxT( "value" ), value, NULL );
-
             XmlNode->SetAttributes( Property );
         }
         else
-        {
             Property->SetValue( value );
-        }
     }
     return true;
 }

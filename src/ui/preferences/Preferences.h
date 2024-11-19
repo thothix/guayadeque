@@ -113,7 +113,6 @@ class guCopyToPattern
 WX_DECLARE_OBJARRAY( guCopyToPattern, guCopyToPatternArray );
 
 
-
 // -------------------------------------------------------------------------------- //
 class guPrefDialog : public wxDialog
 {
