@@ -2233,7 +2233,7 @@ msgid "Decrement the volume level"
 msgstr "Smanji razinu glasnoće"
 
 #: MainFrame.cpp:1591 TaskBar.cpp:183
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr "Forsiraj gapeless način"
 
 #: MainFrame.cpp:1592 TaskBar.cpp:183
@@ -4015,15 +4015,15 @@ msgid "&Smart Play"
 msgstr "&Pametno Izvođenje"
 
 #: TaskBar.cpp:169
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "&Ponovi listu izvođenja"
 
 #: TaskBar.cpp:173
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "&Ponovi pjesmu"
 
 #: TaskBar.cpp:177
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "&Nasumično"
 
 #: TaskBar.cpp:187

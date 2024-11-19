@@ -3973,7 +3973,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Opdater afspilningsliste baseret på Last.fm-statistik"
 
 #: ui/taskbar/TaskBar.cpp:173
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "&Gentag afspilningsliste"
 
 #: ui/taskbar/TaskBar.cpp:173 ui/MainFrame.cpp:1608
@@ -3981,7 +3981,7 @@ msgid "Repeat the tracks in the playlist"
 msgstr "Gentag numrene i afspilningslisten"
 
 #: ui/taskbar/TaskBar.cpp:177
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "&Gentag nummer"
 
 #: ui/taskbar/TaskBar.cpp:177 ui/MainFrame.cpp:1614
@@ -3989,7 +3989,7 @@ msgid "Repeat the current track in the playlist"
 msgstr "Gentag nummeret i afspilningslisten"
 
 #: ui/taskbar/TaskBar.cpp:181
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "&Vilkårligt valg"
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
@@ -3997,7 +3997,7 @@ msgid "Randomize the playlist"
 msgstr "Vilkårlig rækkefølge i afspilningsliste"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr "Fremtving tilstand uden huller"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1634

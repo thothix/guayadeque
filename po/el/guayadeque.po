@@ -1796,7 +1796,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Ενημέρωση της λίστας αναπαραγωγής σύμφωνα με τις στατιστικές του Last.fm"
 
 #: ui/taskbar/TaskBar.cpp:171
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "Επανάληψη Λίστας Αναπαραγωγής"
 
 #: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1524
@@ -1804,7 +1804,7 @@ msgid "Repeat the tracks in the playlist"
 msgstr "Επανάληψη των κομματιών της λίστας αναπαραγωγής"
 
 #: ui/taskbar/TaskBar.cpp:175
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "Επανάληψη Κομματιού"
 
 #: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1530
@@ -1812,11 +1812,11 @@ msgid "Repeat the current track in the playlist"
 msgstr "Επανάληψη του τρέχοντος κομματιού στη λίστα"
 
 #: ui/taskbar/TaskBar.cpp:179
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "&Τυχαία σειρά"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr "Εξαναγκασμένη Aδιάλειπτη Λειτουργία"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1550

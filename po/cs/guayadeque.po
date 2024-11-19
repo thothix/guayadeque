@@ -3977,7 +3977,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Updatovat seznamy skladeb podle last.fm statistiky"
 
 #: ui/taskbar/TaskBar.cpp:173
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "&Opakovat Seznam Skladeb"
 
 #: ui/taskbar/TaskBar.cpp:173 ui/MainFrame.cpp:1608
@@ -3985,7 +3985,7 @@ msgid "Repeat the tracks in the playlist"
 msgstr "Opakovat skladby v seznamu "
 
 #: ui/taskbar/TaskBar.cpp:177
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "&Opakovat Skladbu"
 
 #: ui/taskbar/TaskBar.cpp:177 ui/MainFrame.cpp:1614
@@ -3993,7 +3993,7 @@ msgid "Repeat the current track in the playlist"
 msgstr "Opakovat stávající skladbu v seznamu"
 
 #: ui/taskbar/TaskBar.cpp:181
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "Z&amíchat"
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
@@ -4001,7 +4001,7 @@ msgid "Randomize the playlist"
 msgstr "Zamíchat seznam skladeb"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr "Vynucený bezmezerový režim"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1634

@@ -2232,7 +2232,7 @@ msgid "Decrement the volume level"
 msgstr ""
 
 #: MainFrame.cpp:1591 TaskBar.cpp:183
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr ""
 
 #: MainFrame.cpp:1592 TaskBar.cpp:183
@@ -4014,15 +4014,15 @@ msgid "&Smart Play"
 msgstr ""
 
 #: TaskBar.cpp:169
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "เล่นซ้ำทั้งคิวเพลง"
 
 #: TaskBar.cpp:173
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "เล่นซ้ำเพลงเดิม"
 
 #: TaskBar.cpp:177
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "สลับลำดับของเพลงในคิว"
 
 #: TaskBar.cpp:187

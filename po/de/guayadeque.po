@@ -1797,7 +1797,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Wiedergabeliste mittels Last.fm Statistik aktualisieren"
 
 #: ui/taskbar/TaskBar.cpp:171
-msgid "&Repeat Playlist"
+msgid "Repeat &Playlist"
 msgstr "&Wiedergabeliste wiederholen"
 
 #: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1524
@@ -1805,7 +1805,7 @@ msgid "Repeat the tracks in the playlist"
 msgstr "Titel der Wiedergabeliste wiederholen"
 
 #: ui/taskbar/TaskBar.cpp:175
-msgid "&Repeat Track"
+msgid "Repeat &Track"
 msgstr "&Track wiederholen"
 
 #: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1530
@@ -1813,7 +1813,7 @@ msgid "Repeat the current track in the playlist"
 msgstr "Aktuellen Titel der Wiedergabeliste wiederholen"
 
 #: ui/taskbar/TaskBar.cpp:179
-msgid "R&andomize"
+msgid "&Randomize"
 msgstr "Titel mischen"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
@@ -1821,7 +1821,7 @@ msgid "Randomize the playlist"
 msgstr "Titel mischen"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
-msgid "Force Gapless Mode"
+msgid "Force &Gapless Mode"
 msgstr "Unterbrechungsfreie Wiedergabe erzwingen"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1550
