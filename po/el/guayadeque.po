@@ -1812,12 +1812,8 @@ msgid "Repeat the current track in the playlist"
 msgstr "Επανάληψη του τρέχοντος κομματιού στη λίστα"
 
 #: ui/taskbar/TaskBar.cpp:179
-msgid "Randomize"
-msgstr "Τυχαία σειρά"
-
-#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
-msgid "R&andomize the playlist"
-msgstr "Τυχαία σειρά των κομματιών της λίστας αναπαραγωγής"
+msgid "R&andomize"
+msgstr "&Τυχαία σειρά"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
 msgid "Force Gapless Mode"
@@ -2383,10 +2379,6 @@ msgstr "Επεξεργασία των τραγουδιών από τους επ�
 msgid "Create Best of Playlist"
 msgstr "Δημιουργία λίστας αναπαραγωγής των Best of"
 
-#: ui/mediaviewer/library/ArListBox.cpp:215
-msgid "Create a playlist with the best of this artist"
-msgstr "Δημιουργήστε μια λίστα αναπαραγωγής με τα Best of αυτού του καλλιτέχνη"
-
 #: ui/mediaviewer/library/TaListBox.cpp:105
 #: ui/mediaviewer/treeview/TreePanel.cpp:361
 msgid "Create"
@@ -2430,7 +2422,8 @@ msgstr "Αναπαραγωγή του επιλεγμένου καλλιτέχν�
 
 #: ui/mediaviewer/library/AAListBox.cpp:206
 #: ui/mediaviewer/library/SoListBox.cpp:653
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1817
+#: ui/mediaviewer/library/AlListBox.cpp:343
+#: ui/player/PlayList.cpp:1817
 msgid "Create a playlist with the best of this artist"
 msgstr "Δημιουργήστε μια λίστα αναπαραγωγής με τα Best of αυτού του καλλιτέχνη"
 
