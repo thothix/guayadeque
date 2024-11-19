@@ -2482,6 +2482,10 @@ msgstr "Απόρριψη:"
 msgid "None"
 msgstr "Κανένα"
 
+#: ui/player/PlayerPanel.cpp:170
+msgid "Stops the current track"
+msgstr "Σταματήστε το τρέχον τραγούδι"
+
 #: PlayerPanel.cpp:177
 msgid "Go to the playlist previous track"
 msgstr "Μετάβαση στο προηγούμενο κομμάτι της λίστας αναπαραγωγής"
@@ -2506,9 +2510,9 @@ msgstr "Εγγραφή σε αρχείο"
 msgid "Volume"
 msgstr "Ένταση"
 
-#: PlayerPanel.cpp:210
-msgid "Show the equalizer"
-msgstr "Εμφάνιση του αντισταθμιστή"
+#: ui/player/PlayerPanel.cpp:197
+msgid "Show the equalizer (right click for on/off)"
+msgstr "Εμφανίστε αντισταθμιστής(δεξί κλικ on/off)"
 
 #: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
 msgid "Smart Play: "
@@ -2577,6 +2581,22 @@ msgstr "Λειτουργία επανάληψης:"
 msgid "Off"
 msgstr "Όχι"
 
+#: ui/player/PlayerPanel.cpp:2561
+msgid "Smart mode enabled"
+msgstr "Ενεργοποιημένη έξυπνη λειτουργία"
+
+#: ui/player/PlayerPanel.cpp:2567
+msgid "Repeat all"
+msgstr "Eπαναλάβετε όλα"
+
+#: ui/player/PlayerPanel.cpp:2572
+msgid "Repeat one"
+msgstr "Eπαναλάβετε ένα"
+
+#: ui/player/PlayerPanel.cpp:2579
+msgid "Smart mode disabled"
+msgstr "Απενεργοποιημένη έξυπνη λειτουργία"
+
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
 msgstr "Λίστα αναπαραγωγής:"
@@ -2616,6 +2636,22 @@ msgstr "Επεξεργασία των επιλεγμένων τραγουδιώ�
 #: PlayList.cpp:1548
 msgid "Set as Next Track"
 msgstr "Καθορισμός σαν Επόμενο Κομμάτι"
+
+#: ui/player/PlayList.cpp:68
+msgid "Move the selected tracks to the top"
+msgstr "μετακινήστε το επιλεγμένο τραγούδι στην κορυφή"
+
+#: ui/player/PlayList.cpp:72
+msgid "Move the selected tracks up"
+msgstr "μετακινήστε το επιλεγμένο τραγούδι προς τα πάνω"
+
+#: ui/player/PlayList.cpp:76
+msgid "Move the selected tracks down"
+msgstr "μετακινήστε το επιλεγμένο τραγούδι προς τα κάτω"
+
+#: ui/player/PlayList.cpp:80
+msgid "Move the selected tracks to the bottom"
+msgstr "μετακινήστε το επιλεγμένο τραγούδι στο κάτω μέρος"
 
 #: PlayList.cpp:1549
 msgid "Move the selected tracks to be played next"
@@ -3209,9 +3245,11 @@ msgstr "Άμεση αναζήτηση κειμένου"
 msgid "When searching, pressing enter queues the result"
 msgstr "Με Enter κατά την αναζήτηση, τοποθετείται το αποτέλεσμα στην ουρά αναπαραγωγής"
 
-#: Preferences.cpp:681
-msgid "Show CD cover frame in the player"
-msgstr "Εμφάνιση του πλαισίου των εξωφύλλων στο player"
+msgid "Show album cover in the player"
+msgstr "Εμφανίστε το εξώφυλλο του άλμπουμ στο πλαισίο"
+
+msgid "Show CD cover frame in the cover editor"
+msgstr "Εμφάνιση πλαισίου εξωφύλλου CD στον επεξεργαστή εξωφύλλου"
 
 #: Preferences.cpp:687
 msgid " On Close "
@@ -3288,6 +3326,14 @@ msgstr "Διαγραφή κομματιών που έχουν αναπαραχθ
 #: Preferences.cpp:965
 msgid "Show notifications"
 msgstr "Εμφάνιση ενημερώσεων"
+
+#: ui/preferences/Preferences.cpp:836
+msgid "Enable equalizer"
+msgstr "Ενεργοποίηση αντισταθμιστής"
+
+#: ui/preferences/Preferences.cpp:840
+msgid "Enable volume and fader"
+msgstr "Ενεργοποίηση έντασης ήχου και αμφισοσταθμιστής (crossfader)"
 
 #: Preferences.cpp:971
 msgid "ReplayGain mode:"
@@ -3437,6 +3483,10 @@ msgstr "Όνομα Χρήστη:"
 msgid "Password:"
 msgstr "Κωδικός:"
 
+#: ui/preferences/Preferences.cpp:1395
+msgid "Disabled Genres"
+msgstr "Aπενεργοποιημένο είδος"
+
 #: Preferences.cpp:1396
 msgid " Libre.fm audioscrobble "
 msgstr "Scrobble ήχου του Libre.fm"
@@ -3448,6 +3498,10 @@ msgstr "Γίνετε μέλος της ομάδας του Guayadeque στον L
 #: Preferences.cpp:1467
 msgid " Sources "
 msgstr "Πηγές"
+
+#: ui/preferences/Preferences.cpp:1483
+msgid "Proxy Enabled"
+msgstr "Ενεργοποίηση proxy"
 
 #: Preferences.cpp:1511
 msgid " Targets "
@@ -3693,6 +3747,10 @@ msgstr "Λέξη:"
 #: Preferences.cpp:3139 Preferences.cpp:3159
 msgid "Enter the text to find covers"
 msgstr "Εισαγωγή κειμένου για εύρεση εξωφύλλων"
+
+#: ui/preferences/Preferences.cpp:3363
+msgid "Enter the genre to disable"
+msgstr "Εισάγετε το είδος για να απενεργοποιήσετε"
 
 #: Preferences.cpp:3648 Preferences.cpp:3678
 msgid "Filter: "
@@ -4334,3 +4392,27 @@ msgstr "Εξαγωγή όλων των ραδιοφωνικών σταθμών"
 #: UserRadio.cpp:105
 msgid "User Defined"
 msgstr "Καθορισμένο απο το χρήστη"
+
+msgid "Browse in File Manager"
+msgstr "Αναζήτηση στη Διαχείριση αρχείων"
+
+msgid "Burn as AudioCD using Brasero"
+msgstr "Εγγραφή ως AudioCD χρησιμοποιώντας το Brasero"
+
+msgid "Burn as DataCD using Brasero"
+msgstr "Εγγραφή ως DataCD χρησιμοποιώντας το Brasero"
+
+msgid "Open Terminal in directory"
+msgstr "Ανοίξτε το τερματικό στο φάκελο"
+
+msgid "Edit cover using GIMP"
+msgstr "Επεξεργασία εξωφύλλου με το GIMP"
+
+msgid "To mp3"
+msgstr "Σε mp3"
+
+msgid "From file"
+msgstr "Από αρχείο"
+
+msgid "To file"
+msgstr "Σε αρχείο"

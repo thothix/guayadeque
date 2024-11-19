@@ -2256,10 +2256,6 @@ msgstr "Obtenir de l'aide sur l'utilisation de Guayadeque"
 msgid "Community"
 msgstr "Communauté"
 
-#: MainFrame.cpp:1620
-msgid "Get guayadeque support from guayadeque.org"
-msgstr "Obtenir du support de la communauté guayadeque.org"
-
 #: MainFrame.cpp:1625
 msgid "About"
 msgstr "À propos"
@@ -2565,6 +2561,18 @@ msgstr "Affiche le débit du morceau en cours"
 msgid "Buffering..."
 msgstr "Mise en cache..."
 
+#: ui/player/PlayerPanel.cpp:2561
+msgid "Smart mode enabled"
+msgstr "Mode intelligent activé"
+
+#: ui/player/PlayerPanel.cpp:2567
+msgid "Repeat all"
+msgstr "Tout rejouer"
+
+#: ui/player/PlayerPanel.cpp:2572
+msgid "Repeat one"
+msgstr "Rejouer un morceau"
+
 #: PlayerPanel.cpp:2227
 msgid "Repeat Mode: "
 msgstr "Mode répétition : "
@@ -2572,6 +2580,10 @@ msgstr "Mode répétition : "
 #: PlayerPanel.cpp:2230
 msgid "Off"
 msgstr "Arrêté"
+
+#: ui/player/PlayerPanel.cpp:2579
+msgid "Smart mode disabled"
+msgstr "Mode intelligent désactivé"
 
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
@@ -3469,10 +3481,6 @@ msgstr "Genres désactivés"
 msgid " Libre.fm audioscrobble "
 msgstr " Scrobbler Audio Libre.fm"
 
-#: Preferences.cpp:1435
-msgid "Join the Guayadeque Last.fm users group"
-msgstr "Rejoignez le groupe d'utilisateurs Last.fm Guayadeque"
-
 #: Preferences.cpp:1467
 msgid " Sources "
 msgstr " Sources "
@@ -3961,10 +3969,6 @@ msgstr "Sélectionne l'Artiste de l'Album du morceau en cours"
 #: SoListBox.cpp:661
 msgid "Selects the composer of the current song"
 msgstr "Sélectionne le compositeur du morceau en cours"
-
-#: SplashWin.cpp:62
-msgid "guayadeque.org"
-msgstr "guayadeque.org"
 
 #: SplashWin.cpp:69
 msgid "Please Donate!"

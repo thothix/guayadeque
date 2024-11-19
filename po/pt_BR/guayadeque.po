@@ -2589,7 +2589,15 @@ msgstr "Armazenando..."
 msgid "Smart mode enabled"
 msgstr "Modo inteligente habilitado"
 
-#: ui/player/PlayerPanel.cpp:2686
+#: ui/player/PlayerPanel.cpp:2567
+msgid "Repeat all"
+msgstr "Repete todas"
+
+#: ui/player/PlayerPanel.cpp:2572
+msgid "Repeat one"
+msgstr "Repete uma"
+
+#: ui/player/PlayerPanel.cpp:2579
 msgid "Smart mode disabled"
 msgstr "Modo inteligente desabilitado"
 

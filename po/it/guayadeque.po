@@ -2491,6 +2491,10 @@ msgstr "Riproduci/Metti in pausa la traccia corrente"
 msgid "Go to the playlist next track"
 msgstr "Vai alla traccia successiva nella playlist"
 
+#: ui/player/PlayerPanel.cpp:190
+msgid "Stops the current track"
+msgstr "Arresta il brano corrente"
+
 #: PlayerPanel.cpp:192
 msgid "Stop playing"
 msgstr "Ferma riproduzione"
@@ -2504,8 +2508,8 @@ msgid "Volume"
 msgstr "Volume"
 
 #: PlayerPanel.cpp:210
-msgid "Show the equalizer"
-msgstr "Mostra l'equalizzatore"
+msgid "Show the equalizer (right click for on/off)"
+msgstr "Mostra l'equalizzatore (click destro on/off)"
 
 #: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
 msgid "Smart Play: "
@@ -2574,6 +2578,10 @@ msgstr "Ripetizione: "
 msgid "Off"
 msgstr "Non Attivo"
 
+#: ui/player/PlayerPanel.cpp:2561
+msgid "Smart mode enabled"
+msgstr "Modalità intelligente abilitata"
+
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
 msgstr "Playlist:"
@@ -2613,6 +2621,22 @@ msgstr "Modifica i brani selezionati"
 #: PlayList.cpp:1548
 msgid "Set as Next Track"
 msgstr "Imposta come Successiva"
+
+#: ui/player/PlayList.cpp:68
+msgid "Move the selected tracks to the top"
+msgstr "Spostare i brani selezionati in alto"
+
+#: ui/player/PlayList.cpp:72
+msgid "Move the selected tracks up"
+msgstr "Spostare i brani selezionati verso l'alto"
+
+#: ui/player/PlayList.cpp:76
+msgid "Move the selected tracks down"
+msgstr "Spostare i brani selezionati verso il basso"
+
+#: ui/player/PlayList.cpp:80
+msgid "Move the selected tracks to the bottom"
+msgstr "Spostare i brani selezionati in basso"
 
 #: PlayList.cpp:1549
 msgid "Move the selected tracks to be played next"
@@ -3206,9 +3230,12 @@ msgstr "Ricerca Testo Istantanea"
 msgid "When searching, pressing enter queues the result"
 msgstr "Durante la ricerca, accoda i risultati premendo Invio"
 
+msgid "Show album cover in the player"
+msgstr "Mostrare la copertina dell'album nel lettore"
+
 #: Preferences.cpp:681
-msgid "Show CD cover frame in the player"
-msgstr "Mostra la cover CD  del nel player"
+msgid "Show CD cover frame in the cover editor"
+msgstr "Mostra la cornice della copertina del CD nell'editor delle copertine"
 
 #: Preferences.cpp:687
 msgid " On Close "
@@ -3285,6 +3312,14 @@ msgstr "Elimina automaticamente i brani riprodotti dalla Playlist"
 #: Preferences.cpp:965
 msgid "Show notifications"
 msgstr "Mostra notifiche"
+
+#: ui/preferences/Preferences.cpp:836
+msgid "Enable equalizer"
+msgstr "Attivare l'equalizzatore"
+
+#: ui/preferences/Preferences.cpp:840
+msgid "Enable volume and fader"
+msgstr "Attivare il controllo del volume e il fader"
 
 #: Preferences.cpp:971
 msgid "ReplayGain mode:"
@@ -3434,6 +3469,10 @@ msgstr "Username:"
 msgid "Password:"
 msgstr "Password:"
 
+#: ui/preferences/Preferences.cpp:1395
+msgid "Disabled Genres"
+msgstr "Genere disabile"
+
 #: Preferences.cpp:1396
 msgid " Libre.fm audioscrobble "
 msgstr " Libre.fm audioscrobble "
@@ -3445,6 +3484,10 @@ msgstr "Unisciti al gruppo di Guayadeque su Last.fm"
 #: Preferences.cpp:1467
 msgid " Sources "
 msgstr " Fonti"
+
+#: ui/preferences/Preferences.cpp:1483
+msgid "Proxy Enabled"
+msgstr "Proxy abilitato"
 
 #: Preferences.cpp:1511
 msgid " Targets "
@@ -3690,6 +3733,10 @@ msgstr "Parola:"
 #: Preferences.cpp:3139 Preferences.cpp:3159
 msgid "Enter the text to find covers"
 msgstr "Inserisci il testo per trovare la copertina"
+
+#: ui/preferences/Preferences.cpp:3363
+msgid "Enter the genre to disable"
+msgstr "Inserire il genere da disabilitare"
 
 #: Preferences.cpp:3648 Preferences.cpp:3678
 msgid "Filter: "
@@ -4331,3 +4378,27 @@ msgstr "Esporta tutte le stazioni radio"
 #: UserRadio.cpp:105
 msgid "User Defined"
 msgstr "Personali"
+
+msgid "Browse in File Manager"
+msgstr "Sfogliare in gestore dei file"
+
+msgid "Burn as AudioCD using Brasero"
+msgstr "Masterizzare in CD audio con Brasero"
+
+msgid "Burn as DataCD using Brasero"
+msgstr "Masterizzare in DataCD con Brasero"
+
+msgid "Open Terminal in directory"
+msgstr "Aprire un terminale nella cartella"
+
+msgid "Edit cover using GIMP"
+msgstr "Modificare la copertina con GIMP"
+
+msgid "To mp3"
+msgstr "In mp3"
+
+msgid "From file"
+msgstr "Da un file"
+
+msgid "To file"
+msgstr "In un file"
