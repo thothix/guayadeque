@@ -165,6 +165,8 @@ void guMainApp::checkDesktopConfig()
     guLogMessage( wxT("XDG Current Desktop: %s"), xdg_current_desktop);
     xdg_current_desktop = xdg_current_desktop.Lower();
 
+    xdg_current_desktop = "kde";
+
     // Get the preferences desktop
     wxString preference_desktop = m_Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, m_desktop, CONFIG_PATH_GENERAL);
 
@@ -205,7 +207,7 @@ void guMainApp::checkDesktopConfig()
         wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, desktops[ix_desktop]);
         wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, desktops[ix_desktop]);
 
-        if (m_desktop == desktops[ix_desktop])
+        if (m_desktop == desktops[ix_desktop] && desktops[ix_desktop] == "gnome")
         {
             // Import the current commands to current desktop
             m_Config->WriteAStr(CONFIG_KEY_COMMANDS_EXEC, Commands, category_execs);
