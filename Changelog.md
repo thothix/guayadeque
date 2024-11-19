@@ -8,13 +8,15 @@ Unreleased (2024-11-xx)
 ------------------
 
 ### Features
-  * Detects the desktop manager and check/set the proper default commands (KDE, xfce 
-    and Gnome by now) at Guayadeque initialization.
+  * Detects the desktop manager and check/set the proper default commands
+    (KDE, xfce and Gnome by now) at Guayadeque initialization.
 
 ### Enhancements
   * Lyrics preferences: Change source embedded default to true.
   * Added translation to lyrics source and target options.
-  * Translation updates (French, German, Portuguese and Brazilian Portuguese).
+  * Updated French, Greek and Italian translations. Thanks to filochard.
+  * Updated German translations. Thanks to martinkg.
+  * updated Portuguese and Brazilian Portuguese translations.
 
 0.6.1 (2024-11-12)
 ------------------
