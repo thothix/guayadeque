@@ -20,21 +20,16 @@
 #include "TreePanel.h"
 
 #include "Accelerators.h"
-#include "AuiNotebook.h"
 #include "AuiDockArt.h"
 #include "EventCommandIds.h"
 #include "Config.h"
 #include "DbLibrary.h"
-#include "DynamicPlayList.h"
 #include "EditWithOptions.h"
-#include "FileRenamer.h"
 #include "Images.h"
 #include "LabelEditor.h"
-#include "MainApp.h"
 #include "MainFrame.h"
 #include "OnlineLinks.h"
 #include "PlayListAppend.h"
-#include "PlayListFile.h"
 #include "TagInfo.h"
 #include "TrackEdit.h"
 #include "TreeViewFilterEditor.h"
@@ -312,9 +307,13 @@ void AddTreeViewCommands( wxMenu * Menu, int ItemType )
 
         SubMenu = new wxMenu();
 
-        guConfig * Config = ( guConfig * ) guConfig::Get();
-        wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-        wxArrayString Names = Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
+        guConfig * Config = (guConfig *) guConfig::Get();
+
+        wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+        wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+        wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+        wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, current_desktop);
+        wxArrayString Names = Config->ReadAStr(CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
         int count = Commands.Count();
         if( count )
         {
@@ -693,15 +692,16 @@ void guTreeViewTreeCtrl::OnCommandClicked( wxCommandEvent &event )
 {
     const wxTreeItemId &CurItemId = GetFocusedItem();
     guTreeViewData * TreeViewData = ( guTreeViewData * ) GetItemData( CurItemId );
-//    int ItemType = TreeViewData->GetType();
 
     wxArrayInt Selection;
-    Selection.Add( TreeViewData->GetData() );
+    Selection.Add(TreeViewData->GetData());
 
-    guConfig * Config = ( guConfig * ) guConfig::Get();
+    guConfig * Config = (guConfig *) guConfig::Get();
     if( Config )
     {
-        wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+        wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+        wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+        wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
 
         //guLogMessage( wxT( "CommandId: %u" ), Index );
         int CommandIndex = event.GetId() - ID_COMMANDS_BASE;
@@ -758,8 +758,6 @@ int guTreeViewTreeCtrl::GetContextMenuFlags( void )
 }
 
 
-
-
 // -------------------------------------------------------------------------------- //
 // guTreeViewPanel
 // -------------------------------------------------------------------------------- //
@@ -779,7 +777,6 @@ guTreeViewPanel::guTreeViewPanel( wxWindow * parent, guMediaViewer * mediaviewer
     m_VisiblePanels = Config->ReadNum( wxT( "VisiblePanels" ), guPANEL_PLAYLIST_VISIBLE_DEFAULT, m_ConfigPath );
 
     InitPanelData();
-
     CreateControls();
 }
 

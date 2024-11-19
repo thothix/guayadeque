@@ -295,9 +295,14 @@ void guFileBrowserDirCtrl::AppendFolderCommands( wxMenu * menu )
 
     SubMenu = new wxMenu();
 
-    auto * Config = ( guConfig * ) guConfig::Get();
-    wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-    wxArrayString Names = Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
+    auto * Config = (guConfig *) guConfig::Get();
+
+    wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+    wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+    wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+    wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, current_desktop);
+    wxArrayString Names = Config->ReadAStr(CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
+
     int Count = Commands.Count();
     if( Count )
     {
@@ -910,16 +915,19 @@ void guFilesListBox::ReloadItems( bool reset )
 // -------------------------------------------------------------------------------- //
 void AppendItemsCommands( wxMenu * menu, int selcount, int seltype )
 {
-    wxMenu * SubMenu;
     wxMenuItem * MenuItem;
-
-    SubMenu = new wxMenu();
+    wxMenu * SubMenu = new wxMenu();
 
     guLogMessage( wxT( "AppendItemCommands: %i  %i" ), selcount, seltype );
 
-    guConfig * Config = ( guConfig * ) guConfig::Get();
-    wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-    wxArrayString Names = Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
+    guConfig * Config = (guConfig *) guConfig::Get();
+
+    wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+    wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+    wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+    wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, current_desktop);
+    wxArrayString Names = Config->ReadAStr(CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
+
     int Count = Commands.Count();
     if( Count )
     {
@@ -2017,11 +2025,13 @@ void guFileBrowser::OnFolderCommand( wxCommandEvent &event )
 {
     int CommandId = event.GetId();
 
-    guConfig * Config = ( guConfig * ) guConfig::Get();
+    guConfig * Config = (guConfig *) guConfig::Get();
     if (!Config)
         return;
 
-    wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+    wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+    wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+    wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
 
     CommandId -= ID_COMMANDS_BASE;
     wxString CurCmd = Commands[ CommandId ];
@@ -2056,7 +2066,9 @@ void guFileBrowser::OnItemsCommand( wxCommandEvent &event )
     guConfig * Config = ( guConfig * ) guConfig::Get();
     if( Config )
     {
-        wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+        wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+        wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+        wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
 
         CommandId -= ID_COMMANDS_BASE;
         wxString CurCmd = Commands[ CommandId ];

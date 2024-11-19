@@ -27,15 +27,11 @@
 #include "LabelEditor.h"
 #include "LibPanel.h"
 #include "LibUpdate.h"
-#include "MainApp.h"
 #include "MainFrame.h"
 #include "MediaViewer.h"
 #include "OnlineLinks.h"
 #include "PlayListAppend.h"
-#include "SelCoverFile.h"
 #include "Settings.h"
-#include "StaticBitmap.h"
-#include "ShowImage.h"
 #include "TagInfo.h"
 #include "TrackEdit.h"
 #include "Utils.h"
@@ -1287,7 +1283,9 @@ void guAlbumBrowser::OnCommandClicked( const int cmdid, const int albumid )
         guConfig * Config = ( guConfig * ) guConfig::Get();
         if( Config )
         {
-            wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+            wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+            wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+            wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
 
             int CommandIndex = cmdid - ID_COMMANDS_BASE;
             wxString CurCmd = Commands[ CommandIndex ];
@@ -1346,7 +1344,9 @@ void guAlbumBrowser::OnCommandClicked( const int cmdid, const guTrackArray &trac
         guConfig * Config = ( guConfig * ) guConfig::Get();
         if( Config )
         {
-            wxArrayString Commands = Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+            wxString current_desktop = Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+            wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+            wxArrayString Commands = Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
             int CommandIndex = cmdid - ID_COMMANDS_BASE;
             wxString CurCmd = Commands[ CommandIndex ];
 

@@ -2060,15 +2060,19 @@ void guPrefDialog::BuildCommandsPage()
     // Commands Panel
     //
 	wxBoxSizer * CmdMainSizer = new wxBoxSizer( wxVERTICAL );
-
 	wxStaticBoxSizer * CmdLabelSizer = new wxStaticBoxSizer( new wxStaticBox( m_CmdPanel, wxID_ANY, _(" Commands ") ), wxVERTICAL );
-
 	wxBoxSizer * CmdListBoxSizer = new wxBoxSizer( wxHORIZONTAL );
 
 	m_CmdListBox = new wxListBox( m_CmdPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, 0 );
-    wxArrayString Commands = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
+
+    wxString current_desktop = m_Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+    wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+    wxArrayString Commands = m_Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
 	m_CmdListBox->Append( Commands );
-    m_CmdNames = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
+
+    wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, current_desktop);
+    m_CmdNames = m_Config->ReadAStr(CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
+
     int count = m_CmdListBox->GetCount();
 	while( ( int ) m_CmdNames.Count() < count )
         m_CmdNames.Add( wxEmptyString );
@@ -2077,9 +2081,7 @@ void guPrefDialog::BuildCommandsPage()
     for( int index = 0; index < count; index++ )
     {
         if( m_CmdNames[ index ].IsEmpty() )
-        {
             m_CmdNames[ index ] = Commands[ index ].BeforeFirst( ' ' );
-        }
     }
 
 	CmdListBoxSizer->Add( m_CmdListBox, 1, wxALL|wxEXPAND, 5 );
@@ -2675,9 +2677,7 @@ void guPrefDialog::SaveSettings()
                     }
                 }
                 else
-                {
                     guLogError( wxT( "Coult not get the icon from SearchLink server '%s'" ), Uri.GetServer().c_str() );
-                }
             }
         }
     }
@@ -2685,8 +2685,12 @@ void guPrefDialog::SaveSettings()
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_COMMANDS )
     {
         wxArrayString Commands = m_CmdListBox->GetStrings();
-        m_Config->WriteAStr( CONFIG_KEY_COMMANDS_EXEC, Commands, CONFIG_PATH_COMMANDS_EXECS );
-        m_Config->WriteAStr( CONFIG_KEY_COMMANDS_NAME, m_CmdNames, CONFIG_PATH_COMMANDS_NAMES );
+
+        wxString current_desktop = m_Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, wxEmptyString, CONFIG_PATH_GENERAL);
+        wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, current_desktop);
+        wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, current_desktop);
+        m_Config->WriteAStr( CONFIG_KEY_COMMANDS_EXEC, Commands, category_execs );
+        m_Config->WriteAStr( CONFIG_KEY_COMMANDS_NAME, m_CmdNames, category_names );
     }
 
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_COPYTO )
@@ -2703,9 +2707,7 @@ void guPrefDialog::SaveSettings()
     }
 
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_ACCELERATORS )
-    {
         m_Config->WriteANum( CONFIG_KEY_ACCELERATORS_ACCELKEY, m_AccelKeys, CONFIG_PATH_ACCELERATORS );
-    }
 
     m_Config->Flush();
 }

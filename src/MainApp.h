@@ -29,7 +29,6 @@
 
 namespace Guayadeque {
 
-// -------------------------------------------------------------------------------- //
 class guMainApp : public wxApp
 {
   protected :
@@ -37,6 +36,9 @@ class guMainApp : public wxApp
     guConfig *                  m_Config;
     wxSingleInstanceChecker *   m_SingleInstanceChecker;
     wxLocale                    m_Locale;
+    wxString                    m_desktop;
+
+    void checkDesktopConfig();
 
   public:
     guMainApp();
@@ -45,11 +47,8 @@ class guMainApp : public wxApp
     virtual int  OnExit();
     void OnFatalException();
     wxLocale * GetLocale() { return &m_Locale; }
-
-    void checkDesktopConfig();
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

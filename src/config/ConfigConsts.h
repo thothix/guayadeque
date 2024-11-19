@@ -34,6 +34,9 @@ namespace Guayadeque {
 #define CONFIG_KEY_AUDIOCD_ORDERDESC                     "OrderDesc"
 
 // Commands
+#define CONFIG_PATH_COMMANDS                             "commands"
+#define CONFIG_PATH_COMMANDS_DESKTOP_EXECS               "commands/%s/execs"
+#define CONFIG_PATH_COMMANDS_DESKTOP_NAMES               "commands/%s/names"
 #define CONFIG_PATH_COMMANDS_EXECS                       "commands/execs"
 #define CONFIG_PATH_COMMANDS_NAMES                       "commands/names"
 #define CONFIG_KEY_COMMANDS_EXEC                         "Exec"
@@ -62,15 +65,15 @@ namespace Guayadeque {
 
 // File Browser
 #define CONFIG_PATH_FILE_BROWSER                         "filebrowser"
+#define CONFIG_PATH_FILE_BROWSER_COLUMNS_IDS             "filebrowser/columns/ids"
+#define CONFIG_PATH_FILE_BROWSER_COLUMNS_WIDTHS          "filebrowser/columns/widths"
+#define CONFIG_PATH_FILE_BROWSER_COLUMNS_SHOWS           "filebrowser/columns/shows"
 #define CONFIG_KEY_FILE_BROWSER_SHOW_LIB_PATHS           "ShowLibPaths"
 #define CONFIG_KEY_FILE_BROWSER_ORDER                    "Order"
 #define CONFIG_KEY_FILE_BROWSER_ORDERDESC                "OrderDesc"
 #define CONFIG_KEY_FILE_BROWSER_VISIBLE_PANELS           "VisiblePanels"
 #define CONFIG_KEY_FILE_BROWSER_LAST_LAYOUT              "LastLayout"
 #define CONFIG_KEY_FILE_BROWSER_PATH                     "Path"
-#define CONFIG_PATH_FILE_BROWSER_COLUMNS_IDS             "filebrowser/columns/ids"
-#define CONFIG_PATH_FILE_BROWSER_COLUMNS_WIDTHS          "filebrowser/columns/widths"
-#define CONFIG_PATH_FILE_BROWSER_COLUMNS_SHOWS           "filebrowser/columns/shows"
 
 // File Renamer
 #define CONFIG_PATH_FILE_RENAMER                         "filebrowser/filerenamer"
@@ -119,6 +122,7 @@ namespace Guayadeque {
 #define CONFIG_KEY_GENERAL_SOUND_MENU_INTEGRATE          "SoundMenuIntegration"
 #define CONFIG_KEY_GENERAL_START_MINIMIZED               "StartMinimized"
 #define CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER             "TextSearchEnterRelax"
+#define CONFIG_KEY_GENERAL_DESKTOP                       "Desktop"
 
 // Import Files
 #define CONFIG_PATH_IMPORT_FILES_POSITION                "positions/import_files/position"
