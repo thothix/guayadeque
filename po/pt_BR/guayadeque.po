@@ -2252,7 +2252,7 @@ msgstr "Reduzir o volume"
 
 #: MainFrame.cpp:1591 TaskBar.cpp:183
 msgid "Force &Gapless Mode"
-msgstr "Forçar modo sem intervalo"
+msgstr "Forçar modo sem &intervalo"
 
 #: MainFrame.cpp:1592 TaskBar.cpp:183
 msgid "Set playback in gapless mode"
