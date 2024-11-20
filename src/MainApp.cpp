@@ -165,8 +165,6 @@ void guMainApp::checkDesktopConfig()
     guLogMessage( wxT("XDG Current Desktop: %s"), xdg_current_desktop);
     xdg_current_desktop = xdg_current_desktop.Lower();
 
-    xdg_current_desktop = "kde";
-
     // Get the preferences desktop
     wxString preference_desktop = m_Config->ReadStr(CONFIG_KEY_GENERAL_DESKTOP, m_desktop, CONFIG_PATH_GENERAL);
 
@@ -175,6 +173,8 @@ void guMainApp::checkDesktopConfig()
         m_desktop = "kde";
     else if (xdg_current_desktop.Contains("xfce"))
         m_desktop = "xfce";
+    else if (xdg_current_desktop.Contains("lxqt"))
+        m_desktop = "lxqt";
     else        // cinnamon, mate, ...
         m_desktop = "gnome";
 
@@ -187,40 +187,58 @@ void guMainApp::checkDesktopConfig()
 
     // Old commands config
     wxArrayString Commands = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, CONFIG_PATH_COMMANDS_EXECS );
-    size_t count = Commands.Count();
+    size_t count = Commands.GetCount();
 
     // Returns if already converted (no old config)
-    if (!count)
-        return;
+    //if (!count)
+    //    return;
 
     // Convert from "command/execs" to "command/desktop/execs"
     wxArrayString Names = m_Config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, CONFIG_PATH_COMMANDS_NAMES );
 
-    m_Config->DeleteCategory(CONFIG_PATH_COMMANDS);
+    m_Config->DeleteCategory(CONFIG_PATH_COMMANDS_EXECS);
+    m_Config->DeleteCategory(CONFIG_PATH_COMMANDS_NAMES);
+    m_Config->Flush();
 
     // Read the current/New default .conf
     auto default_config = new guConfig(wxT(DATADIR "/guayadeque.default.conf"));
     wxArrayString desktops = guDESKTOP_MANAGERS;
+    wxArrayString default_cmds;
+    bool found;
 
-    for (size_t ix_desktop = 0; ix_desktop < desktops.Count(); ix_desktop++)
+    for (size_t ix_desktop = 0; ix_desktop < desktops.GetCount(); ix_desktop++)
     {
         wxString category_execs = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_EXECS, desktops[ix_desktop]);
         wxString category_names = wxString::Format(CONFIG_PATH_COMMANDS_DESKTOP_NAMES, desktops[ix_desktop]);
 
-        if (m_desktop == desktops[ix_desktop] && desktops[ix_desktop] == "gnome")
+        wxArrayString new_cmds = m_Config->ReadAStr(CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+         if (!new_cmds.IsEmpty())
+            continue;
+
+        wxArrayString template_cmds = default_config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+        wxArrayString template_names = default_config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
+        if (ix_desktop == 0)
+            default_cmds = default_config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
+
+        if (m_desktop == desktops[ix_desktop])
         {
             // Import the current commands to current desktop
-            m_Config->WriteAStr(CONFIG_KEY_COMMANDS_EXEC, Commands, category_execs);
-            m_Config->WriteAStr(CONFIG_KEY_COMMANDS_NAME, Names, category_names);
+            for (size_t ix_cmds = 0; ix_cmds < count; ix_cmds++)
+            {
+                found = template_cmds.Index(Commands[ix_cmds]) != wxNOT_FOUND;
+                if (!found)
+                    found = default_cmds.Index(Commands[ix_cmds]) != wxNOT_FOUND;
+
+                if (!found)
+                {
+                    template_cmds.Insert(Commands[ix_cmds], ix_cmds);
+                    template_names.Insert(Names[ix_cmds], ix_cmds);
+                }
+            }
         }
-        else
-        {
-            // Import other desktops from the (new) default.conf
-            wxArrayString template_cmds = default_config->ReadAStr( CONFIG_KEY_COMMANDS_EXEC, wxEmptyString, category_execs);
-            wxArrayString template_names = default_config->ReadAStr( CONFIG_KEY_COMMANDS_NAME, wxEmptyString, category_names);
-            m_Config->WriteAStr(CONFIG_KEY_COMMANDS_EXEC, template_cmds, category_execs);
-            m_Config->WriteAStr(CONFIG_KEY_COMMANDS_NAME, template_names, category_names);
-        }
+
+        m_Config->WriteAStr(CONFIG_KEY_COMMANDS_EXEC, template_cmds, category_execs);
+        m_Config->WriteAStr(CONFIG_KEY_COMMANDS_NAME, template_names, category_names);
     }
 
     m_Config->Flush();
