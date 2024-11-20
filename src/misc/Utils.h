@@ -58,7 +58,7 @@ namespace Guayadeque {
     #define  guGST_ELEMENT_REQUEST_PAD_SIMPLE gst_element_get_request_pad
 #endif
 
-#define guDESKTOP_MANAGERS  { wxT("gnome"), wxT("kde"), wxT("xfce") }
+#define guDESKTOP_MANAGERS  { wxT("gnome"), wxT("kde"), wxT("xfce"), wxT("lxqt") }
 
 enum guFILEITEM_TYPE {
     guFILEITEM_TYPE_FOLDER = 0,
