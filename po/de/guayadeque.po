@@ -2613,9 +2613,25 @@ msgstr "Aktuell ausgewählte Track-Labels bearbeiten"
 msgid "Edit the current selected songs"
 msgstr "Aktuell ausgewählte Tracks bearbeiten"
 
-#: PlayList.cpp:1548
+#: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1740
 msgid "Set as Next Track"
 msgstr "Als nächsten Track festlegen"
+
+#: ui/player/PlayList.cpp:68
+msgid "Move the selected tracks to the top"
+msgstr "Verschiebe die ausgewählten Titel an den Anfang"
+
+#: ui/player/PlayList.cpp:72
+msgid "Move the selected tracks up"
+msgstr "Verschiebe die ausgewählten Titel nach oben"
+
+#: ui/player/PlayList.cpp:76
+msgid "Move the selected tracks down"
+msgstr "Verschiebe die ausgewählten Titel nach unten"
+
+#: ui/player/PlayList.cpp:80
+msgid "Move the selected tracks to the bottom"
+msgstr "Verschiebe die ausgewählten Titel ans Ende der Liste"
 
 #: PlayList.cpp:1549
 msgid "Move the selected tracks to be played next"
