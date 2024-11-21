@@ -691,11 +691,10 @@ void guPlayerPanel::UpdatePositionLabel( const unsigned int curpos )
 {
     wxString Label;
     unsigned int CurLen = m_LastLength;
+
     //if( !m_ShowRevTime || !m_MediaSong.m_Length )
     if( !m_ShowRevTime || !CurLen )
-    {
         Label = LenToString( curpos );
-    }
     else if( CurLen )
     {
         // The Gapless playback can produce than while we are listenning to the finish of
@@ -718,7 +717,6 @@ void guPlayerPanel::UpdatePositionLabel( const unsigned int curpos )
     }
 
     m_PositionLabel->SetLabel( Label );
-
     m_PosLabelSizer->Layout();
 }
 
@@ -2749,16 +2747,14 @@ void guPlayerPanel::OnLeftClickPlayerCoverBitmap( wxMouseEvent &event )
 void guPlayerPanel::OnPlayerPositionSliderBeginSeek( wxScrollEvent &event )
 {
     m_SliderIsDragged = true;
-    //
     if( m_LastLength )
     {
         int CurPos = event.GetPosition() * ( m_LastLength / 1000 );
 
-//        m_PositionLabel->SetLabel( LenToString( CurPos / 1000 ) + _( " of " ) + LenToString( m_MediaSong.m_Length ) );
-//        m_PosLabelSizer->Layout();
+        //m_PositionLabel->SetLabel( LenToString( CurPos / 1000 ) + _( " of " ) + LenToString( m_MediaSong.m_Length ) );
+        //m_PosLabelSizer->Layout();
         UpdatePositionLabel( CurPos );
         //printf( "Slider Tracking %d\n", CurPos );
-
         //m_MediaCtrl->Seek( CurPos * m_MediaSong.Length );
     }
 }

@@ -1068,8 +1068,8 @@ msgid "Current Filters"
 msgstr "Текущи филтри"
 
 #: DynamicPlayList.cpp:548
-msgid " Result "
-msgstr " Резултат "
+msgid "Result"
+msgstr "Резултат"
 
 #: DynamicPlayList.cpp:553 SmartMode.cpp:456
 msgid "Limit to"
@@ -1241,8 +1241,8 @@ msgid "Continue"
 msgstr "Продължи"
 
 #: FileRenamer.cpp:55
-msgid " Names Preview "
-msgstr " Предварителен преглед на имената "
+msgid "Names Preview"
+msgstr "Предварителен преглед на имената"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
 msgid "Pattern:"
@@ -1424,12 +1424,8 @@ msgid "Download Albums torrents"
 msgstr "Свали албума през торент"
 
 #: LabelEditor.cpp:70
-msgid " Items "
-msgstr " елементи "
-
-#: LabelEditor.cpp:91
-msgid " Labels "
-msgstr " Етикети "
+msgid "Items"
+msgstr "елементи"
 
 #: LabelEditor.cpp:119
 msgid "Add a new label"
@@ -1615,8 +1611,8 @@ msgid "Select Columns"
 msgstr "Избери колони"
 
 #: ListView.cpp:1490
-msgid " Columns "
-msgstr " Колони "
+msgid "Columns"
+msgstr "Колони"
 
 #: LocationPanel.cpp:97
 msgid "Local Music"
@@ -1905,10 +1901,6 @@ msgstr "Не е намерен:"
 #: LyricsPanel.cpp:2539
 msgid "Replace option editor"
 msgstr "Настройка на заменянето"
-
-#: LyricsPanel.cpp:2540 RadioPanel.cpp:1173
-msgid "Search:"
-msgstr "Търси:"
 
 #: LyricsPanel.cpp:2545
 msgid "Extract option editor"
@@ -2391,8 +2383,8 @@ msgid ""
 msgstr "Албума не бе намерен в библиотеката с песни.\nТрябва да обновите библиотеката."
 
 #: MediaViewer.cpp:2160
-msgid " smart playlist"
-msgstr " интелигентен плейлист"
+msgid "smart playlist"
+msgstr "интелигентен плейлист"
 
 #: MediaViewer.cpp:2169 PlayerPanel.cpp:245 PlayerPanel.cpp:2238
 msgid "Playlist"
@@ -2669,10 +2661,6 @@ msgid "Search in the library"
 msgstr "Търси в библиотеката"
 
 #: PlayList.cpp:2158
-msgid "Search: "
-msgstr "Търсене: "
-
-#: PlayList.cpp:2158
 msgid "Please enter the search term"
 msgstr "Моля въведете критерии за търсене"
 
@@ -2876,10 +2864,6 @@ msgstr "вграден"
 #: PortableMedia.cpp:985
 msgid "Portable Media Properties"
 msgstr "Свойства на преносима медия"
-
-#: PortableMedia.cpp:991 Preferences.cpp:1271
-msgid " Properties "
-msgstr " Свойства "
 
 #: PortableMedia.cpp:1007 Preferences.cpp:2383
 msgid "Path:"
@@ -3109,20 +3093,16 @@ msgid "Shortcuts"
 msgstr "Преки пътища"
 
 #: Preferences.cpp:371
-msgid " Accept "
-msgstr " Приеми "
-
-#: Preferences.cpp:373
-msgid " Cancel "
-msgstr " Отказ "
+msgid "Accept"
+msgstr "Приеми"
 
 #: Preferences.cpp:587
-msgid " On Start "
-msgstr " При стартиране "
+msgid "On Start"
+msgstr "При стартиране"
 
 #: Preferences.cpp:591 Preferences.cpp:1634
-msgid "Language:"
-msgstr "Език:"
+msgid "Language"
+msgstr "Език"
 
 #: Preferences.cpp:602
 msgid "(Needs restart)"
@@ -3149,8 +3129,8 @@ msgid "Load default layout"
 msgstr "Зареди базовата схема"
 
 #: Preferences.cpp:641
-msgid " Behaviour "
-msgstr " Поведение "
+msgid "Behaviour"
+msgstr "Поведение"
 
 #: Preferences.cpp:643
 msgid "Activate task bar icon"
@@ -3196,10 +3176,6 @@ msgstr "Затварянето скрива прозореца в иконата
 msgid "Ask confirmation on exit"
 msgstr "Питай за потвърждение при изход"
 
-#: Preferences.cpp:740
-msgid " Collections "
-msgstr " Колекции "
-
 #: Preferences.cpp:788
 msgid " Paths "
 msgstr " Пътища "
@@ -3209,8 +3185,8 @@ msgid " Words to detect covers "
 msgstr " Думи по които да се откриват обложки "
 
 #: Preferences.cpp:836 Preferences.cpp:2344
-msgid " Options "
-msgstr " Опции "
+msgid "Options"
+msgstr "Опции"
 
 #: Preferences.cpp:838
 msgid "Update when opened "
@@ -3265,7 +3241,7 @@ msgid "PreAmp:"
 msgstr "PreAmp:"
 
 #: Preferences.cpp:1001
-msgid " Random / Smart play modes "
+msgid "Random / Smart play modes"
 msgstr "Режими на Произволно/Интелигентно възпроизвеждане"
 
 #: Preferences.cpp:1011
@@ -3417,8 +3393,8 @@ msgid " Sources "
 msgstr " Източници "
 
 #: Preferences.cpp:1511
-msgid " Targets "
-msgstr " Дестинации "
+msgid "Targets"
+msgstr "Дестинации"
 
 #: Preferences.cpp:1551
 msgid " Font "
@@ -3440,21 +3416,17 @@ msgstr "Център"
 msgid " Filters "
 msgstr " Филтри "
 
-#: Preferences.cpp:1632
-msgid " Language "
-msgstr " Език "
-
 #: Preferences.cpp:1648
-msgid " Browser command "
-msgstr " Команди на браузъра "
+msgid "Browser command"
+msgstr "Команди на браузъра"
 
 #: Preferences.cpp:1669
-msgid " Minimum radio allowed bit rate "
-msgstr " Минимален позволен битрейт на радиото "
+msgid "Minimum radio allowed bit rate"
+msgstr "Минимален позволен битрейт на радиото"
 
 #: Preferences.cpp:1677
-msgid " Player online buffer size "
-msgstr " Размер на буфера при онлайн възпроизвеждане "
+msgid "Player online buffer size"
+msgstr "Размер на буфера при онлайн възпроизвеждане"
 
 #: Preferences.cpp:1713
 msgid " Podcasts "
@@ -3569,14 +3541,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "Двубуквен код на езика\nТекст за търсене"
-
-#: Preferences.cpp:2166
-msgid " Commands "
-msgstr " Команди "
-
-#: Preferences.cpp:2219
-msgid "Command:"
-msgstr "Команда:"
 
 #: Preferences.cpp:2244
 msgid " Define commands using "
@@ -3702,8 +3666,8 @@ msgid "There are not entries for this Radio Station"
 msgstr "Няма елементи за тази радиостанция"
 
 #: RadioPanel.cpp:1168
-msgid " Radio Search "
-msgstr " Търсене на радио "
+msgid "Radio Search"
+msgstr "Търсене на радио"
 
 #: RadioPanel.cpp:1183
 msgid "Search in now playing info"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-21 16:35-0300\n"
+"POT-Creation-Date: 2024-11-21 20:18-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -206,7 +206,9 @@ msgstr ""
 msgid "Save to Playlist"
 msgstr ""
 
-#: misc/Accelerators.cpp:143 ui/player/PlayList.cpp:1764
+#: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
+#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1764
+#: ui/player/PlayList.cpp:2307
 msgid "Search"
 msgstr ""
 
@@ -434,7 +436,7 @@ msgstr ""
 msgid "Snapshot"
 msgstr ""
 
-#: misc/Accelerators.cpp:401
+#: misc/Accelerators.cpp:401 ui/preferences/Preferences.cpp:371
 msgid "Cancel"
 msgstr ""
 
@@ -467,7 +469,7 @@ msgstr ""
 
 #: db/DbLibrary.cpp:295 db/DbLibrary.cpp:307 db/DbLibrary.cpp:1764
 #: db/DbLibrary.cpp:1776 db/DbLibrary.cpp:1849 db/DbLibrary.cpp:1861
-#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1428
+#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1426
 msgid "Unknown"
 msgstr ""
 
@@ -660,7 +662,7 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: ui/lyrics/LyricsPanel.cpp:2009
+#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2118
 msgid "Command"
 msgstr ""
 
@@ -690,10 +692,6 @@ msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:2449
 msgid "Replace option editor"
-msgstr ""
-
-#: ui/lyrics/LyricsPanel.cpp:2450 ui/radios/RadioPanel.cpp:1170
-msgid "Search:"
 msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:2455
@@ -807,9 +805,10 @@ msgstr ""
 #: ui/locationpanel/LocationPanel.cpp:539 ui/jamendo/Jamendo.cpp:1125
 #: ui/MainFrame.cpp:998 ui/MainFrame.cpp:1036 ui/MainFrame.cpp:1293
 #: ui/mediaviewer/MediaViewer.cpp:943
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:688
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1626
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1035
-#: ui/podcasts/PodcastsPanel.cpp:1758
+#: ui/preferences/Preferences.cpp:1133 ui/podcasts/PodcastsPanel.cpp:1758
 msgid "Properties"
 msgstr ""
 
@@ -870,8 +869,8 @@ msgstr ""
 msgid "View the library Directories"
 msgstr ""
 
-#: ui/locationpanel/LocationPanel.cpp:423 ui/MainFrame.cpp:1177
-#: ui/mediaviewer/library/LibPanel.cpp:241
+#: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
+#: ui/MainFrame.cpp:1177 ui/mediaviewer/library/LibPanel.cpp:241
 #: ui/mediaviewer/library/LibPanel.cpp:248
 #: ui/mediaviewer/library/LibPanel.cpp:563
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:63
@@ -1071,11 +1070,7 @@ msgid "Show collection properties"
 msgstr ""
 
 #: ui/labeleditor/LabelEditor.cpp:71
-msgid " Items "
-msgstr ""
-
-#: ui/labeleditor/LabelEditor.cpp:91
-msgid " Labels "
+msgid "Items"
 msgstr ""
 
 #: ui/labeleditor/LabelEditor.cpp:119
@@ -1363,7 +1358,7 @@ msgid "Select Columns"
 msgstr ""
 
 #: ui/itemlistbox/ListView.cpp:1437
-msgid " Columns "
+msgid "Columns"
 msgstr ""
 
 #: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1042
@@ -1371,7 +1366,7 @@ msgid "Rename Files"
 msgstr ""
 
 #: ui/filebrowser/FileRenamer.cpp:56
-msgid " Names Preview "
+msgid "Names Preview"
 msgstr ""
 
 #: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2252
@@ -1417,7 +1412,7 @@ msgstr ""
 #: ui/mediaviewer/library/SoListBox.cpp:460
 #: ui/mediaviewer/library/AlListBox.cpp:252
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:279
-#: ui/player/PlayList.cpp:1702
+#: ui/preferences/Preferences.cpp:2063 ui/player/PlayList.cpp:1702
 msgid "Commands"
 msgstr ""
 
@@ -2793,23 +2788,23 @@ msgid ""
 msgstr ""
 
 #: ui/mediaviewer/MediaViewer.cpp:2057
-msgid " smart playlist"
+msgid "smart playlist"
 msgstr ""
 
-#: ui/mediaviewer/MediaViewer.cpp:2066
+#: ui/mediaviewer/MediaViewer.cpp:2067
 msgid "Playlist"
 msgstr ""
 
-#: ui/mediaviewer/MediaViewer.cpp:2100
+#: ui/mediaviewer/MediaViewer.cpp:2101
 msgid "The best of "
 msgstr ""
 
-#: ui/mediaviewer/MediaViewer.cpp:2123
+#: ui/mediaviewer/MediaViewer.cpp:2124
 #, c-format
 msgid "No tracks found for %s."
 msgstr ""
 
-#: ui/mediaviewer/MediaViewer.cpp:2126
+#: ui/mediaviewer/MediaViewer.cpp:2127
 #, c-format
 msgid "Best tracks for '%s' not found."
 msgstr ""
@@ -2913,11 +2908,6 @@ msgstr ""
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:682
 msgid "Portable Media Properties"
-msgstr ""
-
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:688
-#: ui/preferences/Preferences.cpp:1133
-msgid " Properties "
 msgstr ""
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:704
@@ -3250,7 +3240,7 @@ msgid "Current Filters"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:547
-msgid " Result "
+msgid "Result"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:572
@@ -3691,7 +3681,7 @@ msgid "There are not entries for this Radio Station"
 msgstr ""
 
 #: ui/radios/RadioPanel.cpp:1165
-msgid " Radio Search "
+msgid "Radio Search"
 msgstr ""
 
 #: ui/radios/RadioPanel.cpp:1180
@@ -3835,7 +3825,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:224
+#: ui/preferences/Preferences.cpp:224 ui/preferences/Preferences.cpp:606
 msgid "Collections"
 msgstr ""
 
@@ -3864,19 +3854,16 @@ msgid "Shortcuts"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:369
-msgid " Accept "
-msgstr ""
-
-#: ui/preferences/Preferences.cpp:371
-msgid " Cancel "
+msgid "Accept"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:447
-msgid " On Start "
+msgid "On Start"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:451 ui/preferences/Preferences.cpp:1556
-msgid "Language:"
+#: ui/preferences/Preferences.cpp:451 ui/preferences/Preferences.cpp:1554
+#: ui/preferences/Preferences.cpp:1556
+msgid "Language"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:462
@@ -3904,7 +3891,7 @@ msgid "Load default layout"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:501
-msgid " Behaviour "
+msgid "Behaviour"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:503
@@ -3955,10 +3942,6 @@ msgstr ""
 msgid "Ask confirmation on exit"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:606
-msgid " Collections "
-msgstr ""
-
 #: ui/preferences/Preferences.cpp:651
 msgid " Paths "
 msgstr ""
@@ -3968,7 +3951,7 @@ msgid " Words to detect covers "
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:700 ui/preferences/Preferences.cpp:2238
-msgid " Options "
+msgid "Options"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:702
@@ -4036,7 +4019,7 @@ msgid "PreAmp:"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:871
-msgid " Random / Smart play modes "
+msgid "Random / Smart play modes"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:881
@@ -4190,7 +4173,7 @@ msgid " Sources "
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1354
-msgid " Targets "
+msgid "Targets"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1395
@@ -4233,20 +4216,16 @@ msgstr ""
 msgid " Filters "
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1554
-msgid " Language "
-msgstr ""
-
 #: ui/preferences/Preferences.cpp:1571
-msgid " Browser command "
+msgid "Browser command"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1579
-msgid " Minimum radio allowed bit rate "
+msgid "Minimum radio allowed bit rate"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1586
-msgid " Player online buffer size "
+msgid "Player online buffer size"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1620
@@ -4361,14 +4340,6 @@ msgstr ""
 msgid ""
 "2 letters language code\n"
 "Text to search"
-msgstr ""
-
-#: ui/preferences/Preferences.cpp:2063
-msgid " Commands "
-msgstr ""
-
-#: ui/preferences/Preferences.cpp:2118
-msgid "Command:"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:2143
@@ -4656,11 +4627,11 @@ msgstr ""
 msgid "Record to file"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3180
+#: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3176
 msgid "Enable crossfading"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3180
+#: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3176
 msgid "Disable crossfading"
 msgstr ""
 
@@ -4668,7 +4639,7 @@ msgstr ""
 msgid "Show the equalizer (right click for on/off)"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:201 ui/player/PlayerPanel.cpp:2846
+#: ui/player/PlayerPanel.cpp:201 ui/player/PlayerPanel.cpp:2842
 msgid "Volume"
 msgstr ""
 
@@ -4704,23 +4675,23 @@ msgstr ""
 msgid "Show the bit rate of the current track"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:1341
+#: ui/player/PlayerPanel.cpp:1339
 msgid "Buffering..."
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2561
+#: ui/player/PlayerPanel.cpp:2559
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2567
+#: ui/player/PlayerPanel.cpp:2565
 msgid "Repeat all"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2572
+#: ui/player/PlayerPanel.cpp:2570
 msgid "Repeat one"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2579
+#: ui/player/PlayerPanel.cpp:2577
 msgid "Smart mode disabled"
 msgstr ""
 
@@ -4810,10 +4781,6 @@ msgstr ""
 
 #: ui/player/PlayList.cpp:2166
 msgid "Can't create a playlist without mediaviewer."
-msgstr ""
-
-#: ui/player/PlayList.cpp:2307
-msgid "Search: "
 msgstr ""
 
 #: ui/player/PlayList.cpp:2307

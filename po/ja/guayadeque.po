@@ -1070,8 +1070,8 @@ msgid "Current Filters"
 msgstr "現在のフィルター"
 
 #: DynamicPlayList.cpp:548
-msgid " Result "
-msgstr " 結果 "
+msgid "Result"
+msgstr "結果"
 
 #: DynamicPlayList.cpp:553 SmartMode.cpp:456
 msgid "Limit to"
@@ -1243,8 +1243,8 @@ msgid "Continue"
 msgstr "続行"
 
 #: FileRenamer.cpp:55
-msgid " Names Preview "
-msgstr " 名前のプレビュー "
+msgid "Names Preview"
+msgstr "名前のプレビュー"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
 msgid "Pattern:"
@@ -1426,12 +1426,8 @@ msgid "Download Albums torrents"
 msgstr "トレントでアルバムをダウンロード"
 
 #: LabelEditor.cpp:70
-msgid " Items "
-msgstr " アイテム "
-
-#: LabelEditor.cpp:91
-msgid " Labels "
-msgstr " ラベル "
+msgid "Items"
+msgstr "アイテム"
 
 #: LabelEditor.cpp:119
 msgid "Add a new label"
@@ -1617,8 +1613,8 @@ msgid "Select Columns"
 msgstr "コラムを選択"
 
 #: ListView.cpp:1490
-msgid " Columns "
-msgstr " コラム "
+msgid "Columns"
+msgstr "コラム"
 
 #: LocationPanel.cpp:97
 msgid "Local Music"
@@ -1907,10 +1903,6 @@ msgstr "見つかりません:"
 #: LyricsPanel.cpp:2539
 msgid "Replace option editor"
 msgstr "オプション・エディタの変更"
-
-#: LyricsPanel.cpp:2540 RadioPanel.cpp:1173
-msgid "Search:"
-msgstr "検索:"
 
 #: LyricsPanel.cpp:2545
 msgid "Extract option editor"
@@ -2393,8 +2385,8 @@ msgid ""
 msgstr "ライブラリにアルバムが見つかりません\nライブラリを更新して下さい"
 
 #: MediaViewer.cpp:2160
-msgid " smart playlist"
-msgstr " スマート再生リスト"
+msgid "smart playlist"
+msgstr "スマート再生リスト"
 
 #: MediaViewer.cpp:2169 PlayerPanel.cpp:245 PlayerPanel.cpp:2238
 msgid "Playlist"
@@ -2671,10 +2663,6 @@ msgid "Search in the library"
 msgstr "ライブラリの検索"
 
 #: PlayList.cpp:2158
-msgid "Search: "
-msgstr "検索"
-
-#: PlayList.cpp:2158
 msgid "Please enter the search term"
 msgstr "検索条件を入力"
 
@@ -2878,10 +2866,6 @@ msgstr "埋め込み"
 #: PortableMedia.cpp:985
 msgid "Portable Media Properties"
 msgstr "携帯メディアの設定"
-
-#: PortableMedia.cpp:991 Preferences.cpp:1271
-msgid " Properties "
-msgstr "設定"
 
 #: PortableMedia.cpp:1007 Preferences.cpp:2383
 msgid "Path:"
@@ -3111,19 +3095,15 @@ msgid "Shortcuts"
 msgstr "ショートカット"
 
 #: Preferences.cpp:371
-msgid " Accept "
+msgid "Accept"
 msgstr "設定"
 
-#: Preferences.cpp:373
-msgid " Cancel "
-msgstr "キャンセル"
-
 #: Preferences.cpp:587
-msgid " On Start "
+msgid "On Start"
 msgstr "起動時"
 
 #: Preferences.cpp:591 Preferences.cpp:1634
-msgid "Language:"
+msgid "Language"
 msgstr "言語"
 
 #: Preferences.cpp:602
@@ -3151,8 +3131,8 @@ msgid "Load default layout"
 msgstr "デフォルト・レイアウトをロードする"
 
 #: Preferences.cpp:641
-msgid " Behaviour "
-msgstr " 動作 "
+msgid "Behaviour"
+msgstr "動作"
 
 #: Preferences.cpp:643
 msgid "Activate task bar icon"
@@ -3198,10 +3178,6 @@ msgstr "タスクバー・アイコンを閉じる"
 msgid "Ask confirmation on exit"
 msgstr "終了時に確認する"
 
-#: Preferences.cpp:740
-msgid " Collections "
-msgstr " コレクション "
-
 #: Preferences.cpp:788
 msgid " Paths "
 msgstr " パス "
@@ -3211,8 +3187,8 @@ msgid " Words to detect covers "
 msgstr " カバーを検出する言葉 "
 
 #: Preferences.cpp:836 Preferences.cpp:2344
-msgid " Options "
-msgstr " オプション "
+msgid "Options"
+msgstr "オプション"
 
 #: Preferences.cpp:838
 msgid "Update when opened "
@@ -3267,8 +3243,8 @@ msgid "PreAmp:"
 msgstr "プリアンプ"
 
 #: Preferences.cpp:1001
-msgid " Random / Smart play modes "
-msgstr " ランダム/スマート再生モード "
+msgid "Random / Smart play modes"
+msgstr "ランダム/スマート再生モード"
 
 #: Preferences.cpp:1011
 msgid "Tracks left to start search"
@@ -3419,8 +3395,8 @@ msgid " Sources "
 msgstr " ソース "
 
 #: Preferences.cpp:1511
-msgid " Targets "
-msgstr " ターゲット "
+msgid "Targets"
+msgstr "ターゲット"
 
 #: Preferences.cpp:1551
 msgid " Font "
@@ -3442,20 +3418,16 @@ msgstr "中央"
 msgid " Filters "
 msgstr " フィルター "
 
-#: Preferences.cpp:1632
-msgid " Language "
-msgstr " 言語 "
-
 #: Preferences.cpp:1648
-msgid " Browser command "
-msgstr " ブラウザ・コマンド "
+msgid "Browser command"
+msgstr "ブラウザ・コマンド"
 
 #: Preferences.cpp:1669
-msgid " Minimum radio allowed bit rate "
+msgid "Minimum radio allowed bit rate"
 msgstr "許可する最小ビットレート"
 
 #: Preferences.cpp:1677
-msgid " Player online buffer size "
+msgid "Player online buffer size"
 msgstr "オンライン・プレイヤーのバッファサイズ"
 
 #: Preferences.cpp:1713
@@ -3571,14 +3543,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "2文字の文字コード\n検索する文字"
-
-#: Preferences.cpp:2166
-msgid " Commands "
-msgstr "コマンド"
-
-#: Preferences.cpp:2219
-msgid "Command:"
-msgstr "コマンド:"
 
 #: Preferences.cpp:2244
 msgid " Define commands using "
@@ -3704,7 +3668,7 @@ msgid "There are not entries for this Radio Station"
 msgstr "このラジオ局のエントリーがありません"
 
 #: RadioPanel.cpp:1168
-msgid " Radio Search "
+msgid "Radio Search"
 msgstr "ラジオ曲の検索"
 
 #: RadioPanel.cpp:1183

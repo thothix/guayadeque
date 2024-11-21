@@ -487,7 +487,7 @@ msgstr "Executar"
 msgid "Snapshot"
 msgstr "Captura"
 
-#: Accelerators.cpp:412
+#: Accelerators.cpp:412 Preferences.cpp:373
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -1071,7 +1071,7 @@ msgid "Current Filters"
 msgstr "Filtros atuais"
 
 #: DynamicPlayList.cpp:548
-msgid " Result "
+msgid "Result"
 msgstr "Resultado"
 
 #: DynamicPlayList.cpp:553 SmartMode.cpp:456
@@ -1246,7 +1246,7 @@ msgid "Continue"
 msgstr "Continuar"
 
 #: FileRenamer.cpp:55
-msgid " Names Preview "
+msgid "Names Preview"
 msgstr "Antevisão de nomes"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
@@ -1433,12 +1433,8 @@ msgid "Download Albums torrents"
 msgstr "Transferir torrents de álbuns"
 
 #: LabelEditor.cpp:70
-msgid " Items "
+msgid "Items"
 msgstr "Itens"
-
-#: LabelEditor.cpp:91
-msgid " Labels "
-msgstr "Etiquetas"
 
 #: LabelEditor.cpp:119
 msgid "Add a new label"
@@ -1628,7 +1624,7 @@ msgid "Select Columns"
 msgstr "Selecione as colunas"
 
 #: ListView.cpp:1490
-msgid " Columns "
+msgid "Columns"
 msgstr "Colunas"
 
 #: LocationPanel.cpp:97
@@ -1917,10 +1913,6 @@ msgstr "Não encontrada:"
 #: LyricsPanel.cpp:2539
 msgid "Replace option editor"
 msgstr "Editor de \"Substituição\""
-
-#: LyricsPanel.cpp:2540 RadioPanel.cpp:1173
-msgid "Search:"
-msgstr "Procurar:"
 
 #: LyricsPanel.cpp:2545
 msgid "Extract option editor"
@@ -2405,7 +2397,7 @@ msgstr ""
 "Experimente atualizar a coleção."
 
 #: MediaViewer.cpp:2160
-msgid " smart playlist"
+msgid "smart playlist"
 msgstr "lista de reprodução inteligente"
 
 #: MediaViewer.cpp:2169 PlayerPanel.cpp:245 PlayerPanel.cpp:2238
@@ -2707,10 +2699,6 @@ msgid "Search in the library"
 msgstr "Procurar na coleção"
 
 #: PlayList.cpp:2158
-msgid "Search: "
-msgstr "Procurar:"
-
-#: PlayList.cpp:2158
 msgid "Please enter the search term"
 msgstr "Indique o texto a procurar"
 
@@ -2914,10 +2902,6 @@ msgstr "incorporado"
 #: PortableMedia.cpp:985
 msgid "Portable Media Properties"
 msgstr "Propriedades do dispositivo"
-
-#: PortableMedia.cpp:991 Preferences.cpp:1271
-msgid " Properties "
-msgstr "Propriedades"
 
 #: PortableMedia.cpp:1007 Preferences.cpp:2383
 msgid "Path:"
@@ -3152,20 +3136,16 @@ msgid "Shortcuts"
 msgstr "Atalhos"
 
 #: Preferences.cpp:371
-msgid " Accept "
+msgid "Accept"
 msgstr "Aceitar"
 
-#: Preferences.cpp:373
-msgid " Cancel "
-msgstr "Cancelar"
-
 #: Preferences.cpp:587
-msgid " On Start "
+msgid "On Start"
 msgstr "Ao iniciar"
 
 #: Preferences.cpp:591 Preferences.cpp:1634
-msgid "Language:"
-msgstr "Idioma:"
+msgid "Language"
+msgstr "Idioma"
 
 #: Preferences.cpp:602
 msgid "(Needs restart)"
@@ -3192,7 +3172,7 @@ msgid "Load default layout"
 msgstr "Carregar esquema padrão"
 
 #: Preferences.cpp:641
-msgid " Behaviour "
+msgid "Behaviour"
 msgstr "Comportamento"
 
 #: Preferences.cpp:643
@@ -3243,10 +3223,6 @@ msgstr "Fechar para a barra de tarefas"
 msgid "Ask confirmation on exit"
 msgstr "Pedir confirmação ao sair"
 
-#: Preferences.cpp:740
-msgid " Collections "
-msgstr "Coleções"
-
 #: Preferences.cpp:788
 msgid " Paths "
 msgstr "Caminhos"
@@ -3256,7 +3232,7 @@ msgid " Words to detect covers "
 msgstr "Palavras para detetar capas"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
-msgid " Options "
+msgid "Options"
 msgstr "Opções"
 
 #: Preferences.cpp:838
@@ -3320,7 +3296,7 @@ msgid "PreAmp:"
 msgstr "Amplificador:"
 
 #: Preferences.cpp:1001
-msgid " Random / Smart play modes "
+msgid "Random / Smart play modes"
 msgstr "Modos Aleatório/Reprodução inteligente"
 
 #: Preferences.cpp:1011
@@ -3480,7 +3456,7 @@ msgid "Proxy Enabled"
 msgstr "Proxy habilitado"
 
 #: Preferences.cpp:1511
-msgid " Targets "
+msgid "Targets"
 msgstr "Destinos"
 
 #: Preferences.cpp:1551
@@ -3503,21 +3479,17 @@ msgstr "Centro"
 msgid " Filters "
 msgstr "Filtros"
 
-#: Preferences.cpp:1632
-msgid " Language "
-msgstr "Idioma"
-
 #: Preferences.cpp:1648
-msgid " Browser command "
+msgid "Browser command"
 msgstr "Comando do navegador"
 
 #: Preferences.cpp:1669
-msgid " Minimum radio allowed bit rate "
+msgid "Minimum radio allowed bit rate"
 msgstr "Taxa mínima para rádio"
 
 #: Preferences.cpp:1677
-msgid " Player online buffer size "
-msgstr "\"Buffer\" do reprodutor"
+msgid "Player online buffer size"
+msgstr "Tamanho do buffer online do reprodutor"
 
 #: Preferences.cpp:1713
 msgid " Podcasts "
@@ -3634,14 +3606,6 @@ msgid ""
 msgstr ""
 "Código do idioma (2 letras)\n"
 "Texto a procurar"
-
-#: Preferences.cpp:2166
-msgid " Commands "
-msgstr "Comandos "
-
-#: Preferences.cpp:2219
-msgid "Command:"
-msgstr "Comando:"
 
 #: Preferences.cpp:2244
 msgid " Define commands using "
@@ -3786,7 +3750,7 @@ msgid "There are not entries for this Radio Station"
 msgstr "Não existem entradas para esta estação"
 
 #: RadioPanel.cpp:1168
-msgid " Radio Search "
+msgid "Radio Search"
 msgstr "Procura de rádios"
 
 #: RadioPanel.cpp:1183

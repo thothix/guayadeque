@@ -656,12 +656,8 @@ msgid "There are not entries for this Radio Station"
 msgstr "Brak wpisów dla tej stacji radiowej"
 
 #: ui/radios/RadioPanel.cpp:1208
-msgid " Radio Search "
-msgstr " Wyszukiwanie radia "
-
-#: ui/radios/RadioPanel.cpp:1213 ui/lyrics/LyricsPanel.cpp:2585
-msgid "Search:"
-msgstr "Szukaj:"
+msgid "Radio Search"
+msgstr "Wyszukiwanie radia"
 
 #: ui/radios/RadioPanel.cpp:1223
 msgid "Search in now playing info"
@@ -776,12 +772,8 @@ msgid "Preset:"
 msgstr "Tryb odtwarzania:"
 
 #: ui/labeleditor/LabelEditor.cpp:73
-msgid " Items "
-msgstr " Elementy "
-
-#: ui/labeleditor/LabelEditor.cpp:94
-msgid " Labels "
-msgstr " Etykiety "
+msgid "Items"
+msgstr "Elementy"
 
 #: ui/labeleditor/LabelEditor.cpp:122
 msgid "Add a new label"
@@ -1383,8 +1375,8 @@ msgid "Select Columns"
 msgstr "Wybierz kolumny"
 
 #: ui/itemlistbox/ListView.cpp:1504
-msgid " Columns "
-msgstr " Kolumny "
+msgid "Columns"
+msgstr "Kolumny"
 
 #: ui/preferences/Preferences.cpp:133
 #: ui/mediaviewer/treeview/TreePanel.cpp:347
@@ -1563,20 +1555,20 @@ msgid "Shortcuts"
 msgstr "Skróty"
 
 #: ui/preferences/Preferences.cpp:380
-msgid " Accept "
-msgstr " Akceptuj "
+msgid "Accept"
+msgstr "Akceptuj"
 
 #: ui/preferences/Preferences.cpp:382
-msgid " Cancel "
-msgstr " Anuluj "
+msgid "Cancel"
+msgstr "Anuluj"
 
 #: ui/preferences/Preferences.cpp:463
-msgid " On Start "
-msgstr " Podczas startu "
+msgid "On Start"
+msgstr "Podczas startu"
 
 #: ui/preferences/Preferences.cpp:467 ui/preferences/Preferences.cpp:1598
-msgid "Language:"
-msgstr "Język:"
+msgid "Language"
+msgstr "Język"
 
 #: ui/preferences/Preferences.cpp:478
 msgid "(Needs restart)"
@@ -1608,8 +1600,8 @@ msgid "Load default layout"
 msgstr "Wczytaj domyślny układ"
 
 #: ui/preferences/Preferences.cpp:517
-msgid " Behaviour "
-msgstr " Zachowanie "
+msgid "Behaviour"
+msgstr "Zachowanie"
 
 #: ui/preferences/Preferences.cpp:519
 msgid "Activate task bar icon"
@@ -1655,10 +1647,6 @@ msgstr "Zamknij do ikony zasobnika"
 msgid "Ask confirmation on exit"
 msgstr "Wymagaj potwierdzenia przy zamknięciu"
 
-#: ui/preferences/Preferences.cpp:617
-msgid " Collections "
-msgstr " Kolekcje "
-
 #: ui/preferences/Preferences.cpp:665
 msgid " Paths "
 msgstr " Ścieżki "
@@ -1668,8 +1656,8 @@ msgid " Words to detect covers "
 msgstr " Słowa do wykrycia okładki "
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
-msgid " Options "
-msgstr " Opcje "
+msgid "Options"
+msgstr "Opcje"
 
 #: ui/preferences/Preferences.cpp:715
 msgid "Update when opened "
@@ -1765,8 +1753,8 @@ msgid "PreAmp:"
 msgstr "PreAmp:"
 
 #: ui/preferences/Preferences.cpp:886
-msgid " Random / Smart play modes "
-msgstr " Tryby odtwarzania losowego / inteligentnego "
+msgid "Random / Smart play modes"
+msgstr "Tryby odtwarzania losowego / inteligentnego"
 
 #: ui/preferences/Preferences.cpp:896
 msgid "Tracks left to start search"
@@ -1872,11 +1860,6 @@ msgstr "Zapisz do:"
 msgid "Select a folder"
 msgstr "Wybierz katalog"
 
-#: ui/preferences/Preferences.cpp:1156
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:694
-msgid " Properties "
-msgstr " Właściwości "
-
 #: ui/preferences/Preferences.cpp:1163 ui/preferences/Preferences.cpp:2314
 msgid "Format:"
 msgstr "Format:"
@@ -1921,8 +1904,8 @@ msgid " Sources "
 msgstr " Źródła "
 
 #: ui/preferences/Preferences.cpp:1392
-msgid " Targets "
-msgstr " Cele "
+msgid "Targets"
+msgstr "Cele"
 
 #: ui/preferences/Preferences.cpp:1434
 msgid "Disabled Genres"
@@ -1972,21 +1955,17 @@ msgstr ""
 msgid " Filters "
 msgstr " Filtry "
 
-#: ui/preferences/Preferences.cpp:1596
-msgid " Language "
-msgstr " Język "
-
 #: ui/preferences/Preferences.cpp:1613
-msgid " Browser command "
-msgstr " Komenda przeglądarki "
+msgid "Browser command"
+msgstr "Komenda przeglądarki"
 
 #: ui/preferences/Preferences.cpp:1621
-msgid " Minimum radio allowed bit rate "
-msgstr " Minimalny dozwolony bitrate radia "
+msgid "Minimum radio allowed bit rate"
+msgstr "Minimalny dozwolony bitrate radia"
 
 #: ui/preferences/Preferences.cpp:1628
-msgid " Player online buffer size "
-msgstr " Wielkość bufora odtwarzacza online "
+msgid "Player online buffer size"
+msgstr "Wielkość bufora odtwarzacza online"
 
 #: ui/preferences/Preferences.cpp:1665
 msgid " Podcasts "
@@ -2101,14 +2080,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "2-literowy kod języka\nTekst do wyszukania"
-
-#: ui/preferences/Preferences.cpp:2115
-msgid " Commands "
-msgstr " Polecenia "
-
-#: ui/preferences/Preferences.cpp:2168
-msgid "Command:"
-msgstr "Polecenie:"
 
 #: ui/preferences/Preferences.cpp:2193
 msgid " Define commands using "
@@ -3463,8 +3434,8 @@ msgid "Current Filters"
 msgstr "Aktualne filtry"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:552
-msgid " Result "
-msgstr " Wynik "
+msgid "Result"
+msgstr "Wynik"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:557
 #: info/smartmode/SmartMode.cpp:459
@@ -3547,8 +3518,8 @@ msgid "Adding path error"
 msgstr "Błąd dodawania ścieżki"
 
 #: ui/mediaviewer/MediaViewer.cpp:2179
-msgid " smart playlist"
-msgstr " inteligentna lista odtwarzania"
+msgid "smart playlist"
+msgstr "inteligentna lista odtwarzania"
 
 #: ui/mediaviewer/MediaViewer.cpp:2188
 msgid "Playlist"
@@ -3559,7 +3530,7 @@ msgid "Rename Files"
 msgstr "Zmień nazwy plików"
 
 #: ui/filebrowser/FileRenamer.cpp:58
-msgid " Names Preview "
+msgid "Names Preview"
 msgstr " Podgląd nazw "
 
 #: ui/filebrowser/FileRenamer.cpp:85
@@ -4125,10 +4096,6 @@ msgstr "Wybierz rok bieżącego utworu"
 #: ui/player/PlayList.cpp:1666
 msgid "Select the genre of the current song"
 msgstr "Wybierz gatunek bieżącego utworu"
-
-#: ui/player/PlayList.cpp:2172
-msgid "Search: "
-msgstr "Wyszukaj: "
 
 #: ui/player/PlayList.cpp:2172
 msgid "Please enter the search term"
@@ -4735,10 +4702,6 @@ msgstr "Execute"
 #: misc/Accelerators.cpp:412
 msgid "Snapshot"
 msgstr "Snapshot"
-
-#: misc/Accelerators.cpp:415
-msgid "Cancel"
-msgstr "Anuluj"
 
 #: misc/Accelerators.cpp:416
 msgid "Menu"

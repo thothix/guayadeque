@@ -68,7 +68,7 @@ guLabelEditor::guLabelEditor( wxWindow * parent, guDbLibrary * db, const wxStrin
 	ItemsMainSizer = new wxBoxSizer( wxVERTICAL );
 
 	wxStaticBoxSizer* ItemsStaticBox;
-	ItemsStaticBox = new wxStaticBoxSizer( new wxStaticBox( m_ItemsPanel, wxID_ANY, _(" Items ") ), wxVERTICAL );
+	ItemsStaticBox = new wxStaticBoxSizer(new wxStaticBox(m_ItemsPanel, wxID_ANY, wxString::Format(" %s ", _("Items"))), wxVERTICAL);
 
 	m_ItemsListBox = new wxListBox( m_ItemsPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0 );
 	int Count = items->Count();
@@ -88,7 +88,7 @@ guLabelEditor::guLabelEditor( wxWindow * parent, guDbLibrary * db, const wxStrin
 	LabelsMainSizer = new wxBoxSizer( wxVERTICAL );
 
 	wxStaticBoxSizer* LabelsStaticBox;
-	LabelsStaticBox = new wxStaticBoxSizer( new wxStaticBox( m_LabelsPanel, wxID_ANY, _(" Labels ") ), wxHORIZONTAL );
+	LabelsStaticBox = new wxStaticBoxSizer(new wxStaticBox(m_LabelsPanel, wxID_ANY, wxString::Format(" %s ", _("Labels"))), wxHORIZONTAL);
 
 	if( m_IsRadioLabel )
 	{

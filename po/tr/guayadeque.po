@@ -1071,8 +1071,8 @@ msgid "Current Filters"
 msgstr "Geçerli Filtreler"
 
 #: DynamicPlayList.cpp:548
-msgid " Result "
-msgstr " Sonuç "
+msgid "Result"
+msgstr "Sonuç"
 
 #: DynamicPlayList.cpp:553 SmartMode.cpp:456
 msgid "Limit to"
@@ -1244,8 +1244,8 @@ msgid "Continue"
 msgstr "Devam et"
 
 #: FileRenamer.cpp:55
-msgid " Names Preview "
-msgstr " İsim Önizleme "
+msgid "Names Preview"
+msgstr "İsim Önizleme"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
 msgid "Pattern:"
@@ -1427,12 +1427,8 @@ msgid "Download Albums torrents"
 msgstr "Albüm torrentlerini indir"
 
 #: LabelEditor.cpp:70
-msgid " Items "
-msgstr " Öğeler "
-
-#: LabelEditor.cpp:91
-msgid " Labels "
-msgstr " Etiketler "
+msgid "Items"
+msgstr "Öğeler"
 
 #: LabelEditor.cpp:119
 msgid "Add a new label"
@@ -1618,7 +1614,7 @@ msgid "Select Columns"
 msgstr "Kolonları sil"
 
 #: ListView.cpp:1490
-msgid " Columns "
+msgid "Columns"
 msgstr " Kolonlar "
 
 #: LocationPanel.cpp:97
@@ -1908,10 +1904,6 @@ msgstr "Bulunamadı:"
 #: LyricsPanel.cpp:2539
 msgid "Replace option editor"
 msgstr "Seçenek düzenleyicisini değiştir"
-
-#: LyricsPanel.cpp:2540 RadioPanel.cpp:1173
-msgid "Search:"
-msgstr "Arama:"
 
 #: LyricsPanel.cpp:2545
 msgid "Extract option editor"
@@ -2394,8 +2386,8 @@ msgid ""
 msgstr "Albüm, şarkı kütüphanesinde bulunamadı.\nKütüphaneyi güncellemeniz gerekmektedir."
 
 #: MediaViewer.cpp:2160
-msgid " smart playlist"
-msgstr " akıllı çalma listesi"
+msgid "smart playlist"
+msgstr "akıllı çalma listesi"
 
 #: MediaViewer.cpp:2169 PlayerPanel.cpp:245 PlayerPanel.cpp:2238
 msgid "Playlist"
@@ -2672,10 +2664,6 @@ msgid "Search in the library"
 msgstr "Kütüphanede ara"
 
 #: PlayList.cpp:2158
-msgid "Search: "
-msgstr "Arama: "
-
-#: PlayList.cpp:2158
 msgid "Please enter the search term"
 msgstr "Lütfen arama terimini girin"
 
@@ -2879,10 +2867,6 @@ msgstr "eşleştirildi"
 #: PortableMedia.cpp:985
 msgid "Portable Media Properties"
 msgstr "Taşınabilir Medya Tercihleri"
-
-#: PortableMedia.cpp:991 Preferences.cpp:1271
-msgid " Properties "
-msgstr " Tercihler "
 
 #: PortableMedia.cpp:1007 Preferences.cpp:2383
 msgid "Path:"
@@ -3112,20 +3096,16 @@ msgid "Shortcuts"
 msgstr "Kısayollar"
 
 #: Preferences.cpp:371
-msgid " Accept "
-msgstr " Uygula "
-
-#: Preferences.cpp:373
-msgid " Cancel "
-msgstr " İptal "
+msgid "Accept"
+msgstr "Uygula"
 
 #: Preferences.cpp:587
-msgid " On Start "
-msgstr " Başlangıçta "
+msgid "On Start"
+msgstr "Başlangıçta"
 
 #: Preferences.cpp:591 Preferences.cpp:1634
-msgid "Language:"
-msgstr "Dil:"
+msgid "Language"
+msgstr "Dil"
 
 #: Preferences.cpp:602
 msgid "(Needs restart)"
@@ -3152,8 +3132,8 @@ msgid "Load default layout"
 msgstr "Varsayılan düzeni yükle"
 
 #: Preferences.cpp:641
-msgid " Behaviour "
-msgstr " Eylemler "
+msgid "Behaviour"
+msgstr "Eylemler"
 
 #: Preferences.cpp:643
 msgid "Activate task bar icon"
@@ -3199,10 +3179,6 @@ msgstr "Görev çubuğuna küçült"
 msgid "Ask confirmation on exit"
 msgstr "Çıkışta onay iste"
 
-#: Preferences.cpp:740
-msgid " Collections "
-msgstr " Koleksiyonlar "
-
 #: Preferences.cpp:788
 msgid " Paths "
 msgstr " Yollar "
@@ -3212,8 +3188,8 @@ msgid " Words to detect covers "
 msgstr " Albüm kapağı aranırken bakılacak kelimeler "
 
 #: Preferences.cpp:836 Preferences.cpp:2344
-msgid " Options "
-msgstr " Seçenekler "
+msgid "Options"
+msgstr "Seçenekler"
 
 #: Preferences.cpp:838
 msgid "Update when opened "
@@ -3268,8 +3244,8 @@ msgid "PreAmp:"
 msgstr "PreAmp:"
 
 #: Preferences.cpp:1001
-msgid " Random / Smart play modes "
-msgstr " Karışık/Akıllı Çalma Modları "
+msgid "Random / Smart play modes"
+msgstr "Karışık/Akıllı Çalma Modları"
 
 #: Preferences.cpp:1011
 msgid "Tracks left to start search"
@@ -3420,8 +3396,8 @@ msgid " Sources "
 msgstr " Kaynaklar "
 
 #: Preferences.cpp:1511
-msgid " Targets "
-msgstr " Hedefler "
+msgid "Targets"
+msgstr "Hedefler"
 
 #: Preferences.cpp:1551
 msgid " Font "
@@ -3443,20 +3419,16 @@ msgstr "Ortala"
 msgid " Filters "
 msgstr " Filtreler "
 
-#: Preferences.cpp:1632
-msgid " Language "
-msgstr " Dil "
-
 #: Preferences.cpp:1648
-msgid " Browser command "
-msgstr " Tarayıcı komutu "
+msgid "Browser command"
+msgstr "Tarayıcı komutu"
 
 #: Preferences.cpp:1669
-msgid " Minimum radio allowed bit rate "
-msgstr " Radyo için izin verilen en düşük bit oranı"
+msgid "Minimum radio allowed bit rate"
+msgstr "Radyo için izin verilen en düşük bit oranı"
 
 #: Preferences.cpp:1677
-msgid " Player online buffer size "
+msgid "Player online buffer size"
 msgstr "Player online yüklenme boyutu"
 
 #: Preferences.cpp:1713
@@ -3572,14 +3544,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "2 harfli dil kodu\nArama metni"
-
-#: Preferences.cpp:2166
-msgid " Commands "
-msgstr " Komutlar "
-
-#: Preferences.cpp:2219
-msgid "Command:"
-msgstr "Komut:"
 
 #: Preferences.cpp:2244
 msgid " Define commands using "
@@ -3705,8 +3669,8 @@ msgid "There are not entries for this Radio Station"
 msgstr "Bu Radyo İstasyonu için kayıt bulunmuyor"
 
 #: RadioPanel.cpp:1168
-msgid " Radio Search "
-msgstr " Radyo Arama "
+msgid "Radio Search"
+msgstr "Radyo Arama"
 
 #: RadioPanel.cpp:1183
 msgid "Search in now playing info"
