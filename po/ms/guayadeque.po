@@ -648,12 +648,8 @@ msgid "There are not entries for this Radio Station"
 msgstr "Tiada masukan untuk Stesen Radio ini"
 
 #: ui/radios/RadioPanel.cpp:1208
-msgid " Radio Search "
+msgid "Radio Search"
 msgstr "Gelintar Radio"
-
-#: ui/radios/RadioPanel.cpp:1213 ui/lyrics/LyricsPanel.cpp:2585
-msgid "Search:"
-msgstr "Gelintar:"
 
 #: ui/radios/RadioPanel.cpp:1223
 msgid "Search in now playing info"
@@ -768,12 +764,8 @@ msgid "Preset:"
 msgstr "Praset:"
 
 #: ui/labeleditor/LabelEditor.cpp:73
-msgid " Items "
+msgid "Items"
 msgstr "Item"
-
-#: ui/labeleditor/LabelEditor.cpp:94
-msgid " Labels "
-msgstr "Label"
 
 #: ui/labeleditor/LabelEditor.cpp:122
 msgid "Add a new label"
@@ -1371,7 +1363,7 @@ msgid "Select Columns"
 msgstr "Pilih Lajur"
 
 #: ui/itemlistbox/ListView.cpp:1504
-msgid " Columns "
+msgid "Columns"
 msgstr "Lajur"
 
 #: ui/preferences/Preferences.cpp:133
@@ -1551,20 +1543,20 @@ msgid "Shortcuts"
 msgstr "Pintasan"
 
 #: ui/preferences/Preferences.cpp:380
-msgid " Accept "
+msgid "Accept"
 msgstr "Terima"
 
 #: ui/preferences/Preferences.cpp:382
-msgid " Cancel "
+msgid "Cancel"
 msgstr "Batal"
 
 #: ui/preferences/Preferences.cpp:463
-msgid " On Start "
+msgid "On Start"
 msgstr "Ketika Permulaan"
 
 #: ui/preferences/Preferences.cpp:467 ui/preferences/Preferences.cpp:1598
-msgid "Language:"
-msgstr "Bahasa:"
+msgid "Language"
+msgstr "Bahasa"
 
 #: ui/preferences/Preferences.cpp:478
 msgid "(Needs restart)"
@@ -1596,7 +1588,7 @@ msgid "Load default layout"
 msgstr "Muat bentangan lalai"
 
 #: ui/preferences/Preferences.cpp:517
-msgid " Behaviour "
+msgid "Behaviour"
 msgstr "Kelakuan"
 
 #: ui/preferences/Preferences.cpp:519
@@ -1643,10 +1635,6 @@ msgstr "Beralih ke ikon palang tugas"
 msgid "Ask confirmation on exit"
 msgstr "Tanya pengesahan ketika keluar"
 
-#: ui/preferences/Preferences.cpp:617
-msgid " Collections "
-msgstr "Koleksi"
-
 #: ui/preferences/Preferences.cpp:665
 msgid " Paths "
 msgstr "Laluan"
@@ -1656,7 +1644,7 @@ msgid " Words to detect covers "
 msgstr "Perkataan yang mengesan kulit hadapan"
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
-msgid " Options "
+msgid "Options"
 msgstr "Pilihan"
 
 #: ui/preferences/Preferences.cpp:715
@@ -1753,7 +1741,7 @@ msgid "PreAmp:"
 msgstr "PraAmp:"
 
 #: ui/preferences/Preferences.cpp:886
-msgid " Random / Smart play modes "
+msgid "Random / Smart play modes"
 msgstr "Mof main Rawak / Pintar"
 
 #: ui/preferences/Preferences.cpp:896
@@ -1860,11 +1848,6 @@ msgstr "Simpan ke:"
 msgid "Select a folder"
 msgstr "Pilih satu folder"
 
-#: ui/preferences/Preferences.cpp:1156
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:694
-msgid " Properties "
-msgstr "Sifat"
-
 #: ui/preferences/Preferences.cpp:1163 ui/preferences/Preferences.cpp:2314
 msgid "Format:"
 msgstr "Format:"
@@ -1909,7 +1892,7 @@ msgid " Sources "
 msgstr "Sumber"
 
 #: ui/preferences/Preferences.cpp:1392
-msgid " Targets "
+msgid "Targets"
 msgstr "Sasaran"
 
 #: ui/preferences/Preferences.cpp:1434
@@ -1960,20 +1943,16 @@ msgstr "Port:"
 msgid " Filters "
 msgstr "Penapis"
 
-#: ui/preferences/Preferences.cpp:1596
-msgid " Language "
-msgstr "Bahasa"
-
 #: ui/preferences/Preferences.cpp:1613
-msgid " Browser command "
+msgid "Browser command"
 msgstr "Perintah pelayar"
 
 #: ui/preferences/Preferences.cpp:1621
-msgid " Minimum radio allowed bit rate "
+msgid "Minimum radio allowed bit rate"
 msgstr "Kadar bit minimum radio yang dibenarkan"
 
 #: ui/preferences/Preferences.cpp:1628
-msgid " Player online buffer size "
+msgid "Player online buffer size"
 msgstr "Saiz penimbal dalam talian pemain"
 
 #: ui/preferences/Preferences.cpp:1665
@@ -2089,14 +2068,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "Kod bahasa 2 abjad\nTeks untuk gelintar"
-
-#: ui/preferences/Preferences.cpp:2115
-msgid " Commands "
-msgstr "Perintah"
-
-#: ui/preferences/Preferences.cpp:2168
-msgid "Command:"
-msgstr "Perintah:"
 
 #: ui/preferences/Preferences.cpp:2193
 msgid " Define commands using "
@@ -3455,7 +3426,7 @@ msgid "Current Filters"
 msgstr "Penapis Semasa"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:552
-msgid " Result "
+msgid "Result"
 msgstr "Keputusan"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:557
@@ -3539,7 +3510,7 @@ msgid "Adding path error"
 msgstr "Ralat menambah laluan"
 
 #: ui/mediaviewer/MediaViewer.cpp:2179
-msgid " smart playlist"
+msgid "smart playlist"
 msgstr "senarai main pintar"
 
 #: ui/mediaviewer/MediaViewer.cpp:2188
@@ -3551,7 +3522,7 @@ msgid "Rename Files"
 msgstr "Nama Semula Fail"
 
 #: ui/filebrowser/FileRenamer.cpp:58
-msgid " Names Preview "
+msgid "Names Preview"
 msgstr "Pratonton Nama"
 
 #: ui/filebrowser/FileRenamer.cpp:85
@@ -4117,10 +4088,6 @@ msgstr "Pilih tahun lagu semasa"
 #: ui/player/PlayList.cpp:1666
 msgid "Select the genre of the current song"
 msgstr "Pilih genre lagu semasa"
-
-#: ui/player/PlayList.cpp:2172
-msgid "Search: "
-msgstr "Gelintar:"
 
 #: ui/player/PlayList.cpp:2172
 msgid "Please enter the search term"
@@ -4727,10 +4694,6 @@ msgstr "Lakukan"
 #: misc/Accelerators.cpp:412
 msgid "Snapshot"
 msgstr "Petikan"
-
-#: misc/Accelerators.cpp:415
-msgid "Cancel"
-msgstr "Batal"
 
 #: misc/Accelerators.cpp:416
 msgid "Menu"

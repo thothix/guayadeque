@@ -2304,7 +2304,7 @@ wxString guPlayList::GetItemSearchText( const int row )
 // -------------------------------------------------------------------------------- //
 void guPlayList::OnSearchClicked( wxCommandEvent &event )
 {
-    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Search: " ), _( "Please enter the search term" ), m_LastSearch );
+    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, wxString::Format("%s: ", _("Search")), _( "Please enter the search term" ), m_LastSearch );
     if( EntryDialog->ShowModal() == wxID_OK )
     {
         m_LastSearch = EntryDialog->GetValue();

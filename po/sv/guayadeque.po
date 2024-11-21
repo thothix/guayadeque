@@ -1068,8 +1068,8 @@ msgid "Current Filters"
 msgstr "Aktuella filter"
 
 #: DynamicPlayList.cpp:548
-msgid " Result "
-msgstr " Resultat "
+msgid "Result"
+msgstr "Resultat"
 
 #: DynamicPlayList.cpp:553 SmartMode.cpp:456
 msgid "Limit to"
@@ -1241,7 +1241,7 @@ msgid "Continue"
 msgstr "Fortsätt"
 
 #: FileRenamer.cpp:55
-msgid " Names Preview "
+msgid "Names Preview"
 msgstr ""
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
@@ -1424,11 +1424,7 @@ msgid "Download Albums torrents"
 msgstr ""
 
 #: LabelEditor.cpp:70
-msgid " Items "
-msgstr ""
-
-#: LabelEditor.cpp:91
-msgid " Labels "
+msgid "Items"
 msgstr ""
 
 #: LabelEditor.cpp:119
@@ -1615,7 +1611,7 @@ msgid "Select Columns"
 msgstr "Välj kolumner"
 
 #: ListView.cpp:1490
-msgid " Columns "
+msgid "Columns"
 msgstr " Kolumner "
 
 #: LocationPanel.cpp:97
@@ -1905,10 +1901,6 @@ msgstr ""
 #: LyricsPanel.cpp:2539
 msgid "Replace option editor"
 msgstr ""
-
-#: LyricsPanel.cpp:2540 RadioPanel.cpp:1173
-msgid "Search:"
-msgstr "Sök:"
 
 #: LyricsPanel.cpp:2545
 msgid "Extract option editor"
@@ -2391,7 +2383,7 @@ msgid ""
 msgstr ""
 
 #: MediaViewer.cpp:2160
-msgid " smart playlist"
+msgid "smart playlist"
 msgstr ""
 
 #: MediaViewer.cpp:2169 PlayerPanel.cpp:245 PlayerPanel.cpp:2238
@@ -2669,10 +2661,6 @@ msgid "Search in the library"
 msgstr "Sök i biblioteket"
 
 #: PlayList.cpp:2158
-msgid "Search: "
-msgstr "Sök: "
-
-#: PlayList.cpp:2158
 msgid "Please enter the search term"
 msgstr "Ange söktermen"
 
@@ -2876,10 +2864,6 @@ msgstr ""
 #: PortableMedia.cpp:985
 msgid "Portable Media Properties"
 msgstr ""
-
-#: PortableMedia.cpp:991 Preferences.cpp:1271
-msgid " Properties "
-msgstr " Egenskaper "
 
 #: PortableMedia.cpp:1007 Preferences.cpp:2383
 msgid "Path:"
@@ -3109,20 +3093,16 @@ msgid "Shortcuts"
 msgstr ""
 
 #: Preferences.cpp:371
-msgid " Accept "
-msgstr ""
-
-#: Preferences.cpp:373
-msgid " Cancel "
+msgid "Accept"
 msgstr ""
 
 #: Preferences.cpp:587
-msgid " On Start "
-msgstr " Vid uppstart "
+msgid "On Start"
+msgstr "Vid uppstart"
 
 #: Preferences.cpp:591 Preferences.cpp:1634
-msgid "Language:"
-msgstr "Språk:"
+msgid "Language"
+msgstr "Språk"
 
 #: Preferences.cpp:602
 msgid "(Needs restart)"
@@ -3149,8 +3129,8 @@ msgid "Load default layout"
 msgstr ""
 
 #: Preferences.cpp:641
-msgid " Behaviour "
-msgstr " Beteende "
+msgid "Behaviour"
+msgstr "Beteende"
 
 #: Preferences.cpp:643
 msgid "Activate task bar icon"
@@ -3196,10 +3176,6 @@ msgstr ""
 msgid "Ask confirmation on exit"
 msgstr "Fråga efter bekräftelse vid avslut"
 
-#: Preferences.cpp:740
-msgid " Collections "
-msgstr ""
-
 #: Preferences.cpp:788
 msgid " Paths "
 msgstr " Sökvägar "
@@ -3209,7 +3185,7 @@ msgid " Words to detect covers "
 msgstr ""
 
 #: Preferences.cpp:836 Preferences.cpp:2344
-msgid " Options "
+msgid "Options"
 msgstr ""
 
 #: Preferences.cpp:838
@@ -3265,7 +3241,7 @@ msgid "PreAmp:"
 msgstr ""
 
 #: Preferences.cpp:1001
-msgid " Random / Smart play modes "
+msgid "Random / Smart play modes"
 msgstr ""
 
 #: Preferences.cpp:1011
@@ -3417,7 +3393,7 @@ msgid " Sources "
 msgstr ""
 
 #: Preferences.cpp:1511
-msgid " Targets "
+msgid "Targets"
 msgstr ""
 
 #: Preferences.cpp:1551
@@ -3440,20 +3416,16 @@ msgstr "Center"
 msgid " Filters "
 msgstr " Filter "
 
-#: Preferences.cpp:1632
-msgid " Language "
-msgstr " Språk "
-
 #: Preferences.cpp:1648
-msgid " Browser command "
+msgid "Browser command"
 msgstr ""
 
 #: Preferences.cpp:1669
-msgid " Minimum radio allowed bit rate "
+msgid "Minimum radio allowed bit rate"
 msgstr ""
 
 #: Preferences.cpp:1677
-msgid " Player online buffer size "
+msgid "Player online buffer size"
 msgstr ""
 
 #: Preferences.cpp:1713
@@ -3569,14 +3541,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr ""
-
-#: Preferences.cpp:2166
-msgid " Commands "
-msgstr " Kommandon "
-
-#: Preferences.cpp:2219
-msgid "Command:"
-msgstr "Kommando:"
 
 #: Preferences.cpp:2244
 msgid " Define commands using "
@@ -3702,7 +3666,7 @@ msgid "There are not entries for this Radio Station"
 msgstr ""
 
 #: RadioPanel.cpp:1168
-msgid " Radio Search "
+msgid "Radio Search"
 msgstr ""
 
 #: RadioPanel.cpp:1183

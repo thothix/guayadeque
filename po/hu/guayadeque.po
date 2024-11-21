@@ -486,7 +486,7 @@ msgstr "Végrehajt"
 msgid "Snapshot"
 msgstr "Pillanatkép"
 
-#: Accelerators.cpp:412
+#: Accelerators.cpp:412 Preferences.cpp:373
 msgid "Cancel"
 msgstr "Mégsem"
 
@@ -1068,8 +1068,8 @@ msgid "Current Filters"
 msgstr "Aktuális szűrők"
 
 #: DynamicPlayList.cpp:548
-msgid " Result "
-msgstr " Eredmény "
+msgid "Result"
+msgstr "Eredmény"
 
 #: DynamicPlayList.cpp:553 SmartMode.cpp:456
 msgid "Limit to"
@@ -1241,8 +1241,8 @@ msgid "Continue"
 msgstr "Folytatás"
 
 #: FileRenamer.cpp:55
-msgid " Names Preview "
-msgstr " Nevek előnézete "
+msgid "Names Preview"
+msgstr "Nevek előnézete"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
 msgid "Pattern:"
@@ -1424,12 +1424,8 @@ msgid "Download Albums torrents"
 msgstr "Album torrent letöltése"
 
 #: LabelEditor.cpp:70
-msgid " Items "
-msgstr " Tételek "
-
-#: LabelEditor.cpp:91
-msgid " Labels "
-msgstr " Címkék "
+msgid "Items"
+msgstr "Tételek"
 
 #: LabelEditor.cpp:119
 msgid "Add a new label"
@@ -1615,8 +1611,8 @@ msgid "Select Columns"
 msgstr "Oszlop kiválasztása"
 
 #: ListView.cpp:1490
-msgid " Columns "
-msgstr " Oszlopok "
+msgid "Columns"
+msgstr "Oszlopok"
 
 #: LocationPanel.cpp:97
 msgid "Local Music"
@@ -1905,10 +1901,6 @@ msgstr "Nem található:"
 #: LyricsPanel.cpp:2539
 msgid "Replace option editor"
 msgstr "Csere beállítás szerkesztő"
-
-#: LyricsPanel.cpp:2540 RadioPanel.cpp:1173
-msgid "Search:"
-msgstr "Keresés:"
 
 #: LyricsPanel.cpp:2545
 msgid "Extract option editor"
@@ -2391,8 +2383,8 @@ msgid ""
 msgstr "Az album nem található a zenekatalógusban.\nFrissítse a zenekatalógust."
 
 #: MediaViewer.cpp:2160
-msgid " smart playlist"
-msgstr " intellingens lejátszási listába"
+msgid "smart playlist"
+msgstr "intellingens lejátszási listába"
 
 #: MediaViewer.cpp:2169 PlayerPanel.cpp:245 PlayerPanel.cpp:2238
 msgid "Playlist"
@@ -2669,10 +2661,6 @@ msgid "Search in the library"
 msgstr "Keresés a zenekatalógusban"
 
 #: PlayList.cpp:2158
-msgid "Search: "
-msgstr "Keresés: "
-
-#: PlayList.cpp:2158
 msgid "Please enter the search term"
 msgstr "Adja meg a keresési feltételt"
 
@@ -2876,10 +2864,6 @@ msgstr "beágyazott"
 #: PortableMedia.cpp:985
 msgid "Portable Media Properties"
 msgstr "Hordozható média tulajdonágai"
-
-#: PortableMedia.cpp:991 Preferences.cpp:1271
-msgid " Properties "
-msgstr " Beállítások "
 
 #: PortableMedia.cpp:1007 Preferences.cpp:2383
 msgid "Path:"
@@ -3109,20 +3093,16 @@ msgid "Shortcuts"
 msgstr "Hivatkozások"
 
 #: Preferences.cpp:371
-msgid " Accept "
-msgstr " OK "
-
-#: Preferences.cpp:373
-msgid " Cancel "
-msgstr " Mégsem "
+msgid "Accept"
+msgstr "OK"
 
 #: Preferences.cpp:587
-msgid " On Start "
-msgstr " Indításkor "
+msgid "On Start"
+msgstr "Indításkor"
 
 #: Preferences.cpp:591 Preferences.cpp:1634
-msgid "Language:"
-msgstr "Nyelv:"
+msgid "Language"
+msgstr "Nyelv"
 
 #: Preferences.cpp:602
 msgid "(Needs restart)"
@@ -3149,8 +3129,8 @@ msgid "Load default layout"
 msgstr "Alapértelmezett elrendezés betöltése"
 
 #: Preferences.cpp:641
-msgid " Behaviour "
-msgstr " Viselkedés "
+msgid "Behaviour"
+msgstr "Viselkedés"
 
 #: Preferences.cpp:643
 msgid "Activate task bar icon"
@@ -3196,10 +3176,6 @@ msgstr "Bezáráskor ikon állapot a panelen"
 msgid "Ask confirmation on exit"
 msgstr "Kilépés megerősítése"
 
-#: Preferences.cpp:740
-msgid " Collections "
-msgstr " Gyűjtemények"
-
 #: Preferences.cpp:788
 msgid " Paths "
 msgstr " Útvonalak "
@@ -3209,8 +3185,8 @@ msgid " Words to detect covers "
 msgstr " Szóminták a borítók kereséséhez "
 
 #: Preferences.cpp:836 Preferences.cpp:2344
-msgid " Options "
-msgstr " Opciók "
+msgid "Options"
+msgstr "Opciók"
 
 #: Preferences.cpp:838
 msgid "Update when opened "
@@ -3265,8 +3241,8 @@ msgid "PreAmp:"
 msgstr "Előerősítés:"
 
 #: Preferences.cpp:1001
-msgid " Random / Smart play modes "
-msgstr " Véletlenszerű / Intelligens lejátszási mód "
+msgid "Random / Smart play modes"
+msgstr "Véletlenszerű / Intelligens lejátszási mód"
 
 #: Preferences.cpp:1011
 msgid "Tracks left to start search"
@@ -3417,8 +3393,8 @@ msgid " Sources "
 msgstr " Források "
 
 #: Preferences.cpp:1511
-msgid " Targets "
-msgstr " Célok "
+msgid "Targets"
+msgstr "Célok"
 
 #: Preferences.cpp:1551
 msgid " Font "
@@ -3440,21 +3416,17 @@ msgstr "Középre"
 msgid " Filters "
 msgstr " Szűrők "
 
-#: Preferences.cpp:1632
-msgid " Language "
-msgstr " Nyelv "
-
 #: Preferences.cpp:1648
-msgid " Browser command "
-msgstr " Böngésző parancs "
+msgid "Browser command"
+msgstr "Böngésző parancs"
 
 #: Preferences.cpp:1669
-msgid " Minimum radio allowed bit rate "
-msgstr " Rádiónál a megengedett minimális bitsebesség"
+msgid "Minimum radio allowed bit rate"
+msgstr "Rádiónál a megengedett minimális bitsebesség"
 
 #: Preferences.cpp:1677
-msgid " Player online buffer size "
-msgstr " A lejátszó online puffermérete "
+msgid "Player online buffer size"
+msgstr "A lejátszó online puffermérete"
 
 #: Preferences.cpp:1713
 msgid " Podcasts "
@@ -3569,14 +3541,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "2 betűs nyelvi kód\nSzöveg a kereséshez"
-
-#: Preferences.cpp:2166
-msgid " Commands "
-msgstr " Parancsok "
-
-#: Preferences.cpp:2219
-msgid "Command:"
-msgstr "Parancs:"
 
 #: Preferences.cpp:2244
 msgid " Define commands using "
@@ -3702,8 +3666,8 @@ msgid "There are not entries for this Radio Station"
 msgstr "Nincsenek bejegyzések ehhez a Rádióállomáshoz"
 
 #: RadioPanel.cpp:1168
-msgid " Radio Search "
-msgstr " Rádió keresés "
+msgid "Radio Search"
+msgstr "Rádió keresés"
 
 #: RadioPanel.cpp:1183
 msgid "Search in now playing info"

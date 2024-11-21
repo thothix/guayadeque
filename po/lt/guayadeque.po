@@ -647,11 +647,7 @@ msgid "There are not entries for this Radio Station"
 msgstr ""
 
 #: ui/radios/RadioPanel.cpp:1208
-msgid " Radio Search "
-msgstr ""
-
-#: ui/radios/RadioPanel.cpp:1213 ui/lyrics/LyricsPanel.cpp:2585
-msgid "Search:"
+msgid "Radio Search"
 msgstr ""
 
 #: ui/radios/RadioPanel.cpp:1223
@@ -767,12 +763,8 @@ msgid "Preset:"
 msgstr ""
 
 #: ui/labeleditor/LabelEditor.cpp:73
-msgid " Items "
+msgid "Items"
 msgstr ""
-
-#: ui/labeleditor/LabelEditor.cpp:94
-msgid " Labels "
-msgstr "Etiketės"
 
 #: ui/labeleditor/LabelEditor.cpp:122
 msgid "Add a new label"
@@ -1370,7 +1362,7 @@ msgid "Select Columns"
 msgstr ""
 
 #: ui/itemlistbox/ListView.cpp:1504
-msgid " Columns "
+msgid "Columns"
 msgstr "Stulpeliai"
 
 #: ui/preferences/Preferences.cpp:133
@@ -1550,20 +1542,20 @@ msgid "Shortcuts"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:380
-msgid " Accept "
+msgid "Accept"
 msgstr "Priimti"
 
 #: ui/preferences/Preferences.cpp:382
-msgid " Cancel "
+msgid "Cancel"
 msgstr "Atsisakyti"
 
 #: ui/preferences/Preferences.cpp:463
-msgid " On Start "
-msgstr " Paleidžiant programą "
+msgid "On Start"
+msgstr "Paleidžiant programą"
 
 #: ui/preferences/Preferences.cpp:467 ui/preferences/Preferences.cpp:1598
-msgid "Language:"
-msgstr "Kalba:"
+msgid "Language"
+msgstr "Kalba"
 
 #: ui/preferences/Preferences.cpp:478
 msgid "(Needs restart)"
@@ -1595,8 +1587,8 @@ msgid "Load default layout"
 msgstr "Įkelti numatytąjį išdėstymą"
 
 #: ui/preferences/Preferences.cpp:517
-msgid " Behaviour "
-msgstr " Elgsena "
+msgid "Behaviour"
+msgstr "Elgsena"
 
 #: ui/preferences/Preferences.cpp:519
 msgid "Activate task bar icon"
@@ -1642,10 +1634,6 @@ msgstr ""
 msgid "Ask confirmation on exit"
 msgstr "Išeinant, klausti patvirtinimo"
 
-#: ui/preferences/Preferences.cpp:617
-msgid " Collections "
-msgstr " Kolekcijos "
-
 #: ui/preferences/Preferences.cpp:665
 msgid " Paths "
 msgstr " Keliai "
@@ -1655,7 +1643,7 @@ msgid " Words to detect covers "
 msgstr " Žodžiai, naudojami viršelių aptikimui "
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
-msgid " Options "
+msgid "Options"
 msgstr "Parametrai"
 
 #: ui/preferences/Preferences.cpp:715
@@ -1752,8 +1740,8 @@ msgid "PreAmp:"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:886
-msgid " Random / Smart play modes "
-msgstr " Atsitiktinio / Išmaniojo atkūrimo veiksenos "
+msgid "Random / Smart play modes"
+msgstr "Atsitiktinio / Išmaniojo atkūrimo veiksenos"
 
 #: ui/preferences/Preferences.cpp:896
 msgid "Tracks left to start search"
@@ -1859,11 +1847,6 @@ msgstr "Įrašyti į:"
 msgid "Select a folder"
 msgstr "Pasirinkite aplanką"
 
-#: ui/preferences/Preferences.cpp:1156
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:694
-msgid " Properties "
-msgstr " Savybės "
-
 #: ui/preferences/Preferences.cpp:1163 ui/preferences/Preferences.cpp:2314
 msgid "Format:"
 msgstr "Formatas:"
@@ -1908,8 +1891,8 @@ msgid " Sources "
 msgstr " Šaltiniai "
 
 #: ui/preferences/Preferences.cpp:1392
-msgid " Targets "
-msgstr " Paskirtys "
+msgid "Targets"
+msgstr "Paskirtys"
 
 #: ui/preferences/Preferences.cpp:1434
 msgid "Disabled Genres"
@@ -1959,21 +1942,17 @@ msgstr "Prievadas:"
 msgid " Filters "
 msgstr " Filtrai "
 
-#: ui/preferences/Preferences.cpp:1596
-msgid " Language "
-msgstr " Kalba "
-
 #: ui/preferences/Preferences.cpp:1613
-msgid " Browser command "
-msgstr " Naršyklės komanda "
+msgid "Browser command"
+msgstr "Naršyklės komanda"
 
 #: ui/preferences/Preferences.cpp:1621
-msgid " Minimum radio allowed bit rate "
+msgid "Minimum radio allowed bit rate"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1628
-msgid " Player online buffer size "
-msgstr " Grotuvo internetinio buferio dydis "
+msgid "Player online buffer size"
+msgstr "Grotuvo internetinio buferio dydis"
 
 #: ui/preferences/Preferences.cpp:1665
 msgid " Podcasts "
@@ -2088,10 +2067,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr ""
-
-#: ui/preferences/Preferences.cpp:2115
-msgid " Commands "
-msgstr " Komandos "
 
 #: ui/preferences/Preferences.cpp:2168
 msgid "Command:"
@@ -3454,7 +3429,7 @@ msgid "Current Filters"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:552
-msgid " Result "
+msgid "Result"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:557
@@ -3538,7 +3513,7 @@ msgid "Adding path error"
 msgstr "Kelio pridėjimo klaida"
 
 #: ui/mediaviewer/MediaViewer.cpp:2179
-msgid " smart playlist"
+msgid "smart playlist"
 msgstr "išmanusis grojaraštis"
 
 #: ui/mediaviewer/MediaViewer.cpp:2188
@@ -3550,7 +3525,7 @@ msgid "Rename Files"
 msgstr "Pervadinti failus"
 
 #: ui/filebrowser/FileRenamer.cpp:58
-msgid " Names Preview "
+msgid "Names Preview"
 msgstr "Pavadinimų peržiūra"
 
 #: ui/filebrowser/FileRenamer.cpp:85
@@ -4115,10 +4090,6 @@ msgstr ""
 
 #: ui/player/PlayList.cpp:1666
 msgid "Select the genre of the current song"
-msgstr ""
-
-#: ui/player/PlayList.cpp:2172
-msgid "Search: "
 msgstr ""
 
 #: ui/player/PlayList.cpp:2172
@@ -4726,10 +4697,6 @@ msgstr ""
 #: misc/Accelerators.cpp:412
 msgid "Snapshot"
 msgstr ""
-
-#: misc/Accelerators.cpp:415
-msgid "Cancel"
-msgstr "Atsisakyti"
 
 #: misc/Accelerators.cpp:416
 msgid "Menu"

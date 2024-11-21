@@ -366,9 +366,9 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     wxButton *                  ButtonsSizerCancel;
 
 	ButtonsSizer = new wxStdDialogButtonSizer();
-	ButtonsSizerOK = new wxButton( this, wxID_OK, _( " Accept " ) );
+	ButtonsSizerOK = new wxButton(this, wxID_OK, wxString::Format(" %s ", _("Accept")));
 	ButtonsSizer->AddButton( ButtonsSizerOK );
-	ButtonsSizerCancel = new wxButton( this, wxID_CANCEL, _( " Cancel " ) );
+	ButtonsSizerCancel = new wxButton(this, wxID_CANCEL, wxString::Format(" %s ", _("Cancel")));
 	ButtonsSizer->AddButton( ButtonsSizerCancel );
 
 	ButtonsSizer->SetAffirmativeButton( ButtonsSizerOK );
@@ -444,11 +444,11 @@ void guPrefDialog::BuildGeneralPage()
     // General Preferences Panel
     //
 	wxBoxSizer * GenMainSizer = new wxBoxSizer( wxVERTICAL );
-	wxStaticBoxSizer * StartSizer = new wxStaticBoxSizer( new wxStaticBox( m_GenPanel, wxID_ANY, _(" On Start ") ), wxVERTICAL );
+	wxStaticBoxSizer * StartSizer = new wxStaticBoxSizer(new wxStaticBox(m_GenPanel, wxID_ANY, wxString::Format(" %s ", _("On Start"))), wxVERTICAL);
 
 	wxBoxSizer * LangSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	wxStaticText * LangStaticText = new wxStaticText( m_GenPanel, wxID_ANY, _( "Language:" ), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * LangStaticText = new wxStaticText( m_GenPanel, wxID_ANY, wxString::Format("%s:", _("Language")), wxDefaultPosition, wxDefaultSize, 0 );
 	LangStaticText->Wrap( -1 );
 	LangSizer->Add( LangStaticText, 0, wxALIGN_CENTER_VERTICAL|wxRIGHT|wxLEFT|wxBOTTOM, 5 );
 
@@ -498,7 +498,7 @@ void guPrefDialog::BuildGeneralPage()
 
 	GenMainSizer->Add( StartSizer, 0, wxEXPAND|wxALL, 5 );
 
-	wxStaticBoxSizer * BehaviSizer = new wxStaticBoxSizer( new wxStaticBox( m_GenPanel, wxID_ANY, _(" Behaviour ") ), wxVERTICAL );
+	wxStaticBoxSizer * BehaviSizer = new wxStaticBoxSizer(new wxStaticBox(m_GenPanel, wxID_ANY, wxString::Format(" %s ", _("Behaviour"))), wxVERTICAL);
 
 	m_TaskIconChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Activate task bar icon"), wxDefaultPosition, wxDefaultSize, 0 );
     m_TaskIconChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_TASK_BAR_ICON, false, CONFIG_PATH_GENERAL ) );
@@ -603,7 +603,7 @@ void guPrefDialog::BuildLibraryPage()
     m_LibSplitter->SetMinimumPaneSize( 190 );
     //wxPanel * LibCollectPanel = new wxPanel( m_LibSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
     wxScrolledWindow * LibCollectPanel = new wxScrolledWindow( m_LibSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	wxStaticBoxSizer * LibCollectSizer = new wxStaticBoxSizer( new wxStaticBox( LibCollectPanel, wxID_ANY, _( " Collections " ) ), wxHORIZONTAL );
+	wxStaticBoxSizer * LibCollectSizer = new wxStaticBoxSizer(new wxStaticBox(LibCollectPanel, wxID_ANY, wxString::Format(" %s ", _("Collections"))), wxHORIZONTAL);
 
     // Collections list
 	m_LibCollectListBox = new wxListBox( LibCollectPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_HSCROLL|wxLB_SINGLE );
@@ -697,7 +697,7 @@ void guPrefDialog::BuildLibraryPage()
 	m_LibOptSizer->Add( LibOptCoversSizer, 1, wxEXPAND, 5 );
 
     // Options
-	m_LibOptionsSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, _( " Options " ) ), wxVERTICAL );
+	m_LibOptionsSizer = new wxStaticBoxSizer(new wxStaticBox(m_LibOptPanel, wxID_ANY, wxString::Format(" %s ", _("Options"))), wxVERTICAL);
 
 	m_LibOptAutoUpdateChkBox = new wxCheckBox( m_LibOptPanel, wxID_ANY, _( "Update when opened " ), wxDefaultPosition, wxDefaultSize, 0 );
 	m_LibOptAutoUpdateChkBox->Enable( false );
@@ -868,7 +868,7 @@ void guPrefDialog::BuildPlaybackPage()
 	PlayGenSizer->Add( PlayReplaySizer, 1, wxEXPAND, 5 );
 	PlayMainSizer->Add( PlayGenSizer, 0, wxEXPAND|wxALL, 5 );
 
-    wxStaticBoxSizer * SmartPlayListSizer = new wxStaticBoxSizer( new wxStaticBox( m_PlayPanel, wxID_ANY, _( " Random / Smart play modes " ) ), wxVERTICAL );
+    wxStaticBoxSizer * SmartPlayListSizer = new wxStaticBoxSizer(new wxStaticBox(m_PlayPanel, wxID_ANY, wxString::Format(" %s ", _("Random / Smart play modes"))), wxVERTICAL);
 
     wxFlexGridSizer * SmartPlayListFlexGridSizer = new wxFlexGridSizer( 2, 0, 0 );
 	SmartPlayListFlexGridSizer->SetFlexibleDirection( wxBOTH );
@@ -1130,7 +1130,7 @@ void guPrefDialog::BuildRecordPage()
 
 	RecordSizer->Add( RecSelDirSizer, 0, wxEXPAND, 5 );
 
-	wxStaticBoxSizer * RecPropSizer = new wxStaticBoxSizer( new wxStaticBox( m_RecordPanel, wxID_ANY, _(" Properties ") ), wxVERTICAL );
+	wxStaticBoxSizer * RecPropSizer = new wxStaticBoxSizer(new wxStaticBox(m_RecordPanel, wxID_ANY, wxString::Format(" %s ", _("Properties"))), wxVERTICAL);
 
     wxFlexGridSizer * RecPropFlexSizer = new wxFlexGridSizer( 2, 0, 0 );
 	RecPropFlexSizer->AddGrowableCol( 1 );
@@ -1351,7 +1351,7 @@ void guPrefDialog::BuildLyricsPage()
 
     // Targets
     //
-	wxStaticBoxSizer * LyricsSaveSizer = new wxStaticBoxSizer( new wxStaticBox( m_LyricsPanel, wxID_ANY, _( " Targets " ) ), wxHORIZONTAL );
+	wxStaticBoxSizer * LyricsSaveSizer = new wxStaticBoxSizer(new wxStaticBox(m_LyricsPanel, wxID_ANY, wxString::Format(" %s ", _("Targets"))), wxHORIZONTAL);
 
     wxArrayString LyricTargetsNames;
     wxArrayInt    LyricTargetsEnabled;
@@ -1551,9 +1551,9 @@ void guPrefDialog::BuildOnlinePage()
     OnlineFiltersSizer->Add( OnlineBtnSizer, 0, wxEXPAND, 5 );
 
     OnlineMainSizer->Add( OnlineFiltersSizer, 0, wxEXPAND|wxALL, 5 );
-    wxStaticBoxSizer * OnlineLangSizer = new wxStaticBoxSizer( new wxStaticBox( m_OnlinePanel, wxID_ANY, _( " Language " ) ), wxHORIZONTAL );
+    wxStaticBoxSizer * OnlineLangSizer = new wxStaticBoxSizer(new wxStaticBox(m_OnlinePanel, wxID_ANY, wxString::Format(" %s ", _("Language"))), wxHORIZONTAL);
 
-    m_LangStaticText = new wxStaticText( m_OnlinePanel, wxID_ANY, _("Language:"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_LangStaticText = new wxStaticText( m_OnlinePanel, wxID_ANY, wxString::Format("%s:", _("Language")), wxDefaultPosition, wxDefaultSize, 0 );
     m_LangStaticText->Wrap( -1 );
     OnlineLangSizer->Add( m_LangStaticText, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxLEFT, 5 );
 
@@ -1568,7 +1568,7 @@ void guPrefDialog::BuildOnlinePage()
 
     OnlineMainSizer->Add( OnlineLangSizer, 0, wxEXPAND|wxALL, 5 );
 
-    wxStaticBoxSizer * BrowserCmdSizer = new wxStaticBoxSizer( new wxStaticBox( m_OnlinePanel, wxID_ANY, _(" Browser command ") ), wxHORIZONTAL );
+    wxStaticBoxSizer * BrowserCmdSizer = new wxStaticBoxSizer(new wxStaticBox(m_OnlinePanel, wxID_ANY, wxString::Format(" %s ", _("Browser command"))), wxHORIZONTAL);
 
     m_BrowserCmdTextCtrl = new wxTextCtrl( m_OnlinePanel, wxID_ANY, m_Config->ReadStr( CONFIG_KEY_GENERAL_BROWSER_COMMAND, wxT( "firefox --new-tab" ), CONFIG_PATH_GENERAL ), wxDefaultPosition, wxDefaultSize, 0 );
     BrowserCmdSizer->Add( m_BrowserCmdTextCtrl, 1, wxALL, 5 );
@@ -1576,14 +1576,14 @@ void guPrefDialog::BuildOnlinePage()
     OnlineMainSizer->Add( BrowserCmdSizer, 0, wxEXPAND|wxALL, 5 );
 
     m_LastMinBitRate = m_Config->ReadNum( CONFIG_KEY_RADIOS_MIN_BITRATE, 128, CONFIG_PATH_RADIOS );
-    wxStaticBoxSizer * RadioBitRateSizer = new wxStaticBoxSizer( new wxStaticBox( m_OnlinePanel, wxID_ANY, _( " Minimum radio allowed bit rate " ) ), wxHORIZONTAL );
+    wxStaticBoxSizer * RadioBitRateSizer = new wxStaticBoxSizer(new wxStaticBox(m_OnlinePanel, wxID_ANY, wxString::Format(" %s ", _("Minimum radio allowed bit rate"))), wxHORIZONTAL);
 
     m_RadioMinBitRateSlider = new wxSlider( m_OnlinePanel, wxID_ANY, m_LastMinBitRate, 0, 320, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL|wxSL_LABELS );
     RadioBitRateSizer->Add( m_RadioMinBitRateSlider, 1, wxEXPAND, 5 );
 
     OnlineMainSizer->Add( RadioBitRateSizer, 0, wxEXPAND|wxALL, 5 );
 
-    wxStaticBoxSizer * BufferSizeSizer = new wxStaticBoxSizer( new wxStaticBox( m_OnlinePanel, wxID_ANY, _( " Player online buffer size ") ), wxHORIZONTAL );
+    wxStaticBoxSizer * BufferSizeSizer = new wxStaticBoxSizer(new wxStaticBox(m_OnlinePanel, wxID_ANY, wxString::Format(" %s ", _("Player online buffer size"))), wxHORIZONTAL);
 
     m_BufferSizeSlider = new wxSlider( m_OnlinePanel, wxID_ANY, m_Config->ReadNum( CONFIG_KEY_GENERAL_BUFFER_SIZE, 64, CONFIG_PATH_GENERAL ), 32, 1024, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL|wxSL_LABELS );
     BufferSizeSizer->Add( m_BufferSizeSlider, 1, wxEXPAND, 5 );
@@ -2060,7 +2060,7 @@ void guPrefDialog::BuildCommandsPage()
     // Commands Panel
     //
 	wxBoxSizer * CmdMainSizer = new wxBoxSizer( wxVERTICAL );
-	wxStaticBoxSizer * CmdLabelSizer = new wxStaticBoxSizer( new wxStaticBox( m_CmdPanel, wxID_ANY, _(" Commands ") ), wxVERTICAL );
+	wxStaticBoxSizer * CmdLabelSizer = new wxStaticBoxSizer(new wxStaticBox(m_CmdPanel, wxID_ANY, wxString::Format(" %s ", _("Commands"))), wxVERTICAL);
 	wxBoxSizer * CmdListBoxSizer = new wxBoxSizer( wxHORIZONTAL );
 
 	m_CmdListBox = new wxListBox( m_CmdPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, 0 );
@@ -2115,7 +2115,7 @@ void guPrefDialog::BuildCommandsPage()
 	CmdFieldsSizer->SetFlexibleDirection( wxBOTH );
 	CmdFieldsSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	wxStaticText * CmdStaticText = new wxStaticText( m_CmdPanel, wxID_ANY, _( "Command:" ), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * CmdStaticText = new wxStaticText(m_CmdPanel, wxID_ANY, wxString::Format("%s:", _("Command")), wxDefaultPosition, wxDefaultSize, 0);
 	CmdStaticText->Wrap( -1 );
 	CmdFieldsSizer->Add( CmdStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxALL, 5 );
 
@@ -2235,7 +2235,7 @@ void guPrefDialog::BuildCopyToPage()
 
 	wxBoxSizer* CopyToEditorSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	wxStaticBoxSizer * CopyToOptionsSizer = new wxStaticBoxSizer( new wxStaticBox( m_CopyPanel, wxID_ANY, _(" Options ") ), wxHORIZONTAL );
+	wxStaticBoxSizer * CopyToOptionsSizer = new wxStaticBoxSizer(new wxStaticBox(m_CopyPanel, wxID_ANY, wxString::Format(" %s ", _("Options"))), wxHORIZONTAL);
 
     wxFlexGridSizer * CopyToFieldsSizer = new wxFlexGridSizer( 2, 0, 0 );
 	CopyToFieldsSizer->AddGrowableCol( 1 );

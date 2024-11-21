@@ -1069,7 +1069,7 @@ msgid "Current Filters"
 msgstr "Filtres actuals"
 
 #: DynamicPlayList.cpp:548
-msgid " Result "
+msgid "Result"
 msgstr "Resultat"
 
 #: DynamicPlayList.cpp:553 SmartMode.cpp:456
@@ -1242,7 +1242,7 @@ msgid "Continue"
 msgstr "Continua"
 
 #: FileRenamer.cpp:55
-msgid " Names Preview "
+msgid "Names Preview"
 msgstr "Previsualització dels noms"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
@@ -1425,12 +1425,8 @@ msgid "Download Albums torrents"
 msgstr "Baixa Torrents d'àlbums"
 
 #: LabelEditor.cpp:70
-msgid " Items "
+msgid "Items"
 msgstr "Elements"
-
-#: LabelEditor.cpp:91
-msgid " Labels "
-msgstr "Etiquetes"
 
 #: LabelEditor.cpp:119
 msgid "Add a new label"
@@ -1616,7 +1612,7 @@ msgid "Select Columns"
 msgstr "Seleccioneu Columnes"
 
 #: ListView.cpp:1490
-msgid " Columns "
+msgid "Columns"
 msgstr "Columnes"
 
 #: LocationPanel.cpp:97
@@ -1906,10 +1902,6 @@ msgstr "Res trobat:"
 #: LyricsPanel.cpp:2539
 msgid "Replace option editor"
 msgstr "Editor d'opcions de remplaçament"
-
-#: LyricsPanel.cpp:2540 RadioPanel.cpp:1173
-msgid "Search:"
-msgstr "Cerca:"
 
 #: LyricsPanel.cpp:2545
 msgid "Extract option editor"
@@ -2392,7 +2384,7 @@ msgid ""
 msgstr "No s'ha trobat l'Àlbum en la Fonoteca\nHauríeu d'actualitzar-la."
 
 #: MediaViewer.cpp:2160
-msgid " smart playlist"
+msgid "smart playlist"
 msgstr "llista intel·ligent"
 
 #: MediaViewer.cpp:2169 PlayerPanel.cpp:245 PlayerPanel.cpp:2238
@@ -2670,10 +2662,6 @@ msgid "Search in the library"
 msgstr "Cerca a la fonoteca"
 
 #: PlayList.cpp:2158
-msgid "Search: "
-msgstr "Cerca:"
-
-#: PlayList.cpp:2158
 msgid "Please enter the search term"
 msgstr "Introduïu un terme per cercar "
 
@@ -2877,10 +2865,6 @@ msgstr "incrustat"
 #: PortableMedia.cpp:985
 msgid "Portable Media Properties"
 msgstr "Propietats de dispositiu portàtil"
-
-#: PortableMedia.cpp:991 Preferences.cpp:1271
-msgid " Properties "
-msgstr "Propietats"
 
 #: PortableMedia.cpp:1007 Preferences.cpp:2383
 msgid "Path:"
@@ -3110,20 +3094,16 @@ msgid "Shortcuts"
 msgstr "Dreceres de teclat"
 
 #: Preferences.cpp:371
-msgid " Accept "
+msgid "Accept"
 msgstr "Acceptar"
 
-#: Preferences.cpp:373
-msgid " Cancel "
-msgstr "Cancel·lar"
-
 #: Preferences.cpp:587
-msgid " On Start "
+msgid "On Start"
 msgstr "Al inici"
 
 #: Preferences.cpp:591 Preferences.cpp:1634
-msgid "Language:"
-msgstr "Idioma:"
+msgid "Language"
+msgstr "Idioma"
 
 #: Preferences.cpp:602
 msgid "(Needs restart)"
@@ -3150,7 +3130,7 @@ msgid "Load default layout"
 msgstr "Obre la disposició per defecte"
 
 #: Preferences.cpp:641
-msgid " Behaviour "
+msgid "Behaviour"
 msgstr "Comportament"
 
 #: Preferences.cpp:643
@@ -3197,10 +3177,6 @@ msgstr "Tanca a una icona de la barra de tasques"
 msgid "Ask confirmation on exit"
 msgstr "Demana confirmació per sortir"
 
-#: Preferences.cpp:740
-msgid " Collections "
-msgstr "Col·leccions"
-
 #: Preferences.cpp:788
 msgid " Paths "
 msgstr "Rutes"
@@ -3210,7 +3186,7 @@ msgid " Words to detect covers "
 msgstr "Paraules per detectar caràtules"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
-msgid " Options "
+msgid "Options"
 msgstr "Opcions"
 
 #: Preferences.cpp:838
@@ -3266,7 +3242,7 @@ msgid "PreAmp:"
 msgstr "Preamplificació:"
 
 #: Preferences.cpp:1001
-msgid " Random / Smart play modes "
+msgid "Random / Smart play modes"
 msgstr "Mode de reproducció Aleatori/Intel·ligent"
 
 #: Preferences.cpp:1011
@@ -3418,7 +3394,7 @@ msgid " Sources "
 msgstr "Orígens"
 
 #: Preferences.cpp:1511
-msgid " Targets "
+msgid "Targets"
 msgstr "Destinacions"
 
 #: Preferences.cpp:1551
@@ -3441,20 +3417,16 @@ msgstr "Centre"
 msgid " Filters "
 msgstr "Filtres"
 
-#: Preferences.cpp:1632
-msgid " Language "
-msgstr "Idioma"
-
 #: Preferences.cpp:1648
-msgid " Browser command "
+msgid "Browser command"
 msgstr "Ordre del navegador"
 
 #: Preferences.cpp:1669
-msgid " Minimum radio allowed bit rate "
+msgid "Minimum radio allowed bit rate"
 msgstr "Taxa de bits mínima permesa per les ràdios"
 
 #: Preferences.cpp:1677
-msgid " Player online buffer size "
+msgid "Player online buffer size"
 msgstr "Mida de la memòria cau del reproductor en línia"
 
 #: Preferences.cpp:1713
@@ -3570,14 +3542,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "Codi d'idioma de 2 lletres\nText per cercar"
-
-#: Preferences.cpp:2166
-msgid " Commands "
-msgstr "Ordres"
-
-#: Preferences.cpp:2219
-msgid "Command:"
-msgstr "Ordre:"
 
 #: Preferences.cpp:2244
 msgid " Define commands using "
@@ -3703,7 +3667,7 @@ msgid "There are not entries for this Radio Station"
 msgstr "No hi ha entrades per aquesta emissora de ràdio"
 
 #: RadioPanel.cpp:1168
-msgid " Radio Search "
+msgid "Radio Search"
 msgstr "Cerca d'emissores"
 
 #: RadioPanel.cpp:1183

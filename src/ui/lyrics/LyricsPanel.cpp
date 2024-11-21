@@ -2447,7 +2447,7 @@ guLyricSourceOptionEditor::guLyricSourceOptionEditor( wxWindow * parent, guLyric
     if( optiontype == guLYRIC_SOURCE_OPTION_TYPE_REPLACE )
     {
         Title = _( "Replace option editor" );
-        Label1 = _( "Search:" );
+        Label1 = wxString::Format("%s:", _("Search"));
         Label2 = _( "Replace:" );
     }
     else if( optiontype == guLYRIC_SOURCE_OPTION_TYPE_EXTRACT )

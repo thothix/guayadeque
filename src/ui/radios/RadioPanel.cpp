@@ -1162,12 +1162,12 @@ guShoutcastSearch::guShoutcastSearch( wxWindow * parent, guRadioItemData * itemd
 	MainSizer = new wxBoxSizer( wxVERTICAL );
 
 	wxStaticBoxSizer* LabelSizer;
-	LabelSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _(" Radio Search ") ), wxVERTICAL );
+	LabelSizer = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxString::Format(" %s ", _("Radio Search"))), wxVERTICAL);
 
 	wxBoxSizer* SearchSizer;
 	SearchSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	wxStaticText * SearchLabel = new wxStaticText( this, wxID_ANY, _("Search:"), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * SearchLabel = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Search")), wxDefaultPosition, wxDefaultSize, 0 );
 	SearchLabel->Wrap( -1 );
 	SearchSizer->Add( SearchLabel, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 

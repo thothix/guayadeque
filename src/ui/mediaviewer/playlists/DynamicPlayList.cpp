@@ -544,7 +544,7 @@ guDynPlayListEditor::guDynPlayListEditor( wxWindow * parent, guDynPlayList * pla
     if( !albumfilter )
     {
         wxStaticBoxSizer* ResultSizer;
-        ResultSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _(" Result ") ), wxVERTICAL );
+        ResultSizer = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxString::Format(" %s ", _("Result"))), wxVERTICAL);
 
         wxBoxSizer* LimitSizer;
         LimitSizer = new wxBoxSizer( wxHORIZONTAL );

@@ -685,7 +685,7 @@ guPortableMediaProperties::guPortableMediaProperties( wxWindow * parent, guPorta
 
 	wxBoxSizer * MainSizer = new wxBoxSizer( wxVERTICAL );
 
-	wxStaticBoxSizer * PMBoxSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _( " Properties " ) ), wxVERTICAL );
+	wxStaticBoxSizer * PMBoxSizer = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxString::Format(" %s ", _("Properties"))), wxVERTICAL);
 
     wxFlexGridSizer * PMFlexSizer = new wxFlexGridSizer( 2, 0, 0 );
 	PMFlexSizer->AddGrowableCol( 1 );

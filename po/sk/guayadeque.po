@@ -1076,8 +1076,8 @@ msgid "Current Filters"
 msgstr "Aktuálne filtre"
 
 #: DynamicPlayList.cpp:548
-msgid " Result "
-msgstr " Výsledok "
+msgid "Result"
+msgstr "Výsledok"
 
 #: DynamicPlayList.cpp:553 SmartMode.cpp:456
 msgid "Limit to"
@@ -1249,8 +1249,8 @@ msgid "Continue"
 msgstr "Pokračovať"
 
 #: FileRenamer.cpp:55
-msgid " Names Preview "
-msgstr " Náhľad mien "
+msgid "Names Preview"
+msgstr "Náhľad mien"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
 msgid "Pattern:"
@@ -1432,12 +1432,8 @@ msgid "Download Albums torrents"
 msgstr "Stiahnuť torrenty albumov"
 
 #: LabelEditor.cpp:70
-msgid " Items "
-msgstr " položky "
-
-#: LabelEditor.cpp:91
-msgid " Labels "
-msgstr " Menovky "
+msgid "Items"
+msgstr "Položky"
 
 #: LabelEditor.cpp:119
 msgid "Add a new label"
@@ -1623,8 +1619,8 @@ msgid "Select Columns"
 msgstr "Vybrať stĺpce"
 
 #: ListView.cpp:1490
-msgid " Columns "
-msgstr " Stĺpce "
+msgid "Columns"
+msgstr "Stĺpce"
 
 #: LocationPanel.cpp:97
 msgid "Local Music"
@@ -1913,10 +1909,6 @@ msgstr "Nenájdené:"
 #: LyricsPanel.cpp:2539
 msgid "Replace option editor"
 msgstr "Úprava voľby nahradiť"
-
-#: LyricsPanel.cpp:2540 RadioPanel.cpp:1173
-msgid "Search:"
-msgstr "Hľadať:"
 
 #: LyricsPanel.cpp:2545
 msgid "Extract option editor"
@@ -2399,7 +2391,7 @@ msgid ""
 msgstr "Nemožno nájsť album v knižnici skladieb.\nMali by ste aktualizovať knižnicu."
 
 #: MediaViewer.cpp:2160
-msgid " smart playlist"
+msgid "smart playlist"
 msgstr "Aktualizovať stanice rádia"
 
 #: MediaViewer.cpp:2169 PlayerPanel.cpp:245 PlayerPanel.cpp:2238
@@ -2677,10 +2669,6 @@ msgid "Search in the library"
 msgstr "Hľadať v knižnici"
 
 #: PlayList.cpp:2158
-msgid "Search: "
-msgstr "Hľadať: "
-
-#: PlayList.cpp:2158
 msgid "Please enter the search term"
 msgstr "Prosím, zadajte hľadaný výraz"
 
@@ -2884,10 +2872,6 @@ msgstr "Pripojené"
 #: PortableMedia.cpp:985
 msgid "Portable Media Properties"
 msgstr "Vlastnosti prenosného média"
-
-#: PortableMedia.cpp:991 Preferences.cpp:1271
-msgid " Properties "
-msgstr " Vlastnosti "
 
 #: PortableMedia.cpp:1007 Preferences.cpp:2383
 msgid "Path:"
@@ -3117,20 +3101,16 @@ msgid "Shortcuts"
 msgstr "Klávesové skratky"
 
 #: Preferences.cpp:371
-msgid " Accept "
-msgstr " Prijať "
-
-#: Preferences.cpp:373
-msgid " Cancel "
-msgstr " Zrušiť "
+msgid "Accept"
+msgstr "Prijať"
 
 #: Preferences.cpp:587
-msgid " On Start "
-msgstr " Pri spustení "
+msgid "On Start"
+msgstr "Pri spustení"
 
 #: Preferences.cpp:591 Preferences.cpp:1634
-msgid "Language:"
-msgstr "Jazyk:"
+msgid "Language"
+msgstr "Jazyk"
 
 #: Preferences.cpp:602
 msgid "(Needs restart)"
@@ -3157,8 +3137,8 @@ msgid "Load default layout"
 msgstr "Načítať predvolený vzhľad"
 
 #: Preferences.cpp:641
-msgid " Behaviour "
-msgstr " Správanie "
+msgid "Behaviour"
+msgstr "Správanie"
 
 #: Preferences.cpp:643
 msgid "Activate task bar icon"
@@ -3204,10 +3184,6 @@ msgstr "Zatvoriť do oznamovacej oblasti"
 msgid "Ask confirmation on exit"
 msgstr "Potvrdiť ukončenie"
 
-#: Preferences.cpp:740
-msgid " Collections "
-msgstr " Zbierky "
-
 #: Preferences.cpp:788
 msgid " Paths "
 msgstr " Cesty "
@@ -3217,8 +3193,8 @@ msgid " Words to detect covers "
 msgstr " Slová na identifikovanie obalov "
 
 #: Preferences.cpp:836 Preferences.cpp:2344
-msgid " Options "
-msgstr " Voľby "
+msgid "Options"
+msgstr "Voľby"
 
 #: Preferences.cpp:838
 msgid "Update when opened "
@@ -3273,8 +3249,8 @@ msgid "PreAmp:"
 msgstr "Predzosilnenie:"
 
 #: Preferences.cpp:1001
-msgid " Random / Smart play modes "
-msgstr "Náhodné / Inteligentné prehrávacie režimy:"
+msgid "Random / Smart play modes"
+msgstr "Náhodné / Inteligentné prehrávacie režimy"
 
 #: Preferences.cpp:1011
 msgid "Tracks left to start search"
@@ -3425,8 +3401,8 @@ msgid " Sources "
 msgstr " Zdroje "
 
 #: Preferences.cpp:1511
-msgid " Targets "
-msgstr " Ciele "
+msgid "Targets"
+msgstr "Ciele"
 
 #: Preferences.cpp:1551
 msgid " Font "
@@ -3448,21 +3424,17 @@ msgstr "Na stred"
 msgid " Filters "
 msgstr " Filtre "
 
-#: Preferences.cpp:1632
-msgid " Language "
-msgstr " Jazyk "
-
 #: Preferences.cpp:1648
-msgid " Browser command "
-msgstr " Príkaz prehliadača "
+msgid "Browser command"
+msgstr "Príkaz prehliadača"
 
 #: Preferences.cpp:1669
-msgid " Minimum radio allowed bit rate "
-msgstr " Minimálny povolený dátový tok rádia "
+msgid "Minimum radio allowed bit rate"
+msgstr "Minimálny povolený dátový tok rádia"
 
 #: Preferences.cpp:1677
-msgid " Player online buffer size "
-msgstr " Veľkosť online bufera prehrávača"
+msgid "Player online buffer size"
+msgstr "Veľkosť online bufera prehrávača"
 
 #: Preferences.cpp:1713
 msgid " Podcasts "
@@ -3577,14 +3549,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "2-písmenový kód jazyka\nHľadaný text"
-
-#: Preferences.cpp:2166
-msgid " Commands "
-msgstr " Príkazy "
-
-#: Preferences.cpp:2219
-msgid "Command:"
-msgstr "Príkaz:"
 
 #: Preferences.cpp:2244
 msgid " Define commands using "
@@ -3710,8 +3674,8 @@ msgid "There are not entries for this Radio Station"
 msgstr "Pre túto rádiovú stanicu neexistujú položky"
 
 #: RadioPanel.cpp:1168
-msgid " Radio Search "
-msgstr " Hľadanie rádia "
+msgid "Radio Search"
+msgstr "Hľadanie rádia"
 
 #: RadioPanel.cpp:1183
 msgid "Search in now playing info"

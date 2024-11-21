@@ -647,12 +647,8 @@ msgid "There are not entries for this Radio Station"
 msgstr "Der er ingen beskeder for denne radiostation"
 
 #: ui/radios/RadioPanel.cpp:1208
-msgid " Radio Search "
-msgstr " Radiosøgning "
-
-#: ui/radios/RadioPanel.cpp:1213 ui/lyrics/LyricsPanel.cpp:2585
-msgid "Search:"
-msgstr "Søg:"
+msgid "Radio Search"
+msgstr "Radiosøgning"
 
 #: ui/radios/RadioPanel.cpp:1223
 msgid "Search in now playing info"
@@ -767,12 +763,8 @@ msgid "Preset:"
 msgstr "Nulstilling:"
 
 #: ui/labeleditor/LabelEditor.cpp:73
-msgid " Items "
-msgstr " Elementer "
-
-#: ui/labeleditor/LabelEditor.cpp:94
-msgid " Labels "
-msgstr " Etiketter "
+msgid "Items"
+msgstr "Elementer"
 
 #: ui/labeleditor/LabelEditor.cpp:122
 msgid "Add a new label"
@@ -1369,8 +1361,8 @@ msgid "Select Columns"
 msgstr "Vælg kolonner"
 
 #: ui/itemlistbox/ListView.cpp:1504
-msgid " Columns "
-msgstr " Kolonner "
+msgid "Columns"
+msgstr "Kolonner"
 
 #: ui/preferences/Preferences.cpp:133
 #: ui/mediaviewer/treeview/TreePanel.cpp:347
@@ -1549,20 +1541,20 @@ msgid "Shortcuts"
 msgstr "Genveje"
 
 #: ui/preferences/Preferences.cpp:380
-msgid " Accept "
-msgstr " Accepter "
+msgid "Accept"
+msgstr "Accepter"
 
 #: ui/preferences/Preferences.cpp:382
-msgid " Cancel "
-msgstr " Afbryd "
+msgid "Cancel"
+msgstr "Afbryd"
 
 #: ui/preferences/Preferences.cpp:463
-msgid " On Start "
-msgstr " Ved opstart "
+msgid "On Start"
+msgstr "Ved opstart"
 
 #: ui/preferences/Preferences.cpp:467 ui/preferences/Preferences.cpp:1598
-msgid "Language:"
-msgstr "Sprog:"
+msgid "Language"
+msgstr "Sprog"
 
 #: ui/preferences/Preferences.cpp:478
 msgid "(Needs restart)"
@@ -1594,8 +1586,8 @@ msgid "Load default layout"
 msgstr "Indlæs standardlayout"
 
 #: ui/preferences/Preferences.cpp:517
-msgid " Behaviour "
-msgstr " Opførsel "
+msgid "Behaviour"
+msgstr "Opførsel"
 
 #: ui/preferences/Preferences.cpp:519
 msgid "Activate task bar icon"
@@ -1641,10 +1633,6 @@ msgstr "Luk til opgavebjælkeikon"
 msgid "Ask confirmation on exit"
 msgstr "Bed om bekræftelse ved afslut"
 
-#: ui/preferences/Preferences.cpp:617
-msgid " Collections "
-msgstr " Samlinger "
-
 #: ui/preferences/Preferences.cpp:665
 msgid " Paths "
 msgstr " Stier "
@@ -1654,8 +1642,8 @@ msgid " Words to detect covers "
 msgstr " Ord til at detektere omslag "
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
-msgid " Options "
-msgstr " Indstillinger "
+msgid "Options"
+msgstr "Indstillinger"
 
 #: ui/preferences/Preferences.cpp:715
 msgid "Update when opened "
@@ -1751,8 +1739,8 @@ msgid "PreAmp:"
 msgstr "PreAmp:"
 
 #: ui/preferences/Preferences.cpp:886
-msgid " Random / Smart play modes "
-msgstr " Vilkårlig og smart afspilningstilstand "
+msgid "Random / Smart play modes"
+msgstr "Vilkårlig og smart afspilningstilstand"
 
 #: ui/preferences/Preferences.cpp:896
 msgid "Tracks left to start search"
@@ -1858,11 +1846,6 @@ msgstr "Gemt til:"
 msgid "Select a folder"
 msgstr "Vælg en mappe"
 
-#: ui/preferences/Preferences.cpp:1156
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:694
-msgid " Properties "
-msgstr " Egenskaber "
-
 #: ui/preferences/Preferences.cpp:1163 ui/preferences/Preferences.cpp:2314
 msgid "Format:"
 msgstr "Format:"
@@ -1907,8 +1890,8 @@ msgid " Sources "
 msgstr " Kilder "
 
 #: ui/preferences/Preferences.cpp:1392
-msgid " Targets "
-msgstr " Mål "
+msgid "Targets"
+msgstr "Mål"
 
 #: ui/preferences/Preferences.cpp:1434
 msgid "Disabled Genres"
@@ -1958,21 +1941,17 @@ msgstr "Port:"
 msgid " Filters "
 msgstr " Filtre "
 
-#: ui/preferences/Preferences.cpp:1596
-msgid " Language "
-msgstr " Sprog "
-
 #: ui/preferences/Preferences.cpp:1613
-msgid " Browser command "
-msgstr " Browserkommando "
+msgid "Browser command"
+msgstr "Browserkommando"
 
 #: ui/preferences/Preferences.cpp:1621
-msgid " Minimum radio allowed bit rate "
-msgstr " Minimum radiotilladt bithastighed "
+msgid "Minimum radio allowed bit rate"
+msgstr "Minimum radiotilladt bithastighed"
 
 #: ui/preferences/Preferences.cpp:1628
-msgid " Player online buffer size "
-msgstr " Spillers mellemlagerstørrelse på nettet "
+msgid "Player online buffer size"
+msgstr "Spillers mellemlagerstørrelse på nettet"
 
 #: ui/preferences/Preferences.cpp:1665
 msgid " Podcasts "
@@ -2087,14 +2066,6 @@ msgid ""
 "2 letters language code\n"
 "Text to search"
 msgstr "2-bogstavs sprogkoder\nTekst at søge"
-
-#: ui/preferences/Preferences.cpp:2115
-msgid " Commands "
-msgstr " Kommandoer "
-
-#: ui/preferences/Preferences.cpp:2168
-msgid "Command:"
-msgstr "Kommando:"
 
 #: ui/preferences/Preferences.cpp:2193
 msgid " Define commands using "
@@ -3453,8 +3424,8 @@ msgid "Current Filters"
 msgstr "Nuværende filtre"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:552
-msgid " Result "
-msgstr " Resultat "
+msgid "Result"
+msgstr "Resultat"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:557
 #: info/smartmode/SmartMode.cpp:459
@@ -3537,8 +3508,8 @@ msgid "Adding path error"
 msgstr "Tilføjer stifejl"
 
 #: ui/mediaviewer/MediaViewer.cpp:2179
-msgid " smart playlist"
-msgstr " smart afspilningsliste"
+msgid "smart playlist"
+msgstr "smart afspilningsliste"
 
 #: ui/mediaviewer/MediaViewer.cpp:2188
 msgid "Playlist"
@@ -3549,8 +3520,8 @@ msgid "Rename Files"
 msgstr "Omdøb filer"
 
 #: ui/filebrowser/FileRenamer.cpp:58
-msgid " Names Preview "
-msgstr " Navneforhåndsvisning "
+msgid "Names Preview"
+msgstr "Navneforhåndsvisning"
 
 #: ui/filebrowser/FileRenamer.cpp:85
 msgid ""
@@ -4115,10 +4086,6 @@ msgstr "Vælg året fra sangen"
 #: ui/player/PlayList.cpp:1666
 msgid "Select the genre of the current song"
 msgstr "Vælg genren fra sangen"
-
-#: ui/player/PlayList.cpp:2172
-msgid "Search: "
-msgstr "Søg: "
 
 #: ui/player/PlayList.cpp:2172
 msgid "Please enter the search term"
@@ -4725,10 +4692,6 @@ msgstr "Kør"
 #: misc/Accelerators.cpp:412
 msgid "Snapshot"
 msgstr "Øjebliksbillede"
-
-#: misc/Accelerators.cpp:415
-msgid "Cancel"
-msgstr "Afbryd"
 
 #: misc/Accelerators.cpp:416
 msgid "Menu"

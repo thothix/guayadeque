@@ -53,7 +53,7 @@ guFileRenamer::guFileRenamer( wxWindow * parent, guDbLibrary * db, const wxArray
 	MainSizer = new wxBoxSizer( wxVERTICAL );
 
 	wxStaticBoxSizer * FilesSizer;
-	FilesSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _(" Names Preview ") ), wxVERTICAL );
+	FilesSizer = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxString::Format(" %s ", _("Names Preview"))), wxVERTICAL);
 
 	m_FilesListBox = new wxListBox( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_EXTENDED|wxLB_MULTIPLE );
 	m_FilesListBox->Append( files );

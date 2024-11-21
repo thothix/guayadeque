@@ -2054,7 +2054,8 @@ void guMediaViewer::OnSmartAddTracks( wxCommandEvent &event )
 void guMediaViewer::CreateSmartPlaylist( const wxString &artistname, const wxString &trackname )
 {
     wxString PlaylistName = artistname + wxT( " " ) + trackname + wxT( " " );
-    PlaylistName += _( " smart playlist" );
+    PlaylistName += wxString::Format(" %s", _("smart playlist"));
+
     guGenSmartPlaylist * GenSmartPlaylist = new guGenSmartPlaylist( this, this, PlaylistName );
     if( GenSmartPlaylist )
     {
