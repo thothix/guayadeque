@@ -785,8 +785,8 @@ msgid "Podcast Channel Editor"
 msgstr "Úprava podcastových kanálov"
 
 #: ChannelEditor.cpp:57
-msgid " Podcast Channel "
-msgstr " Podcastový Kanál "
+msgid "Podcast Channel"
+msgstr "Podcastový Kanál"
 
 #: ChannelEditor.cpp:99 PodcastsPanel.cpp:948
 msgid "Description:"
@@ -862,15 +862,6 @@ msgstr "Kopírovanie súborov je dokončené"
 #: CoverEdit.cpp:54
 msgid "Cover Editor"
 msgstr "Úprava obalu"
-
-#: CoverEdit.cpp:71 LastFMPanel.cpp:1682 LyricsPanel.cpp:111 TrackEdit.cpp:148
-#: TrackEdit.cpp:373 TrackEdit.cpp:415 TrackEdit.cpp:474
-msgid "Artist:"
-msgstr "Umelec:"
-
-#: CoverEdit.cpp:78 TrackEdit.cpp:172 TrackEdit.cpp:440 TrackEdit.cpp:496
-msgid "Album:"
-msgstr "Album:"
 
 #: CoverEdit.cpp:85
 msgid "From:"
@@ -971,10 +962,6 @@ msgstr "Bitový tok"
 #: DynamicPlayList.cpp:63 FileBrowser.cpp:764
 msgid "Size"
 msgstr "Veľkosť"
-
-#: DynamicPlayList.cpp:64 SoListBox.cpp:415
-msgid "Disc"
-msgstr "Disk"
 
 #: DynamicPlayList.cpp:65
 msgid "Has Cover"
@@ -1085,8 +1072,8 @@ msgid "Name:"
 msgstr "Meno:"
 
 #: DynamicPlayList.cpp:467
-msgid " Current Filters "
-msgstr " Aktuálne filtre "
+msgid "Current Filters"
+msgstr "Aktuálne filtre"
 
 #: DynamicPlayList.cpp:548
 msgid " Result "
@@ -1309,8 +1296,8 @@ msgid "Select a folder"
 msgstr "Vyberať priečinok"
 
 #: ImportFiles.cpp:121
-msgid " Files "
-msgstr " Súbory "
+msgid "Files"
+msgstr "Súbory"
 
 #: ImportFiles.cpp:228
 msgid "Select files"
@@ -1545,10 +1532,6 @@ msgstr "Kopírovať informácie o udalosti do schránky"
 #: LastFMPanel.cpp:1665 LyricsPanel.cpp:81
 msgid "Follow player"
 msgstr "Nasledovať prehrávač"
-
-#: LastFMPanel.cpp:1691 LyricsPanel.cpp:121 TrackEdit.cpp:380
-msgid "Track:"
-msgstr "Skladba:"
 
 #: LastFMPanel.cpp:1711
 msgid "Artist Info"
@@ -2428,8 +2411,8 @@ msgid "New Podcast Channel"
 msgstr "Nový kanál podkastu"
 
 #: NewChannel.cpp:100
-msgid " Digital Podcast Directory "
-msgstr " Zložka digitálnych podkastov "
+msgid "Digital Podcast Directory"
+msgstr "Zložka digitálnych podkastov"
 
 #: NewChannel.cpp:111
 msgid "Search in the podcast directory"
@@ -2596,10 +2579,6 @@ msgstr "Kde:"
 #: PlayListAppend.cpp:69
 msgid "Beginning"
 msgstr "Začiatok"
-
-#: PlayListAppend.cpp:75
-msgid "Tracks:"
-msgstr "Skladby:"
 
 #: PlayList.cpp:1523
 msgid "Empty Playlist"
@@ -2806,17 +2785,9 @@ msgstr "Nový Playlist"
 msgid "Delete the current selected tracks"
 msgstr "Odstrániť aktuálne zvolené skladby"
 
-#: PodcastsPanel.cpp:928 TrackEdit.cpp:466
-msgid " Details "
-msgstr " Podrobnosti "
-
 #: PodcastsPanel.cpp:979 RadioEditor.cpp:52
 msgid "Link:"
 msgstr "Odkaz:"
-
-#: PodcastsPanel.cpp:994 TrackEdit.cpp:183 TrackEdit.cpp:423 TrackEdit.cpp:520
-msgid "Title:"
-msgstr "Názov:"
 
 #: PodcastsPanel.cpp:1004
 msgid "Sumary:"
@@ -3545,10 +3516,6 @@ msgstr "Mesiacoch"
 msgid "Only if played"
 msgstr "Len po prehraní"
 
-#: Preferences.cpp:1791 Preferences.cpp:1884 RadioGenreEditor.cpp:37
-msgid " Genres "
-msgstr " Žánre "
-
 #: Preferences.cpp:1825 Preferences.cpp:1922
 msgid "Invert"
 msgstr "Invertovať"
@@ -3725,10 +3692,6 @@ msgstr "Editor žánrov rádií"
 #: RadioGenreEditor.cpp:48
 msgid "Other:"
 msgstr "Iné:"
-
-#: RadioPanel.cpp:330
-msgid "BitRate"
-msgstr "Dátový tok"
 
 #: RadioPanel.cpp:331
 msgid "Listeners"
@@ -4051,7 +4014,7 @@ msgid "Songs Editor"
 msgstr "Editor piesní"
 
 #: TrackEdit.cpp:102
-msgid " Songs "
+msgid "Songs"
 msgstr " Piesne "
 
 #: TrackEdit.cpp:110
@@ -4071,8 +4034,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Kopírovať meno umelca albumu do všetkých upravovaných skladieb"
 
 #: TrackEdit.cpp:160 TrackEdit.cpp:485
-msgid "A. Artist:"
-msgstr "A. Umelec:"
+msgid "A. Artist"
+msgstr "A. Umelec"
 
 #: TrackEdit.cpp:161
 msgid "shows the album artist of the track"
@@ -4090,25 +4053,17 @@ msgstr "Kopírovať názov do všetkých upravovaných skladieb"
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "Kopírovať skladateľa do všetkých upravovaných skladieb"
 
-#: TrackEdit.cpp:195
-msgid "Composer:"
-msgstr "Skladateľ:"
-
 #: TrackEdit.cpp:203
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "Kopírovať komentár do všetkých upravovaných skladieb"
-
-#: TrackEdit.cpp:207
-msgid "Comment:"
-msgstr "Komentár:"
 
 #: TrackEdit.cpp:216
 msgid "Copy the number to all the tracks you are editing"
 msgstr "Kopírovať číslo do všetkých upravovaných skladieb"
 
 #: TrackEdit.cpp:219 TrackEdit.cpp:543
-msgid "Number:"
-msgstr "Číslo:"
+msgid "Number"
+msgstr "Číslo"
 
 #: TrackEdit.cpp:233
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -4119,28 +4074,16 @@ msgid "Copy the disk to all the tracks you are editing"
 msgstr "Kopírovať disk do všetkých upravovaných skladieb"
 
 #: TrackEdit.cpp:243
-msgid "Disk:"
-msgstr "Disk:"
+msgid "Disk"
+msgstr "Disk"
 
 #: TrackEdit.cpp:253
 msgid "Copy the genre name to all songs you are editing"
 msgstr "Kopírovať názov žánru do všetkých upravovaných skladieb"
 
-#: TrackEdit.cpp:256
-msgid "Genre:"
-msgstr "Žáner:"
-
 #: TrackEdit.cpp:264
 msgid "Copy the year to all songs you are editing"
 msgstr "Kopírovať rok do všetkých upravovaných skladieb"
-
-#: TrackEdit.cpp:267
-msgid "Year:"
-msgstr "Rok:"
-
-#: TrackEdit.cpp:283
-msgid "Rating:"
-msgstr "Hodnotenie:"
 
 #: TrackEdit.cpp:332
 msgid "Add a picture from file to the current track"
@@ -4215,18 +4158,13 @@ msgid "Copy the number to the edited tracks"
 msgstr "Kopírovať číslo do upravovaných skladieb"
 
 #: TrackEdit.cpp:919
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr "Typ súboru\t: %s\nDĺžka\t\t: %s"
+msgid "File Type"
+msgstr "Typ súboru"
 
 #: TrackEdit.cpp:923
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr "Dátový tok\t\t: %u kb/s\nVeľkosť súboru\t: %s"
+msgid "File Size"
+msgstr "Veľkosť súboru"
 
 #: TrackEdit.cpp:1673
 #, c-format

@@ -925,7 +925,7 @@ guPodcastPanel::guPodcastPanel( wxWindow * parent, guDbPodcasts * db, guMainFram
 	m_DetailMainSizer = new wxBoxSizer( wxVERTICAL );
 
 	wxStaticBoxSizer* DetailSizer;
-	DetailSizer = new wxStaticBoxSizer( new wxStaticBox( DetailsPanel, wxID_ANY, _(" Details ") ), wxVERTICAL );
+	DetailSizer = new wxStaticBoxSizer( new wxStaticBox( DetailsPanel, wxID_ANY, wxString::Format(" %s ", _("Details")) ), wxVERTICAL );
 
 	m_DetailScrolledWindow = new wxScrolledWindow( DetailsPanel, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxHSCROLL );
 	m_DetailScrolledWindow->SetScrollRate( 5, 5 );
@@ -991,7 +991,7 @@ guPodcastPanel::guPodcastPanel( wxWindow * parent, guDbPodcasts * db, guMainFram
 	DetailStaticLine2 = new wxStaticLine( m_DetailScrolledWindow, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
 	m_DetailFlexGridSizer->Add( DetailStaticLine2, 0, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
 
-	DetailItemTitleLabel = new wxStaticText( m_DetailScrolledWindow, wxID_ANY, _("Title:"), wxDefaultPosition, wxDefaultSize, 0 );
+	DetailItemTitleLabel = new wxStaticText( m_DetailScrolledWindow, wxID_ANY, wxString::Format(_("%s:"), _("Title")), wxDefaultPosition, wxDefaultSize, 0 );
 	DetailItemTitleLabel->Wrap( -1 );
 	DetailItemTitleLabel->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString));
 

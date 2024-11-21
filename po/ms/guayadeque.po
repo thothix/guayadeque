@@ -70,18 +70,6 @@ msgstr "Sangat Rendah"
 msgid "Cover Editor"
 msgstr "Penyunting Kulit Hadapan"
 
-#: ui/cover/CoverEdit.cpp:78 ui/lastfmpanel/LastFMPanel.cpp:1726
-#: ui/lyrics/LyricsPanel.cpp:114 ui/trackedit/TrackEdit.cpp:164
-#: ui/trackedit/TrackEdit.cpp:389 ui/trackedit/TrackEdit.cpp:430
-#: ui/trackedit/TrackEdit.cpp:489
-msgid "Artist:"
-msgstr "Artis:"
-
-#: ui/cover/CoverEdit.cpp:85 ui/trackedit/TrackEdit.cpp:188
-#: ui/trackedit/TrackEdit.cpp:455 ui/trackedit/TrackEdit.cpp:511
-msgid "Album:"
-msgstr "Album:"
-
 #: ui/cover/CoverEdit.cpp:92
 msgid "From:"
 msgstr "Daripada:"
@@ -457,11 +445,6 @@ msgstr "Salin maklumat peristiwa ke dalam papan keratan"
 msgid "Follow player"
 msgstr "Ikut pemain"
 
-#: ui/lastfmpanel/LastFMPanel.cpp:1735 ui/lyrics/LyricsPanel.cpp:124
-#: ui/trackedit/TrackEdit.cpp:396
-msgid "Track:"
-msgstr "Trek:"
-
 #: ui/lastfmpanel/LastFMPanel.cpp:1755
 msgid "Artist Info"
 msgstr "Maklumat Artis"
@@ -585,11 +568,6 @@ msgstr "Ditakrif Pengguna"
 msgid "Radio Genre Editor"
 msgstr "Penyunting Genre Radio"
 
-#: ui/radios/RadioGenreEditor.cpp:40 ui/preferences/Preferences.cpp:1742
-#: ui/preferences/Preferences.cpp:1834
-msgid " Genres "
-msgstr "Genre"
-
 #: ui/radios/RadioGenreEditor.cpp:51
 msgid "Other:"
 msgstr "Lain-lain:"
@@ -599,10 +577,6 @@ msgstr "Lain-lain:"
 #: ui/mediaviewer/library/AlListBox.cpp:322 ui/filebrowser/FileBrowser.cpp:778
 msgid "Name"
 msgstr "Nama"
-
-#: ui/radios/RadioPanel.cpp:332
-msgid "BitRate"
-msgstr "KadarBit"
 
 #: ui/radios/RadioPanel.cpp:333
 msgid "Listeners"
@@ -965,7 +939,7 @@ msgid "Songs Editor"
 msgstr "Penyunting Lagu"
 
 #: ui/trackedit/TrackEdit.cpp:118
-msgid " Songs "
+msgid "Songs"
 msgstr "Lagu"
 
 #: ui/trackedit/TrackEdit.cpp:126
@@ -985,8 +959,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Salin nama artis album ke semua trek yang masih disunting"
 
 #: ui/trackedit/TrackEdit.cpp:176 ui/trackedit/TrackEdit.cpp:500
-msgid "A. Artist:"
-msgstr "A. Artis:"
+msgid "A. Artist"
+msgstr "A. Artis"
 
 #: ui/trackedit/TrackEdit.cpp:177
 msgid "shows the album artist of the track"
@@ -1000,34 +974,21 @@ msgstr "Salin nama album ke semua trek yang masih disunting"
 msgid "Copy the title to all the tracks you are editing"
 msgstr "Salin tajuk ke semua trek yang masih disunting"
 
-#: ui/trackedit/TrackEdit.cpp:199 ui/trackedit/TrackEdit.cpp:438
-#: ui/trackedit/TrackEdit.cpp:533 ui/podcasts/PodcastsPanel.cpp:999
-msgid "Title:"
-msgstr "Tajuk:"
-
 #: ui/trackedit/TrackEdit.cpp:207
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "Salin penggubah ke semua trek yang masih disunting"
 
-#: ui/trackedit/TrackEdit.cpp:211
-msgid "Composer:"
-msgstr "Penggubah:"
-
 #: ui/trackedit/TrackEdit.cpp:219
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "Salin ulasan bagi semua trek yang anda sunting"
-
-#: ui/trackedit/TrackEdit.cpp:223
-msgid "Comment:"
-msgstr "Ulasan:"
 
 #: ui/trackedit/TrackEdit.cpp:232
 msgid "Copy the number to all the tracks you are editing"
 msgstr "Salin bilangan semua trek yang anda sunting"
 
 #: ui/trackedit/TrackEdit.cpp:235 ui/trackedit/TrackEdit.cpp:556
-msgid "Number:"
-msgstr "Bilangan:"
+msgid "Number"
+msgstr "Bilangan"
 
 #: ui/trackedit/TrackEdit.cpp:249
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -1037,29 +998,13 @@ msgstr "Enumerasikan trek supaya ia ditambah untuk penyuntingan"
 msgid "Copy the disk to all the tracks you are editing"
 msgstr "Salin cakera ke semua trek yang masih disunting"
 
-#: ui/trackedit/TrackEdit.cpp:259
-msgid "Disk:"
-msgstr "Cakera:"
-
 #: ui/trackedit/TrackEdit.cpp:269
 msgid "Copy the genre name to all songs you are editing"
 msgstr "Salin nama genre ke semua lagu yang masih disunting"
 
-#: ui/trackedit/TrackEdit.cpp:272
-msgid "Genre:"
-msgstr "Genre:"
-
 #: ui/trackedit/TrackEdit.cpp:280
 msgid "Copy the year to all songs you are editing"
 msgstr "Salin tahun ke semua lagu yang masih disunting"
-
-#: ui/trackedit/TrackEdit.cpp:283 ui/trackedit/TrackEdit.cpp:522
-msgid "Year:"
-msgstr "Tahun:"
-
-#: ui/trackedit/TrackEdit.cpp:299
-msgid "Rating:"
-msgstr "Penarafan:"
 
 #: ui/trackedit/TrackEdit.cpp:326 ui/podcasts/PodcastsPanel.cpp:1065
 #: ui/locationpanel/LocationPanel.cpp:365 ui/MainFrame.cpp:1108
@@ -1120,10 +1065,6 @@ msgstr "Gelintar album dalam musicbrainz"
 msgid "Copy the content of the album to the edited tracks"
 msgstr "Salin kandungan album ke trek yang disunting"
 
-#: ui/trackedit/TrackEdit.cpp:481 ui/podcasts/PodcastsPanel.cpp:933
-msgid " Details "
-msgstr "Perincian"
-
 #: ui/trackedit/TrackEdit.cpp:497
 msgid "Copy the artist to the edited tracks"
 msgstr "Salin artis ke trek yang disunting"
@@ -1153,18 +1094,13 @@ msgid "Copy the number to the edited tracks"
 msgstr "Salin bilangan ke trek yang disunting"
 
 #: ui/trackedit/TrackEdit.cpp:927
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr "Jenis Fail\t: %s\nTempoh\t: %s"
+msgid "File Type"
+msgstr "Jenis Fail"
 
 #: ui/trackedit/TrackEdit.cpp:931
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr "KadarBit\t: %u Kbps\nSaiz Fail\t: %s"
+msgid "File Size"
+msgstr "Saiz Fail"
 
 #: ui/trackedit/TrackEdit.cpp:1674
 #, c-format
@@ -1357,7 +1293,7 @@ msgid "Podcast Channel Editor"
 msgstr "Penyunting Saluran Audio Siar"
 
 #: ui/podcasts/ChannelEditor.cpp:60
-msgid " Podcast Channel "
+msgid "Podcast Channel"
 msgstr "Saluran Audio Siar"
 
 #: ui/podcasts/ChannelEditor.cpp:135
@@ -1389,7 +1325,7 @@ msgid "New Podcast Channel"
 msgstr "Saluran Audio Siar Baharu"
 
 #: ui/podcasts/NewChannel.cpp:104
-msgid " Digital Podcast Directory "
+msgid "Digital Podcast Directory"
 msgstr "Direktori Audio Siar Digital"
 
 #: ui/podcasts/NewChannel.cpp:115
@@ -2255,10 +2191,6 @@ msgid "Enter the text to find covers"
 msgstr "Masukkan teks untuk mencari kulit hadapan"
 
 #: ui/preferences/Preferences.cpp:3445
-msgid "Genre: "
-msgstr "Genre: "
-
-#: ui/preferences/Preferences.cpp:3445
 msgid "Enter the genre to disable"
 msgstr "Masukkan genre untuk dilumpuhkan"
 
@@ -3001,11 +2933,6 @@ msgstr "Main genre terpilih semasa"
 msgid "Add current selected genres to playlist"
 msgstr "Tambah genre terpilih semasa ke senarai main"
 
-#: ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:67
-msgid "Disc"
-msgstr "Cakera"
-
 #: ui/mediaviewer/library/SoListBox.cpp:70
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:65
 msgid "Bit Rate"
@@ -3222,7 +3149,7 @@ msgid "Destination Folder:"
 msgstr "Folder Destinasi:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:132
-msgid " Files "
+msgid "Files"
 msgstr "Fail"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:245
@@ -3398,10 +3325,6 @@ msgstr "Permulaan"
 msgid "End"
 msgstr "End"
 
-#: ui/mediaviewer/playlists/PlayListAppend.cpp:78
-msgid "Tracks:"
-msgstr "Trek:"
-
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:54
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 msgid "Label"
@@ -3528,7 +3451,7 @@ msgid "Dynamic Playlist Editor"
 msgstr "Penyunting Senarai Main Dinamik"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:471
-msgid " Current Filters "
+msgid "Current Filters"
 msgstr "Penapis Semasa"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:552

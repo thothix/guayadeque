@@ -70,14 +70,14 @@ guCoverEditor::guCoverEditor(wxWindow* parent,
     // First line
     wxBoxSizer *EditsSizer = new wxBoxSizer( wxHORIZONTAL );
 
-    ArtistStaticText = new wxStaticText( this, wxID_ANY, _( "Artist:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    ArtistStaticText = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Artist")), wxDefaultPosition, wxDefaultSize, 0 );
     ArtistStaticText->Wrap( -1 );
     EditsSizer->Add( ArtistStaticText, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxLEFT, 5 );
 
     m_ArtistTextCtrl = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER );
     EditsSizer->Add( m_ArtistTextCtrl, 1, wxEXPAND|wxTOP|wxBOTTOM|wxRIGHT, 5 );
 
-    AlbumStaticText = new wxStaticText( this, wxID_ANY, _( "Album:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    AlbumStaticText = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Album")), wxDefaultPosition, wxDefaultSize, 0 );
     AlbumStaticText->Wrap( -1 );
     EditsSizer->Add( AlbumStaticText, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxLEFT, 5 );
 

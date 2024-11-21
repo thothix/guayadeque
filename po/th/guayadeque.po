@@ -776,8 +776,8 @@ msgid "Podcast Channel Editor"
 msgstr "เครื่องมือแก้ไขพอดแคสต์"
 
 #: ChannelEditor.cpp:57
-msgid " Podcast Channel "
-msgstr "พอดแคสต์"
+msgid "Podcast Channel"
+msgstr "พอดแคสต"
 
 #: ChannelEditor.cpp:99 PodcastsPanel.cpp:948
 msgid "Description:"
@@ -853,15 +853,6 @@ msgstr ""
 #: CoverEdit.cpp:54
 msgid "Cover Editor"
 msgstr "เครื่องมือแก้ไขปก"
-
-#: CoverEdit.cpp:71 LastFMPanel.cpp:1682 LyricsPanel.cpp:111 TrackEdit.cpp:148
-#: TrackEdit.cpp:373 TrackEdit.cpp:415 TrackEdit.cpp:474
-msgid "Artist:"
-msgstr "ศิลปิน:"
-
-#: CoverEdit.cpp:78 TrackEdit.cpp:172 TrackEdit.cpp:440 TrackEdit.cpp:496
-msgid "Album:"
-msgstr "อัลบั้ม:"
 
 #: CoverEdit.cpp:85
 msgid "From:"
@@ -957,15 +948,11 @@ msgstr ""
 
 #: DynamicPlayList.cpp:62 SoListBox.cpp:418
 msgid "Bit Rate"
-msgstr ""
+msgstr "บิทเรท"
 
 #: DynamicPlayList.cpp:63 FileBrowser.cpp:764
 msgid "Size"
 msgstr "ขนาด"
-
-#: DynamicPlayList.cpp:64 SoListBox.cpp:415
-msgid "Disc"
-msgstr ""
 
 #: DynamicPlayList.cpp:65
 msgid "Has Cover"
@@ -1076,8 +1063,8 @@ msgid "Name:"
 msgstr "ชื่อสถานี:"
 
 #: DynamicPlayList.cpp:467
-msgid " Current Filters "
-msgstr "เลือกเพลง (จากคลังเพลง) ที่"
+msgid "Current Filters"
+msgstr "เลือกเพลง (จากคลังเพลง) ที"
 
 #: DynamicPlayList.cpp:548
 msgid " Result "
@@ -1300,7 +1287,7 @@ msgid "Select a folder"
 msgstr "เลือกแฟ้ม"
 
 #: ImportFiles.cpp:121
-msgid " Files "
+msgid "Files"
 msgstr ""
 
 #: ImportFiles.cpp:228
@@ -1363,7 +1350,7 @@ msgstr "ครั้งละเพลง"
 #: ImportFiles.cpp:317 MediaViewer.cpp:1363 MediaViewer.cpp:1382
 #: MediaViewer.cpp:1397 Preferences.cpp:1052
 msgid "tracks"
-msgstr ""
+msgstr "จำนวนเพลง"
 
 #: ImportFiles.cpp:327
 msgid "No files added"
@@ -1536,10 +1523,6 @@ msgstr "คัดลอกรายละเอียดการแสดง"
 #: LastFMPanel.cpp:1665 LyricsPanel.cpp:81
 msgid "Follow player"
 msgstr "แสดงรายละเอียดตามเพลงที่เล่นอยู๋"
-
-#: LastFMPanel.cpp:1691 LyricsPanel.cpp:121 TrackEdit.cpp:380
-msgid "Track:"
-msgstr "ชื่อเพลง:"
 
 #: LastFMPanel.cpp:1711
 msgid "Artist Info"
@@ -2419,8 +2402,8 @@ msgid "New Podcast Channel"
 msgstr "เพิ่มช่องพอดแคสต์"
 
 #: NewChannel.cpp:100
-msgid " Digital Podcast Directory "
-msgstr " แฟ้มพอดแคสต์"
+msgid "Digital Podcast Directory"
+msgstr "แฟ้มพอดแคสต"
 
 #: NewChannel.cpp:111
 msgid "Search in the podcast directory"
@@ -2587,10 +2570,6 @@ msgstr "ตำแหน่งในคิวเพลงที่ต้องก
 #: PlayListAppend.cpp:69
 msgid "Beginning"
 msgstr ""
-
-#: PlayListAppend.cpp:75
-msgid "Tracks:"
-msgstr "จำนวนเพลง:"
 
 #: PlayList.cpp:1523
 msgid "Empty Playlist"
@@ -2797,17 +2776,9 @@ msgstr ""
 msgid "Delete the current selected tracks"
 msgstr "ลบเพลงที่เลือก"
 
-#: PodcastsPanel.cpp:928 TrackEdit.cpp:466
-msgid " Details "
-msgstr "รายละเอียด"
-
 #: PodcastsPanel.cpp:979 RadioEditor.cpp:52
 msgid "Link:"
 msgstr "ลิงค์:"
-
-#: PodcastsPanel.cpp:994 TrackEdit.cpp:183 TrackEdit.cpp:423 TrackEdit.cpp:520
-msgid "Title:"
-msgstr "ชื่อเพลง:"
 
 #: PodcastsPanel.cpp:1004
 msgid "Sumary:"
@@ -3536,10 +3507,6 @@ msgstr "เดือน"
 msgid "Only if played"
 msgstr "ลบเฉพาะตอนที่ฟังแล้ว"
 
-#: Preferences.cpp:1791 Preferences.cpp:1884 RadioGenreEditor.cpp:37
-msgid " Genres "
-msgstr ""
-
 #: Preferences.cpp:1825 Preferences.cpp:1922
 msgid "Invert"
 msgstr ""
@@ -3716,10 +3683,6 @@ msgstr ""
 #: RadioGenreEditor.cpp:48
 msgid "Other:"
 msgstr ""
-
-#: RadioPanel.cpp:330
-msgid "BitRate"
-msgstr "บิทเรท"
 
 #: RadioPanel.cpp:331
 msgid "Listeners"
@@ -4042,7 +4005,7 @@ msgid "Songs Editor"
 msgstr "เครื่องมือแก้ไขเพลง"
 
 #: TrackEdit.cpp:102
-msgid " Songs "
+msgid "Songs"
 msgstr " เพลง"
 
 #: TrackEdit.cpp:110
@@ -4062,7 +4025,7 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr ""
 
 #: TrackEdit.cpp:160 TrackEdit.cpp:485
-msgid "A. Artist:"
+msgid "A. Artist"
 msgstr ""
 
 #: TrackEdit.cpp:161
@@ -4081,25 +4044,17 @@ msgstr ""
 msgid "Copy the composer to all the tracks you are editing"
 msgstr ""
 
-#: TrackEdit.cpp:195
-msgid "Composer:"
-msgstr ""
-
 #: TrackEdit.cpp:203
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "คัดลอกรายละเอียดอื่นๆไปใส่ทุกเพลงที่กำลังแก้ไข"
-
-#: TrackEdit.cpp:207
-msgid "Comment:"
-msgstr ""
 
 #: TrackEdit.cpp:216
 msgid "Copy the number to all the tracks you are editing"
 msgstr ""
 
 #: TrackEdit.cpp:219 TrackEdit.cpp:543
-msgid "Number:"
-msgstr "เพลงที่:"
+msgid "Number"
+msgstr "เพลงที"
 
 #: TrackEdit.cpp:233
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -4110,28 +4065,16 @@ msgid "Copy the disk to all the tracks you are editing"
 msgstr "คัดลอกหมายเลขแผ่นไปใส่ทุกเพลงที่กำลังแก้ไข"
 
 #: TrackEdit.cpp:243
-msgid "Disk:"
-msgstr "แผ่นที่:"
+msgid "Disk"
+msgstr "แผ่นที:"
 
 #: TrackEdit.cpp:253
 msgid "Copy the genre name to all songs you are editing"
 msgstr ""
 
-#: TrackEdit.cpp:256
-msgid "Genre:"
-msgstr "ประเภท:"
-
 #: TrackEdit.cpp:264
 msgid "Copy the year to all songs you are editing"
 msgstr ""
-
-#: TrackEdit.cpp:267
-msgid "Year:"
-msgstr "ปี:"
-
-#: TrackEdit.cpp:283
-msgid "Rating:"
-msgstr "คะแนน:"
 
 #: TrackEdit.cpp:332
 msgid "Add a picture from file to the current track"
@@ -4206,17 +4149,12 @@ msgid "Copy the number to the edited tracks"
 msgstr "คัดลอกหมายเลขของเพลงไปยังเพลงที่แก้ไขแล้ว"
 
 #: TrackEdit.cpp:919
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
+msgid "File Type"
 msgstr ""
 
 #: TrackEdit.cpp:923
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
+msgid "File Size"
 msgstr ""
 
 #: TrackEdit.cpp:1673

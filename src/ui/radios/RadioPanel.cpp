@@ -309,7 +309,7 @@ wxArrayString guRadioStationListBox::GetColumnNames( void )
 {
     wxArrayString ColumnNames;
     ColumnNames.Add( _( "Name" ) );
-    ColumnNames.Add( _( "BitRate" ) );
+    ColumnNames.Add( _( "Bit Rate" ) );
     ColumnNames.Add( _( "Listeners" ) );
     ColumnNames.Add( _( "Format" ) );
     ColumnNames.Add( _( "Now Playing" ) );

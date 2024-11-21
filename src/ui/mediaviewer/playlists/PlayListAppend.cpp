@@ -72,7 +72,7 @@ guPlayListAppend::guPlayListAppend( wxWindow * parent, guDbLibrary * db, const w
     m_PosChoice->SetSelection( 1 );
     FieldsSizer->Add( m_PosChoice, 0, wxTOP|wxBOTTOM|wxRIGHT, 5 );
 
-    TracksLabel = new wxStaticText( this, wxID_ANY, _("Tracks:"), wxDefaultPosition, wxDefaultSize, 0 );
+    TracksLabel = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Tracks")), wxDefaultPosition, wxDefaultSize, 0 );
     TracksLabel->Wrap( -1 );
     FieldsSizer->Add( TracksLabel, 0, wxALL|wxALIGN_RIGHT, 5 );
 

@@ -109,7 +109,7 @@ guLyricsPanel::guLyricsPanel( wxWindow * parent, guDbLibrary * db, guLyricSearch
     m_WebSearchButton->SetToolTip( _( "Search the lyrics on the web" ) );
     EditorSizer->Add( m_WebSearchButton, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT, 5 );
 
-    wxStaticText * ArtistStaticText = new wxStaticText( this, wxID_ANY, _( "Artist:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText * ArtistStaticText = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Artist")), wxDefaultPosition, wxDefaultSize, 0 );
     ArtistStaticText->Wrap( -1 );
 
     EditorSizer->Add( ArtistStaticText, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT, 5 );
@@ -119,7 +119,7 @@ guLyricsPanel::guLyricsPanel( wxWindow * parent, guDbLibrary * db, guLyricSearch
 
     EditorSizer->Add( m_ArtistTextCtrl, 1, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT, 5 );
 
-    wxStaticText * TrackStaticText = new wxStaticText( this, wxID_ANY, _( "Track:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText * TrackStaticText = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Track")), wxDefaultPosition, wxDefaultSize, 0 );
     TrackStaticText->Wrap( -1 );
 
     EditorSizer->Add( TrackStaticText, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT, 5 );

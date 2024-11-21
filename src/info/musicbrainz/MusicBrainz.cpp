@@ -324,7 +324,7 @@ int guMusicBrainz::GetDiscIdReleases( const wxString &discid, guMBReleaseArray *
                 XmlNode = XmlNode->GetChildren();
                 continue;
             }
-            else if( XmlNode->GetName() == wxT( "disc" ) )
+            else if( XmlNode->GetName() == wxT( "disk" ) )
             {
                 XmlNode = XmlNode->GetChildren();
                 continue;

@@ -72,18 +72,6 @@ msgstr "Mjög Lágt"
 msgid "Cover Editor"
 msgstr "Breyta plötualbúmi"
 
-#: ui/cover/CoverEdit.cpp:78 ui/lastfmpanel/LastFMPanel.cpp:1726
-#: ui/lyrics/LyricsPanel.cpp:114 ui/trackedit/TrackEdit.cpp:164
-#: ui/trackedit/TrackEdit.cpp:389 ui/trackedit/TrackEdit.cpp:430
-#: ui/trackedit/TrackEdit.cpp:489
-msgid "Artist:"
-msgstr "Flytjandi"
-
-#: ui/cover/CoverEdit.cpp:85 ui/trackedit/TrackEdit.cpp:188
-#: ui/trackedit/TrackEdit.cpp:455 ui/trackedit/TrackEdit.cpp:511
-msgid "Album:"
-msgstr "Plata:"
-
 #: ui/cover/CoverEdit.cpp:92
 msgid "From:"
 msgstr "Frá:"
@@ -459,11 +447,6 @@ msgstr "Afrita upplýsingar um atburð á kippispjald"
 msgid "Follow player"
 msgstr "Elta spilara"
 
-#: ui/lastfmpanel/LastFMPanel.cpp:1735 ui/lyrics/LyricsPanel.cpp:124
-#: ui/trackedit/TrackEdit.cpp:396
-msgid "Track:"
-msgstr "Lag:"
-
 #: ui/lastfmpanel/LastFMPanel.cpp:1755
 msgid "Artist Info"
 msgstr "Upplýsingar um flytjanda"
@@ -587,11 +570,6 @@ msgstr "Stöðvar notanda"
 msgid "Radio Genre Editor"
 msgstr "Breyta Flokk Útvarps"
 
-#: ui/radios/RadioGenreEditor.cpp:40 ui/preferences/Preferences.cpp:1742
-#: ui/preferences/Preferences.cpp:1834
-msgid " Genres "
-msgstr " Flokkar "
-
 #: ui/radios/RadioGenreEditor.cpp:51
 msgid "Other:"
 msgstr "Annað:"
@@ -601,10 +579,6 @@ msgstr "Annað:"
 #: ui/mediaviewer/library/AlListBox.cpp:322 ui/filebrowser/FileBrowser.cpp:778
 msgid "Name"
 msgstr "Nafn"
-
-#: ui/radios/RadioPanel.cpp:332
-msgid "BitRate"
-msgstr "Hraði"
 
 #: ui/radios/RadioPanel.cpp:333
 msgid "Listeners"
@@ -967,7 +941,7 @@ msgid "Songs Editor"
 msgstr "Breyta Lögum"
 
 #: ui/trackedit/TrackEdit.cpp:118
-msgid " Songs "
+msgid "Songs"
 msgstr " Lög "
 
 #: ui/trackedit/TrackEdit.cpp:126
@@ -987,8 +961,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Afrita nafn flytjanda plötu við öll lög sem þú breytir"
 
 #: ui/trackedit/TrackEdit.cpp:176 ui/trackedit/TrackEdit.cpp:500
-msgid "A. Artist:"
-msgstr "A. Flytjandi:"
+msgid "A. Artist"
+msgstr "A. Flytjandi"
 
 #: ui/trackedit/TrackEdit.cpp:177
 msgid "shows the album artist of the track"
@@ -1002,34 +976,21 @@ msgstr "Afrita nafn plötu við öll lög sem þú breytir"
 msgid "Copy the title to all the tracks you are editing"
 msgstr "Afrita Titil við öll lög sem þú breytir"
 
-#: ui/trackedit/TrackEdit.cpp:199 ui/trackedit/TrackEdit.cpp:438
-#: ui/trackedit/TrackEdit.cpp:533 ui/podcasts/PodcastsPanel.cpp:999
-msgid "Title:"
-msgstr "Titill:"
-
 #: ui/trackedit/TrackEdit.cpp:207
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "Afrita  tónskáld við öll lög sem þú breytir"
 
-#: ui/trackedit/TrackEdit.cpp:211
-msgid "Composer:"
-msgstr "Tónskáld:"
-
 #: ui/trackedit/TrackEdit.cpp:219
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "Afrita athugasemd við öll lög sem þú breytir"
-
-#: ui/trackedit/TrackEdit.cpp:223
-msgid "Comment:"
-msgstr "Athugasemd:"
 
 #: ui/trackedit/TrackEdit.cpp:232
 msgid "Copy the number to all the tracks you are editing"
 msgstr "Afrita númer við öll lög sem þú breytir"
 
 #: ui/trackedit/TrackEdit.cpp:235 ui/trackedit/TrackEdit.cpp:556
-msgid "Number:"
-msgstr "Númer:"
+msgid "Number"
+msgstr "Númer"
 
 #: ui/trackedit/TrackEdit.cpp:249
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -1039,29 +1000,13 @@ msgstr "Númera lög í þeirri röð sem þeim var raðað fyrir breytingu"
 msgid "Copy the disk to all the tracks you are editing"
 msgstr "Afrita disk við allar skrár sem er breytt"
 
-#: ui/trackedit/TrackEdit.cpp:259
-msgid "Disk:"
-msgstr "Diskur:"
-
 #: ui/trackedit/TrackEdit.cpp:269
 msgid "Copy the genre name to all songs you are editing"
 msgstr "Afrita nafn flokks við allar skrár sem þú breytir"
 
-#: ui/trackedit/TrackEdit.cpp:272
-msgid "Genre:"
-msgstr "Flokkur:"
-
 #: ui/trackedit/TrackEdit.cpp:280
 msgid "Copy the year to all songs you are editing"
 msgstr "Afritar ár við allar skrá sem þú breytir"
-
-#: ui/trackedit/TrackEdit.cpp:283 ui/trackedit/TrackEdit.cpp:522
-msgid "Year:"
-msgstr "Ár:"
-
-#: ui/trackedit/TrackEdit.cpp:299
-msgid "Rating:"
-msgstr "Einkunn:"
 
 #: ui/trackedit/TrackEdit.cpp:326 ui/podcasts/PodcastsPanel.cpp:1065
 #: ui/locationpanel/LocationPanel.cpp:365 ui/MainFrame.cpp:1108
@@ -1122,10 +1067,6 @@ msgstr "Leita að plötum í musicbrainz"
 msgid "Copy the content of the album to the edited tracks"
 msgstr "Afritar innihald plötu við breytt lög"
 
-#: ui/trackedit/TrackEdit.cpp:481 ui/podcasts/PodcastsPanel.cpp:933
-msgid " Details "
-msgstr " Upplýsingar "
-
 #: ui/trackedit/TrackEdit.cpp:497
 msgid "Copy the artist to the edited tracks"
 msgstr "Afritar flytjanda við breytt lög"
@@ -1155,18 +1096,13 @@ msgid "Copy the number to the edited tracks"
 msgstr "Afrita númer við breytt lög"
 
 #: ui/trackedit/TrackEdit.cpp:927
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr "Skráar Tegund\t: %s\nLengd\t: %s"
+msgid "File Type"
+msgstr "Skráar Tegund"
 
 #: ui/trackedit/TrackEdit.cpp:931
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr "Bitahraði\t: %u Kbps\nSrá Stærð\t: %s"
+msgid "File Size"
+msgstr "Srá Stærð"
 
 #: ui/trackedit/TrackEdit.cpp:1674
 #, c-format
@@ -1359,8 +1295,8 @@ msgid "Podcast Channel Editor"
 msgstr "Breyta Hlaðvarpsveitu"
 
 #: ui/podcasts/ChannelEditor.cpp:60
-msgid " Podcast Channel "
-msgstr " Hlaðvarps Veita "
+msgid "Podcast Channel"
+msgstr "Hlaðvarps Veita"
 
 #: ui/podcasts/ChannelEditor.cpp:135
 msgid "Download:"
@@ -1391,8 +1327,8 @@ msgid "New Podcast Channel"
 msgstr "Ný Hlaðvarpsveita"
 
 #: ui/podcasts/NewChannel.cpp:104
-msgid " Digital Podcast Directory "
-msgstr " Digital Hlaðvarps staðsetning "
+msgid "Digital Podcast Directory"
+msgstr "Digital Hlaðvarps staðsetning"
 
 #: ui/podcasts/NewChannel.cpp:115
 msgid "Search in the podcast directory"
@@ -2257,10 +2193,6 @@ msgid "Enter the text to find covers"
 msgstr "Leit til að finna Plötualbúm"
 
 #: ui/preferences/Preferences.cpp:3445
-msgid "Genre: "
-msgstr "Flokkur"
-
-#: ui/preferences/Preferences.cpp:3445
 msgid "Enter the genre to disable"
 msgstr "Velja flokk til að afengja"
 
@@ -3003,11 +2935,6 @@ msgstr "Spila valin flokk"
 msgid "Add current selected genres to playlist"
 msgstr "Bæta við völdum flokkum við lagalista"
 
-#: ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:67
-msgid "Disc"
-msgstr "Diskur"
-
 #: ui/mediaviewer/library/SoListBox.cpp:70
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:65
 msgid "Bit Rate"
@@ -3224,8 +3151,8 @@ msgid "Destination Folder:"
 msgstr "Staðsetning Möppu:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:132
-msgid " Files "
-msgstr " Skrár "
+msgid "Files"
+msgstr "Skrár"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:245
 msgid "Select files"
@@ -3400,10 +3327,6 @@ msgstr "Byrjun"
 msgid "End"
 msgstr "End"
 
-#: ui/mediaviewer/playlists/PlayListAppend.cpp:78
-msgid "Tracks:"
-msgstr "Lög:"
-
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:54
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 msgid "Label"
@@ -3530,8 +3453,8 @@ msgid "Dynamic Playlist Editor"
 msgstr "Breyta Breytanlegum Lagalista"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:471
-msgid " Current Filters "
-msgstr " Núverandi síur"
+msgid "Current Filters"
+msgstr "Núverandi síur"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:552
 msgid " Result "

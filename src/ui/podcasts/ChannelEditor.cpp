@@ -55,7 +55,7 @@ guChannelEditor::guChannelEditor( wxWindow * parent, guPodcastChannel * channel 
 	MainSizer = new wxBoxSizer( wxVERTICAL );
 
 	wxStaticBoxSizer* ChannelSizer;
-	ChannelSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _( " Podcast Channel " ) ), wxVERTICAL );
+	ChannelSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, wxString::Format(" %s ", _("Podcast Channel"))), wxVERTICAL );
 
 	wxFlexGridSizer* FlexGridSizer;
     FlexGridSizer = new wxFlexGridSizer( 2, 0, 0 );

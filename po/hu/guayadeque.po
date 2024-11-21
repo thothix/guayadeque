@@ -777,8 +777,8 @@ msgid "Podcast Channel Editor"
 msgstr "Podcast Csatorna Szerkesztő"
 
 #: ChannelEditor.cpp:57
-msgid " Podcast Channel "
-msgstr " Podcast csatorna "
+msgid "Podcast Channel"
+msgstr "Podcast csatorna"
 
 #: ChannelEditor.cpp:99 PodcastsPanel.cpp:948
 msgid "Description:"
@@ -854,15 +854,6 @@ msgstr "Fájlmásolás kész"
 #: CoverEdit.cpp:54
 msgid "Cover Editor"
 msgstr "Borító szerkesztő"
-
-#: CoverEdit.cpp:71 LastFMPanel.cpp:1682 LyricsPanel.cpp:111 TrackEdit.cpp:148
-#: TrackEdit.cpp:373 TrackEdit.cpp:415 TrackEdit.cpp:474
-msgid "Artist:"
-msgstr "Előadó:"
-
-#: CoverEdit.cpp:78 TrackEdit.cpp:172 TrackEdit.cpp:440 TrackEdit.cpp:496
-msgid "Album:"
-msgstr "Album:"
 
 #: CoverEdit.cpp:85
 msgid "From:"
@@ -963,10 +954,6 @@ msgstr "Bitráta"
 #: DynamicPlayList.cpp:63 FileBrowser.cpp:764
 msgid "Size"
 msgstr "Méret"
-
-#: DynamicPlayList.cpp:64 SoListBox.cpp:415
-msgid "Disc"
-msgstr "Lemez"
 
 #: DynamicPlayList.cpp:65
 msgid "Has Cover"
@@ -1077,8 +1064,8 @@ msgid "Name:"
 msgstr "Név:"
 
 #: DynamicPlayList.cpp:467
-msgid " Current Filters "
-msgstr " Aktuális szűrők "
+msgid "Current Filters"
+msgstr "Aktuális szűrők"
 
 #: DynamicPlayList.cpp:548
 msgid " Result "
@@ -1301,8 +1288,8 @@ msgid "Select a folder"
 msgstr "Könyvtár kiválasztása"
 
 #: ImportFiles.cpp:121
-msgid " Files "
-msgstr " Fájlok"
+msgid "Files"
+msgstr "Fájlok"
 
 #: ImportFiles.cpp:228
 msgid "Select files"
@@ -1537,10 +1524,6 @@ msgstr "Esemény információ másolása vágólapra"
 #: LastFMPanel.cpp:1665 LyricsPanel.cpp:81
 msgid "Follow player"
 msgstr "Dal követése"
-
-#: LastFMPanel.cpp:1691 LyricsPanel.cpp:121 TrackEdit.cpp:380
-msgid "Track:"
-msgstr "Cím:"
 
 #: LastFMPanel.cpp:1711
 msgid "Artist Info"
@@ -2420,8 +2403,8 @@ msgid "New Podcast Channel"
 msgstr "Új Podcast csatorna"
 
 #: NewChannel.cpp:100
-msgid " Digital Podcast Directory "
-msgstr " Digitális Podcast könyvtár "
+msgid "Digital Podcast Directory"
+msgstr "Digitális Podcast könyvtár"
 
 #: NewChannel.cpp:111
 msgid "Search in the podcast directory"
@@ -2588,10 +2571,6 @@ msgstr "Hová:"
 #: PlayListAppend.cpp:69
 msgid "Beginning"
 msgstr "Elejére"
-
-#: PlayListAppend.cpp:75
-msgid "Tracks:"
-msgstr "Dalok:"
 
 #: PlayList.cpp:1523
 msgid "Empty Playlist"
@@ -2798,17 +2777,9 @@ msgstr "Új lejátszási lista"
 msgid "Delete the current selected tracks"
 msgstr "A kiválasztott dalok törlése"
 
-#: PodcastsPanel.cpp:928 TrackEdit.cpp:466
-msgid " Details "
-msgstr " Részletek "
-
 #: PodcastsPanel.cpp:979 RadioEditor.cpp:52
 msgid "Link:"
 msgstr "Link:"
-
-#: PodcastsPanel.cpp:994 TrackEdit.cpp:183 TrackEdit.cpp:423 TrackEdit.cpp:520
-msgid "Title:"
-msgstr "Cím:"
 
 #: PodcastsPanel.cpp:1004
 msgid "Sumary:"
@@ -3537,10 +3508,6 @@ msgstr "Hónap"
 msgid "Only if played"
 msgstr "Csak ha lejátszott"
 
-#: Preferences.cpp:1791 Preferences.cpp:1884 RadioGenreEditor.cpp:37
-msgid " Genres "
-msgstr " Műfajok "
-
 #: Preferences.cpp:1825 Preferences.cpp:1922
 msgid "Invert"
 msgstr "Invertálás"
@@ -3717,10 +3684,6 @@ msgstr "Rádió műfaj szerkesztő"
 #: RadioGenreEditor.cpp:48
 msgid "Other:"
 msgstr "Egyéb:"
-
-#: RadioPanel.cpp:330
-msgid "BitRate"
-msgstr "Bitráta"
 
 #: RadioPanel.cpp:331
 msgid "Listeners"
@@ -4043,7 +4006,7 @@ msgid "Songs Editor"
 msgstr "Dalszerkesztő"
 
 #: TrackEdit.cpp:102
-msgid " Songs "
+msgid "Songs"
 msgstr " Dalok "
 
 #: TrackEdit.cpp:110
@@ -4063,8 +4026,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Az album előadó nevének másolása a szerkesztett dalokba"
 
 #: TrackEdit.cpp:160 TrackEdit.cpp:485
-msgid "A. Artist:"
-msgstr "Album előadó:"
+msgid "A. Artist"
+msgstr "Album előadó"
 
 #: TrackEdit.cpp:161
 msgid "shows the album artist of the track"
@@ -4082,25 +4045,17 @@ msgstr "A dal címének másolása a szerkesztett dalokba"
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "A szerző nevének másolása a szerkesztett dalokba"
 
-#: TrackEdit.cpp:195
-msgid "Composer:"
-msgstr "Szerző:"
-
 #: TrackEdit.cpp:203
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "A megjegyzés másolása a szerkesztett dalokba"
-
-#: TrackEdit.cpp:207
-msgid "Comment:"
-msgstr "Megjegyzés:"
 
 #: TrackEdit.cpp:216
 msgid "Copy the number to all the tracks you are editing"
 msgstr "A dal sorszámának másolása a szerkesztett dalokba"
 
 #: TrackEdit.cpp:219 TrackEdit.cpp:543
-msgid "Number:"
-msgstr "Sorszám:"
+msgid "Number"
+msgstr "Sorszám"
 
 #: TrackEdit.cpp:233
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -4111,28 +4066,16 @@ msgid "Copy the disk to all the tracks you are editing"
 msgstr "A lemez sorszámának másolása a szerkesztett dalokba"
 
 #: TrackEdit.cpp:243
-msgid "Disk:"
-msgstr "Lemez:"
+msgid "Disk"
+msgstr "Lemez"
 
 #: TrackEdit.cpp:253
 msgid "Copy the genre name to all songs you are editing"
 msgstr "A műfaj nevének másolása a szerkesztett dalokba"
 
-#: TrackEdit.cpp:256
-msgid "Genre:"
-msgstr "Műfaj:"
-
 #: TrackEdit.cpp:264
 msgid "Copy the year to all songs you are editing"
 msgstr "Az év másolása a szerkesztett dalokba"
-
-#: TrackEdit.cpp:267
-msgid "Year:"
-msgstr "Év:"
-
-#: TrackEdit.cpp:283
-msgid "Rating:"
-msgstr "Értékelés:"
 
 #: TrackEdit.cpp:332
 msgid "Add a picture from file to the current track"
@@ -4207,18 +4150,13 @@ msgid "Copy the number to the edited tracks"
 msgstr "A sorszám másolása a szerkesztett dalokba"
 
 #: TrackEdit.cpp:919
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr "Fájl típusa\t: %s\nHossz\t\t: %s"
+msgid "File Type"
+msgstr "Fájl típusa"
 
 #: TrackEdit.cpp:923
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr "Bitráta\t: %u Kbps\nFájlméret\t: %s"
+msgid "File Size"
+msgstr "Fájlméret"
 
 #: TrackEdit.cpp:1673
 #, c-format
