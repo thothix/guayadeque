@@ -778,8 +778,8 @@ msgid "Podcast Channel Editor"
 msgstr "Editor dei canali Podcast"
 
 #: ChannelEditor.cpp:57
-msgid " Podcast Channel "
-msgstr " Canale Podcast "
+msgid "Podcast Channel"
+msgstr "Canale Podcast"
 
 #: ChannelEditor.cpp:99 PodcastsPanel.cpp:948
 msgid "Description:"
@@ -855,15 +855,6 @@ msgstr "Copia dei file terminata"
 #: CoverEdit.cpp:54
 msgid "Cover Editor"
 msgstr "Editor copertine"
-
-#: CoverEdit.cpp:71 LastFMPanel.cpp:1682 LyricsPanel.cpp:111 TrackEdit.cpp:148
-#: TrackEdit.cpp:373 TrackEdit.cpp:415 TrackEdit.cpp:474
-msgid "Artist:"
-msgstr "Artista:"
-
-#: CoverEdit.cpp:78 TrackEdit.cpp:172 TrackEdit.cpp:440 TrackEdit.cpp:496
-msgid "Album:"
-msgstr "Album:"
 
 #: CoverEdit.cpp:85
 msgid "From:"
@@ -964,10 +955,6 @@ msgstr "Bit Rate"
 #: DynamicPlayList.cpp:63 FileBrowser.cpp:764
 msgid "Size"
 msgstr "Dimensione"
-
-#: DynamicPlayList.cpp:64 SoListBox.cpp:415
-msgid "Disc"
-msgstr "Disco"
 
 #: DynamicPlayList.cpp:65
 msgid "Has Cover"
@@ -1078,8 +1065,8 @@ msgid "Name:"
 msgstr "Nome:"
 
 #: DynamicPlayList.cpp:467
-msgid " Current Filters "
-msgstr " Filtri Correnti "
+msgid "Current Filters"
+msgstr "Filtri Correnti"
 
 #: DynamicPlayList.cpp:548
 msgid " Result "
@@ -1302,8 +1289,8 @@ msgid "Select a folder"
 msgstr "Seleziona una cartella"
 
 #: ImportFiles.cpp:121
-msgid " Files "
-msgstr " File "
+msgid "Files"
+msgstr "File"
 
 #: ImportFiles.cpp:228
 msgid "Select files"
@@ -1538,10 +1525,6 @@ msgstr "Copia le informazioni sull'evento negli appunti"
 #: LastFMPanel.cpp:1665 LyricsPanel.cpp:81
 msgid "Follow player"
 msgstr "Collega al player"
-
-#: LastFMPanel.cpp:1691 LyricsPanel.cpp:121 TrackEdit.cpp:380
-msgid "Track:"
-msgstr "Brano:"
 
 #: LastFMPanel.cpp:1711
 msgid "Artist Info"
@@ -2421,8 +2404,8 @@ msgid "New Podcast Channel"
 msgstr "Nuovo Canale Podcast"
 
 #: NewChannel.cpp:100
-msgid " Digital Podcast Directory "
-msgstr " Elenco digitale dei Podcast "
+msgid "Digital Podcast Directory"
+msgstr "Elenco digitale dei Podcast"
 
 #: NewChannel.cpp:111
 msgid "Search in the podcast directory"
@@ -2597,10 +2580,6 @@ msgstr "Dove:"
 #: PlayListAppend.cpp:69
 msgid "Beginning"
 msgstr "Inizio"
-
-#: PlayListAppend.cpp:75
-msgid "Tracks:"
-msgstr "Brani:"
 
 #: PlayList.cpp:1523
 msgid "Empty Playlist"
@@ -2823,17 +2802,9 @@ msgstr "Nuova Playlist"
 msgid "Delete the current selected tracks"
 msgstr "Elimina i brani selezionati"
 
-#: PodcastsPanel.cpp:928 TrackEdit.cpp:466
-msgid " Details "
-msgstr " Dettagli "
-
 #: PodcastsPanel.cpp:979 RadioEditor.cpp:52
 msgid "Link:"
 msgstr "Link:"
-
-#: PodcastsPanel.cpp:994 TrackEdit.cpp:183 TrackEdit.cpp:423 TrackEdit.cpp:520
-msgid "Title:"
-msgstr "Titolo:"
 
 #: PodcastsPanel.cpp:1004
 msgid "Sumary:"
@@ -3581,10 +3552,6 @@ msgstr "Mesi"
 msgid "Only if played"
 msgstr "Solo se riprodotti"
 
-#: Preferences.cpp:1791 Preferences.cpp:1884 RadioGenreEditor.cpp:37
-msgid " Genres "
-msgstr " Generi"
-
 #: Preferences.cpp:1825 Preferences.cpp:1922
 msgid "Invert"
 msgstr "Inverti"
@@ -3765,10 +3732,6 @@ msgstr "Editor generi delle radio"
 #: RadioGenreEditor.cpp:48
 msgid "Other:"
 msgstr "Altro:"
-
-#: RadioPanel.cpp:330
-msgid "BitRate"
-msgstr "BitRate"
 
 #: RadioPanel.cpp:331
 msgid "Listeners"
@@ -4091,7 +4054,7 @@ msgid "Songs Editor"
 msgstr "Editor dei brani"
 
 #: TrackEdit.cpp:102
-msgid " Songs "
+msgid "Songs"
 msgstr " Brani "
 
 #: TrackEdit.cpp:110
@@ -4111,8 +4074,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Copia artista album per tutte le tracce che stai modificando"
 
 #: TrackEdit.cpp:160 TrackEdit.cpp:485
-msgid "A. Artist:"
-msgstr "Artista A.:"
+msgid "A. Artist"
+msgstr "Artista A."
 
 #: TrackEdit.cpp:161
 msgid "shows the album artist of the track"
@@ -4130,25 +4093,17 @@ msgstr "Copia il titolo per tutte le tracce che stai modificando"
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "Copia il compositore per tutte le tracce che stai modificando"
 
-#: TrackEdit.cpp:195
-msgid "Composer:"
-msgstr "Compositore:"
-
 #: TrackEdit.cpp:203
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "Utilizza questo commento per tutti i brani che stai modificando"
-
-#: TrackEdit.cpp:207
-msgid "Comment:"
-msgstr "Commento:"
 
 #: TrackEdit.cpp:216
 msgid "Copy the number to all the tracks you are editing"
 msgstr "Copia il numero per tutte le tracce che stai modificando"
 
 #: TrackEdit.cpp:219 TrackEdit.cpp:543
-msgid "Number:"
-msgstr "Numero:"
+msgid "Number"
+msgstr "Numero"
 
 #: TrackEdit.cpp:233
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -4159,28 +4114,16 @@ msgid "Copy the disk to all the tracks you are editing"
 msgstr "Utilizza questo disco per tutti i brani che stai modificando"
 
 #: TrackEdit.cpp:243
-msgid "Disk:"
-msgstr "Disco:"
+msgid "Disk"
+msgstr "Disco"
 
 #: TrackEdit.cpp:253
 msgid "Copy the genre name to all songs you are editing"
 msgstr "Copia il genere per tutte le tracce che stai modificando"
 
-#: TrackEdit.cpp:256
-msgid "Genre:"
-msgstr "Genere:"
-
 #: TrackEdit.cpp:264
 msgid "Copy the year to all songs you are editing"
 msgstr "Copia l'anno per tutte le tracce che stai modificando"
-
-#: TrackEdit.cpp:267
-msgid "Year:"
-msgstr "Anno:"
-
-#: TrackEdit.cpp:283
-msgid "Rating:"
-msgstr "Punteggio:"
 
 #: TrackEdit.cpp:332
 msgid "Add a picture from file to the current track"
@@ -4255,18 +4198,13 @@ msgid "Copy the number to the edited tracks"
 msgstr "Copia il numero traccia nei brani modificati"
 
 #: TrackEdit.cpp:919
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr "Tipo File\t: %s\nDurata\t: %s"
+msgid "File Type"
+msgstr "Tipo File"
 
 #: TrackEdit.cpp:923
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr "BitRate\t: %u Kbps\nDimensione\t: %s"
+msgid "File Size"
+msgstr "Dimensione"
 
 #: TrackEdit.cpp:1673
 #, c-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-20 18:36-0300\n"
+"POT-Creation-Date: 2024-11-21 16:35-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,7 +165,8 @@ msgstr ""
 #: misc/Accelerators.cpp:132 misc/Accelerators.cpp:133
 #: misc/Accelerators.cpp:134 misc/Accelerators.cpp:135
 #: misc/Accelerators.cpp:136 misc/Accelerators.cpp:137
-#: ui/taskbar/TaskBar.cpp:164 ui/mediaviewer/library/SoListBox.cpp:69
+#: ui/trackedit/TrackEdit.cpp:293 ui/taskbar/TaskBar.cpp:164
+#: ui/mediaviewer/library/SoListBox.cpp:69
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:57
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:135
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:70
@@ -522,6 +523,7 @@ msgstr ""
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:298
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1719
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2550
+#: ui/mediaviewer/playlists/PlayListAppend.cpp:75
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:119
 msgid "Tracks"
 msgstr ""
@@ -573,14 +575,21 @@ msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:112 ui/trackedit/TrackEdit.cpp:164
 #: ui/trackedit/TrackEdit.cpp:383 ui/trackedit/TrackEdit.cpp:423
-#: ui/trackedit/TrackEdit.cpp:497 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642
-msgid "Artist:"
+#: ui/trackedit/TrackEdit.cpp:497 ui/mediaviewer/library/SoListBox.cpp:60
+#: ui/mediaviewer/library/SoListBox.cpp:569
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:48
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:128
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1777
+msgid "Artist"
 msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:390
-#: ui/lastfmpanel/LastFMPanel.cpp:1654
-msgid "Track:"
+#: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:847
+#: ui/player/PlayList.cpp:1774
+msgid "Track"
 msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:280
@@ -780,7 +789,8 @@ msgstr ""
 #: ui/mediaviewer/library/LibPanel.cpp:229
 #: ui/mediaviewer/library/LibPanel.cpp:561
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/radios/RadioPanel.cpp:594
+#: ui/radios/RadioPanel.cpp:594 ui/radios/RadioGenreEditor.cpp:38
+#: ui/preferences/Preferences.cpp:1697 ui/preferences/Preferences.cpp:1789
 msgid "Genres"
 msgstr ""
 
@@ -822,7 +832,8 @@ msgid "Show/Hide the podcasts channels"
 msgstr ""
 
 #: ui/locationpanel/LocationPanel.cpp:363 ui/trackedit/TrackEdit.cpp:321
-#: ui/MainFrame.cpp:1021 ui/podcasts/PodcastsPanel.cpp:1060
+#: ui/trackedit/TrackEdit.cpp:476 ui/MainFrame.cpp:1021
+#: ui/podcasts/PodcastsPanel.cpp:928 ui/podcasts/PodcastsPanel.cpp:1060
 msgid "Details"
 msgstr ""
 
@@ -1097,7 +1108,7 @@ msgid "Songs Editor"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:105
-msgid " Songs "
+msgid "Songs"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:113
@@ -1113,8 +1124,12 @@ msgid "Copy the title to all the tracks you are editing"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:152 ui/trackedit/TrackEdit.cpp:431
-#: ui/trackedit/TrackEdit.cpp:485 ui/podcasts/PodcastsPanel.cpp:994
-msgid "Title:"
+#: ui/trackedit/TrackEdit.cpp:485 ui/mediaviewer/library/SoListBox.cpp:59
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:47
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:127
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:358
+#: ui/podcasts/PodcastsPanel.cpp:994 ui/podcasts/PodcastsPanel.cpp:1796
+msgid "Title"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:161
@@ -1126,7 +1141,7 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:177 ui/trackedit/TrackEdit.cpp:509
-msgid "A. Artist:"
+msgid "A. Artist"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:178
@@ -1138,16 +1153,29 @@ msgid "Copy the album name to all the tracks you are editing"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:190 ui/trackedit/TrackEdit.cpp:449
-#: ui/trackedit/TrackEdit.cpp:521 ui/cover/CoverEdit.cpp:80
-msgid "Album:"
+#: ui/trackedit/TrackEdit.cpp:521 ui/mediaviewer/library/SoListBox.cpp:62
+#: ui/mediaviewer/library/SoListBox.cpp:581
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:50
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:130
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361 ui/cover/CoverEdit.cpp:80
+#: ui/preferences/Preferences.cpp:847 ui/player/PlayList.cpp:1786
+msgid "Album"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:199
 msgid "Copy the composer to all the tracks you are editing"
 msgstr ""
 
-#: ui/trackedit/TrackEdit.cpp:203
-msgid "Composer:"
+#: ui/trackedit/TrackEdit.cpp:203 ui/mediaviewer/library/SoListBox.cpp:64
+#: ui/mediaviewer/library/SoListBox.cpp:577
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:53
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1783
+msgid "Composer"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:212
@@ -1155,7 +1183,8 @@ msgid "Copy the comment to all the tracks you are editing"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:216
-msgid "Comment:"
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:54
+msgid "Comment"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:225
@@ -1163,7 +1192,7 @@ msgid "Copy the number to all the tracks you are editing"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:228 ui/trackedit/TrackEdit.cpp:557
-msgid "Number:"
+msgid "Number"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:239
@@ -1174,16 +1203,25 @@ msgstr ""
 msgid "Copy the disk to all the tracks you are editing"
 msgstr ""
 
-#: ui/trackedit/TrackEdit.cpp:250
-msgid "Disk:"
+#: ui/trackedit/TrackEdit.cpp:250 ui/mediaviewer/library/SoListBox.cpp:65
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:65
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:364
+msgid "Disk"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:261
 msgid "Copy the genre name to all songs you are editing"
 msgstr ""
 
-#: ui/trackedit/TrackEdit.cpp:264
-msgid "Genre:"
+#: ui/trackedit/TrackEdit.cpp:264 ui/mediaviewer/library/SoListBox.cpp:63
+#: ui/mediaviewer/library/SoListBox.cpp:565
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:51
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3365
+#: ui/player/PlayList.cpp:1792
+msgid "Genre"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:273
@@ -1191,11 +1229,38 @@ msgid "Copy the year to all songs you are editing"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:276 ui/trackedit/TrackEdit.cpp:533
-msgid "Year:"
+#: ui/mediaviewer/library/SoListBox.cpp:67
+#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:423
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:56
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:69
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1789
+msgid "Year"
 msgstr ""
 
-#: ui/trackedit/TrackEdit.cpp:293
-msgid "Rating:"
+#: ui/trackedit/TrackEdit.cpp:308 ui/trackedit/TrackEdit.cpp:928
+msgid "File Type"
+msgstr ""
+
+#: ui/trackedit/TrackEdit.cpp:308 ui/trackedit/TrackEdit.cpp:930
+#: ui/mediaviewer/library/SoListBox.cpp:66
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:58
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:136
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:365
+#: ui/podcasts/PodcastsPanel.cpp:1800
+msgid "Length"
+msgstr ""
+
+#: ui/trackedit/TrackEdit.cpp:312 ui/trackedit/TrackEdit.cpp:935
+#: ui/mediaviewer/library/SoListBox.cpp:68
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:63 ui/radios/RadioPanel.cpp:312
+msgid "Bit Rate"
+msgstr ""
+
+#: ui/trackedit/TrackEdit.cpp:312 ui/trackedit/TrackEdit.cpp:937
+msgid "File Size"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:342
@@ -1226,6 +1291,12 @@ msgstr ""
 msgid "Type the artist name to search in musicbrainz"
 msgstr ""
 
+#: ui/trackedit/TrackEdit.cpp:431 ui/trackedit/TrackEdit.cpp:485
+#: ui/podcasts/PodcastsPanel.cpp:994
+#, c-format
+msgid "%s:"
+msgstr ""
+
 #: ui/trackedit/TrackEdit.cpp:436
 msgid "Type the album name to search in musicbrainz"
 msgstr ""
@@ -1244,10 +1315,6 @@ msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:467
 msgid "Copy the content of the album to the edited tracks"
-msgstr ""
-
-#: ui/trackedit/TrackEdit.cpp:476 ui/podcasts/PodcastsPanel.cpp:928
-msgid " Details "
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:493
@@ -1278,30 +1345,16 @@ msgstr ""
 msgid "Copy the number to the edited tracks"
 msgstr ""
 
-#: ui/trackedit/TrackEdit.cpp:926
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr ""
-
-#: ui/trackedit/TrackEdit.cpp:930
-#, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr ""
-
-#: ui/trackedit/TrackEdit.cpp:1642
+#: ui/trackedit/TrackEdit.cpp:1648
 #, c-format
 msgid "Error: The album have %lu tracks and you are editing %lu"
 msgstr ""
 
-#: ui/trackedit/TrackEdit.cpp:1648
+#: ui/trackedit/TrackEdit.cpp:1654
 msgid "Warning: The length of some edited tracks don't match"
 msgstr ""
 
-#: ui/trackedit/TrackEdit.cpp:1652
+#: ui/trackedit/TrackEdit.cpp:1658
 msgid "Everything ok"
 msgstr ""
 
@@ -2411,84 +2464,6 @@ msgstr ""
 msgid "Play current selected tracks"
 msgstr ""
 
-#: ui/mediaviewer/library/SoListBox.cpp:59
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:47
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:127
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:358
-#: ui/podcasts/PodcastsPanel.cpp:1796
-msgid "Title"
-msgstr ""
-
-#: ui/mediaviewer/library/SoListBox.cpp:60
-#: ui/mediaviewer/library/SoListBox.cpp:569
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:48
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:128
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/player/PlayList.cpp:1777
-msgid "Artist"
-msgstr ""
-
-#: ui/mediaviewer/library/SoListBox.cpp:62
-#: ui/mediaviewer/library/SoListBox.cpp:581
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:50
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:130
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361
-#: ui/preferences/Preferences.cpp:847 ui/player/PlayList.cpp:1786
-msgid "Album"
-msgstr ""
-
-#: ui/mediaviewer/library/SoListBox.cpp:63
-#: ui/mediaviewer/library/SoListBox.cpp:565
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:51
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/player/PlayList.cpp:1792
-msgid "Genre"
-msgstr ""
-
-#: ui/mediaviewer/library/SoListBox.cpp:64
-#: ui/mediaviewer/library/SoListBox.cpp:577
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:53
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1783
-msgid "Composer"
-msgstr ""
-
-#: ui/mediaviewer/library/SoListBox.cpp:65
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:65
-msgid "Disc"
-msgstr ""
-
-#: ui/mediaviewer/library/SoListBox.cpp:66
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:58
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:136
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:365
-#: ui/podcasts/PodcastsPanel.cpp:1800
-msgid "Length"
-msgstr ""
-
-#: ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/library/AlListBox.cpp:322
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:423
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:56
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:69
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1789
-msgid "Year"
-msgstr ""
-
-#: ui/mediaviewer/library/SoListBox.cpp:68
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:63
-msgid "Bit Rate"
-msgstr ""
-
 #: ui/mediaviewer/library/SoListBox.cpp:71
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:60
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:138
@@ -3058,10 +3033,6 @@ msgstr ""
 msgid "Beginning"
 msgstr ""
 
-#: ui/mediaviewer/playlists/PlayListAppend.cpp:75
-msgid "Tracks:"
-msgstr ""
-
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:1827
 msgid "Randomize the songs in the playlist"
 msgstr ""
@@ -3161,10 +3132,6 @@ msgstr ""
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:52
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:132
 msgid "Label"
-msgstr ""
-
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:54
-msgid "Comment"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:62
@@ -3279,7 +3246,7 @@ msgid "Dynamic Playlist Editor"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:466
-msgid " Current Filters "
+msgid "Current Filters"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:547
@@ -3316,7 +3283,7 @@ msgid "Select a folder"
 msgstr ""
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:129
-msgid " Files "
+msgid "Files"
 msgstr ""
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:241
@@ -3425,10 +3392,6 @@ msgstr ""
 
 #: ui/mediaviewer/treeview/TreePanel.cpp:1210
 msgid "Are you sure to delete the selected filter?"
-msgstr ""
-
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:364
-msgid "Disk"
 msgstr ""
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:651 ui/radios/RadioPanel.cpp:411
@@ -3707,10 +3670,6 @@ msgstr ""
 msgid "Link:"
 msgstr ""
 
-#: ui/radios/RadioPanel.cpp:312
-msgid "BitRate"
-msgstr ""
-
 #: ui/radios/RadioPanel.cpp:313
 msgid "Listeners"
 msgstr ""
@@ -3753,11 +3712,6 @@ msgstr ""
 
 #: ui/radios/RadioGenreEditor.cpp:28
 msgid "Radio Genre Editor"
-msgstr ""
-
-#: ui/radios/RadioGenreEditor.cpp:38 ui/preferences/Preferences.cpp:1697
-#: ui/preferences/Preferences.cpp:1789
-msgid " Genres "
 msgstr ""
 
 #: ui/radios/RadioGenreEditor.cpp:49
@@ -4075,10 +4029,6 @@ msgstr ""
 
 #: ui/preferences/Preferences.cpp:847
 msgid "Disabled"
-msgstr ""
-
-#: ui/preferences/Preferences.cpp:847 ui/player/PlayList.cpp:1774
-msgid "Track"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:854
@@ -4501,10 +4451,6 @@ msgid "Enter the text to find covers"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:3365
-msgid "Genre: "
-msgstr ""
-
-#: ui/preferences/Preferences.cpp:3365
 msgid "Enter the genre to disable"
 msgstr ""
 
@@ -4533,7 +4479,7 @@ msgid "New Podcast Channel"
 msgstr ""
 
 #: ui/podcasts/NewChannel.cpp:100
-msgid " Digital Podcast Directory "
+msgid "Digital Podcast Directory"
 msgstr ""
 
 #: ui/podcasts/NewChannel.cpp:111
@@ -4571,7 +4517,7 @@ msgid "Podcast Channel Editor"
 msgstr ""
 
 #: ui/podcasts/ChannelEditor.cpp:58
-msgid " Podcast Channel "
+msgid "Podcast Channel"
 msgstr ""
 
 #: ui/podcasts/ChannelEditor.cpp:100 ui/podcasts/PodcastsPanel.cpp:948

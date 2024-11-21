@@ -126,7 +126,7 @@ void guImportFiles::CreateControls( void )
 
 	MainStaticBoxSizer->Add( CopyToSizer, 0, wxEXPAND, 5 );
 
-	wxStaticBoxSizer * FilesSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _( " Files " ) ), wxVERTICAL );
+	wxStaticBoxSizer * FilesSizer = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxString::Format(" %s ", _("Files"))), wxVERTICAL);
 
 	m_FilesListBox = new wxListBox( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_MULTIPLE );
 	Count = m_Tracks->Count();

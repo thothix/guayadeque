@@ -62,7 +62,7 @@ void inline InitArrayStrings( void )
         m_FilterFieldChoices.Add( _( "Track Number" ) );
         m_FilterFieldChoices.Add( _( "Bit Rate" ) );
         m_FilterFieldChoices.Add( _( "Size" ) );
-        m_FilterFieldChoices.Add( _( "Disc" ) );
+        m_FilterFieldChoices.Add( _( "Disk" ) );
         m_FilterFieldChoices.Add( _( "Has Cover" ) );
 //    }
 //
@@ -463,7 +463,7 @@ guDynPlayListEditor::guDynPlayListEditor( wxWindow * parent, guDynPlayList * pla
 
 	MainSizer->Add( NameSizer, 0, wxEXPAND|wxTOP|wxRIGHT|wxLEFT, 5 );
 
-	wxStaticBoxSizer * CurFiltersSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _( " Current Filters " ) ), wxVERTICAL );
+	wxStaticBoxSizer * CurFiltersSizer = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxString::Format(" %s ", _("Current Filters"))), wxVERTICAL);
 
 	m_FiltersListBox = new wxListBox( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0 );
 	m_FiltersListBox->SetMinSize( wxSize( -1,80 ) );

@@ -572,18 +572,6 @@ msgstr "Αποθήκευση των στίχων"
 msgid "Search the lyrics on the web"
 msgstr "Αναζήτηση των στίχων στο διαδίκτυο"
 
-#: ui/lyrics/LyricsPanel.cpp:112 ui/trackedit/TrackEdit.cpp:164
-#: ui/trackedit/TrackEdit.cpp:383 ui/trackedit/TrackEdit.cpp:423
-#: ui/trackedit/TrackEdit.cpp:497 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642
-msgid "Artist:"
-msgstr "Καλλιτέχνης:"
-
-#: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:390
-#: ui/lastfmpanel/LastFMPanel.cpp:1654
-msgid "Track:"
-msgstr "Kομμάτι:"
-
 #: ui/lyrics/LyricsPanel.cpp:280
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:451
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2008
@@ -1098,7 +1086,7 @@ msgid "Songs Editor"
 msgstr "Επεξεργαστής Τραγουδιών"
 
 #: ui/trackedit/TrackEdit.cpp:105
-msgid " Songs "
+msgid "Songs"
 msgstr " Τραγούδια "
 
 #: ui/trackedit/TrackEdit.cpp:113
@@ -1113,11 +1101,6 @@ msgstr "Μετακίνηση κομματιού στην επόμενη θέση
 msgid "Copy the title to all the tracks you are editing"
 msgstr "Αντιγραφή του τίτλου σε όλα τα επεξεργαζόμενα κομμάτια"
 
-#: ui/trackedit/TrackEdit.cpp:152 ui/trackedit/TrackEdit.cpp:431
-#: ui/trackedit/TrackEdit.cpp:485 ui/podcasts/PodcastsPanel.cpp:994
-msgid "Title:"
-msgstr "Τίτλος:"
-
 #: ui/trackedit/TrackEdit.cpp:161
 msgid "Copy the artist name to all the tracks you are editing"
 msgstr "Αντιγραφή του ονόματος του καλλιτέχνη σε όλα τα επεξεργαζόμενα κομμάτια"
@@ -1127,8 +1110,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Αντιγραφή του ονόματος του καλλιτέχνη δίσκου σε όλα τα επεξεργαζόμενα κομμάτια"
 
 #: ui/trackedit/TrackEdit.cpp:177 ui/trackedit/TrackEdit.cpp:509
-msgid "A. Artist:"
-msgstr "Καλλιτέχνης Δίσκου:"
+msgid "A. Artist"
+msgstr "Καλλιτέχνης Δίσκου"
 
 #: ui/trackedit/TrackEdit.cpp:178
 msgid "shows the album artist of the track"
@@ -1138,34 +1121,21 @@ msgstr "εμφάνιση του καλλιτέχνη δίσκου του κομ�
 msgid "Copy the album name to all the tracks you are editing"
 msgstr "Αντιγραφή της ονομασίας του δίσκου σε όλα τα επεξεργαζόμενα κομμάτια"
 
-#: ui/trackedit/TrackEdit.cpp:190 ui/trackedit/TrackEdit.cpp:449
-#: ui/trackedit/TrackEdit.cpp:521 ui/cover/CoverEdit.cpp:80
-msgid "Album:"
-msgstr "Δίσκος:"
-
 #: ui/trackedit/TrackEdit.cpp:199
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "Αντιγραφή του συνθέτη σε όλα τα επεξεργαζόμενα κομμάτια"
 
-#: ui/trackedit/TrackEdit.cpp:203
-msgid "Composer:"
-msgstr "Συνθέτης:"
-
 #: ui/trackedit/TrackEdit.cpp:212
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "Αντιγραφή σχολίου σε όλα τα επεξεργαζόμενα κομμάτια"
-
-#: ui/trackedit/TrackEdit.cpp:216
-msgid "Comment:"
-msgstr "Σχόλιο:"
 
 #: ui/trackedit/TrackEdit.cpp:225
 msgid "Copy the number to all the tracks you are editing"
 msgstr "Αντιγραφή του αριθμού σε όλα τα επεξεργαζόμενα κομμάτια"
 
 #: ui/trackedit/TrackEdit.cpp:228 ui/trackedit/TrackEdit.cpp:557
-msgid "Number:"
-msgstr "Αριθμός:"
+msgid "Number"
+msgstr "Αριθμός"
 
 #: ui/trackedit/TrackEdit.cpp:239
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -1175,29 +1145,13 @@ msgstr "Απαρίθμηση των κομματιών με τη σειρά πο
 msgid "Copy the disk to all the tracks you are editing"
 msgstr "Αντιγραφή του δίσκου σε όλα τα επεξεργαζόμενα κομμάτια"
 
-#: ui/trackedit/TrackEdit.cpp:250
-msgid "Disk:"
-msgstr "Δίσκος:"
-
 #: ui/trackedit/TrackEdit.cpp:261
 msgid "Copy the genre name to all songs you are editing"
 msgstr "Αντιγραφή του ονόματος είδους σε όλα τα επεξεργαζόμενα τραγούδια"
 
-#: ui/trackedit/TrackEdit.cpp:264
-msgid "Genre:"
-msgstr "Είδος:"
-
 #: ui/trackedit/TrackEdit.cpp:273
 msgid "Copy the year to all songs you are editing"
 msgstr "Αντιγραφή του έτους σε όλα τα επεξεργαζόμενα τραγούδια"
-
-#: ui/trackedit/TrackEdit.cpp:276 ui/trackedit/TrackEdit.cpp:533
-msgid "Year:"
-msgstr "Έτος:"
-
-#: ui/trackedit/TrackEdit.cpp:293
-msgid "Rating:"
-msgstr "Βαθμολογία:"
 
 #: ui/trackedit/TrackEdit.cpp:342
 msgid "Add a picture from file to the current track"
@@ -1247,10 +1201,6 @@ msgstr "Αναζήτηση για δίσκους στο musicbrainz"
 msgid "Copy the content of the album to the edited tracks"
 msgstr "Αντιγραφή του περιεχομένου του δίσκου στα επεξεργαζόμενα κομμάτια"
 
-#: ui/trackedit/TrackEdit.cpp:476 ui/podcasts/PodcastsPanel.cpp:928
-msgid " Details "
-msgstr " Λεπτομέρειες "
-
 #: ui/trackedit/TrackEdit.cpp:493
 msgid "Copy the song names to the edited tracks"
 msgstr "Αντιγραφή των ονομάτων των τραγουδιών στα επεξεργασμένα κομμάτια"
@@ -1280,22 +1230,13 @@ msgid "Copy the number to the edited tracks"
 msgstr "Αντιγραφή του αριθμού στα επεξεργασμένα κομμάτια"
 
 #: ui/trackedit/TrackEdit.cpp:926
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr ""
-"Είδος Αρχείου\t: %s\n"
-"\"Διάρκεια\t: %s\""
+msgid "File Type"
+msgstr "Είδος Αρχείου"
 
 #: ui/trackedit/TrackEdit.cpp:930
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr ""
-"Συχνότητα Bit\t: %u Kbps\n"
-"Μέγεθος Αρχείου\t: %s"
+msgid "File Size"
+msgstr "Μέγεθος Αρχείου"
 
 #: ui/trackedit/TrackEdit.cpp:1642
 #, c-format
@@ -2479,11 +2420,6 @@ msgstr "Είδος"
 msgid "Composer"
 msgstr "Συνθέτης"
 
-#: ui/mediaviewer/library/SoListBox.cpp:65
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:65
-msgid "Disc"
-msgstr "Δίσκος"
-
 #: ui/mediaviewer/library/SoListBox.cpp:66
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:58
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:136
@@ -3084,10 +3020,6 @@ msgstr "Που:"
 msgid "Beginning"
 msgstr "Αρχή"
 
-#: ui/mediaviewer/playlists/PlayListAppend.cpp:75
-msgid "Tracks:"
-msgstr "Κομμάτια:"
-
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:1827
 msgid "Randomize the songs in the playlist"
 msgstr "Τυχαία σειρά των τραγουδιών στη λίστα αναπαραγωγής"
@@ -3305,8 +3237,8 @@ msgid "Dynamic Playlist Editor"
 msgstr "Δυναμικός Επεξεργαστής της Λίστας Αναπαραγωγής"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:466
-msgid " Current Filters "
-msgstr " Τρέχοντα Φίλτρα "
+msgid "Current Filters"
+msgstr "Τρέχοντα Φίλτρα"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:547
 msgid " Result "
@@ -3342,8 +3274,8 @@ msgid "Select a folder"
 msgstr "Επιλογή φακέλου"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:129
-msgid " Files "
-msgstr " Αρχεία "
+msgid "Files"
+msgstr "Αρχεία"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:241
 msgid "Select files"
@@ -3735,10 +3667,6 @@ msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετ�
 msgid "Link:"
 msgstr "Σύνδεσμοι:"
 
-#: ui/radios/RadioPanel.cpp:312
-msgid "BitRate"
-msgstr "Συχνότητα Bit"
-
 #: ui/radios/RadioPanel.cpp:313
 msgid "Listeners"
 msgstr "Ακροατές"
@@ -3782,11 +3710,6 @@ msgstr "Συμπερίληψη αποτελεσμάτων από όλα τα ε�
 #: ui/radios/RadioGenreEditor.cpp:28
 msgid "Radio Genre Editor"
 msgstr "Επεξεργαστής Είδους Ραδιοφώνου"
-
-#: ui/radios/RadioGenreEditor.cpp:38 ui/preferences/Preferences.cpp:1697
-#: ui/preferences/Preferences.cpp:1789
-msgid " Genres "
-msgstr " Είδη "
 
 #: ui/radios/RadioGenreEditor.cpp:49
 msgid "Other:"
@@ -4546,10 +4469,6 @@ msgid "Enter the text to find covers"
 msgstr "Εισαγωγή κειμένου για φιλτράρισμα"
 
 #: ui/preferences/Preferences.cpp:3365
-msgid "Genre: "
-msgstr "Είδος: "
-
-#: ui/preferences/Preferences.cpp:3365
 msgid "Enter the genre to disable"
 msgstr "Εισάγετε το είδος για να απενεργοποιήσετε"
 
@@ -4578,8 +4497,8 @@ msgid "New Podcast Channel"
 msgstr "Νέο Podcast Κανάλι"
 
 #: ui/podcasts/NewChannel.cpp:100
-msgid " Digital Podcast Directory "
-msgstr " Ψηφιακός Podcast Φάκελος "
+msgid "Digital Podcast Directory"
+msgstr "Ψηφιακός Podcast Φάκελος"
 
 #: ui/podcasts/NewChannel.cpp:111
 msgid "Search in the podcast directory"
@@ -4616,8 +4535,8 @@ msgid "Podcast Channel Editor"
 msgstr "Επεξεργαστής Καναλιών των Podcast"
 
 #: ui/podcasts/ChannelEditor.cpp:58
-msgid " Podcast Channel "
-msgstr " Podcast Κανάλι "
+msgid "Podcast Channel"
+msgstr "Podcast Κανάλι"
 
 #: ui/podcasts/ChannelEditor.cpp:100 ui/podcasts/PodcastsPanel.cpp:948
 msgid "Description:"

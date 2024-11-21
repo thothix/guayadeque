@@ -62,7 +62,7 @@ guSoListBox::guSoListBox( wxWindow * parent, guMediaViewer * mediaviewer, wxStri
     m_ColumnNames.Add( _( "Album" ) );
     m_ColumnNames.Add( _( "Genre" ) );
     m_ColumnNames.Add( _( "Composer" ) );
-    m_ColumnNames.Add( _( "Disc" ) );
+    m_ColumnNames.Add( _( "Disk" ) );
     m_ColumnNames.Add( _( "Length" ) );
     m_ColumnNames.Add( _( "Year" ) );
     m_ColumnNames.Add( _( "Bit Rate" ) );

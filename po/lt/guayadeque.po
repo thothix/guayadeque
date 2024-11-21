@@ -69,18 +69,6 @@ msgstr "Labai žema"
 msgid "Cover Editor"
 msgstr "Viršelių redaktorius"
 
-#: ui/cover/CoverEdit.cpp:78 ui/lastfmpanel/LastFMPanel.cpp:1726
-#: ui/lyrics/LyricsPanel.cpp:114 ui/trackedit/TrackEdit.cpp:164
-#: ui/trackedit/TrackEdit.cpp:389 ui/trackedit/TrackEdit.cpp:430
-#: ui/trackedit/TrackEdit.cpp:489
-msgid "Artist:"
-msgstr "Atlikėjas:"
-
-#: ui/cover/CoverEdit.cpp:85 ui/trackedit/TrackEdit.cpp:188
-#: ui/trackedit/TrackEdit.cpp:455 ui/trackedit/TrackEdit.cpp:511
-msgid "Album:"
-msgstr "Albumas:"
-
 #: ui/cover/CoverEdit.cpp:92
 msgid "From:"
 msgstr ""
@@ -456,11 +444,6 @@ msgstr "Kopijuoti įvykio informaciją į iškarpinę"
 msgid "Follow player"
 msgstr ""
 
-#: ui/lastfmpanel/LastFMPanel.cpp:1735 ui/lyrics/LyricsPanel.cpp:124
-#: ui/trackedit/TrackEdit.cpp:396
-msgid "Track:"
-msgstr "Takelis:"
-
 #: ui/lastfmpanel/LastFMPanel.cpp:1755
 msgid "Artist Info"
 msgstr "Atlikėjo informacija"
@@ -584,11 +567,6 @@ msgstr ""
 msgid "Radio Genre Editor"
 msgstr ""
 
-#: ui/radios/RadioGenreEditor.cpp:40 ui/preferences/Preferences.cpp:1742
-#: ui/preferences/Preferences.cpp:1834
-msgid " Genres "
-msgstr " Žanrai "
-
 #: ui/radios/RadioGenreEditor.cpp:51
 msgid "Other:"
 msgstr ""
@@ -598,10 +576,6 @@ msgstr ""
 #: ui/mediaviewer/library/AlListBox.cpp:322 ui/filebrowser/FileBrowser.cpp:778
 msgid "Name"
 msgstr "Pavadinimas"
-
-#: ui/radios/RadioPanel.cpp:332
-msgid "BitRate"
-msgstr ""
 
 #: ui/radios/RadioPanel.cpp:333
 msgid "Listeners"
@@ -964,7 +938,7 @@ msgid "Songs Editor"
 msgstr "Dainų redaktorius"
 
 #: ui/trackedit/TrackEdit.cpp:118
-msgid " Songs "
+msgid "Songs"
 msgstr "Dainos"
 
 #: ui/trackedit/TrackEdit.cpp:126
@@ -984,8 +958,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Kopijuoti albumo atlikėjo pavadinimą į visus jūsų taisomus takelius"
 
 #: ui/trackedit/TrackEdit.cpp:176 ui/trackedit/TrackEdit.cpp:500
-msgid "A. Artist:"
-msgstr "A. Atlikėjas:"
+msgid "A. Artist"
+msgstr "A. Atlikėjas"
 
 #: ui/trackedit/TrackEdit.cpp:177
 msgid "shows the album artist of the track"
@@ -999,34 +973,21 @@ msgstr "Kopijuoti albumo pavadinimą į visus jūsų taisomus takelius"
 msgid "Copy the title to all the tracks you are editing"
 msgstr "Kopijuoti pavadinimą į visus jūsų taisomus takelius"
 
-#: ui/trackedit/TrackEdit.cpp:199 ui/trackedit/TrackEdit.cpp:438
-#: ui/trackedit/TrackEdit.cpp:533 ui/podcasts/PodcastsPanel.cpp:999
-msgid "Title:"
-msgstr "Pavadinimas:"
-
 #: ui/trackedit/TrackEdit.cpp:207
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "Kopijuoti kompozitorių į visus jūsų taisomus takelius"
 
-#: ui/trackedit/TrackEdit.cpp:211
-msgid "Composer:"
-msgstr "Kompozitorius:"
-
 #: ui/trackedit/TrackEdit.cpp:219
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "Kopijuoti komentarą į visus jūsų taisomus takelius"
-
-#: ui/trackedit/TrackEdit.cpp:223
-msgid "Comment:"
-msgstr "Komentaras:"
 
 #: ui/trackedit/TrackEdit.cpp:232
 msgid "Copy the number to all the tracks you are editing"
 msgstr "Kopijuoti numerį į visus jūsų taisomus takelius"
 
 #: ui/trackedit/TrackEdit.cpp:235 ui/trackedit/TrackEdit.cpp:556
-msgid "Number:"
-msgstr "Numeris:"
+msgid "Number"
+msgstr "Numeris"
 
 #: ui/trackedit/TrackEdit.cpp:249
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -1036,29 +997,13 @@ msgstr ""
 msgid "Copy the disk to all the tracks you are editing"
 msgstr "Kopijuoti diską į visus jūsų taisomus takelius"
 
-#: ui/trackedit/TrackEdit.cpp:259
-msgid "Disk:"
-msgstr "Diskas:"
-
 #: ui/trackedit/TrackEdit.cpp:269
 msgid "Copy the genre name to all songs you are editing"
 msgstr "Kopijuoti žanro pavadinimą į visas jūsų taisomas dainas"
 
-#: ui/trackedit/TrackEdit.cpp:272
-msgid "Genre:"
-msgstr "Žanras:"
-
 #: ui/trackedit/TrackEdit.cpp:280
 msgid "Copy the year to all songs you are editing"
 msgstr "Kopijuoti metus į visas jūsų taisomas dainas"
-
-#: ui/trackedit/TrackEdit.cpp:283 ui/trackedit/TrackEdit.cpp:522
-msgid "Year:"
-msgstr "Metai:"
-
-#: ui/trackedit/TrackEdit.cpp:299
-msgid "Rating:"
-msgstr "Vertinimas:"
 
 #: ui/trackedit/TrackEdit.cpp:326 ui/podcasts/PodcastsPanel.cpp:1065
 #: ui/locationpanel/LocationPanel.cpp:365 ui/MainFrame.cpp:1108
@@ -1119,10 +1064,6 @@ msgstr ""
 msgid "Copy the content of the album to the edited tracks"
 msgstr ""
 
-#: ui/trackedit/TrackEdit.cpp:481 ui/podcasts/PodcastsPanel.cpp:933
-msgid " Details "
-msgstr "Išsamiau"
-
 #: ui/trackedit/TrackEdit.cpp:497
 msgid "Copy the artist to the edited tracks"
 msgstr ""
@@ -1152,18 +1093,13 @@ msgid "Copy the number to the edited tracks"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:927
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr "Failo tipas\t: %s\nIlgis\t: %s"
+msgid "File Type"
+msgstr "Failo tipas"
 
 #: ui/trackedit/TrackEdit.cpp:931
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr "Pralaidumas\t: %u Kbps\nFailo dydis\t: %s"
+msgid "File Size"
+msgstr "Failo dydis"
 
 #: ui/trackedit/TrackEdit.cpp:1674
 #, c-format
@@ -1356,7 +1292,7 @@ msgid "Podcast Channel Editor"
 msgstr "Tinklalaidžių kanalų redaktorius"
 
 #: ui/podcasts/ChannelEditor.cpp:60
-msgid " Podcast Channel "
+msgid "Podcast Channel"
 msgstr "Tinklalaidės kanalas"
 
 #: ui/podcasts/ChannelEditor.cpp:135
@@ -1388,7 +1324,7 @@ msgid "New Podcast Channel"
 msgstr "Naujas tinklalaidės kanalas"
 
 #: ui/podcasts/NewChannel.cpp:104
-msgid " Digital Podcast Directory "
+msgid "Digital Podcast Directory"
 msgstr "Skaitmeninis tinklalaidžių katalogas"
 
 #: ui/podcasts/NewChannel.cpp:115
@@ -1761,7 +1697,7 @@ msgstr "Groti atsitiktinį"
 #: ui/mediaviewer/MediaViewer.cpp:1382 ui/mediaviewer/MediaViewer.cpp:1401
 #: ui/mediaviewer/MediaViewer.cpp:1416 ui/MainFrame.cpp:3357
 msgid "track"
-msgstr ""
+msgstr "takelis"
 
 #: ui/preferences/Preferences.cpp:824
 msgid "album"
@@ -1844,7 +1780,7 @@ msgstr ""
 #: ui/mediaviewer/MediaViewer.cpp:1382 ui/mediaviewer/MediaViewer.cpp:1401
 #: ui/mediaviewer/MediaViewer.cpp:1416 ui/MainFrame.cpp:3357
 msgid "tracks"
-msgstr ""
+msgstr "takeliai"
 
 #: ui/preferences/Preferences.cpp:945
 msgid " Silence detector "
@@ -2251,10 +2187,6 @@ msgstr ""
 
 #: ui/preferences/Preferences.cpp:3103 ui/preferences/Preferences.cpp:3123
 msgid "Enter the text to find covers"
-msgstr ""
-
-#: ui/preferences/Preferences.cpp:3445
-msgid "Genre: "
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:3445
@@ -3000,11 +2932,6 @@ msgstr "Groti šiuo metu pažymėtus žanrus"
 msgid "Add current selected genres to playlist"
 msgstr "Pridėti šiuo metu pažymėtus žanrus į grojaraštį"
 
-#: ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:67
-msgid "Disc"
-msgstr "Diskas"
-
 #: ui/mediaviewer/library/SoListBox.cpp:70
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:65
 msgid "Bit Rate"
@@ -3221,7 +3148,7 @@ msgid "Destination Folder:"
 msgstr "Paskirties aplankas:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:132
-msgid " Files "
+msgid "Files"
 msgstr "Failai"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:245
@@ -3397,10 +3324,6 @@ msgstr ""
 msgid "End"
 msgstr ""
 
-#: ui/mediaviewer/playlists/PlayListAppend.cpp:78
-msgid "Tracks:"
-msgstr ""
-
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:54
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 msgid "Label"
@@ -3527,7 +3450,7 @@ msgid "Dynamic Playlist Editor"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:471
-msgid " Current Filters "
+msgid "Current Filters"
 msgstr ""
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:552

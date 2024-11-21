@@ -78,18 +78,6 @@ msgstr "Bardzo niska"
 msgid "Cover Editor"
 msgstr "Edytor okładek"
 
-#: ui/cover/CoverEdit.cpp:78 ui/lastfmpanel/LastFMPanel.cpp:1726
-#: ui/lyrics/LyricsPanel.cpp:114 ui/trackedit/TrackEdit.cpp:164
-#: ui/trackedit/TrackEdit.cpp:389 ui/trackedit/TrackEdit.cpp:430
-#: ui/trackedit/TrackEdit.cpp:489
-msgid "Artist:"
-msgstr "Wykonawca:"
-
-#: ui/cover/CoverEdit.cpp:85 ui/trackedit/TrackEdit.cpp:188
-#: ui/trackedit/TrackEdit.cpp:455 ui/trackedit/TrackEdit.cpp:511
-msgid "Album:"
-msgstr "Album:"
-
 #: ui/cover/CoverEdit.cpp:92
 msgid "From:"
 msgstr "Z:"
@@ -465,11 +453,6 @@ msgstr "Kopiuj zdarzenie do schowka"
 msgid "Follow player"
 msgstr "Podążaj za odtwarzaczem"
 
-#: ui/lastfmpanel/LastFMPanel.cpp:1735 ui/lyrics/LyricsPanel.cpp:124
-#: ui/trackedit/TrackEdit.cpp:396
-msgid "Track:"
-msgstr "Utwór:"
-
 #: ui/lastfmpanel/LastFMPanel.cpp:1755
 msgid "Artist Info"
 msgstr "Informacje o wykonawcy"
@@ -593,11 +576,6 @@ msgstr "Zdefiniowany przez użytkownika"
 msgid "Radio Genre Editor"
 msgstr "Edytor gatunków radia"
 
-#: ui/radios/RadioGenreEditor.cpp:40 ui/preferences/Preferences.cpp:1742
-#: ui/preferences/Preferences.cpp:1834
-msgid " Genres "
-msgstr " Gatunki "
-
 #: ui/radios/RadioGenreEditor.cpp:51
 msgid "Other:"
 msgstr "Inne:"
@@ -607,10 +585,6 @@ msgstr "Inne:"
 #: ui/mediaviewer/library/AlListBox.cpp:322 ui/filebrowser/FileBrowser.cpp:778
 msgid "Name"
 msgstr "Nazwa"
-
-#: ui/radios/RadioPanel.cpp:332
-msgid "BitRate"
-msgstr "Gęstość bitowa"
 
 #: ui/radios/RadioPanel.cpp:333
 msgid "Listeners"
@@ -973,7 +947,7 @@ msgid "Songs Editor"
 msgstr "Edytor utworów"
 
 #: ui/trackedit/TrackEdit.cpp:118
-msgid " Songs "
+msgid "Songs"
 msgstr " Utwory "
 
 #: ui/trackedit/TrackEdit.cpp:126
@@ -993,8 +967,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Skopiuj artystę albumu do wszystkich utworów, które edytujesz"
 
 #: ui/trackedit/TrackEdit.cpp:176 ui/trackedit/TrackEdit.cpp:500
-msgid "A. Artist:"
-msgstr "Artysta albumu:"
+msgid "A. Artist"
+msgstr "Artysta albumu"
 
 #: ui/trackedit/TrackEdit.cpp:177
 msgid "shows the album artist of the track"
@@ -1008,34 +982,21 @@ msgstr "Skopiuj nazwę albumu do wszystkich utworów, które edytujesz"
 msgid "Copy the title to all the tracks you are editing"
 msgstr "Skopiuj tytuł do wszystkich utworów, które edytujesz"
 
-#: ui/trackedit/TrackEdit.cpp:199 ui/trackedit/TrackEdit.cpp:438
-#: ui/trackedit/TrackEdit.cpp:533 ui/podcasts/PodcastsPanel.cpp:999
-msgid "Title:"
-msgstr "Tytuł:"
-
 #: ui/trackedit/TrackEdit.cpp:207
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "Skopiuj kompozytora do wszystkich utworów, które edytujesz"
 
-#: ui/trackedit/TrackEdit.cpp:211
-msgid "Composer:"
-msgstr "Kompozytor:"
-
 #: ui/trackedit/TrackEdit.cpp:219
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "Skopiuj komentarz do wszystkich utworów, które edytujesz"
-
-#: ui/trackedit/TrackEdit.cpp:223
-msgid "Comment:"
-msgstr "Komentarz:"
 
 #: ui/trackedit/TrackEdit.cpp:232
 msgid "Copy the number to all the tracks you are editing"
 msgstr "Skopiuj numer do wszystkich utworów, które edytujesz"
 
 #: ui/trackedit/TrackEdit.cpp:235 ui/trackedit/TrackEdit.cpp:556
-msgid "Number:"
-msgstr "Numer:"
+msgid "Number"
+msgstr "Numer"
 
 #: ui/trackedit/TrackEdit.cpp:249
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -1046,28 +1007,16 @@ msgid "Copy the disk to all the tracks you are editing"
 msgstr "Skopiuj dysk do wszystkich utworów, które edytujesz"
 
 #: ui/trackedit/TrackEdit.cpp:259
-msgid "Disk:"
-msgstr "Dysk:"
+msgid "Disk"
+msgstr "Dysk"
 
 #: ui/trackedit/TrackEdit.cpp:269
 msgid "Copy the genre name to all songs you are editing"
 msgstr "Skopiuj gatunek do wszystkich utworów, które edytujesz"
 
-#: ui/trackedit/TrackEdit.cpp:272
-msgid "Genre:"
-msgstr "Gatunek:"
-
 #: ui/trackedit/TrackEdit.cpp:280
 msgid "Copy the year to all songs you are editing"
 msgstr "Skopiuj rok do wszystkich utworów, które edytujesz"
-
-#: ui/trackedit/TrackEdit.cpp:283 ui/trackedit/TrackEdit.cpp:522
-msgid "Year:"
-msgstr "Rok:"
-
-#: ui/trackedit/TrackEdit.cpp:299
-msgid "Rating:"
-msgstr "Ocena:"
 
 #: ui/trackedit/TrackEdit.cpp:326 ui/podcasts/PodcastsPanel.cpp:1065
 #: ui/locationpanel/LocationPanel.cpp:365 ui/MainFrame.cpp:1108
@@ -1128,10 +1077,6 @@ msgstr "Wyszukaj w musicbrainz"
 msgid "Copy the content of the album to the edited tracks"
 msgstr "Skopiuj zawartość albumu do edytowanych utworów"
 
-#: ui/trackedit/TrackEdit.cpp:481 ui/podcasts/PodcastsPanel.cpp:933
-msgid " Details "
-msgstr " Szczegóły "
-
 #: ui/trackedit/TrackEdit.cpp:497
 msgid "Copy the artist to the edited tracks"
 msgstr "Skopiuj artystę do edytowanych utworów"
@@ -1161,18 +1106,13 @@ msgid "Copy the number to the edited tracks"
 msgstr "Skopiuj numer do edytowanych utworów"
 
 #: ui/trackedit/TrackEdit.cpp:927
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr "Typ pliku\t: %s\nDługość\t: %s"
+msgid "File Type"
+msgstr "Typ pliku"
 
 #: ui/trackedit/TrackEdit.cpp:931
 #, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr "Gęstość bitowa\t: %u Kbps\nRozmiar pliku\t: %s"
+msgid "File Size"
+msgstr "Rozmiar pliku"
 
 #: ui/trackedit/TrackEdit.cpp:1674
 #, c-format
@@ -1365,8 +1305,8 @@ msgid "Podcast Channel Editor"
 msgstr "Błąd kanału podcastów"
 
 #: ui/podcasts/ChannelEditor.cpp:60
-msgid " Podcast Channel "
-msgstr " Kanał podcastów "
+msgid "Podcast Channel"
+msgstr "Kanał podcastów"
 
 #: ui/podcasts/ChannelEditor.cpp:135
 msgid "Download:"
@@ -1397,8 +1337,8 @@ msgid "New Podcast Channel"
 msgstr "Nowy kanał pocastów"
 
 #: ui/podcasts/NewChannel.cpp:104
-msgid " Digital Podcast Directory "
-msgstr " Cyfrowy katalog podcastów "
+msgid "Digital Podcast Directory"
+msgstr "Cyfrowy katalog podcastów"
 
 #: ui/podcasts/NewChannel.cpp:115
 msgid "Search in the podcast directory"
@@ -2263,10 +2203,6 @@ msgid "Enter the text to find covers"
 msgstr "Wprowadź tekst do znalezienia okładek"
 
 #: ui/preferences/Preferences.cpp:3445
-msgid "Genre: "
-msgstr "Gatunek: "
-
-#: ui/preferences/Preferences.cpp:3445
 msgid "Enter the genre to disable"
 msgstr ""
 
@@ -2511,10 +2447,6 @@ msgstr "Wykonawca albumu"
 #: ui/player/PlayList.cpp:1657
 msgid "Composer"
 msgstr "Kompozytor"
-
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366
-msgid "Disk"
-msgstr ""
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:429
@@ -3009,11 +2941,6 @@ msgstr "Odtwarzaj zaznaczone gatunki"
 msgid "Add current selected genres to playlist"
 msgstr "Dodaj zaznaczone gatunki do listy odtwarzania"
 
-#: ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:67
-msgid "Disc"
-msgstr "Dysk"
-
 #: ui/mediaviewer/library/SoListBox.cpp:70
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:65
 msgid "Bit Rate"
@@ -3230,8 +3157,8 @@ msgid "Destination Folder:"
 msgstr "Katalog docelowy:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:132
-msgid " Files "
-msgstr " Pliki "
+msgid "Files"
+msgstr "Pliki"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:245
 msgid "Select files"
@@ -3406,10 +3333,6 @@ msgstr "Początek"
 msgid "End"
 msgstr "End"
 
-#: ui/mediaviewer/playlists/PlayListAppend.cpp:78
-msgid "Tracks:"
-msgstr "Utwory:"
-
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:54
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 msgid "Label"
@@ -3536,8 +3459,8 @@ msgid "Dynamic Playlist Editor"
 msgstr "Edytor dynamicznych list odtwarzania"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:471
-msgid " Current Filters "
-msgstr " Aktualne filtry "
+msgid "Current Filters"
+msgstr "Aktualne filtry"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:552
 msgid " Result "

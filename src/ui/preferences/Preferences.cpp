@@ -1694,7 +1694,7 @@ void guPrefDialog::BuildJamendoPage()
     //
     wxBoxSizer * JamMainSizer = new wxBoxSizer( wxVERTICAL );
 
-    wxStaticBoxSizer * JamGenresSizer = new wxStaticBoxSizer( new wxStaticBox( m_JamendoPanel, wxID_ANY, _( " Genres " ) ), wxHORIZONTAL );
+    wxStaticBoxSizer * JamGenresSizer = new wxStaticBoxSizer( new wxStaticBox( m_JamendoPanel, wxID_ANY, wxString::Format(" %s ", _("Genres"))), wxHORIZONTAL );
 
     wxArrayString JamendoGenres;
     int Index = 0;
@@ -1786,7 +1786,7 @@ void guPrefDialog::BuildMagnatunePage()
     //
     wxBoxSizer * MagMainSizer = new wxBoxSizer( wxVERTICAL );
 
-    wxStaticBoxSizer * MagGenresSizer = new wxStaticBoxSizer( new wxStaticBox( m_MagnatunePanel, wxID_ANY, _(" Genres ") ), wxHORIZONTAL );
+    wxStaticBoxSizer * MagGenresSizer = new wxStaticBoxSizer( new wxStaticBox( m_MagnatunePanel, wxID_ANY, wxString::Format(" %s ", _("Genres")) ), wxHORIZONTAL );
 
     wxArrayString MagnatuneGenres = m_Config->ReadAStr( CONFIG_KEY_MAGNATUNE_GENRES_GENRE, wxEmptyString, CONFIG_PATH_MAGNATUNE_GENRELIST );
     if( !MagnatuneGenres.Count() )
@@ -3362,7 +3362,7 @@ void guPrefDialog::OnLyricDisGenreSelected( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnLyricDisGenreAddBtnClick( wxCommandEvent &event )
 {
-    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Genre: " ), _( "Enter the genre to disable" ), wxEmptyString );
+    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, wxString::Format("%s: ", _("Genre")), _( "Enter the genre to disable" ), wxEmptyString );
     if( EntryDialog )
     {
         if( EntryDialog->ShowModal() == wxID_OK )

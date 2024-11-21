@@ -35,7 +35,7 @@ guRadioGenreEditor::guRadioGenreEditor( wxWindow * parent, guDbRadios * db ) :
 	MainSizer = new wxBoxSizer( wxVERTICAL );
 
 	wxStaticBoxSizer* ListBoxSizer;
-	ListBoxSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _(" Genres ") ), wxVERTICAL );
+	ListBoxSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, wxString::Format(" %s ", _("Genres")) ), wxVERTICAL );
 
     guShoutCast ShoutCast;
     m_RadioGenres = ShoutCast.GetGenres();

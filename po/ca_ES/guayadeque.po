@@ -778,8 +778,8 @@ msgid "Podcast Channel Editor"
 msgstr "Editor del canal Podcast"
 
 #: ChannelEditor.cpp:57
-msgid " Podcast Channel "
-msgstr "Canal Podcast "
+msgid "Podcast Channel"
+msgstr "Canal Podcast"
 
 #: ChannelEditor.cpp:99 PodcastsPanel.cpp:948
 msgid "Description:"
@@ -855,15 +855,6 @@ msgstr "Còpia de fitxers enllestida"
 #: CoverEdit.cpp:54
 msgid "Cover Editor"
 msgstr "Editor de caràtules"
-
-#: CoverEdit.cpp:71 LastFMPanel.cpp:1682 LyricsPanel.cpp:111 TrackEdit.cpp:148
-#: TrackEdit.cpp:373 TrackEdit.cpp:415 TrackEdit.cpp:474
-msgid "Artist:"
-msgstr "Artista:"
-
-#: CoverEdit.cpp:78 TrackEdit.cpp:172 TrackEdit.cpp:440 TrackEdit.cpp:496
-msgid "Album:"
-msgstr "Àlbum:"
 
 #: CoverEdit.cpp:85
 msgid "From:"
@@ -964,10 +955,6 @@ msgstr "Taxa de bits"
 #: DynamicPlayList.cpp:63 FileBrowser.cpp:764
 msgid "Size"
 msgstr "Mida"
-
-#: DynamicPlayList.cpp:64 SoListBox.cpp:415
-msgid "Disc"
-msgstr "Disc"
 
 #: DynamicPlayList.cpp:65
 msgid "Has Cover"
@@ -1078,7 +1065,7 @@ msgid "Name:"
 msgstr "Nom:"
 
 #: DynamicPlayList.cpp:467
-msgid " Current Filters "
+msgid "Current Filters"
 msgstr "Filtres actuals"
 
 #: DynamicPlayList.cpp:548
@@ -1302,7 +1289,7 @@ msgid "Select a folder"
 msgstr "Seleccionau una carpeta"
 
 #: ImportFiles.cpp:121
-msgid " Files "
+msgid "Files"
 msgstr "Fitxers"
 
 #: ImportFiles.cpp:228
@@ -1538,10 +1525,6 @@ msgstr "Copia la informació de l'esdeveniment al porta-retalls"
 #: LastFMPanel.cpp:1665 LyricsPanel.cpp:81
 msgid "Follow player"
 msgstr "Segeix reproductor"
-
-#: LastFMPanel.cpp:1691 LyricsPanel.cpp:121 TrackEdit.cpp:380
-msgid "Track:"
-msgstr "Pista:"
 
 #: LastFMPanel.cpp:1711
 msgid "Artist Info"
@@ -2421,7 +2404,7 @@ msgid "New Podcast Channel"
 msgstr "Nou canal Podcast"
 
 #: NewChannel.cpp:100
-msgid " Digital Podcast Directory "
+msgid "Digital Podcast Directory"
 msgstr "Carpeta Podcast digital"
 
 #: NewChannel.cpp:111
@@ -2589,10 +2572,6 @@ msgstr "On:"
 #: PlayListAppend.cpp:69
 msgid "Beginning"
 msgstr "Inici"
-
-#: PlayListAppend.cpp:75
-msgid "Tracks:"
-msgstr "Pistes:"
 
 #: PlayList.cpp:1523
 msgid "Empty Playlist"
@@ -2799,17 +2778,9 @@ msgstr "Nova llista"
 msgid "Delete the current selected tracks"
 msgstr "Elimina les pistes seleccionades"
 
-#: PodcastsPanel.cpp:928 TrackEdit.cpp:466
-msgid " Details "
-msgstr "Detalls"
-
 #: PodcastsPanel.cpp:979 RadioEditor.cpp:52
 msgid "Link:"
 msgstr "Enllaç:"
-
-#: PodcastsPanel.cpp:994 TrackEdit.cpp:183 TrackEdit.cpp:423 TrackEdit.cpp:520
-msgid "Title:"
-msgstr "Títol:"
 
 #: PodcastsPanel.cpp:1004
 msgid "Sumary:"
@@ -3538,10 +3509,6 @@ msgstr "Mesos"
 msgid "Only if played"
 msgstr "Només si s'ha reproduït "
 
-#: Preferences.cpp:1791 Preferences.cpp:1884 RadioGenreEditor.cpp:37
-msgid " Genres "
-msgstr "Gèneres"
-
 #: Preferences.cpp:1825 Preferences.cpp:1922
 msgid "Invert"
 msgstr "Inverteix"
@@ -3718,10 +3685,6 @@ msgstr "Editor de gènere de ràdio"
 #: RadioGenreEditor.cpp:48
 msgid "Other:"
 msgstr "Altres:"
-
-#: RadioPanel.cpp:330
-msgid "BitRate"
-msgstr "Taxa de bits"
 
 #: RadioPanel.cpp:331
 msgid "Listeners"
@@ -4044,7 +4007,7 @@ msgid "Songs Editor"
 msgstr "Editor de cançons"
 
 #: TrackEdit.cpp:102
-msgid " Songs "
+msgid "Songs"
 msgstr "Cançons"
 
 #: TrackEdit.cpp:110
@@ -4064,8 +4027,8 @@ msgid "Copy the album artist name to all the tracks you are editing"
 msgstr "Copia el nom de l'artista de l'àlbum a totes les pistes que edito"
 
 #: TrackEdit.cpp:160 TrackEdit.cpp:485
-msgid "A. Artist:"
-msgstr "A. Artista:"
+msgid "A. Artist"
+msgstr "A. Artista"
 
 #: TrackEdit.cpp:161
 msgid "shows the album artist of the track"
@@ -4083,25 +4046,17 @@ msgstr "Copia el títol a totes les pistes que edito"
 msgid "Copy the composer to all the tracks you are editing"
 msgstr "Copia el compositor a totes les pistes que edito"
 
-#: TrackEdit.cpp:195
-msgid "Composer:"
-msgstr "Compositor:"
-
 #: TrackEdit.cpp:203
 msgid "Copy the comment to all the tracks you are editing"
 msgstr "Copia el comentari a totes les pistes que edito"
-
-#: TrackEdit.cpp:207
-msgid "Comment:"
-msgstr "Cometari:"
 
 #: TrackEdit.cpp:216
 msgid "Copy the number to all the tracks you are editing"
 msgstr "Copia el número a totes les pistes que edito"
 
 #: TrackEdit.cpp:219 TrackEdit.cpp:543
-msgid "Number:"
-msgstr "Número:"
+msgid "Number"
+msgstr "Número"
 
 #: TrackEdit.cpp:233
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -4112,28 +4067,16 @@ msgid "Copy the disk to all the tracks you are editing"
 msgstr "Copia el disc a totes les pistes que edito"
 
 #: TrackEdit.cpp:243
-msgid "Disk:"
-msgstr "Disc:"
+msgid "Disk"
+msgstr "Disc"
 
 #: TrackEdit.cpp:253
 msgid "Copy the genre name to all songs you are editing"
 msgstr "Copia el gènere a totes les pistes que edito"
 
-#: TrackEdit.cpp:256
-msgid "Genre:"
-msgstr "Gènere:"
-
 #: TrackEdit.cpp:264
 msgid "Copy the year to all songs you are editing"
 msgstr "Copia l'any a totes les pistes que edito"
-
-#: TrackEdit.cpp:267
-msgid "Year:"
-msgstr "Any:"
-
-#: TrackEdit.cpp:283
-msgid "Rating:"
-msgstr "Valoració:"
 
 #: TrackEdit.cpp:332
 msgid "Add a picture from file to the current track"
@@ -4208,18 +4151,12 @@ msgid "Copy the number to the edited tracks"
 msgstr "Copia el número a les pistes editades"
 
 #: TrackEdit.cpp:919
-#, c-format
-msgid ""
-"File Type\t: %s\n"
-"Length\t: %s"
-msgstr "Tipus de fitxer\t: %s\nDurada\t: %s"
+msgid "File Type"
+msgstr "Tipus de fitxer"
 
 #: TrackEdit.cpp:923
-#, c-format
-msgid ""
-"BitRate\t: %u Kbps\n"
-"File Size\t: %s"
-msgstr "Flux de bits\t: %u Kbps\nMida del fitxer\t: %s"
+msgid "File Size"
+msgstr "Mida del fitxer"
 
 #: TrackEdit.cpp:1673
 #, c-format

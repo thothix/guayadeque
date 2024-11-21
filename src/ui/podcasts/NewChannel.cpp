@@ -97,7 +97,7 @@ guNewPodcastChannelSelector::guNewPodcastChannelSelector( wxWindow * parent ) :
 	DirectoryMainSizer = new wxBoxSizer( wxVERTICAL );
 
 	wxStaticBoxSizer* DirectoryStaticSizer;
-	DirectoryStaticSizer = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _( " Digital Podcast Directory " ) ), wxVERTICAL );
+	DirectoryStaticSizer = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY,  wxString::Format(" %s ", _("Digital Podcast Directory"))), wxVERTICAL );
 
 	wxBoxSizer* DirectoryTopSizer;
 	DirectoryTopSizer = new wxBoxSizer( wxHORIZONTAL );
