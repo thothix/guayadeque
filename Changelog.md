@@ -8,15 +8,16 @@ Unreleased (2024-11-xx)
 ------------------
 
 ### Features
-  * Detects the desktop manager and check/set the proper default commands
-    (KDE, xfce and Gnome by now) at Guayadeque initialization.
+  * Detects the desktop manager and check/set the proper default commands.
+    Gnome (including compatible DEs like Cinnamon and Mate), KDE, xfce and
+    LXQT are currently configured.
 
 ### Enhancements
   * Lyrics preferences: Change source embedded default to true.
   * Added translation to lyrics source and target options.
   * Updated French, Greek and Italian translations. Thanks to filochard.
   * Updated German translations. Thanks to martinkg.
-  * updated Portuguese and Brazilian Portuguese translations.
+  * Updated Portuguese and Brazilian Portuguese translations.
 
 0.6.1 (2024-11-12)
 ------------------
@@ -28,7 +29,8 @@ Unreleased (2024-11-xx)
       - Destination changed from /usr/share/appdata to /usr/share/metainfo.
       - Updated project_license to use SPDX-License-Identifier.
     * guayadeque.desktop renamed to org.guayadeque.guayadeque.desktop.
-    * guayadeque.png destination changed from "pixmaps/" to "icons/hicolor/64x64/apps/"
+    * guayadeque.png destination changed from "pixmaps/" to 
+      "icons/hicolor/64x64/apps/"
   * Added RADIOS.md for radios related information.
   * Added missing license headers.
   * Small UI adjustments (Songs Editor).
