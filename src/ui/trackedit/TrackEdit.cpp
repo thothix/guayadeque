@@ -609,7 +609,6 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     this->Layout();
 
     MainDetailPanel->SetScrollRate( 20, 20 );
-
     ButtonsSizerOK->SetDefault();
 
     // --------------------------------------------------------------------
@@ -830,7 +829,6 @@ void guTrackEditor::OnOKButton( wxCommandEvent& event )
 void guTrackEditor::OnSongListBoxSelected( wxCommandEvent& event )
 {
     m_NextItem = event.GetInt();
-
     m_SelectedTimer.Start( guTRACKEDIT_TIMER_SELECTION_TIME, wxTIMER_ONE_SHOT );
 }
 
@@ -870,7 +868,6 @@ void guTrackEditor::OnMoveUpBtnClick( wxCommandEvent &event )
 
     event.SetInt( m_CurItem );
     OnSongListBoxSelected( event );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -896,7 +893,6 @@ void guTrackEditor::OnMoveDownBtnClick( wxCommandEvent &event )
 
     event.SetInt( m_CurItem );
     OnSongListBoxSelected( event );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1025,29 +1021,19 @@ void guTrackEditor::WriteItemData( void )
         guTrack &Track = ( * m_Items )[ m_CurItem ];
 
         if( m_AlbumArtistChanged )
-        {
           SetTagField( Track.m_AlbumArtist, m_AlbumArtistComboBox->GetValue(), ChangedFlag );
-        }
 
         if( m_ArtistChanged )
-        {
           SetTagField( Track.m_ArtistName, m_ArtistComboBox->GetValue(), ChangedFlag );
-        }
 
         if( m_AlbumChanged )
-        {
           SetTagField( Track.m_AlbumName, m_AlbumComboBox->GetValue(), ChangedFlag );
-        }
 
         if( m_TitleTextCtrl->IsModified() )
-        {
           SetTagField( Track.m_SongName, m_TitleTextCtrl->GetValue(), ChangedFlag );
-        }
 
         if( m_CompChanged )
-        {
           SetTagField( Track.m_Composer, m_CompComboBox->GetValue(), ChangedFlag );
-        }
 
         if( m_NumberTextCtrl->IsModified() )
         {
@@ -1056,14 +1042,10 @@ void guTrackEditor::WriteItemData( void )
         }
 
         if( m_DiskTextCtrl->IsModified() )
-        {
           SetTagField( Track.m_Disk, m_DiskTextCtrl->GetValue(), ChangedFlag );
-        }
 
         if( m_GenreChanged )
-        {
           SetTagField( Track.m_GenreName, m_GenreComboBox->GetValue(), ChangedFlag );
-        }
 
         if( m_YearTextCtrl->IsModified() )
         {
@@ -1079,19 +1061,14 @@ void guTrackEditor::WriteItemData( void )
         }
 
         if( m_CommentText->IsModified() )
-        {
           SetTagField( Track.m_Comments, m_CommentText->GetValue(), ChangedFlag );
-        }
 
         if( m_LyricsTextCtrl->IsModified() )
-        {
           SetTagField( ( * m_Lyrics )[ m_CurItem ], m_LyricsTextCtrl->GetValue(), ChangedFlag, guTRACK_CHANGED_DATA_LYRICS );
-        }
 
-        ( * m_ChangedFlags )[ m_CurItem ] = ChangedFlag;
+        (* m_ChangedFlags)[m_CurItem] = ChangedFlag;
     }
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guTrackEditor::OnAACopyButtonClicked( wxCommandEvent& event )
@@ -1099,9 +1076,7 @@ void guTrackEditor::OnAACopyButtonClicked( wxCommandEvent& event )
     wxString CurData = m_AlbumArtistComboBox->GetValue();
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_AlbumArtist, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1110,9 +1085,7 @@ void guTrackEditor::OnArCopyButtonClicked( wxCommandEvent& event )
     wxString CurData = m_ArtistComboBox->GetValue();
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_ArtistName, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1121,9 +1094,7 @@ void guTrackEditor::OnAlCopyButtonClicked( wxCommandEvent& event )
     wxString CurData = m_AlbumComboBox->GetValue();
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_AlbumName, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1132,9 +1103,7 @@ void guTrackEditor::OnTiCopyButtonClicked( wxCommandEvent& event )
     wxString CurData = m_TitleTextCtrl->GetValue();
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_SongName, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1143,9 +1112,7 @@ void guTrackEditor::OnCoCopyButtonClicked( wxCommandEvent& event )
     wxString CurData = m_CompComboBox->GetValue();
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_Composer, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1153,9 +1120,7 @@ void guTrackEditor::OnNuOrderButtonClicked( wxCommandEvent& event )
 {
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_Number, ( index + 1 ), ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1165,9 +1130,7 @@ void guTrackEditor::OnNuCopyButtonClicked( wxCommandEvent& event )
     m_NumberTextCtrl->GetValue().ToLong( &CurData );
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_Number, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1176,9 +1139,7 @@ void guTrackEditor::OnDiCopyButtonClicked( wxCommandEvent& event )
     wxString CurData = m_DiskTextCtrl->GetValue();
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_Disk, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1187,9 +1148,7 @@ void guTrackEditor::OnGeCopyButtonClicked( wxCommandEvent& event )
     wxString CurData = m_GenreComboBox->GetValue();
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_GenreName, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1198,16 +1157,12 @@ void guTrackEditor::OnYeCopyButtonClicked( wxCommandEvent& event )
     long Year;
     wxString YearStr = m_YearTextCtrl->GetValue();
     if( YearStr.IsEmpty() || !YearStr.ToLong( &Year ) )
-    {
         Year = 0;
-    }
 
     //guLogMessage( wxT( "Year set to : %u" ), Year );
     int Count = m_Items->Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         SetTagField( ( * m_Items )[ Index ].m_Year, Year, ( * m_ChangedFlags )[ Index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1230,9 +1185,7 @@ void guTrackEditor::OnCommentCopyButtonClicked( wxCommandEvent& event )
     wxString CurData = m_CommentText->GetValue();
     int count = m_Items->Count();
     for( int index = 0; index < count; index++ )
-    {
         SetTagField( ( * m_Items )[ index ].m_Comments, CurData, ( * m_ChangedFlags )[ index ] );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1248,13 +1201,10 @@ void guTrackEditor::RefreshImage( void )
     wxImage Image;
     wxImage * pCurImage = NULL;
     if( ( m_CurItem >= 0 ) && ( pCurImage = ( * m_Images )[ m_CurItem ] ) )
-    {
         Image = * pCurImage;
-    }
     else
-    {
         Image = guImage( guIMAGE_INDEX_no_cover );
-    }
+
     Image.Rescale( 250, 250, wxIMAGE_QUALITY_HIGH );
     m_PictureBitmap->SetBitmap( Image );
 
@@ -1342,14 +1292,10 @@ void guTrackEditor::OnSaveImageClicked( wxCommandEvent &event )
 
     wxString CoverName;
     if( CurTrack->m_MediaViewer )
-    {
         CoverName = CurTrack->m_MediaViewer->CoverName();
-    }
 
     if( CoverName.IsEmpty() )
-    {
         CoverName = wxT( "cover" );
-    }
 
     CoverName += wxT( ".jpg" );
 
@@ -1368,13 +1314,9 @@ void guTrackEditor::OnSaveImageClicked( wxCommandEvent &event )
             wxString FileName = FileDialog->GetPath();
             //guLogMessage( wxT( "File Save to : '%s'" ), FileName.c_str() );
             if( FileName.EndsWith( wxT( ".png" ) ) )
-            {
                 pCurImage->SaveFile( FileName, wxBITMAP_TYPE_PNG );
-            }
             else
-            {
                 pCurImage->SaveFile( FileName, wxBITMAP_TYPE_JPEG );
-            }
         }
         FileDialog->Destroy();
     }
@@ -1504,9 +1446,7 @@ void guTrackEditor::ReloadMBAlbums()
         }
     }
     else
-    {
         wxMessageBox( wxT( "MusicBrainz: Could not get any track information." ), wxT( "MusicBrainz Error" ) );
-    }
 }
 
 void guTrackEditor::OnAcousticIdMBIdFound( const wxString &mbid )
@@ -1546,7 +1486,6 @@ void guTrackEditor::OnAcousticIdError( const int status )
     m_MBAddButton->Enable( true );
     wxSetCursor( wxNullCursor );
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guTrackEditor::UpdateMBrainzTrackInfo( void )
@@ -1627,7 +1566,7 @@ int guTrackEditor::CheckTracksLengths( guMBRecordingArray * mbtracks, guTrackArr
     for( int Index = 0; Index < Count; Index++ )
     {
         if( GetTrackLengthDiff( tracks->Item( Index ).m_Length,
-                             mbtracks->Item( Index ).m_Length ) > guMBRAINZ_MAX_TIME_DIFF )
+                                mbtracks->Item( Index ).m_Length ) > guMBRAINZ_MAX_TIME_DIFF )
         {
             RetVal++;
         }
@@ -1654,9 +1593,8 @@ void guTrackEditor::MBCheckCountAndLengths( void )
             InfoText += _( "Warning: The length of some edited tracks don't match" );
         }
         if( InfoText.IsEmpty() )
-        {
             InfoText += _( "Everything ok" );
-        }
+
         m_MBInfoStaticText->SetLabel( InfoText );
     }
 }
@@ -1870,9 +1808,7 @@ void guTrackEditor::OnSearchLyrics( wxCommandEvent &event )
         return;
 
     if( !m_LyricSearchEngine )
-    {
         m_LyricSearchEngine = ( ( guMainFrame * ) guMainFrame::GetMainFrame() )->LyricSearchEngine();
-    }
 
     if( m_LyricSearchEngine )
     {
@@ -1884,9 +1820,7 @@ void guTrackEditor::OnSearchLyrics( wxCommandEvent &event )
             m_LyricSearchContext = m_LyricSearchEngine->CreateContext( this, &Track, false );
         }
         if( m_LyricSearchContext )
-        {
             m_LyricSearchEngine->SearchStart( m_LyricSearchContext );
-        }
     }
 
     m_LyricReloadButton->Enable( false );
@@ -1942,9 +1876,7 @@ void inline guUpdateComboBoxEntries( wxComboBox * combobox, wxSortedArrayString 
         for( int Index = 0; Index < Count; Index++ )
         {
             if( itemlist[ Index ].Lower().Find( FilterText ) != wxNOT_FOUND )
-            {
                 SetItems.Add( itemlist[ Index ] );
-            }
         }
         combobox->Append( SetItems );
     }
@@ -1980,7 +1912,6 @@ void guTrackEditor::OnGenreChangedTimeout( wxTimerEvent &event )
 {
     guUpdateComboBoxEntries( m_GenreComboBox, m_Genres, m_CurItem, m_LastGenre );
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guTrackEditor::OnArtistTextChanged( wxCommandEvent &event )
@@ -2021,10 +1952,9 @@ void guTrackEditor::OnGenreTextChanged( wxCommandEvent &event )
 guTrack * guTrackEditor::GetTrack( const int index )
 {
     if( m_Items && ( index >= 0 ) && ( index < ( int ) m_Items->Count() ) )
-    {
         return &m_Items->Item( index );
-    }
-    return NULL;
+
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2046,9 +1976,7 @@ guTrackEditorGetComboDataThread::guTrackEditorGetComboDataThread( guTrackEditor 
 guTrackEditorGetComboDataThread::~guTrackEditorGetComboDataThread()
 {
     if( !TestDestroy() && m_TrackEditor )
-    {
         m_TrackEditor->m_GetComboDataThread = NULL;
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2089,7 +2017,6 @@ guTrackEditorGetComboDataThread::ExitCode guTrackEditorGetComboDataThread::Entry
     m_TrackEditor->UpdateAlbumArtists();
 
     //
-    //
     guListItems Albums;
     m_Db->GetAlbums( &Albums, true );
     if( TestDestroy() )
@@ -2100,7 +2027,6 @@ guTrackEditorGetComboDataThread::ExitCode guTrackEditorGetComboDataThread::Entry
     m_TrackEditor->UpdateAlbums();
 
     //
-    //
     guListItems Composers;
     m_Db->GetComposers( &Composers, true );
     if( TestDestroy() )
@@ -2110,7 +2036,6 @@ guTrackEditorGetComboDataThread::ExitCode guTrackEditorGetComboDataThread::Entry
         return 0;
     m_TrackEditor->UpdateComposers();
 
-    //
     //
     guListItems Genres;
     m_Db->GetGenres( &Genres, true );
@@ -2125,5 +2050,3 @@ guTrackEditorGetComboDataThread::ExitCode guTrackEditorGetComboDataThread::Entry
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

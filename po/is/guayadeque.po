@@ -2252,18 +2252,13 @@ msgstr "Notað:"
 msgid "%s free of %s"
 msgstr "%s frítt af %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Skráarnafn"
+
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:751
 msgid "Name Pattern:"
 msgstr "Nafn Mynstur:"
-
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:756
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr "{a}\t: Flytjandi\t\t\t{aa} : Plata Flytjandi\n{b}\t: Plata\t\t\t{d}\t : Diskur\n{f}\t: Skráarnafn\t\t{g}\t : Flokkur\n{n}\t: Númer\t\t\t{t}\t : Titill\n{y}\t: Ár"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:761
 msgid "Audio Folders:"

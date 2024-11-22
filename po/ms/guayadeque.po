@@ -2250,18 +2250,13 @@ msgstr "Digunakan:"
 msgid "%s free of %s"
 msgstr "%s bebas dari %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Nama Fail"
+
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:751
 msgid "Name Pattern:"
 msgstr "Pola Nama:"
-
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:756
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr "{a}\t: Artis\t\t\t{aa} : Artis Album\n{b}\t: Album\t\t\t{d}\t : Cakera\n{f}\t: Nama Fail\t\t{g}\t : Genre\n{n}\t: Bilangan\t\t\t{t}\t : Tajuk\n{y}\t: Tahun"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:761
 msgid "Audio Folders:"

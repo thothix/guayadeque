@@ -2880,18 +2880,13 @@ msgstr "Použité:"
 msgid "%s free of %s"
 msgstr "%s voľné z %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Meno súboru"
+
 #: PortableMedia.cpp:1048
 msgid "Name Pattern:"
 msgstr "Vzor názvu:"
-
-#: PortableMedia.cpp:1053
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr "{a}\t: Umelec\t\t{aa}\t: Umelec albumu\n{b}\t: Album\t\t\t{d}\t: Disk\n{f}\t: Meno súboru\t\t{g}\t: Žáner\n{n}\t: Číslo\t\t\t{t}\t: Názov\n{y}\t: Rok"
 
 #: PortableMedia.cpp:1058
 msgid "Audio Folders:"
