@@ -1620,7 +1620,7 @@ msgid "Show CD cover frame in the player"
 msgstr "Tunjuk bingkai kulit hadapan CD dalam pemain"
 
 #: ui/preferences/Preferences.cpp:563
-msgid " On Close "
+msgid "On Close"
 msgstr "Ketika Ditutup"
 
 #: ui/preferences/Preferences.cpp:565
@@ -1636,11 +1636,11 @@ msgid "Ask confirmation on exit"
 msgstr "Tanya pengesahan ketika keluar"
 
 #: ui/preferences/Preferences.cpp:665
-msgid " Paths "
+msgid "Paths"
 msgstr "Laluan"
 
 #: ui/preferences/Preferences.cpp:685
-msgid " Words to detect covers "
+msgid "Words to detect covers"
 msgstr "Perkataan yang mengesan kulit hadapan"
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
@@ -1772,7 +1772,7 @@ msgid "tracks"
 msgstr "trek"
 
 #: ui/preferences/Preferences.cpp:945
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr "Pengesan senyap"
 
 #: ui/preferences/Preferences.cpp:950
@@ -1788,7 +1788,7 @@ msgid "seconds"
 msgstr "saat"
 
 #: ui/preferences/Preferences.cpp:987
-msgid " Output device "
+msgid "Output device"
 msgstr "Peranti output"
 
 #: ui/preferences/Preferences.cpp:990
@@ -1831,10 +1831,6 @@ msgstr "Permulaan resap-masuk:"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Pilih volum yang manakah bagi resap-hilang dan resap-masuk bermula"
 
-#: ui/preferences/Preferences.cpp:1137
-msgid " Record "
-msgstr "Rakam"
-
 #: ui/preferences/Preferences.cpp:1139
 msgid "Enable recording"
 msgstr "Dayakan rakaman"
@@ -1866,8 +1862,8 @@ msgid "Delete tracks shorter than"
 msgstr "Padam trek yang pendek dari"
 
 #: ui/preferences/Preferences.cpp:1246
-msgid " Last.fm audioscrobble "
-msgstr " Audioscrobble Last.fm "
+msgid "Last.fm audioscrobble"
+msgstr "Audioscrobble Last.fm"
 
 #: ui/preferences/Preferences.cpp:1248 ui/preferences/Preferences.cpp:1284
 msgid "Enabled"
@@ -1884,12 +1880,8 @@ msgid "Password:"
 msgstr "Kata Laluan:"
 
 #: ui/preferences/Preferences.cpp:1282
-msgid " Libre.fm audioscrobble "
-msgstr " Audioscrobble Libre.fm "
-
-#: ui/preferences/Preferences.cpp:1346
-msgid " Sources "
-msgstr "Sumber"
+msgid "Libre.fm audioscrobble"
+msgstr "Audioscrobble Libre.fm"
 
 #: ui/preferences/Preferences.cpp:1392
 msgid "Targets"
@@ -1900,12 +1892,8 @@ msgid "Disabled Genres"
 msgstr "Lumpuhkan Genre"
 
 #: ui/preferences/Preferences.cpp:1456
-msgid " Font "
+msgid "Font"
 msgstr "Fon"
-
-#: ui/preferences/Preferences.cpp:1458
-msgid "Font:"
-msgstr "Fon:"
 
 #: ui/preferences/Preferences.cpp:1470
 msgid "Align:"
@@ -1924,7 +1912,7 @@ msgid "Right"
 msgstr "Kanan"
 
 #: ui/preferences/Preferences.cpp:1522
-msgid " Proxy "
+msgid "Proxy"
 msgstr "Proksi"
 
 #: ui/preferences/Preferences.cpp:1524
@@ -1939,10 +1927,6 @@ msgstr "Nama hos:"
 msgid "Port:"
 msgstr "Port:"
 
-#: ui/preferences/Preferences.cpp:1578
-msgid " Filters "
-msgstr "Penapis"
-
 #: ui/preferences/Preferences.cpp:1613
 msgid "Browser command"
 msgstr "Perintah pelayar"
@@ -1954,10 +1938,6 @@ msgstr "Kadar bit minimum radio yang dibenarkan"
 #: ui/preferences/Preferences.cpp:1628
 msgid "Player online buffer size"
 msgstr "Saiz penimbal dalam talian pemain"
-
-#: ui/preferences/Preferences.cpp:1665
-msgid " Podcasts "
-msgstr "Audio Siar"
 
 #: ui/preferences/Preferences.cpp:1669
 msgid "Destination directory:"
@@ -2051,16 +2031,12 @@ msgstr "Muat turun sebagai :"
 msgid "Download Page"
 msgstr "Laman Muat Turun"
 
-#: ui/preferences/Preferences.cpp:1992
-msgid " Links "
-msgstr "Pautan"
-
 #: ui/preferences/Preferences.cpp:2047
 msgid "URL:"
 msgstr "URL:"
 
 #: ui/preferences/Preferences.cpp:2072
-msgid " Define URLs using "
+msgid "Define URLs using"
 msgstr "Takrif penggunaan URL"
 
 #: ui/preferences/Preferences.cpp:2078
@@ -2070,7 +2046,7 @@ msgid ""
 msgstr "Kod bahasa 2 abjad\nTeks untuk gelintar"
 
 #: ui/preferences/Preferences.cpp:2193
-msgid " Define commands using "
+msgid "Define commands using"
 msgstr "Takrif penggunaan perintah"
 
 #: ui/preferences/Preferences.cpp:2199
@@ -2081,12 +2057,12 @@ msgid ""
 msgstr "Laluan album\nLaluan fail kulit hadapan album\nLaluan trek"
 
 #: ui/preferences/Preferences.cpp:2236
-msgid " Patterns "
+msgid "Patterns"
 msgstr "Pola"
 
 #: ui/preferences/Preferences.cpp:2307 ui/filebrowser/FileRenamer.cpp:77
-msgid "Pattern:"
-msgstr "Pola:"
+msgid "Pattern"
+msgstr "Pola"
 
 #: ui/preferences/Preferences.cpp:2332
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:710
@@ -2126,7 +2102,7 @@ msgid ""
 msgstr "Indeks\nBilangan\nTajuk\nTahun"
 
 #: ui/preferences/Preferences.cpp:2443
-msgid " Accelerators "
+msgid "Accelerators"
 msgstr "Pemecut"
 
 #: ui/preferences/Preferences.cpp:2448
@@ -3525,19 +3501,13 @@ msgstr "Nama Semula Fail"
 msgid "Names Preview"
 msgstr "Pratonton Nama"
 
-#: ui/filebrowser/FileRenamer.cpp:85
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Bendera pola:\n{g} : Genre\n{a} : Artis\n{aa}: Album Artis\n{A} : {aa} atau {a}\n{b} : Album\n{t} : Tajuk\n{n} : Nombor\n{y} : Tahun\n{d} : Cakera"
+#: FileRenamer.cpp:82
+msgid "Pattern flags"
+msgstr "Bendera pola"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "atau"
 
 #: ui/filebrowser/FileBrowser.cpp:233 ui/filebrowser/FileBrowser.cpp:603
 msgid "See used locations"

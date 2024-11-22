@@ -1520,7 +1520,7 @@ msgstr ""
 
 #: ui/preferences/Preferences.cpp:283 onlinelinks/OnlineLinks.cpp:74
 msgid "Links"
-msgstr ""
+msgstr "Nuorodos"
 
 #: ui/preferences/Preferences.cpp:288
 #: ui/mediaviewer/treeview/TreePanel.cpp:351
@@ -1619,8 +1619,8 @@ msgid "Show CD cover frame in the player"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:563
-msgid " On Close "
-msgstr " Užveriant programą "
+msgid "On Close"
+msgstr "Užveriant programą"
 
 #: ui/preferences/Preferences.cpp:565
 msgid "Save playlist on close"
@@ -1635,12 +1635,12 @@ msgid "Ask confirmation on exit"
 msgstr "Išeinant, klausti patvirtinimo"
 
 #: ui/preferences/Preferences.cpp:665
-msgid " Paths "
-msgstr " Keliai "
+msgid "Paths"
+msgstr "Keliai"
 
 #: ui/preferences/Preferences.cpp:685
-msgid " Words to detect covers "
-msgstr " Žodžiai, naudojami viršelių aptikimui "
+msgid "Words to detect covers"
+msgstr "Žodžiai, naudojami viršelių aptikimui"
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
 msgid "Options"
@@ -1771,7 +1771,7 @@ msgid "tracks"
 msgstr "takeliai"
 
 #: ui/preferences/Preferences.cpp:945
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:950
@@ -1787,8 +1787,8 @@ msgid "seconds"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:987
-msgid " Output device "
-msgstr " Išvesties įrenginys "
+msgid "Output device"
+msgstr "Išvesties įrenginys"
 
 #: ui/preferences/Preferences.cpp:990
 msgid "Automatic"
@@ -1830,10 +1830,6 @@ msgstr ""
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1137
-msgid " Record "
-msgstr ""
-
 #: ui/preferences/Preferences.cpp:1139
 msgid "Enable recording"
 msgstr ""
@@ -1865,7 +1861,7 @@ msgid "Delete tracks shorter than"
 msgstr "Ištrinti takelius, kurie trumpesni nei"
 
 #: ui/preferences/Preferences.cpp:1246
-msgid " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1248 ui/preferences/Preferences.cpp:1284
@@ -1883,12 +1879,8 @@ msgid "Password:"
 msgstr "Slaptažodis:"
 
 #: ui/preferences/Preferences.cpp:1282
-msgid " Libre.fm audioscrobble "
+msgid "Libre.fm audioscrobble"
 msgstr ""
-
-#: ui/preferences/Preferences.cpp:1346
-msgid " Sources "
-msgstr " Šaltiniai "
 
 #: ui/preferences/Preferences.cpp:1392
 msgid "Targets"
@@ -1899,12 +1891,8 @@ msgid "Disabled Genres"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1456
-msgid " Font "
-msgstr " Šriftas "
-
-#: ui/preferences/Preferences.cpp:1458
-msgid "Font:"
-msgstr "Šriftas:"
+msgid "Font"
+msgstr "Šriftas"
 
 #: ui/preferences/Preferences.cpp:1470
 msgid "Align:"
@@ -1923,7 +1911,7 @@ msgid "Right"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1522
-msgid " Proxy "
+msgid "Proxy"
 msgstr "Įgaliotasis serveris"
 
 #: ui/preferences/Preferences.cpp:1524
@@ -1938,10 +1926,6 @@ msgstr "Serveris:"
 msgid "Port:"
 msgstr "Prievadas:"
 
-#: ui/preferences/Preferences.cpp:1578
-msgid " Filters "
-msgstr " Filtrai "
-
 #: ui/preferences/Preferences.cpp:1613
 msgid "Browser command"
 msgstr "Naršyklės komanda"
@@ -1953,10 +1937,6 @@ msgstr ""
 #: ui/preferences/Preferences.cpp:1628
 msgid "Player online buffer size"
 msgstr "Grotuvo internetinio buferio dydis"
-
-#: ui/preferences/Preferences.cpp:1665
-msgid " Podcasts "
-msgstr " Tinklalaidės "
 
 #: ui/preferences/Preferences.cpp:1669
 msgid "Destination directory:"
@@ -2050,17 +2030,13 @@ msgstr "Atsisiųsti kaip :"
 msgid "Download Page"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1992
-msgid " Links "
-msgstr " Nuorodos "
-
 #: ui/preferences/Preferences.cpp:2047
 msgid "URL:"
 msgstr "URL:"
 
 #: ui/preferences/Preferences.cpp:2072
-msgid " Define URLs using "
-msgstr " Apibrėžkite URL, naudodami "
+msgid "Define URLs using"
+msgstr " Apibrėžkite URL, naudodami"
 
 #: ui/preferences/Preferences.cpp:2078
 msgid ""
@@ -2073,8 +2049,8 @@ msgid "Command:"
 msgstr "Komanda:"
 
 #: ui/preferences/Preferences.cpp:2193
-msgid " Define commands using "
-msgstr " Apibrėžkite komandas, naudodami "
+msgid "Define commands using"
+msgstr "Apibrėžkite komandas, naudodami"
 
 #: ui/preferences/Preferences.cpp:2199
 msgid ""
@@ -2084,12 +2060,12 @@ msgid ""
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:2236
-msgid " Patterns "
-msgstr " Šablonai "
+msgid "Patterns"
+msgstr "Šablonai"
 
 #: ui/preferences/Preferences.cpp:2307 ui/filebrowser/FileRenamer.cpp:77
-msgid "Pattern:"
-msgstr "Šablonas:"
+msgid "Pattern"
+msgstr "Šablonas"
 
 #: ui/preferences/Preferences.cpp:2332
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:710
@@ -2129,7 +2105,7 @@ msgid ""
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:2443
-msgid " Accelerators "
+msgid "Accelerators"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:2448
@@ -3528,19 +3504,13 @@ msgstr "Pervadinti failus"
 msgid "Names Preview"
 msgstr "Pavadinimų peržiūra"
 
-#: ui/filebrowser/FileRenamer.cpp:85
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Šablono vėliavėlės:\n{g} : Žanras\n{a} : Atlikėjas\n{aa}: Albumo atlikėjas\n{A} : {aa} arba {a}\n{b} : Albumas\n{t} : Pavadinimas\n{n} : Numeris\n{y} : Metai\n{d} : Diskas"
+#: FileRenamer.cpp:82
+msgid "Pattern flags"
+msgstr "Šablono vėliavėlės"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "arba"
 
 #: ui/filebrowser/FileBrowser.cpp:233 ui/filebrowser/FileBrowser.cpp:603
 msgid "See used locations"
@@ -4427,7 +4397,7 @@ msgstr ""
 
 #: ui/MainFrame.cpp:3323
 msgid "podcasts"
-msgstr ""
+msgstr "tinklalaidės"
 
 #: ui/MainFrame.cpp:3338
 msgid "dir"

@@ -1263,32 +1263,16 @@ msgid "Names Preview"
 msgstr "Aperçu des noms"
 
 #: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2252
-msgid "Pattern:"
-msgstr "Modèle:"
+msgid "Pattern"
+msgstr "Modèle"
 
-#: ui/filebrowser/FileRenamer.cpp:83
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr ""
-"Modèle de balises:\n"
-"{g} : Genre\n"
-"{a} : Artiste\n"
-"{aa}: Artiste de l'Album\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Titre\n"
-"{n} : Numéro\n"
-"{y} : Année\n"
-"{d} : Disque"
+#: FileRenamer.cpp:82
+msgid "Pattern flags"
+msgstr "Modèle de balises"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "ou"
 
 #: ui/filebrowser/FileBrowser.cpp:224 ui/filebrowser/FileBrowser.cpp:583
 msgid "See used locations"
@@ -3917,8 +3901,8 @@ msgid "Show CD cover frame in the cover editor"
 msgstr "Afficher le cadre de pochette dans l'éditeur de pochette"
 
 #: ui/preferences/Preferences.cpp:551
-msgid " On Close "
-msgstr " A la Fermeture "
+msgid "On Close"
+msgstr "A la Fermeture"
 
 #: ui/preferences/Preferences.cpp:553
 msgid "Save playlist on close"
@@ -3933,12 +3917,12 @@ msgid "Ask confirmation on exit"
 msgstr "Demander la confirmation de la sortie du programme"
 
 #: ui/preferences/Preferences.cpp:654
-msgid " Paths "
-msgstr " Emplacements "
+msgid "Paths"
+msgstr "Emplacements"
 
 #: ui/preferences/Preferences.cpp:674
-msgid " Words to detect covers "
-msgstr " Mots-clés pour trouver les pochettes "
+msgid "Words to detect covers"
+msgstr "Mots-clés pour trouver les pochettes"
 
 #: ui/preferences/Preferences.cpp:703 ui/preferences/Preferences.cpp:2238
 msgid "Options"
@@ -4037,8 +4021,8 @@ msgid "artists or"
 msgstr "artistes ou"
 
 #: ui/preferences/Preferences.cpp:933
-msgid " Silence detector "
-msgstr " Détecteur de silence "
+msgid "Silence detector"
+msgstr "Détecteur de silence"
 
 #: ui/preferences/Preferences.cpp:938
 msgid "Skip at"
@@ -4053,8 +4037,8 @@ msgid "seconds"
 msgstr "secondes"
 
 #: ui/preferences/Preferences.cpp:975
-msgid " Output device "
-msgstr " Périphérique de sortie "
+msgid "Output device"
+msgstr "Périphérique de sortie"
 
 #: ui/preferences/Preferences.cpp:978
 msgid "Automatic"
@@ -4100,10 +4084,6 @@ msgstr "Démarrage fondu entrant:"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Sélectionne à quel volume de fondu sortant le fondu entrant doit démarrer"
 
-#: ui/preferences/Preferences.cpp:1117
-msgid " Record "
-msgstr " Enregistrer "
-
 #: ui/preferences/Preferences.cpp:1119
 msgid "Enable recording"
 msgstr "Activer l'enregistrement"
@@ -4145,8 +4125,8 @@ msgid "Delete tracks shorter than"
 msgstr "Supprimer les morceaux d'une durée inférieure à"
 
 #: ui/preferences/Preferences.cpp:1222
-msgid " Last.fm audioscrobble "
-msgstr " Scrobbler Audio Last.fm "
+msgid "Last.fm audioscrobble"
+msgstr "Scrobbler Audio Last.fm"
 
 #: ui/preferences/Preferences.cpp:1224 ui/preferences/Preferences.cpp:1260
 msgid "Enabled"
@@ -4163,12 +4143,8 @@ msgid "Password:"
 msgstr "Mot de passe :"
 
 #: ui/preferences/Preferences.cpp:1258
-msgid " Libre.fm audioscrobble "
-msgstr " Scrobbler Audio Libre.fm "
-
-#: ui/preferences/Preferences.cpp:1318
-msgid " Sources "
-msgstr " Sources "
+msgid "Libre.fm audioscrobble"
+msgstr "Scrobbler Audio Libre.fm"
 
 #: ui/preferences/Preferences.cpp:1363
 msgid "Targets"
@@ -4179,12 +4155,8 @@ msgid " Disabled Genres "
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1426
-msgid " Font "
-msgstr " Police "
-
-#: ui/preferences/Preferences.cpp:1428
-msgid "Font:"
-msgstr "Police :"
+msgid "Font"
+msgstr "Police"
 
 #: ui/preferences/Preferences.cpp:1440
 msgid "Align:"
@@ -4195,8 +4167,8 @@ msgid "Center"
 msgstr "Centre"
 
 #: ui/preferences/Preferences.cpp:1491
-msgid " Proxy "
-msgstr " Proxy "
+msgid "Proxy"
+msgstr "Proxy"
 
 #: ui/preferences/Preferences.cpp:1493
 msgid "Proxy Enabled"
@@ -4210,10 +4182,6 @@ msgstr "Hostname:"
 msgid "Port:"
 msgstr "Port:"
 
-#: ui/preferences/Preferences.cpp:1546
-msgid " Filters "
-msgstr " Filtres "
-
 #: ui/preferences/Preferences.cpp:1581
 msgid "Browser command"
 msgstr "Commande du navigateur Internet"
@@ -4225,10 +4193,6 @@ msgstr "Débit minimum souhaité pour les radios"
 #: ui/preferences/Preferences.cpp:1596
 msgid "Player online buffer size"
 msgstr "Taille de cache du Lecteur en ligne"
-
-#: ui/preferences/Preferences.cpp:1630
-msgid " Podcasts "
-msgstr " Podcasts "
 
 #: ui/preferences/Preferences.cpp:1634
 msgid "Destination directory:"
@@ -4322,17 +4286,13 @@ msgstr "Télécharger en :"
 msgid "Download Page"
 msgstr "Page de téléchargement"
 
-#: ui/preferences/Preferences.cpp:1955
-msgid " Links "
-msgstr " Liens "
-
 #: ui/preferences/Preferences.cpp:2009
 msgid "URL:"
 msgstr "URL :"
 
 #: ui/preferences/Preferences.cpp:2034
-msgid " Define URLs using "
-msgstr " Définir les URLs avec "
+msgid "Define URLs using"
+msgstr "Définir les URLs avec"
 
 #: ui/preferences/Preferences.cpp:2040
 msgid ""
@@ -4343,8 +4303,8 @@ msgstr ""
 "Texte à rechercher"
 
 #: ui/preferences/Preferences.cpp:2143
-msgid " Define commands using "
-msgstr " Définir les commandes avec "
+msgid "Define commands using"
+msgstr "Définir les commandes avec"
 
 #: ui/preferences/Preferences.cpp:2149
 msgid ""
@@ -4357,8 +4317,8 @@ msgstr ""
 "Emplacement du Morceau"
 
 #: ui/preferences/Preferences.cpp:2182
-msgid " Patterns "
-msgstr " Modèles "
+msgid "Patterns"
+msgstr "Modèles"
 
 #: ui/preferences/Preferences.cpp:2293
 msgid "Remove source files"
@@ -4405,8 +4365,8 @@ msgstr ""
 "Année"
 
 #: ui/preferences/Preferences.cpp:2383
-msgid " Accelerators "
-msgstr " Raccourcis "
+msgid "Accelerators"
+msgstr "Raccourcis"
 
 #: ui/preferences/Preferences.cpp:2388
 msgid "Action"

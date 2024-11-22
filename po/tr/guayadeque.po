@@ -1248,22 +1248,16 @@ msgid "Names Preview"
 msgstr "İsim Önizleme"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
-msgstr "Şablon:"
+msgid "Pattern"
+msgstr "Şablon"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Şablon kısaltmaları:\n{g} : Tür\n{a} : Sanatçı\n{aa}: Albüm Sanatçısı\n{A} : {aa} ya da {a}⏎\n{b} : albüm\n{t} : Başlık\n{n} : Numara\n{y} : Yıl\n{d} : Disk"
+msgid "Pattern flags"
+msgstr "Şablon kısaltmaları"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "ya da"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -3164,8 +3158,8 @@ msgid "Show CD cover frame in the player"
 msgstr "Albüm kapağı çerçevesini göster"
 
 #: Preferences.cpp:687
-msgid " On Close "
-msgstr " Kapanışta "
+msgid "On Close"
+msgstr "Kapanışta"
 
 #: Preferences.cpp:689
 msgid "Save playlist on close"
@@ -3180,12 +3174,12 @@ msgid "Ask confirmation on exit"
 msgstr "Çıkışta onay iste"
 
 #: Preferences.cpp:788
-msgid " Paths "
-msgstr " Yollar "
+msgid "Paths"
+msgstr "Yollar"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
-msgstr " Albüm kapağı aranırken bakılacak kelimeler "
+msgid "Words to detect covers"
+msgstr "Albüm kapağı aranırken bakılacak kelimeler"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
 msgid "Options"
@@ -3268,7 +3262,7 @@ msgid "artists or"
 msgstr "sanatçıyı veya"
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr "Sessizlik detektörü"
 
 #: Preferences.cpp:1065
@@ -3284,7 +3278,7 @@ msgid "seconds"
 msgstr "saniye"
 
 #: Preferences.cpp:1102
-msgid " Output device "
+msgid "Output device"
 msgstr "Çıktı aygıtı"
 
 #: Preferences.cpp:1105
@@ -3327,10 +3321,6 @@ msgstr "Fade-in başlangıcı:"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Başlarken ses kuvvetinin hangisinde  olduğunu açılması kapatılmasında seçin"
 
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr " Kayıt "
-
 #: Preferences.cpp:1254
 msgid "Enable recording"
 msgstr "Kaydetmeyi etkinleştir"
@@ -3372,8 +3362,8 @@ msgid "Delete tracks shorter than"
 msgstr "'dan kısa parçayı sil"
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
-msgstr " Last.fm Müzik Skroplama "
+msgid "Last.fm audioscrobble"
+msgstr "Last.fm Müzik Skroplama"
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
 msgid "Username:"
@@ -3384,28 +3374,20 @@ msgid "Password:"
 msgstr "Parola:"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
-msgstr " Libre.fm Müzik Skroplama "
+msgid "Libre.fm audioscrobble"
+msgstr "Libre.fm Müzik Skroplama"
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
 msgstr "Guayadeque Last.fm kullanıcı gruplarına katıl"
-
-#: Preferences.cpp:1467
-msgid " Sources "
-msgstr " Kaynaklar "
 
 #: Preferences.cpp:1511
 msgid "Targets"
 msgstr "Hedefler"
 
 #: Preferences.cpp:1551
-msgid " Font "
-msgstr " Yazı Tipi "
-
-#: Preferences.cpp:1553
-msgid "Font:"
-msgstr "Yazı Tipi:"
+msgid "Font"
+msgstr "Yazı Tipi"
 
 #: Preferences.cpp:1565
 msgid "Align:"
@@ -3414,10 +3396,6 @@ msgstr "Hizala:"
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr "Ortala"
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr " Filtreler "
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3430,10 +3408,6 @@ msgstr "Radyo için izin verilen en düşük bit oranı"
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
 msgstr "Player online yüklenme boyutu"
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
-msgstr " Podcastler "
 
 #: Preferences.cpp:1717
 msgid "Destination directory:"
@@ -3527,17 +3501,13 @@ msgstr "İndirme biçimi:"
 msgid "Download Page"
 msgstr "İndirme Sayfası"
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr " Bağlantılar "
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr "URL:"
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
-msgstr " Kullanılacak URL'leri tanımla "
+msgid "Define URLs using"
+msgstr "Kullanılacak URL'leri tanımla"
 
 #: Preferences.cpp:2129
 msgid ""
@@ -3546,8 +3516,8 @@ msgid ""
 msgstr "2 harfli dil kodu\nArama metni"
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
-msgstr " Kullanılacak komutları tanımla "
+msgid "Define commands using"
+msgstr "Kullanılacak komutları tanımla"
 
 #: Preferences.cpp:2250
 msgid ""
@@ -3557,7 +3527,7 @@ msgid ""
 msgstr "Albüm yolu\nAlbüm kapağı dosyası yolu\nParça yolu"
 
 #: Preferences.cpp:2287
-msgid " Patterns "
+msgid "Patterns"
 msgstr "Şablonlar"
 
 #: Preferences.cpp:2399
@@ -3593,7 +3563,7 @@ msgid ""
 msgstr "İçerik\nNumara\nBaşlık\nYıl"
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
+msgid "Accelerators"
 msgstr "Hızlandırıcılar"
 
 #: Preferences.cpp:2499

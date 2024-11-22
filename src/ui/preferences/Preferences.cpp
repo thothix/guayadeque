@@ -545,7 +545,7 @@ void guPrefDialog::BuildGeneralPage()
 
 	GenMainSizer->Add( BehaviSizer, 0, wxEXPAND|wxALL, 5 );
 
-	wxStaticBoxSizer * OnCloseSizer = new wxStaticBoxSizer( new wxStaticBox( m_GenPanel, wxID_ANY, _(" On Close ") ), wxVERTICAL );
+	wxStaticBoxSizer * OnCloseSizer = new wxStaticBoxSizer(new wxStaticBox(m_GenPanel, wxID_ANY, wxString::Format(" %s ", _("On Close"))), wxVERTICAL);
 
 	m_SavePlayListChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Save playlist on close"), wxDefaultPosition, wxDefaultSize, 0 );
     m_SavePlayListChkBox->SetValue( m_Config->ReadBool( wxT( "SaveOnClose" ), true, wxT( "playlist" ) ) );
@@ -648,7 +648,7 @@ void guPrefDialog::BuildLibraryPage()
 	m_LibOptSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, wxEmptyString ), wxVERTICAL );
 
     // Path
-	m_LibOptPathSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, _(" Paths ") ), wxHORIZONTAL );
+	m_LibOptPathSizer = new wxStaticBoxSizer(new wxStaticBox(m_LibOptPanel, wxID_ANY, wxString::Format(" %s ", _("Paths"))), wxHORIZONTAL);
 	m_LibPathListBox = new wxListBox( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_MULTIPLE );
 	m_LibPathListBox->Enable( false );
 	m_LibOptPathSizer->Add( m_LibPathListBox, 1, wxEXPAND|wxALL, 5 );
@@ -668,7 +668,7 @@ void guPrefDialog::BuildLibraryPage()
 	m_LibOptSizer->Add( m_LibOptPathSizer, 1, wxEXPAND|wxTOP|wxBOTTOM, 5 );
 
     // Covers
-	wxStaticBoxSizer* LibOptCoversSizer = new wxStaticBoxSizer( new wxStaticBox( m_LibOptPanel, wxID_ANY, _(" Words to detect covers ") ), wxHORIZONTAL );
+	wxStaticBoxSizer* LibOptCoversSizer = new wxStaticBoxSizer(new wxStaticBox(m_LibOptPanel, wxID_ANY, wxString::Format(" %s ", _("Words to detect covers"))), wxHORIZONTAL);
 
 	m_LibCoverListBox = new wxListBox( m_LibOptPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE );
 	m_LibCoverListBox->Enable( false );
@@ -927,7 +927,7 @@ void guPrefDialog::BuildPlaybackPage()
 
 	PlayMainSizer->Add( SmartPlayListSizer, 0, wxALL|wxEXPAND, 5 );
 
-	wxStaticBoxSizer * PlaySilenceSizer = new wxStaticBoxSizer( new wxStaticBox( m_PlayPanel, wxID_ANY, _(" Silence detector ") ), wxVERTICAL );
+	wxStaticBoxSizer * PlaySilenceSizer = new wxStaticBoxSizer(new wxStaticBox(m_PlayPanel, wxID_ANY, wxString::Format(" %s ", _("Silence detector"))), wxVERTICAL);
 
 	wxBoxSizer * PlayLevelSizer = new wxBoxSizer( wxHORIZONTAL );
 
@@ -969,7 +969,7 @@ void guPrefDialog::BuildPlaybackPage()
 
 	PlayMainSizer->Add( PlaySilenceSizer, 0, wxEXPAND|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
 
-	wxStaticBoxSizer* PlayOutDeviceSizer = new wxStaticBoxSizer( new wxStaticBox( m_PlayPanel, wxID_ANY, _(" Output device ") ), wxHORIZONTAL );
+	wxStaticBoxSizer* PlayOutDeviceSizer = new wxStaticBoxSizer(new wxStaticBox(m_PlayPanel, wxID_ANY, wxString::Format(" %s ", _("Output device"))), wxHORIZONTAL);
 
     wxArrayString OutputDeviceOptions;
     OutputDeviceOptions.Add( _( "Automatic" ) );
@@ -1111,7 +1111,7 @@ void guPrefDialog::BuildRecordPage()
     //
 	wxBoxSizer * RecMainSizer = new wxBoxSizer( wxVERTICAL );
 
-	wxStaticBoxSizer * RecordSizer = new wxStaticBoxSizer( new wxStaticBox( m_RecordPanel, wxID_ANY, _(" Record ") ), wxVERTICAL );
+	wxStaticBoxSizer * RecordSizer = new wxStaticBoxSizer(new wxStaticBox(m_RecordPanel, wxID_ANY, wxString::Format(" %s ", _("Record"))), wxVERTICAL);
 
 	m_RecordChkBox = new wxCheckBox( m_RecordPanel, wxID_ANY, _("Enable recording"), wxDefaultPosition, wxDefaultSize, 0 );
     m_RecordChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_RECORD_ENABLED, false, CONFIG_PATH_RECORD ) );
@@ -1216,7 +1216,7 @@ void guPrefDialog::BuildAudioScrobblePage()
     //
 	wxBoxSizer * ASMainSizer = new wxBoxSizer( wxVERTICAL );
 
-	wxStaticBoxSizer * LastFMASSizer = new wxStaticBoxSizer( new wxStaticBox( m_LastFMPanel, wxID_ANY, _(" Last.fm audioscrobble ") ), wxVERTICAL );
+	wxStaticBoxSizer * LastFMASSizer = new wxStaticBoxSizer(new wxStaticBox(m_LastFMPanel, wxID_ANY, wxString::Format(" %s ", _("Last.fm audioscrobble"))), wxVERTICAL);
 
 	m_LastFMASEnableChkBox = new wxCheckBox( m_LastFMPanel, wxID_ANY, _("Enabled"), wxDefaultPosition, wxDefaultSize, 0 );
     m_LastFMASEnableChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_LASTFM_ENABLED, false, CONFIG_PATH_LASTFM ) );
@@ -1250,7 +1250,7 @@ void guPrefDialog::BuildAudioScrobblePage()
 
     ASMainSizer->Add( LastFMASSizer, 0, wxEXPAND|wxALL, 5 );
 
-    wxStaticBoxSizer * LibreFMASSizer = new wxStaticBoxSizer( new wxStaticBox( m_LastFMPanel, wxID_ANY, _(" Libre.fm audioscrobble ") ), wxVERTICAL );
+    wxStaticBoxSizer * LibreFMASSizer = new wxStaticBoxSizer(new wxStaticBox(m_LastFMPanel, wxID_ANY, wxString::Format(" %s ", _("Libre.fm audioscrobble"))), wxVERTICAL);
 
     m_LibreFMASEnableChkBox = new wxCheckBox( m_LastFMPanel, wxID_ANY, _( "Enabled" ), wxDefaultPosition, wxDefaultSize, 0 );
     m_LibreFMASEnableChkBox->SetValue( m_Config->ReadBool( wxT( "SubmitEnabled" ), false, CONFIG_PATH_LIBREFM ) );
@@ -1308,7 +1308,7 @@ void guPrefDialog::BuildLyricsPage()
     //
 	wxBoxSizer * LyricsMainSizer = new wxBoxSizer( wxVERTICAL );
 
-	wxStaticBoxSizer * LyricsSrcSizer = new wxStaticBoxSizer( new wxStaticBox( m_LyricsPanel, wxID_ANY, _(" Sources " ) ), wxHORIZONTAL );
+	wxStaticBoxSizer * LyricsSrcSizer = new wxStaticBoxSizer(new wxStaticBox(m_LyricsPanel, wxID_ANY, wxString::Format(" %s ", _("Sources"))), wxHORIZONTAL);
 
     m_LyricSearchEngine = new guLyricSearchEngine();
 
@@ -1413,9 +1413,9 @@ void guPrefDialog::BuildLyricsPage()
 
     // Font
     //
-	wxStaticBoxSizer * LyricsFontSizer = new wxStaticBoxSizer( new wxStaticBox( m_LyricsPanel, wxID_ANY, _(" Font ") ), wxHORIZONTAL );
+	wxStaticBoxSizer * LyricsFontSizer = new wxStaticBoxSizer(new wxStaticBox(m_LyricsPanel, wxID_ANY, wxString::Format(" %s ", _("Font"))), wxHORIZONTAL);
 
-	wxStaticText * LyricsFontLabel = new wxStaticText( m_LyricsPanel, wxID_ANY, _( "Font:" ), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * LyricsFontLabel = new wxStaticText( m_LyricsPanel, wxID_ANY, wxString::Format("%s:", _("Font")), wxDefaultPosition, wxDefaultSize, 0 );
 	LyricsFontLabel->Wrap( -1 );
 	LyricsFontSizer->Add( LyricsFontLabel, 0, wxALIGN_CENTER_VERTICAL|wxRIGHT|wxLEFT, 5 );
 
@@ -1478,7 +1478,7 @@ void guPrefDialog::BuildOnlinePage()
     wxBoxSizer * OnlineMainSizer = new wxBoxSizer( wxVERTICAL );
 
     // Proxy
-    wxStaticBoxSizer * OnlineProxyMainSizer = new wxStaticBoxSizer( new wxStaticBox( m_OnlinePanel, wxID_ANY, _(" Proxy ") ), wxVERTICAL );
+    wxStaticBoxSizer * OnlineProxyMainSizer = new wxStaticBoxSizer(new wxStaticBox(m_OnlinePanel, wxID_ANY, wxString::Format(" %s ", _("Proxy"))), wxVERTICAL);
 
     m_OnlineProxyEnableChkBox = new wxCheckBox( m_OnlinePanel, wxID_ANY, _("Proxy Enabled"), wxDefaultPosition, wxDefaultSize, 0 );
     bool ProxyEnabled = m_Config->ReadBool( CONFIG_KEY_PROXY_ENABLED, false, CONFIG_PATH_PROXY );
@@ -1533,7 +1533,7 @@ void guPrefDialog::BuildOnlinePage()
 
     OnlineMainSizer->Add( OnlineProxyMainSizer, 0, wxEXPAND|wxALL, 5 );
 
-    wxStaticBoxSizer * OnlineFiltersSizer = new wxStaticBoxSizer( new wxStaticBox( m_OnlinePanel, wxID_ANY, _(" Filters ") ), wxHORIZONTAL );
+    wxStaticBoxSizer * OnlineFiltersSizer = new wxStaticBoxSizer(new wxStaticBox(m_OnlinePanel, wxID_ANY, wxString::Format(" %s ", _("Filters"))), wxHORIZONTAL);
 
     m_OnlineFiltersListBox = new wxListBox( m_OnlinePanel, wxID_ANY, wxDefaultPosition, wxSize( -1, 100 ), 0, nullptr, 0 );
     m_OnlineFiltersListBox->Append( m_Config->ReadAStr( CONFIG_KEY_SEARCH_FILTERS_FILTER, wxEmptyString, CONFIG_PATH_SEARCH_FILTERS ) );
@@ -1617,7 +1617,7 @@ void guPrefDialog::BuildPodcastsPage()
     //
     wxBoxSizer * PodcastsMainSizer = new wxBoxSizer( wxVERTICAL );
 
-    wxStaticBoxSizer * PodcastsSizer = new wxStaticBoxSizer( new wxStaticBox( m_PodcastPanel, wxID_ANY, _(" Podcasts ") ), wxVERTICAL );
+    wxStaticBoxSizer * PodcastsSizer = new wxStaticBoxSizer(new wxStaticBox(m_PodcastPanel, wxID_ANY, wxString::Format(" %s ", _("Podcasts"))), wxVERTICAL);
 
     wxBoxSizer * PathSizer = new wxBoxSizer( wxHORIZONTAL );
 
@@ -1942,7 +1942,7 @@ void guPrefDialog::BuildLinksPage()
     //
 	wxBoxSizer * LinksMainSizer = new wxBoxSizer( wxVERTICAL );
 
-	wxStaticBoxSizer * LinksLabelSizer = new wxStaticBoxSizer( new wxStaticBox( m_LinksPanel, wxID_ANY, _(" Links ") ), wxVERTICAL );
+	wxStaticBoxSizer * LinksLabelSizer = new wxStaticBoxSizer(new wxStaticBox(m_LinksPanel, wxID_ANY, wxString::Format(" %s ", _("Links"))), wxVERTICAL);
 
 	wxBoxSizer * LinksListBoxSizer = new wxBoxSizer( wxHORIZONTAL );
 
@@ -2021,7 +2021,7 @@ void guPrefDialog::BuildLinksPage()
 
 	LinksMainSizer->Add( LinksLabelSizer, 1, wxEXPAND|wxALL, 5 );
 
-	wxStaticBoxSizer * LinksHelpSizer = new wxStaticBoxSizer( new wxStaticBox( m_LinksPanel, wxID_ANY, _(" Define URLs using ") ), wxHORIZONTAL );
+	wxStaticBoxSizer * LinksHelpSizer = new wxStaticBoxSizer(new wxStaticBox(m_LinksPanel, wxID_ANY, wxString::Format(" %s ", _("Define URLs using"))), wxHORIZONTAL);
 
 	wxStaticText * LinksHelpText = new wxStaticText( m_LinksPanel, wxID_ANY, wxT("{lang}:\n{text}:"), wxDefaultPosition, wxDefaultSize, 0 );
 	LinksHelpText->Wrap( -1 );
@@ -2140,7 +2140,7 @@ void guPrefDialog::BuildCommandsPage()
 
 	CmdMainSizer->Add( CmdLabelSizer, 1, wxEXPAND|wxALL, 5 );
 
-	wxStaticBoxSizer * CmdHelpSizer = new wxStaticBoxSizer( new wxStaticBox( m_CmdPanel, wxID_ANY, _(" Define commands using ") ), wxHORIZONTAL );
+	wxStaticBoxSizer * CmdHelpSizer = new wxStaticBoxSizer(new wxStaticBox(m_CmdPanel, wxID_ANY, wxString::Format(" %s ", _("Define commands using"))), wxHORIZONTAL);
 
 	wxStaticText * CmdHelpText = new wxStaticText( m_CmdPanel, wxID_ANY, wxT( "{bp}:\n{bc}:\n{tp}:"), wxDefaultPosition, wxDefaultSize, 0 );
 	CmdHelpText->Wrap( -1 );
@@ -2179,7 +2179,7 @@ void guPrefDialog::BuildCopyToPage()
     //
 	wxBoxSizer * CopyToMainSizer = new wxBoxSizer( wxVERTICAL );
 
-	wxStaticBoxSizer * CopyToLabelSizer = new wxStaticBoxSizer( new wxStaticBox( m_CopyPanel, wxID_ANY, _(" Patterns ") ), wxVERTICAL );
+	wxStaticBoxSizer * CopyToLabelSizer = new wxStaticBoxSizer(new wxStaticBox(m_CopyPanel, wxID_ANY, wxString::Format(" %s ", _("Patterns"))), wxVERTICAL);
 
 	wxBoxSizer * CopyToListBoxSizer = new wxBoxSizer( wxHORIZONTAL );
 
@@ -2249,7 +2249,7 @@ void guPrefDialog::BuildCopyToPage()
 	m_CopyToNameTextCtrl = new wxTextCtrl( m_CopyPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	CopyToFieldsSizer->Add( m_CopyToNameTextCtrl, 1, wxEXPAND|wxRIGHT, 5 );
 
-	wxStaticText * CopyToPatternStaticText = new wxStaticText( m_CopyPanel, wxID_ANY, _( "Pattern:" ), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * CopyToPatternStaticText = new wxStaticText( m_CopyPanel, wxID_ANY, wxString::Format("%s:", _("Pattern")), wxDefaultPosition, wxDefaultSize, 0 );
 	CopyToPatternStaticText->Wrap( -1 );
 	CopyToFieldsSizer->Add( CopyToPatternStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxLEFT|wxRIGHT, 5 );
 
@@ -2380,7 +2380,7 @@ void guPrefDialog::BuildAcceleratorsPage()
     //
 	wxBoxSizer * AccelMainSizer = new wxBoxSizer( wxVERTICAL );
 
-	wxStaticBoxSizer * AccelActionsSizer = new wxStaticBoxSizer( new wxStaticBox( m_AccelPanel, wxID_ANY, _(" Accelerators ") ), wxVERTICAL );
+	wxStaticBoxSizer * AccelActionsSizer = new wxStaticBoxSizer(new wxStaticBox(m_AccelPanel, wxID_ANY, wxString::Format(" %s ", _("Accelerators"))), wxVERTICAL);
 
 	m_AccelListCtrl = new wxListCtrl( m_AccelPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER | wxLC_SINGLE_SEL | wxLC_REPORT | wxLC_VRULES );
 

@@ -1250,32 +1250,16 @@ msgid "Names Preview"
 msgstr "Antevisão de nomes"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
-msgstr "Padrão:"
+msgid "Pattern"
+msgstr "Padrão"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr ""
-"Tokens:\n"
-"{g} : Género\n"
-"{a} : Artista\n"
-"{aa}: Artista do álbum\n"
-"{A} : {aa} ou {a}\n"
-"{b} : Álbum\n"
-"{t} : Título\n"
-"{n} : Número\n"
-"{y} : Ano\n"
-"{d} : Disco"
+msgid "Pattern flags"
+msgstr "Padrões"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "ou"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -3120,7 +3104,7 @@ msgstr "Crossfader"
 
 #: Preferences.cpp:239
 msgid "Record"
-msgstr "Gravação"
+msgstr "Gravar"
 
 #: Preferences.cpp:254
 msgid "Online"
@@ -3208,7 +3192,7 @@ msgid "Show CD cover frame in the cover editor"
 msgstr "Mostrar caixa de CD no editor de capas"
 
 #: Preferences.cpp:687
-msgid " On Close "
+msgid "On Close"
 msgstr "Ao fechar"
 
 #: Preferences.cpp:689
@@ -3224,11 +3208,11 @@ msgid "Ask confirmation on exit"
 msgstr "Pedir confirmação ao sair"
 
 #: Preferences.cpp:788
-msgid " Paths "
+msgid "Paths"
 msgstr "Caminhos"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
+msgid "Words to detect covers"
 msgstr "Palavras para detetar capas"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
@@ -3320,7 +3304,7 @@ msgid "artists or"
 msgstr "artistas ou"
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr "Detetor de silêncio"
 
 #: Preferences.cpp:1065
@@ -3336,7 +3320,7 @@ msgid "seconds"
 msgstr "segundos"
 
 #: Preferences.cpp:1102
-msgid " Output device "
+msgid "Output device"
 msgstr "Sistema de som"
 
 #: Preferences.cpp:1105
@@ -3379,10 +3363,6 @@ msgstr "Sobreposição:"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Selecione o volume inicial entre o silêncio/aparecimento gradual"
 
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr "Gravar "
-
 #: Preferences.cpp:1254
 msgid "Enable recording"
 msgstr "Ativar gravação"
@@ -3424,8 +3404,8 @@ msgid "Delete tracks shorter than"
 msgstr "Eliminar faixas inferiores a"
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
-msgstr "Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
+msgstr "Last.fm audioscrobble"
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
 msgid "Username:"
@@ -3440,16 +3420,12 @@ msgid "Disabled Genres"
 msgstr "Gêneros desabilitados"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
-msgstr "Libre.fm audioscrobble "
+msgid "Libre.fm audioscrobble"
+msgstr "Libre.fm audioscrobble"
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
 msgstr "Integrar grupo de utilizadores Guayadeque"
-
-#: Preferences.cpp:1467
-msgid " Sources "
-msgstr "Fontes "
 
 #: ui/preferences/Preferences.cpp:1483
 msgid "Proxy Enabled"
@@ -3460,12 +3436,8 @@ msgid "Targets"
 msgstr "Destinos"
 
 #: Preferences.cpp:1551
-msgid " Font "
+msgid "Font"
 msgstr "Tipo de letra"
-
-#: Preferences.cpp:1553
-msgid "Font:"
-msgstr "Tipo de letra:"
 
 #: Preferences.cpp:1565
 msgid "Align:"
@@ -3474,10 +3446,6 @@ msgstr "Alinhar:"
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr "Centro"
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr "Filtros"
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3490,10 +3458,6 @@ msgstr "Taxa mínima para rádio"
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
 msgstr "Tamanho do buffer online do reprodutor"
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
-msgstr "Podcasts "
 
 #: Preferences.cpp:1717
 msgid "Destination directory:"
@@ -3587,16 +3551,12 @@ msgstr "Transferir como:"
 msgid "Download Page"
 msgstr "Transferir página"
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr "Ligações"
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr "URL:"
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
+msgid "Define URLs using"
 msgstr "Definir URLS utilizando"
 
 #: Preferences.cpp:2129
@@ -3608,7 +3568,7 @@ msgstr ""
 "Texto a procurar"
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
+msgid "Define commands using"
 msgstr "Definir comandos utilizando"
 
 #: Preferences.cpp:2250
@@ -3622,7 +3582,7 @@ msgstr ""
 "Caminho da faixa"
 
 #: Preferences.cpp:2287
-msgid " Patterns "
+msgid "Patterns"
 msgstr "Padrões"
 
 #: Preferences.cpp:2399
@@ -3670,7 +3630,7 @@ msgstr ""
 "Ano"
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
+msgid "Accelerators"
 msgstr "Atalhos"
 
 #: Preferences.cpp:2499

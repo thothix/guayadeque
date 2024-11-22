@@ -1246,22 +1246,16 @@ msgid "Names Preview"
 msgstr "Voorbeeld van de nieuwe namen"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
+msgid "Pattern"
 msgstr "Patroon"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Patronen voor eigenschappen:\n{g}: Genre\n{a}: Artiest\n{aa}: Albumartiest\n{A}: kiest automatisch tussen {aa} en {A}\n{b}: Album\n{t}: Titel\n{n}: Albumnummer\n{y}: Jaar\n{d}: Schijf"
+msgid "Pattern flags"
+msgstr "Patronen voor eigenschappen"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "en"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -3162,7 +3156,7 @@ msgid "Show CD cover frame in the player"
 msgstr "Toon de albumhoes in de speler"
 
 #: Preferences.cpp:687
-msgid " On Close "
+msgid "On Close"
 msgstr "Bij Afsluiten"
 
 #: Preferences.cpp:689
@@ -3178,11 +3172,11 @@ msgid "Ask confirmation on exit"
 msgstr "Bevestiging vragen bij afsluiten"
 
 #: Preferences.cpp:788
-msgid " Paths "
+msgid "Paths"
 msgstr "Paden"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
+msgid "Words to detect covers"
 msgstr "Woorden om hoezen te zoeken"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
@@ -3266,7 +3260,7 @@ msgid "artists or"
 msgstr "artiesten of "
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr "Stiltes opsporen"
 
 #: Preferences.cpp:1065
@@ -3282,8 +3276,8 @@ msgid "seconds"
 msgstr "seconden"
 
 #: Preferences.cpp:1102
-msgid " Output device "
-msgstr " Uitvoer apparaat "
+msgid "Output device"
+msgstr "Uitvoer apparaat"
 
 #: Preferences.cpp:1105
 msgid "Automatic"
@@ -3324,10 +3318,6 @@ msgstr "Begin van fade-in:"
 #: Preferences.cpp:1208
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Selecteer op welk volume van de fade out de fade in start"
-
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr "Opnemen"
 
 #: Preferences.cpp:1254
 msgid "Enable recording"
@@ -3370,8 +3360,8 @@ msgid "Delete tracks shorter than"
 msgstr "Verwijder nummers die korter zijn dan"
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
-msgstr " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
+msgstr "Last.fm audioscrobble"
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
 msgid "Username:"
@@ -3382,28 +3372,20 @@ msgid "Password:"
 msgstr "Wachtwoord:"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
-msgstr " Libre.fm audioscrobble "
+msgid "Libre.fm audioscrobble"
+msgstr "Libre.fm audioscrobble"
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
 msgstr "Bij de Guayadeque Last.fm gebruikersgroep aansluiten"
-
-#: Preferences.cpp:1467
-msgid " Sources "
-msgstr " Bronnen "
 
 #: Preferences.cpp:1511
 msgid "Targets"
 msgstr "Doelen"
 
 #: Preferences.cpp:1551
-msgid " Font "
-msgstr "Lettertype "
-
-#: Preferences.cpp:1553
-msgid "Font:"
-msgstr "Lettertype:"
+msgid "Font"
+msgstr "Lettertype"
 
 #: Preferences.cpp:1565
 msgid "Align:"
@@ -3412,10 +3394,6 @@ msgstr "Uitlijning:"
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr "Midden"
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr "Filters"
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3428,10 +3406,6 @@ msgstr "Minimum bitrate toegelaten voor radio"
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
 msgstr "Buffergrootte online speler"
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
-msgstr "Podcasts"
 
 #: Preferences.cpp:1717
 msgid "Destination directory:"
@@ -3525,17 +3499,13 @@ msgstr "Download als:"
 msgid "Download Page"
 msgstr "Downloadpagina"
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr "Links"
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr "URL:"
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
-msgstr " Definieer URLs als "
+msgid "Define URLs using"
+msgstr "Definieer URLs als"
 
 #: Preferences.cpp:2129
 msgid ""
@@ -3544,8 +3514,8 @@ msgid ""
 msgstr "2-letterige taalcode\nTekst om naar te zoeken"
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
-msgstr " Definieer opdrachten als "
+msgid "Define commands using"
+msgstr "Definieer opdrachten als"
 
 #: Preferences.cpp:2250
 msgid ""
@@ -3555,7 +3525,7 @@ msgid ""
 msgstr "Album pad\nLocatie van de albumhoes\nLocatie van nummers"
 
 #: Preferences.cpp:2287
-msgid " Patterns "
+msgid "Patterns"
 msgstr "Patronen"
 
 #: Preferences.cpp:2399
@@ -3591,8 +3561,8 @@ msgid ""
 msgstr "Albumnummer\nNummer\nTitel\nJaar"
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
-msgstr " Sneltoetsen "
+msgid "Accelerators"
+msgstr "Sneltoetsen"
 
 #: Preferences.cpp:2499
 msgid "Action"

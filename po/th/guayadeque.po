@@ -1244,22 +1244,16 @@ msgid "Names Preview"
 msgstr "ดูชื่อ"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
-msgstr "รูปแบบ:"
+msgid "Pattern"
+msgstr "รูปแบบ"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr ""
+msgid "Pattern flags"
+msgstr "รูปแบบ"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "หรือ"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -2272,7 +2266,7 @@ msgstr ""
 
 #: MainFrame.cpp:3255
 msgid "podcasts"
-msgstr ""
+msgstr "พอดแคสต์"
 
 #: MainFrame.cpp:3270
 msgid "dir"
@@ -3160,7 +3154,7 @@ msgid "Show CD cover frame in the player"
 msgstr ""
 
 #: Preferences.cpp:687
-msgid " On Close "
+msgid "On Close"
 msgstr ""
 
 #: Preferences.cpp:689
@@ -3176,12 +3170,12 @@ msgid "Ask confirmation on exit"
 msgstr "คำถามยืนยันก่อนออกจากโปรแกรม"
 
 #: Preferences.cpp:788
-msgid " Paths "
-msgstr " ตำแหน่งที่อยู่ของคลังเพลง"
+msgid "Paths"
+msgstr "ตำแหน่งที่อยู่ของคลังเพลง"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
-msgstr " คำที่ใช้ในการค้นหาปก"
+msgid "Words to detect covers"
+msgstr "คำที่ใช้ในการค้นหาปก"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
 msgid "Options"
@@ -3264,8 +3258,8 @@ msgid "artists or"
 msgstr ""
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
-msgstr " ข้ามไปเพลงต่อไปถ้าเพลงทีกำลังเล่นไม่มีเสียงในช่วงท้ายของเพลง"
+msgid "Silence detector"
+msgstr "ข้ามไปเพลงต่อไปถ้าเพลงทีกำลังเล่นไม่มีเสียงในช่วงท้ายของเพลง"
 
 #: Preferences.cpp:1065
 msgid "Skip at"
@@ -3280,7 +3274,7 @@ msgid "seconds"
 msgstr "วินาที"
 
 #: Preferences.cpp:1102
-msgid " Output device "
+msgid "Output device"
 msgstr ""
 
 #: Preferences.cpp:1105
@@ -3323,10 +3317,6 @@ msgstr ""
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr ""
 
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr " การอัดเสียง"
-
 #: Preferences.cpp:1254
 msgid "Enable recording"
 msgstr "เปิดใช้งานการอัดเสียง"
@@ -3368,7 +3358,7 @@ msgid "Delete tracks shorter than"
 msgstr ""
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
 msgstr ""
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
@@ -3380,27 +3370,19 @@ msgid "Password:"
 msgstr "รหัสผ่าน:"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
+msgid "Libre.fm audioscrobble"
 msgstr ""
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
 msgstr "เข้าร่วมกลุ่มผู้ใช้ Guayadeque ใน Last.fm"
 
-#: Preferences.cpp:1467
-msgid " Sources "
-msgstr ""
-
 #: Preferences.cpp:1511
 msgid "Targets"
 msgstr ""
 
 #: Preferences.cpp:1551
-msgid " Font "
-msgstr ""
-
-#: Preferences.cpp:1553
-msgid "Font:"
+msgid "Font"
 msgstr ""
 
 #: Preferences.cpp:1565
@@ -3410,10 +3392,6 @@ msgstr ""
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr ""
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr " ตัวกรอง"
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3426,10 +3404,6 @@ msgstr ""
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
 msgstr ""
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
-msgstr " พอดแคสต์ "
 
 #: Preferences.cpp:1717
 msgid "Destination directory:"
@@ -3523,16 +3497,12 @@ msgstr ""
 msgid "Download Page"
 msgstr ""
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr " ลิงค์"
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr ""
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
+msgid "Define URLs using"
 msgstr ""
 
 #: Preferences.cpp:2129
@@ -3542,7 +3512,7 @@ msgid ""
 msgstr ""
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
+msgid "Define commands using"
 msgstr ""
 
 #: Preferences.cpp:2250
@@ -3553,7 +3523,7 @@ msgid ""
 msgstr ""
 
 #: Preferences.cpp:2287
-msgid " Patterns "
+msgid "Patterns"
 msgstr ""
 
 #: Preferences.cpp:2399
@@ -3589,7 +3559,7 @@ msgid ""
 msgstr ""
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
+msgid "Accelerators"
 msgstr ""
 
 #: Preferences.cpp:2499

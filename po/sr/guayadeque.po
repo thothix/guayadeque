@@ -1245,22 +1245,16 @@ msgid "Names Preview"
 msgstr "Преглед имена"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
-msgstr "Образац:"
+msgid "Pattern"
+msgstr "Образац"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Заставице обрасца: /n {g} : Жанр /n {a} : Извођач /n {аа} : Уметник албума /n {А} : {аа} или {а} /n {b} : Албум /n {t} : Наслов /n {n} : Број /n {y} : Година /n {d} : Диск"
+msgid "Pattern flags"
+msgstr "Заставице обрасца"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "или"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -3162,7 +3156,7 @@ msgid "Show CD cover frame in the player"
 msgstr "Прикажи оквир омота ЦД-а у плејеру"
 
 #: Preferences.cpp:687
-msgid " On Close "
+msgid "On Close"
 msgstr "При изласку"
 
 #: Preferences.cpp:689
@@ -3178,11 +3172,11 @@ msgid "Ask confirmation on exit"
 msgstr "Питај за потрвду при изласку"
 
 #: Preferences.cpp:788
-msgid " Paths "
+msgid "Paths"
 msgstr "Путање"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
+msgid "Words to detect covers"
 msgstr "Речи за детекцију омота"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
@@ -3266,7 +3260,7 @@ msgid "artists or"
 msgstr "извођачи или"
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr "Детектор тишине"
 
 #: Preferences.cpp:1065
@@ -3282,7 +3276,7 @@ msgid "seconds"
 msgstr "секунди"
 
 #: Preferences.cpp:1102
-msgid " Output device "
+msgid "Output device"
 msgstr "Излазни уређај"
 
 #: Preferences.cpp:1105
@@ -3325,10 +3319,6 @@ msgstr "Почетак израњања:"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Изабери при којој јачини звука урањања ће почети израњање"
 
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr "Сними"
-
 #: Preferences.cpp:1254
 msgid "Enable recording"
 msgstr "Омогући снимање"
@@ -3370,7 +3360,7 @@ msgid "Delete tracks shorter than"
 msgstr "Обриши нумере краће од"
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
 msgstr "Last.fm скробловање"
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
@@ -3382,28 +3372,20 @@ msgid "Password:"
 msgstr "Лозинка:"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
+msgid "Libre.fm audioscrobble"
 msgstr "Libre.fm скробловање"
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
 msgstr "Прикључи се Guayadeque Last.fm групи"
 
-#: Preferences.cpp:1467
-msgid " Sources "
-msgstr "Извори"
-
 #: Preferences.cpp:1511
 msgid "Targets"
 msgstr "Одредиште"
 
 #: Preferences.cpp:1551
-msgid " Font "
+msgid "Font"
 msgstr "Фонт"
-
-#: Preferences.cpp:1553
-msgid "Font:"
-msgstr "Фонт:"
 
 #: Preferences.cpp:1565
 msgid "Align:"
@@ -3412,10 +3394,6 @@ msgstr "Центрирај:"
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr "Центар"
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr "Филтри"
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3428,10 +3406,6 @@ msgstr "Минимална дозвољена брзина у битовима �
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
 msgstr "Величина онлајн бафера плејера"
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
-msgstr "Подемисије"
 
 #: Preferences.cpp:1717
 msgid "Destination directory:"
@@ -3525,16 +3499,12 @@ msgstr "Преузми као:"
 msgid "Download Page"
 msgstr "Страница за преузимање"
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr "Везе"
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr "УРЛ:"
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
+msgid "Define URLs using"
 msgstr "Дефиниши УРЛ користећи"
 
 #: Preferences.cpp:2129
@@ -3544,7 +3514,7 @@ msgid ""
 msgstr "двословни код језика \n текст у претрази"
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
+msgid "Define commands using"
 msgstr "Дефиниши команде користећи"
 
 #: Preferences.cpp:2250
@@ -3555,7 +3525,7 @@ msgid ""
 msgstr "Путања албума\nПутања омота албума\nПутања фајла"
 
 #: Preferences.cpp:2287
-msgid " Patterns "
+msgid "Patterns"
 msgstr "Шаблони"
 
 #: Preferences.cpp:2399
@@ -3591,7 +3561,7 @@ msgid ""
 msgstr "Индекс\nБрој\nНаслов\nГодина"
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
+msgid "Accelerators"
 msgstr "Убрзивачи"
 
 #: Preferences.cpp:2499
