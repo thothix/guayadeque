@@ -72,7 +72,7 @@ guFileRenamer::guFileRenamer( wxWindow * parent, guDbLibrary * db, const wxArray
 	m_NameTextCtrl = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	EditSizer->Add( m_NameTextCtrl, 0, wxTOP|wxBOTTOM|wxRIGHT|wxEXPAND, 5 );
 
-	wxStaticText * PatternStaticText = new wxStaticText( this, wxID_ANY, _("Pattern:"), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * PatternStaticText = new wxStaticText(this, wxID_ANY, wxString::Format("%s:", _("Pattern")), wxDefaultPosition, wxDefaultSize, 0);
 	PatternStaticText->Wrap( -1 );
 	EditSizer->Add( PatternStaticText, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
@@ -80,7 +80,12 @@ guFileRenamer::guFileRenamer( wxWindow * parent, guDbLibrary * db, const wxArray
 	PatternSizer = new wxBoxSizer( wxHORIZONTAL );
 
     m_PatTextCtrl = new wxTextCtrl( this, wxID_ANY, Config->ReadStr( CONFIG_KEY_FILE_RENAMER_PATTERN, wxT( "{n} - {a} - {t}" ), CONFIG_PATH_FILE_RENAMER ), wxDefaultPosition, wxDefaultSize, 0 );
-	m_PatTextCtrl->SetToolTip( _( "Pattern flags:\n{g} : Genre\n{a} : Artist\n{aa}: Album Artist\n{A} : {aa} or {a}\n{b} : Album\n{t} : Title\n{n} : Number\n{y} : Year\n{d} : Disk" ) );
+
+    m_PatTextCtrl->SetToolTip(wxString::Format(
+        "%s:\n{g} : %s\n{a} : %s\n{aa} : %s\n{A} : {aa} %s {a}\n{b} : %s\n{t} : %s\n{n} : %s\n{y} : %s\n{d} : %s",
+            _("Pattern flags"), _("Genre"), _("Artist"), _("Album Artist"), _("or"),
+            _("Album"), _("Title"), _("Number"), _("Year"), _("Disk"))
+    );
 
 	PatternSizer->Add( m_PatTextCtrl, 1, wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
 

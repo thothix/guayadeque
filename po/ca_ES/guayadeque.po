@@ -1246,22 +1246,16 @@ msgid "Names Preview"
 msgstr "Previsualització dels noms"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
-msgstr "Patró:"
+msgid "Pattern"
+msgstr "Patró"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Patrons:\n{g} : Genere\n{a} : Artista\n{aa}: Artista de l'àlbum \n{A} : {aa} o {a}\n{b} : Àlbum\n{t} : Títol\n{n} : Número \n{y} : Any\n{d} : Disc"
+msgid "Pattern flags"
+msgstr "Patrons"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "o"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -2004,9 +1998,9 @@ msgstr "Reproductor de llistes"
 msgid "Show/Hide the player playlist panel"
 msgstr "Mostra/Amaga el quadre de la llista"
 
-#: MainFrame.cpp:1370 MainFrame.cpp:1645 MainFrame.cpp:4325
+#: MainFrame.cpp:1370 MainFrame.cpp:1645 MainFrame.cpp:4325 Preferences.cpp:1467
 msgid "Sources"
-msgstr "Fonts"
+msgstr "Orígens"
 
 #: MainFrame.cpp:1371
 msgid "Show/Hide the locatons"
@@ -3162,7 +3156,7 @@ msgid "Show CD cover frame in the player"
 msgstr "Mostra la caràtula del CD al reproduir"
 
 #: Preferences.cpp:687
-msgid " On Close "
+msgid "On Close"
 msgstr "Al sortir"
 
 #: Preferences.cpp:689
@@ -3178,11 +3172,11 @@ msgid "Ask confirmation on exit"
 msgstr "Demana confirmació per sortir"
 
 #: Preferences.cpp:788
-msgid " Paths "
+msgid "Paths"
 msgstr "Rutes"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
+msgid "Words to detect covers"
 msgstr "Paraules per detectar caràtules"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
@@ -3266,7 +3260,7 @@ msgid "artists or"
 msgstr "artistes , o les darreres"
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr "Detector de silenci"
 
 #: Preferences.cpp:1065
@@ -3282,7 +3276,7 @@ msgid "seconds"
 msgstr "segons"
 
 #: Preferences.cpp:1102
-msgid " Output device "
+msgid "Output device"
 msgstr "Dispositiu de sortida"
 
 #: Preferences.cpp:1105
@@ -3325,10 +3319,6 @@ msgstr "Inici de la fosa:"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Seleccioneu el nivell del volum de la fosa de sortida on ha de començar la fosa d'entrada"
 
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr "Enregistrar"
-
 #: Preferences.cpp:1254
 msgid "Enable recording"
 msgstr "Activa enregistrament"
@@ -3370,8 +3360,8 @@ msgid "Delete tracks shorter than"
 msgstr "Elimina les pistes més curtes de"
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
-msgstr " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
+msgstr "Last.fm audioscrobble"
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
 msgid "Username:"
@@ -3382,28 +3372,20 @@ msgid "Password:"
 msgstr "Contrasenya:"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
-msgstr " Libre.fm audioscrobble "
+msgid "Libre.fm audioscrobble"
+msgstr "Libre.fm audioscrobble"
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
 msgstr "Uniu-vos al grup d'usuaris Guayadeque de Last.fm"
-
-#: Preferences.cpp:1467
-msgid " Sources "
-msgstr "Orígens"
 
 #: Preferences.cpp:1511
 msgid "Targets"
 msgstr "Destinacions"
 
 #: Preferences.cpp:1551
-msgid " Font "
+msgid "Font"
 msgstr "Font"
-
-#: Preferences.cpp:1553
-msgid "Font:"
-msgstr "Font:"
 
 #: Preferences.cpp:1565
 msgid "Align:"
@@ -3412,10 +3394,6 @@ msgstr "Alineació:"
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr "Centre"
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr "Filtres"
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3428,10 +3406,6 @@ msgstr "Taxa de bits mínima permesa per les ràdios"
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
 msgstr "Mida de la memòria cau del reproductor en línia"
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
-msgstr " Podcasts "
 
 #: Preferences.cpp:1717
 msgid "Destination directory:"
@@ -3525,17 +3499,13 @@ msgstr "Baixa com a:"
 msgid "Download Page"
 msgstr "Pàgina de baixada"
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr "Enllaços"
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr "URL:"
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
-msgstr "Definició de les URLs usades "
+msgid "Define URLs using"
+msgstr "Definició de les URLs usades"
 
 #: Preferences.cpp:2129
 msgid ""
@@ -3544,7 +3514,7 @@ msgid ""
 msgstr "Codi d'idioma de 2 lletres\nText per cercar"
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
+msgid "Define commands using"
 msgstr "Defineix ordres utilitzant"
 
 #: Preferences.cpp:2250
@@ -3555,7 +3525,7 @@ msgid ""
 msgstr "Ruta de l'Àlbum\nRuta de la caràtula\nRuta de la pista"
 
 #: Preferences.cpp:2287
-msgid " Patterns "
+msgid "Patterns"
 msgstr "Patrons"
 
 #: Preferences.cpp:2399
@@ -3591,7 +3561,7 @@ msgid ""
 msgstr "Índex\nNúmero\nTítol\nAny"
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
+msgid "Accelerators"
 msgstr "Acceleradors"
 
 #: Preferences.cpp:2499

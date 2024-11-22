@@ -1260,32 +1260,16 @@ msgid "Names Preview"
 msgstr "Προεπισκόπηση των ονομάτων"
 
 #: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2252
-msgid "Pattern:"
-msgstr "Πρότυπο:"
+msgid "Pattern"
+msgstr "Πρότυπο"
 
-#: ui/filebrowser/FileRenamer.cpp:83
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr ""
-"Πρότυπες σημαίες:\n"
-"{g} : Είδος\n"
-"{a} : Καλλιτέχνης\n"
-"{aa}: Καλλιτέχνης Δίσκου\n"
-"{A} : {aa} ή {a}\n"
-"{b} : Δίσκος\n"
-"{t} : Τίτλος\n"
-"{n} : Αριθμός\n"
-"{y} : Έτος\n"
-"{d} : Δίσκος"
+#: FileRenamer.cpp:82
+msgid "Pattern flags"
+msgstr "Πρότυπες σημαίες"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "ή"
 
 #: ui/filebrowser/FileBrowser.cpp:224 ui/filebrowser/FileBrowser.cpp:581
 msgid "See used locations"
@@ -3920,8 +3904,8 @@ msgid "Show CD cover frame in the cover editor"
 msgstr "Εμφάνιση του πλαισίου των εξώφυλλων στον επεξεργαστή εξώφυλλων"
 
 #: ui/preferences/Preferences.cpp:548
-msgid " On Close "
-msgstr " Κατά την Έξοδο "
+msgid "On Close"
+msgstr "Κατά την Έξοδο"
 
 #: ui/preferences/Preferences.cpp:550
 msgid "Save playlist on close"
@@ -3936,12 +3920,12 @@ msgid "Ask confirmation on exit"
 msgstr "Επιβεβαίωση κατά την έξοδο"
 
 #: ui/preferences/Preferences.cpp:651
-msgid " Paths "
-msgstr " Διαδρομές "
+msgid "Paths"
+msgstr "Διαδρομές"
 
 #: ui/preferences/Preferences.cpp:671
-msgid " Words to detect covers "
-msgstr " Λέξεις για εντοπισμό εξώφυλλων "
+msgid "Words to detect covers"
+msgstr "Λέξεις για εντοπισμό εξώφυλλων"
 
 #: ui/preferences/Preferences.cpp:700 ui/preferences/Preferences.cpp:2238
 msgid "Options"
@@ -4040,8 +4024,8 @@ msgid "artists or"
 msgstr "καλλιτέχνες ή"
 
 #: ui/preferences/Preferences.cpp:930
-msgid " Silence detector "
-msgstr " Ανιχνευτής σιγής "
+msgid "Silence detector"
+msgstr "Ανιχνευτής σιγής"
 
 #: ui/preferences/Preferences.cpp:935
 msgid "Skip at"
@@ -4056,8 +4040,8 @@ msgid "seconds"
 msgstr "δευτερόλεπτα"
 
 #: ui/preferences/Preferences.cpp:972
-msgid " Output device "
-msgstr " Συσκευή εξόδου "
+msgid "Output device"
+msgstr "Συσκευή εξόδου"
 
 #: ui/preferences/Preferences.cpp:975
 msgid "Automatic"
@@ -4098,10 +4082,6 @@ msgstr "Έναρξη αποδυνάμωσης (fade-in):"
 #: ui/preferences/Preferences.cpp:1074
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Επιλέξτε σε ποια ένταση όγκοu της εξασθένησης (fade-out) η σταδιακή αύξηση του ήχου (fade-in) αρχίζει"
-
-#: ui/preferences/Preferences.cpp:1114
-msgid " Record "
-msgstr " Εγγραφή "
 
 #: ui/preferences/Preferences.cpp:1116
 msgid "Enable recording"
@@ -4144,8 +4124,8 @@ msgid "Delete tracks shorter than"
 msgstr "Διαγραφή κομματιών μικρότερων απο"
 
 #: ui/preferences/Preferences.cpp:1219
-msgid " Last.fm audioscrobble "
-msgstr " Scrobble ήχου του Last.fm "
+msgid "Last.fm audioscrobble"
+msgstr "Scrobble ήχου του Last.fm"
 
 #: ui/preferences/Preferences.cpp:1221 ui/preferences/Preferences.cpp:1255
 msgid "Enabled"
@@ -4162,12 +4142,8 @@ msgid "Password:"
 msgstr "Κωδικός:"
 
 #: ui/preferences/Preferences.cpp:1253
-msgid " Libre.fm audioscrobble "
-msgstr " Scrobble ήχου του Libre.fm "
-
-#: ui/preferences/Preferences.cpp:1311
-msgid " Sources "
-msgstr " Πηγές "
+msgid "Libre.fm audioscrobble"
+msgstr "Scrobble ήχου του Libre.fm"
 
 #: ui/preferences/Preferences.cpp:1354
 msgid "Targets"
@@ -4178,12 +4154,8 @@ msgid "Disabled Genres"
 msgstr "Απενεργοποιημένα είδη"
 
 #: ui/preferences/Preferences.cpp:1416
-msgid " Font "
-msgstr " Γραμματοσειρά "
-
-#: ui/preferences/Preferences.cpp:1418
-msgid "Font:"
-msgstr "Γραμματοσειρά:"
+msgid "Font"
+msgstr "Γραμματοσειρά"
 
 #: ui/preferences/Preferences.cpp:1430
 msgid "Align:"
@@ -4194,8 +4166,8 @@ msgid "Center"
 msgstr "Κέντρο"
 
 #: ui/preferences/Preferences.cpp:1481
-msgid " Proxy "
-msgstr " Proxy "
+msgid "Proxy"
+msgstr "Proxy"
 
 #: ui/preferences/Preferences.cpp:1483
 msgid "Proxy Enabled"
@@ -4209,10 +4181,6 @@ msgstr "Hostname:"
 msgid "Port:"
 msgstr "Port:"
 
-#: ui/preferences/Preferences.cpp:1536
-msgid " Filters "
-msgstr " Φίλτρα "
-
 #: ui/preferences/Preferences.cpp:1571
 msgid "Browser command"
 msgstr "Εντολή περιηγητή"
@@ -4224,10 +4192,6 @@ msgstr "Ελάχιστη επιτρεπόμενη συχνότητα bit του 
 #: ui/preferences/Preferences.cpp:1586
 msgid "Player online buffer size"
 msgstr "Μέγεθος buffer του παίκτη online"
-
-#: ui/preferences/Preferences.cpp:1620
-msgid " Podcasts "
-msgstr " Podcasts "
 
 #: ui/preferences/Preferences.cpp:1624
 msgid "Destination directory:"
@@ -4321,17 +4285,13 @@ msgstr "Κατεβάστε (download) ως:"
 msgid "Download Page"
 msgstr "Σελίδα κατεβάσματος"
 
-#: ui/preferences/Preferences.cpp:1945
-msgid " Links "
-msgstr " Σύνδεσμοι "
-
 #: ui/preferences/Preferences.cpp:1999
 msgid "URL:"
 msgstr "URL:"
 
 #: ui/preferences/Preferences.cpp:2024
-msgid " Define URLs using "
-msgstr " Ορισμός των URL που χρησιμοποιούν "
+msgid "Define URLs using"
+msgstr "Ορισμός των URL που χρησιμοποιούν"
 
 #: ui/preferences/Preferences.cpp:2030
 msgid ""
@@ -4342,8 +4302,8 @@ msgstr ""
 "Κείμενο για αναζήτηση"
 
 #: ui/preferences/Preferences.cpp:2143
-msgid " Define commands using "
-msgstr " Ορισμός εντολών χρησιμοποιώντας "
+msgid "Define commands using"
+msgstr "Ορισμός εντολών χρησιμοποιώντας"
 
 #: ui/preferences/Preferences.cpp:2149
 msgid ""
@@ -4356,8 +4316,8 @@ msgstr ""
 "Διαδρομή κομματιού"
 
 #: ui/preferences/Preferences.cpp:2182
-msgid " Patterns "
-msgstr " Πρότυπα "
+msgid "Patterns"
+msgstr "Πρότυπα"
 
 #: ui/preferences/Preferences.cpp:2293
 msgid "Remove source files"
@@ -4404,8 +4364,8 @@ msgstr ""
 "Έτος"
 
 #: ui/preferences/Preferences.cpp:2383
-msgid " Accelerators "
-msgstr " Επιταχυντές "
+msgid "Accelerators"
+msgstr "Επιταχυντές"
 
 #: ui/preferences/Preferences.cpp:2388
 msgid "Action"

@@ -1622,8 +1622,8 @@ msgid "Show CD cover frame in the player"
 msgstr "Sýna geisladiskahulstur í spilara"
 
 #: ui/preferences/Preferences.cpp:563
-msgid " On Close "
-msgstr " Hætta "
+msgid "On Close"
+msgstr "Hætta"
 
 #: ui/preferences/Preferences.cpp:565
 msgid "Save playlist on close"
@@ -1638,12 +1638,12 @@ msgid "Ask confirmation on exit"
 msgstr "Spyrja staðfestingar þegar hætt er"
 
 #: ui/preferences/Preferences.cpp:665
-msgid " Paths "
-msgstr " Slóðir "
+msgid "Paths"
+msgstr "Slóðir"
 
 #: ui/preferences/Preferences.cpp:685
-msgid " Words to detect covers "
-msgstr " Orð til að finna plötualbúm"
+msgid "Words to detect covers"
+msgstr "Orð til að finna plötualbúm"
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
 msgid "Options"
@@ -1774,8 +1774,8 @@ msgid "tracks"
 msgstr "lög"
 
 #: ui/preferences/Preferences.cpp:945
-msgid " Silence detector "
-msgstr " Finna Þögn "
+msgid "Silence detector"
+msgstr "Finna Þögn"
 
 #: ui/preferences/Preferences.cpp:950
 msgid "Skip at"
@@ -1790,8 +1790,8 @@ msgid "seconds"
 msgstr "sekúntur"
 
 #: ui/preferences/Preferences.cpp:987
-msgid " Output device "
-msgstr " Úttaks tæki "
+msgid "Output device"
+msgstr "Úttaks tæki"
 
 #: ui/preferences/Preferences.cpp:990
 msgid "Automatic"
@@ -1833,10 +1833,6 @@ msgstr "Deyfa Inn byrja:"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Velja hljóðstillingu  lagi er deyft inn byrja"
 
-#: ui/preferences/Preferences.cpp:1137
-msgid " Record "
-msgstr " Upptaka "
-
 #: ui/preferences/Preferences.cpp:1139
 msgid "Enable recording"
 msgstr "Virkja upptöku"
@@ -1868,8 +1864,8 @@ msgid "Delete tracks shorter than"
 msgstr "Eyða lögum styttri en"
 
 #: ui/preferences/Preferences.cpp:1246
-msgid " Last.fm audioscrobble "
-msgstr " Last.fM audioscrobble "
+msgid "Last.fm audioscrobble"
+msgstr "Last.fm audioscrobble"
 
 #: ui/preferences/Preferences.cpp:1248 ui/preferences/Preferences.cpp:1284
 msgid "Enabled"
@@ -1886,12 +1882,8 @@ msgid "Password:"
 msgstr "Lykilorð:"
 
 #: ui/preferences/Preferences.cpp:1282
-msgid " Libre.fm audioscrobble "
-msgstr " Libre.fm audioscrobble "
-
-#: ui/preferences/Preferences.cpp:1346
-msgid " Sources "
-msgstr " Uppruni "
+msgid "Libre.fm audioscrobble"
+msgstr "Libre.fm audioscrobble"
 
 #: ui/preferences/Preferences.cpp:1392
 msgid "Targets"
@@ -1902,12 +1894,8 @@ msgid "Disabled Genres"
 msgstr "Aftengja Flokka"
 
 #: ui/preferences/Preferences.cpp:1456
-msgid " Font "
-msgstr " Letur "
-
-#: ui/preferences/Preferences.cpp:1458
-msgid "Font:"
-msgstr "Letur:"
+msgid "Font"
+msgstr "Letur"
 
 #: ui/preferences/Preferences.cpp:1470
 msgid "Align:"
@@ -1926,8 +1914,8 @@ msgid "Right"
 msgstr "Right"
 
 #: ui/preferences/Preferences.cpp:1522
-msgid " Proxy "
-msgstr "Proxy "
+msgid "Proxy"
+msgstr "Proxy"
 
 #: ui/preferences/Preferences.cpp:1524
 msgid "Proxy Enabled"
@@ -1941,10 +1929,6 @@ msgstr "Nafn hýsils"
 msgid "Port:"
 msgstr "Gátt"
 
-#: ui/preferences/Preferences.cpp:1578
-msgid " Filters "
-msgstr " Síur "
-
 #: ui/preferences/Preferences.cpp:1613
 msgid "Browser command"
 msgstr "Vafra skipun"
@@ -1956,10 +1940,6 @@ msgstr "Minnsti leyfður bitahraði útvarps"
 #: ui/preferences/Preferences.cpp:1628
 msgid "Player online buffer size"
 msgstr "Spilari tengdur stærð biðminnis"
-
-#: ui/preferences/Preferences.cpp:1665
-msgid " Podcasts "
-msgstr " Hlaðvörp "
 
 #: ui/preferences/Preferences.cpp:1669
 msgid "Destination directory:"
@@ -2053,16 +2033,12 @@ msgstr "Niðurhala sem :"
 msgid "Download Page"
 msgstr "Niðurhals Síða"
 
-#: ui/preferences/Preferences.cpp:1992
-msgid " Links "
-msgstr " Tenglar "
-
 #: ui/preferences/Preferences.cpp:2047
 msgid "URL:"
 msgstr "Vefslóð"
 
 #: ui/preferences/Preferences.cpp:2072
-msgid " Define URLs using "
+msgid "Define URLs using"
 msgstr "Skilgreina vefslóð sem"
 
 #: ui/preferences/Preferences.cpp:2078
@@ -2072,7 +2048,7 @@ msgid ""
 msgstr "2 stafir túngumál kóði\nTexti til að leita"
 
 #: ui/preferences/Preferences.cpp:2193
-msgid " Define commands using "
+msgid "Define commands using"
 msgstr "Skilgreina skipanir nota"
 
 #: ui/preferences/Preferences.cpp:2199
@@ -2083,12 +2059,12 @@ msgid ""
 msgstr "Plata slóð\nPlata skráarslóð\nLag slóð"
 
 #: ui/preferences/Preferences.cpp:2236
-msgid " Patterns "
-msgstr " Mynstur "
+msgid "Patterns"
+msgstr "Mynstur"
 
 #: ui/preferences/Preferences.cpp:2307 ui/filebrowser/FileRenamer.cpp:77
-msgid "Pattern:"
-msgstr "Mynstur:"
+msgid "Pattern"
+msgstr "Mynstur"
 
 #: ui/preferences/Preferences.cpp:2332
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:710
@@ -2128,8 +2104,8 @@ msgid ""
 msgstr "Yfirlit\nNúmer\nTitill\nÁr"
 
 #: ui/preferences/Preferences.cpp:2443
-msgid " Accelerators "
-msgstr " Flýtiritun "
+msgid "Accelerators"
+msgstr "Flýtiritun"
 
 #: ui/preferences/Preferences.cpp:2448
 msgid "Action"
@@ -3527,19 +3503,13 @@ msgstr "Endurnefna Skrár"
 msgid "Names Preview"
 msgstr "Forskoða nöfn"
 
-#: ui/filebrowser/FileRenamer.cpp:85
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Mynstur flögg:\n{g} : Flokkur\n{a} : Flytjandi\n{aa}: Plata Flytjandi\n{A} : {aa} eða {a}\n{b} : Plata\n{t} : Titill\n{n} : Númer\n{y} : Ár\n{d} : Diskur"
+#: FileRenamer.cpp:82
+msgid "Pattern flags"
+msgstr "Mynstur flögg"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "eða"
 
 #: ui/filebrowser/FileBrowser.cpp:233 ui/filebrowser/FileBrowser.cpp:603
 msgid "See used locations"

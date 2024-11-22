@@ -1626,7 +1626,7 @@ msgid "Show CD cover frame in the player"
 msgstr "Zobrazit Obal v CD-rámu v přehravači"
 
 #: ui/preferences/Preferences.cpp:563
-msgid " On Close "
+msgid "On Close"
 msgstr "Při zavření"
 
 #: ui/preferences/Preferences.cpp:565
@@ -1642,11 +1642,11 @@ msgid "Ask confirmation on exit"
 msgstr "Ptát se při ukončení"
 
 #: ui/preferences/Preferences.cpp:665
-msgid " Paths "
+msgid "Paths"
 msgstr "Cesty"
 
 #: ui/preferences/Preferences.cpp:685
-msgid " Words to detect covers "
+msgid "Words to detect covers"
 msgstr "Slova pro detekci obalu"
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
@@ -1778,7 +1778,7 @@ msgid "tracks"
 msgstr "skladeb"
 
 #: ui/preferences/Preferences.cpp:945
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr "Detektor ticha"
 
 #: ui/preferences/Preferences.cpp:950
@@ -1794,8 +1794,8 @@ msgid "seconds"
 msgstr "vteřin"
 
 #: ui/preferences/Preferences.cpp:987
-msgid " Output device "
-msgstr " Výstupní Zařízení "
+msgid "Output device"
+msgstr "Výstupní Zařízení"
 
 #: ui/preferences/Preferences.cpp:990
 msgid "Automatic"
@@ -1837,10 +1837,6 @@ msgstr "Začátek zesílení"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Označit hlasitost fade out / fade in efektu (začátku ef.)"
 
-#: ui/preferences/Preferences.cpp:1137
-msgid " Record "
-msgstr "Záznam"
-
 #: ui/preferences/Preferences.cpp:1139
 msgid "Enable recording"
 msgstr "Povolit nahrávání"
@@ -1872,8 +1868,8 @@ msgid "Delete tracks shorter than"
 msgstr "Smazat Skladby Kratší než"
 
 #: ui/preferences/Preferences.cpp:1246
-msgid " Last.fm audioscrobble "
-msgstr " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
+msgstr "Last.fm audioscrobble"
 
 #: ui/preferences/Preferences.cpp:1248 ui/preferences/Preferences.cpp:1284
 msgid "Enabled"
@@ -1890,12 +1886,8 @@ msgid "Password:"
 msgstr "Heslo:"
 
 #: ui/preferences/Preferences.cpp:1282
-msgid " Libre.fm audioscrobble "
-msgstr " Libre.fm audioscrobble "
-
-#: ui/preferences/Preferences.cpp:1346
-msgid " Sources "
-msgstr " Zdroje "
+msgid "Libre.fm audioscrobble"
+msgstr "Libre.fm audioscrobble"
 
 #: ui/preferences/Preferences.cpp:1392
 msgid "Targets"
@@ -1906,12 +1898,8 @@ msgid "Disabled Genres"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1456
-msgid " Font "
-msgstr " Font "
-
-#: ui/preferences/Preferences.cpp:1458
-msgid "Font:"
-msgstr "Font:"
+msgid "Font"
+msgstr "Font"
 
 #: ui/preferences/Preferences.cpp:1470
 msgid "Align:"
@@ -1930,7 +1918,7 @@ msgid "Right"
 msgstr "Vpravo"
 
 #: ui/preferences/Preferences.cpp:1522
-msgid " Proxy "
+msgid "Proxy"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1524
@@ -1945,10 +1933,6 @@ msgstr ""
 msgid "Port:"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1578
-msgid " Filters "
-msgstr "Filtry"
-
 #: ui/preferences/Preferences.cpp:1613
 msgid "Browser command"
 msgstr "Přikaz Webového Prohlížeče"
@@ -1960,10 +1944,6 @@ msgstr "Minimmální povolený bitrate radií"
 #: ui/preferences/Preferences.cpp:1628
 msgid "Player online buffer size"
 msgstr "buffer při online přehrávaní"
-
-#: ui/preferences/Preferences.cpp:1665
-msgid " Podcasts "
-msgstr " Podcasts "
 
 #: ui/preferences/Preferences.cpp:1669
 msgid "Destination directory:"
@@ -2057,17 +2037,13 @@ msgstr "Stahnout jako:"
 msgid "Download Page"
 msgstr "Stranka stahnovaní"
 
-#: ui/preferences/Preferences.cpp:1992
-msgid " Links "
-msgstr "Linky"
-
 #: ui/preferences/Preferences.cpp:2047
 msgid "URL:"
 msgstr "URL:"
 
 #: ui/preferences/Preferences.cpp:2072
-msgid " Define URLs using "
-msgstr " Definovat URL podle "
+msgid "Define URLs using"
+msgstr "Definovat URL podle"
 
 #: ui/preferences/Preferences.cpp:2078
 msgid ""
@@ -2076,8 +2052,8 @@ msgid ""
 msgstr "2 znakový kód jazyků\nText pro Hledaní"
 
 #: ui/preferences/Preferences.cpp:2193
-msgid " Define commands using "
-msgstr " Definovat přikaz podle "
+msgid "Define commands using"
+msgstr "Definovat přikaz podle"
 
 #: ui/preferences/Preferences.cpp:2199
 msgid ""
@@ -2087,12 +2063,12 @@ msgid ""
 msgstr "Cesta Album \nCesta Obalu Albu\nCesta Skladby"
 
 #: ui/preferences/Preferences.cpp:2236
-msgid " Patterns "
-msgstr "Vzor:"
+msgid "Patterns"
+msgstr "Vzor"
 
 #: ui/preferences/Preferences.cpp:2307 ui/filebrowser/FileRenamer.cpp:77
-msgid "Pattern:"
-msgstr "Vzor:"
+msgid "Pattern"
+msgstr "Vzor"
 
 #: ui/preferences/Preferences.cpp:2332
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:710
@@ -2132,8 +2108,8 @@ msgid ""
 msgstr "Index\nČíslo\nNázev\nRok"
 
 #: ui/preferences/Preferences.cpp:2443
-msgid " Accelerators "
-msgstr " Klavesové Zkratky "
+msgid "Accelerators"
+msgstr "Klavesové Zkratky"
 
 #: ui/preferences/Preferences.cpp:2448
 msgid "Action"
@@ -3527,19 +3503,13 @@ msgstr "Přejmenovat Soubory"
 msgid "Names Preview"
 msgstr "Náhled jména"
 
-#: ui/filebrowser/FileRenamer.cpp:85
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Vzorové značky:\n{g} : Žánr\n{a} : Autor\n{aa}: Autor Alba\n{A} : {aa} or {a}\n{b} : Album\n{t} : Název\n{n} : Číslo\n{y} : Rok\n{d} : Disk"
+#: FileRenamer.cpp:82
+msgid "Pattern flags"
+msgstr "Vzorové značky"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "or"
 
 #: ui/filebrowser/FileBrowser.cpp:233 ui/filebrowser/FileBrowser.cpp:603
 msgid "See used locations"

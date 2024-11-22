@@ -1245,22 +1245,16 @@ msgid "Names Preview"
 msgstr "Nevek előnézete"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
-msgstr "Sablon:"
+msgid "Pattern"
+msgstr "Sablon"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Sablon kapcsolók:\n{g} : Műfaj\n{a} : Előadó\n{aa}: Album Előadó\n{A} : {aa} vagy {a}\n{b} : Album\n{t} : Dal címe\n{n} : Dal sorszáma\n{y} : Dal év\n{d} : Lemez"
+msgid "Pattern flags"
+msgstr "Sablon kapcsolók"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "vagy"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -3161,8 +3155,8 @@ msgid "Show CD cover frame in the player"
 msgstr "CD borító keret mutatása a lejátszóban"
 
 #: Preferences.cpp:687
-msgid " On Close "
-msgstr " Bezáráskor "
+msgid "On Close"
+msgstr "Bezáráskor"
 
 #: Preferences.cpp:689
 msgid "Save playlist on close"
@@ -3177,12 +3171,12 @@ msgid "Ask confirmation on exit"
 msgstr "Kilépés megerősítése"
 
 #: Preferences.cpp:788
-msgid " Paths "
-msgstr " Útvonalak "
+msgid "Paths"
+msgstr "Útvonalak"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
-msgstr " Szóminták a borítók kereséséhez "
+msgid "Words to detect covers"
+msgstr "Szóminták a borítók kereséséhez"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
 msgid "Options"
@@ -3265,8 +3259,8 @@ msgid "artists or"
 msgstr "előadó vagy"
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
-msgstr " Csend detektáló "
+msgid "Silence detector"
+msgstr "Csend detektáló"
 
 #: Preferences.cpp:1065
 msgid "Skip at"
@@ -3281,8 +3275,8 @@ msgid "seconds"
 msgstr "másodperc"
 
 #: Preferences.cpp:1102
-msgid " Output device "
-msgstr " Kimeneti eszköz "
+msgid "Output device"
+msgstr "Kimeneti eszköz"
 
 #: Preferences.cpp:1105
 msgid "Automatic"
@@ -3323,10 +3317,6 @@ msgstr "Felhangosítás indítása:"
 #: Preferences.cpp:1208
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "A lehalkítás és a felhangosítás milyen hangerőnél induljon"
-
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr " Felvétel "
 
 #: Preferences.cpp:1254
 msgid "Enable recording"
@@ -3369,8 +3359,8 @@ msgid "Delete tracks shorter than"
 msgstr "Dalok törlése, ha rövidebbek mint"
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
-msgstr " Last.fm audiótovábbítás (Audioscrobble) "
+msgid "Last.fm audioscrobble"
+msgstr "Last.fm audiótovábbítás (Audioscrobble)"
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
 msgid "Username:"
@@ -3381,28 +3371,20 @@ msgid "Password:"
 msgstr "Jelszó:"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
-msgstr " Libre.fm audiótovábbítás (Audioscrobble) "
+msgid "Libre.fm audioscrobble"
+msgstr "Libre.fm audiótovábbítás (Audioscrobble)"
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
 msgstr "Csatlakozás a Guayadeque Last.fm felhasználói csoporthoz"
-
-#: Preferences.cpp:1467
-msgid " Sources "
-msgstr " Források "
 
 #: Preferences.cpp:1511
 msgid "Targets"
 msgstr "Célok"
 
 #: Preferences.cpp:1551
-msgid " Font "
-msgstr " Betűkészletek "
-
-#: Preferences.cpp:1553
-msgid "Font:"
-msgstr "Betűkészlet:"
+msgid "Font"
+msgstr "Betűkészletek"
 
 #: Preferences.cpp:1565
 msgid "Align:"
@@ -3411,10 +3393,6 @@ msgstr "Igazítás:"
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr "Középre"
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr " Szűrők "
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3427,10 +3405,6 @@ msgstr "Rádiónál a megengedett minimális bitsebesség"
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
 msgstr "A lejátszó online puffermérete"
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
-msgstr " Podcastok "
 
 #: Preferences.cpp:1717
 msgid "Destination directory:"
@@ -3524,17 +3498,13 @@ msgstr "Letöltés mint:"
 msgid "Download Page"
 msgstr "Letöltési oldal"
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr " Linkek "
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr "URL:"
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
-msgstr " URL megadása"
+msgid "Define URLs using"
+msgstr "URL megadása"
 
 #: Preferences.cpp:2129
 msgid ""
@@ -3543,8 +3513,8 @@ msgid ""
 msgstr "2 betűs nyelvi kód\nSzöveg a kereséshez"
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
-msgstr " Parancsok megadása"
+msgid "Define commands using"
+msgstr "Parancsok megadása"
 
 #: Preferences.cpp:2250
 msgid ""
@@ -3554,8 +3524,8 @@ msgid ""
 msgstr "Album útvonal\nAlbumborító útvonal\nDal útvonal"
 
 #: Preferences.cpp:2287
-msgid " Patterns "
-msgstr " Sablonok "
+msgid "Patterns"
+msgstr "Sablonok"
 
 #: Preferences.cpp:2399
 msgid "Remove source files"
@@ -3590,8 +3560,8 @@ msgid ""
 msgstr "Index\nSorszám\nCímke\nÉv"
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
-msgstr " Gyorsbillentyűk "
+msgid "Accelerators"
+msgstr "Gyorsbillentyűk"
 
 #: Preferences.cpp:2499
 msgid "Action"

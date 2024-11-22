@@ -1632,8 +1632,8 @@ msgid "Show CD cover frame in the player"
 msgstr "Wyświetl ramkę z okładką w odtwarzaczu"
 
 #: ui/preferences/Preferences.cpp:563
-msgid " On Close "
-msgstr " Przy zamknięciu "
+msgid "On Close"
+msgstr "Przy zamknięciu"
 
 #: ui/preferences/Preferences.cpp:565
 msgid "Save playlist on close"
@@ -1648,12 +1648,12 @@ msgid "Ask confirmation on exit"
 msgstr "Wymagaj potwierdzenia przy zamknięciu"
 
 #: ui/preferences/Preferences.cpp:665
-msgid " Paths "
-msgstr " Ścieżki "
+msgid "Paths"
+msgstr "Ścieżki"
 
 #: ui/preferences/Preferences.cpp:685
-msgid " Words to detect covers "
-msgstr " Słowa do wykrycia okładki "
+msgid "Words to detect covers"
+msgstr "Słowa do wykrycia okładki"
 
 #: ui/preferences/Preferences.cpp:713 ui/preferences/Preferences.cpp:2293
 msgid "Options"
@@ -1784,8 +1784,8 @@ msgid "tracks"
 msgstr "utwory"
 
 #: ui/preferences/Preferences.cpp:945
-msgid " Silence detector "
-msgstr " Cichy wykrywacz "
+msgid "Silence detector"
+msgstr "Cichy wykrywacz"
 
 #: ui/preferences/Preferences.cpp:950
 msgid "Skip at"
@@ -1800,8 +1800,8 @@ msgid "seconds"
 msgstr "sekundy"
 
 #: ui/preferences/Preferences.cpp:987
-msgid " Output device "
-msgstr " Urządzenie wyjściowe "
+msgid "Output device"
+msgstr "Urządzenie wyjściowe"
 
 #: ui/preferences/Preferences.cpp:990
 msgid "Automatic"
@@ -1843,10 +1843,6 @@ msgstr "Początek wzgłaśniania:"
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Wybierz na jakim poziomie głośności podczas wyciszenia, wzgłaśnianie się rozpoczyna"
 
-#: ui/preferences/Preferences.cpp:1137
-msgid " Record "
-msgstr " Nagranie "
-
 #: ui/preferences/Preferences.cpp:1139
 msgid "Enable recording"
 msgstr "Uruchom nagrywanie"
@@ -1878,8 +1874,8 @@ msgid "Delete tracks shorter than"
 msgstr "Usuń utwory krótsze niż"
 
 #: ui/preferences/Preferences.cpp:1246
-msgid " Last.fm audioscrobble "
-msgstr " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
+msgstr "Last.fm audioscrobble"
 
 #: ui/preferences/Preferences.cpp:1248 ui/preferences/Preferences.cpp:1284
 msgid "Enabled"
@@ -1896,12 +1892,8 @@ msgid "Password:"
 msgstr "Hasło:"
 
 #: ui/preferences/Preferences.cpp:1282
-msgid " Libre.fm audioscrobble "
-msgstr " Libre.fm audioscrobble "
-
-#: ui/preferences/Preferences.cpp:1346
-msgid " Sources "
-msgstr " Źródła "
+msgid "Libre.fm audioscrobble"
+msgstr "Libre.fm audioscrobble"
 
 #: ui/preferences/Preferences.cpp:1392
 msgid "Targets"
@@ -1912,12 +1904,8 @@ msgid "Disabled Genres"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1456
-msgid " Font "
-msgstr " Czcionka "
-
-#: ui/preferences/Preferences.cpp:1458
-msgid "Font:"
-msgstr "Czcionka:"
+msgid "Font"
+msgstr "Czcionka"
 
 #: ui/preferences/Preferences.cpp:1470
 msgid "Align:"
@@ -1936,7 +1924,7 @@ msgid "Right"
 msgstr "Prawo"
 
 #: ui/preferences/Preferences.cpp:1522
-msgid " Proxy "
+msgid "Proxy"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1524
@@ -1951,10 +1939,6 @@ msgstr ""
 msgid "Port:"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1578
-msgid " Filters "
-msgstr " Filtry "
-
 #: ui/preferences/Preferences.cpp:1613
 msgid "Browser command"
 msgstr "Komenda przeglądarki"
@@ -1966,10 +1950,6 @@ msgstr "Minimalny dozwolony bitrate radia"
 #: ui/preferences/Preferences.cpp:1628
 msgid "Player online buffer size"
 msgstr "Wielkość bufora odtwarzacza online"
-
-#: ui/preferences/Preferences.cpp:1665
-msgid " Podcasts "
-msgstr " Podcasty "
 
 #: ui/preferences/Preferences.cpp:1669
 msgid "Destination directory:"
@@ -2063,17 +2043,13 @@ msgstr "Pobierz jako:"
 msgid "Download Page"
 msgstr "Strona pobierania"
 
-#: ui/preferences/Preferences.cpp:1992
-msgid " Links "
-msgstr " Odnośniki "
-
 #: ui/preferences/Preferences.cpp:2047
 msgid "URL:"
 msgstr "URL:"
 
 #: ui/preferences/Preferences.cpp:2072
-msgid " Define URLs using "
-msgstr " Definicja używanych adresów URL "
+msgid "Define URLs using"
+msgstr "Definicja używanych adresów URL"
 
 #: ui/preferences/Preferences.cpp:2078
 msgid ""
@@ -2082,8 +2058,8 @@ msgid ""
 msgstr "2-literowy kod języka\nTekst do wyszukania"
 
 #: ui/preferences/Preferences.cpp:2193
-msgid " Define commands using "
-msgstr " Zdefiniuj polecenie używając "
+msgid "Define commands using"
+msgstr "Zdefiniuj polecenie używając"
 
 #: ui/preferences/Preferences.cpp:2199
 msgid ""
@@ -2093,12 +2069,12 @@ msgid ""
 msgstr "Ścieżka albumu\nŚcieżka pliku okładki\nŚcieżka utworu"
 
 #: ui/preferences/Preferences.cpp:2236
-msgid " Patterns "
-msgstr " Wzorce "
+msgid "Patterns"
+msgstr "Wzorce"
 
 #: ui/preferences/Preferences.cpp:2307 ui/filebrowser/FileRenamer.cpp:77
-msgid "Pattern:"
-msgstr "Wzorzec:"
+msgid "Pattern"
+msgstr "Wzorzec"
 
 #: ui/preferences/Preferences.cpp:2332
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:710
@@ -2138,8 +2114,8 @@ msgid ""
 msgstr "Indeks\nNumer\nTytuł\nRok"
 
 #: ui/preferences/Preferences.cpp:2443
-msgid " Accelerators "
-msgstr " Przyspieszacze "
+msgid "Accelerators"
+msgstr "Przyspieszacze"
 
 #: ui/preferences/Preferences.cpp:2448
 msgid "Action"
@@ -3533,19 +3509,13 @@ msgstr "Zmień nazwy plików"
 msgid "Names Preview"
 msgstr " Podgląd nazw "
 
-#: ui/filebrowser/FileRenamer.cpp:85
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Flagi wzorców:\n{g} : Gatunek\n{a} : Wykonawca\n{aa}: Wykonawca albumu\n{A} : {aa} lub {a}\n{b} : Album\n{t} : Tytuł\n{n} : Numer\n{y} : Rok\n{d} : Dysk"
+#: FileRenamer.cpp:82
+msgid "Pattern flags"
+msgstr "Flagi wzorców"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "lub"
 
 #: ui/filebrowser/FileBrowser.cpp:233 ui/filebrowser/FileBrowser.cpp:603
 msgid "See used locations"

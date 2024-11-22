@@ -1245,22 +1245,16 @@ msgid "Names Preview"
 msgstr ""
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
-msgstr "Mönster:"
+msgid "Pattern"
+msgstr "Mönster"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr ""
+msgid "Pattern flags"
+msgstr "Mönster"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "ellen"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -3161,7 +3155,7 @@ msgid "Show CD cover frame in the player"
 msgstr ""
 
 #: Preferences.cpp:687
-msgid " On Close "
+msgid "On Close"
 msgstr ""
 
 #: Preferences.cpp:689
@@ -3177,11 +3171,11 @@ msgid "Ask confirmation on exit"
 msgstr "Fråga efter bekräftelse vid avslut"
 
 #: Preferences.cpp:788
-msgid " Paths "
-msgstr " Sökvägar "
+msgid "Paths"
+msgstr "Sökvägar"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
+msgid "Words to detect covers"
 msgstr ""
 
 #: Preferences.cpp:836 Preferences.cpp:2344
@@ -3265,7 +3259,7 @@ msgid "artists or"
 msgstr ""
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
+msgid "Silence detector"
 msgstr ""
 
 #: Preferences.cpp:1065
@@ -3281,7 +3275,7 @@ msgid "seconds"
 msgstr "sekunder"
 
 #: Preferences.cpp:1102
-msgid " Output device "
+msgid "Output device"
 msgstr ""
 
 #: Preferences.cpp:1105
@@ -3324,10 +3318,6 @@ msgstr ""
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr ""
 
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr " Spela in "
-
 #: Preferences.cpp:1254
 msgid "Enable recording"
 msgstr "Aktivera inspelning"
@@ -3369,7 +3359,7 @@ msgid "Delete tracks shorter than"
 msgstr ""
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
 msgstr ""
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
@@ -3381,15 +3371,11 @@ msgid "Password:"
 msgstr "Lösenord:"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
+msgid "Libre.fm audioscrobble"
 msgstr ""
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
-msgstr ""
-
-#: Preferences.cpp:1467
-msgid " Sources "
 msgstr ""
 
 #: Preferences.cpp:1511
@@ -3397,11 +3383,7 @@ msgid "Targets"
 msgstr ""
 
 #: Preferences.cpp:1551
-msgid " Font "
-msgstr ""
-
-#: Preferences.cpp:1553
-msgid "Font:"
+msgid "Font"
 msgstr ""
 
 #: Preferences.cpp:1565
@@ -3411,10 +3393,6 @@ msgstr ""
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr "Center"
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr " Filter "
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3426,10 +3404,6 @@ msgstr ""
 
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
-msgstr ""
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
 msgstr ""
 
 #: Preferences.cpp:1717
@@ -3524,16 +3498,12 @@ msgstr ""
 msgid "Download Page"
 msgstr ""
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr " Länkar "
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr ""
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
+msgid "Define URLs using"
 msgstr ""
 
 #: Preferences.cpp:2129
@@ -3543,7 +3513,7 @@ msgid ""
 msgstr ""
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
+msgid "Define commands using"
 msgstr ""
 
 #: Preferences.cpp:2250
@@ -3554,7 +3524,7 @@ msgid ""
 msgstr ""
 
 #: Preferences.cpp:2287
-msgid " Patterns "
+msgid "Patterns"
 msgstr ""
 
 #: Preferences.cpp:2399
@@ -3590,7 +3560,7 @@ msgid ""
 msgstr ""
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
+msgid "Accelerators"
 msgstr ""
 
 #: Preferences.cpp:2499

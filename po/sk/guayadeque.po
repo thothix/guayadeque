@@ -1253,22 +1253,16 @@ msgid "Names Preview"
 msgstr "Náhľad mien"
 
 #: FileRenamer.cpp:74 Preferences.cpp:2358
-msgid "Pattern:"
+msgid "Pattern"
 msgstr "Vzor"
 
 #: FileRenamer.cpp:82
-msgid ""
-"Pattern flags:\n"
-"{g} : Genre\n"
-"{a} : Artist\n"
-"{aa}: Album Artist\n"
-"{A} : {aa} or {a}\n"
-"{b} : Album\n"
-"{t} : Title\n"
-"{n} : Number\n"
-"{y} : Year\n"
-"{d} : Disk"
-msgstr "Premenné vzoru:\n{g} : Žáner\n{a} : Interpret\n{aa}: Interpret albumu\n{A} : {aa} alebo {a}\n{b} : Album\n{t} : Názov\n{n} : Číslo\n{y} : Rok\n{d} : Disk"
+msgid "Pattern flags"
+msgstr "Premenné vzoru"
+
+#: FileRenamer.cpp:82
+msgid "or"
+msgstr "alebo"
 
 #: GeListBox.cpp:93
 msgid "Play current selected genres"
@@ -3169,8 +3163,8 @@ msgid "Show CD cover frame in the player"
 msgstr "Zobraziť rám obalu CD v prehrávači"
 
 #: Preferences.cpp:687
-msgid " On Close "
-msgstr " Pri ukončení "
+msgid "On Close"
+msgstr "Pri ukončení"
 
 #: Preferences.cpp:689
 msgid "Save playlist on close"
@@ -3185,12 +3179,12 @@ msgid "Ask confirmation on exit"
 msgstr "Potvrdiť ukončenie"
 
 #: Preferences.cpp:788
-msgid " Paths "
-msgstr " Cesty "
+msgid "Paths"
+msgstr "Cesty"
 
 #: Preferences.cpp:808
-msgid " Words to detect covers "
-msgstr " Slová na identifikovanie obalov "
+msgid "Words to detect covers"
+msgstr "Slová na identifikovanie obalov"
 
 #: Preferences.cpp:836 Preferences.cpp:2344
 msgid "Options"
@@ -3273,8 +3267,8 @@ msgid "artists or"
 msgstr "umelec alebo"
 
 #: Preferences.cpp:1060
-msgid " Silence detector "
-msgstr " Detektor ticha "
+msgid "Silence detector"
+msgstr "Detektor ticha"
 
 #: Preferences.cpp:1065
 msgid "Skip at"
@@ -3289,8 +3283,8 @@ msgid "seconds"
 msgstr "sekundy"
 
 #: Preferences.cpp:1102
-msgid " Output device "
-msgstr " Výstupné zariadenie "
+msgid "Output device"
+msgstr "Výstupné zariadenie"
 
 #: Preferences.cpp:1105
 msgid "Automatic"
@@ -3331,10 +3325,6 @@ msgstr "Začiatok fade-in"
 #: Preferences.cpp:1208
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Voľba hlasitosti zoslabovania pri ktorej začne zosilňovanie"
-
-#: Preferences.cpp:1252
-msgid " Record "
-msgstr " Záznam "
 
 #: Preferences.cpp:1254
 msgid "Enable recording"
@@ -3377,7 +3367,7 @@ msgid "Delete tracks shorter than"
 msgstr "Odstrániť skladby kratšie ako"
 
 #: Preferences.cpp:1361
-msgid " Last.fm audioscrobble "
+msgid "Last.fm audioscrobble"
 msgstr "Last.fm audioscrobble"
 
 #: Preferences.cpp:1371 Preferences.cpp:1406
@@ -3389,28 +3379,20 @@ msgid "Password:"
 msgstr "Heslo:"
 
 #: Preferences.cpp:1396
-msgid " Libre.fm audioscrobble "
+msgid "Libre.fm audioscrobble"
 msgstr "Libre.fm audioscrobble"
 
 #: Preferences.cpp:1435
 msgid "Join the Guayadeque Last.fm users group"
 msgstr "Staňte sa členom používateľskej skupiny Guayadeque na Last.fm"
 
-#: Preferences.cpp:1467
-msgid " Sources "
-msgstr " Zdroje "
-
 #: Preferences.cpp:1511
 msgid "Targets"
 msgstr "Ciele"
 
 #: Preferences.cpp:1551
-msgid " Font "
-msgstr " Písmo "
-
-#: Preferences.cpp:1553
-msgid "Font:"
-msgstr "Písmo:"
+msgid "Font"
+msgstr "Písmo"
 
 #: Preferences.cpp:1565
 msgid "Align:"
@@ -3419,10 +3401,6 @@ msgstr "Zarovnať:"
 #: Preferences.cpp:1571
 msgid "Center"
 msgstr "Na stred"
-
-#: Preferences.cpp:1613
-msgid " Filters "
-msgstr " Filtre "
 
 #: Preferences.cpp:1648
 msgid "Browser command"
@@ -3435,10 +3413,6 @@ msgstr "Minimálny povolený dátový tok rádia"
 #: Preferences.cpp:1677
 msgid "Player online buffer size"
 msgstr "Veľkosť online bufera prehrávača"
-
-#: Preferences.cpp:1713
-msgid " Podcasts "
-msgstr " Podkasty "
 
 #: Preferences.cpp:1717
 msgid "Destination directory:"
@@ -3532,17 +3506,13 @@ msgstr "Stiahnuť ako:"
 msgid "Download Page"
 msgstr "Stránka sťahovania"
 
-#: Preferences.cpp:2043
-msgid " Links "
-msgstr " Odkazy "
-
 #: Preferences.cpp:2098
 msgid "URL:"
 msgstr "URL:"
 
 #: Preferences.cpp:2123
-msgid " Define URLs using "
-msgstr " Definuje použité URL "
+msgid "Define URLs using"
+msgstr "Definuje použité URL"
 
 #: Preferences.cpp:2129
 msgid ""
@@ -3551,8 +3521,8 @@ msgid ""
 msgstr "2-písmenový kód jazyka\nHľadaný text"
 
 #: Preferences.cpp:2244
-msgid " Define commands using "
-msgstr " Definuje použité príkazy "
+msgid "Define commands using"
+msgstr "Definuje použité príkazy"
 
 #: Preferences.cpp:2250
 msgid ""
@@ -3562,8 +3532,8 @@ msgid ""
 msgstr "Cesta albumu\nCesta súboru obalu albumu\nCesta skladby"
 
 #: Preferences.cpp:2287
-msgid " Patterns "
-msgstr " Vzory "
+msgid "Patterns"
+msgstr "Vzory"
 
 #: Preferences.cpp:2399
 msgid "Remove source files"
@@ -3598,8 +3568,8 @@ msgid ""
 msgstr "Index\nČíslo\nNázov\nRok"
 
 #: Preferences.cpp:2494
-msgid " Accelerators "
-msgstr "Uložiť do:"
+msgid "Accelerators"
+msgstr "Uložiť do"
 
 #: Preferences.cpp:2499
 msgid "Action"
