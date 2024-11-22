@@ -2872,17 +2872,12 @@ msgstr ""
 msgid "%s free of %s"
 msgstr ""
 
-#: PortableMedia.cpp:1048
-msgid "Name Pattern:"
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
 msgstr ""
 
-#: PortableMedia.cpp:1053
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
+#: PortableMedia.cpp:1048
+msgid "Name Pattern:"
 msgstr ""
 
 #: PortableMedia.cpp:1058

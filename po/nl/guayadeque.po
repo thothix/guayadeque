@@ -2873,18 +2873,13 @@ msgstr "Gebruikt:"
 msgid "%s free of %s"
 msgstr "%s vrij van %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Bestandsnaam"
+
 #: PortableMedia.cpp:1048
 msgid "Name Pattern:"
 msgstr "Naam Patroon:"
-
-#: PortableMedia.cpp:1053
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr "{a}\t: Artiest\t\t\t{aa} : Album Artiest\n{b}\t: Album\t\t\t{d}\t : Schijf\n{f}\t: Bestandsnaam\t\t{g}\t : Genre\n{n}\t: Nummer\t\t\t{t}\t : Titel\n{y}\t: Jaar"
 
 #: PortableMedia.cpp:1058
 msgid "Audio Folders:"

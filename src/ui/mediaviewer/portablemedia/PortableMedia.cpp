@@ -578,25 +578,15 @@ void guPortableMediaLibrary::UpdateStaticPlayListFile( const int plid )
         wxString PlayListFile = m_PortableDevice->MountPath() + m_PortableDevice->PlaylistFolder();
         PlayListFile += wxT( "/" ) + PlayListName;
         if( PlayListFormats & guPORTABLEMEDIA_PLAYLIST_FORMAT_M3U )
-        {
             PlayListFile += wxT( ".m3u" );
-        }
         else if( PlayListFormats & guPORTABLEMEDIA_PLAYLIST_FORMAT_PLS )
-        {
             PlayListFile += wxT( ".pls" );
-        }
         else if( PlayListFormats & guPORTABLEMEDIA_PLAYLIST_FORMAT_XSPF )
-        {
             PlayListFile += wxT( ".xspf" );
-        }
         else if( PlayListFormats & guPORTABLEMEDIA_PLAYLIST_FORMAT_ASX )
-        {
             PlayListFile += wxT( ".asx" );
-        }
         else
-        {
             PlayListFile += wxT( ".m3u" );
-        }
 
         wxFileName FileName( PlayListFile );
         if( FileName.Normalize(wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS) )
@@ -666,7 +656,6 @@ guPortableMediaProperties::guPortableMediaProperties( wxWindow * parent, guPorta
     wxStdDialogButtonSizer *    BtnSizer;
     wxButton *                  BtnSizerOK;
     wxButton *                  BtnSizerCancel;
-
 
     m_PortableDevice = mediadevice;
     m_PortableDevice->UpdateDiskFree();
@@ -747,7 +736,12 @@ guPortableMediaProperties::guPortableMediaProperties( wxWindow * parent, guPorta
         PMFlexSizer->Add( NamePatternLabel, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
         m_NamePatternText = new wxTextCtrl( PMAudioPanel, wxID_ANY, mediadevice->Pattern(), wxDefaultPosition, wxDefaultSize, 0 );
-        m_NamePatternText->SetToolTip( _("{a}\t: Artist\t\t\t{aa} : Album Artist\n{b}\t: Album\t\t\t{d}\t : Disk\n{f}\t: Filename\t\t{g}\t : Genre\n{n}\t: Number\t\t\t{t}\t : Title\n{y}\t: Year") );
+
+        m_NamePatternText->SetToolTip(wxString::Format(
+            "{a}\t: %s\t\t\t{aa}: %s\n{b}\t: %s\t\t\t{d}\t: %s\n{f}\t: %s\t\t\t{g}\t: %s\n{n}\t: %s\t\t\t{t}\t: %s\n{y}\t: %s",
+            _("Artist"),_("Album Artist"), _("Album"), _("Disk"), _("Filename"),
+            _("Genre"), _("Number"), _("Title"), _("Year"))
+        );
         PMFlexSizer->Add( m_NamePatternText, 0, wxEXPAND|wxTOP|wxBOTTOM, 5 );
 
         PMFlexSizer->Add( 0, 0, 0, wxEXPAND, 5 );
@@ -789,9 +783,7 @@ guPortableMediaProperties::guPortableMediaProperties( wxWindow * parent, guPorta
         m_TransFormatChoice->SetSelection( mediadevice->TranscodeFormat() == guTRANSCODE_FORMAT_AAC );
 	}
 	else
-	{
         m_TransFormatChoice->SetSelection( mediadevice->TranscodeFormat() );
-	}
 
 	TranscodeSizer->Add( m_TransFormatChoice, 1, wxEXPAND|wxTOP|wxBOTTOM, 5 );
 
@@ -804,8 +796,6 @@ guPortableMediaProperties::guPortableMediaProperties( wxWindow * parent, guPorta
 	TranscodeSizer->Add( m_TransScopeChoice, 0, wxTOP|wxBOTTOM|wxLEFT, 5 );
 
 	PMFlexSizer->Add( TranscodeSizer, 1, wxEXPAND, 5 );
-
-
 	PMFlexSizer->Add( 0, 0, 1, wxEXPAND, 5 );
 
 	wxStaticText * TransQualityLabel = new wxStaticText( PMAudioPanel, wxID_ANY, _("Quality:"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -815,12 +805,9 @@ guPortableMediaProperties::guPortableMediaProperties( wxWindow * parent, guPorta
 	m_TransQualityChoice = new wxChoice( PMAudioPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, guTranscodeQualityStrings(), 0 );
 	m_TransQualityChoice->SetSelection( mediadevice->TranscodeQuality() );
 	if( !m_IsIpod )
-	{
         m_TransQualityChoice->Enable( ( m_PortableDevice->TranscodeFormat() != guTRANSCODE_FORMAT_KEEP ) );
-	}
-	PMFlexSizer->Add( m_TransQualityChoice, 0, wxEXPAND|wxTOP|wxBOTTOM|wxALIGN_CENTER_VERTICAL, 5 );
 
-
+    PMFlexSizer->Add( m_TransQualityChoice, 0, wxEXPAND|wxTOP|wxBOTTOM|wxALIGN_CENTER_VERTICAL, 5 );
 	PMFlexSizer->Add( 0, 0, 1, wxEXPAND, 5 );
 
 	PMAudioPanel->SetSizer( PMFlexSizer );
@@ -891,7 +878,6 @@ guPortableMediaProperties::guPortableMediaProperties( wxWindow * parent, guPorta
 
         m_CoverNameText = new wxTextCtrl( PMCoversPanel, wxID_ANY, mediadevice->CoverName(), wxDefaultPosition, wxDefaultSize, 0 );
         PMFlexSizer->Add( m_CoverNameText, 0, wxEXPAND|wxTOP|wxBOTTOM|wxALIGN_CENTER_VERTICAL, 5 );
-
 
         PMFlexSizer->Add( 0, 0, 0, wxEXPAND, 5 );
     }

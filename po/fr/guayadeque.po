@@ -2884,23 +2884,13 @@ msgstr "Utilisé :"
 msgid "%s free of %s"
 msgstr "%s disponible sur %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Nom de fichier"
+
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:745
 msgid "Name Pattern:"
 msgstr "Modèle de nom:"
-
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:750
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr ""
-"{a}\t: Artiste\t\t\t{aa} : Artiste de l'Album\n"
-"{b}\t: Album\t\t\t{d}\t : Disque\n"
-"{f}\t: Nom de fichier\t\t{g}\t : Genre\n"
-"{n}\t: Numéro\t\t\t{t}\t : Titre\n"
-"{y}\t: Année"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:755
 msgid "Audio Folders:"

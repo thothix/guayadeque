@@ -2897,18 +2897,13 @@ msgstr "Usato:"
 msgid "%s free of %s"
 msgstr "%s libero di %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Nome del file"
+
 #: PortableMedia.cpp:1048
 msgid "Name Pattern:"
 msgstr "Schema rinomina:"
-
-#: PortableMedia.cpp:1053
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr "{a}\t: Artista\t\t\t{aa} : Artista dell'album\n{b}\t: Album\t\t\t{d}\t : Disco\n{f}\t: Nome del file\t\t{g}\t : Genere\n{n}\t: Numero\t\t\t{t}\t : Titolo\n{y}\t: Anno"
 
 #: PortableMedia.cpp:1058
 msgid "Audio Folders:"

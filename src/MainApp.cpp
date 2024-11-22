@@ -152,7 +152,6 @@ guMainApp::~guMainApp()
         delete m_DbCache;
     }
 
-    // config
     if (m_Config)
         delete m_Config;
 }
@@ -271,7 +270,6 @@ bool SendFilesByMPRIS( const int argc, wxChar * argv[] )
          return false;
     }
 
-
     dbmsg = dbus_message_new_method_call( GUAYADEQUE_MPRIS_SERVICENAME,
                                           GUAYADEQUE_MPRIS_TRACKLIST_PATH,
                                           GUAYADEQUE_MPRIS_INTERFACE,
@@ -302,10 +300,10 @@ bool SendFilesByMPRIS( const int argc, wxChar * argv[] )
     dbreply = dbus_connection_send_with_reply_and_block( dbconn, dbmsg, 5000, &dberr );
     if( dbus_error_is_set( &dberr ) )
     {
-          guLogMessage( wxT( "Error adding files: '%s'" ), wxString( dberr.message, wxConvUTF8 ).c_str() );
-          dbus_message_unref( dbmsg );
-          dbus_error_free( &dberr );
-          return false;
+        guLogMessage( wxT( "Error adding files: '%s'" ), wxString( dberr.message, wxConvUTF8 ).c_str() );
+        dbus_message_unref( dbmsg );
+        dbus_error_free( &dberr );
+        return false;
     }
 
     if( dbreply )
@@ -336,12 +334,11 @@ bool MakeWindowVisible( void )
          return false;
     }
 
-
     dbmsg = dbus_message_new_method_call( "org.mpris.MediaPlayer2.guayadeque",
                                           "/org/mpris/MediaPlayer2",
                                           "org.mpris.MediaPlayer2",
                                           "Raise" );
-    if( dbmsg == NULL )
+    if (dbmsg == nullptr)
     {
          guLogError( wxT( "Couldn’t create a DBusMessage" ) );
          return false;
@@ -350,10 +347,10 @@ bool MakeWindowVisible( void )
     dbreply = dbus_connection_send_with_reply_and_block( dbconn, dbmsg, 5000, &dberr );
     if( dbus_error_is_set( &dberr ) )
     {
-          guLogMessage( wxT( "Error showing window" ) );
-          dbus_message_unref( dbmsg );
-          dbus_error_free( &dberr );
-          return false;
+        guLogMessage( wxT( "Error showing window" ) );
+        dbus_message_unref( dbmsg );
+        dbus_error_free( &dberr );
+        return false;
     }
 
     if( dbreply )
@@ -394,9 +391,8 @@ bool guMainApp::OnInit()
                 while( RetryCnt++ < 25 )
                 {
                     if( SendFilesByMPRIS( argc, argv ) )
-                    {
                         break;
-                    }
+
                     wxMilliSleep( 100 );
                 }
             }
@@ -410,9 +406,7 @@ bool guMainApp::OnInit()
                              wxICON_QUESTION | wxYES_NO ) == wxYES )
             {
                 if( !wxRemoveFile( wxGetHomeDir() + "/" + AppName ) )
-                {
                     guLogMessage( wxT( "Could not delete the file: %s" ), AppName.c_str() );
-                }
                 wxMilliSleep( 1000 );
             }
             else
@@ -422,9 +416,7 @@ bool guMainApp::OnInit()
             }
         }
         else
-        {
             break;
-        }
     }
 
     // If enabled Show the Splash Screen on Startup
@@ -460,9 +452,7 @@ bool guMainApp::OnInit()
             guLogError( wxT( "Locale directory '%s'" ), wxStandardPaths::Get().GetLocalizedResourcesDir( LangInfo->CanonicalName, wxStandardPaths::ResourceCat_Messages).c_str() );
         }
         else
-        {
             guLogError( wxT( "Could not initialize the translations engine for (%d)" ), LangId );
-        }
     }
 
     // Enable tooltips
@@ -470,9 +460,7 @@ bool guMainApp::OnInit()
 
     m_DbCache = new guDbCache( guPATH_DBCACHE );
     if( !m_DbCache )
-    {
         guLogError( wxT( "Could not open the guayadeque cache database" ) );
-    }
 
     m_DbCache->SetDbCache();
 
@@ -500,9 +488,7 @@ bool guMainApp::OnInit()
         }
     }
     else
-    {
         Frame->Show();
-    }
 
     return true;
 }
@@ -512,7 +498,6 @@ int guMainApp::OnExit()
 {
     // Free any resources used by Curl Library
     guCurl::CurlDone();
-
     return 0;
 }
 

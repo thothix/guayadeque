@@ -2873,18 +2873,13 @@ msgstr "Коришћено:"
 msgid "%s free of %s"
 msgstr "%s слободно од %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Име фајла"
+
 #: PortableMedia.cpp:1048
 msgid "Name Pattern:"
 msgstr "Шаблон имена:"
-
-#: PortableMedia.cpp:1053
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr "{a}»: Извођач»»»{aa} : Уметник албума \n {b}»: Албум»»»{d}» : Диск\n {f}»: Filename»»{g}» : Жанр\n {n}»: Број»»»{t}» : Наслов\n {y}»:"
 
 #: PortableMedia.cpp:1058
 msgid "Audio Folders:"
@@ -3550,7 +3545,7 @@ msgid ""
 "Disk\n"
 "Filename\n"
 "Genre"
-msgstr "Композитор \n Диск \n Име фајла \n Жанр"
+msgstr "Композитор\nДиск\nИме фајла\nЖанр"
 
 #: Preferences.cpp:2438
 msgid ""

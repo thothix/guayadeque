@@ -2874,18 +2874,13 @@ msgstr "使用:"
 msgid "%s free of %s"
 msgstr "%2$s 中 %1$s フリー"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "ファイル名"
+
 #: PortableMedia.cpp:1048
 msgid "Name Pattern:"
 msgstr "名前のパターン"
-
-#: PortableMedia.cpp:1053
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr "{a}\t: アーティスト\t\t\t{aa} : アルバム・アーティスト\n{b}\t: アルバム\t\t\t{d}\t : ディスク\n{f}\t: ファイル\t\t{g}\t : ジャンル\n{n}\t: 番号\t\t\t{t}\t : タイトル\n{y}\t: 年"
 
 #: PortableMedia.cpp:1058
 msgid "Audio Folders:"

@@ -2887,23 +2887,13 @@ msgstr "Χρησιμοποιημένο:"
 msgid "%s free of %s"
 msgstr "%s ελεύθερο από %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Όνομα Αρχείου"
+
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:745
 msgid "Name Pattern:"
 msgstr "Πρότυπο Ονομασίας:"
-
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:750
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr ""
-"{a}\t: Καλλιτέχνης\t\t\t{aa} : Καλλιτέχνης του Άλμπουμ\n"
-"{b}\t: Αλμπουμ\t\t\t{d}\t : Δισκος\n"
-"{f}\t: Όνομα Αρχείου\t\t{g}\t : Είδος\n"
-"{n}\t: Αριθμός\t\t\t{t}\t : Τίτλος\n"
-"{y}\t: Έτος\""
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:755
 msgid "Audio Folders:"

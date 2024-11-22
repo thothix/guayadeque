@@ -2900,23 +2900,13 @@ msgstr "Utilizado:"
 msgid "%s free of %s"
 msgstr "%s livres em %s"
 
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
+msgid "Filename"
+msgstr "Nome do ficheiro"
+
 #: PortableMedia.cpp:1048
 msgid "Name Pattern:"
 msgstr "Padrão:"
-
-#: PortableMedia.cpp:1053
-msgid ""
-"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
-"{b}\t: Album\t\t\t{d}\t : Disk\n"
-"{f}\t: Filename\t\t{g}\t : Genre\n"
-"{n}\t: Number\t\t\t{t}\t : Title\n"
-"{y}\t: Year"
-msgstr ""
-"{a}\t: Artista\t\t\t{aa} : Artista do álbum\n"
-"{b}\t: Álbum\t\t\t{d}\t : Disco\n"
-"{f}\t: Nome do ficheiro\t\t{g}\t : Género\n"
-"{n}\t: Número\t\t\t{t}\t : Título\n"
-"{y}\t: Ano"
 
 #: PortableMedia.cpp:1058
 msgid "Audio Folders:"
@@ -3614,7 +3604,7 @@ msgid ""
 msgstr ""
 "Compositor\n"
 "Disco\n"
-"Nome de ficheiro\n"
+"Nome do ficheiro\n"
 "Género"
 
 #: Preferences.cpp:2438
