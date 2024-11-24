@@ -2003,7 +2003,7 @@ msgid "Sources"
 msgstr "Bronnen"
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Toon/Verberg het bronnenpaneel"
 
 #: MainFrame.cpp:1378
@@ -3123,7 +3123,7 @@ msgid "Behaviour"
 msgstr "Gedrag"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Icoon in systeemvak weergeven"
 
 #: Preferences.cpp:658
@@ -3159,7 +3159,7 @@ msgid "Save playlist on close"
 msgstr "Afspeellijst opslaan bij afsluiten"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Afsluiten naar systeemvak"
 
 #: Preferences.cpp:698

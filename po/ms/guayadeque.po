@@ -1592,7 +1592,7 @@ msgid "Behaviour"
 msgstr "Kelakuan"
 
 #: ui/preferences/Preferences.cpp:519
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Aktifkan ikon palang tugas"
 
 #: ui/preferences/Preferences.cpp:534
@@ -1628,7 +1628,7 @@ msgid "Save playlist on close"
 msgstr "Simpan senarai main ketika ditutup"
 
 #: ui/preferences/Preferences.cpp:569
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Beralih ke ikon palang tugas"
 
 #: ui/preferences/Preferences.cpp:574
@@ -4167,7 +4167,7 @@ msgid "Sources"
 msgstr "Sumber"
 
 #: ui/MainFrame.cpp:1413
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Tunjuk/Sembunyi lokasi"
 
 #: ui/MainFrame.cpp:1420

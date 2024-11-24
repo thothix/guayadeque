@@ -1324,7 +1324,7 @@ void guMainFrame::CreateViewMenu( wxMenu * menu )
     // Locations
     m_MenuMainLocations = new wxMenuItem( menu, ID_MENU_VIEW_MAIN_LOCATIONS,
                     wxString( _( "Sources" ) ) + guAccelGetCommandKeyCodeString( ID_MENU_VIEW_MAIN_LOCATIONS ),
-                    _( "Show/Hide the locatons" ), wxITEM_CHECK );
+                    _( "Show/Hide the locations" ), wxITEM_CHECK );
     menu->Append( m_MenuMainLocations );
     m_MenuMainLocations->Check( m_LocationPanel );
 

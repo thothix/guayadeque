@@ -2006,7 +2006,7 @@ msgid "Sources"
 msgstr "Quellen"
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Orte ein- oder ausblenden"
 
 #: MainFrame.cpp:1378
@@ -3141,7 +3141,7 @@ msgid "Behaviour"
 msgstr "Verhalten"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Startleistensymbol aktivieren"
 
 #: Preferences.cpp:658
@@ -3181,8 +3181,8 @@ msgid "Save playlist on close"
 msgstr "Wiedergabeliste beim Schließen speichern"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
-msgstr "Guayadeque in Taskbar minimieren"
+msgid "Close to taskbar icon"
+msgstr "Guayadeque in taskbar minimieren"
 
 #: Preferences.cpp:698
 msgid "Ask confirmation on exit"

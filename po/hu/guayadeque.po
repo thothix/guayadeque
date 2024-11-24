@@ -2002,7 +2002,7 @@ msgid "Sources"
 msgstr "Források"
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Helyek be/ki"
 
 #: MainFrame.cpp:1378
@@ -3122,7 +3122,7 @@ msgid "Behaviour"
 msgstr "Viselkedés"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Panel ikon aktiválása"
 
 #: Preferences.cpp:658
@@ -3158,7 +3158,7 @@ msgid "Save playlist on close"
 msgstr "Várólista mentése bezáráskor"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Bezáráskor ikon állapot a panelen"
 
 #: Preferences.cpp:698

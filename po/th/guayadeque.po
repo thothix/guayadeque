@@ -2001,7 +2001,7 @@ msgid "Sources"
 msgstr ""
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr ""
 
 #: MainFrame.cpp:1378
@@ -3121,7 +3121,7 @@ msgid "Behaviour"
 msgstr "การใช้งา"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "เพิ่มไอค่อนในทาสบาร์"
 
 #: Preferences.cpp:658
@@ -3157,7 +3157,7 @@ msgid "Save playlist on close"
 msgstr "บันทึกคิวเพลงที่กำลังเล่นอัตโนมัติก่อนออกจากโปรแกรม"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "ย่อโปรแกรมไปยังทาสบาร์เมื่อกดปุ่มกากบาท"
 
 #: Preferences.cpp:698

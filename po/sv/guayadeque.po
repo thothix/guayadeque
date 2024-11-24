@@ -2002,7 +2002,7 @@ msgid "Sources"
 msgstr ""
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr ""
 
 #: MainFrame.cpp:1378
@@ -3122,7 +3122,7 @@ msgid "Behaviour"
 msgstr "Beteende"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr ""
 
 #: Preferences.cpp:658
@@ -3158,7 +3158,7 @@ msgid "Save playlist on close"
 msgstr "Spara spellista vid stängning"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr ""
 
 #: Preferences.cpp:698

@@ -2010,7 +2010,7 @@ msgid "Sources"
 msgstr "Fontes"
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Mostrar/Ocultar os locais"
 
 #: MainFrame.cpp:1378
@@ -3164,7 +3164,7 @@ msgid "Behaviour"
 msgstr "Comportamento"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Ativar ícone da barra de tarefas"
 
 #: Preferences.cpp:658
@@ -3204,7 +3204,7 @@ msgid "Save playlist on close"
 msgstr "Salvar lista de reprodução ao sair"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Fechar e ir para o ícone da barra de tarefas"
 
 #: Preferences.cpp:698

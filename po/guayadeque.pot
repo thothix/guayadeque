@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-22 16:21-0300\n"
+"POT-Creation-Date: 2024-11-24 13:47-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2007,7 +2007,7 @@ msgid "Sources"
 msgstr ""
 
 #: ui/MainFrame.cpp:1327
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr ""
 
 #: ui/MainFrame.cpp:1334
@@ -3902,7 +3902,7 @@ msgid "Behaviour"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:503
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:514
@@ -3942,7 +3942,7 @@ msgid "Save playlist on close"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:554
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:559

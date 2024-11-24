@@ -1873,7 +1873,7 @@ msgid "Sources"
 msgstr "Sources"
 
 #: ui/MainFrame.cpp:1327
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Afficher/Cacher les sources multimédias"
 
 #: ui/MainFrame.cpp:1334
@@ -3859,7 +3859,7 @@ msgid "Behaviour"
 msgstr "Comportement"
 
 #: ui/preferences/Preferences.cpp:506
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Activer l'icône de la barre des tâches"
 
 #: ui/preferences/Preferences.cpp:517
@@ -3899,7 +3899,7 @@ msgid "Save playlist on close"
 msgstr "Sauvegarder la file de lecture à la Fermeture"
 
 #: ui/preferences/Preferences.cpp:557
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Fermer vers l'icône de la barre des tâches"
 
 #: ui/preferences/Preferences.cpp:562

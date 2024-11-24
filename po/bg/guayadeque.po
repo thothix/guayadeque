@@ -2002,7 +2002,7 @@ msgid "Sources"
 msgstr "Източници"
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Покажи/Скрий местата"
 
 #: MainFrame.cpp:1378
@@ -3122,7 +3122,7 @@ msgid "Behaviour"
 msgstr "Поведение"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Активиране на иконата в панела със задачи"
 
 #: Preferences.cpp:658
@@ -3158,7 +3158,7 @@ msgid "Save playlist on close"
 msgstr "Запази плейлиста при затваряне"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Затварянето скрива прозореца в иконата в полето със задачи"
 
 #: Preferences.cpp:698

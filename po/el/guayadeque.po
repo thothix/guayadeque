@@ -1870,7 +1870,7 @@ msgid "Sources"
 msgstr "Πηγές"
 
 #: ui/MainFrame.cpp:1327
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Εμφάνιση/Απόκρυψη των τοποθεσιών"
 
 #: ui/MainFrame.cpp:1334
@@ -3862,7 +3862,7 @@ msgid "Behaviour"
 msgstr "Συμπεριφορά"
 
 #: ui/preferences/Preferences.cpp:503
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Ενεργοποίηση εικονιδίου γραμμής εργασιών"
 
 #: ui/preferences/Preferences.cpp:514
@@ -3902,7 +3902,7 @@ msgid "Save playlist on close"
 msgstr "Αποθήκευση της λίστας αναπαραγωγής κατά την έξοδο"
 
 #: ui/preferences/Preferences.cpp:554
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Κλείσιμο σε εικονίδιο της γραμμής εργασιών"
 
 #: ui/preferences/Preferences.cpp:559

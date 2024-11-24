@@ -2002,7 +2002,7 @@ msgid "Sources"
 msgstr "Izvori"
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Prikaži/Sakrij lokacije"
 
 #: MainFrame.cpp:1378
@@ -3122,8 +3122,8 @@ msgid "Behaviour"
 msgstr "Ponašanje"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
-msgstr "Uključi task bar ikonu"
+msgid "Activate taskbar icon"
+msgstr "Uključi taskbar ikonu"
 
 #: Preferences.cpp:658
 msgid "Integrate into SoundMenu"
@@ -3158,8 +3158,8 @@ msgid "Save playlist on close"
 msgstr "Sačuvaj listu izvođenja"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
-msgstr "Zatvori u task bar ikonu"
+msgid "Close to taskbar icon"
+msgstr "Zatvori u taskbar ikonu"
 
 #: Preferences.cpp:698
 msgid "Ask confirmation on exit"
