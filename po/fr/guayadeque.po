@@ -11,13 +11,13 @@ msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 19:53-0300\n"
-"PO-Revision-Date: 2024-11-20 02:07+0100\n"
+"PO-Revision-Date: 2024-11-24 16:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.5\n"
 
@@ -751,7 +751,7 @@ msgstr "Afficher"
 
 #: ui/locationpanel/LocationPanel.cpp:310 ui/MainFrame.cpp:968
 msgid "Show/Hide the radio panel"
-msgstr "Afficher/Cacher le panneau des radios "
+msgstr "Afficher/Cacher le panneau des radios"
 
 #: ui/locationpanel/LocationPanel.cpp:316 ui/MainFrame.cpp:974
 #: ui/radios/RadioPanel.cpp:552 ui/radios/RadioPanel.cpp:592
@@ -930,7 +930,7 @@ msgstr "Afficher les notations de la Bibliothèque"
 
 #: ui/locationpanel/LocationPanel.cpp:463
 msgid "Play Counts"
-msgstr ""
+msgstr "Nombre d'écoutes"
 
 #: ui/locationpanel/LocationPanel.cpp:463 ui/MainFrame.cpp:1217
 msgid "View the library play counts"
@@ -1078,11 +1078,11 @@ msgstr "Êtes-vous sûr de vouloir supprimer les étiquettes sélectionnées?"
 
 #: ui/trackedit/TrackEdit.cpp:92
 msgid "Songs Editor"
-msgstr "Éditeur de morceauxs"
+msgstr "Éditeur de morceaux"
 
 #: ui/trackedit/TrackEdit.cpp:105
 msgid "Songs"
-msgstr "Morceaux "
+msgstr "Morceaux"
 
 #: ui/trackedit/TrackEdit.cpp:113
 msgid "Move the track to the previous position"
@@ -1182,7 +1182,9 @@ msgstr "Saisir le nom de l'album à rechercher sur musicbrainz"
 
 #: ui/trackedit/TrackEdit.cpp:440
 msgid "Clear the search fields so it search using the music fingerprint"
-msgstr "Effacer les champs de recherche pour faire une cherche par empreinte digitale de la musique"
+msgstr ""
+"Effacer les champs de recherche pour faire une cherche "
+"par empreinte digitale de la musique"
 
 #: ui/trackedit/TrackEdit.cpp:455
 msgid "Select the album found in musicbrainz"
@@ -1263,16 +1265,32 @@ msgid "Names Preview"
 msgstr "Aperçu des noms"
 
 #: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2252
-msgid "Pattern"
-msgstr "Modèle"
+msgid "Pattern:"
+msgstr "Modèle:"
 
-#: FileRenamer.cpp:82
-msgid "Pattern flags"
-msgstr "Modèle de balises"
-
-#: FileRenamer.cpp:82
-msgid "or"
-msgstr "ou"
+#: ui/filebrowser/FileRenamer.cpp:83
+msgid ""
+"Pattern flags:\n"
+"{g} : Genre\n"
+"{a} : Artist\n"
+"{aa}: Album Artist\n"
+"{A} : {aa} or {a}\n"
+"{b} : Album\n"
+"{t} : Title\n"
+"{n} : Number\n"
+"{y} : Year\n"
+"{d} : Disk"
+msgstr ""
+"Modèle de balises:\n"
+"{g} : Genre\n"
+"{a} : Artiste\n"
+"{aa}: Artiste de l'Album\n"
+"{A} : {aa} or {a}\n"
+"{b} : Album\n"
+"{t} : Titre\n"
+"{n} : Numéro\n"
+"{y} : Année\n"
+"{d} : Disque"
 
 #: ui/filebrowser/FileBrowser.cpp:224 ui/filebrowser/FileBrowser.cpp:583
 msgid "See used locations"
@@ -1357,7 +1375,9 @@ msgstr "Morceau en cours"
 #: ui/lastfmpanel/LastFMPanel.cpp:1477 ui/lastfmpanel/LastFMPanel.cpp:2942
 #: ui/radios/RadioPanel.cpp:419 ui/podcasts/PodcastsPanel.cpp:2054
 msgid "Add current selected tracks to playlist after the current track"
-msgstr "Ajouter les morceaux sélectionnés à la file de lecture après le morceau en cours"
+msgstr ""
+"Ajouter les morceaux sélectionnés à la file de lecture"
+"après le morceau en cours"
 
 #: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:989
 #: ui/mediaviewer/library/DiBrowser.cpp:286
@@ -1405,7 +1425,9 @@ msgstr "Album en cours"
 #: ui/lastfmpanel/LastFMPanel.cpp:1483 ui/lastfmpanel/LastFMPanel.cpp:2948
 #: ui/radios/RadioPanel.cpp:426 ui/podcasts/PodcastsPanel.cpp:2060
 msgid "Add current selected tracks to playlist after the current album"
-msgstr "Ajouter les morceaux sélectionnés à la file de lecture après l'album en cours"
+msgstr ""
+"Ajouter les morceaux sélectionnés à la file de lecture "
+"après l'album en cours"
 
 #: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:996
 #: ui/mediaviewer/library/DiBrowser.cpp:293
@@ -1644,11 +1666,13 @@ msgstr "Sauter au prochain morceau de la file de lecture en cours"
 
 #: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1444
 msgid "Next Album"
-msgstr ""
+msgstr "Prochain Album"
 
 #: ui/taskbar/TaskBar.cpp:128
 msgid "Skip to next album track in current playlist"
-msgstr "Sauter au prochain morceau de l'album de la file de lecture en cours"
+msgstr ""
+"Sauter au prochain morceau de l'album "
+"de la file de lecture en cours"
 
 #: ui/taskbar/TaskBar.cpp:132
 msgid "Prev Track"
@@ -1898,7 +1922,7 @@ msgstr "Afficher/Cacher la pochette"
 
 #: ui/MainFrame.cpp:1362
 msgid "Show/Hide the file browser panel"
-msgstr ""
+msgstr "Afficher/Cacher le panneau du navigateur de fichiers"
 
 #: ui/MainFrame.cpp:1369 ui/MainFrame.cpp:2562
 msgid "Last.fm"
@@ -1950,7 +1974,9 @@ msgstr "Charger une Disposition"
 
 #: ui/MainFrame.cpp:1425
 msgid "Set current view from a user defined layout"
-msgstr "Établir l'affichage actuel à partir d'une Disposition enregistrée par l'utilisateur"
+msgstr ""
+"Établir l'affichage actuel à partir d'une Disposition "
+"enregistrée par l'utilisateur"
 
 #: ui/MainFrame.cpp:1426
 msgid "Delete Layout"
@@ -2246,7 +2272,8 @@ msgstr "Jouer le compositeur sélectionné"
 #: ui/mediaviewer/library/AlListBox.cpp:285
 #: ui/mediaviewer/library/AlListBox.cpp:291
 msgid "Add current selected albums to the Playlist as Next Tracks"
-msgstr "Ajouter les albums sélectionnés à la file de lecture comme prochain morceaux"
+msgstr "Ajouter les albums sélectionnés à la file de lecture "
+"comme prochain morceaux"
 
 #: ui/mediaviewer/library/CoListBox.cpp:140
 #: ui/mediaviewer/library/AlListBox.cpp:295
@@ -2290,7 +2317,8 @@ msgstr "Créer une liste de lecture des meilleurs morceaux"
 
 #: ui/mediaviewer/library/ArListBox.cpp:215
 msgid "Create a playlist with the best of this aretist"
-msgstr "Créer une liste de lecture des meilleurs morceaux (Best of) de cet artiste"
+msgstr "Créer une liste de lecture des meilleurs morceaux "
+"(Best of) de cet artiste"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
 #: ui/mediaviewer/treeview/TreePanel.cpp:361
@@ -2337,7 +2365,8 @@ msgstr "Lire l'Artiste de l'Album sélectionné"
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1817
 msgid "Create a playlist with the best of this artist"
-msgstr "Créer une liste de lecture avec les meilleurs morceaux (Best of) de cet artiste"
+msgstr "Créer une liste de lecture avec les meilleurs morceaux "
+"(Best of) de cet artiste"
 
 #: ui/mediaviewer/library/PcListBox.cpp:112
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:645
@@ -2884,13 +2913,23 @@ msgstr "Utilisé :"
 msgid "%s free of %s"
 msgstr "%s disponible sur %s"
 
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
-msgid "Filename"
-msgstr "Nom de fichier"
-
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:745
 msgid "Name Pattern:"
 msgstr "Modèle de nom:"
+
+#: ui/mediaviewer/portablemedia/PortableMedia.cpp:750
+msgid ""
+"{a}\t: Artist\t\t\t{aa} : Album Artist\n"
+"{b}\t: Album\t\t\t{d}\t : Disk\n"
+"{f}\t: Filename\t\t{g}\t : Genre\n"
+"{n}\t: Number\t\t\t{t}\t : Title\n"
+"{y}\t: Year"
+msgstr ""
+"{a}\t: Artiste\t\t\t{aa} : Artiste de l'Album\n"
+"{b}\t: Album\t\t\t{d}\t : Disque\n"
+"{f}\t: Nom de fichier\t\t{g}\t : Genre\n"
+"{n}\t: Numéro\t\t\t{t}\t : Titre\n"
+"{y}\t: Année"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:755
 msgid "Audio Folders:"
@@ -3028,7 +3067,9 @@ msgstr "Éditer la Liste de Lecture sélectionnée"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 msgid "Save the selected playlist as a Static Playlist"
-msgstr "Sauvegarder la Liste de Lecture sélectionnée en tant que Liste Statique"
+msgstr ""
+"Sauvegarder la Liste de Lecture sélectionnée"
+"en tant que Liste Statique"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:292
 msgid "Change the name of the selected playlist"
@@ -3848,7 +3889,9 @@ msgstr "Restaurer la position pour les morceaux d'une durée supérieure à"
 
 #: ui/preferences/Preferences.cpp:488
 msgid "set the minimum length in minutes to save track position"
-msgstr "définir la durée minimum en minutes pour sauvegarder la position du morceau"
+msgstr ""
+"définir la durée minimum en minutes "
+"pour sauvegarder la position du morceau"
 
 #: ui/preferences/Preferences.cpp:498
 msgid "Load default layout"
@@ -3880,7 +3923,9 @@ msgstr "Texte de recherche : instantané"
 
 #: ui/preferences/Preferences.cpp:535
 msgid "When searching, pressing enter queues the result"
-msgstr "Pendant la recherche, l'appui sur |entrée| ajoute le résultat à la file de lecture"
+msgstr ""
+"Pendant la recherche, l'appui sur |entrée| "
+"ajoute le résultat à la file de lecture"
 
 #: ui/preferences/Preferences.cpp:541
 msgid "Show album cover in the player"
@@ -3891,8 +3936,8 @@ msgid "Show CD cover frame in the cover editor"
 msgstr "Afficher le cadre de pochette dans l'éditeur de pochette"
 
 #: ui/preferences/Preferences.cpp:551
-msgid "On Close"
-msgstr "A la Fermeture"
+msgid " On Close "
+msgstr " A la Fermeture "
 
 #: ui/preferences/Preferences.cpp:553
 msgid "Save playlist on close"
@@ -3907,12 +3952,12 @@ msgid "Ask confirmation on exit"
 msgstr "Demander la confirmation de la sortie du programme"
 
 #: ui/preferences/Preferences.cpp:654
-msgid "Paths"
-msgstr "Emplacements"
+msgid " Paths "
+msgstr " Emplacements "
 
 #: ui/preferences/Preferences.cpp:674
-msgid "Words to detect covers"
-msgstr "Mots-clés pour trouver les pochettes"
+msgid " Words to detect covers "
+msgstr " Mots-clés pour trouver les pochettes "
 
 #: ui/preferences/Preferences.cpp:703 ui/preferences/Preferences.cpp:2238
 msgid "Options"
@@ -4011,8 +4056,8 @@ msgid "artists or"
 msgstr "artistes ou"
 
 #: ui/preferences/Preferences.cpp:933
-msgid "Silence detector"
-msgstr "Détecteur de silence"
+msgid " Silence detector "
+msgstr " Détecteur de silence "
 
 #: ui/preferences/Preferences.cpp:938
 msgid "Skip at"
@@ -4027,8 +4072,8 @@ msgid "seconds"
 msgstr "secondes"
 
 #: ui/preferences/Preferences.cpp:975
-msgid "Output device"
-msgstr "Périphérique de sortie"
+msgid " Output device "
+msgstr " Périphérique de sortie "
 
 #: ui/preferences/Preferences.cpp:978
 msgid "Automatic"
@@ -4072,7 +4117,13 @@ msgstr "Démarrage fondu entrant:"
 
 #: ui/preferences/Preferences.cpp:1077
 msgid "Select at which volume of the fade out the fade in starts"
-msgstr "Sélectionne à quel volume de fondu sortant le fondu entrant doit démarrer"
+msgstr ""
+"Sélectionne à quel volume de fondu sortant "
+"le fondu entrant doit démarrer"
+
+#: ui/preferences/Preferences.cpp:1117
+msgid " Record "
+msgstr " Enregistrer "
 
 #: ui/preferences/Preferences.cpp:1119
 msgid "Enable recording"
@@ -4115,8 +4166,8 @@ msgid "Delete tracks shorter than"
 msgstr "Supprimer les morceaux d'une durée inférieure à"
 
 #: ui/preferences/Preferences.cpp:1222
-msgid "Last.fm audioscrobble"
-msgstr "Scrobbler Audio Last.fm"
+msgid " Last.fm audioscrobble "
+msgstr " Scrobbler Audio Last.fm "
 
 #: ui/preferences/Preferences.cpp:1224 ui/preferences/Preferences.cpp:1260
 msgid "Enabled"
@@ -4133,8 +4184,12 @@ msgid "Password:"
 msgstr "Mot de passe :"
 
 #: ui/preferences/Preferences.cpp:1258
-msgid "Libre.fm audioscrobble"
-msgstr "Scrobbler Audio Libre.fm"
+msgid " Libre.fm audioscrobble "
+msgstr " Scrobbler Audio Libre.fm "
+
+#: ui/preferences/Preferences.cpp:1318
+msgid " Sources "
+msgstr " Sources "
 
 #: ui/preferences/Preferences.cpp:1363
 msgid "Targets"
@@ -4145,8 +4200,12 @@ msgid " Disabled Genres "
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:1426
-msgid "Font"
-msgstr "Police"
+msgid " Font "
+msgstr " Police "
+
+#: ui/preferences/Preferences.cpp:1428
+msgid "Font:"
+msgstr "Police :"
 
 #: ui/preferences/Preferences.cpp:1440
 msgid "Align:"
@@ -4157,8 +4216,8 @@ msgid "Center"
 msgstr "Centre"
 
 #: ui/preferences/Preferences.cpp:1491
-msgid "Proxy"
-msgstr "Proxy"
+msgid " Proxy "
+msgstr " Proxy "
 
 #: ui/preferences/Preferences.cpp:1493
 msgid "Proxy Enabled"
@@ -4172,6 +4231,10 @@ msgstr "Hostname:"
 msgid "Port:"
 msgstr "Port:"
 
+#: ui/preferences/Preferences.cpp:1546
+msgid " Filters "
+msgstr " Filtres "
+
 #: ui/preferences/Preferences.cpp:1581
 msgid "Browser command"
 msgstr "Commande du navigateur Internet"
@@ -4183,6 +4246,10 @@ msgstr "Débit minimum souhaité pour les radios"
 #: ui/preferences/Preferences.cpp:1596
 msgid "Player online buffer size"
 msgstr "Taille de cache du Lecteur en ligne"
+
+#: ui/preferences/Preferences.cpp:1630
+msgid " Podcasts "
+msgstr " Podcasts "
 
 #: ui/preferences/Preferences.cpp:1634
 msgid "Destination directory:"
@@ -4276,13 +4343,17 @@ msgstr "Télécharger en :"
 msgid "Download Page"
 msgstr "Page de téléchargement"
 
+#: ui/preferences/Preferences.cpp:1955
+msgid " Links "
+msgstr " Liens "
+
 #: ui/preferences/Preferences.cpp:2009
 msgid "URL:"
 msgstr "URL :"
 
 #: ui/preferences/Preferences.cpp:2034
-msgid "Define URLs using"
-msgstr "Définir les URLs avec"
+msgid " Define URLs using "
+msgstr " Définir les URLs avec "
 
 #: ui/preferences/Preferences.cpp:2040
 msgid ""
@@ -4293,8 +4364,8 @@ msgstr ""
 "Texte à rechercher"
 
 #: ui/preferences/Preferences.cpp:2143
-msgid "Define commands using"
-msgstr "Définir les commandes avec"
+msgid " Define commands using "
+msgstr " Définir les commandes avec "
 
 #: ui/preferences/Preferences.cpp:2149
 msgid ""
@@ -4307,8 +4378,8 @@ msgstr ""
 "Emplacement du Morceau"
 
 #: ui/preferences/Preferences.cpp:2182
-msgid "Patterns"
-msgstr "Modèles"
+msgid " Patterns "
+msgstr " Modèles "
 
 #: ui/preferences/Preferences.cpp:2293
 msgid "Remove source files"
@@ -4355,8 +4426,8 @@ msgstr ""
 "Année"
 
 #: ui/preferences/Preferences.cpp:2383
-msgid "Accelerators"
-msgstr "Raccourcis"
+msgid " Accelerators "
+msgstr " Raccourcis "
 
 #: ui/preferences/Preferences.cpp:2388
 msgid "Action"
