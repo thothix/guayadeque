@@ -1743,7 +1743,7 @@ msgid "Random / Smart play modes"
 msgstr "Vilkårlig og smart afspilningstilstand"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Numre tilbage for at starte søgning"
 
 #: ui/preferences/Preferences.cpp:904
@@ -1757,10 +1757,6 @@ msgstr "Maks. afspillede numre i afspilningslisten"
 #: ui/preferences/Preferences.cpp:921
 msgid "Don't repeat last"
 msgstr "Gentag ikke sidste"
-
-#: ui/preferences/Preferences.cpp:929
-msgid "artists or"
-msgstr "kunstnere eller"
 
 #: ui/preferences/Preferences.cpp:937
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:335

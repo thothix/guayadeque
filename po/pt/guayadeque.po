@@ -3274,7 +3274,7 @@ msgid "Random / Smart play modes"
 msgstr "Modos Aleatório/Reprodução inteligente"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Faixas mínimas para nova adição"
 
 #: Preferences.cpp:1019
@@ -3285,13 +3285,11 @@ msgstr "Faixas adicionadas à vez"
 msgid "Max played tracks kept in playlist"
 msgstr "Número de faixas reproduzidas a manter na lista"
 
-#: Preferences.cpp:1036
+#: ui/preferences/Preferences.cpp:908
 msgid "Don't repeat last"
-msgstr "Não repetir últimos"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "artistas ou"
+msgid_plural "Don't repeat last"
+msgstr[0] "Não repetir último"
+msgstr[1] "Não repetir últimos"
 
 #: Preferences.cpp:1060
 msgid "Silence detector"

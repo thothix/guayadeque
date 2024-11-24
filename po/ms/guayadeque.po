@@ -1745,7 +1745,7 @@ msgid "Random / Smart play modes"
 msgstr "Mof main Rawak / Pintar"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Trek berbaki untuk mula gelintar"
 
 #: ui/preferences/Preferences.cpp:904
@@ -1759,10 +1759,6 @@ msgstr "Maksimum trek telah main disimpan dalam senarai main"
 #: ui/preferences/Preferences.cpp:921
 msgid "Don't repeat last"
 msgstr "Jangan ulang yang terakhir"
-
-#: ui/preferences/Preferences.cpp:929
-msgid "artists or"
-msgstr "artis atau"
 
 #: ui/preferences/Preferences.cpp:937
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:335

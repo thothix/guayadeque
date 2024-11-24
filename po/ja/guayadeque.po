@@ -3236,7 +3236,7 @@ msgid "Random / Smart play modes"
 msgstr "ランダム/スマート再生モード"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "サーチを始める残り曲数"
 
 #: Preferences.cpp:1019
@@ -3250,10 +3250,6 @@ msgstr "再生リストに保持する曲数"
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
 msgstr "除外 最近再生した"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "アーティストあるいは"
 
 #: Preferences.cpp:1060
 msgid "Silence detector"

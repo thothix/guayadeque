@@ -1747,7 +1747,7 @@ msgid "Random / Smart play modes"
 msgstr "Modo Aleatorio / Inteligente de reproducción"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Pistas restantes para iniciar la búsqueda"
 
 #: ui/preferences/Preferences.cpp:904
@@ -1761,10 +1761,6 @@ msgstr "Max.  pistas en la lista de reproducción"
 #: ui/preferences/Preferences.cpp:921
 msgid "Don't repeat last"
 msgstr "No repetir último"
-
-#: ui/preferences/Preferences.cpp:929
-msgid "artists or"
-msgstr "Artistas o"
 
 #: ui/preferences/Preferences.cpp:937
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:335

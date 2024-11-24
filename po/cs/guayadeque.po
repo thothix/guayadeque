@@ -1751,7 +1751,7 @@ msgid "Random / Smart play modes"
 msgstr "Nahodný / Chytrý mód hraní"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Počet skladeb po kterých se začne vyhledávat"
 
 #: ui/preferences/Preferences.cpp:904
@@ -1765,10 +1765,6 @@ msgstr "Maximální počet skladeb , které zůstanou v seznamu skladeb"
 #: ui/preferences/Preferences.cpp:921
 msgid "Don't repeat last"
 msgstr "Neopakovat poslední hrané"
-
-#: ui/preferences/Preferences.cpp:929
-msgid "artists or"
-msgstr "autor nebo"
 
 #: ui/preferences/Preferences.cpp:937
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:335
@@ -3504,7 +3500,7 @@ msgstr "Vzorové značky"
 
 #: FileRenamer.cpp:82
 msgid "or"
-msgstr "or"
+msgstr "nebo"
 
 #: ui/filebrowser/FileBrowser.cpp:233 ui/filebrowser/FileBrowser.cpp:603
 msgid "See used locations"

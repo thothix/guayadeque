@@ -3234,7 +3234,7 @@ msgid "Random / Smart play modes"
 msgstr "Nasumično / Pametno Izvođenje načini"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Pjesme prije nego počinje traženje"
 
 #: Preferences.cpp:1019
@@ -3248,10 +3248,6 @@ msgstr "Najveći broj pjesma koji ostaje na listi"
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
 msgstr "Ne ponavljati zadnjih"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "izvođača ili"
 
 #: Preferences.cpp:1060
 msgid "Silence detector"

@@ -1747,7 +1747,7 @@ msgid "Random / Smart play modes"
 msgstr "Stokkað / Snjall Hamur"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Lög til að hefja leit"
 
 #: ui/preferences/Preferences.cpp:904
@@ -1761,10 +1761,6 @@ msgstr "Hámark laga í lagalista"
 #: ui/preferences/Preferences.cpp:921
 msgid "Don't repeat last"
 msgstr "Ekki endurtaka síðustu"
-
-#: ui/preferences/Preferences.cpp:929
-msgid "artists or"
-msgstr "flytjendur eða"
 
 #: ui/preferences/Preferences.cpp:937
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:335

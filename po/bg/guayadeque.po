@@ -3234,7 +3234,7 @@ msgid "Random / Smart play modes"
 msgstr "Режими на Произволно/Интелигентно възпроизвеждане"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Оставащи песни преди търсене"
 
 #: Preferences.cpp:1019
@@ -3248,10 +3248,6 @@ msgstr "Максимален брой прослушани песни, коит�
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
 msgstr "Не повтаряй предишнишните"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "изпълнител или"
 
 #: Preferences.cpp:1060
 msgid "Silence detector"

@@ -3234,7 +3234,7 @@ msgid "Random / Smart play modes"
 msgstr ""
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr ""
 
 #: Preferences.cpp:1019
@@ -3247,10 +3247,6 @@ msgstr ""
 
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
-msgstr ""
-
-#: Preferences.cpp:1044
-msgid "artists or"
 msgstr ""
 
 #: Preferences.cpp:1060

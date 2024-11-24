@@ -1744,7 +1744,7 @@ msgid "Random / Smart play modes"
 msgstr "Atsitiktinio / Išmaniojo atkūrimo veiksenos"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:904
@@ -1757,10 +1757,6 @@ msgstr ""
 
 #: ui/preferences/Preferences.cpp:921
 msgid "Don't repeat last"
-msgstr ""
-
-#: ui/preferences/Preferences.cpp:929
-msgid "artists or"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:937

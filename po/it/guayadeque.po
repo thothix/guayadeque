@@ -4045,7 +4045,7 @@ msgid "Random / Smart play modes"
 msgstr "Modalità di riproduzione : Casuale / Intelligente"
 
 #: ui/preferences/Preferences.cpp:881
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Brani lasciati quando inizia ricerca"
 
 #: ui/preferences/Preferences.cpp:889
@@ -4059,10 +4059,6 @@ msgstr "Numero massimo di brani mantenuti nella Playlist"
 #: ui/preferences/Preferences.cpp:906
 msgid "Don't repeat last"
 msgstr "Non ripetere gli ultimi"
-
-#: ui/preferences/Preferences.cpp:914
-msgid "artists or"
-msgstr "artisti o"
 
 #: ui/preferences/Preferences.cpp:930
 msgid "Silence detector"
