@@ -2003,7 +2003,7 @@ msgid "Sources"
 msgstr "Джерела"
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Показати/Сховати місця"
 
 #: MainFrame.cpp:1378
@@ -3123,7 +3123,7 @@ msgid "Behaviour"
 msgstr "Поведінка"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Активувати іконку в системному лотку"
 
 #: Preferences.cpp:658
@@ -3159,7 +3159,7 @@ msgid "Save playlist on close"
 msgstr "Зберегти список програвання при виході"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Згортати при закритті вікна"
 
 #: Preferences.cpp:698

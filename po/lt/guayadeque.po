@@ -1591,7 +1591,7 @@ msgid "Behaviour"
 msgstr "Elgsena"
 
 #: ui/preferences/Preferences.cpp:519
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:534
@@ -1627,7 +1627,7 @@ msgid "Save playlist on close"
 msgstr "Užveriant, įrašyti grojaraštį"
 
 #: ui/preferences/Preferences.cpp:569
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:574
@@ -4170,7 +4170,7 @@ msgid "Sources"
 msgstr "Šaltiniai"
 
 #: ui/MainFrame.cpp:1413
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr ""
 
 #: ui/MainFrame.cpp:1420

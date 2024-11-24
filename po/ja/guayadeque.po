@@ -2004,7 +2004,7 @@ msgid "Sources"
 msgstr "ミュージックソース"
 
 #: MainFrame.cpp:1371
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "場所の表示/非表示"
 
 #: MainFrame.cpp:1378
@@ -3124,7 +3124,7 @@ msgid "Behaviour"
 msgstr "動作"
 
 #: Preferences.cpp:643
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "タスクバーアイコンを有効にする"
 
 #: Preferences.cpp:658
@@ -3160,7 +3160,7 @@ msgid "Save playlist on close"
 msgstr "終了時に再生リストを保存"
 
 #: Preferences.cpp:693
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "タスクバー・アイコンを閉じる"
 
 #: Preferences.cpp:698

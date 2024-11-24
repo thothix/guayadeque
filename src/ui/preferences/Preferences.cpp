@@ -500,7 +500,7 @@ void guPrefDialog::BuildGeneralPage()
 
 	wxStaticBoxSizer * BehaviSizer = new wxStaticBoxSizer(new wxStaticBox(m_GenPanel, wxID_ANY, wxString::Format(" %s ", _("Behaviour"))), wxVERTICAL);
 
-	m_TaskIconChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Activate task bar icon"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_TaskIconChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Activate taskbar icon"), wxDefaultPosition, wxDefaultSize, 0 );
     m_TaskIconChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_TASK_BAR_ICON, false, CONFIG_PATH_GENERAL ) );
 	BehaviSizer->Add( m_TaskIconChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
@@ -551,7 +551,7 @@ void guPrefDialog::BuildGeneralPage()
     m_SavePlayListChkBox->SetValue( m_Config->ReadBool( wxT( "SaveOnClose" ), true, wxT( "playlist" ) ) );
 	OnCloseSizer->Add( m_SavePlayListChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
-	m_CloseTaskBarChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Close to task bar icon"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_CloseTaskBarChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Close to taskbar icon"), wxDefaultPosition, wxDefaultSize, 0 );
     m_CloseTaskBarChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_CLOSE_TO_TASKBAR, false, CONFIG_PATH_GENERAL ) );
     m_CloseTaskBarChkBox->Enable( m_TaskIconChkBox->IsChecked() && ( !m_SoundMenuChkBox || !m_SoundMenuChkBox->IsChecked() ) );
 	OnCloseSizer->Add( m_CloseTaskBarChkBox, 0, wxLEFT | wxRIGHT, 5 );

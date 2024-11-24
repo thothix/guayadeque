@@ -1598,7 +1598,7 @@ msgid "Behaviour"
 msgstr "Chování"
 
 #: ui/preferences/Preferences.cpp:519
-msgid "Activate task bar icon"
+msgid "Activate taskbar icon"
 msgstr "Zapnout ikonu v oznamovací oblasti"
 
 #: ui/preferences/Preferences.cpp:534
@@ -1634,7 +1634,7 @@ msgid "Save playlist on close"
 msgstr "Uložit seznam skladeb při ukončení"
 
 #: ui/preferences/Preferences.cpp:569
-msgid "Close to task bar icon"
+msgid "Close to taskbar icon"
 msgstr "Zavírat do oznamovací oblasti"
 
 #: ui/preferences/Preferences.cpp:574
@@ -4169,7 +4169,7 @@ msgid "Sources"
 msgstr "Zdroje"
 
 #: ui/MainFrame.cpp:1413
-msgid "Show/Hide the locatons"
+msgid "Show/Hide the locations"
 msgstr "Zobrazit/Skrýt Lokace"
 
 #: ui/MainFrame.cpp:1420
