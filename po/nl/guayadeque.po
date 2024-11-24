@@ -3235,7 +3235,7 @@ msgid "Random / Smart play modes"
 msgstr "Willekeurige/Slimme afspeelmodes"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "overgebleven nummers in de wachtrij veroorzaken een nieuwe zoekopdracht"
 
 #: Preferences.cpp:1019
@@ -3249,10 +3249,6 @@ msgstr "is het maximum aantal nummers die behouden blijven in de wachtrij"
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
 msgstr "Herhaal geen enkele van de laatste"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "artiesten of "
 
 #: Preferences.cpp:1060
 msgid "Silence detector"

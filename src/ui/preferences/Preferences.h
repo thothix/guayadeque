@@ -144,6 +144,8 @@ class guPrefDialog : public wxDialog
 	wxSpinCtrl *                m_MinLenSpinCtrl;
     wxCheckBox *                m_CloseTaskBarChkBox;
     wxCheckBox *                m_ExitConfirmChkBox;
+	wxStaticText *				m_SmartPlayFilterLabel;
+	wxStaticText *				m_SmartPlayArtistLabel;
 
     wxScrolledWindow *          m_LibPanel;
     wxSplitterWindow *          m_LibSplitter;
@@ -432,7 +434,7 @@ class guPrefDialog : public wxDialog
     void OnLyricDisGenreAddBtnClick( wxCommandEvent &event );
     void OnLyricDisGenreDelBtnClick( wxCommandEvent &event );
 
-    void OnPlayLevelEnabled( wxCommandEvent &event );
+	void OnPlayLevelEnabled( wxCommandEvent &event );
     void OnReplayGainModeChanged( wxCommandEvent &event );
     void OnPlayPreAmpLevelValueChanged( wxScrollEvent &event );
     void OnPlayLevelValueChanged( wxScrollEvent &event );
@@ -444,6 +446,7 @@ class guPrefDialog : public wxDialog
 	void OnFiltersListBoxSelected( wxCommandEvent &event );
 	void OnLastFMASUserNameChanged( wxCommandEvent &event );
 	void OnLibreFMASUserNameChanged( wxCommandEvent &event );
+    void OnSmartPlayArtistsChanged( wxCommandEvent &event );
 
     void OnOnlineAddBtnClick( wxCommandEvent &event );
 	void OnOnlineDelBtnClick( wxCommandEvent &event );

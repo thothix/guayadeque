@@ -3242,7 +3242,7 @@ msgid "Random / Smart play modes"
 msgstr "Náhodné / Inteligentné prehrávacie režimy"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Zostávajúce skladby pre začatie vyhľadávania"
 
 #: Preferences.cpp:1019
@@ -3256,10 +3256,6 @@ msgstr "Maximálny počet skladieb uchovávaných v Playliste"
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
 msgstr "Neopakovať posledné"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "umelec alebo"
 
 #: Preferences.cpp:1060
 msgid "Silence detector"

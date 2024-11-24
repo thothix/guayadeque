@@ -878,7 +878,7 @@ void guPrefDialog::BuildPlaybackPage()
     m_MinTracksSpinCtrl->SetValue( m_Config->ReadNum( CONFIG_KEY_PLAYBACK_MIN_TRACKS_PLAY, 4, CONFIG_PATH_PLAYBACK ) );
 	SmartPlayListFlexGridSizer->Add( m_MinTracksSpinCtrl, 0, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5 );
 
-	wxStaticText * MinTracksStaticText = new wxStaticText( m_PlayPanel, wxID_ANY, _("Tracks left to start search"), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * MinTracksStaticText = new wxStaticText( m_PlayPanel, wxID_ANY, _("Number of remaining tracks needed to start search"), wxDefaultPosition, wxDefaultSize, 0 );
 	MinTracksStaticText->Wrap( -1 );
 	SmartPlayListFlexGridSizer->Add( MinTracksStaticText, 0, wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
 
@@ -903,17 +903,20 @@ void guPrefDialog::BuildPlaybackPage()
 
 	wxBoxSizer * SmartPlayFilterSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	wxStaticText * SmartPlayFilterLabel = new wxStaticText( m_PlayPanel, wxID_ANY, _("Don't repeat last"), wxDefaultPosition, wxDefaultSize, 0 );
-	SmartPlayFilterLabel->Wrap( -1 );
-	SmartPlayFilterSizer->Add( SmartPlayFilterLabel, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
+	int filter_artists = m_Config->ReadNum(CONFIG_KEY_PLAYBACK_SMART_FILTER_ARTISTS, 20, CONFIG_PATH_PLAYBACK);
+
+	m_SmartPlayFilterLabel = new wxStaticText( m_PlayPanel, wxID_ANY, wxPLURAL("Don't repeat last", "Don't repeat last", filter_artists), wxDefaultPosition, wxDefaultSize, 0 );
+	m_SmartPlayFilterLabel->Wrap( -1 );
+	SmartPlayFilterSizer->Add( m_SmartPlayFilterLabel, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
 
 	m_SmartPlayArtistsSpinCtrl = new wxSpinCtrl( m_PlayPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 50, 20 );
-    m_SmartPlayArtistsSpinCtrl->SetValue( m_Config->ReadNum( CONFIG_KEY_PLAYBACK_SMART_FILTER_ARTISTS, 20, CONFIG_PATH_PLAYBACK ) );
+    m_SmartPlayArtistsSpinCtrl->SetValue(filter_artists);
 	SmartPlayFilterSizer->Add( m_SmartPlayArtistsSpinCtrl, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT, 5 );
 
-	wxStaticText * SmartPlayArtistLabel = new wxStaticText( m_PlayPanel, wxID_ANY, _("artists or"), wxDefaultPosition, wxDefaultSize, 0 );
-	SmartPlayArtistLabel->Wrap( -1 );
-	SmartPlayFilterSizer->Add( SmartPlayArtistLabel, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT, 5 );
+	m_SmartPlayArtistLabel = new wxStaticText(m_PlayPanel, wxID_ANY, wxString::Format("%s %s",
+		wxPLURAL("Artist", "Artists", filter_artists).Lower(), _("or")), wxDefaultPosition, wxDefaultSize, 0);
+	m_SmartPlayArtistLabel->Wrap( -1 );
+	SmartPlayFilterSizer->Add( m_SmartPlayArtistLabel, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT, 5 );
 
 	m_SmartPlayTracksSpinCtrl = new wxSpinCtrl( m_PlayPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 200, 100 );
     m_SmartPlayTracksSpinCtrl->SetValue( m_Config->ReadNum( CONFIG_KEY_PLAYBACK_SMART_FILTER_TRACKS, 100, CONFIG_PATH_PLAYBACK ) );
@@ -1004,6 +1007,7 @@ void guPrefDialog::BuildPlaybackPage()
     m_PlayLevelSlider->Bind( wxEVT_SCROLL_THUMBTRACK, &guPrefDialog::OnPlayLevelValueChanged, this );
     m_PlayEndTimeCheckBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnPlayEndTimeEnabled, this );
     m_PlayOutDevChoice->Bind( wxEVT_CHOICE, &guPrefDialog::OnPlayOutDevChanged, this );
+	m_SmartPlayArtistsSpinCtrl->Bind( wxEVT_SPINCTRL, &guPrefDialog::OnSmartPlayArtistsChanged, this );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3429,6 +3433,15 @@ void guPrefDialog::OnPlayLevelValueChanged( wxScrollEvent &event )
     int Value = m_PlayLevelSlider->GetValue();
     m_PlayLevelVal->SetLabel( wxString::Format( wxT( "%02idb" ), Value ) );
     m_PlayLevelVal->GetParent()->GetSizer()->Layout();
+}
+
+// -------------------------------------------------------------------------------- //
+void guPrefDialog::OnSmartPlayArtistsChanged(wxCommandEvent &event)
+{
+    int value = m_SmartPlayArtistsSpinCtrl->GetValue();
+	m_SmartPlayFilterLabel->SetLabel(wxPLURAL("Don't repeat last", "Don't repeat last", value));
+	m_SmartPlayArtistLabel->SetLabel(wxString::Format("%s %s", wxPLURAL("Artist", "Artists", value).Lower(), _("or")));
+	m_SmartPlayFilterLabel->GetParent()->GetSizer()->Layout();
 }
 
 // -------------------------------------------------------------------------------- //

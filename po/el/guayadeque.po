@@ -3994,7 +3994,7 @@ msgid "Random / Smart play modes"
 msgstr "Λειτουργίες Τυχαίας / Έξυπνης αναπαραγωγής"
 
 #: ui/preferences/Preferences.cpp:881
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Κομμάτια που απομένουν μέχρι να ξεκινήσει η αναζήτηση"
 
 #: ui/preferences/Preferences.cpp:889
@@ -4008,10 +4008,6 @@ msgstr "Μέγιστος αριθμός αναπαραγμένων κομματ�
 #: ui/preferences/Preferences.cpp:906
 msgid "Don't repeat last"
 msgstr "Να μην επαναλαμβάνονται οι τελευταίοι"
-
-#: ui/preferences/Preferences.cpp:914
-msgid "artists or"
-msgstr "καλλιτέχνες ή"
 
 #: ui/preferences/Preferences.cpp:930
 msgid "Silence detector"

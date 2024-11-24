@@ -3235,7 +3235,7 @@ msgid "Random / Smart play modes"
 msgstr "Mode de reproducció Aleatori/Intel·ligent"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Pistes restants per iniciar l'addició de noves"
 
 #: Preferences.cpp:1019
@@ -3249,10 +3249,6 @@ msgstr "Màxim de pistes conservades a la llista"
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
 msgstr "Evita repetir els últims"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "artistes , o les darreres"
 
 #: Preferences.cpp:1060
 msgid "Silence detector"

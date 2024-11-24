@@ -3991,7 +3991,7 @@ msgid "Random / Smart play modes"
 msgstr "Modes de Lecture Aléatoire / Intelligent"
 
 #: ui/preferences/Preferences.cpp:884
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Recherche des morceaux restant à démarrer"
 
 #: ui/preferences/Preferences.cpp:892
@@ -4002,13 +4002,11 @@ msgstr "Morceaux ajoutés chaque fois"
 msgid "Max played tracks kept in playlist"
 msgstr "Nombre maximum de morceaux lus gardés dans la file"
 
-#: ui/preferences/Preferences.cpp:909
+#: ui/preferences/Preferences.cpp:908
 msgid "Don't repeat last"
-msgstr "Ne pas répéter le dernier"
-
-#: ui/preferences/Preferences.cpp:917
-msgid "artists or"
-msgstr "artistes ou"
+msgid_plural "Don't repeat last"
+msgstr[0] "Ne pas répéter le dernier"
+msgstr[1] "Ne pas répéter les derniers"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"

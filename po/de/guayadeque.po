@@ -3265,7 +3265,7 @@ msgid "Random / Smart play modes"
 msgstr "Zufallswiedergabe / Intelligente-Wiedergabe-Modus"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "verbleibende Tracks bis zur neuen Suche"
 
 #: Preferences.cpp:1019
@@ -3279,10 +3279,6 @@ msgstr "Maximum wiedergegebener Tracks, die in der Wiedergabeliste verbleiben"
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
 msgstr "Nicht wiederholen: letzten"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "Interpreten oder"
 
 #: Preferences.cpp:1060
 msgid "Silence detector"

@@ -3237,7 +3237,7 @@ msgid "Random / Smart play modes"
 msgstr "Karışık/Akıllı Çalma Modları"
 
 #: Preferences.cpp:1011
-msgid "Tracks left to start search"
+msgid "Number of remaining tracks needed to start search"
 msgstr "Yeni arama için kalan parça sayısı"
 
 #: Preferences.cpp:1019
@@ -3251,10 +3251,6 @@ msgstr "Çalma listesinde kalacak, en çok çalınan şarkı sayısı"
 #: Preferences.cpp:1036
 msgid "Don't repeat last"
 msgstr "En son"
-
-#: Preferences.cpp:1044
-msgid "artists or"
-msgstr "sanatçıyı veya"
 
 #: Preferences.cpp:1060
 msgid "Silence detector"
