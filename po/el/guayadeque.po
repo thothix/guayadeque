@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 16:21-0300\n"
-"PO-Revision-Date: 2024-11-24 15:07+0100\n"
+"PO-Revision-Date: 2024-11-24 17:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: el\n"
@@ -1135,18 +1135,18 @@ msgstr "Τίτλος"
 
 #: ui/trackedit/TrackEdit.cpp:161
 msgid "Copy the artist name to all the tracks you are editing"
-msgstr "Αντιγραφή του ονόματος του καλλιτέχνη "
-"σε όλα τα επεξεργαζόμενα κομμάτια"
+msgstr ""
+"Αντιγραφή του ονόματος του καλλιτέχνη σε όλα τα επεξεργαζόμενα κομμάτια"
 
 #: ui/trackedit/TrackEdit.cpp:174
 msgid "Copy the album artist name to all the tracks you are editing"
 msgstr ""
-"Αντιγραφή του ονόματος του καλλιτέχνη του δίσκου "
-"σε όλα τα επεξεργαζόμενα κομμάτια"
+"Αντιγραφή του ονόματος του καλλιτέχνη του δίσκου σε όλα τα επεξεργαζόμενα "
+"κομμάτια"
 
 #: ui/trackedit/TrackEdit.cpp:177 ui/trackedit/TrackEdit.cpp:509
 msgid "A. Artist"
-msgstr "Καλλιτέχνης Δίσκου:"
+msgstr "Καλλιτέχνης Δίσκου"
 
 #: ui/trackedit/TrackEdit.cpp:178
 msgid "shows the album artist of the track"
@@ -1201,7 +1201,7 @@ msgstr "Αντιγραφή του αριθμού σε όλα τα επεξεργ
 #: ui/filebrowser/FileRenamer.cpp:87
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:743
 msgid "Number"
-msgstr "Αριθμός:"
+msgstr "Αριθμός"
 
 #: ui/trackedit/TrackEdit.cpp:239
 msgid "Enumerate the tracks in the order they were added for editing"
@@ -1302,14 +1302,14 @@ msgstr "Εικόνες"
 
 #: ui/trackedit/TrackEdit.cpp:428
 msgid "Type the artist name to search in musicbrainz"
-msgstr "Πληκτρολογήστε το όνομα του καλλιτέχνη για να αναζητηθεί "
-"στο musicbrainz"
+msgstr ""
+"Πληκτρολογήστε το όνομα του καλλιτέχνη για να αναζητηθεί στο musicbrainz"
 
 #: ui/trackedit/TrackEdit.cpp:431 ui/trackedit/TrackEdit.cpp:485
 #: ui/podcasts/PodcastsPanel.cpp:994
 #, c-format
 msgid "%s:"
-msgstr "%s"
+msgstr "%s:"
 
 #: ui/trackedit/TrackEdit.cpp:436
 msgid "Type the album name to search in musicbrainz"
@@ -1497,8 +1497,8 @@ msgstr "Τρέχον Κομμάτι"
 #: ui/radios/RadioPanel.cpp:419 ui/podcasts/PodcastsPanel.cpp:2054
 msgid "Add current selected tracks to playlist after the current track"
 msgstr ""
-"Προσθήκη επιλεγμένων κομματιών στη λίστα αναπαραγωγήςμετά "
-"από τον τρέχοντα δίσκο"
+"Προσθήκη επιλεγμένων κομματιών στη λίστα αναπαραγωγής μετά από τον τρέχοντα "
+"δίσκο"
 
 #: ui/filebrowser/FileBrowser.cpp:357 ui/filebrowser/FileBrowser.cpp:984
 #: ui/mediaviewer/library/DiBrowser.cpp:286
@@ -1547,8 +1547,8 @@ msgstr "Τρέχων Δίσκος"
 #: ui/radios/RadioPanel.cpp:426 ui/podcasts/PodcastsPanel.cpp:2060
 msgid "Add current selected tracks to playlist after the current album"
 msgstr ""
-"Προσθήκη επιλεγμένων κομματιών στη λίστα αναπαραγωγής"
-"μετά από τον τρέχοντα δίσκο"
+"Προσθήκη επιλεγμένων κομματιών στη λίστα αναπαραγωγήςμετά από τον τρέχοντα "
+"δίσκο"
 
 #: ui/filebrowser/FileBrowser.cpp:363 ui/filebrowser/FileBrowser.cpp:991
 #: ui/mediaviewer/library/DiBrowser.cpp:293
@@ -1597,8 +1597,8 @@ msgstr "Τρέχων Καλλιτέχνης"
 #: ui/radios/RadioPanel.cpp:433 ui/podcasts/PodcastsPanel.cpp:2066
 msgid "Add current selected tracks to playlist after the current artist"
 msgstr ""
-"Προσθήκη επιλεγμένων κομματιών στη λίστα αναπαραγωγής"
-"μετά από τον τρέχοντα καλλιτέχνη"
+"Προσθήκη επιλεγμένων κομματιών στη λίστα αναπαραγωγήςμετά από τον τρέχοντα "
+"καλλιτέχνη"
 
 #: ui/filebrowser/FileBrowser.cpp:368 ui/filebrowser/FileBrowser.cpp:997
 #: ui/mediaviewer/library/DiBrowser.cpp:299
@@ -1851,8 +1851,8 @@ msgstr "&Έξυπνη αναπαραγωγή"
 
 #: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1514
 msgid "Update playlist based on Last.fm statics"
-msgstr "Ενημέρωση της λίστας αναπαραγωγής σύμφωνα "
-"με τις στατιστικές του Last.fm"
+msgstr ""
+"Ενημέρωση της λίστας αναπαραγωγής σύμφωνα με τις στατιστικές του Last.fm"
 
 #: ui/taskbar/TaskBar.cpp:171
 msgid "Repeat &Playlist"
@@ -2370,8 +2370,8 @@ msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
 msgstr ""
-"Είστε σίγουροι ότι θέλετε να διαγράψετε τα επιλεγμένα κομμάτια"
-"από το σκληρό δίσκο σας;\n"
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τα επιλεγμένα κομμάτια από το σκληρό "
+"δίσκο σας;\n"
 "Αυτό θα διαγράψει οριστικά τα επιλεγμένα κομμάτια."
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
@@ -2389,8 +2389,7 @@ msgstr "Αναπαραγωγή επιλεγμένου συνθέτη"
 #: ui/mediaviewer/library/AlListBox.cpp:287
 #: ui/mediaviewer/library/AlListBox.cpp:293
 msgid "Add current selected albums to the Playlist as Next Tracks"
-msgstr "Προσθήκη επιλεγμένων δίσκων στη Λίστα Αναπαραγωγής"
-"σαν Επόμενα Κομμάτια"
+msgstr "Προσθήκη επιλεγμένων δίσκων στη Λίστα Αναπαραγωγήςσαν Επόμενα Κομμάτια"
 
 #: ui/mediaviewer/library/CoListBox.cpp:140
 #: ui/mediaviewer/library/AlListBox.cpp:297
@@ -2419,8 +2418,8 @@ msgstr "Προσθήκη των επιλεγμένων καλλιτεχνών σ
 
 #: ui/mediaviewer/library/ArListBox.cpp:196
 msgid "Edit the labels assigned to the selected artists"
-msgstr "Επεξεργασία των ετικετών που έχουν οριστεί"
-"στους επιλεγμένους καλλιτέχνες"
+msgstr ""
+"Επεξεργασία των ετικετών που έχουν οριστείστους επιλεγμένους καλλιτέχνες"
 
 #: ui/mediaviewer/library/ArListBox.cpp:204
 msgid "Edit the songs from the selected artists"
@@ -2963,10 +2962,8 @@ msgid "Name Pattern:"
 msgstr "Πρότυπο Ονομασίας:"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
-#, fuzzy
-#| msgid "Rename"
 msgid "Filename"
-msgstr "Μετονομασία"
+msgstr "Ονόματος αρχείου"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:749
 msgid "Audio Folders:"
@@ -3105,8 +3102,7 @@ msgstr "Επεξεργασία επιλεγμένης λίστας αναπαρ�
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 msgid "Save the selected playlist as a Static Playlist"
 msgstr ""
-"Αποθήκευση της επιλεγμένης λίστας αναπαραγωγής "
-"σαν Στατική Λίστα Αναπαραγωγής"
+"Αποθήκευση της επιλεγμένης λίστας αναπαραγωγής σαν Στατική Λίστα Αναπαραγωγής"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:292
 msgid "Change the name of the selected playlist"
@@ -3141,8 +3137,8 @@ msgstr "Εισαγωγή του νέου ονόματος της λίστας α
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1066
 msgid "Are you sure to delete the selected Playlist?"
-msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε "
-"την επιλεγμένη Λίστα Αναπαραγωγής;"
+msgstr ""
+"Είστε σίγουροι ότι θέλετε να διαγράψετε την επιλεγμένη Λίστα Αναπαραγωγής;"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1147
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1220
@@ -3551,7 +3547,7 @@ msgid ""
 "%i plays by %u users"
 msgstr ""
 "%s\n"
-"%i ακροάσεις από %u χρήστες\"
+"%i ακροάσεις από %u χρήστες"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1676
 msgid "Artist Info"
@@ -3692,14 +3688,14 @@ msgstr "Προσθήκη νέου Ονόματος Είδους"
 
 #: ui/radios/ShoutcastRadio.cpp:364
 msgid "Are you sure to delete the selected radio genres?"
-msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε "
-"τα επιλεγμένα ραδιοφωνικά είδη;"
+msgstr ""
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τα επιλεγμένα ραδιοφωνικά είδη;"
 
 #: ui/radios/ShoutcastRadio.cpp:443
 msgid "Are you sure to delete the selected radio searches?"
 msgstr ""
-"Είστε σίγουροι ότι θέλετε να διαγράψετε "
-"τις επιλεγμένες ραδιοφωνικές αναζητήσεις;"
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τις επιλεγμένες ραδιοφωνικές "
+"αναζητήσεις;"
 
 #: ui/radios/RadioEditor.cpp:53 ui/podcasts/PodcastsPanel.cpp:979
 msgid "Link:"
@@ -4007,7 +4003,6 @@ msgid "Words to detect covers"
 msgstr "Λέξεις για εντοπισμό εξώφυλλων"
 
 #: ui/preferences/Preferences.cpp:700 ui/preferences/Preferences.cpp:2238
-
 msgid "Options"
 msgstr "Επιλογές"
 
@@ -4134,8 +4129,7 @@ msgstr "Μήκος της εξασθένησης:  (Fade-out length)"
 #: ui/preferences/Preferences.cpp:1038
 msgid "Select the length of the fade out. 0 for gapless playback"
 msgstr ""
-"Επιλογή του μήκους της εξασθένησης (fade-out)."
-"0 για αδιάλειπτη αναπαραγωγή"
+"Επιλογή του μήκους της εξασθένησης (fade-out).0 για αδιάλειπτη αναπαραγωγή"
 
 #: ui/preferences/Preferences.cpp:1041
 msgid "Fade-in length:"
@@ -4151,8 +4145,8 @@ msgstr "Ένταση της σταδιακής αύξησης του ήχου :"
 
 #: ui/preferences/Preferences.cpp:1062
 msgid "Select the initial volume of the fade in"
-msgstr "Επιλογή της αρχικής έντασης ήχου "
-"της σταδιακής αύξησης του ήχου (fade-in)"
+msgstr ""
+"Επιλογή της αρχικής έντασης ήχου της σταδιακής αύξησης του ήχου (fade-in)"
 
 #: ui/preferences/Preferences.cpp:1065
 msgid "Fade-in start:"
@@ -4161,8 +4155,8 @@ msgstr "Έναρξη της σταδιακής αύξησης του ήχου (f
 #: ui/preferences/Preferences.cpp:1074
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr ""
-"Επιλέξτε σε ποια ένταση ήχου της εξασθένησης (fade-out)"
-"η σταδιακή αύξηση του ήχου (fade-in) αρχίζει"
+"Επιλέξτε σε ποια ένταση ήχου της εξασθένησης (fade-out)η σταδιακή αύξηση του "
+"ήχου (fade-in) αρχίζει"
 
 #: ui/preferences/Preferences.cpp:1116
 msgid "Enable recording"
@@ -4224,7 +4218,7 @@ msgstr "Κωδικός:"
 
 #: ui/preferences/Preferences.cpp:1253
 msgid "Libre.fm audioscrobble"
-msgstr "Scrobble ήχου (audioscrobble) του Libre.fm "
+msgstr "Scrobble ήχου (audioscrobble) του Libre.fm"
 
 #: ui/preferences/Preferences.cpp:1354
 msgid "Targets"
@@ -4522,7 +4516,7 @@ msgstr "Αναζήτηση στον κατάλογο των podcast"
 
 #: ui/podcasts/NewChannel.cpp:115
 msgid "Refresh the podcast directory list"
-msgstr "Ανανέωση της λίστας των Podcast του καταλόγου "
+msgstr "Ανανέωση της λίστας των Podcast του καταλόγου"
 
 #: ui/podcasts/NewChannel.cpp:231
 msgid "Filtered channels"
