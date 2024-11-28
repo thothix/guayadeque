@@ -31,7 +31,7 @@ msgstr "Scrobbler Audio"
 
 #: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1472 ui/player/PlayList.cpp:94
 #: ui/player/PlayList.cpp:1829
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "Effacer la file de lecture"
 
 #: misc/Accelerators.cpp:112
@@ -1704,7 +1704,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Mettre à jour la file de lecture sur la base des statistiques Last.fm"
 
 #: ui/taskbar/TaskBar.cpp:171
-msgid "Repeat &Playlist"
+msgid "Repeat the &Playlist"
 msgstr "Rejouer la &file de lecture"
 
 #: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1524
@@ -1724,7 +1724,7 @@ msgid "Shu&ffle"
 msgstr "Mélanger &aléatoirement"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "Mélanger aléatoirement les morceaux de la file de lecture"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
@@ -2009,7 +2009,7 @@ msgid "Shuffle"
 msgstr "Mélanger"
 
 #: ui/MainFrame.cpp:1523
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "Rejouer la file de lecture"
 
 #: ui/MainFrame.cpp:1529

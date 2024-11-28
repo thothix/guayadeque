@@ -90,7 +90,7 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
     BarSizer->Add(m_RemoveButton, 0, wxALIGN_LEFT | wxLEFT, 0);
 
     m_ClearPlaylistButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_edit_clear), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
-    m_ClearPlaylistButton->SetToolTip(_("Clear Playlist"));
+    m_ClearPlaylistButton->SetToolTip(_("Clear the Playlist"));
     BarSizer->Add(m_ClearPlaylistButton, 0, wxALIGN_LEFT | wxLEFT, 0);
 
     // Update layout
@@ -1823,13 +1823,13 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
 
     MenuItem = new wxMenuItem(
             Menu, ID_PLAYER_PLAYLIST_RANDOMPLAY,
-            wxString( _( "Shuffle the playlist" ) )  + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
+            wxString( _( "Shuffle the Playlist" ) )  + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
             _( "Shuffle the tracks in the playlist" ) );
     Menu->Append( MenuItem );
 
     MenuItem = new wxMenuItem(
             Menu, ID_PLAYER_PLAYLIST_CLEAR,
-            wxString( _( "Clear Playlist" ) ) +  guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_CLEAR ),
+            wxString( _( "Clear the Playlist" ) ) +  guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_CLEAR ),
             _( "Remove all tracks from playlist" ) );
     MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit_clear ) );
     Menu->Append( MenuItem );

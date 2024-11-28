@@ -184,7 +184,7 @@ msgid "Audio Scrobbling"
 msgstr "Audioscrobbling"
 
 #: Accelerators.cpp:110 MainFrame.cpp:1511 PlayList.cpp:1606
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "Wiedergabeliste leeren"
 
 #: Accelerators.cpp:111
@@ -2174,11 +2174,11 @@ msgid "Shuffle"
 msgstr "Tracks mischen"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "Tracks mischen"
 
 #: MainFrame.cpp:1565
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "Wiedergabeliste wiederholen"
 
 #: MainFrame.cpp:1566 TaskBar.cpp:169

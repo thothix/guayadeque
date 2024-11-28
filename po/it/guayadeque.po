@@ -31,7 +31,7 @@ msgstr "AudioScrobble"
 
 #: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1472 ui/player/PlayList.cpp:93
 #: ui/player/PlayList.cpp:1832
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "Pulisci la Playlist"
 
 #: misc/Accelerators.cpp:112
@@ -1843,7 +1843,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Aggiorna la playlist usando le statistiche Last.fm"
 
 #: ui/taskbar/TaskBar.cpp:171
-msgid "Repeat &Playlist"
+msgid "Repeat the &Playlist"
 msgstr "Ripeti &Playlist"
 
 #: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1524
@@ -1863,7 +1863,7 @@ msgid "Shu&ffle"
 msgstr "Ordina in modo &Casuale"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "Ordina la playlist in modo casuale"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
@@ -2150,7 +2150,7 @@ msgid "Shuffle"
 msgstr "Ordina in modo casuale"
 
 #: ui/MainFrame.cpp:1523
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "Ripeti Playlist"
 
 #: ui/MainFrame.cpp:1529

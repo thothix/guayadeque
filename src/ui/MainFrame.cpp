@@ -1469,7 +1469,7 @@ void guMainFrame::CreateControlsMenu( wxMenu * menu )
     menu->AppendSeparator();
 
     MenuItem = new wxMenuItem( menu, ID_PLAYER_PLAYLIST_CLEAR,
-                                wxString( _( "Clear Playlist" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_CLEAR ),
+                                wxString( _( "Clear the Playlist" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_CLEAR ),
                                 _( "Clear the now playing playlist" ), wxITEM_NORMAL );
     menu->Append( MenuItem );
 
@@ -1516,11 +1516,11 @@ void guMainFrame::CreateControlsMenu( wxMenu * menu )
     m_MenuPlaySmart->Check( m_PlayerPanel->GetPlaySmart() );
 
     MenuItem = new wxMenuItem( menu, ID_PLAYER_PLAYLIST_RANDOMPLAY,
-                              wxString( _( "Shuffle" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
-                              _( "Shuffle the playlist" ), wxITEM_NORMAL );
+                              wxString( _( "Shuffle the Playlist" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
+                              _( "Shuffle the tracks in the playlist" ), wxITEM_NORMAL );
     menu->Append( MenuItem );
     m_MenuLoopPlayList = new wxMenuItem( menu, ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST,
-                                wxString( _( "Repeat Playlist" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST ),
+                                wxString( _( "Repeat the Playlist" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST ),
                                 _( "Repeat the tracks in the playlist" ), wxITEM_CHECK );
     menu->Append( m_MenuLoopPlayList );
     m_MenuLoopPlayList->Check( m_PlayerPanel->GetPlayMode() == guPLAYER_PLAYMODE_REPEAT_PLAYLIST );

@@ -187,7 +187,7 @@ msgid "Audio Scrobbling"
 msgstr "Filtro colaborativo"
 
 #: Accelerators.cpp:110 MainFrame.cpp:1511 PlayList.cpp:1606
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "Limpar fila de reprodução"
 
 #: Accelerators.cpp:111
@@ -2180,11 +2180,11 @@ msgid "Shuffle"
 msgstr "Embaralhar"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "Embaralhar a lista de reprodução"
 
 #: MainFrame.cpp:1565
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "Repetir a fila de reprodução"
 
 #: MainFrame.cpp:1566 TaskBar.cpp:169
@@ -3982,7 +3982,7 @@ msgid "&Smart Play"
 msgstr "&Reprodução inteligente"
 
 #: TaskBar.cpp:169
-msgid "Repeat &Playlist"
+msgid "Repeat the &Playlist"
 msgstr "R&epetir fila de reprodução"
 
 #: TaskBar.cpp:173

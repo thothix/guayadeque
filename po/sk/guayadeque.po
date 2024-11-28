@@ -188,7 +188,7 @@ msgid "Audio Scrobbling"
 msgstr "Audio Scrobbling"
 
 #: Accelerators.cpp:110 MainFrame.cpp:1511 PlayList.cpp:1606
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "Vyprázdniť Playlist"
 
 #: Accelerators.cpp:111
@@ -2178,11 +2178,11 @@ msgid "Shuffle"
 msgstr "Náhodné"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "Náhodné poradie v Playliste"
 
 #: MainFrame.cpp:1565
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "Opakovať Playlist"
 
 #: MainFrame.cpp:1566 TaskBar.cpp:169
@@ -3903,7 +3903,7 @@ msgid "&Smart Play"
 msgstr "& Inteligentné Prehrávanie"
 
 #: TaskBar.cpp:169
-msgid "Repeat &Playlist"
+msgid "Repeat the &Playlist"
 msgstr "&Opakovať Playlist"
 
 #: TaskBar.cpp:173

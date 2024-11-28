@@ -108,7 +108,7 @@ int guAccelGetActionNames( wxArrayString &actionnames )
 {
 	actionnames.Add( _( "Add Folder" ) );
 	actionnames.Add( _( "Audio Scrobbling" ) );
-	actionnames.Add( _( "Clear Playlist" ) );
+	actionnames.Add( _( "Clear the Playlist" ) );
 	actionnames.Add( _( "Close Window" ) );
 	actionnames.Add( _( "Community Forums" ) );
 	actionnames.Add( _( "Edit Labels" ) );
@@ -128,7 +128,7 @@ int guAccelGetActionNames( wxArrayString &actionnames )
 	actionnames.Add( _( "Preferences" ) );
 	actionnames.Add( _( "Quit" ) );
 	//
-	actionnames.Add( _( "Shuffle the playlist" ) );
+	actionnames.Add( _( "Shuffle the Playlist" ) );
 	actionnames.Add( wxString( _( "Rating" ) ) + wxT( " ☆☆☆☆☆" ) );
 	actionnames.Add( wxString( _( "Rating" ) ) + wxT( " ★☆☆☆☆" ) );
 	actionnames.Add( wxString( _( "Rating" ) ) + wxT( " ★★☆☆☆" ) );

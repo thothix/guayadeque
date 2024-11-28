@@ -168,7 +168,7 @@ wxMenu * guTaskBarIcon::CreatePopupMenu()
         Menu->Append( MenuItem );
         MenuItem->Check( m_PlayerPanel->GetPlaySmart() );
 
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST, _( "Repeat &Playlist" ), _( "Repeat the tracks in the playlist" ), wxITEM_CHECK );
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST, _( "Repeat the &Playlist" ), _( "Repeat the tracks in the playlist" ), wxITEM_CHECK );
         Menu->Append( MenuItem );
         MenuItem->Check( m_PlayerPanel->GetPlayMode() == guPLAYER_PLAYMODE_REPEAT_PLAYLIST );
 
@@ -176,7 +176,7 @@ wxMenu * guTaskBarIcon::CreatePopupMenu()
         Menu->Append( MenuItem );
         MenuItem->Check( m_PlayerPanel->GetPlayMode() == guPLAYER_PLAYMODE_REPEAT_TRACK );
 
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_RANDOMPLAY, _( "Shu&ffle" ), _( "Shuffle the playlist" ), wxITEM_NORMAL );
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_RANDOMPLAY, _( "Shu&ffle" ), _( "Shuffle the tracks in the playlist" ), wxITEM_NORMAL );
         Menu->Append( MenuItem );
 
         Menu->AppendSeparator();

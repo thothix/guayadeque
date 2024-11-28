@@ -1344,7 +1344,7 @@ DBusHandlerResult guMPRIS2::HandleMessages( guDBusMessage * msg, guDBusMessage *
                                         RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                     }
                                 }
-                                else if( !strcmp( QueryProperty, "CanGoPreviouss" ) )
+                                else if( !strcmp( QueryProperty, "CanGoPrevious" ) )
                                 {
                                     dbus_bool_t CanGoPrev = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_PREV ) > 0;
                                     if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanGoPrev ) )
