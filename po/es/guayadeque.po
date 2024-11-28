@@ -3822,7 +3822,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Añadir canciones a la lista de reproduccíon basada en estadísticas de last.fm"
 
 #: ui/taskbar/TaskBar.cpp:173
-msgid "Repeat &Playlist"
+msgid "Repeat the &Playlist"
 msgstr "Repetir lista de reproducción"
 
 #: ui/taskbar/TaskBar.cpp:173 ui/MainFrame.cpp:1608
@@ -3842,7 +3842,7 @@ msgid "Shu&ffle"
 msgstr "Aleatorio"
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "Lista de reproducción Aleatoria"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
@@ -4004,7 +4004,7 @@ msgid "Search a track in the playlist by name"
 msgstr "Buscar una pista en la lista de reproducción por nombre"
 
 #: ui/player/PlayList.cpp:1613 ui/MainFrame.cpp:1553 misc/Accelerators.cpp:113
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "Vaciar lista de reproducción"
 
 #: ui/player/PlayList.cpp:1614
@@ -4300,7 +4300,7 @@ msgid "Shuffle"
 msgstr "Aleatorio"
 
 #: ui/MainFrame.cpp:1607
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "Repetir lista de reproducción"
 
 #: ui/MainFrame.cpp:1613

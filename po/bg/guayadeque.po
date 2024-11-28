@@ -180,7 +180,7 @@ msgid "Audio Scrobbling"
 msgstr "Аудио Scrobbling"
 
 #: Accelerators.cpp:110 MainFrame.cpp:1511 PlayList.cpp:1606
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "Изчисти плейлиста"
 
 #: Accelerators.cpp:111
@@ -2170,11 +2170,11 @@ msgid "Shuffle"
 msgstr "Разбъркай"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "Разбъркай плейлиста"
 
 #: MainFrame.cpp:1565
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "Повтаряне на плейлист"
 
 #: MainFrame.cpp:1566 TaskBar.cpp:169
@@ -3895,7 +3895,7 @@ msgid "&Smart Play"
 msgstr "&Интелигентно Възпроизвеждане"
 
 #: TaskBar.cpp:169
-msgid "Repeat &Playlist"
+msgid "Repeat the &Playlist"
 msgstr "&Повтаряне на плейлист"
 
 #: TaskBar.cpp:173

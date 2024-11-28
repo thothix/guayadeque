@@ -3820,7 +3820,7 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Kemas kini senarai main berdasarkan statistik Last.fm"
 
 #: ui/taskbar/TaskBar.cpp:173
-msgid "Repeat &Playlist"
+msgid "Repeat the &Playlist"
 msgstr "&Ulang Senarai Main"
 
 #: ui/taskbar/TaskBar.cpp:173 ui/MainFrame.cpp:1608
@@ -3840,7 +3840,7 @@ msgid "Shu&ffle"
 msgstr "R&awak"
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "Rawakkan senarai main"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
@@ -4002,7 +4002,7 @@ msgid "Search a track in the playlist by name"
 msgstr "Gelintar trek dalam senarai main mengikut nama"
 
 #: ui/player/PlayList.cpp:1613 ui/MainFrame.cpp:1553 misc/Accelerators.cpp:113
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "Kosongkan Senarai Main"
 
 #: ui/player/PlayList.cpp:1614
@@ -4298,7 +4298,7 @@ msgid "Shuffle"
 msgstr "Rawak"
 
 #: ui/MainFrame.cpp:1607
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "Ulang Senarai Main"
 
 #: ui/MainFrame.cpp:1613

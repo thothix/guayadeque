@@ -182,7 +182,7 @@ msgid "Audio Scrobbling"
 msgstr "Scrobble(曲のデータ送信)"
 
 #: Accelerators.cpp:110 MainFrame.cpp:1511 PlayList.cpp:1606
-msgid "Clear Playlist"
+msgid "Clear the Playlist"
 msgstr "プレイリストを消去"
 
 #: Accelerators.cpp:111
@@ -2172,11 +2172,11 @@ msgid "Shuffle"
 msgstr "ランダム化"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Shuffle the playlist"
+msgid "Shuffle the Playlist"
 msgstr "再生リストをランダム化"
 
 #: MainFrame.cpp:1565
-msgid "Repeat Playlist"
+msgid "Repeat the Playlist"
 msgstr "再生リストをリピート"
 
 #: MainFrame.cpp:1566 TaskBar.cpp:169
@@ -3897,7 +3897,7 @@ msgid "&Smart Play"
 msgstr "&Smart 再生"
 
 #: TaskBar.cpp:169
-msgid "Repeat &Playlist"
+msgid "Repeat the &Playlist"
 msgstr "&Repeat 再生リスト"
 
 #: TaskBar.cpp:173
