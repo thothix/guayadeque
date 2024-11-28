@@ -8,13 +8,15 @@ Unreleased (2024-11-xx)
 ------------------
 
 ### Features
-  * Detects the desktop manager and check/set the proper default commands.
+  * Check/set the proper default commands for the current desktop manager.
     Gnome (including compatible DEs like Cinnamon and Mate), KDE, xfce and
-    LXQT are currently configured.
+    LXQT are currently detected and configured. Fallback to Gnome commands.
 
 ### Enhancements
   * Lyrics preferences: Change source embedded default to true.
-  * Added translation to lyrics source and target options.
+  * "Randomize" playlist feature renamed to "Shuffle".
+  * Added translation to source and target lyrics options.
+  * Lots of translation refactorings (all languages).
   * Updated French, Greek and Italian translations. Thanks to filochard.
   * Updated German translations. Thanks to martinkg.
   * Updated Portuguese and Brazilian Portuguese translations.

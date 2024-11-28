@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-24 19:45-0300\n"
+"POT-Creation-Date: 2024-11-28 11:49-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,9 +157,9 @@ msgstr ""
 msgid "Quit"
 msgstr ""
 
-#: misc/Accelerators.cpp:131 ui/mediaviewer/playlists/PLSoListBox.cpp:162
-#: ui/player/PlayList.cpp:1826
-msgid "Randomize Playlist"
+#: misc/Accelerators.cpp:131 ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1826
+msgid "Shuffle the playlist"
 msgstr ""
 
 #: misc/Accelerators.cpp:132 misc/Accelerators.cpp:133
@@ -1859,11 +1859,7 @@ msgid "Repeat the current track in the playlist"
 msgstr ""
 
 #: ui/taskbar/TaskBar.cpp:179
-msgid "&Randomize"
-msgstr ""
-
-#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
-msgid "Randomize the playlist"
+msgid "Shu&ffle"
 msgstr ""
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
@@ -2146,7 +2142,7 @@ msgid "Set the rating of the current track"
 msgstr ""
 
 #: ui/MainFrame.cpp:1519
-msgid "Randomize"
+msgid "Shuffle"
 msgstr ""
 
 #: ui/MainFrame.cpp:1523
@@ -3031,8 +3027,9 @@ msgstr ""
 msgid "Beginning"
 msgstr ""
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:1827
-msgid "Randomize the songs in the playlist"
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
+#: ui/player/PlayList.cpp:1827
+msgid "Shuffle the tracks in the playlist"
 msgstr ""
 
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1840
@@ -3904,7 +3901,7 @@ msgid "Behaviour"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:503
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:514
@@ -3944,7 +3941,7 @@ msgid "Save playlist on close"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:554
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:559
@@ -4032,7 +4029,7 @@ msgid "Random / Smart play modes"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:881
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:889
@@ -4694,10 +4691,6 @@ msgstr ""
 
 #: ui/player/PlayList.cpp:79
 msgid "Move the selected tracks to the bottom"
-msgstr ""
-
-#: ui/player/PlayList.cpp:85
-msgid "Randomize the tracks in playlist"
 msgstr ""
 
 #: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1841

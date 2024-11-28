@@ -159,8 +159,8 @@ void guPLSoListBox::CreateContextMenu( wxMenu * Menu ) const
         if( !m_DisableSorting && ( m_TracksOrder == wxNOT_FOUND ) )
         {
             MenuItem = new wxMenuItem( Menu, ID_TRACKS_RANDOMIZE,
-                            wxString( _( "Randomize Playlist" ) )  + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
-                            _( "Randomize the songs in the playlist" ) );
+                            wxString( _( "Shuffle the playlist" ) )  + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
+                            _( "Shuffle the tracks in the playlist" ) );
             Menu->Insert( 9, MenuItem );
             InsertPosition = 13;
         }

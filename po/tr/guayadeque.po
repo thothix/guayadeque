@@ -245,10 +245,6 @@ msgstr "Akışı Çal"
 msgid "Quit"
 msgstr "Çıkış"
 
-#: Accelerators.cpp:130 PlayList.cpp:1601 PLSoListBox.cpp:160
-msgid "Randomize Playlist"
-msgstr "Karışık Çalma Listesi"
-
 #: Accelerators.cpp:131 Accelerators.cpp:132 Accelerators.cpp:133
 #: Accelerators.cpp:134 Accelerators.cpp:135 Accelerators.cpp:136
 #: DynamicPlayList.cpp:56 DynamicPlayList.cpp:134 PlayList.cpp:1567
@@ -2173,11 +2169,11 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Çalma Listes'ni Last.fm istatistiklerini baz alarak güncelle"
 
 #: MainFrame.cpp:1561
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Karıştır"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Çalma Listesi'ni karıştır"
 
 #: MainFrame.cpp:1565
@@ -2502,7 +2498,7 @@ msgid "Track"
 msgstr "Parça"
 
 #: PlayerPanel.cpp:253
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Çalma listesindeki parçaları karıştır"
 
 #: PlayerPanel.cpp:271
@@ -2592,10 +2588,6 @@ msgstr "Seçili geçerli parçaların derecelendirmesini ayarla"
 #: PlayList.cpp:1574
 msgid "Search a track in the playlist by name"
 msgstr "Çalma listesinde, ismine göre bir şarkı ara"
-
-#: PlayList.cpp:1602 PLSoListBox.cpp:161
-msgid "Randomize the songs in the playlist"
-msgstr "Çalma listesindeki şarkıları karıştır"
 
 #: PlayList.cpp:1607
 msgid "Remove all tracks from playlist"
@@ -3125,7 +3117,7 @@ msgid "Behaviour"
 msgstr "Eylemler"
 
 #: Preferences.cpp:643
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "Görev çubuğu simgesini etkinleştir"
 
 #: Preferences.cpp:658
@@ -3161,7 +3153,7 @@ msgid "Save playlist on close"
 msgstr "Çalma listesini kapatılırken kaydet"
 
 #: Preferences.cpp:693
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "Görev çubuğuna küçült"
 
 #: Preferences.cpp:698
@@ -3237,7 +3229,7 @@ msgid "Random / Smart play modes"
 msgstr "Karışık/Akıllı Çalma Modları"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Yeni arama için kalan parça sayısı"
 
 #: Preferences.cpp:1019
@@ -3914,7 +3906,7 @@ msgid "Repeat &Track"
 msgstr "&Parçayı Tekrarla"
 
 #: TaskBar.cpp:177
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "&Karıştır"
 
 #: TaskBar.cpp:187

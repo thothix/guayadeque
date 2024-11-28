@@ -176,7 +176,7 @@ wxMenu * guTaskBarIcon::CreatePopupMenu()
         Menu->Append( MenuItem );
         MenuItem->Check( m_PlayerPanel->GetPlayMode() == guPLAYER_PLAYMODE_REPEAT_TRACK );
 
-        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_RANDOMPLAY, _( "&Randomize" ), _( "Randomize the playlist" ), wxITEM_NORMAL );
+        MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_RANDOMPLAY, _( "Shu&ffle" ), _( "Shuffle the playlist" ), wxITEM_NORMAL );
         Menu->Append( MenuItem );
 
         Menu->AppendSeparator();

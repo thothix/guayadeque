@@ -161,11 +161,6 @@ msgstr "Preferenze"
 msgid "Quit"
 msgstr "Esci"
 
-#: misc/Accelerators.cpp:131 ui/mediaviewer/playlists/PLSoListBox.cpp:162
-#: ui/player/PlayList.cpp:1826
-msgid "Randomize Playlist"
-msgstr "Ordina la Playlist in modo casuale"
-
 #: misc/Accelerators.cpp:132 misc/Accelerators.cpp:133
 #: misc/Accelerators.cpp:134 misc/Accelerators.cpp:135
 #: misc/Accelerators.cpp:136 misc/Accelerators.cpp:137
@@ -1864,11 +1859,11 @@ msgid "Repeat the current track in the playlist"
 msgstr "Ripeti il brano attuale nella playlist"
 
 #: ui/taskbar/TaskBar.cpp:179
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "Ordina in modo &Casuale"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Ordina la playlist in modo casuale"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
@@ -2151,7 +2146,7 @@ msgid "Set the rating of the current track"
 msgstr "Imposta il punteggio per il brano attuale"
 
 #: ui/MainFrame.cpp:1519
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Ordina in modo casuale"
 
 #: ui/MainFrame.cpp:1523
@@ -3040,10 +3035,6 @@ msgstr "Dove:"
 msgid "Beginning"
 msgstr "Inizio"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:1827
-msgid "Randomize the songs in the playlist"
-msgstr "Ordina casualmente i canzoni nella Playlist"
-
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1840
 msgid "Remove from Playlist"
 msgstr "Rimuove dalla Playlist"
@@ -3917,8 +3908,8 @@ msgid "Behaviour"
 msgstr "Comportamento"
 
 #: ui/preferences/Preferences.cpp:503
-msgid "Activate taskbar icon"
-msgstr "Attiva l'icona nell'area di notifica"
+msgid "Activate system tray icon"
+msgstr "Attivare l'icona nell'area di notifica (system tray)"
 
 #: ui/preferences/Preferences.cpp:514
 msgid "Integrate into SoundMenu"
@@ -3957,8 +3948,8 @@ msgid "Save playlist on close"
 msgstr "Memorizza la Playlist alla chiusura del programma"
 
 #: ui/preferences/Preferences.cpp:554
-msgid "Close to taskbar icon"
-msgstr "Icona di chiusura nell'area di notifica"
+msgid "Close minimizes to system tray icon"
+msgstr "La chiusura lo riduce alla sua icona nell'area di notifica (system tray)"
 
 #: ui/preferences/Preferences.cpp:559
 msgid "Ask confirmation on exit"
@@ -4045,7 +4036,7 @@ msgid "Random / Smart play modes"
 msgstr "Modalità di riproduzione : Casuale / Intelligente"
 
 #: ui/preferences/Preferences.cpp:881
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Brani lasciati quando inizia ricerca"
 
 #: ui/preferences/Preferences.cpp:889
@@ -4731,7 +4722,7 @@ msgid "Move the selected tracks to the bottom"
 msgstr "Spostare i brani selezionati in basso"
 
 #: ui/player/PlayList.cpp:85
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Ordina la Playlist in modo casuale"
 
 #: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1841

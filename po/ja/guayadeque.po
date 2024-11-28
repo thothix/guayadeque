@@ -244,10 +244,6 @@ msgstr "ストリームを再生"
 msgid "Quit"
 msgstr "終了"
 
-#: Accelerators.cpp:130 PlayList.cpp:1601 PLSoListBox.cpp:160
-msgid "Randomize Playlist"
-msgstr "プレイリストをシャッフル"
-
 #: Accelerators.cpp:131 Accelerators.cpp:132 Accelerators.cpp:133
 #: Accelerators.cpp:134 Accelerators.cpp:135 Accelerators.cpp:136
 #: DynamicPlayList.cpp:56 DynamicPlayList.cpp:134 PlayList.cpp:1567
@@ -2172,11 +2168,11 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Last.fmで再生リストを更新"
 
 #: MainFrame.cpp:1561
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "ランダム化"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "再生リストをランダム化"
 
 #: MainFrame.cpp:1565
@@ -2501,7 +2497,7 @@ msgid "Track"
 msgstr "曲"
 
 #: PlayerPanel.cpp:253
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "再生リストをランダムにする"
 
 #: PlayerPanel.cpp:271
@@ -2591,10 +2587,6 @@ msgstr "選択した曲の評価をセット"
 #: PlayList.cpp:1574
 msgid "Search a track in the playlist by name"
 msgstr "再生リストを名前で検索"
-
-#: PlayList.cpp:1602 PLSoListBox.cpp:161
-msgid "Randomize the songs in the playlist"
-msgstr "再生リストをランダム再生"
 
 #: PlayList.cpp:1607
 msgid "Remove all tracks from playlist"
@@ -3124,7 +3116,7 @@ msgid "Behaviour"
 msgstr "動作"
 
 #: Preferences.cpp:643
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "タスクバーアイコンを有効にする"
 
 #: Preferences.cpp:658
@@ -3160,7 +3152,7 @@ msgid "Save playlist on close"
 msgstr "終了時に再生リストを保存"
 
 #: Preferences.cpp:693
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "タスクバー・アイコンを閉じる"
 
 #: Preferences.cpp:698
@@ -3236,7 +3228,7 @@ msgid "Random / Smart play modes"
 msgstr "ランダム/スマート再生モード"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "サーチを始める残り曲数"
 
 #: Preferences.cpp:1019
@@ -3913,8 +3905,8 @@ msgid "Repeat &Track"
 msgstr "&Repeat 曲"
 
 #: TaskBar.cpp:177
-msgid "&Randomize"
-msgstr "&Randomize"
+msgid "Shu&ffle"
+msgstr "Shu&ffle"
 
 #: TaskBar.cpp:187
 msgid "Audioscrobbling"

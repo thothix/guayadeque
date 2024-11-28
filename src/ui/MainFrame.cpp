@@ -1516,8 +1516,8 @@ void guMainFrame::CreateControlsMenu( wxMenu * menu )
     m_MenuPlaySmart->Check( m_PlayerPanel->GetPlaySmart() );
 
     MenuItem = new wxMenuItem( menu, ID_PLAYER_PLAYLIST_RANDOMPLAY,
-                              wxString( _( "Randomize" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
-                              _( "Randomize the playlist" ), wxITEM_NORMAL );
+                              wxString( _( "Shuffle" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
+                              _( "Shuffle the playlist" ), wxITEM_NORMAL );
     menu->Append( MenuItem );
     m_MenuLoopPlayList = new wxMenuItem( menu, ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST,
                                 wxString( _( "Repeat Playlist" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYMODE_REPEAT_PLAYLIST ),

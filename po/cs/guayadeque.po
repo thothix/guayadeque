@@ -1598,7 +1598,7 @@ msgid "Behaviour"
 msgstr "Chování"
 
 #: ui/preferences/Preferences.cpp:519
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "Zapnout ikonu v oznamovací oblasti"
 
 #: ui/preferences/Preferences.cpp:534
@@ -1634,7 +1634,7 @@ msgid "Save playlist on close"
 msgstr "Uložit seznam skladeb při ukončení"
 
 #: ui/preferences/Preferences.cpp:569
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "Zavírat do oznamovací oblasti"
 
 #: ui/preferences/Preferences.cpp:574
@@ -1751,7 +1751,7 @@ msgid "Random / Smart play modes"
 msgstr "Nahodný / Chytrý mód hraní"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Počet skladeb po kterých se začne vyhledávat"
 
 #: ui/preferences/Preferences.cpp:904
@@ -3228,15 +3228,6 @@ msgstr "Označit Soubor Seznamu Skladeb"
 msgid "New Playlist"
 msgstr "Nový Seznam Skladeb"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:164 ui/player/PlayList.cpp:1608
-#: misc/Accelerators.cpp:133
-msgid "Randomize Playlist"
-msgstr "Náhodný Seznam skladeb"
-
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:165 ui/player/PlayList.cpp:1609
-msgid "Randomize the songs in the playlist"
-msgstr "Znáhodnit Skladby v Seznamu Skladeb"
-
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:172 ui/player/PlayList.cpp:1621
 msgid "Remove from Playlist"
 msgstr "Odebrat z Seznamu Skladeb"
@@ -3847,11 +3838,11 @@ msgid "Repeat the current track in the playlist"
 msgstr "Opakovat stávající skladbu v seznamu"
 
 #: ui/taskbar/TaskBar.cpp:181
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "Z&amíchat"
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Zamíchat seznam skladeb"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
@@ -3899,7 +3890,7 @@ msgid "Record to file"
 msgstr "Nahrát do souboru"
 
 #: ui/player/PlayerPanel.cpp:207
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Zamíchat skladby v seznamu skladeb"
 
 #: ui/player/PlayerPanel.cpp:213 ui/player/PlayerPanel.cpp:3289
@@ -4305,7 +4296,7 @@ msgid "Smart Play"
 msgstr "Chytré Hraní"
 
 #: ui/MainFrame.cpp:1603
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Znáhodni"
 
 #: ui/MainFrame.cpp:1607
