@@ -129,7 +129,7 @@ class guPrefDialog : public wxDialog
     wxChoice *                  m_MainLangChoice;
     wxCheckBox *                m_ShowSplashChkBox;
     wxCheckBox *                m_MinStartChkBox;
-    wxCheckBox *                m_TaskIconChkBox;
+    wxCheckBox *                m_SystemTrayChkBox;
     wxCheckBox *                m_SoundMenuChkBox;
     wxCheckBox *                m_IgnoreLayoutsChkBox;
     wxCheckBox *                m_DropFilesChkBox;
@@ -142,7 +142,7 @@ class guPrefDialog : public wxDialog
     wxCheckBox *                m_SavePlayListChkBox;
     wxCheckBox *                m_SavePosCheckBox;
 	wxSpinCtrl *                m_MinLenSpinCtrl;
-    wxCheckBox *                m_CloseTaskBarChkBox;
+    wxCheckBox *                m_CloseSystemTrayChkBox;
     wxCheckBox *                m_ExitConfirmChkBox;
 	wxStaticText *				m_SmartPlayFilterLabel;
 	wxStaticText *				m_SmartPlayArtistLabel;

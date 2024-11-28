@@ -243,10 +243,6 @@ msgstr "Reprodueix flux"
 msgid "Quit"
 msgstr "Surt"
 
-#: Accelerators.cpp:130 PlayList.cpp:1601 PLSoListBox.cpp:160
-msgid "Randomize Playlist"
-msgstr "Llista aleatòria"
-
 #: Accelerators.cpp:131 Accelerators.cpp:132 Accelerators.cpp:133
 #: Accelerators.cpp:134 Accelerators.cpp:135 Accelerators.cpp:136
 #: DynamicPlayList.cpp:56 DynamicPlayList.cpp:134 PlayList.cpp:1567
@@ -2171,11 +2167,11 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Actualitza la llista basada en l'estadística Last.fm"
 
 #: MainFrame.cpp:1561
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Reproducció aleatòria"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Reproducció aleatòria de la llista"
 
 #: MainFrame.cpp:1565
@@ -2500,7 +2496,7 @@ msgid "Track"
 msgstr "Pista"
 
 #: PlayerPanel.cpp:253
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Reproducció aleatòria de les pistes de la llista"
 
 #: PlayerPanel.cpp:271
@@ -2590,10 +2586,6 @@ msgstr "Defineix la valoració de les pistes actuals"
 #: PlayList.cpp:1574
 msgid "Search a track in the playlist by name"
 msgstr "Cerca a la llista una pista pel nom"
-
-#: PlayList.cpp:1602 PLSoListBox.cpp:161
-msgid "Randomize the songs in the playlist"
-msgstr "Reproducció aleatòria de les cançons de la llista"
 
 #: PlayList.cpp:1607
 msgid "Remove all tracks from playlist"
@@ -3123,7 +3115,7 @@ msgid "Behaviour"
 msgstr "Comportament"
 
 #: Preferences.cpp:643
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "Activa la icona a la barra de tasques"
 
 #: Preferences.cpp:658
@@ -3159,7 +3151,7 @@ msgid "Save playlist on close"
 msgstr "Desa la llista al sortir"
 
 #: Preferences.cpp:693
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "Tanca a una icona de la barra de tasques"
 
 #: Preferences.cpp:698
@@ -3235,7 +3227,7 @@ msgid "Random / Smart play modes"
 msgstr "Mode de reproducció Aleatori/Intel·ligent"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Pistes restants per iniciar l'addició de noves"
 
 #: Preferences.cpp:1019
@@ -3912,7 +3904,7 @@ msgid "Repeat &Track"
 msgstr "&Repeteix pista"
 
 #: TaskBar.cpp:177
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "&Aleatori"
 
 #: TaskBar.cpp:187

@@ -243,10 +243,6 @@ msgstr "Stream Afspelen"
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: Accelerators.cpp:130 PlayList.cpp:1601 PLSoListBox.cpp:160
-msgid "Randomize Playlist"
-msgstr "Willekeurige Afspeelvolgorde"
-
 #: Accelerators.cpp:131 Accelerators.cpp:132 Accelerators.cpp:133
 #: Accelerators.cpp:134 Accelerators.cpp:135 Accelerators.cpp:136
 #: DynamicPlayList.cpp:56 DynamicPlayList.cpp:134 PlayList.cpp:1567
@@ -2171,11 +2167,11 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Ververs afspeellijst op basis van Last.fm statistieken"
 
 #: MainFrame.cpp:1561
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Schud door elkaar"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Afspeellijst schudden"
 
 #: MainFrame.cpp:1565
@@ -2500,7 +2496,7 @@ msgid "Track"
 msgstr "Nummer"
 
 #: PlayerPanel.cpp:253
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Nummers in afspeellijst schudden"
 
 #: PlayerPanel.cpp:271
@@ -2590,10 +2586,6 @@ msgstr "Stel de waardering van de geselecteerde nummers in"
 #: PlayList.cpp:1574
 msgid "Search a track in the playlist by name"
 msgstr "Nummer in afspeellijst zoeken volgens naam"
-
-#: PlayList.cpp:1602 PLSoListBox.cpp:161
-msgid "Randomize the songs in the playlist"
-msgstr "Schud de nummers in de wachtrij door elkaar voor een willekeurige afspeelvolgorde"
 
 #: PlayList.cpp:1607
 msgid "Remove all tracks from playlist"
@@ -3123,7 +3115,7 @@ msgid "Behaviour"
 msgstr "Gedrag"
 
 #: Preferences.cpp:643
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "Icoon in systeemvak weergeven"
 
 #: Preferences.cpp:658
@@ -3159,7 +3151,7 @@ msgid "Save playlist on close"
 msgstr "Afspeellijst opslaan bij afsluiten"
 
 #: Preferences.cpp:693
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "Afsluiten naar systeemvak"
 
 #: Preferences.cpp:698
@@ -3235,7 +3227,7 @@ msgid "Random / Smart play modes"
 msgstr "Willekeurige/Slimme afspeelmodes"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "overgebleven nummers in de wachtrij veroorzaken een nieuwe zoekopdracht"
 
 #: Preferences.cpp:1019
@@ -3912,7 +3904,7 @@ msgid "Repeat &Track"
 msgstr "&Herhaal Nummer"
 
 #: TaskBar.cpp:177
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "S&chudden"
 
 #: TaskBar.cpp:187

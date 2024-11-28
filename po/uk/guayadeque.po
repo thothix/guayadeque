@@ -243,10 +243,6 @@ msgstr "Грати потік"
 msgid "Quit"
 msgstr "Вихід"
 
-#: Accelerators.cpp:130 PlayList.cpp:1601 PLSoListBox.cpp:160
-msgid "Randomize Playlist"
-msgstr "Перемішати список програвання"
-
 #: Accelerators.cpp:131 Accelerators.cpp:132 Accelerators.cpp:133
 #: Accelerators.cpp:134 Accelerators.cpp:135 Accelerators.cpp:136
 #: DynamicPlayList.cpp:56 DynamicPlayList.cpp:134 PlayList.cpp:1567
@@ -2171,11 +2167,11 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Оновити список програвання базуючись на статистиці Last.fm"
 
 #: MainFrame.cpp:1561
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Перемішати"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Перемішати список програвання"
 
 #: MainFrame.cpp:1565
@@ -2500,7 +2496,7 @@ msgid "Track"
 msgstr "Трек"
 
 #: PlayerPanel.cpp:253
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Перемішати треки в списку програвання"
 
 #: PlayerPanel.cpp:271
@@ -2590,10 +2586,6 @@ msgstr "Встановити рейтинг вибраним трекам"
 #: PlayList.cpp:1574
 msgid "Search a track in the playlist by name"
 msgstr "Шукати трек у списку програвання зі назвою"
-
-#: PlayList.cpp:1602 PLSoListBox.cpp:161
-msgid "Randomize the songs in the playlist"
-msgstr "Перемішати пісні в списку програвання"
 
 #: PlayList.cpp:1607
 msgid "Remove all tracks from playlist"
@@ -3123,7 +3115,7 @@ msgid "Behaviour"
 msgstr "Поведінка"
 
 #: Preferences.cpp:643
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "Активувати іконку в системному лотку"
 
 #: Preferences.cpp:658
@@ -3159,7 +3151,7 @@ msgid "Save playlist on close"
 msgstr "Зберегти список програвання при виході"
 
 #: Preferences.cpp:693
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "Згортати при закритті вікна"
 
 #: Preferences.cpp:698
@@ -3235,7 +3227,7 @@ msgid "Random / Smart play modes"
 msgstr "Випадково/Розумний режим"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Кількість треків для початку пошуку"
 
 #: Preferences.cpp:1019
@@ -3912,7 +3904,7 @@ msgid "Repeat &Track"
 msgstr "&Повторювати трек"
 
 #: TaskBar.cpp:177
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "В&ипадково"
 
 #: TaskBar.cpp:187

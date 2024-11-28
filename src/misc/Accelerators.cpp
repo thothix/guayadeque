@@ -128,7 +128,7 @@ int guAccelGetActionNames( wxArrayString &actionnames )
 	actionnames.Add( _( "Preferences" ) );
 	actionnames.Add( _( "Quit" ) );
 	//
-	actionnames.Add( _( "Randomize Playlist" ) );
+	actionnames.Add( _( "Shuffle the playlist" ) );
 	actionnames.Add( wxString( _( "Rating" ) ) + wxT( " ☆☆☆☆☆" ) );
 	actionnames.Add( wxString( _( "Rating" ) ) + wxT( " ★☆☆☆☆" ) );
 	actionnames.Add( wxString( _( "Rating" ) ) + wxT( " ★★☆☆☆" ) );

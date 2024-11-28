@@ -158,11 +158,6 @@ msgstr "Προτιμήσεις"
 msgid "Quit"
 msgstr "Έξοδος"
 
-#: misc/Accelerators.cpp:131 ui/mediaviewer/playlists/PLSoListBox.cpp:162
-#: ui/player/PlayList.cpp:1826
-msgid "Randomize Playlist"
-msgstr "Τυχαία σειρά περιεχομένων της Λίστας Αναπαραγωγής"
-
 #: misc/Accelerators.cpp:132 misc/Accelerators.cpp:133
 #: misc/Accelerators.cpp:134 misc/Accelerators.cpp:135
 #: misc/Accelerators.cpp:136 misc/Accelerators.cpp:137
@@ -1722,11 +1717,11 @@ msgid "Repeat the current track in the playlist"
 msgstr "Επανάληψη του τρέχοντος κομματιού στη λίστα"
 
 #: ui/taskbar/TaskBar.cpp:179
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "&Τυχαία σειρά"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Τυχαία σειρά των κομματιών της λίστας αναπαραγωγής"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
@@ -2007,7 +2002,7 @@ msgid "Set the rating of the current track"
 msgstr "Βαθμολόγηση τρέχοντος κομματιού"
 
 #: ui/MainFrame.cpp:1519
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Τυχαία σειρά"
 
 #: ui/MainFrame.cpp:1523
@@ -2981,10 +2976,6 @@ msgstr "Που:"
 msgid "Beginning"
 msgstr "Αρχή"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:1827
-msgid "Randomize the songs in the playlist"
-msgstr "Τυχαία σειρά των τραγουδιών στη λίστα αναπαραγωγής"
-
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1840
 msgid "Remove from Playlist"
 msgstr "Διαγραφή από τη Λίστα Αναπαραγωγής"
@@ -3862,8 +3853,8 @@ msgid "Behaviour"
 msgstr "Συμπεριφορά"
 
 #: ui/preferences/Preferences.cpp:503
-msgid "Activate taskbar icon"
-msgstr "Ενεργοποίηση εικονιδίου γραμμής εργασιών"
+msgid "Activate system tray icon"
+msgstr "Ενεργοποίηση του εικονιδίου στη ζώνη ειδοποιήσεων (system tray)"
 
 #: ui/preferences/Preferences.cpp:514
 msgid "Integrate into SoundMenu"
@@ -3902,8 +3893,8 @@ msgid "Save playlist on close"
 msgstr "Αποθήκευση της λίστας αναπαραγωγής κατά την έξοδο"
 
 #: ui/preferences/Preferences.cpp:554
-msgid "Close to taskbar icon"
-msgstr "Κλείσιμο σε εικονίδιο της γραμμής εργασιών"
+msgid "Close minimizes to system tray icon"
+msgstr "Το κλείσιμο του προγράμματος το περιορίζει στο εικονίδιό του στη ζώνη ειδοποιήσεων (system tray)"
 
 #: ui/preferences/Preferences.cpp:559
 msgid "Ask confirmation on exit"
@@ -3994,7 +3985,7 @@ msgid "Random / Smart play modes"
 msgstr "Λειτουργίες Τυχαίας / Έξυπνης αναπαραγωγής"
 
 #: ui/preferences/Preferences.cpp:881
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Κομμάτια που απομένουν μέχρι να ξεκινήσει η αναζήτηση"
 
 #: ui/preferences/Preferences.cpp:889
@@ -4676,7 +4667,7 @@ msgid "Move the selected tracks to the bottom"
 msgstr "Μετακίνηση των επιλεγμένων κομματιών στο κάτω μέρος"
 
 #: ui/player/PlayList.cpp:85
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Τυχαία σειρά των κομματιών στη λίστα αναπαραγωγής"
 
 #: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1841

@@ -1594,7 +1594,7 @@ msgid "Behaviour"
 msgstr "Hegðun"
 
 #: ui/preferences/Preferences.cpp:519
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "Virkja merki á tólastiku"
 
 #: ui/preferences/Preferences.cpp:534
@@ -1630,7 +1630,7 @@ msgid "Save playlist on close"
 msgstr "Vista lagalista þegar hætt er"
 
 #: ui/preferences/Preferences.cpp:569
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "Hætta minnkað"
 
 #: ui/preferences/Preferences.cpp:574
@@ -1747,7 +1747,7 @@ msgid "Random / Smart play modes"
 msgstr "Stokkað / Snjall Hamur"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Lög til að hefja leit"
 
 #: ui/preferences/Preferences.cpp:904
@@ -3228,15 +3228,6 @@ msgstr "Velja lagalista skrá"
 msgid "New Playlist"
 msgstr "Nýr Lagalsti"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:164 ui/player/PlayList.cpp:1608
-#: misc/Accelerators.cpp:133
-msgid "Randomize Playlist"
-msgstr "Stokka Lagalista"
-
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:165 ui/player/PlayList.cpp:1609
-msgid "Randomize the songs in the playlist"
-msgstr "Stokka lög í lagaLista"
-
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:172 ui/player/PlayList.cpp:1621
 msgid "Remove from Playlist"
 msgstr "Fjarlægja úr Lagalista"
@@ -3847,11 +3838,11 @@ msgid "Repeat the current track in the playlist"
 msgstr "Endurtaka valið lag í lagalista"
 
 #: ui/taskbar/TaskBar.cpp:181
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "S&tokkað"
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Stokka lagalista"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
@@ -3899,7 +3890,7 @@ msgid "Record to file"
 msgstr "Upptaka"
 
 #: ui/player/PlayerPanel.cpp:207
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Stokka lög í lagalista"
 
 #: ui/player/PlayerPanel.cpp:213 ui/player/PlayerPanel.cpp:3289
@@ -4305,7 +4296,7 @@ msgid "Smart Play"
 msgstr "Snjall spilun"
 
 #: ui/MainFrame.cpp:1603
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Stokkað"
 
 #: ui/MainFrame.cpp:1607

@@ -249,10 +249,6 @@ msgstr "Reproduzir fluxo"
 msgid "Quit"
 msgstr "Sair"
 
-#: Accelerators.cpp:130 PlayList.cpp:1601 PLSoListBox.cpp:160
-msgid "Randomize Playlist"
-msgstr "Embaralhar lista de reprodução"
-
 #: Accelerators.cpp:131 Accelerators.cpp:132 Accelerators.cpp:133
 #: Accelerators.cpp:134 Accelerators.cpp:135 Accelerators.cpp:136
 #: DynamicPlayList.cpp:56 DynamicPlayList.cpp:134 PlayList.cpp:1567
@@ -2180,11 +2176,11 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Atualizar a lista de reprodução baseada nas estatística da Last.fm"
 
 #: MainFrame.cpp:1561
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Embaralhar"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Embaralhar a lista de reprodução"
 
 #: MainFrame.cpp:1565
@@ -2511,7 +2507,7 @@ msgid "Track"
 msgstr "Faixa"
 
 #: PlayerPanel.cpp:253
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Embaralhar as faixas da lista de reprodução"
 
 #: PlayerPanel.cpp:271
@@ -2633,10 +2629,6 @@ msgstr "Avaliar as faixas selecionadas"
 #: PlayList.cpp:1574
 msgid "Search a track in the playlist by name"
 msgstr "Procurar uma faixa na lista de reprodução pelo nome"
-
-#: PlayList.cpp:1602 PLSoListBox.cpp:161
-msgid "Randomize the songs in the playlist"
-msgstr "Embaralhar as músicas na lista de reprodução"
 
 #: PlayList.cpp:1607
 msgid "Remove all tracks from playlist"
@@ -3166,8 +3158,8 @@ msgid "Behaviour"
 msgstr "Comportamento"
 
 #: Preferences.cpp:643
-msgid "Activate taskbar icon"
-msgstr "Ativar ícone da barra de tarefas"
+msgid "Activate system tray icon"
+msgstr "Ativar ícone na área de notificação do sistema"
 
 #: Preferences.cpp:658
 msgid "Integrate into SoundMenu"
@@ -3206,8 +3198,8 @@ msgid "Save playlist on close"
 msgstr "Salvar lista de reprodução ao sair"
 
 #: Preferences.cpp:693
-msgid "Close to taskbar icon"
-msgstr "Fechar e ir para o ícone da barra de tarefas"
+msgid "Close minimizes to system tray icon"
+msgstr "Fechar minimiza para a área de notificação do sistema"
 
 #: Preferences.cpp:698
 msgid "Ask confirmation on exit"
@@ -3290,8 +3282,8 @@ msgid "Random / Smart play modes"
 msgstr "Modo de reprodução aleatório/inteligente"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start search"
-msgstr "Faixas que restam para iniciar pesquisa"
+msgid "Number of remaining tracks needed to start adding new ones"
+msgstr "Faixas restantes necessárias para nova adição"
 
 #: Preferences.cpp:1019
 msgid "Tracks added each time"
@@ -3998,7 +3990,7 @@ msgid "Repeat &Track"
 msgstr "Re&petir faixa"
 
 #: TaskBar.cpp:177
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "Emb&aralhar"
 
 #: TaskBar.cpp:187

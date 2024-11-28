@@ -243,10 +243,6 @@ msgstr "Reproduzir emissão"
 msgid "Quit"
 msgstr "Sair"
 
-#: Accelerators.cpp:130 PlayList.cpp:1601 PLSoListBox.cpp:160
-msgid "Randomize Playlist"
-msgstr "Lista de reprodução aleatória"
-
 #: Accelerators.cpp:131 Accelerators.cpp:132 Accelerators.cpp:133
 #: Accelerators.cpp:134 Accelerators.cpp:135 Accelerators.cpp:136
 #: DynamicPlayList.cpp:56 DynamicPlayList.cpp:134 PlayList.cpp:1567
@@ -2172,11 +2168,11 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Atualizar lista de reprodução com estatísticas Last.fm"
 
 #: MainFrame.cpp:1561
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Aleatório"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Lista de reprodução aleatória"
 
 #: MainFrame.cpp:1565
@@ -2503,7 +2499,7 @@ msgid "Track"
 msgstr "Faixa"
 
 #: PlayerPanel.cpp:253
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Faixas aleatórias na lista de reprodução"
 
 #: PlayerPanel.cpp:271
@@ -2617,10 +2613,6 @@ msgstr "Definir avaliação das faixas selecionadas"
 #: PlayList.cpp:1574
 msgid "Search a track in the playlist by name"
 msgstr "Procurar faixa na lista de reprodução (por nome)"
-
-#: PlayList.cpp:1602 PLSoListBox.cpp:161
-msgid "Randomize the songs in the playlist"
-msgstr "Faixas aleatórias na lista de reprodução"
 
 #: PlayList.cpp:1607
 msgid "Remove all tracks from playlist"
@@ -3150,8 +3142,8 @@ msgid "Behaviour"
 msgstr "Comportamento"
 
 #: Preferences.cpp:643
-msgid "Activate taskbar icon"
-msgstr "Ativar ícone na barra de tarefas"
+msgid "Activate system tray icon"
+msgstr "Ativar ícone na bandeja do sistema"
 
 #: Preferences.cpp:658
 msgid "Integrate into SoundMenu"
@@ -3190,8 +3182,8 @@ msgid "Save playlist on close"
 msgstr "Gravar lista de reprodução ao fechar"
 
 #: Preferences.cpp:693
-msgid "Close to taskbar icon"
-msgstr "Fechar para a barra de tarefas"
+msgid "Close minimizes to system tray icon"
+msgstr "Fechar minimiza para a bandeja do sistema"
 
 #: Preferences.cpp:698
 msgid "Ask confirmation on exit"
@@ -3274,7 +3266,7 @@ msgid "Random / Smart play modes"
 msgstr "Modos Aleatório/Reprodução inteligente"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Faixas mínimas para nova adição"
 
 #: Preferences.cpp:1019
@@ -3982,7 +3974,7 @@ msgid "Repeat &Track"
 msgstr "&Repetir faixa"
 
 #: TaskBar.cpp:177
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "&Aleatório"
 
 #: TaskBar.cpp:187

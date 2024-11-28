@@ -250,10 +250,6 @@ msgstr "Prehrať Stream"
 msgid "Quit"
 msgstr "Ukončiť"
 
-#: Accelerators.cpp:130 PlayList.cpp:1601 PLSoListBox.cpp:160
-msgid "Randomize Playlist"
-msgstr "Zamiešať Playlist"
-
 #: Accelerators.cpp:131 Accelerators.cpp:132 Accelerators.cpp:133
 #: Accelerators.cpp:134 Accelerators.cpp:135 Accelerators.cpp:136
 #: DynamicPlayList.cpp:56 DynamicPlayList.cpp:134 PlayList.cpp:1567
@@ -2178,11 +2174,11 @@ msgid "Update playlist based on Last.fm statics"
 msgstr "Aktualizovať Playlist podľa štatistík Last.fm"
 
 #: MainFrame.cpp:1561
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Náhodné"
 
 #: MainFrame.cpp:1562 TaskBar.cpp:177
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Náhodné poradie v Playliste"
 
 #: MainFrame.cpp:1565
@@ -2507,7 +2503,7 @@ msgid "Track"
 msgstr "Skladba"
 
 #: PlayerPanel.cpp:253
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Náhodné poradie skladieb v Playliste"
 
 #: PlayerPanel.cpp:271
@@ -2597,10 +2593,6 @@ msgstr "nastaviť hodnotenie aktuálne zvolených skladieb"
 #: PlayList.cpp:1574
 msgid "Search a track in the playlist by name"
 msgstr "Hľadať skladbu v playliste podľa mena"
-
-#: PlayList.cpp:1602 PLSoListBox.cpp:161
-msgid "Randomize the songs in the playlist"
-msgstr "Náhodné poradie playlistu"
 
 #: PlayList.cpp:1607
 msgid "Remove all tracks from playlist"
@@ -3130,7 +3122,7 @@ msgid "Behaviour"
 msgstr "Správanie"
 
 #: Preferences.cpp:643
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "Aktivovať ikonu oznamovacej oblasti"
 
 #: Preferences.cpp:658
@@ -3166,7 +3158,7 @@ msgid "Save playlist on close"
 msgstr "Uložiť Playlist pri skončení"
 
 #: Preferences.cpp:693
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "Zatvoriť do oznamovacej oblasti"
 
 #: Preferences.cpp:698
@@ -3242,7 +3234,7 @@ msgid "Random / Smart play modes"
 msgstr "Náhodné / Inteligentné prehrávacie režimy"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Zostávajúce skladby pre začatie vyhľadávania"
 
 #: Preferences.cpp:1019
@@ -3919,7 +3911,7 @@ msgid "Repeat &Track"
 msgstr "Opakovať &skladbu"
 
 #: TaskBar.cpp:177
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "&Náhodne"
 
 #: TaskBar.cpp:187

@@ -1604,7 +1604,7 @@ msgid "Behaviour"
 msgstr "Zachowanie"
 
 #: ui/preferences/Preferences.cpp:519
-msgid "Activate taskbar icon"
+msgid "Activate system tray icon"
 msgstr "Aktywuj ikonę zasobnika systemowego"
 
 #: ui/preferences/Preferences.cpp:534
@@ -1640,7 +1640,7 @@ msgid "Save playlist on close"
 msgstr "Zapisz listę odtwarzania przy zamknięciu"
 
 #: ui/preferences/Preferences.cpp:569
-msgid "Close to taskbar icon"
+msgid "Close minimizes to system tray icon"
 msgstr "Zamknij do ikony zasobnika"
 
 #: ui/preferences/Preferences.cpp:574
@@ -1757,7 +1757,7 @@ msgid "Random / Smart play modes"
 msgstr "Tryby odtwarzania losowego / inteligentnego"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Pozostałe utwory do rozpoczęcia wyszukiwania"
 
 #: ui/preferences/Preferences.cpp:904
@@ -3234,15 +3234,6 @@ msgstr "Wybierz plik listy odtwarzania"
 msgid "New Playlist"
 msgstr "Nowa lista odtwarzania"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:164 ui/player/PlayList.cpp:1608
-#: misc/Accelerators.cpp:133
-msgid "Randomize Playlist"
-msgstr "Losowa lista odtwarzania"
-
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:165 ui/player/PlayList.cpp:1609
-msgid "Randomize the songs in the playlist"
-msgstr "Wymieszaj utwory na liście odtwarzania"
-
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:172 ui/player/PlayList.cpp:1621
 msgid "Remove from Playlist"
 msgstr "Usuń z listy odtwarzania"
@@ -3853,11 +3844,11 @@ msgid "Repeat the current track in the playlist"
 msgstr "Powtórz aktualny utwór w liście odtwarzania"
 
 #: ui/taskbar/TaskBar.cpp:181
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "Wymiesz&aj"
 
 #: ui/taskbar/TaskBar.cpp:181 ui/MainFrame.cpp:1604
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Wylosuj listę odtwarzania"
 
 #: ui/taskbar/TaskBar.cpp:187 ui/MainFrame.cpp:1633
@@ -3905,7 +3896,7 @@ msgid "Record to file"
 msgstr "Nagraj do pliku"
 
 #: ui/player/PlayerPanel.cpp:207
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Wymieszaj utwory na liście odtwarzania"
 
 #: ui/player/PlayerPanel.cpp:213 ui/player/PlayerPanel.cpp:3289
@@ -4311,7 +4302,7 @@ msgid "Smart Play"
 msgstr "Inteligentne odtwarzanie"
 
 #: ui/MainFrame.cpp:1603
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Losowo"
 
 #: ui/MainFrame.cpp:1607

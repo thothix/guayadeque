@@ -82,7 +82,7 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
     BarSizer->Add( 10, 0, 0 );
 
     m_ShuffleButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_shuffle), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
-    m_ShuffleButton->SetToolTip(_("Randomize the tracks in playlist"));
+    m_ShuffleButton->SetToolTip(_("Shuffle the tracks in the playlist"));
     BarSizer->Add(m_ShuffleButton, 0, wxALIGN_LEFT | wxLEFT, 0);
 
     m_RemoveButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_del), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
@@ -1823,8 +1823,8 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
 
     MenuItem = new wxMenuItem(
             Menu, ID_PLAYER_PLAYLIST_RANDOMPLAY,
-            wxString( _( "Randomize Playlist" ) )  + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
-            _( "Randomize the songs in the playlist" ) );
+            wxString( _( "Shuffle the playlist" ) )  + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_RANDOMPLAY ),
+            _( "Shuffle the tracks in the playlist" ) );
     Menu->Append( MenuItem );
 
     MenuItem = new wxMenuItem(

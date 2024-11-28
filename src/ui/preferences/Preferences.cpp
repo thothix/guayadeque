@@ -500,9 +500,9 @@ void guPrefDialog::BuildGeneralPage()
 
 	wxStaticBoxSizer * BehaviSizer = new wxStaticBoxSizer(new wxStaticBox(m_GenPanel, wxID_ANY, wxString::Format(" %s ", _("Behaviour"))), wxVERTICAL);
 
-	m_TaskIconChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Activate taskbar icon"), wxDefaultPosition, wxDefaultSize, 0 );
-    m_TaskIconChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_TASK_BAR_ICON, false, CONFIG_PATH_GENERAL ) );
-	BehaviSizer->Add( m_TaskIconChkBox, 0, wxLEFT | wxRIGHT, 5 );
+	m_SystemTrayChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Activate system tray icon"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_SystemTrayChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_TASK_BAR_ICON, false, CONFIG_PATH_GENERAL ) );
+	BehaviSizer->Add( m_SystemTrayChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
     m_SoundMenuChkBox = nullptr;
 
@@ -513,7 +513,7 @@ void guPrefDialog::BuildGeneralPage()
     {
         m_SoundMenuChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _( "Integrate into SoundMenu" ), wxDefaultPosition, wxDefaultSize, 0 );
         m_SoundMenuChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_SOUND_MENU_INTEGRATE, false, CONFIG_PATH_GENERAL ) );
-        m_SoundMenuChkBox->Enable( m_TaskIconChkBox->IsChecked() );
+        m_SoundMenuChkBox->Enable( m_SystemTrayChkBox->IsChecked() );
         BehaviSizer->Add( m_SoundMenuChkBox, 0, wxLEFT | wxRIGHT, 5 );
     }
 
@@ -551,10 +551,10 @@ void guPrefDialog::BuildGeneralPage()
     m_SavePlayListChkBox->SetValue( m_Config->ReadBool( wxT( "SaveOnClose" ), true, wxT( "playlist" ) ) );
 	OnCloseSizer->Add( m_SavePlayListChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
-	m_CloseTaskBarChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Close to taskbar icon"), wxDefaultPosition, wxDefaultSize, 0 );
-    m_CloseTaskBarChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_CLOSE_TO_TASKBAR, false, CONFIG_PATH_GENERAL ) );
-    m_CloseTaskBarChkBox->Enable( m_TaskIconChkBox->IsChecked() && ( !m_SoundMenuChkBox || !m_SoundMenuChkBox->IsChecked() ) );
-	OnCloseSizer->Add( m_CloseTaskBarChkBox, 0, wxLEFT | wxRIGHT, 5 );
+	m_CloseSystemTrayChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Close minimizes to system tray icon"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_CloseSystemTrayChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_CLOSE_TO_TASKBAR, false, CONFIG_PATH_GENERAL ) );
+    m_CloseSystemTrayChkBox->Enable( m_SystemTrayChkBox->IsChecked() && ( !m_SoundMenuChkBox || !m_SoundMenuChkBox->IsChecked() ) );
+	OnCloseSizer->Add( m_CloseSystemTrayChkBox, 0, wxLEFT | wxRIGHT, 5 );
 
 	m_ExitConfirmChkBox = new wxCheckBox( m_GenPanel, wxID_ANY, _("Ask confirmation on exit"), wxDefaultPosition, wxDefaultSize, 0 );
     m_ExitConfirmChkBox->SetValue( m_Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_CLOSE_CONFIRM, true, CONFIG_PATH_GENERAL ) );
@@ -567,7 +567,7 @@ void guPrefDialog::BuildGeneralPage()
 	m_GenPanel->Layout();
 	GenMainSizer->FitInside( m_GenPanel );
 
-    m_TaskIconChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnActivateTaskBarIcon, this );
+    m_SystemTrayChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnActivateTaskBarIcon, this );
 	if( m_SoundMenuChkBox )
         m_SoundMenuChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnActivateSoundMenuIntegration, this );
     m_InstantSearchChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnActivateInstantSearch, this );
@@ -878,7 +878,7 @@ void guPrefDialog::BuildPlaybackPage()
     m_MinTracksSpinCtrl->SetValue( m_Config->ReadNum( CONFIG_KEY_PLAYBACK_MIN_TRACKS_PLAY, 4, CONFIG_PATH_PLAYBACK ) );
 	SmartPlayListFlexGridSizer->Add( m_MinTracksSpinCtrl, 0, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5 );
 
-	wxStaticText * MinTracksStaticText = new wxStaticText( m_PlayPanel, wxID_ANY, _("Number of remaining tracks needed to start search"), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * MinTracksStaticText = new wxStaticText( m_PlayPanel, wxID_ANY, _("Number of remaining tracks needed to start adding new ones"), wxDefaultPosition, wxDefaultSize, 0 );
 	MinTracksStaticText->Wrap( -1 );
 	SmartPlayListFlexGridSizer->Add( MinTracksStaticText, 0, wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_CENTER_VERTICAL, 5 );
 
@@ -2455,8 +2455,8 @@ void guPrefDialog::SaveSettings()
         m_Config->WriteBool( CONFIG_KEY_GENERAL_SHOW_SPLASH_SCREEN, m_ShowSplashChkBox->GetValue(), CONFIG_PATH_GENERAL );
         m_Config->WriteBool( CONFIG_KEY_GENERAL_START_MINIMIZED, m_MinStartChkBox->GetValue(), CONFIG_PATH_GENERAL );
         m_Config->WriteBool( CONFIG_KEY_GENERAL_LOAD_DEFAULT_LAYOUTS, m_IgnoreLayoutsChkBox->GetValue(), CONFIG_PATH_GENERAL );
-        m_Config->WriteBool( CONFIG_KEY_GENERAL_SHOW_TASK_BAR_ICON, m_TaskIconChkBox->GetValue(), CONFIG_PATH_GENERAL );
-        m_Config->WriteBool( CONFIG_KEY_GENERAL_CLOSE_TO_TASKBAR, m_TaskIconChkBox->IsChecked() && m_CloseTaskBarChkBox->GetValue(), CONFIG_PATH_GENERAL );
+        m_Config->WriteBool( CONFIG_KEY_GENERAL_SHOW_TASK_BAR_ICON, m_SystemTrayChkBox->GetValue(), CONFIG_PATH_GENERAL );
+        m_Config->WriteBool( CONFIG_KEY_GENERAL_CLOSE_TO_TASKBAR, m_SystemTrayChkBox->IsChecked() && m_CloseSystemTrayChkBox->GetValue(), CONFIG_PATH_GENERAL );
         if( m_SoundMenuChkBox )
             m_Config->WriteBool( CONFIG_KEY_GENERAL_SOUND_MENU_INTEGRATE, m_SoundMenuChkBox->GetValue(), CONFIG_PATH_GENERAL );
         m_Config->WriteBool( CONFIG_KEY_GENERAL_ACTION_ENQUEUE, m_EnqueueChkBox->GetValue(), CONFIG_PATH_GENERAL );
@@ -2720,15 +2720,15 @@ void guPrefDialog::SaveSettings()
 void guPrefDialog::OnActivateTaskBarIcon( wxCommandEvent& event )
 {
     if( m_SoundMenuChkBox )
-        m_SoundMenuChkBox->Enable( m_TaskIconChkBox->IsChecked() );
-    m_CloseTaskBarChkBox->Enable( m_TaskIconChkBox->IsChecked() && ( !m_SoundMenuChkBox || !m_SoundMenuChkBox->IsChecked() ) );
+        m_SoundMenuChkBox->Enable( m_SystemTrayChkBox->IsChecked() );
+    m_CloseSystemTrayChkBox->Enable( m_SystemTrayChkBox->IsChecked() && ( !m_SoundMenuChkBox || !m_SoundMenuChkBox->IsChecked() ) );
     m_ExitConfirmChkBox->Enable( !m_SoundMenuChkBox || !m_SoundMenuChkBox->IsEnabled() || !m_SoundMenuChkBox->IsChecked() );
 }
 
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnActivateSoundMenuIntegration( wxCommandEvent& event )
 {
-    m_CloseTaskBarChkBox->Enable( m_TaskIconChkBox->IsChecked() && !m_SoundMenuChkBox->IsChecked() );
+    m_CloseSystemTrayChkBox->Enable( m_SystemTrayChkBox->IsChecked() && !m_SoundMenuChkBox->IsChecked() );
     m_ExitConfirmChkBox->Enable( !m_SoundMenuChkBox->IsEnabled() || !m_SoundMenuChkBox->IsChecked() );
 }
 

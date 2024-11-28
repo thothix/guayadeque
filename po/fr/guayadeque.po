@@ -161,11 +161,6 @@ msgstr "Préférences"
 msgid "Quit"
 msgstr "Quitter"
 
-#: misc/Accelerators.cpp:131 ui/mediaviewer/playlists/PLSoListBox.cpp:162
-#: ui/player/PlayList.cpp:1823
-msgid "Randomize Playlist"
-msgstr "Mélanger la liste de lecture"
-
 #: misc/Accelerators.cpp:132 misc/Accelerators.cpp:133
 #: misc/Accelerators.cpp:134 misc/Accelerators.cpp:135
 #: misc/Accelerators.cpp:136 misc/Accelerators.cpp:137
@@ -1725,11 +1720,11 @@ msgid "Repeat the current track in the playlist"
 msgstr "Rejouer le morceau en cours dans la file de lecture"
 
 #: ui/taskbar/TaskBar.cpp:179
-msgid "&Randomize"
+msgid "Shu&ffle"
 msgstr "Mélanger &aléatoirement"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
-msgid "Randomize the playlist"
+msgid "Shuffle the playlist"
 msgstr "Mélanger aléatoirement les morceaux de la file de lecture"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
@@ -2010,7 +2005,7 @@ msgid "Set the rating of the current track"
 msgstr "Donner une note pour le morceau en cours"
 
 #: ui/MainFrame.cpp:1519
-msgid "Randomize"
+msgid "Shuffle"
 msgstr "Mélanger"
 
 #: ui/MainFrame.cpp:1523
@@ -2978,10 +2973,6 @@ msgstr "Où :"
 msgid "Beginning"
 msgstr "Début"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:1824
-msgid "Randomize the songs in the playlist"
-msgstr "Mélanger aléatoirement les morceaux dans la file"
-
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1837
 msgid "Remove from Playlist"
 msgstr "Retirer de la Liste de Lecture"
@@ -3859,8 +3850,8 @@ msgid "Behaviour"
 msgstr "Comportement"
 
 #: ui/preferences/Preferences.cpp:506
-msgid "Activate taskbar icon"
-msgstr "Activer l'icône de la barre des tâches"
+msgid "Activate system tray icon"
+msgstr "Activer l'icône dans la zone de notifications (system tray)"
 
 #: ui/preferences/Preferences.cpp:517
 msgid "Integrate into SoundMenu"
@@ -3899,8 +3890,8 @@ msgid "Save playlist on close"
 msgstr "Sauvegarder la file de lecture à la Fermeture"
 
 #: ui/preferences/Preferences.cpp:557
-msgid "Close to taskbar icon"
-msgstr "Fermer vers l'icône de la barre des tâches"
+msgid "Close minimizes to system tray icon"
+msgstr "Fermer le programme le réduit à son icône dans la zone de notifications (system tray)"
 
 #: ui/preferences/Preferences.cpp:562
 msgid "Ask confirmation on exit"
@@ -3991,7 +3982,7 @@ msgid "Random / Smart play modes"
 msgstr "Modes de Lecture Aléatoire / Intelligent"
 
 #: ui/preferences/Preferences.cpp:884
-msgid "Number of remaining tracks needed to start search"
+msgid "Number of remaining tracks needed to start adding new ones"
 msgstr "Recherche des morceaux restant à démarrer"
 
 #: ui/preferences/Preferences.cpp:892
@@ -4679,7 +4670,7 @@ msgid "Move the selected tracks to the bottom"
 msgstr "Déplacer les morceaux sélectionnés en fin de liste"
 
 #: ui/player/PlayList.cpp:86
-msgid "Randomize the tracks in playlist"
+msgid "Shuffle the tracks in the playlist"
 msgstr "Mélanger les morceaux de la file de lecture"
 
 #: ui/player/PlayList.cpp:90 ui/player/PlayList.cpp:1838
