@@ -4036,7 +4036,7 @@ msgid "Random / Smart play modes"
 msgstr "Modalità di riproduzione : Casuale / Intelligente"
 
 #: ui/preferences/Preferences.cpp:881
-msgid "Number of remaining tracks needed to start adding new ones"
+msgid "Minimum number of tracks required to add new ones"
 msgstr "Brani lasciati quando inizia ricerca"
 
 #: ui/preferences/Preferences.cpp:889

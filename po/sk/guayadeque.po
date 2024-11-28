@@ -3234,7 +3234,7 @@ msgid "Random / Smart play modes"
 msgstr "Náhodné / Inteligentné prehrávacie režimy"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start adding new ones"
+msgid "Minimum number of tracks required to add new ones"
 msgstr "Zostávajúce skladby pre začatie vyhľadávania"
 
 #: Preferences.cpp:1019

@@ -1747,7 +1747,7 @@ msgid "Random / Smart play modes"
 msgstr "Stokkað / Snjall Hamur"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Number of remaining tracks needed to start adding new ones"
+msgid "Minimum number of tracks required to add new ones"
 msgstr "Lög til að hefja leit"
 
 #: ui/preferences/Preferences.cpp:904
