@@ -3226,7 +3226,7 @@ msgid "Random / Smart play modes"
 msgstr "Режими на Произволно/Интелигентно възпроизвеждане"
 
 #: Preferences.cpp:1011
-msgid "Minimum number of tracks required to add new ones"
+msgid "Minimum number of tracks to play required to add new ones"
 msgstr "Оставащи песни преди търсене"
 
 #: Preferences.cpp:1019

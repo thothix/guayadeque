@@ -1747,7 +1747,7 @@ msgid "Random / Smart play modes"
 msgstr "Modo Aleatorio / Inteligente de reproducción"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Minimum number of tracks required to add new ones"
+msgid "Minimum number of tracks to play required to add new ones"
 msgstr "Pistas restantes para iniciar la búsqueda"
 
 #: ui/preferences/Preferences.cpp:904
