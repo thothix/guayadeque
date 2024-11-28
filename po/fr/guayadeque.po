@@ -3982,7 +3982,7 @@ msgid "Random / Smart play modes"
 msgstr "Modes de Lecture Aléatoire / Intelligent"
 
 #: ui/preferences/Preferences.cpp:884
-msgid "Number of remaining tracks needed to start adding new ones"
+msgid "Minimum number of tracks required to add new ones"
 msgstr "Recherche des morceaux restant à démarrer"
 
 #: ui/preferences/Preferences.cpp:892

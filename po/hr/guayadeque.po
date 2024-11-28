@@ -3226,7 +3226,7 @@ msgid "Random / Smart play modes"
 msgstr "Nasumično / Pametno Izvođenje načini"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start adding new ones"
+msgid "Minimum number of tracks required to add new ones"
 msgstr "Pjesme prije nego počinje traženje"
 
 #: Preferences.cpp:1019

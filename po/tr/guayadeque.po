@@ -3229,7 +3229,7 @@ msgid "Random / Smart play modes"
 msgstr "Karışık/Akıllı Çalma Modları"
 
 #: Preferences.cpp:1011
-msgid "Number of remaining tracks needed to start adding new ones"
+msgid "Minimum number of tracks required to add new ones"
 msgstr "Yeni arama için kalan parça sayısı"
 
 #: Preferences.cpp:1019

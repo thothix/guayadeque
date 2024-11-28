@@ -4026,7 +4026,7 @@ msgid "Random / Smart play modes"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:881
-msgid "Number of remaining tracks needed to start adding new ones"
+msgid "Minimum number of tracks required to add new ones"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:889

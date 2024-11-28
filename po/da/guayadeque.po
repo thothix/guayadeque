@@ -1743,7 +1743,7 @@ msgid "Random / Smart play modes"
 msgstr "Vilkårlig og smart afspilningstilstand"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Number of remaining tracks needed to start adding new ones"
+msgid "Minimum number of tracks required to add new ones"
 msgstr "Numre tilbage for at starte søgning"
 
 #: ui/preferences/Preferences.cpp:904
