@@ -3266,7 +3266,7 @@ msgid "Random / Smart play modes"
 msgstr "Modos Aleatório/Reprodução inteligente"
 
 #: Preferences.cpp:1011
-msgid "Minimum number of tracks required to add new ones"
+msgid "Minimum number of tracks to play required to add new ones"
 msgstr "Faixas mínimas para nova adição"
 
 #: Preferences.cpp:1019

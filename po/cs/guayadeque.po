@@ -1751,7 +1751,7 @@ msgid "Random / Smart play modes"
 msgstr "Nahodný / Chytrý mód hraní"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Minimum number of tracks required to add new ones"
+msgid "Minimum number of tracks to play required to add new ones"
 msgstr "Počet skladeb po kterých se začne vyhledávat"
 
 #: ui/preferences/Preferences.cpp:904

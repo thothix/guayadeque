@@ -3985,7 +3985,7 @@ msgid "Random / Smart play modes"
 msgstr "Λειτουργίες Τυχαίας / Έξυπνης αναπαραγωγής"
 
 #: ui/preferences/Preferences.cpp:881
-msgid "Minimum number of tracks required to add new ones"
+msgid "Minimum number of tracks to play required to add new ones"
 msgstr "Κομμάτια που απομένουν μέχρι να ξεκινήσει η αναζήτηση"
 
 #: ui/preferences/Preferences.cpp:889

@@ -3226,7 +3226,7 @@ msgid "Random / Smart play modes"
 msgstr "Véletlenszerű / Intelligens lejátszási mód"
 
 #: Preferences.cpp:1011
-msgid "Minimum number of tracks required to add new ones"
+msgid "Minimum number of tracks to play required to add new ones"
 msgstr "Dal elhagyása a keresés indításához"
 
 #: Preferences.cpp:1019

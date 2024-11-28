@@ -1744,7 +1744,7 @@ msgid "Random / Smart play modes"
 msgstr "Atsitiktinio / Išmaniojo atkūrimo veiksenos"
 
 #: ui/preferences/Preferences.cpp:896
-msgid "Minimum number of tracks required to add new ones"
+msgid "Minimum number of tracks to play required to add new ones"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:904
