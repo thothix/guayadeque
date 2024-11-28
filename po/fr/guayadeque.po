@@ -11,13 +11,13 @@ msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-19 19:53-0300\n"
-"PO-Revision-Date: 2024-11-20 02:07+0100\n"
+"PO-Revision-Date: 2024-11-24 17:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.5\n"
 
@@ -43,8 +43,7 @@ msgid "Community Forums"
 msgstr "Forums de la communauté"
 
 #: misc/Accelerators.cpp:114 ui/mediaviewer/library/ArListBox.cpp:191
-#: ui/mediaviewer/library/SoListBox.cpp:589
-#: ui/mediaviewer/library/AlListBox.cpp:300
+#: ui/mediaviewer/library/SoListBox.cpp:589 ui/mediaviewer/library/AlListBox.cpp:300
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
@@ -59,22 +58,16 @@ msgstr "Éditer les morceaux"
 
 #: misc/Accelerators.cpp:116 ui/filebrowser/FileBrowser.cpp:345
 #: ui/filebrowser/FileBrowser.cpp:974 ui/mediaviewer/library/DiBrowser.cpp:270
-#: ui/mediaviewer/library/YeListBox.cpp:111
-#: ui/mediaviewer/library/CoListBox.cpp:111
-#: ui/mediaviewer/library/ArListBox.cpp:155
-#: ui/mediaviewer/library/TaListBox.cpp:131
-#: ui/mediaviewer/library/GeListBox.cpp:102
-#: ui/mediaviewer/library/AAListBox.cpp:152
-#: ui/mediaviewer/library/PcListBox.cpp:118
-#: ui/mediaviewer/library/SoListBox.cpp:523
-#: ui/mediaviewer/library/RaListBox.cpp:150
-#: ui/mediaviewer/library/AlListBox.cpp:270
+#: ui/mediaviewer/library/YeListBox.cpp:111 ui/mediaviewer/library/CoListBox.cpp:111
+#: ui/mediaviewer/library/ArListBox.cpp:155 ui/mediaviewer/library/TaListBox.cpp:131
+#: ui/mediaviewer/library/GeListBox.cpp:102 ui/mediaviewer/library/AAListBox.cpp:152
+#: ui/mediaviewer/library/PcListBox.cpp:118 ui/mediaviewer/library/SoListBox.cpp:523
+#: ui/mediaviewer/library/RaListBox.cpp:150 ui/mediaviewer/library/AlListBox.cpp:270
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:340
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1933
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:230
-#: ui/mediaviewer/treeview/TreePanel.cpp:387
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:650
+#: ui/mediaviewer/treeview/TreePanel.cpp:387 ui/mediaviewer/audiocd/AudioCdPanel.cpp:650
 #: ui/lastfmpanel/LastFMPanel.cpp:582 ui/lastfmpanel/LastFMPanel.cpp:851
 #: ui/lastfmpanel/LastFMPanel.cpp:1050 ui/lastfmpanel/LastFMPanel.cpp:1254
 #: ui/lastfmpanel/LastFMPanel.cpp:1469 ui/lastfmpanel/LastFMPanel.cpp:2934
@@ -108,24 +101,18 @@ msgid "Help"
 msgstr "Aide"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:339
-#: ui/filebrowser/FileBrowser.cpp:968 ui/taskbar/TaskBar.cpp:114
-#: ui/MainFrame.cpp:1456 ui/mediaviewer/library/DiBrowser.cpp:264
-#: ui/mediaviewer/library/YeListBox.cpp:104
-#: ui/mediaviewer/library/CoListBox.cpp:104
-#: ui/mediaviewer/library/ArListBox.cpp:148
-#: ui/mediaviewer/library/TaListBox.cpp:124
-#: ui/mediaviewer/library/GeListBox.cpp:95
-#: ui/mediaviewer/library/AAListBox.cpp:145
-#: ui/mediaviewer/library/PcListBox.cpp:111
-#: ui/mediaviewer/library/SoListBox.cpp:516
-#: ui/mediaviewer/library/RaListBox.cpp:143
+#: ui/filebrowser/FileBrowser.cpp:968 ui/taskbar/TaskBar.cpp:114 ui/MainFrame.cpp:1456
+#: ui/mediaviewer/library/DiBrowser.cpp:264 ui/mediaviewer/library/YeListBox.cpp:104
+#: ui/mediaviewer/library/CoListBox.cpp:104 ui/mediaviewer/library/ArListBox.cpp:148
+#: ui/mediaviewer/library/TaListBox.cpp:124 ui/mediaviewer/library/GeListBox.cpp:95
+#: ui/mediaviewer/library/AAListBox.cpp:145 ui/mediaviewer/library/PcListBox.cpp:111
+#: ui/mediaviewer/library/SoListBox.cpp:516 ui/mediaviewer/library/RaListBox.cpp:143
 #: ui/mediaviewer/library/AlListBox.cpp:264
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2064
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:225
-#: ui/mediaviewer/treeview/TreePanel.cpp:382
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:644
+#: ui/mediaviewer/treeview/TreePanel.cpp:382 ui/mediaviewer/audiocd/AudioCdPanel.cpp:644
 #: ui/lastfmpanel/LastFMPanel.cpp:578 ui/lastfmpanel/LastFMPanel.cpp:847
 #: ui/lastfmpanel/LastFMPanel.cpp:1046 ui/lastfmpanel/LastFMPanel.cpp:1250
 #: ui/lastfmpanel/LastFMPanel.cpp:1465 ui/lastfmpanel/LastFMPanel.cpp:2930
@@ -146,14 +133,12 @@ msgid "Play Stream"
 msgstr "Lire un flux en ligne"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:324
-#: ui/filebrowser/FileBrowser.cpp:953 ui/MainFrame.cpp:1414
-#: ui/MainFrame.cpp:4240 ui/mediaviewer/library/DiBrowser.cpp:249
-#: ui/mediaviewer/library/ArListBox.cpp:132
-#: ui/mediaviewer/library/AAListBox.cpp:129
-#: ui/mediaviewer/library/SoListBox.cpp:455
-#: ui/mediaviewer/library/AlListBox.cpp:247
-#: ui/mediaviewer/treeview/TreePanel.cpp:336 ui/preferences/Preferences.cpp:127
-#: ui/player/PlayList.cpp:1696 onlinelinks/OnlineLinks.cpp:68
+#: ui/filebrowser/FileBrowser.cpp:953 ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4240
+#: ui/mediaviewer/library/DiBrowser.cpp:249 ui/mediaviewer/library/ArListBox.cpp:132
+#: ui/mediaviewer/library/AAListBox.cpp:129 ui/mediaviewer/library/SoListBox.cpp:455
+#: ui/mediaviewer/library/AlListBox.cpp:247 ui/mediaviewer/treeview/TreePanel.cpp:336
+#: ui/preferences/Preferences.cpp:127 ui/player/PlayList.cpp:1696
+#: onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
 msgstr "Préférences"
 
@@ -186,21 +171,16 @@ msgstr "Sauvegarder la Disposition"
 
 #: misc/Accelerators.cpp:142 ui/filebrowser/FileBrowser.cpp:381
 #: ui/filebrowser/FileBrowser.cpp:1018 ui/mediaviewer/library/DiBrowser.cpp:312
-#: ui/mediaviewer/library/YeListBox.cpp:158
-#: ui/mediaviewer/library/CoListBox.cpp:158
-#: ui/mediaviewer/library/ArListBox.cpp:208
-#: ui/mediaviewer/library/TaListBox.cpp:167
-#: ui/mediaviewer/library/GeListBox.cpp:138
-#: ui/mediaviewer/library/AAListBox.cpp:199
-#: ui/mediaviewer/library/PcListBox.cpp:165
-#: ui/mediaviewer/library/SoListBox.cpp:644
-#: ui/mediaviewer/library/RaListBox.cpp:197
-#: ui/mediaviewer/library/AlListBox.cpp:336
+#: ui/mediaviewer/library/YeListBox.cpp:158 ui/mediaviewer/library/CoListBox.cpp:158
+#: ui/mediaviewer/library/ArListBox.cpp:208 ui/mediaviewer/library/TaListBox.cpp:167
+#: ui/mediaviewer/library/GeListBox.cpp:138 ui/mediaviewer/library/AAListBox.cpp:199
+#: ui/mediaviewer/library/PcListBox.cpp:165 ui/mediaviewer/library/SoListBox.cpp:644
+#: ui/mediaviewer/library/RaListBox.cpp:197 ui/mediaviewer/library/AlListBox.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2110
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
-#: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1808
+#: ui/mediaviewer/treeview/TreePanel.cpp:443 ui/lastfmpanel/LastFMPanel.cpp:2962
+#: ui/player/PlayList.cpp:1808
 msgid "Save to Playlist"
 msgstr "Sauvegarder vers une Liste de Lecture"
 
@@ -297,10 +277,9 @@ msgid "Update Covers"
 msgstr "Mettre les pochettes à jour"
 
 #: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:333
-#: ui/locationpanel/LocationPanel.cpp:371
-#: ui/locationpanel/LocationPanel.cpp:511 ui/filebrowser/FileBrowser.cpp:412
-#: ui/jamendo/Jamendo.cpp:1114 ui/MainFrame.cpp:991 ui/MainFrame.cpp:1029
-#: ui/MainFrame.cpp:1265 ui/mediaviewer/library/DiBrowser.cpp:327
+#: ui/locationpanel/LocationPanel.cpp:371 ui/locationpanel/LocationPanel.cpp:511
+#: ui/filebrowser/FileBrowser.cpp:412 ui/jamendo/Jamendo.cpp:1114 ui/MainFrame.cpp:991
+#: ui/MainFrame.cpp:1029 ui/MainFrame.cpp:1265 ui/mediaviewer/library/DiBrowser.cpp:327
 #: ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1610
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
@@ -452,9 +431,8 @@ msgstr "Un autre programme fonctionne déjà."
 msgid "Do you want to continue with the program?"
 msgstr "Voulez-vous continuer avec le programme?"
 
-#: MainApp.cpp:378 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:550 ui/filebrowser/FileBrowser.cpp:1990
-#: ui/mediaviewer/library/LibPanel.cpp:1281
+#: MainApp.cpp:378 ui/labeleditor/LabelEditor.cpp:309 ui/filebrowser/FileBrowser.cpp:550
+#: ui/filebrowser/FileBrowser.cpp:1990 ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
 #: ui/mediaviewer/treeview/TreePanel.cpp:1214 ui/radios/ShoutcastRadio.cpp:365
@@ -463,9 +441,9 @@ msgstr "Voulez-vous continuer avec le programme?"
 msgid "Confirm"
 msgstr "Confirmer"
 
-#: db/DbLibrary.cpp:295 db/DbLibrary.cpp:307 db/DbLibrary.cpp:1764
-#: db/DbLibrary.cpp:1776 db/DbLibrary.cpp:1849 db/DbLibrary.cpp:1861
-#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1428
+#: db/DbLibrary.cpp:295 db/DbLibrary.cpp:307 db/DbLibrary.cpp:1764 db/DbLibrary.cpp:1776
+#: db/DbLibrary.cpp:1849 db/DbLibrary.cpp:1861 ui/jamendo/Jamendo.cpp:622
+#: ui/player/PlayerPanel.cpp:1428
 msgid "Unknown"
 msgstr "Inconnu"
 
@@ -487,9 +465,8 @@ msgstr "Créer une liste de lecture intelligente"
 
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
 #: ui/mediaviewer/library/AlListBox.cpp:488
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
-#: ui/preferences/Preferences.cpp:1735 ui/preferences/Preferences.cpp:1830
-#: ui/player/PlayerFilters.cpp:107
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694 ui/preferences/Preferences.cpp:1735
+#: ui/preferences/Preferences.cpp:1830 ui/player/PlayerFilters.cpp:107
 msgid "All"
 msgstr "Tout tous"
 
@@ -511,8 +488,7 @@ msgstr "Exclure"
 msgid "None"
 msgstr "Aucun"
 
-#: info/smartmode/SmartMode.cpp:454
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:552
+#: info/smartmode/SmartMode.cpp:454 ui/mediaviewer/playlists/DynamicPlayList.cpp:552
 msgid "Limit to"
 msgstr "Limiter à"
 
@@ -525,8 +501,7 @@ msgstr "Limiter à"
 msgid "Tracks"
 msgstr "Morceaux"
 
-#: info/smartmode/SmartMode.cpp:466
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:120
+#: info/smartmode/SmartMode.cpp:466 ui/mediaviewer/playlists/DynamicPlayList.cpp:120
 msgid "Minutes"
 msgstr "Minutes"
 
@@ -570,12 +545,10 @@ msgstr "Sauvegarder les paroles"
 msgid "Search the lyrics on the web"
 msgstr "Rechercher les paroles sur le web"
 
-#: ui/lyrics/LyricsPanel.cpp:280
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:451
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2008
-#: ui/lastfmpanel/LastFMPanel.cpp:620 ui/lastfmpanel/LastFMPanel.cpp:890
-#: ui/lastfmpanel/LastFMPanel.cpp:1091 ui/lastfmpanel/LastFMPanel.cpp:1300
-#: ui/lastfmpanel/LastFMPanel.cpp:1512
+#: ui/lyrics/LyricsPanel.cpp:280 ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:451
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2008 ui/lastfmpanel/LastFMPanel.cpp:620
+#: ui/lastfmpanel/LastFMPanel.cpp:890 ui/lastfmpanel/LastFMPanel.cpp:1091
+#: ui/lastfmpanel/LastFMPanel.cpp:1300 ui/lastfmpanel/LastFMPanel.cpp:1512
 msgid "Copy to Clipboard"
 msgstr "Copier dans le presse-papier"
 
@@ -620,9 +593,9 @@ msgstr "Modifier les sources des paroles"
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:695
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
-#: ui/radios/RadioEditor.cpp:45 ui/preferences/Preferences.cpp:2016
-#: ui/preferences/Preferences.cpp:2125 ui/preferences/Preferences.cpp:2245
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46 ui/radios/RadioEditor.cpp:45
+#: ui/preferences/Preferences.cpp:2016 ui/preferences/Preferences.cpp:2125
+#: ui/preferences/Preferences.cpp:2245
 msgid "Name:"
 msgstr "Nom:"
 
@@ -714,39 +687,35 @@ msgstr "Contexte"
 msgid "Radios"
 msgstr "Radios"
 
-#: ui/locationpanel/LocationPanel.cpp:209 ui/MainFrame.cpp:1039
-#: ui/MainFrame.cpp:2643 ui/MainFrame.cpp:3337
-#: ui/preferences/Preferences.cpp:260 ui/podcasts/PodcastsPanel.cpp:916
+#: ui/locationpanel/LocationPanel.cpp:209 ui/MainFrame.cpp:1039 ui/MainFrame.cpp:2643
+#: ui/MainFrame.cpp:3337 ui/preferences/Preferences.cpp:260
+#: ui/podcasts/PodcastsPanel.cpp:916
 msgid "Podcasts"
 msgstr "Podcasts"
 
-#: ui/locationpanel/LocationPanel.cpp:214 ui/MainFrame.cpp:1059
-#: ui/MainFrame.cpp:2589
+#: ui/locationpanel/LocationPanel.cpp:214 ui/MainFrame.cpp:1059 ui/MainFrame.cpp:2589
 msgid "Audio CD"
 msgstr "CD Audio"
 
-#: ui/locationpanel/LocationPanel.cpp:276 ui/MainFrame.cpp:1361
-#: ui/MainFrame.cpp:2676
+#: ui/locationpanel/LocationPanel.cpp:276 ui/MainFrame.cpp:1361 ui/MainFrame.cpp:2676
 msgid "File Browser"
 msgstr "Explorateur de fichiers"
 
 #: ui/locationpanel/LocationPanel.cpp:288 ui/trackedit/TrackEdit.cpp:409
-#: ui/MainFrame.cpp:1377 ui/MainFrame.cpp:2616
-#: ui/preferences/Preferences.cpp:250
+#: ui/MainFrame.cpp:1377 ui/MainFrame.cpp:2616 ui/preferences/Preferences.cpp:250
 msgid "Lyrics"
 msgstr "Paroles"
 
-#: ui/locationpanel/LocationPanel.cpp:309
-#: ui/locationpanel/LocationPanel.cpp:351
-#: ui/locationpanel/LocationPanel.cpp:398
-#: ui/locationpanel/LocationPanel.cpp:411 ui/MainFrame.cpp:967
-#: ui/MainFrame.cpp:1009 ui/MainFrame.cpp:1153 ui/MainFrame.cpp:1165
+#: ui/locationpanel/LocationPanel.cpp:309 ui/locationpanel/LocationPanel.cpp:351
+#: ui/locationpanel/LocationPanel.cpp:398 ui/locationpanel/LocationPanel.cpp:411
+#: ui/MainFrame.cpp:967 ui/MainFrame.cpp:1009 ui/MainFrame.cpp:1153
+#: ui/MainFrame.cpp:1165
 msgid "Show"
 msgstr "Afficher"
 
 #: ui/locationpanel/LocationPanel.cpp:310 ui/MainFrame.cpp:968
 msgid "Show/Hide the radio panel"
-msgstr "Afficher/Cacher le panneau des radios "
+msgstr "Afficher/Cacher le panneau des radios"
 
 #: ui/locationpanel/LocationPanel.cpp:316 ui/MainFrame.cpp:974
 #: ui/radios/RadioPanel.cpp:552 ui/radios/RadioPanel.cpp:592
@@ -757,13 +726,10 @@ msgstr "Recherche d'un texte"
 msgid "Show/Hide the radio text search"
 msgstr "Afficher/cacher la recherche d'un texte (onglet Radio)"
 
-#: ui/locationpanel/LocationPanel.cpp:326
-#: ui/locationpanel/LocationPanel.cpp:428 ui/MainFrame.cpp:984
-#: ui/MainFrame.cpp:1182 ui/mediaviewer/library/LibPanel.cpp:221
-#: ui/mediaviewer/library/LibPanel.cpp:229
-#: ui/mediaviewer/library/LibPanel.cpp:561
-#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/radios/RadioPanel.cpp:594
+#: ui/locationpanel/LocationPanel.cpp:326 ui/locationpanel/LocationPanel.cpp:428
+#: ui/MainFrame.cpp:984 ui/MainFrame.cpp:1182 ui/mediaviewer/library/LibPanel.cpp:221
+#: ui/mediaviewer/library/LibPanel.cpp:229 ui/mediaviewer/library/LibPanel.cpp:561
+#: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123 ui/radios/RadioPanel.cpp:594
 msgid "Genres"
 msgstr "Genres"
 
@@ -775,8 +741,7 @@ msgstr "Afficher/Cacher les genres de Radios"
 msgid "Update the radio station lists"
 msgstr "Mettre à jour la liste des radios"
 
-#: ui/locationpanel/LocationPanel.cpp:340
-#: ui/locationpanel/LocationPanel.cpp:379
+#: ui/locationpanel/LocationPanel.cpp:340 ui/locationpanel/LocationPanel.cpp:379
 #: ui/locationpanel/LocationPanel.cpp:539 ui/jamendo/Jamendo.cpp:1125
 #: ui/MainFrame.cpp:998 ui/MainFrame.cpp:1036 ui/MainFrame.cpp:1293
 #: ui/mediaviewer/MediaViewer.cpp:943
@@ -825,16 +790,14 @@ msgstr "Définir les préférences des podcasts"
 msgid "Open the music collection"
 msgstr "Ouvrir la collection de musique"
 
-#: ui/locationpanel/LocationPanel.cpp:411
-#: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1165
-#: ui/MainFrame.cpp:1226
+#: ui/locationpanel/LocationPanel.cpp:411 ui/locationpanel/LocationPanel.cpp:472
+#: ui/MainFrame.cpp:1165 ui/MainFrame.cpp:1226
 msgid "View the collection library"
 msgstr "Afficher la Bibliothèque de la collection"
 
 #: ui/locationpanel/LocationPanel.cpp:418 ui/filebrowser/FileBrowser.cpp:1371
 #: ui/filebrowser/FileBrowser.cpp:1387 ui/MainFrame.cpp:1172
-#: ui/mediaviewer/library/LibPanel.cpp:425
-#: ui/mediaviewer/library/LibPanel.cpp:559
+#: ui/mediaviewer/library/LibPanel.cpp:425 ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
 msgstr "Dossiers"
 
@@ -843,8 +806,7 @@ msgid "View the library Directories"
 msgstr "Afficher les dossiers de la Bibliothèque"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/MainFrame.cpp:1177
-#: ui/mediaviewer/library/LibPanel.cpp:241
-#: ui/mediaviewer/library/LibPanel.cpp:248
+#: ui/mediaviewer/library/LibPanel.cpp:241 ui/mediaviewer/library/LibPanel.cpp:248
 #: ui/mediaviewer/library/LibPanel.cpp:563
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:63
 msgid "Labels"
@@ -859,8 +821,7 @@ msgid "View the library genres"
 msgstr "Afficher les genres de la Bibliothèque"
 
 #: ui/locationpanel/LocationPanel.cpp:433 ui/MainFrame.cpp:1187
-#: ui/mediaviewer/library/LibPanel.cpp:260
-#: ui/mediaviewer/library/LibPanel.cpp:267
+#: ui/mediaviewer/library/LibPanel.cpp:260 ui/mediaviewer/library/LibPanel.cpp:267
 #: ui/mediaviewer/library/LibPanel.cpp:565
 msgid "Artists"
 msgstr "Artistes"
@@ -870,8 +831,7 @@ msgid "View the library artists"
 msgstr "Afficher les artistes de la Bibliothèque"
 
 #: ui/locationpanel/LocationPanel.cpp:438 ui/MainFrame.cpp:1202
-#: ui/mediaviewer/library/LibPanel.cpp:355
-#: ui/mediaviewer/library/LibPanel.cpp:362
+#: ui/mediaviewer/library/LibPanel.cpp:355 ui/mediaviewer/library/LibPanel.cpp:362
 #: ui/mediaviewer/library/LibPanel.cpp:575
 msgid "Composers"
 msgstr "Compositeurs"
@@ -890,8 +850,7 @@ msgid "View the library album artists"
 msgstr "Afficher les artistes d'albums de la Bibliothèque"
 
 #: ui/locationpanel/LocationPanel.cpp:448 ui/MainFrame.cpp:1197
-#: ui/mediaviewer/library/LibPanel.cpp:279
-#: ui/mediaviewer/library/LibPanel.cpp:286
+#: ui/mediaviewer/library/LibPanel.cpp:279 ui/mediaviewer/library/LibPanel.cpp:286
 #: ui/mediaviewer/library/LibPanel.cpp:567
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2556
 msgid "Albums"
@@ -902,8 +861,7 @@ msgid "View the library albums"
 msgstr "Afficher les albums de la Bibliothèque"
 
 #: ui/locationpanel/LocationPanel.cpp:453 ui/MainFrame.cpp:1207
-#: ui/mediaviewer/library/LibPanel.cpp:298
-#: ui/mediaviewer/library/LibPanel.cpp:305
+#: ui/mediaviewer/library/LibPanel.cpp:298 ui/mediaviewer/library/LibPanel.cpp:305
 #: ui/mediaviewer/library/LibPanel.cpp:569
 msgid "Years"
 msgstr "Années"
@@ -913,8 +871,7 @@ msgid "View the library years"
 msgstr "Afficher les années de la Bibliothèque"
 
 #: ui/locationpanel/LocationPanel.cpp:458 ui/MainFrame.cpp:1212
-#: ui/mediaviewer/library/LibPanel.cpp:317
-#: ui/mediaviewer/library/LibPanel.cpp:324
+#: ui/mediaviewer/library/LibPanel.cpp:317 ui/mediaviewer/library/LibPanel.cpp:324
 #: ui/mediaviewer/library/LibPanel.cpp:571
 msgid "Ratings"
 msgstr "Notes"
@@ -925,15 +882,14 @@ msgstr "Afficher les notations de la Bibliothèque"
 
 #: ui/locationpanel/LocationPanel.cpp:463
 msgid "Play Counts"
-msgstr ""
+msgstr "Nombre d'écoutes"
 
 #: ui/locationpanel/LocationPanel.cpp:463 ui/MainFrame.cpp:1217
 msgid "View the library play counts"
 msgstr "Afficher les compteurs de lecture de la Bibliothèque"
 
-#: ui/locationpanel/LocationPanel.cpp:468
-#: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1222
-#: ui/MainFrame.cpp:1226 ui/mediaviewer/treeview/TreePanel.cpp:87
+#: ui/locationpanel/LocationPanel.cpp:468 ui/locationpanel/LocationPanel.cpp:472
+#: ui/MainFrame.cpp:1222 ui/MainFrame.cpp:1226 ui/mediaviewer/treeview/TreePanel.cpp:87
 msgid "Library"
 msgstr "Bibliothèque"
 
@@ -946,8 +902,7 @@ msgid "View the collection album browser"
 msgstr "Afficher l'explorateur' de pochettes d'albums de la collection"
 
 #: ui/locationpanel/LocationPanel.cpp:483 ui/MainFrame.cpp:1237
-#: ui/mediaviewer/treeview/TreePanel.cpp:817
-#: ui/mediaviewer/treeview/TreePanel.cpp:842
+#: ui/mediaviewer/treeview/TreePanel.cpp:817 ui/mediaviewer/treeview/TreePanel.cpp:842
 msgid "Tree"
 msgstr "Arborescence (tree) des dossiers"
 
@@ -956,8 +911,7 @@ msgid "View the collection tree view"
 msgstr "Afficher l'arborescence de la collection"
 
 #: ui/locationpanel/LocationPanel.cpp:488 ui/MainFrame.cpp:1242
-#: ui/mediaviewer/MediaViewer.cpp:253
-#: ui/mediaviewer/portablemedia/PortableMedia.cpp:865
+#: ui/mediaviewer/MediaViewer.cpp:253 ui/mediaviewer/portablemedia/PortableMedia.cpp:865
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:763
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:789
 msgid "Playlists"
@@ -978,8 +932,7 @@ msgid "Add path to the collection"
 msgstr "Ajouter un emplacement pour la collection"
 
 #: ui/locationpanel/LocationPanel.cpp:503 ui/MainFrame.cpp:1257
-#: ui/mediaviewer/MediaViewer.cpp:926
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:49
+#: ui/mediaviewer/MediaViewer.cpp:926 ui/mediaviewer/importfiles/ImportFiles.cpp:49
 msgid "Import Files"
 msgstr "Importer des fichiers"
 
@@ -1073,11 +1026,11 @@ msgstr "Êtes-vous sûr de vouloir supprimer les étiquettes sélectionnées?"
 
 #: ui/trackedit/TrackEdit.cpp:92
 msgid "Songs Editor"
-msgstr "Éditeur de morceauxs"
+msgstr "Éditeur de morceaux"
 
 #: ui/trackedit/TrackEdit.cpp:105
 msgid "Songs"
-msgstr "Morceaux "
+msgstr "Morceaux"
 
 #: ui/trackedit/TrackEdit.cpp:113
 msgid "Move the track to the previous position"
@@ -1177,7 +1130,9 @@ msgstr "Saisir le nom de l'album à rechercher sur musicbrainz"
 
 #: ui/trackedit/TrackEdit.cpp:440
 msgid "Clear the search fields so it search using the music fingerprint"
-msgstr "Effacer les champs de recherche pour faire une cherche par empreinte digitale de la musique"
+msgstr ""
+"Effacer les champs de recherche pour faire une cherche par empreinte digitale de la "
+"musique"
 
 #: ui/trackedit/TrackEdit.cpp:455
 msgid "Select the album found in musicbrainz"
@@ -1278,23 +1233,18 @@ msgid "See system files"
 msgstr "Voir les fichiers du système"
 
 #: ui/filebrowser/FileBrowser.cpp:324 ui/filebrowser/FileBrowser.cpp:953
-#: ui/mediaviewer/library/DiBrowser.cpp:249
-#: ui/mediaviewer/library/ArListBox.cpp:132
-#: ui/mediaviewer/library/AAListBox.cpp:129
-#: ui/mediaviewer/library/SoListBox.cpp:455
-#: ui/mediaviewer/library/AlListBox.cpp:247
-#: ui/mediaviewer/treeview/TreePanel.cpp:336 ui/player/PlayList.cpp:1696
+#: ui/mediaviewer/library/DiBrowser.cpp:249 ui/mediaviewer/library/ArListBox.cpp:132
+#: ui/mediaviewer/library/AAListBox.cpp:129 ui/mediaviewer/library/SoListBox.cpp:455
+#: ui/mediaviewer/library/AlListBox.cpp:247 ui/mediaviewer/treeview/TreePanel.cpp:336
+#: ui/player/PlayList.cpp:1696
 msgid "Add commands in preferences"
 msgstr "Ajouter des commandes dans les préférences"
 
 #: ui/filebrowser/FileBrowser.cpp:327 ui/filebrowser/FileBrowser.cpp:956
-#: ui/mediaviewer/library/DiBrowser.cpp:252
-#: ui/mediaviewer/library/ArListBox.cpp:135
-#: ui/mediaviewer/library/AAListBox.cpp:132
-#: ui/mediaviewer/library/SoListBox.cpp:458
-#: ui/mediaviewer/library/AlListBox.cpp:250
-#: ui/mediaviewer/treeview/TreePanel.cpp:340 ui/preferences/Preferences.cpp:280
-#: ui/player/PlayList.cpp:1699
+#: ui/mediaviewer/library/DiBrowser.cpp:252 ui/mediaviewer/library/ArListBox.cpp:135
+#: ui/mediaviewer/library/AAListBox.cpp:132 ui/mediaviewer/library/SoListBox.cpp:458
+#: ui/mediaviewer/library/AlListBox.cpp:250 ui/mediaviewer/treeview/TreePanel.cpp:340
+#: ui/preferences/Preferences.cpp:280 ui/player/PlayList.cpp:1699
 msgid "Commands"
 msgstr "Commandes"
 
@@ -1307,23 +1257,17 @@ msgid "Add the selected folder to playlist"
 msgstr "Ajouter le dossier sélectionné à la file de lecture"
 
 #: ui/filebrowser/FileBrowser.cpp:353 ui/filebrowser/FileBrowser.cpp:982
-#: ui/mediaviewer/library/DiBrowser.cpp:279
-#: ui/mediaviewer/library/YeListBox.cpp:120
-#: ui/mediaviewer/library/CoListBox.cpp:120
-#: ui/mediaviewer/library/ArListBox.cpp:164
-#: ui/mediaviewer/library/TaListBox.cpp:140
-#: ui/mediaviewer/library/GeListBox.cpp:111
-#: ui/mediaviewer/library/AAListBox.cpp:161
-#: ui/mediaviewer/library/PcListBox.cpp:127
-#: ui/mediaviewer/library/SoListBox.cpp:532
-#: ui/mediaviewer/library/RaListBox.cpp:159
+#: ui/mediaviewer/library/DiBrowser.cpp:279 ui/mediaviewer/library/YeListBox.cpp:120
+#: ui/mediaviewer/library/CoListBox.cpp:120 ui/mediaviewer/library/ArListBox.cpp:164
+#: ui/mediaviewer/library/TaListBox.cpp:140 ui/mediaviewer/library/GeListBox.cpp:111
+#: ui/mediaviewer/library/AAListBox.cpp:161 ui/mediaviewer/library/PcListBox.cpp:127
+#: ui/mediaviewer/library/SoListBox.cpp:532 ui/mediaviewer/library/RaListBox.cpp:159
 #: ui/mediaviewer/library/AlListBox.cpp:278
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:347
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1940
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2075
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:238
-#: ui/mediaviewer/treeview/TreePanel.cpp:395
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:658
+#: ui/mediaviewer/treeview/TreePanel.cpp:395 ui/mediaviewer/audiocd/AudioCdPanel.cpp:658
 #: ui/lastfmpanel/LastFMPanel.cpp:589 ui/lastfmpanel/LastFMPanel.cpp:858
 #: ui/lastfmpanel/LastFMPanel.cpp:1057 ui/lastfmpanel/LastFMPanel.cpp:1261
 #: ui/lastfmpanel/LastFMPanel.cpp:1476 ui/lastfmpanel/LastFMPanel.cpp:2941
@@ -1332,46 +1276,35 @@ msgid "Current Track"
 msgstr "Morceau en cours"
 
 #: ui/filebrowser/FileBrowser.cpp:354 ui/filebrowser/FileBrowser.cpp:983
-#: ui/mediaviewer/library/DiBrowser.cpp:281
-#: ui/mediaviewer/library/YeListBox.cpp:121
-#: ui/mediaviewer/library/ArListBox.cpp:165
-#: ui/mediaviewer/library/TaListBox.cpp:141
-#: ui/mediaviewer/library/GeListBox.cpp:112
-#: ui/mediaviewer/library/AAListBox.cpp:162
-#: ui/mediaviewer/library/PcListBox.cpp:128
-#: ui/mediaviewer/library/SoListBox.cpp:533
+#: ui/mediaviewer/library/DiBrowser.cpp:281 ui/mediaviewer/library/YeListBox.cpp:121
+#: ui/mediaviewer/library/ArListBox.cpp:165 ui/mediaviewer/library/TaListBox.cpp:141
+#: ui/mediaviewer/library/GeListBox.cpp:112 ui/mediaviewer/library/AAListBox.cpp:162
+#: ui/mediaviewer/library/PcListBox.cpp:128 ui/mediaviewer/library/SoListBox.cpp:533
 #: ui/mediaviewer/library/RaListBox.cpp:160
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:348
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1941
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2076
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:239
-#: ui/mediaviewer/treeview/TreePanel.cpp:396
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:659
+#: ui/mediaviewer/treeview/TreePanel.cpp:396 ui/mediaviewer/audiocd/AudioCdPanel.cpp:659
 #: ui/lastfmpanel/LastFMPanel.cpp:590 ui/lastfmpanel/LastFMPanel.cpp:859
 #: ui/lastfmpanel/LastFMPanel.cpp:1058 ui/lastfmpanel/LastFMPanel.cpp:1262
 #: ui/lastfmpanel/LastFMPanel.cpp:1477 ui/lastfmpanel/LastFMPanel.cpp:2942
 #: ui/radios/RadioPanel.cpp:419 ui/podcasts/PodcastsPanel.cpp:2054
 msgid "Add current selected tracks to playlist after the current track"
-msgstr "Ajouter les morceaux sélectionnés à la file de lecture après le morceau en cours"
+msgstr "Ajouter les morceaux sélectionnés à la file de lectureaprès le morceau en cours"
 
 #: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:989
-#: ui/mediaviewer/library/DiBrowser.cpp:286
-#: ui/mediaviewer/library/YeListBox.cpp:127
-#: ui/mediaviewer/library/CoListBox.cpp:127
-#: ui/mediaviewer/library/ArListBox.cpp:171
-#: ui/mediaviewer/library/TaListBox.cpp:147
-#: ui/mediaviewer/library/GeListBox.cpp:118
-#: ui/mediaviewer/library/AAListBox.cpp:168
-#: ui/mediaviewer/library/PcListBox.cpp:134
-#: ui/mediaviewer/library/SoListBox.cpp:539
-#: ui/mediaviewer/library/RaListBox.cpp:166
+#: ui/mediaviewer/library/DiBrowser.cpp:286 ui/mediaviewer/library/YeListBox.cpp:127
+#: ui/mediaviewer/library/CoListBox.cpp:127 ui/mediaviewer/library/ArListBox.cpp:171
+#: ui/mediaviewer/library/TaListBox.cpp:147 ui/mediaviewer/library/GeListBox.cpp:118
+#: ui/mediaviewer/library/AAListBox.cpp:168 ui/mediaviewer/library/PcListBox.cpp:134
+#: ui/mediaviewer/library/SoListBox.cpp:539 ui/mediaviewer/library/RaListBox.cpp:166
 #: ui/mediaviewer/library/AlListBox.cpp:284
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:353
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1946
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2081
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:244
-#: ui/mediaviewer/treeview/TreePanel.cpp:401
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:664
+#: ui/mediaviewer/treeview/TreePanel.cpp:401 ui/mediaviewer/audiocd/AudioCdPanel.cpp:664
 #: ui/lastfmpanel/LastFMPanel.cpp:595 ui/lastfmpanel/LastFMPanel.cpp:864
 #: ui/lastfmpanel/LastFMPanel.cpp:1063 ui/lastfmpanel/LastFMPanel.cpp:1267
 #: ui/lastfmpanel/LastFMPanel.cpp:1482 ui/lastfmpanel/LastFMPanel.cpp:2947
@@ -1380,21 +1313,16 @@ msgid "Current Album"
 msgstr "Album en cours"
 
 #: ui/filebrowser/FileBrowser.cpp:360 ui/filebrowser/FileBrowser.cpp:990
-#: ui/mediaviewer/library/DiBrowser.cpp:288
-#: ui/mediaviewer/library/YeListBox.cpp:128
-#: ui/mediaviewer/library/ArListBox.cpp:172
-#: ui/mediaviewer/library/TaListBox.cpp:148
-#: ui/mediaviewer/library/GeListBox.cpp:119
-#: ui/mediaviewer/library/AAListBox.cpp:169
-#: ui/mediaviewer/library/PcListBox.cpp:135
-#: ui/mediaviewer/library/SoListBox.cpp:540
+#: ui/mediaviewer/library/DiBrowser.cpp:288 ui/mediaviewer/library/YeListBox.cpp:128
+#: ui/mediaviewer/library/ArListBox.cpp:172 ui/mediaviewer/library/TaListBox.cpp:148
+#: ui/mediaviewer/library/GeListBox.cpp:119 ui/mediaviewer/library/AAListBox.cpp:169
+#: ui/mediaviewer/library/PcListBox.cpp:135 ui/mediaviewer/library/SoListBox.cpp:540
 #: ui/mediaviewer/library/RaListBox.cpp:167
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1947
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2082
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:245
-#: ui/mediaviewer/treeview/TreePanel.cpp:402
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:665
+#: ui/mediaviewer/treeview/TreePanel.cpp:402 ui/mediaviewer/audiocd/AudioCdPanel.cpp:665
 #: ui/lastfmpanel/LastFMPanel.cpp:596 ui/lastfmpanel/LastFMPanel.cpp:865
 #: ui/lastfmpanel/LastFMPanel.cpp:1064 ui/lastfmpanel/LastFMPanel.cpp:1268
 #: ui/lastfmpanel/LastFMPanel.cpp:1483 ui/lastfmpanel/LastFMPanel.cpp:2948
@@ -1403,23 +1331,17 @@ msgid "Add current selected tracks to playlist after the current album"
 msgstr "Ajouter les morceaux sélectionnés à la file de lecture après l'album en cours"
 
 #: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:996
-#: ui/mediaviewer/library/DiBrowser.cpp:293
-#: ui/mediaviewer/library/YeListBox.cpp:134
-#: ui/mediaviewer/library/CoListBox.cpp:134
-#: ui/mediaviewer/library/ArListBox.cpp:178
-#: ui/mediaviewer/library/TaListBox.cpp:154
-#: ui/mediaviewer/library/GeListBox.cpp:125
-#: ui/mediaviewer/library/AAListBox.cpp:175
-#: ui/mediaviewer/library/PcListBox.cpp:141
-#: ui/mediaviewer/library/SoListBox.cpp:546
-#: ui/mediaviewer/library/RaListBox.cpp:173
+#: ui/mediaviewer/library/DiBrowser.cpp:293 ui/mediaviewer/library/YeListBox.cpp:134
+#: ui/mediaviewer/library/CoListBox.cpp:134 ui/mediaviewer/library/ArListBox.cpp:178
+#: ui/mediaviewer/library/TaListBox.cpp:154 ui/mediaviewer/library/GeListBox.cpp:125
+#: ui/mediaviewer/library/AAListBox.cpp:175 ui/mediaviewer/library/PcListBox.cpp:141
+#: ui/mediaviewer/library/SoListBox.cpp:546 ui/mediaviewer/library/RaListBox.cpp:173
 #: ui/mediaviewer/library/AlListBox.cpp:290
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:359
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1952
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2087
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:250
-#: ui/mediaviewer/treeview/TreePanel.cpp:407
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:670
+#: ui/mediaviewer/treeview/TreePanel.cpp:407 ui/mediaviewer/audiocd/AudioCdPanel.cpp:670
 #: ui/lastfmpanel/LastFMPanel.cpp:601 ui/lastfmpanel/LastFMPanel.cpp:870
 #: ui/lastfmpanel/LastFMPanel.cpp:1069 ui/lastfmpanel/LastFMPanel.cpp:1273
 #: ui/lastfmpanel/LastFMPanel.cpp:1488 ui/lastfmpanel/LastFMPanel.cpp:2953
@@ -1428,21 +1350,16 @@ msgid "Current Artist"
 msgstr "Artiste en cours"
 
 #: ui/filebrowser/FileBrowser.cpp:366 ui/filebrowser/FileBrowser.cpp:997
-#: ui/mediaviewer/library/DiBrowser.cpp:295
-#: ui/mediaviewer/library/YeListBox.cpp:135
-#: ui/mediaviewer/library/ArListBox.cpp:179
-#: ui/mediaviewer/library/TaListBox.cpp:155
-#: ui/mediaviewer/library/GeListBox.cpp:126
-#: ui/mediaviewer/library/AAListBox.cpp:176
-#: ui/mediaviewer/library/PcListBox.cpp:142
-#: ui/mediaviewer/library/SoListBox.cpp:547
+#: ui/mediaviewer/library/DiBrowser.cpp:295 ui/mediaviewer/library/YeListBox.cpp:135
+#: ui/mediaviewer/library/ArListBox.cpp:179 ui/mediaviewer/library/TaListBox.cpp:155
+#: ui/mediaviewer/library/GeListBox.cpp:126 ui/mediaviewer/library/AAListBox.cpp:176
+#: ui/mediaviewer/library/PcListBox.cpp:142 ui/mediaviewer/library/SoListBox.cpp:547
 #: ui/mediaviewer/library/RaListBox.cpp:174
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:360
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1953
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2088
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:251
-#: ui/mediaviewer/treeview/TreePanel.cpp:408
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:671
+#: ui/mediaviewer/treeview/TreePanel.cpp:408 ui/mediaviewer/audiocd/AudioCdPanel.cpp:671
 #: ui/lastfmpanel/LastFMPanel.cpp:602 ui/lastfmpanel/LastFMPanel.cpp:871
 #: ui/lastfmpanel/LastFMPanel.cpp:1070 ui/lastfmpanel/LastFMPanel.cpp:1274
 #: ui/lastfmpanel/LastFMPanel.cpp:1489 ui/lastfmpanel/LastFMPanel.cpp:2954
@@ -1451,23 +1368,17 @@ msgid "Add current selected tracks to playlist after the current artist"
 msgstr "Ajouter les morceaux sélectionnés après l'artiste en cours"
 
 #: ui/filebrowser/FileBrowser.cpp:370 ui/filebrowser/FileBrowser.cpp:1002
-#: ui/mediaviewer/library/DiBrowser.cpp:299
-#: ui/mediaviewer/library/YeListBox.cpp:140
-#: ui/mediaviewer/library/CoListBox.cpp:140
-#: ui/mediaviewer/library/ArListBox.cpp:184
-#: ui/mediaviewer/library/TaListBox.cpp:160
-#: ui/mediaviewer/library/GeListBox.cpp:131
-#: ui/mediaviewer/library/AAListBox.cpp:181
-#: ui/mediaviewer/library/PcListBox.cpp:147
-#: ui/mediaviewer/library/SoListBox.cpp:552
-#: ui/mediaviewer/library/RaListBox.cpp:179
+#: ui/mediaviewer/library/DiBrowser.cpp:299 ui/mediaviewer/library/YeListBox.cpp:140
+#: ui/mediaviewer/library/CoListBox.cpp:140 ui/mediaviewer/library/ArListBox.cpp:184
+#: ui/mediaviewer/library/TaListBox.cpp:160 ui/mediaviewer/library/GeListBox.cpp:131
+#: ui/mediaviewer/library/AAListBox.cpp:181 ui/mediaviewer/library/PcListBox.cpp:147
+#: ui/mediaviewer/library/SoListBox.cpp:552 ui/mediaviewer/library/RaListBox.cpp:179
 #: ui/mediaviewer/library/AlListBox.cpp:295
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:364
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1957
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2092
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:255
-#: ui/mediaviewer/treeview/TreePanel.cpp:412
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:675
+#: ui/mediaviewer/treeview/TreePanel.cpp:412 ui/mediaviewer/audiocd/AudioCdPanel.cpp:675
 #: ui/lastfmpanel/LastFMPanel.cpp:606 ui/lastfmpanel/LastFMPanel.cpp:875
 #: ui/lastfmpanel/LastFMPanel.cpp:1074 ui/lastfmpanel/LastFMPanel.cpp:1278
 #: ui/lastfmpanel/LastFMPanel.cpp:1493 ui/lastfmpanel/LastFMPanel.cpp:2958
@@ -1541,13 +1452,11 @@ msgid "Error"
 msgstr "Erreur"
 
 #: ui/filebrowser/FileBrowser.cpp:751 ui/mediaviewer/library/AlListBox.cpp:319
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:4219
-#: ui/radios/RadioPanel.cpp:311
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:4219 ui/radios/RadioPanel.cpp:311
 msgid "Name"
 msgstr "Nom"
 
-#: ui/filebrowser/FileBrowser.cpp:752
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
+#: ui/filebrowser/FileBrowser.cpp:752 ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
 msgstr "Taille"
 
@@ -1584,12 +1493,11 @@ msgid "Delete the selected files"
 msgstr "Supprimer les fichiers sélectionnés"
 
 #: ui/filebrowser/FileBrowser.cpp:1759 ui/filebrowser/FileBrowser.cpp:1891
-#: ui/mediaviewer/library/DiBrowser.cpp:548
-#: ui/mediaviewer/library/LibPanel.cpp:1476
+#: ui/mediaviewer/library/DiBrowser.cpp:548 ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1441
-#: ui/mediaviewer/treeview/TreePanel.cpp:1140
-#: ui/mediaviewer/treeview/TreePanel.cpp:1410 ui/player/PlayList.cpp:2129
+#: ui/mediaviewer/treeview/TreePanel.cpp:1140 ui/mediaviewer/treeview/TreePanel.cpp:1410
+#: ui/player/PlayList.cpp:2129
 msgid "UnNamed"
 msgstr "Sans nom"
 
@@ -1639,7 +1547,7 @@ msgstr "Sauter au prochain morceau de la file de lecture en cours"
 
 #: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1444
 msgid "Next Album"
-msgstr ""
+msgstr "Prochain Album"
 
 #: ui/taskbar/TaskBar.cpp:128
 msgid "Skip to next album track in current playlist"
@@ -1756,9 +1664,9 @@ msgstr "Sortir du programme"
 msgid "Download Albums"
 msgstr "Télécharger les Albums"
 
-#: ui/jamendo/Jamendo.cpp:1095 ui/jamendo/Jamendo.cpp:1098
-#: ui/jamendo/Jamendo.cpp:1105 ui/jamendo/Jamendo.cpp:1108
-#: ui/magnatune/Magnatune.cpp:1010 ui/magnatune/Magnatune.cpp:1017
+#: ui/jamendo/Jamendo.cpp:1095 ui/jamendo/Jamendo.cpp:1098 ui/jamendo/Jamendo.cpp:1105
+#: ui/jamendo/Jamendo.cpp:1108 ui/magnatune/Magnatune.cpp:1010
+#: ui/magnatune/Magnatune.cpp:1017
 msgid "Download the current selected album"
 msgstr "Télécharger l'album sélectionné"
 
@@ -1775,9 +1683,8 @@ msgstr "Bienvenue sur Guayadeque "
 msgid "Filters"
 msgstr "Filtres (mode intelligent)"
 
-#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:404 ui/MainFrame.cpp:2020
-#: ui/MainFrame.cpp:2738 ui/MainFrame.cpp:2755 ui/radios/RadioPanel.cpp:315
-#: ui/player/PlayList.cpp:216
+#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:404 ui/MainFrame.cpp:2020 ui/MainFrame.cpp:2738
+#: ui/MainFrame.cpp:2755 ui/radios/RadioPanel.cpp:315 ui/player/PlayList.cpp:216
 msgid "Now Playing"
 msgstr "Lecture en cours"
 
@@ -1842,12 +1749,10 @@ msgid "View the library directories"
 msgstr "Affiche les dossiers de la Bibliothèque"
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
-#: ui/mediaviewer/library/LibPanel.cpp:343
-#: ui/mediaviewer/library/LibPanel.cpp:573
+#: ui/mediaviewer/library/LibPanel.cpp:343 ui/mediaviewer/library/LibPanel.cpp:573
 #: ui/mediaviewer/library/SoListBox.cpp:72
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:59
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:137
-#: ui/podcasts/PodcastsPanel.cpp:1802
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:137 ui/podcasts/PodcastsPanel.cpp:1802
 msgid "Plays"
 msgstr "Lit"
 
@@ -1893,7 +1798,7 @@ msgstr "Afficher/Cacher la pochette"
 
 #: ui/MainFrame.cpp:1362
 msgid "Show/Hide the file browser panel"
-msgstr ""
+msgstr "Afficher/Cacher le panneau du navigateur de fichiers"
 
 #: ui/MainFrame.cpp:1369 ui/MainFrame.cpp:2562
 msgid "Last.fm"
@@ -1945,7 +1850,8 @@ msgstr "Charger une Disposition"
 
 #: ui/MainFrame.cpp:1425
 msgid "Set current view from a user defined layout"
-msgstr "Établir l'affichage actuel à partir d'une Disposition enregistrée par l'utilisateur"
+msgstr ""
+"Établir l'affichage actuel à partir d'une Disposition enregistrée par l'utilisateur"
 
 #: ui/MainFrame.cpp:1426
 msgid "Delete Layout"
@@ -2053,8 +1959,7 @@ msgid "Select destination directory"
 msgstr "Sélectionner un dossier de destination"
 
 #: ui/MainFrame.cpp:2070 ui/MainFrame.cpp:2106 ui/MainFrame.cpp:2149
-#: ui/MainFrame.cpp:2182 ui/MainFrame.cpp:4243
-#: ui/preferences/Preferences.cpp:285
+#: ui/MainFrame.cpp:2182 ui/MainFrame.cpp:4243 ui/preferences/Preferences.cpp:285
 msgid "Copy to"
 msgstr "Copier dans"
 
@@ -2092,15 +1997,13 @@ msgstr "fichiers"
 
 #: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:328
-#: ui/preferences/Preferences.cpp:814
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:328 ui/preferences/Preferences.cpp:814
 msgid "track"
 msgstr "morceau"
 
 #: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:328
-#: ui/preferences/Preferences.cpp:925
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:328 ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "morceaux"
 
@@ -2137,25 +2040,19 @@ msgstr "Ajouter des modèles de 'Copie vers' dans les préférences"
 msgid "Copy the selected tracks to a folder or device"
 msgstr "Copier les morceaux sélectionnés vers un dossier ou un Lecteur portable"
 
-#: ui/mediaviewer/library/YeListBox.cpp:105
-#: ui/mediaviewer/library/ArListBox.cpp:149
+#: ui/mediaviewer/library/YeListBox.cpp:105 ui/mediaviewer/library/ArListBox.cpp:149
 msgid "Play current selected artists"
 msgstr "Lire les artistes sélectionnés"
 
-#: ui/mediaviewer/library/YeListBox.cpp:112
-#: ui/mediaviewer/library/CoListBox.cpp:112
-#: ui/mediaviewer/library/AAListBox.cpp:153
-#: ui/mediaviewer/library/PcListBox.cpp:119
+#: ui/mediaviewer/library/YeListBox.cpp:112 ui/mediaviewer/library/CoListBox.cpp:112
+#: ui/mediaviewer/library/AAListBox.cpp:153 ui/mediaviewer/library/PcListBox.cpp:119
 #: ui/mediaviewer/library/RaListBox.cpp:151
 msgid "Add current selected tracks to playlist"
 msgstr "Ajouter les morceaux sélectionnés à la file de lecture"
 
-#: ui/mediaviewer/library/YeListBox.cpp:149
-#: ui/mediaviewer/library/ArListBox.cpp:199
-#: ui/mediaviewer/library/AAListBox.cpp:190
-#: ui/mediaviewer/library/PcListBox.cpp:156
-#: ui/mediaviewer/library/SoListBox.cpp:597
-#: ui/mediaviewer/library/RaListBox.cpp:188
+#: ui/mediaviewer/library/YeListBox.cpp:149 ui/mediaviewer/library/ArListBox.cpp:199
+#: ui/mediaviewer/library/AAListBox.cpp:190 ui/mediaviewer/library/PcListBox.cpp:156
+#: ui/mediaviewer/library/SoListBox.cpp:597 ui/mediaviewer/library/RaListBox.cpp:188
 #: ui/mediaviewer/library/AlListBox.cpp:308
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
@@ -2164,25 +2061,19 @@ msgstr "Ajouter les morceaux sélectionnés à la file de lecture"
 msgid "Edit Songs"
 msgstr "Éditer des morceaux"
 
-#: ui/mediaviewer/library/YeListBox.cpp:150
-#: ui/mediaviewer/library/CoListBox.cpp:150
-#: ui/mediaviewer/library/AAListBox.cpp:191
-#: ui/mediaviewer/library/PcListBox.cpp:157
-#: ui/mediaviewer/library/RaListBox.cpp:189
-#: ui/mediaviewer/treeview/TreePanel.cpp:435
+#: ui/mediaviewer/library/YeListBox.cpp:150 ui/mediaviewer/library/CoListBox.cpp:150
+#: ui/mediaviewer/library/AAListBox.cpp:191 ui/mediaviewer/library/PcListBox.cpp:157
+#: ui/mediaviewer/library/RaListBox.cpp:189 ui/mediaviewer/treeview/TreePanel.cpp:435
 msgid "Edit the selected tracks"
 msgstr "Éditer les morceaux sélectionnés"
 
-#: ui/mediaviewer/library/YeListBox.cpp:159
-#: ui/mediaviewer/library/AAListBox.cpp:200
+#: ui/mediaviewer/library/YeListBox.cpp:159 ui/mediaviewer/library/AAListBox.cpp:200
 #: ui/mediaviewer/library/AlListBox.cpp:337
 msgid "Save the selected tracks to Playlist"
 msgstr "Sauvegarder les morceaux sélectionnés vers une liste de Lecture"
 
-#: ui/mediaviewer/library/LibPanel.cpp:374
-#: ui/mediaviewer/library/LibPanel.cpp:381
-#: ui/mediaviewer/library/SoListBox.cpp:63
-#: ui/mediaviewer/library/SoListBox.cpp:571
+#: ui/mediaviewer/library/LibPanel.cpp:374 ui/mediaviewer/library/LibPanel.cpp:381
+#: ui/mediaviewer/library/SoListBox.cpp:63 ui/mediaviewer/library/SoListBox.cpp:571
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:49
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:129
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:67
@@ -2191,8 +2082,7 @@ msgstr "Sauvegarder les morceaux sélectionnés vers une liste de Lecture"
 msgid "Album Artist"
 msgstr "Artiste de l'Album"
 
-#: ui/mediaviewer/library/LibPanel.cpp:1026
-#: ui/mediaviewer/treeview/TreePanel.cpp:1042
+#: ui/mediaviewer/library/LibPanel.cpp:1026 ui/mediaviewer/treeview/TreePanel.cpp:1042
 msgid "Artist Labels Editor"
 msgstr "Éditeur d'étiquettes d'artiste"
 
@@ -2234,17 +2124,13 @@ msgstr "Supprimer les morceaux du disque dur"
 msgid "Play current selected composer"
 msgstr "Jouer le compositeur sélectionné"
 
-#: ui/mediaviewer/library/CoListBox.cpp:121
-#: ui/mediaviewer/library/CoListBox.cpp:128
-#: ui/mediaviewer/library/CoListBox.cpp:135
-#: ui/mediaviewer/library/AlListBox.cpp:279
-#: ui/mediaviewer/library/AlListBox.cpp:285
-#: ui/mediaviewer/library/AlListBox.cpp:291
+#: ui/mediaviewer/library/CoListBox.cpp:121 ui/mediaviewer/library/CoListBox.cpp:128
+#: ui/mediaviewer/library/CoListBox.cpp:135 ui/mediaviewer/library/AlListBox.cpp:279
+#: ui/mediaviewer/library/AlListBox.cpp:285 ui/mediaviewer/library/AlListBox.cpp:291
 msgid "Add current selected albums to the Playlist as Next Tracks"
 msgstr "Ajouter les albums sélectionnés à la file de lecture comme prochain morceaux"
 
-#: ui/mediaviewer/library/CoListBox.cpp:140
-#: ui/mediaviewer/library/AlListBox.cpp:295
+#: ui/mediaviewer/library/CoListBox.cpp:140 ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr "Ajouter les albums sélectionnés après"
 
@@ -2252,15 +2138,12 @@ msgstr "Ajouter les albums sélectionnés après"
 msgid "Edit songs"
 msgstr "Éditer les morceaux"
 
-#: ui/mediaviewer/library/CoListBox.cpp:159
-#: ui/mediaviewer/library/ArListBox.cpp:209
-#: ui/mediaviewer/library/TaListBox.cpp:168
-#: ui/mediaviewer/library/GeListBox.cpp:139
-#: ui/mediaviewer/library/PcListBox.cpp:166
-#: ui/mediaviewer/library/RaListBox.cpp:198
+#: ui/mediaviewer/library/CoListBox.cpp:159 ui/mediaviewer/library/ArListBox.cpp:209
+#: ui/mediaviewer/library/TaListBox.cpp:168 ui/mediaviewer/library/GeListBox.cpp:139
+#: ui/mediaviewer/library/PcListBox.cpp:166 ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
-#: ui/mediaviewer/treeview/TreePanel.cpp:444
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1809
+#: ui/mediaviewer/treeview/TreePanel.cpp:444 ui/lastfmpanel/LastFMPanel.cpp:2962
+#: ui/player/PlayList.cpp:1809
 msgid "Save the selected tracks to playlist"
 msgstr "Sauvegarder les morceaux sélectionnés vers une Liste de Lecture"
 
@@ -2276,10 +2159,9 @@ msgstr "Éditer les étiquettes affectées aux artistes sélectionnés"
 msgid "Edit the songs from the selected artists"
 msgstr "Éditer les morceaux des artistes sélectionnés"
 
-#: ui/mediaviewer/library/ArListBox.cpp:214
-#: ui/mediaviewer/library/AAListBox.cpp:205
-#: ui/mediaviewer/library/SoListBox.cpp:653
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1817
+#: ui/mediaviewer/library/ArListBox.cpp:214 ui/mediaviewer/library/AAListBox.cpp:205
+#: ui/mediaviewer/library/SoListBox.cpp:653 ui/mediaviewer/library/AlListBox.cpp:342
+#: ui/player/PlayList.cpp:1817
 msgid "Create Best of Playlist"
 msgstr "Créer une liste de lecture des meilleurs morceaux"
 
@@ -2287,8 +2169,7 @@ msgstr "Créer une liste de lecture des meilleurs morceaux"
 msgid "Create a playlist with the best of this aretist"
 msgstr "Créer une liste de lecture des meilleurs morceaux (Best of) de cet artiste"
 
-#: ui/mediaviewer/library/TaListBox.cpp:105
-#: ui/mediaviewer/treeview/TreePanel.cpp:361
+#: ui/mediaviewer/library/TaListBox.cpp:105 ui/mediaviewer/treeview/TreePanel.cpp:361
 msgid "Create"
 msgstr "Créer"
 
@@ -2328,27 +2209,23 @@ msgstr "Ajouter les Genres sélectionnés à la file de lecture"
 msgid "Play current selected album artist"
 msgstr "Lire l'Artiste de l'Album sélectionné"
 
-#: ui/mediaviewer/library/AAListBox.cpp:206
-#: ui/mediaviewer/library/SoListBox.cpp:653
+#: ui/mediaviewer/library/AAListBox.cpp:206 ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1817
 msgid "Create a playlist with the best of this artist"
 msgstr "Créer une liste de lecture avec les meilleurs morceaux (Best of) de cet artiste"
 
-#: ui/mediaviewer/library/PcListBox.cpp:112
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:645
+#: ui/mediaviewer/library/PcListBox.cpp:112 ui/mediaviewer/audiocd/AudioCdPanel.cpp:645
 msgid "Play current selected tracks"
 msgstr "Jouer les morceaux sélectionnés"
 
 #: ui/mediaviewer/library/SoListBox.cpp:61
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:47
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:127
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:358
-#: ui/podcasts/PodcastsPanel.cpp:1796
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:358 ui/podcasts/PodcastsPanel.cpp:1796
 msgid "Title"
 msgstr "Titre"
 
-#: ui/mediaviewer/library/SoListBox.cpp:62
-#: ui/mediaviewer/library/SoListBox.cpp:567
+#: ui/mediaviewer/library/SoListBox.cpp:62 ui/mediaviewer/library/SoListBox.cpp:567
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:48
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:128
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
@@ -2357,19 +2234,17 @@ msgstr "Titre"
 msgid "Artist"
 msgstr "Artiste"
 
-#: ui/mediaviewer/library/SoListBox.cpp:64
-#: ui/mediaviewer/library/SoListBox.cpp:579
+#: ui/mediaviewer/library/SoListBox.cpp:64 ui/mediaviewer/library/SoListBox.cpp:579
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:50
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:130
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361
-#: ui/preferences/Preferences.cpp:850 ui/player/PlayList.cpp:1783
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361 ui/preferences/Preferences.cpp:850
+#: ui/player/PlayList.cpp:1783
 msgid "Album"
 msgstr "Album"
 
-#: ui/mediaviewer/library/SoListBox.cpp:65
-#: ui/mediaviewer/library/SoListBox.cpp:563
+#: ui/mediaviewer/library/SoListBox.cpp:65 ui/mediaviewer/library/SoListBox.cpp:563
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:51
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
@@ -2378,8 +2253,7 @@ msgstr "Album"
 msgid "Genre"
 msgstr "Genre"
 
-#: ui/mediaviewer/library/SoListBox.cpp:66
-#: ui/mediaviewer/library/SoListBox.cpp:575
+#: ui/mediaviewer/library/SoListBox.cpp:66 ui/mediaviewer/library/SoListBox.cpp:575
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:53
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
@@ -2391,13 +2265,11 @@ msgstr "Compositeur"
 #: ui/mediaviewer/library/SoListBox.cpp:68
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:58
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:136
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:365
-#: ui/podcasts/PodcastsPanel.cpp:1800
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:365 ui/podcasts/PodcastsPanel.cpp:1800
 msgid "Length"
 msgstr "Durée"
 
-#: ui/mediaviewer/library/SoListBox.cpp:69
-#: ui/mediaviewer/library/AlListBox.cpp:320
+#: ui/mediaviewer/library/SoListBox.cpp:69 ui/mediaviewer/library/AlListBox.cpp:320
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:423
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:56
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
@@ -2414,16 +2286,14 @@ msgstr "Débit"
 
 #: ui/mediaviewer/library/SoListBox.cpp:73
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:60
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:138
-#: ui/podcasts/PodcastsPanel.cpp:1803
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:138 ui/podcasts/PodcastsPanel.cpp:1803
 msgid "Last Played"
 msgstr "Dernier joué"
 
 #: ui/mediaviewer/library/SoListBox.cpp:74
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:443
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:61
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:139
-#: ui/podcasts/PodcastsPanel.cpp:1804
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:139 ui/podcasts/PodcastsPanel.cpp:1804
 msgid "Added"
 msgstr "Ajouté"
 
@@ -2446,18 +2316,15 @@ msgstr "Jamais"
 
 #: ui/mediaviewer/library/SoListBox.cpp:485
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:283
-#: ui/mediaviewer/treeview/TreePanel.cpp:365
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:614
+#: ui/mediaviewer/treeview/TreePanel.cpp:365 ui/mediaviewer/audiocd/AudioCdPanel.cpp:614
 msgid "Edit"
 msgstr "Éditer"
 
-#: ui/mediaviewer/library/SoListBox.cpp:488
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:617
+#: ui/mediaviewer/library/SoListBox.cpp:488 ui/mediaviewer/audiocd/AudioCdPanel.cpp:617
 msgid "Edit the clicked column for the selected tracks"
 msgstr "Éditer la colonne cliquée pour les morceaux sélectionnés"
 
-#: ui/mediaviewer/library/SoListBox.cpp:494
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:623
+#: ui/mediaviewer/library/SoListBox.cpp:494 ui/mediaviewer/audiocd/AudioCdPanel.cpp:623
 msgid "Set"
 msgstr "Définir"
 
@@ -2467,8 +2334,7 @@ msgstr "Définir"
 msgid "to"
 msgstr "vers"
 
-#: ui/mediaviewer/library/SoListBox.cpp:501
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:630
+#: ui/mediaviewer/library/SoListBox.cpp:501 ui/mediaviewer/audiocd/AudioCdPanel.cpp:630
 msgid "Set the clicked column for the selected tracks"
 msgstr "Définir la colonne cliquée pour les morceaux sélectionnés"
 
@@ -2526,14 +2392,12 @@ msgid "Save all selected tracks as a playlist"
 msgstr "Sauvegarder tous les morceaux sélectionnés dans une Liste de Lecture"
 
 #: ui/mediaviewer/library/SoListBox.cpp:651
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1815
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115 ui/player/PlayList.cpp:1815
 msgid "Create Smart Playlist"
 msgstr "Créer une Liste de lecture Intelligente"
 
 #: ui/mediaviewer/library/SoListBox.cpp:651
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2116
-#: ui/player/PlayList.cpp:1815
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2116 ui/player/PlayList.cpp:1815
 msgid "Create a smart playlist from this track"
 msgstr "Créer une liste de lecture intelligente à partir de ce morceau"
 
@@ -2713,8 +2577,7 @@ msgstr "Supprimer le filtre sélectionné"
 msgid "Edit the current selected filter"
 msgstr "Éditer le filtre sélectionné"
 
-#: ui/mediaviewer/MediaViewer.cpp:820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1171
+#: ui/mediaviewer/MediaViewer.cpp:820 ui/mediaviewer/treeview/TreePanel.cpp:1171
 msgid "New Filter"
 msgstr "Nouveau Filtre"
 
@@ -2766,41 +2629,37 @@ msgstr "Meilleurs morceaux de '%s' non trouvés."
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2064
-#: ui/lastfmpanel/LastFMPanel.cpp:847
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2064 ui/lastfmpanel/LastFMPanel.cpp:847
 msgid "Play the album tracks"
 msgstr "Lire les morceaux de l'album"
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:340
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1933
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068
-#: ui/lastfmpanel/LastFMPanel.cpp:851
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068 ui/lastfmpanel/LastFMPanel.cpp:851
 msgid "Enqueue the album tracks to the playlist"
 msgstr "Ajouter les morceaux de l'album à la file de lecture"
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:381
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1974
-#: ui/lastfmpanel/LastFMPanel.cpp:881
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1974 ui/lastfmpanel/LastFMPanel.cpp:881
 msgid "Search Album"
 msgstr "Rechercher un album"
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:381
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1974
-#: ui/lastfmpanel/LastFMPanel.cpp:881
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1974 ui/lastfmpanel/LastFMPanel.cpp:881
 msgid "Search the album in the library"
 msgstr "Chercher l'album dans la Bibliothèque"
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:385
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1978
-#: ui/lastfmpanel/LastFMPanel.cpp:611 ui/lastfmpanel/LastFMPanel.cpp:1080
-#: ui/lastfmpanel/LastFMPanel.cpp:1288 ui/lastfmpanel/LastFMPanel.cpp:1503
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1978 ui/lastfmpanel/LastFMPanel.cpp:611
+#: ui/lastfmpanel/LastFMPanel.cpp:1080 ui/lastfmpanel/LastFMPanel.cpp:1288
+#: ui/lastfmpanel/LastFMPanel.cpp:1503
 msgid "Search Artist"
 msgstr "Rechercher un artiste"
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:385
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1978
-#: ui/lastfmpanel/LastFMPanel.cpp:611 ui/lastfmpanel/LastFMPanel.cpp:1080
-#: ui/lastfmpanel/LastFMPanel.cpp:1288 ui/lastfmpanel/LastFMPanel.cpp:1503
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1978 ui/lastfmpanel/LastFMPanel.cpp:611
+#: ui/lastfmpanel/LastFMPanel.cpp:1080 ui/lastfmpanel/LastFMPanel.cpp:1288
+#: ui/lastfmpanel/LastFMPanel.cpp:1503
 msgid "Search the artist in the library"
 msgstr "Chercher l'artiste dans la Bibliothèque"
 
@@ -2843,8 +2702,7 @@ msgid "Set the albums sorting"
 msgstr "Définir le classement des albums"
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:451
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2008
-#: ui/lastfmpanel/LastFMPanel.cpp:890
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2008 ui/lastfmpanel/LastFMPanel.cpp:890
 msgid "Copy the album info to clipboard"
 msgstr "Copier les informations sur l'album dans le presse-papier"
 
@@ -3019,7 +2877,7 @@ msgstr "Éditer la Liste de Lecture sélectionnée"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 msgid "Save the selected playlist as a Static Playlist"
-msgstr "Sauvegarder la Liste de Lecture sélectionnée en tant que Liste Statique"
+msgstr "Sauvegarder la Liste de Lecture sélectionnéeen tant que Liste Statique"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:292
 msgid "Change the name of the selected playlist"
@@ -3156,8 +3014,7 @@ msgstr "vrai"
 msgid "Random"
 msgstr "Aléatoire"
 
-#: ui/mediaviewer/playlists/DynamicPlayList.cpp:145
-#: ui/preferences/Preferences.cpp:492
+#: ui/mediaviewer/playlists/DynamicPlayList.cpp:145 ui/preferences/Preferences.cpp:492
 msgid "minutes"
 msgstr "minutes"
 
@@ -3217,8 +3074,7 @@ msgstr "Option pour la destination de la copie:"
 msgid "Destination Folder:"
 msgstr "Dossier de destination :"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:123
-#: ui/preferences/Preferences.cpp:1129
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:123 ui/preferences/Preferences.cpp:1129
 msgid "Select a folder"
 msgstr "Sélectionner un dossier"
 
@@ -3351,8 +3207,7 @@ msgstr "Chercher à nouveau"
 msgid "Search again for cd metadata"
 msgstr "Chercher à nouveau les metadata du CD"
 
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:695
-#: ui/podcasts/PodcastsPanel.cpp:2092
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:695 ui/podcasts/PodcastsPanel.cpp:2092
 msgid "No selected items..."
 msgstr "Aucun élément sélectionné..."
 
@@ -3515,8 +3370,7 @@ msgstr "Ajouter une Radio"
 msgid "Create a new radio"
 msgstr "Créer une nouvelle Radio"
 
-#: ui/radios/UserRadio.cpp:61 ui/radios/UserRadio.cpp:120
-#: ui/radios/UserRadio.cpp:150
+#: ui/radios/UserRadio.cpp:61 ui/radios/UserRadio.cpp:120 ui/radios/UserRadio.cpp:150
 msgid "Edit Radio"
 msgstr "Éditer une radio"
 
@@ -3871,7 +3725,8 @@ msgstr "Texte de recherche : instantané"
 
 #: ui/preferences/Preferences.cpp:535
 msgid "When searching, pressing enter queues the result"
-msgstr "Pendant la recherche, l'appui sur |entrée| ajoute le résultat à la file de lecture"
+msgstr ""
+"Pendant la recherche, l'appui sur |entrée| ajoute le résultat à la file de lecture"
 
 #: ui/preferences/Preferences.cpp:541
 msgid "Show album cover in the player"
@@ -4687,7 +4542,7 @@ msgstr "La file de lecture est vide"
 
 #: ui/player/PlayList.cpp:1721
 msgid "Edit the current selected tracks labels"
-msgstr ""
+msgstr "Éditer les étiquettes des morceaux sélectionnés"
 
 #: ui/player/PlayList.cpp:1728
 msgid "Edit the current selected songs"
