@@ -2169,10 +2169,6 @@ msgstr "Aktuellen Track bewerten"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Wiedergabeliste mittels Last.fm Statistik aktualisieren"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Tracks mischen"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Tracks mischen"

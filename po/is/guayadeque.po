@@ -4295,10 +4295,6 @@ msgstr "Setja inn einkunn við valið lag"
 msgid "Smart Play"
 msgstr "Snjall spilun"
 
-#: ui/MainFrame.cpp:1603
-msgid "Shuffle"
-msgstr "Stokkað"
-
 #: ui/MainFrame.cpp:1607
 msgid "Repeat the Playlist"
 msgstr "Endurtaka lagalista"

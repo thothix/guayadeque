@@ -2167,10 +2167,6 @@ msgstr "Definir avaliação da faixa atual"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Atualizar lista de reprodução com estatísticas Last.fm"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Aleatório"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Lista de reprodução aleatória"

@@ -2168,10 +2168,6 @@ msgstr "Geçerli parça için derecelendirme ayarla"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Çalma Listes'ni Last.fm istatistiklerini baz alarak güncelle"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Karıştır"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Çalma Listesi'ni karıştır"

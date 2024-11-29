@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-28 13:29-0300\n"
+"POT-Creation-Date: 2024-11-29 12:53-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1299,12 +1299,6 @@ msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:428
 msgid "Type the artist name to search in musicbrainz"
-msgstr ""
-
-#: ui/trackedit/TrackEdit.cpp:431 ui/trackedit/TrackEdit.cpp:485
-#: ui/podcasts/PodcastsPanel.cpp:994
-#, c-format
-msgid "%s:"
 msgstr ""
 
 #: ui/trackedit/TrackEdit.cpp:436
@@ -4792,3 +4786,29 @@ msgstr ""
 #: copyto/CopyTo.cpp:840
 msgid "Finished copying files"
 msgstr ""
+
+# Begin of Translations external from source code
+msgid "Browse in File Manager"
+msgstr ""
+
+msgid "Burn as AudioCD using Brasero"
+msgstr ""
+
+msgid "Burn as DataCD using Brasero"
+msgstr ""
+
+msgid "Open Terminal in directory"
+msgstr ""
+
+msgid "Edit cover using GIMP"
+msgstr ""
+
+msgid "To mp3"
+msgstr ""
+
+msgid "From file"
+msgstr ""
+
+msgid "To file"
+msgstr ""
+# End of Translations external from source code

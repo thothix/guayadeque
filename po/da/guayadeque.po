@@ -4291,10 +4291,6 @@ msgstr "Lav en bedømmelse af nummeret"
 msgid "Smart Play"
 msgstr "Smart afspilning"
 
-#: ui/MainFrame.cpp:1603
-msgid "Shuffle"
-msgstr "Vilkårlig sangvalg"
-
 #: ui/MainFrame.cpp:1607
 msgid "Repeat the Playlist"
 msgstr "Gentag afspilningsliste"

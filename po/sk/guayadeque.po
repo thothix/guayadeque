@@ -2173,10 +2173,6 @@ msgstr "Nastaviť hodnotenie aktuálnej skladby"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Aktualizovať Playlist podľa štatistík Last.fm"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Náhodné"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Náhodné poradie v Playliste"

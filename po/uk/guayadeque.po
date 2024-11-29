@@ -2166,10 +2166,6 @@ msgstr "Встановити рейтинг поточному треку"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Оновити список програвання базуючись на статистиці Last.fm"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Перемішати"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Перемішати список програвання"

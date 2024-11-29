@@ -428,7 +428,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     m_MBQueryArtistTextCtrl->SetToolTip( _( "Type the artist name to search in musicbrainz" ) );
     MBQuerySizer->Add( m_MBQueryArtistTextCtrl, 1, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxRIGHT, 5 );
 
-    MBQueryTitleStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, wxString::Format(_("%s:"), _("Title")), wxDefaultPosition, wxDefaultSize, 0 );
+    MBQueryTitleStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, wxString::Format("%s:", _("Title")), wxDefaultPosition, wxDefaultSize, 0 );
     MBQueryTitleStaticText->Wrap( -1 );
     MBQuerySizer->Add( MBQueryTitleStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
@@ -482,7 +482,7 @@ guTrackEditor::guTrackEditor( wxWindow * parent, guDbLibrary * db, guTrackArray 
     MBDetailFlexGridSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
     // Title
-    m_MBTitleStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, wxString::Format(_("%s:"), _("Title")), wxDefaultPosition, wxDefaultSize, 0 );
+    m_MBTitleStaticText = new wxStaticText( MBrainzPanel, wxID_ANY, wxString::Format("%s:", _("Title")), wxDefaultPosition, wxDefaultSize, 0 );
     m_MBTitleStaticText->Wrap( -1 );
     MBDetailFlexGridSizer->Add( m_MBTitleStaticText, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
 

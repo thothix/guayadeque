@@ -2175,10 +2175,6 @@ msgstr "Avaliar a faixa atual"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Atualizar a lista de reprodução baseada nas estatística da Last.fm"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Embaralhar"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Embaralhar a lista de reprodução"
@@ -4281,7 +4277,6 @@ msgstr "Definido pelo usuário"
 #: ui/mediaviewer/library/AlListBox.cpp:344 ui/player/PlayList.cpp:1591
 msgid "Create Best of Playlist"
 msgstr "Criar lista de reprodução melhor de"
-
 
 msgid "Browse in File Manager"
 msgstr "Abrir no Gerenciador de Arquivos"

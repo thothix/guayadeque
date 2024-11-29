@@ -2165,10 +2165,6 @@ msgstr "Дай оценка на текущата песен"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Обнови плейлиста въз основа на статистика от Last.fm"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Разбъркай"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Разбъркай плейлиста"
