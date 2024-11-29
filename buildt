@@ -1,4 +1,5 @@
 cd src
 find . -name "*.cpp" | xargs xgettext -d guayadeque -o guayadeque.pot -C -k_ -kwxPLURAL
+cat ../po/external.pot >>guayadeque.pot
 mv guayadeque.pot ../po
 cd ..
