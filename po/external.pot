@@ -1,0 +1,26 @@
+
+# Begin of Translations external from source code
+msgid "Browse in File Manager"
+msgstr ""
+
+msgid "Burn as AudioCD using Brasero"
+msgstr ""
+
+msgid "Burn as DataCD using Brasero"
+msgstr ""
+
+msgid "Open Terminal in directory"
+msgstr ""
+
+msgid "Edit cover using GIMP"
+msgstr ""
+
+msgid "To mp3"
+msgstr ""
+
+msgid "From file"
+msgstr ""
+
+msgid "To file"
+msgstr ""
+# End of Translations external from source code
