@@ -105,9 +105,6 @@ guMainApp::guMainApp() : wxApp()
         if (wxFileExists(wxT(DATADIR "/guayadeque.default.conf")))
             wxCopyFile(wxT(DATADIR "/guayadeque.default.conf"),
                        guPATH_CONFIG_FILENAME, false);
-        else if (wxFileExists(wxT("/usr/local/share/guayadeque/guayadeque.default.conf")))
-            wxCopyFile(wxT("/usr/local/share/guayadeque/guayadeque.default.conf"),
-                       guPATH_CONFIG_FILENAME, false);
 
         guLogMessage(wxT("Created the default configuration file"));
     }
@@ -117,9 +114,6 @@ guMainApp::guMainApp() : wxApp()
         if (wxFileExists(wxT(DATADIR "/equalizers.default.conf")))
             wxCopyFile(wxT(DATADIR "/equalizers.default.conf"),
                        guPATH_EQUALIZERS_FILENAME, false);
-        else if (wxFileExists(wxT("/usr/local/share/guayadeque/equalizers.default.conf")))
-            wxCopyFile(wxT("/usr/local/share/guayadeque/equalizers.default.conf"),
-                       guPATH_EQUALIZERS_FILENAME, false);
         guLogMessage(wxT("Created the default equalizers file"));
     }
 
@@ -127,9 +121,6 @@ guMainApp::guMainApp() : wxApp()
     {
         if (wxFileExists(wxT(DATADIR "/lyrics_sources.xml")))
             wxCopyFile(wxT(DATADIR "/lyrics_sources.xml"),
-                       guPATH_LYRICS_SOURCES_FILENAME, false);
-        else if (wxFileExists(wxT("/usr/local/share/guayadeque/lyrics_sources.xml")))
-            wxCopyFile(wxT("/usr/local/share/guayadeque/lyrics_sources.xml"),
                        guPATH_LYRICS_SOURCES_FILENAME, false);
         guLogMessage(wxT("Created the default lyrics sources file"));
     }
