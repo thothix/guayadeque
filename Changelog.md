@@ -11,6 +11,8 @@ Unreleased (2024-11-xx)
   * Check/set the proper default commands for the current desktop manager.
     Gnome (including compatible DEs like Cinnamon and Mate), KDE, xfce and
     LXQT are currently detected and configured. Fallback to Gnome commands.
+  * Added a external.pot file to store external to the source code messages
+    to translation. 
 
 ### Enhancements
   * Lyrics preferences: Change source embedded default to true.
