@@ -4831,3 +4831,27 @@ msgstr ""
 #: copyto/CopyTo.cpp:840
 msgid "Finished copying files"
 msgstr "Copia dei file terminata"
+
+msgid "Browse in File Manager"
+msgstr "Sfogliare in gestore dei file"
+
+msgid "Burn as AudioCD using Brasero"
+msgstr "Masterizzare in CD audio con Brasero"
+
+msgid "Burn as DataCD using Brasero"
+msgstr "Masterizzare in DataCD con Brasero"
+
+msgid "Open Terminal in directory"
+msgstr "Aprire un terminale nella cartella"
+
+msgid "Edit cover using GIMP"
+msgstr "Modificare la copertina con GIMP"
+
+msgid "To mp3"
+msgstr "In mp3"
+
+msgid "From file"
+msgstr "Da un file"
+
+msgid "To file"
+msgstr "In un file"
