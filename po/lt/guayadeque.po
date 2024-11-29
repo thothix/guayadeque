@@ -4296,10 +4296,6 @@ msgstr ""
 msgid "Smart Play"
 msgstr ""
 
-#: ui/MainFrame.cpp:1603
-msgid "Shuffle"
-msgstr "Išdėstyti atsitiktine tvarka"
-
 #: ui/MainFrame.cpp:1607
 msgid "Repeat the Playlist"
 msgstr "Kartoti grojaraštį"

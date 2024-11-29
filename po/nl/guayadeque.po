@@ -2166,10 +2166,6 @@ msgstr "Stel de waardering van het huidige nummer in"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Ververs afspeellijst op basis van Last.fm statistieken"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Schud door elkaar"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Afspeellijst schudden"

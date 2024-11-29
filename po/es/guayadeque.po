@@ -4295,10 +4295,6 @@ msgstr "Establecer la evalutacion de la pista actual"
 msgid "Smart Play"
 msgstr "Reproducción inteligente"
 
-#: ui/MainFrame.cpp:1603
-msgid "Shuffle"
-msgstr "Aleatorio"
-
 #: ui/MainFrame.cpp:1607
 msgid "Repeat the Playlist"
 msgstr "Repetir lista de reproducción"

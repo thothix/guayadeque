@@ -2165,10 +2165,6 @@ msgstr "Postavi ocjenu trenutne pjesme"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Dopuni listu izvođenja na osnovu Last.FM statistike"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Postavi nasumično"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Postavi nasumično na listi izvođenja"

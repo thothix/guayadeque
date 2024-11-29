@@ -1306,12 +1306,6 @@ msgid "Type the artist name to search in musicbrainz"
 msgstr ""
 "Πληκτρολογήστε το όνομα του καλλιτέχνη για να αναζητηθεί στο musicbrainz"
 
-#: ui/trackedit/TrackEdit.cpp:431 ui/trackedit/TrackEdit.cpp:485
-#: ui/podcasts/PodcastsPanel.cpp:994
-#, c-format
-msgid "%s:"
-msgstr ""
-
 #: ui/trackedit/TrackEdit.cpp:436
 msgid "Type the album name to search in musicbrainz"
 msgstr "Πληκτρολογήστε το όνομα του άλμπουμ για να αναζητηθεί στο musicbrainz"
@@ -4850,3 +4844,28 @@ msgstr ""
 #: copyto/CopyTo.cpp:840
 msgid "Finished copying files"
 msgstr "Ολοκληρώθηκε η αντιγραφή των αρχείων"
+
+msgid "Browse in File Manager"
+msgstr "Αναζήτηση στη Διαχείριση αρχείων"
+
+msgid "Burn as AudioCD using Brasero"
+msgstr "Εγγραφή ως AudioCD χρησιμοποιώντας το Brasero"
+
+msgid "Burn as DataCD using Brasero"
+msgstr "Εγγραφή ως DataCD χρησιμοποιώντας το Brasero"
+
+msgid "Open Terminal in directory"
+msgstr "Ανοίξτε το τερματικό στο φάκελο"
+
+msgid "Edit cover using GIMP"
+msgstr "Επεξεργασία εξωφύλλου με το GIMP"
+
+msgid "To mp3"
+msgstr "Σε mp3"
+
+msgid "From file"
+msgstr "Από αρχείο"
+
+msgid "To file"
+msgstr "Σε αρχείο"
+

@@ -4301,10 +4301,6 @@ msgstr "Ustaw ocenę aktualnie odtwarzanego"
 msgid "Smart Play"
 msgstr "Inteligentne odtwarzanie"
 
-#: ui/MainFrame.cpp:1603
-msgid "Shuffle"
-msgstr "Losowo"
-
 #: ui/MainFrame.cpp:1607
 msgid "Repeat the Playlist"
 msgstr "Powtórz listę"

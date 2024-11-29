@@ -4293,10 +4293,6 @@ msgstr "Tetapkan penarafan trek semasa"
 msgid "Smart Play"
 msgstr "Main Pintar"
 
-#: ui/MainFrame.cpp:1603
-msgid "Shuffle"
-msgstr "Rawak"
-
 #: ui/MainFrame.cpp:1607
 msgid "Repeat the Playlist"
 msgstr "Ulang Senarai Main"

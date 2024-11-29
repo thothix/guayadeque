@@ -2166,10 +2166,6 @@ msgstr "Defineix la valoració de la pista actual"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Actualitza la llista basada en l'estadística Last.fm"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Reproducció aleatòria"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Reproducció aleatòria de la llista"

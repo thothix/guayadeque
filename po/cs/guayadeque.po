@@ -4295,10 +4295,6 @@ msgstr "Nastavit hodnocení aktualní skladby"
 msgid "Smart Play"
 msgstr "Chytré Hraní"
 
-#: ui/MainFrame.cpp:1603
-msgid "Shuffle"
-msgstr "Znáhodni"
-
 #: ui/MainFrame.cpp:1607
 msgid "Repeat the Playlist"
 msgstr "Opakovat Seznam Skladeb"

@@ -2167,10 +2167,6 @@ msgstr "現在の曲の評価をセット"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Last.fmで再生リストを更新"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "ランダム化"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "再生リストをランダム化"

@@ -2165,10 +2165,6 @@ msgstr "Az aktuális dal értékelése"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Várólista frissítése a Last.fm statisztikái alapján"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Véletleszerű"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Véletlenszerű sorrend a várólistában"

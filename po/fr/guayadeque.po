@@ -1307,12 +1307,6 @@ msgstr "Images"
 msgid "Type the artist name to search in musicbrainz"
 msgstr "Saisir le nom de l'artiste à rechercher sur musicbrainz"
 
-#: ui/trackedit/TrackEdit.cpp:431 ui/trackedit/TrackEdit.cpp:485
-#: ui/podcasts/PodcastsPanel.cpp:994
-#, c-format
-msgid "%s:"
-msgstr ""
-
 #: ui/trackedit/TrackEdit.cpp:436
 msgid "Type the album name to search in musicbrainz"
 msgstr "Saisir le nom de l'album à rechercher sur musicbrainz"
@@ -4071,7 +4065,9 @@ msgstr "Nombre maximum de morceaux lus gardés dans la file"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
 msgid "Don't repeat last"
-msgstr "Ne pas répéter le dernier"
+msgid_plural "Don't repeat last"
+msgstr[0] "Ne pas répéter le dernier"
+msgstr[1] "Ne pas répéter les derniers"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
@@ -4845,3 +4841,27 @@ msgstr ""
 #: copyto/CopyTo.cpp:840
 msgid "Finished copying files"
 msgstr "Fin de la copie de fichiers"
+
+msgid "Browse in File Manager"
+msgstr "Naviguer dans le Gestionnaire de Fichiers"
+
+msgid "Burn as AudioCD using Brasero"
+msgstr "Graver en AudioCD avec Brasero"
+
+msgid "Burn as DataCD using Brasero"
+msgstr "Graver en DataCD avec Brasero"
+
+msgid "Open Terminal in directory"
+msgstr "Ouvrir un Terminal dans le dossier"
+
+msgid "Edit cover using GIMP"
+msgstr "Modifier la pochette avec GIMP"
+
+msgid "To mp3"
+msgstr "En mp3"
+
+msgid "From file"
+msgstr "Depuis un fichier"
+
+msgid "To file"
+msgstr "Dans un fichier"

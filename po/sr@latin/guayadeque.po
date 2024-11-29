@@ -2165,10 +2165,6 @@ msgstr "Oceni trenutnu numeru"
 msgid "Update playlist based on Last.fm statics"
 msgstr "Ažuriraj listu po statistici na Last.fm"
 
-#: MainFrame.cpp:1561
-msgid "Shuffle"
-msgstr "Pomešaj"
-
 #: MainFrame.cpp:1562 TaskBar.cpp:177
 msgid "Shuffle the Playlist"
 msgstr "Meša listu"

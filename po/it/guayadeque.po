@@ -1307,12 +1307,6 @@ msgstr "Immagini"
 msgid "Type the artist name to search in musicbrainz"
 msgstr "Scrivi il nome dell'artista da cercare in MusicBrainz"
 
-#: ui/trackedit/TrackEdit.cpp:431 ui/trackedit/TrackEdit.cpp:485
-#: ui/podcasts/PodcastsPanel.cpp:994
-#, c-format
-msgid "%s:"
-msgstr "%s:"
-
 #: ui/trackedit/TrackEdit.cpp:436
 msgid "Type the album name to search in musicbrainz"
 msgstr "Scrivi il nome dell'album da cercare in MusicBrainz"
