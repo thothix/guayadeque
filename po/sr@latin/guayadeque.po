@@ -2467,10 +2467,6 @@ msgstr "Jačina zvuka"
 msgid "Show the equalizer"
 msgstr "Prikaži ekvilajzer"
 
-#: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
-msgid "Smart Play: "
-msgstr "Pametno puštanje:"
-
 #: PlayerPanel.cpp:221 PlayerPanel.cpp:237 PlayerPanel.cpp:2182
 #: Preferences.cpp:975
 msgid "Disabled"
@@ -2480,10 +2476,6 @@ msgstr "Onemogućeno"
 #: Preferences.cpp:1398
 msgid "Enabled"
 msgstr "Omogućeno"
-
-#: PlayerPanel.cpp:234
-msgid "Repeat: "
-msgstr "Ponavljaj:"
 
 #: PlayerPanel.cpp:241 PlayerPanel.cpp:2234 PlayList.cpp:1641
 #: Preferences.cpp:975
@@ -2525,14 +2517,6 @@ msgstr "Prikaži bitrejt trenutne numere"
 #: PlayerPanel.cpp:1365
 msgid "Buffering..."
 msgstr "Učitava se..."
-
-#: PlayerPanel.cpp:2227
-msgid "Repeat Mode: "
-msgstr "Mod ponavljanja:"
-
-#: PlayerPanel.cpp:2230
-msgid "Off"
-msgstr "Isključeno"
 
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
@@ -3797,10 +3781,6 @@ msgstr "Bira umetnika albuma trenutne numere"
 #: SoListBox.cpp:661
 msgid "Selects the composer of the current song"
 msgstr "Bira kompozitora trenutne pesme"
-
-#: SplashWin.cpp:62
-msgid "guayadeque.org"
-msgstr "guayadeque.org"
 
 #: SplashWin.cpp:69
 msgid "Please Donate!"

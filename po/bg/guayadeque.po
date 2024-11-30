@@ -2467,10 +2467,6 @@ msgstr "Сила на звука"
 msgid "Show the equalizer"
 msgstr "Покажи еквалайзера"
 
-#: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
-msgid "Smart Play: "
-msgstr "Интелигентно Възпроизвеждане: "
-
 #: PlayerPanel.cpp:221 PlayerPanel.cpp:237 PlayerPanel.cpp:2182
 #: Preferences.cpp:975
 msgid "Disabled"
@@ -2480,10 +2476,6 @@ msgstr "Изключен"
 #: Preferences.cpp:1398
 msgid "Enabled"
 msgstr "Включен"
-
-#: PlayerPanel.cpp:234
-msgid "Repeat: "
-msgstr "Повтаряне: "
 
 #: PlayerPanel.cpp:241 PlayerPanel.cpp:2234 PlayList.cpp:1641
 #: Preferences.cpp:975
@@ -2525,14 +2517,6 @@ msgstr "Покажи битрейта на текущата песен"
 #: PlayerPanel.cpp:1365
 msgid "Buffering..."
 msgstr "Буфериране..."
-
-#: PlayerPanel.cpp:2227
-msgid "Repeat Mode: "
-msgstr "Метод на повтаряне: "
-
-#: PlayerPanel.cpp:2230
-msgid "Off"
-msgstr "Изключен"
 
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
@@ -3797,10 +3781,6 @@ msgstr "Избира изпълнителя на албум на текущат�
 #: SoListBox.cpp:661
 msgid "Selects the composer of the current song"
 msgstr "Избира композитора на текущата песен"
-
-#: SplashWin.cpp:62
-msgid "guayadeque.org"
-msgstr "guayadeque.org"
 
 #: SplashWin.cpp:69
 msgid "Please Donate!"

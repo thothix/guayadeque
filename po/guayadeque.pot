@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-29 12:53-0300\n"
+"POT-Creation-Date: 2024-11-30 17:12-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -448,15 +448,15 @@ msgstr ""
 msgid "Capital"
 msgstr ""
 
-#: MainApp.cpp:404
+#: MainApp.cpp:395
 msgid "Another program instance is already running."
 msgstr ""
 
-#: MainApp.cpp:404
+#: MainApp.cpp:395
 msgid "Do you want to continue with the program?"
 msgstr ""
 
-#: MainApp.cpp:405 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204

@@ -2470,10 +2470,6 @@ msgstr "Ses Yüksekliği"
 msgid "Show the equalizer"
 msgstr "Ekolayzeri göster"
 
-#: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
-msgid "Smart Play: "
-msgstr "Akıllı Çalma: "
-
 #: PlayerPanel.cpp:221 PlayerPanel.cpp:237 PlayerPanel.cpp:2182
 #: Preferences.cpp:975
 msgid "Disabled"
@@ -2483,10 +2479,6 @@ msgstr "Devre Dışı"
 #: Preferences.cpp:1398
 msgid "Enabled"
 msgstr "Etkin"
-
-#: PlayerPanel.cpp:234
-msgid "Repeat: "
-msgstr "Tekrarla: "
 
 #: PlayerPanel.cpp:241 PlayerPanel.cpp:2234 PlayList.cpp:1641
 #: Preferences.cpp:975
@@ -2528,14 +2520,6 @@ msgstr "Geçerli parçanın bit rate değerini göster"
 #: PlayerPanel.cpp:1365
 msgid "Buffering..."
 msgstr "Yükleniyor..."
-
-#: PlayerPanel.cpp:2227
-msgid "Repeat Mode: "
-msgstr "Tekrarlama Biçimi:"
-
-#: PlayerPanel.cpp:2230
-msgid "Off"
-msgstr "Kapalı"
 
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
@@ -3800,10 +3784,6 @@ msgstr "Geçerli şarkı için albüm sanatçısını seç"
 #: SoListBox.cpp:661
 msgid "Selects the composer of the current song"
 msgstr "Geçerli şarkı için besteciyi seç"
-
-#: SplashWin.cpp:62
-msgid "guayadeque.org"
-msgstr "guayadeque.org"
 
 #: SplashWin.cpp:69
 msgid "Please Donate!"

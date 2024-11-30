@@ -2467,10 +2467,6 @@ msgstr "Volym"
 msgid "Show the equalizer"
 msgstr "Visa equalizern"
 
-#: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
-msgid "Smart Play: "
-msgstr ""
-
 #: PlayerPanel.cpp:221 PlayerPanel.cpp:237 PlayerPanel.cpp:2182
 #: Preferences.cpp:975
 msgid "Disabled"
@@ -2480,10 +2476,6 @@ msgstr ""
 #: Preferences.cpp:1398
 msgid "Enabled"
 msgstr "Aktiverad"
-
-#: PlayerPanel.cpp:234
-msgid "Repeat: "
-msgstr ""
 
 #: PlayerPanel.cpp:241 PlayerPanel.cpp:2234 PlayList.cpp:1641
 #: Preferences.cpp:975
@@ -2525,14 +2517,6 @@ msgstr ""
 #: PlayerPanel.cpp:1365
 msgid "Buffering..."
 msgstr "Buffrar..."
-
-#: PlayerPanel.cpp:2227
-msgid "Repeat Mode: "
-msgstr "Upprepningsläge: "
-
-#: PlayerPanel.cpp:2230
-msgid "Off"
-msgstr "Av"
 
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
@@ -3796,10 +3780,6 @@ msgstr ""
 
 #: SoListBox.cpp:661
 msgid "Selects the composer of the current song"
-msgstr ""
-
-#: SplashWin.cpp:62
-msgid "guayadeque.org"
 msgstr ""
 
 #: SplashWin.cpp:69
