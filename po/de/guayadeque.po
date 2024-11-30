@@ -2471,10 +2471,6 @@ msgstr "Lautstärke"
 msgid "Show the equalizer"
 msgstr "Equalizer anzeigen"
 
-#: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
-msgid "Smart Play: "
-msgstr "Intelligente Wiedergabe: "
-
 #: PlayerPanel.cpp:221 PlayerPanel.cpp:237 PlayerPanel.cpp:2182
 #: Preferences.cpp:975
 msgid "Disabled"
@@ -2484,10 +2480,6 @@ msgstr "Deaktiviert"
 #: Preferences.cpp:1398
 msgid "Enabled"
 msgstr "Aktiviert"
-
-#: PlayerPanel.cpp:234
-msgid "Repeat: "
-msgstr "Wiederholen: "
 
 #: PlayerPanel.cpp:241 PlayerPanel.cpp:2234 PlayList.cpp:1641
 #: Preferences.cpp:975
@@ -2529,14 +2521,6 @@ msgstr "Bitrate des aktuellen Tracks anzeigen"
 #: PlayerPanel.cpp:1365
 msgid "Buffering..."
 msgstr "Pufferung..."
-
-#: PlayerPanel.cpp:2227
-msgid "Repeat Mode: "
-msgstr "Wiederholungsmodus: "
-
-#: PlayerPanel.cpp:2230
-msgid "Off"
-msgstr "Aus"
 
 #: PlayListAppend.cpp:49
 msgid "Playlist:"

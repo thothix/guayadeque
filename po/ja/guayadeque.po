@@ -2469,10 +2469,6 @@ msgstr "音量"
 msgid "Show the equalizer"
 msgstr "イコライザーを表示"
 
-#: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
-msgid "Smart Play: "
-msgstr "スマート再生: "
-
 #: PlayerPanel.cpp:221 PlayerPanel.cpp:237 PlayerPanel.cpp:2182
 #: Preferences.cpp:975
 msgid "Disabled"
@@ -2482,10 +2478,6 @@ msgstr "無効"
 #: Preferences.cpp:1398
 msgid "Enabled"
 msgstr "有効"
-
-#: PlayerPanel.cpp:234
-msgid "Repeat: "
-msgstr "リピート:"
 
 #: PlayerPanel.cpp:241 PlayerPanel.cpp:2234 PlayList.cpp:1641
 #: Preferences.cpp:975
@@ -2527,14 +2519,6 @@ msgstr "現在の曲のビットレートを表示"
 #: PlayerPanel.cpp:1365
 msgid "Buffering..."
 msgstr "バッファ中…"
-
-#: PlayerPanel.cpp:2227
-msgid "Repeat Mode: "
-msgstr "リピートモード:"
-
-#: PlayerPanel.cpp:2230
-msgid "Off"
-msgstr "オフ"
 
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
@@ -3799,10 +3783,6 @@ msgstr "現在の曲のアルバム・アーティストを選択"
 #: SoListBox.cpp:661
 msgid "Selects the composer of the current song"
 msgstr "現在の曲の作曲者を選択"
-
-#: SplashWin.cpp:62
-msgid "guayadeque.org"
-msgstr "guayadeque.org"
 
 #: SplashWin.cpp:69
 msgid "Please Donate!"

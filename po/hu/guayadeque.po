@@ -2467,10 +2467,6 @@ msgstr "Hangerő"
 msgid "Show the equalizer"
 msgstr "Equalizer megjelenítése"
 
-#: PlayerPanel.cpp:218 PlayerPanel.cpp:2179
-msgid "Smart Play: "
-msgstr "Intelligens lejátszás: "
-
 #: PlayerPanel.cpp:221 PlayerPanel.cpp:237 PlayerPanel.cpp:2182
 #: Preferences.cpp:975
 msgid "Disabled"
@@ -2480,10 +2476,6 @@ msgstr "Tiltva"
 #: Preferences.cpp:1398
 msgid "Enabled"
 msgstr "Engedélyezve"
-
-#: PlayerPanel.cpp:234
-msgid "Repeat: "
-msgstr "Ismétlés: "
 
 #: PlayerPanel.cpp:241 PlayerPanel.cpp:2234 PlayList.cpp:1641
 #: Preferences.cpp:975
@@ -2525,14 +2517,6 @@ msgstr "Az aktuális dal bitsebességének megjelenítése"
 #: PlayerPanel.cpp:1365
 msgid "Buffering..."
 msgstr "Pufferelés..."
-
-#: PlayerPanel.cpp:2227
-msgid "Repeat Mode: "
-msgstr "Ismétlés mód: "
-
-#: PlayerPanel.cpp:2230
-msgid "Off"
-msgstr "Ki"
 
 #: PlayListAppend.cpp:49
 msgid "Playlist:"
@@ -3797,10 +3781,6 @@ msgstr "Az aktuális dal album előadójának kiválasztása"
 #: SoListBox.cpp:661
 msgid "Selects the composer of the current song"
 msgstr "Az aktuális dal szerzőjének kiválasztása"
-
-#: SplashWin.cpp:62
-msgid "guayadeque.org"
-msgstr "guayadeque.org"
 
 #: SplashWin.cpp:69
 msgid "Please Donate!"
