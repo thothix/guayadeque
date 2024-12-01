@@ -4077,8 +4077,8 @@ msgstr[1] "Να μην επαναλαμβάνονται οι τελευταίο�
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
-msgstr[0] "Καλλιτέχνης"
-msgstr[1] "Καλλιτέχνες"
+msgstr[0] "καλλιτέχνηςt"
+msgstr[1] "καλλιτέχνες"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
