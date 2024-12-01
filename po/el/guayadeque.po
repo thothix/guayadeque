@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 17:12-0300\n"
+"POT-Creation-Date: 2024-11-30 21:31-0300\n"
 "PO-Revision-Date: 2024-11-30 18:27-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -497,6 +497,8 @@ msgstr ""
 "αναζητήσεις;"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -522,8 +524,11 @@ msgstr "Είστε σίγουροι ότι θέλετε να κλείσετε τ
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
 #: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
 #: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#, fuzzy
 msgid "Artist"
-msgstr "Καλλιτέχνης"
+msgid_plural "Artists"
+msgstr[0] "Καλλιτέχνης"
+msgstr[1] "Καλλιτέχνης"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -1457,8 +1462,11 @@ msgid "Don't ask again"
 msgstr "Μην ξαναρωτήσεις"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#, fuzzy
 msgid "Don't repeat last"
-msgstr "Να μην επαναλαμβάνονται οι τελευταίοι"
+msgid_plural "Don't repeat last"
+msgstr[0] "Να μην επαναλαμβάνονται οι τελευταίοι"
+msgstr[1] "Να μην επαναλαμβάνονται οι τελευταίοι"
 
 #: misc/Accelerators.cpp:348
 msgid "Down"
@@ -3206,6 +3214,8 @@ msgid "Remove the selected tracks from playlist"
 msgstr "Διαγραφή των επιλεγμένων κομματιών από τη λίστα αναπαραγωγής"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Διαγραφή κομματιών από σκληρό δίσκο"
 

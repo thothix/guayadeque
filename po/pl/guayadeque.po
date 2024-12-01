@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 17:12-0300\n"
+"POT-Creation-Date: 2024-11-30 21:31-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Piotr Strębski <strebski@gmail.com>, 2017,2022\n"
 "Language-Team: Polish (http://www.transifex.com/anonbeat/guayadeque/language/"
@@ -497,6 +497,8 @@ msgid "Are you sure to delete the selected radio searches?"
 msgstr "Czy na pewno usunąć wybrane wyniki wyszukiwania?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -521,8 +523,13 @@ msgstr "Czy jesteś pewien, że chcesz wyjść z aplikacji?"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
 #: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
 #: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#, fuzzy
 msgid "Artist"
-msgstr "Wykonawca"
+msgid_plural "Artists"
+msgstr[0] "Wykonawca"
+msgstr[1] "Wykonawca"
+msgstr[2] "Wykonawca"
+msgstr[3] "Wykonawca"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -1454,8 +1461,13 @@ msgid "Don't ask again"
 msgstr "Nie pytaj ponownie"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#, fuzzy
 msgid "Don't repeat last"
-msgstr "Nie powtarzaj ostatniego"
+msgid_plural "Don't repeat last"
+msgstr[0] "Nie powtarzaj ostatniego"
+msgstr[1] "Nie powtarzaj ostatniego"
+msgstr[2] "Nie powtarzaj ostatniego"
+msgstr[3] "Nie powtarzaj ostatniego"
 
 #: misc/Accelerators.cpp:348
 msgid "Down"
@@ -3206,6 +3218,8 @@ msgid "Remove the selected tracks from playlist"
 msgstr "Usuń wybrane utwory z listy odtwarzania"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Usuń utwory z dysku"
 

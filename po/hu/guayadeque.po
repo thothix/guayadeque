@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 17:12-0300\n"
+"POT-Creation-Date: 2024-11-30 21:31-0300\n"
 "PO-Revision-Date: 2013-11-29 15:53+0000\n"
 "Last-Translator: László Andrássy <andrassy.laszlo@gmail.com>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/"
@@ -488,6 +488,8 @@ msgid "Are you sure to delete the selected radio searches?"
 msgstr "Biztos, hogy törli a kiválasztott rádió kereséseket?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -512,8 +514,11 @@ msgstr "Biztos, hogy kilép az alkalmazásból?"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
 #: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
 #: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#, fuzzy
 msgid "Artist"
-msgstr "Előadó"
+msgid_plural "Artists"
+msgstr[0] "Előadó"
+msgstr[1] "Előadó"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -1451,8 +1456,11 @@ msgid "Don't ask again"
 msgstr "Ne kérdezze meg újra"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#, fuzzy
 msgid "Don't repeat last"
-msgstr "Ne ismételje az utolsókat: "
+msgid_plural "Don't repeat last"
+msgstr[0] "Ne ismételje az utolsókat: "
+msgstr[1] "Ne ismételje az utolsókat: "
 
 #: misc/Accelerators.cpp:348
 msgid "Down"
@@ -3210,6 +3218,8 @@ msgid "Remove the selected tracks from playlist"
 msgstr "A kiválasztott dalok eltávolítása a várólistából"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Dalok eltávolítása a meghajtóról"
 

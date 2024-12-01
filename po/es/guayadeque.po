@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 17:12-0300\n"
+"POT-Creation-Date: 2024-11-30 21:31-0300\n"
 "PO-Revision-Date: 2024-11-29 22:38+0100\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>, 2020\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -500,6 +500,8 @@ msgid "Are you sure to delete the selected radio searches?"
 msgstr "¿ Seguro que quiere borrar las búsquedas de estaciones seleccionadas?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -524,8 +526,11 @@ msgstr "¿ Está seguro de querer salir de la aplicación?"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
 #: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
 #: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#, fuzzy
 msgid "Artist"
-msgstr "Artista"
+msgid_plural "Artists"
+msgstr[0] "Artista"
+msgstr[1] "Artista"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -1455,8 +1460,11 @@ msgid "Don't ask again"
 msgstr "No pregutar más"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#, fuzzy
 msgid "Don't repeat last"
-msgstr "No repetir último"
+msgid_plural "Don't repeat last"
+msgstr[0] "No repetir último"
+msgstr[1] "No repetir último"
 
 #: misc/Accelerators.cpp:348
 msgid "Down"
@@ -3203,6 +3211,8 @@ msgid "Remove the selected tracks from playlist"
 msgstr "Elimina las pistas seleccionadas de la lista de reproducción"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Elimina las pistas de la unidad"
 

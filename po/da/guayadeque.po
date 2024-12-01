@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 17:12-0300\n"
+"POT-Creation-Date: 2024-11-30 21:31-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2015,2017,2020-2021\n"
 "Language-Team: Danish (http://www.transifex.com/anonbeat/guayadeque/language/"
@@ -486,6 +486,8 @@ msgid "Are you sure to delete the selected radio searches?"
 msgstr "Er du sikker på, at du ønsker at slette de valgte radiosøgninger?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -510,8 +512,11 @@ msgstr "Er du sikker på, at du ønsker at afslutte programmet?"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
 #: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
 #: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#, fuzzy
 msgid "Artist"
-msgstr "Kunstner"
+msgid_plural "Artists"
+msgstr[0] "Kunstner"
+msgstr[1] "Kunstner"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -1443,8 +1448,11 @@ msgid "Don't ask again"
 msgstr "Spørg ikke igen"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#, fuzzy
 msgid "Don't repeat last"
-msgstr "Gentag ikke sidste"
+msgid_plural "Don't repeat last"
+msgstr[0] "Gentag ikke sidste"
+msgstr[1] "Gentag ikke sidste"
 
 #: misc/Accelerators.cpp:348
 msgid "Down"
@@ -3195,6 +3203,8 @@ msgid "Remove the selected tracks from playlist"
 msgstr "Fjern de valgte numre fra afspilningslisten"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Fjern numre fra drev"
 

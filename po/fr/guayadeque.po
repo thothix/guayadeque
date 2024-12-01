@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 17:12-0300\n"
+"POT-Creation-Date: 2024-11-30 21:31-0300\n"
 "PO-Revision-Date: 2024-11-28 20:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -492,6 +492,8 @@ msgid "Are you sure to delete the selected radio searches?"
 msgstr "Êtes-vous sûr de supprimer les Recherches de Radio sélectionnées ?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -514,8 +516,11 @@ msgstr "Êtes-vous sûr de vouloir sortir du programme ?"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
 #: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
 #: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#, fuzzy
 msgid "Artist"
-msgstr "Artiste"
+msgid_plural "Artists"
+msgstr[0] "Artiste"
+msgstr[1] "Artistes"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -750,7 +755,8 @@ msgstr "Effacer la file de lecture en cours de lecture"
 #: ui/trackedit/TrackEdit.cpp:440
 msgid "Clear the search fields so it search using the music fingerprint"
 msgstr ""
-"Effacer les champs de recherche pour faire une cherche par empreinte digitale de la musique"
+"Effacer les champs de recherche pour faire une cherche par empreinte "
+"digitale de la musique"
 
 #: ui/MainFrame.cpp:1407
 msgid "Close Current Tab"
@@ -1453,8 +1459,11 @@ msgstr "Ne pas demander à nouveau"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
 #, fuzzy
+#: ui/preferences/Preferences.cpp:908
 msgid "Don't repeat last"
-msgstr "Ne pas répéter le dernier"
+msgid_plural "Don't repeat last"
+msgstr[0] "Ne pas répéter le dernier"
+msgstr[1] "Ne pas répéter les derniers"
 
 #: misc/Accelerators.cpp:348
 msgid "Down"
@@ -3201,6 +3210,8 @@ msgid "Remove the selected tracks from playlist"
 msgstr "Retirer les morceaux sélectionnés de la Liste de Lecture"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Supprimer les morceaux du disque dur"
 
