@@ -4070,15 +4070,15 @@ msgstr ""
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
-msgstr[0] "No repetir último"
-msgstr[1] "No repetir último"
+msgstr[0] "No repetir el último"
+msgstr[1] "No repetir los últimos"
 
 #: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3443
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
 msgstr[0] "Artista"
-msgstr[1] "Artista"
+msgstr[1] "Artistas"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
