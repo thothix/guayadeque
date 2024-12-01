@@ -362,7 +362,7 @@ void guNewPodcastChannelSelector::OnFilterDirectoryClicked( wxCommandEvent &even
         }
         FilterText.RemoveLast();
     }
-    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( guMainFrame::GetMainFrame(), _( "Filter Text: " ), _( "Enter the text to filter podcasts channels" ), FilterText );
+    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(guMainFrame::GetMainFrame(), wxString::Format("%s: ", _("Filter Text")), _("Enter the text to filter podcasts channels"), FilterText);
     if( EntryDialog->ShowModal() == wxID_OK )
     {
         m_Filters = wxStringTokenize( EntryDialog->GetValue(), wxT( "\t\r\n " ) );

@@ -282,7 +282,7 @@ void guLabelEditor::OnLabelDoubleClicked( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guLabelEditor::OnAddLabelClicked( wxCommandEvent &event )
 {
-    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Label Name: " ), _( "Please enter the label name" ) );
+    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Label Name")), _("Please enter the label name"));
     if( EntryDialog->ShowModal() == wxID_OK )
     {
         int AddedId;

@@ -335,7 +335,11 @@ void guShoutcastRadioProvider::OnGenreEdit( wxCommandEvent &event )
         if( RadioGenreData )
         {
             // Get the Index of the First Selected Item
-            wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( m_RadioPanel, _( "Genre Name: " ), _( "Enter the new Genre Name" ), RadioGenreData->GetName() );
+            auto * EntryDialog = new wxTextEntryDialog(
+                m_RadioPanel,
+                wxString::Format("%s: ", _("Genre Name")),
+                _("Enter the new Genre Name" ),
+                RadioGenreData->GetName());
             if( EntryDialog->ShowModal() == wxID_OK )
             {
                 m_Db->SetRadioGenre( RadioGenreData->GetId(), EntryDialog->GetValue() );

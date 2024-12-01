@@ -454,7 +454,7 @@ guDynPlayListEditor::guDynPlayListEditor( wxWindow * parent, guDynPlayList * pla
 
 	wxBoxSizer * NameSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	wxStaticText * NameStaticText = new wxStaticText( this, wxID_ANY, _( "Name:" ), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * NameStaticText = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Name")), wxDefaultPosition, wxDefaultSize, 0 );
 	NameStaticText->Wrap( -1 );
 	NameSizer->Add( NameStaticText, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxLEFT, 5 );
 

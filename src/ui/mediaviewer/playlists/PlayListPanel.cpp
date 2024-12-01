@@ -1023,8 +1023,8 @@ void guPlayListPanel::OnPLNamesRenamePlaylist( wxCommandEvent &event )
     wxTreeItemId ItemId = m_NamesTreeCtrl->GetFocusedItem();
     if( ItemId.IsOk() )
     {
-        wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Playlist Name: " ),
-          _( "Enter the new playlist name" ), m_NamesTreeCtrl->GetItemText( ItemId ) );
+        wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Playlist Name")),
+          _("Enter the new playlist name"), m_NamesTreeCtrl->GetItemText(ItemId));
         if( EntryDialog->ShowModal() == wxID_OK )
         {
             guPLNamesData * ItemData = ( guPLNamesData * ) m_NamesTreeCtrl->GetItemData( ItemId );
@@ -1160,20 +1160,16 @@ void guPlayListPanel::OnPLNamesImport( wxCommandEvent &event )
             {
                 if( PlayListFile.GetName().IsEmpty() )
                 {
-                    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Playlist Name: " ),
-                      _( "Enter the new playlist name" ), FileDialog->GetPath().AfterLast( wxT( '/' ) ).BeforeLast( wxT( '.' ) ) );
+                    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Playlist Name")),
+                      _("Enter the new playlist name"), FileDialog->GetPath().AfterLast(wxT('/')).BeforeLast(wxT('.')));
                     if( EntryDialog->ShowModal() == wxID_OK )
-                    {
                         PlayListFile.SetName( EntryDialog->GetValue() );
-                    }
+
                     delete EntryDialog;
                 }
 
-                //
                 if( PlayListFile.GetName().IsEmpty() )
-                {
                     PlayListFile.SetName( _( "New Playlist" ) );
-                }
 
                 wxArrayInt Songs;
                 for( int Index = 0; Index < Count; Index++ )

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 23:53-0300\n"
+"POT-Creation-Date: 2024-12-01 15:28-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/"
@@ -471,8 +471,8 @@ msgstr ""
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
-#: ui/mediaviewer/treeview/TreePanel.cpp:1211 ui/radios/ShoutcastRadio.cpp:365
-#: ui/radios/ShoutcastRadio.cpp:444 ui/podcasts/PodcastsPanel.cpp:1241
+#: ui/mediaviewer/treeview/TreePanel.cpp:1211 ui/radios/ShoutcastRadio.cpp:369
+#: ui/radios/ShoutcastRadio.cpp:448 ui/podcasts/PodcastsPanel.cpp:1241
 #: ui/podcasts/PodcastsPanel.cpp:1616
 msgid "Confirm"
 msgstr "Potvrdiť"
@@ -655,13 +655,16 @@ msgid "Lyrics Source Editor"
 msgstr "Editor zdrojov textov"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
+#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
-#: ui/radios/RadioEditor.cpp:45 ui/preferences/Preferences.cpp:2010
-#: ui/preferences/Preferences.cpp:2129 ui/preferences/Preferences.cpp:2249
-msgid "Name:"
-msgstr "Meno:"
+#: ui/radios/RadioEditor.cpp:45 ui/radios/RadioPanel.cpp:311
+#: ui/preferences/Preferences.cpp:2010 ui/preferences/Preferences.cpp:2129
+#: ui/preferences/Preferences.cpp:2249
+msgid "Name"
+msgstr "Meno"
 
 #: ui/lyrics/LyricsPanel.cpp:2002
 msgid "Type:"
@@ -1103,8 +1106,8 @@ msgstr "Skopíruj zvolený popis do všetkých položiek"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 #: ui/mediaviewer/library/TaListBox.cpp:227
-msgid "Label Name: "
-msgstr "Názov menovky: "
+msgid "Label Name"
+msgstr "Názov menovky"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 msgid "Please enter the label name"
@@ -1240,7 +1243,7 @@ msgstr "Kopírovať názov žánru do všetkých upravovaných skladieb"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3369
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3367
 #: ui/player/PlayList.cpp:1792
 msgid "Genre"
 msgstr "Žáner"
@@ -1417,7 +1420,7 @@ msgid "Album Artist"
 msgstr "Autor albumu"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:917
-#: ui/preferences/Preferences.cpp:3443
+#: ui/preferences/Preferences.cpp:3441
 msgid "or"
 msgstr "alebo"
 
@@ -1693,12 +1696,6 @@ msgstr "Chyba pri odstraňovaní priečinka  "
 msgid "Error"
 msgstr "Chyba"
 
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
-#: ui/radios/RadioPanel.cpp:311
-msgid "Name"
-msgstr "Meno"
-
 #: ui/filebrowser/FileBrowser.cpp:750
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
@@ -1740,7 +1737,7 @@ msgstr "Vymazať vybrané súbory"
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1441
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
 #: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2132
 msgid "UnNamed"
@@ -2355,20 +2352,20 @@ msgstr "Naozaj chcete odstrániť obaly zvolených albumov?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1334
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
 #: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2280
 msgid "Tracks Labels Editor"
 msgstr "Editor menoviek skladieb"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1676
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1608
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1604
 #: ui/mediaviewer/treeview/TreePanel.cpp:1574
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:1088
 msgid "Field Editor"
 msgstr "Editor polí"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
 #: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
@@ -2378,7 +2375,7 @@ msgstr ""
 "Zvolené skladby budú nenávratne odstránené."
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
 #: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Odstrániť skladby zo zariadenia"
@@ -2801,11 +2798,12 @@ msgstr "Upraviť aktuálne zvolený filter"
 msgid "New Filter"
 msgstr "Nový filter"
 
-#: ui/mediaviewer/MediaViewer.cpp:947
+#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2820
+#: ui/preferences/Preferences.cpp:2840
 msgid "Collection"
 msgstr "Zbierka"
 
-#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2973
+#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2971
 msgid "Select library path"
 msgstr "Nastaviť cestu knižnice"
 
@@ -3127,8 +3125,8 @@ msgstr "Nastaviť ako Filter Zakázaných"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1026
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1163
-msgid "Playlist Name: "
-msgstr "Názov Playlistu:"
+msgid "Playlist Name"
+msgstr "Názov Playlistu"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1027
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1164
@@ -3140,11 +3138,11 @@ msgid "Are you sure to delete the selected Playlist?"
 msgstr "Naozaj chcete odstrániť zvolený Playlist"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1147
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1220
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1216
 msgid "Select the playlist file"
 msgstr "Zobraziť aktuálne definované filtre"
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1175
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1172
 msgid "New Playlist"
 msgstr "Nový Playlist"
 
@@ -3675,19 +3673,19 @@ msgstr "Aktualizovať stanice rádia"
 msgid "Searches"
 msgstr "Hľadania"
 
-#: ui/radios/ShoutcastRadio.cpp:338
-msgid "Genre Name: "
-msgstr "Názov žánru:"
+#: ui/radios/ShoutcastRadio.cpp:340
+msgid "Genre Name"
+msgstr "Názov žánru"
 
-#: ui/radios/ShoutcastRadio.cpp:338
+#: ui/radios/ShoutcastRadio.cpp:341
 msgid "Enter the new Genre Name"
 msgstr "Zadajte názov nového žánru:"
 
-#: ui/radios/ShoutcastRadio.cpp:364
+#: ui/radios/ShoutcastRadio.cpp:368
 msgid "Are you sure to delete the selected radio genres?"
 msgstr "Naozaj chcete odstrániť zvolené žánre rádia?"
 
-#: ui/radios/ShoutcastRadio.cpp:443
+#: ui/radios/ShoutcastRadio.cpp:447
 msgid "Are you sure to delete the selected radio searches?"
 msgstr "naozaj chcete odstrániť zvolené hľadania rádií?"
 
@@ -4076,7 +4074,7 @@ msgstr "Skladby vždy pridané"
 msgid "Max played tracks kept in playlist"
 msgstr "Maximálny počet skladieb uchovávaných v Playliste"
 
-#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3440
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
@@ -4084,7 +4082,7 @@ msgstr[0] "Neopakovať posledné"
 msgstr[1] "Neopakovať posledné"
 msgstr[2] "Neopakovať posledné"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3443
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
@@ -4448,47 +4446,43 @@ msgid "Key"
 msgstr "Kľúč"
 
 #: ui/preferences/Preferences.cpp:2820 ui/preferences/Preferences.cpp:2840
-msgid "Collection: "
-msgstr "Zbierka: "
-
-#: ui/preferences/Preferences.cpp:2820 ui/preferences/Preferences.cpp:2840
 msgid "Enter the collection name"
 msgstr "Zdajte meno zbierky"
 
-#: ui/preferences/Preferences.cpp:2951
+#: ui/preferences/Preferences.cpp:2949
 msgid "Change library path"
 msgstr "Zmeniť cestu knižnice"
 
-#: ui/preferences/Preferences.cpp:3029 ui/preferences/Preferences.cpp:3049
-msgid "Word: "
-msgstr "Slovo: "
+#: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
+msgid "Word"
+msgstr "Slovo"
 
-#: ui/preferences/Preferences.cpp:3029 ui/preferences/Preferences.cpp:3049
+#: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
 msgid "Enter the text to find covers"
 msgstr "Zadajte text na nájdenie obalov"
 
-#: ui/preferences/Preferences.cpp:3369
+#: ui/preferences/Preferences.cpp:3367
 #, fuzzy
 msgid "Enter the genre to disable"
 msgstr "Zadajte text na filtrovanie"
 
-#: ui/preferences/Preferences.cpp:3570 ui/preferences/Preferences.cpp:3601
-msgid "Filter: "
-msgstr "Filter: "
+#: ui/preferences/Preferences.cpp:3568 ui/preferences/Preferences.cpp:3599
+msgid "Filter"
+msgstr "Filter"
 
-#: ui/preferences/Preferences.cpp:3571
+#: ui/preferences/Preferences.cpp:3569
 msgid "Enter the text to filter"
 msgstr "Zadajte text na filtrovanie"
 
-#: ui/preferences/Preferences.cpp:3601
+#: ui/preferences/Preferences.cpp:3599
 msgid "Edit the text to filter"
 msgstr "Upraviť text na filtrovanie"
 
-#: ui/preferences/Preferences.cpp:4127
+#: ui/preferences/Preferences.cpp:4125
 msgid "Select path"
 msgstr "Vyberte cestu"
 
-#: ui/preferences/Preferences.cpp:4305
+#: ui/preferences/Preferences.cpp:4303
 msgid "Key used by '"
 msgstr "Klávesa používaná '"
 
@@ -4523,8 +4517,8 @@ msgid "%u Categories, %u Channels"
 msgstr "%u kategórií, %u kanálov"
 
 #: ui/podcasts/NewChannel.cpp:365
-msgid "Filter Text: "
-msgstr "Text filtra: "
+msgid "Filter Text"
+msgstr "Text filtra"
 
 #: ui/podcasts/NewChannel.cpp:365
 msgid "Enter the text to filter podcasts channels"

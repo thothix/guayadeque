@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 23:53-0300\n"
+"POT-Creation-Date: 2024-12-01 15:28-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: Adriaan Callaerts <adriaan.callaerts@gmail.com>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/projects/p/"
@@ -464,8 +464,8 @@ msgstr ""
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
-#: ui/mediaviewer/treeview/TreePanel.cpp:1211 ui/radios/ShoutcastRadio.cpp:365
-#: ui/radios/ShoutcastRadio.cpp:444 ui/podcasts/PodcastsPanel.cpp:1241
+#: ui/mediaviewer/treeview/TreePanel.cpp:1211 ui/radios/ShoutcastRadio.cpp:369
+#: ui/radios/ShoutcastRadio.cpp:448 ui/podcasts/PodcastsPanel.cpp:1241
 #: ui/podcasts/PodcastsPanel.cpp:1616
 msgid "Confirm"
 msgstr "Bevestig"
@@ -648,13 +648,16 @@ msgid "Lyrics Source Editor"
 msgstr "Bronnen"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
+#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
-#: ui/radios/RadioEditor.cpp:45 ui/preferences/Preferences.cpp:2010
-#: ui/preferences/Preferences.cpp:2129 ui/preferences/Preferences.cpp:2249
-msgid "Name:"
-msgstr "Naam:"
+#: ui/radios/RadioEditor.cpp:45 ui/radios/RadioPanel.cpp:311
+#: ui/preferences/Preferences.cpp:2010 ui/preferences/Preferences.cpp:2129
+#: ui/preferences/Preferences.cpp:2249
+msgid "Name"
+msgstr "Naam"
 
 #: ui/lyrics/LyricsPanel.cpp:2002
 msgid "Type:"
@@ -1096,8 +1099,8 @@ msgstr "Kopieer de labelselectie naar alle nummers"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 #: ui/mediaviewer/library/TaListBox.cpp:227
-msgid "Label Name: "
-msgstr "Labelnaam: "
+msgid "Label Name"
+msgstr "Labelnaam"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 msgid "Please enter the label name"
@@ -1233,7 +1236,7 @@ msgstr "Kopieer het genre naar alle nummers die momenteel bewerkt worden"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3369
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3367
 #: ui/player/PlayList.cpp:1792
 msgid "Genre"
 msgstr "Genre"
@@ -1411,7 +1414,7 @@ msgid "Album Artist"
 msgstr "Album Artiest"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:917
-#: ui/preferences/Preferences.cpp:3443
+#: ui/preferences/Preferences.cpp:3441
 msgid "or"
 msgstr "en"
 
@@ -1690,12 +1693,6 @@ msgstr "Kon map niet wissen"
 msgid "Error"
 msgstr "Fout"
 
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
-#: ui/radios/RadioPanel.cpp:311
-msgid "Name"
-msgstr "Naam"
-
 #: ui/filebrowser/FileBrowser.cpp:750
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
@@ -1737,7 +1734,7 @@ msgstr "Verwijder de geselecteerde bestanden"
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1441
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
 #: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2132
 msgid "UnNamed"
@@ -2352,20 +2349,20 @@ msgstr "Weet u zeker dat u de geselecteerde albumhoes wil wissen?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1334
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
 #: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2280
 msgid "Tracks Labels Editor"
 msgstr "Nummer Labels Bewerken"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1676
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1608
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1604
 #: ui/mediaviewer/treeview/TreePanel.cpp:1574
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:1088
 msgid "Field Editor"
 msgstr "Veld Bewerken"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
 #: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
@@ -2375,7 +2372,7 @@ msgstr ""
 "Dit zal de geselecteerde nummers definitief verwijderen."
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
 #: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Verwijder nummers van schijf"
@@ -2798,11 +2795,12 @@ msgstr "Bewerk de geselecteerde filter"
 msgid "New Filter"
 msgstr "Nieuwe Filter"
 
-#: ui/mediaviewer/MediaViewer.cpp:947
+#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2820
+#: ui/preferences/Preferences.cpp:2840
 msgid "Collection"
 msgstr "Verzameling"
 
-#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2973
+#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2971
 msgid "Select library path"
 msgstr "Selecteer bibliotheekpad"
 
@@ -3124,8 +3122,8 @@ msgstr "Stel in als 'Weigeren' filter"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1026
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1163
-msgid "Playlist Name: "
-msgstr "Naam van de Afspeellijst: "
+msgid "Playlist Name"
+msgstr "Naam van de Afspeellijst"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1027
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1164
@@ -3137,11 +3135,11 @@ msgid "Are you sure to delete the selected Playlist?"
 msgstr "Weet u zeker dat u de geselecteerde afspeellijst wil verwijderen?"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1147
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1220
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1216
 msgid "Select the playlist file"
 msgstr "Selecteer het afspeellijst-bestand"
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1175
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1172
 msgid "New Playlist"
 msgstr "Nieuwe Afspeellijst"
 
@@ -3672,19 +3670,19 @@ msgstr "Vernieuw Radiozenders"
 msgid "Searches"
 msgstr "Zoekopdrachten"
 
-#: ui/radios/ShoutcastRadio.cpp:338
-msgid "Genre Name: "
-msgstr "Genrenaam:"
+#: ui/radios/ShoutcastRadio.cpp:340
+msgid "Genre Name"
+msgstr "Genrenaam"
 
-#: ui/radios/ShoutcastRadio.cpp:338
+#: ui/radios/ShoutcastRadio.cpp:341
 msgid "Enter the new Genre Name"
 msgstr "Nieuwe genrenaam ingeven"
 
-#: ui/radios/ShoutcastRadio.cpp:364
+#: ui/radios/ShoutcastRadio.cpp:368
 msgid "Are you sure to delete the selected radio genres?"
 msgstr "Weet u zeker dat u het geselecteerde radiogenre wil verwijderen?"
 
-#: ui/radios/ShoutcastRadio.cpp:443
+#: ui/radios/ShoutcastRadio.cpp:447
 msgid "Are you sure to delete the selected radio searches?"
 msgstr "Weet u zeker dat u geselecteerde radio-zoekopdrachten wil wissen?"
 
@@ -4077,14 +4075,14 @@ msgstr "nummers per keer toevoegen"
 msgid "Max played tracks kept in playlist"
 msgstr "is het maximum aantal nummers die behouden blijven in de wachtrij"
 
-#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3440
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
 msgstr[0] "Herhaal geen enkele van de laatste"
 msgstr[1] "Herhaal geen enkele van de laatste"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3443
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
@@ -4449,47 +4447,43 @@ msgid "Key"
 msgstr "Sneltoets"
 
 #: ui/preferences/Preferences.cpp:2820 ui/preferences/Preferences.cpp:2840
-msgid "Collection: "
-msgstr "Verzameling: "
-
-#: ui/preferences/Preferences.cpp:2820 ui/preferences/Preferences.cpp:2840
 msgid "Enter the collection name"
 msgstr "Voer de naam van de verzameling in"
 
-#: ui/preferences/Preferences.cpp:2951
+#: ui/preferences/Preferences.cpp:2949
 msgid "Change library path"
 msgstr "Verander pad naar bibliotheek"
 
-#: ui/preferences/Preferences.cpp:3029 ui/preferences/Preferences.cpp:3049
-msgid "Word: "
-msgstr "Woord:"
+#: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
+msgid "Word"
+msgstr "Woord"
 
-#: ui/preferences/Preferences.cpp:3029 ui/preferences/Preferences.cpp:3049
+#: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
 msgid "Enter the text to find covers"
 msgstr "Voer de tekst in om hoezen te vinden"
 
-#: ui/preferences/Preferences.cpp:3369
+#: ui/preferences/Preferences.cpp:3367
 #, fuzzy
 msgid "Enter the genre to disable"
 msgstr "Te filteren tekst invoeren"
 
-#: ui/preferences/Preferences.cpp:3570 ui/preferences/Preferences.cpp:3601
-msgid "Filter: "
-msgstr "Filter:"
+#: ui/preferences/Preferences.cpp:3568 ui/preferences/Preferences.cpp:3599
+msgid "Filter"
+msgstr "Filter"
 
-#: ui/preferences/Preferences.cpp:3571
+#: ui/preferences/Preferences.cpp:3569
 msgid "Enter the text to filter"
 msgstr "Te filteren tekst invoeren"
 
-#: ui/preferences/Preferences.cpp:3601
+#: ui/preferences/Preferences.cpp:3599
 msgid "Edit the text to filter"
 msgstr "Te filteren tekst wijzigen"
 
-#: ui/preferences/Preferences.cpp:4127
+#: ui/preferences/Preferences.cpp:4125
 msgid "Select path"
 msgstr "Selecteer pad"
 
-#: ui/preferences/Preferences.cpp:4305
+#: ui/preferences/Preferences.cpp:4303
 msgid "Key used by '"
 msgstr "Sneltoets in gebruik voor '"
 
@@ -4524,8 +4518,8 @@ msgid "%u Categories, %u Channels"
 msgstr "%u Categoriën, %u Kanalen"
 
 #: ui/podcasts/NewChannel.cpp:365
-msgid "Filter Text: "
-msgstr "Filter Tekst:"
+msgid "Filter Text"
+msgstr "Filter Tekst"
 
 #: ui/podcasts/NewChannel.cpp:365
 msgid "Enter the text to filter podcasts channels"

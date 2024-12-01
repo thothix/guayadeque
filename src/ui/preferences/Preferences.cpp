@@ -2007,7 +2007,7 @@ void guPrefDialog::BuildLinksPage()
 	m_LinksUrlTextCtrl = new wxTextCtrl( m_LinksPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	LinksFieldsSizer->Add( m_LinksUrlTextCtrl, 1, wxALL|wxEXPAND, 5 );
 
-	wxStaticText * LinkNameStaticText = new wxStaticText( m_LinksPanel, wxID_ANY, _("Name:"), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * LinkNameStaticText = new wxStaticText( m_LinksPanel, wxID_ANY, wxString::Format("%s:", _("Name")), wxDefaultPosition, wxDefaultSize, 0 );
 	LinkNameStaticText->Wrap( -1 );
 	LinksFieldsSizer->Add( LinkNameStaticText, 0, wxALL|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
 
@@ -2126,7 +2126,7 @@ void guPrefDialog::BuildCommandsPage()
 	m_CmdTextCtrl = new wxTextCtrl( m_CmdPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	CmdFieldsSizer->Add( m_CmdTextCtrl, 1, wxEXPAND|wxTOP|wxBOTTOM|wxRIGHT, 5 );
 
-	wxStaticText * CmdNameStaticText = new wxStaticText( m_CmdPanel, wxID_ANY, _( "Name:" ), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * CmdNameStaticText = new wxStaticText( m_CmdPanel, wxID_ANY, wxString::Format("%s:", _("Name")), wxDefaultPosition, wxDefaultSize, 0 );
 	CmdNameStaticText->Wrap( -1 );
 	CmdFieldsSizer->Add( CmdNameStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxALL, 5 );
 
@@ -2246,7 +2246,7 @@ void guPrefDialog::BuildCopyToPage()
 	CopyToFieldsSizer->SetFlexibleDirection( wxBOTH );
 	CopyToFieldsSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	wxStaticText * CopyToNameStaticText = new wxStaticText( m_CopyPanel, wxID_ANY, _( "Name:" ), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * CopyToNameStaticText = new wxStaticText( m_CopyPanel, wxID_ANY, wxString::Format("%s:", _("Name")), wxDefaultPosition, wxDefaultSize, 0 );
 	CopyToNameStaticText->Wrap( -1 );
 	CopyToFieldsSizer->Add( CopyToNameStaticText, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT|wxLEFT|wxRIGHT, 5 );
 
@@ -2817,7 +2817,7 @@ void guPrefDialog::OnLibCollectDClicked( wxCommandEvent& event )
     if( CollectIndex != wxNOT_FOUND &&
         ( m_Collections[ CollectIndex ].m_Type == guMEDIA_COLLECTION_TYPE_NORMAL ) )
     {
-        wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Collection: " ), _( "Enter the collection name" ), m_LibCollectListBox->GetString( CollectIndex ) );
+        wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Collection")), _("Enter the collection name"), m_LibCollectListBox->GetString(CollectIndex));
         if( EntryDialog )
         {
             if( EntryDialog->ShowModal() == wxID_OK )
@@ -2837,7 +2837,7 @@ void guPrefDialog::OnLibCollectDClicked( wxCommandEvent& event )
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnLibAddCollectClick( wxCommandEvent& event )
 {
-    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Collection: " ), _( "Enter the collection name" ), wxEmptyString );
+    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Collection")), _("Enter the collection name"), wxEmptyString);
     if( EntryDialog )
     {
         if( EntryDialog->ShowModal() == wxID_OK )
@@ -2849,9 +2849,7 @@ void guPrefDialog::OnLibAddCollectClick( wxCommandEvent& event )
                 guMediaCollection * Collection = new guMediaCollection();
                 Collection->m_Name = NewName;
                 if( m_Collections.Count() )
-                {
                     Collection->m_CoverWords = m_Collections[ 0 ].m_CoverWords;
-                }
                 else
                 {
                     Collection->m_CoverWords.Add( wxT( "cover" ) );
@@ -3026,7 +3024,7 @@ void guPrefDialog::OnLibCoverDClicked( wxCommandEvent& event )
     guLogMessage( wxT( "guPrefDialog::OnLibCoverDClicked( %i )" ), CoverIndex );
     if( CoverIndex != wxNOT_FOUND )
     {
-        wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Word: " ), _( "Enter the text to find covers" ), m_LibCoverListBox->GetString( CoverIndex ) );
+        wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Word")), _("Enter the text to find covers"), m_LibCoverListBox->GetString(CoverIndex));
         if( EntryDialog )
         {
             if( EntryDialog->ShowModal() == wxID_OK )
@@ -3046,7 +3044,7 @@ void guPrefDialog::OnLibCoverDClicked( wxCommandEvent& event )
 // -------------------------------------------------------------------------------- //
 void guPrefDialog::OnLibAddCoverBtnClick( wxCommandEvent& event )
 {
-    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Word: " ), _( "Enter the text to find covers" ), wxEmptyString );
+    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, wxString::Format("%s: ", _("Word")), _( "Enter the text to find covers" ), wxEmptyString );
     if( EntryDialog )
     {
         if( EntryDialog->ShowModal() == wxID_OK )
@@ -3567,7 +3565,7 @@ void guPrefDialog::OnOnlineAddBtnClick( wxCommandEvent& event )
 {
     auto *EntryDialog = new wxTextEntryDialog(
             this,
-            _("Filter: "),
+            _("Filter"),
             _("Enter the text to filter"),
             wxEmptyString);
 
@@ -3598,7 +3596,7 @@ void guPrefDialog::OnOnlineListBoxDClicked( wxCommandEvent &event )
     int index = event.GetInt();
     if( index != wxNOT_FOUND )
     {
-        wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Filter: " ), _( "Edit the text to filter" ), m_OnlineFiltersListBox->GetString( index ) );
+        wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Filter")), _("Edit the text to filter"), m_OnlineFiltersListBox->GetString(index));
         if( EntryDialog )
         {
             if( EntryDialog->ShowModal() == wxID_OK )
