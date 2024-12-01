@@ -19,6 +19,11 @@ Unreleased (2024-11-xx)
   * "Randomize" playlist feature renamed to "Shuffle".
   * Added translation to source and target lyrics options.
   * Lots of translation refactorings (all languages).
+  * Change the Guayadeque build to update the translations .po files
+    automatically (after the .pot generation). This will:
+    - Update all .po files with the new messages from .pot file to further translation.
+    - Comment out messages in the .po files that aren't in the .pot file anymore.
+    - Order the .po messages alphabetically.
   * Updated French, Greek and Italian translations. Thanks to filochard.
   * Updated German translations. Thanks to martinkg.
   * Updated Portuguese and Brazilian Portuguese translations.
