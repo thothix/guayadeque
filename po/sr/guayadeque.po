@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 17:12-0300\n"
+"POT-Creation-Date: 2024-11-30 21:31-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/guayadeque/"
@@ -489,6 +489,8 @@ msgid "Are you sure to delete the selected radio searches?"
 msgstr "Да ли сигурно желиш да обришеш изабране радио претраге?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -513,8 +515,12 @@ msgstr "Да ли сигурно желиш да изађеш из аплика�
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
 #: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
 #: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#, fuzzy
 msgid "Artist"
-msgstr "Извођач"
+msgid_plural "Artists"
+msgstr[0] "Извођач"
+msgstr[1] "Извођач"
+msgstr[2] "Извођач"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -1451,8 +1457,12 @@ msgid "Don't ask again"
 msgstr "Не питај поново"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#, fuzzy
 msgid "Don't repeat last"
-msgstr "Не понављај последње"
+msgid_plural "Don't repeat last"
+msgstr[0] "Не понављај последње"
+msgstr[1] "Не понављај последње"
+msgstr[2] "Не понављај последње"
 
 #: misc/Accelerators.cpp:348
 msgid "Down"
@@ -3208,6 +3218,8 @@ msgid "Remove the selected tracks from playlist"
 msgstr "Уклони изабране нумере са листе"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Обриши нумере са диска"
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 17:12-0300\n"
+"POT-Creation-Date: 2024-11-30 21:31-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Hreinn Jónsson <hreinnjons@gmail.com>, 2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/anonbeat/"
@@ -489,6 +489,8 @@ msgid "Are you sure to delete the selected radio searches?"
 msgstr "Ertu viss um að þú viljir eyða þessum útvarps leitum?"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -513,8 +515,11 @@ msgstr "Ertu viss um að þú viljir hætta í forritinu"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
 #: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
 #: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#, fuzzy
 msgid "Artist"
-msgstr "Flytjandi"
+msgid_plural "Artists"
+msgstr[0] "Flytjandi"
+msgstr[1] "Flytjandi"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -1446,8 +1451,11 @@ msgid "Don't ask again"
 msgstr "Ekki spyrja aftur"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#, fuzzy
 msgid "Don't repeat last"
-msgstr "Ekki endurtaka síðustu"
+msgid_plural "Don't repeat last"
+msgstr[0] "Ekki endurtaka síðustu"
+msgstr[1] "Ekki endurtaka síðustu"
 
 #: misc/Accelerators.cpp:348
 msgid "Down"
@@ -3198,6 +3206,8 @@ msgid "Remove the selected tracks from playlist"
 msgstr "Fjarlægja valin lög úr lagalista"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Eyða lögum af drifi"
 
