@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:02-0300\n"
+"POT-Creation-Date: 2024-12-01 16:18-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2410,7 +2410,10 @@ msgid "Create Best of Playlist"
 msgstr ""
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
-msgid "Create a playlist with the best of this aretist"
+#: ui/mediaviewer/library/AAListBox.cpp:210
+#: ui/mediaviewer/library/SoListBox.cpp:655
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
+msgid "Create a playlist with the best of this artist"
 msgstr ""
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
@@ -2452,12 +2455,6 @@ msgstr ""
 
 #: ui/mediaviewer/library/AAListBox.cpp:150
 msgid "Play current selected album artist"
-msgstr ""
-
-#: ui/mediaviewer/library/AAListBox.cpp:210
-#: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
-msgid "Create a playlist with the best of this artist"
 msgstr ""
 
 #: ui/mediaviewer/library/PcListBox.cpp:112

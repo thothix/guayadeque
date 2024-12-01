@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:01-0300\n"
+"POT-Creation-Date: 2024-12-01 16:18-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/guayadeque/"
@@ -2427,8 +2427,11 @@ msgid "Create Best of Playlist"
 msgstr "Stvori pametnu listu izvođenja"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
+#: ui/mediaviewer/library/AAListBox.cpp:210
+#: ui/mediaviewer/library/SoListBox.cpp:655
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 #, fuzzy
-msgid "Create a playlist with the best of this aretist"
+msgid "Create a playlist with the best of this artist"
 msgstr "Stvori pametnu listu izvođenja iz ove pjesme"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
@@ -2471,13 +2474,6 @@ msgstr "Dodaj odabrane žanrove na listu izvođenja"
 #: ui/mediaviewer/library/AAListBox.cpp:150
 msgid "Play current selected album artist"
 msgstr "Pokreni trenutno odabranog izvođača"
-
-#: ui/mediaviewer/library/AAListBox.cpp:210
-#: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
-#, fuzzy
-msgid "Create a playlist with the best of this artist"
-msgstr "Stvori pametnu listu izvođenja iz ove pjesme"
 
 #: ui/mediaviewer/library/PcListBox.cpp:112
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:645
