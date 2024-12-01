@@ -7,6 +7,6 @@ cat ../po/external.pot >>${POT}
 mv ${POT} ../po
 
 cd ../po
-find . -name "*.po" | xargs -I{} msgmerge -s -U {} ${POT} 2>/dev/null
+find . -name "*.po" | xargs -I{} msgmerge -U {} ${POT} 2>/dev/null
 
 cd ..

@@ -23,7 +23,6 @@ Unreleased (2024-11-xx)
     automatically (after the .pot generation). This will:
     - Update all .po files with the new messages from .pot file to further translation.
     - Comment out messages in the .po files that aren't in the .pot file anymore.
-    - Order the .po messages alphabetically.
   * Updated French, Greek and Italian translations. Thanks to filochard.
   * Updated German translations. Thanks to martinkg.
   * Updated Portuguese and Brazilian Portuguese translations.
