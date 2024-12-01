@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 21:31-0300\n"
+"POT-Creation-Date: 2024-12-01 00:19-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -587,12 +587,9 @@ msgstr ""
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
-#: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1777
 msgid "Artist"
-msgid_plural "Artists"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:390
 #: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:847
@@ -4041,6 +4038,12 @@ msgstr ""
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3443
+msgid "artist"
+msgid_plural "artists"
 msgstr[0] ""
 msgstr[1] ""
 

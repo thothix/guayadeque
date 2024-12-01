@@ -914,7 +914,7 @@ void guPrefDialog::BuildPlaybackPage()
 	SmartPlayFilterSizer->Add( m_SmartPlayArtistsSpinCtrl, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT, 5 );
 
 	m_SmartPlayArtistLabel = new wxStaticText(m_PlayPanel, wxID_ANY, wxString::Format("%s %s",
-		wxPLURAL("Artist", "Artists", filter_artists).Lower(), _("or")), wxDefaultPosition, wxDefaultSize, 0);
+		wxPLURAL("artist", "artists", filter_artists), _("or")), wxDefaultPosition, wxDefaultSize, 0);
 	m_SmartPlayArtistLabel->Wrap( -1 );
 	SmartPlayFilterSizer->Add( m_SmartPlayArtistLabel, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT, 5 );
 
@@ -3440,7 +3440,7 @@ void guPrefDialog::OnSmartPlayArtistsChanged(wxCommandEvent &event)
 {
     int value = m_SmartPlayArtistsSpinCtrl->GetValue();
 	m_SmartPlayFilterLabel->SetLabel(wxPLURAL("Don't repeat last", "Don't repeat last", value));
-	m_SmartPlayArtistLabel->SetLabel(wxString::Format("%s %s", wxPLURAL("Artist", "Artists", value).Lower(), _("or")));
+	m_SmartPlayArtistLabel->SetLabel(wxString::Format("%s %s", wxPLURAL("artist", "artists", value), _("or")));
 	m_SmartPlayFilterLabel->GetParent()->GetSizer()->Layout();
 }
 
