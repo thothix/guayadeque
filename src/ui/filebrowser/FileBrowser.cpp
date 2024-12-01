@@ -555,7 +555,7 @@ void guFileBrowserDirCtrl::FolderDelete( void )
         }
         else
         {
-            wxMessageBox( _( "Error deleting the folder " ) + FolderData->m_path,
+            wxMessageBox(wxString::Format("%s ", _("Error deleting the folder")) + FolderData->m_path,
                 _( "Error" ), wxICON_ERROR | wxOK, this );
         }
         //m_Db->DoCleanUp();
@@ -1997,14 +1997,14 @@ void guFileBrowser::OnItemsDelete( wxCommandEvent &event )
                 }
                 if( Error )
                 {
-                    if( wxMessageBox( _( "There was an error deleting " ) + wxFileNameFromPath( Files[ Index ] ) +
-                                      _( "\nContinue deleting?" ),
-                                     _( "Continue" ),
-                                     wxICON_QUESTION | wxYES_NO, this ) == wxNO )
+                    if (wxMessageBox(
+                        wxString::Format("%s ", _("There was an error deleting")) + wxFileNameFromPath(Files[Index]) +
+                        _("\nContinue deleting?"),
+                        _("Continue"),
+                        wxICON_QUESTION | wxYES_NO, this) == wxNO)
                     {
                         break;
                     }
-                    //Error = false;
                 }
             }
             wxString CurrentFolder = m_DirCtrl->GetPath();

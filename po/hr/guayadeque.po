@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 15:28-0300\n"
+"POT-Creation-Date: 2024-12-01 16:01-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/guayadeque/"
@@ -43,7 +43,7 @@ msgstr "Forum zajednice"
 
 #: misc/Accelerators.cpp:114 ui/mediaviewer/library/ArListBox.cpp:195
 #: ui/mediaviewer/library/SoListBox.cpp:591
-#: ui/mediaviewer/library/AlListBox.cpp:302
+#: ui/mediaviewer/library/AlListBox.cpp:300
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
@@ -67,7 +67,7 @@ msgstr "Uredi pjesme"
 #: ui/mediaviewer/library/PcListBox.cpp:118
 #: ui/mediaviewer/library/SoListBox.cpp:525
 #: ui/mediaviewer/library/RaListBox.cpp:150
-#: ui/mediaviewer/library/AlListBox.cpp:272
+#: ui/mediaviewer/library/AlListBox.cpp:270
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:340
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1933
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068
@@ -118,7 +118,7 @@ msgstr "Pomoć"
 #: ui/mediaviewer/library/PcListBox.cpp:111
 #: ui/mediaviewer/library/SoListBox.cpp:518
 #: ui/mediaviewer/library/RaListBox.cpp:143
-#: ui/mediaviewer/library/AlListBox.cpp:266
+#: ui/mediaviewer/library/AlListBox.cpp:264
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2064
@@ -150,7 +150,7 @@ msgstr "Pusti stream"
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:249
+#: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
 #: ui/player/PlayList.cpp:1699 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
@@ -200,7 +200,7 @@ msgstr "Spremi izgled"
 #: ui/mediaviewer/library/PcListBox.cpp:165
 #: ui/mediaviewer/library/SoListBox.cpp:646
 #: ui/mediaviewer/library/RaListBox.cpp:197
-#: ui/mediaviewer/library/AlListBox.cpp:338
+#: ui/mediaviewer/library/AlListBox.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2110
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
@@ -493,7 +493,7 @@ msgid "Generate Smart Playlist"
 msgstr "Generiraj pametnu listu izvođenja"
 
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
-#: ui/mediaviewer/library/AlListBox.cpp:492
+#: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
 #: ui/preferences/Preferences.cpp:1729 ui/preferences/Preferences.cpp:1824
 #: ui/player/PlayerFilters.cpp:107
@@ -636,7 +636,7 @@ msgid "No lyrics found"
 msgstr "Tekst nije nađen"
 
 #: ui/lyrics/LyricsPanel.cpp:812
-msgid "Lyrics from "
+msgid "Lyrics from"
 msgstr "Tekst od"
 
 #: ui/lyrics/LyricsPanel.cpp:1969
@@ -648,7 +648,7 @@ msgid "Lyrics Source Editor"
 msgstr "Urednik izvorišta teksta"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -1247,7 +1247,7 @@ msgstr "Kopirati godinu na sve pjesme koje uređujete"
 
 #: ui/trackedit/TrackEdit.cpp:276 ui/trackedit/TrackEdit.cpp:533
 #: ui/filebrowser/FileRenamer.cpp:87 ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:320
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:423
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:743
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:56
@@ -1429,7 +1429,7 @@ msgstr "Vidi sistemske datoteke"
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:249
+#: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1699
 msgid "Add commands in preferences"
 msgstr "Dodaj naredbe u postavkama"
@@ -1439,7 +1439,7 @@ msgstr "Dodaj naredbe u postavkama"
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
 #: ui/mediaviewer/library/SoListBox.cpp:460
-#: ui/mediaviewer/library/AlListBox.cpp:252
+#: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:279
 #: ui/preferences/Preferences.cpp:2067 ui/player/PlayList.cpp:1702
 msgid "Commands"
@@ -1464,7 +1464,7 @@ msgstr "Dodaj odabranu mapu na listu izvođenja"
 #: ui/mediaviewer/library/PcListBox.cpp:127
 #: ui/mediaviewer/library/SoListBox.cpp:534
 #: ui/mediaviewer/library/RaListBox.cpp:159
-#: ui/mediaviewer/library/AlListBox.cpp:280
+#: ui/mediaviewer/library/AlListBox.cpp:278
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:347
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1940
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2075
@@ -1512,7 +1512,7 @@ msgstr "Dodaj odabrane pjesme na listu poslije trenutne pjesme"
 #: ui/mediaviewer/library/PcListBox.cpp:134
 #: ui/mediaviewer/library/SoListBox.cpp:541
 #: ui/mediaviewer/library/RaListBox.cpp:166
-#: ui/mediaviewer/library/AlListBox.cpp:286
+#: ui/mediaviewer/library/AlListBox.cpp:284
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:353
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1946
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2081
@@ -1560,7 +1560,7 @@ msgstr "Dodaj odabrane pjesme na listu poslije trenutnog albuma"
 #: ui/mediaviewer/library/PcListBox.cpp:141
 #: ui/mediaviewer/library/SoListBox.cpp:548
 #: ui/mediaviewer/library/RaListBox.cpp:173
-#: ui/mediaviewer/library/AlListBox.cpp:292
+#: ui/mediaviewer/library/AlListBox.cpp:290
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:359
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1952
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2087
@@ -1608,7 +1608,7 @@ msgstr "Dodaj odabrane pjesme na listu poslije trenutnog izvođača"
 #: ui/mediaviewer/library/PcListBox.cpp:147
 #: ui/mediaviewer/library/SoListBox.cpp:554
 #: ui/mediaviewer/library/RaListBox.cpp:179
-#: ui/mediaviewer/library/AlListBox.cpp:297
+#: ui/mediaviewer/library/AlListBox.cpp:295
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:364
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1957
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2092
@@ -1680,7 +1680,7 @@ msgid "Are you sure to delete the selected path ?"
 msgstr "Sigurno želite obrisati odabrano odredište?"
 
 #: ui/filebrowser/FileBrowser.cpp:558
-msgid "Error deleting the folder "
+msgid "Error deleting the folder"
 msgstr "Greška kod brisanja mape"
 
 #: ui/filebrowser/FileBrowser.cpp:559 ui/mediaviewer/MediaViewer.cpp:1415
@@ -1739,11 +1739,11 @@ msgstr "Neimenovano"
 msgid "Are you sure to delete the selected files ?"
 msgstr "Sigurno želite obrisati odabrane datoteke?"
 
-#: ui/filebrowser/FileBrowser.cpp:2000
-msgid "There was an error deleting "
+#: ui/filebrowser/FileBrowser.cpp:2001
+msgid "There was an error deleting"
 msgstr "Došlo je do greške prilikom brisanja"
 
-#: ui/filebrowser/FileBrowser.cpp:2001
+#: ui/filebrowser/FileBrowser.cpp:2002
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1751,7 +1751,7 @@ msgstr ""
 "\n"
 "Nastavi sa brisanjem?"
 
-#: ui/filebrowser/FileBrowser.cpp:2002
+#: ui/filebrowser/FileBrowser.cpp:2003
 msgid "Continue"
 msgstr "Nastavi"
 
@@ -1911,7 +1911,7 @@ msgid "Download Albums torrents"
 msgstr "Skini torent albuma"
 
 #: ui/MainFrame.cpp:154
-msgid "Welcome to Guayadeque "
+msgid "Welcome to Guayadeque"
 msgstr "Dobrodošli u Guayadeque"
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
@@ -2304,7 +2304,7 @@ msgstr "Dodaj odabrane pjesme na listu"
 #: ui/mediaviewer/library/PcListBox.cpp:156
 #: ui/mediaviewer/library/SoListBox.cpp:599
 #: ui/mediaviewer/library/RaListBox.cpp:188
-#: ui/mediaviewer/library/AlListBox.cpp:310
+#: ui/mediaviewer/library/AlListBox.cpp:308
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
@@ -2323,7 +2323,7 @@ msgstr "Uredi odabrane pjesme"
 
 #: ui/mediaviewer/library/YeListBox.cpp:159
 #: ui/mediaviewer/library/AAListBox.cpp:204
-#: ui/mediaviewer/library/AlListBox.cpp:339
+#: ui/mediaviewer/library/AlListBox.cpp:337
 msgid "Save the selected tracks to Playlist"
 msgstr "Spremi odabrane pjesme na listu izvođenja"
 
@@ -2379,14 +2379,14 @@ msgstr "Pokreni odabranog kompozitora"
 #: ui/mediaviewer/library/CoListBox.cpp:121
 #: ui/mediaviewer/library/CoListBox.cpp:128
 #: ui/mediaviewer/library/CoListBox.cpp:135
-#: ui/mediaviewer/library/AlListBox.cpp:281
-#: ui/mediaviewer/library/AlListBox.cpp:287
-#: ui/mediaviewer/library/AlListBox.cpp:293
+#: ui/mediaviewer/library/AlListBox.cpp:279
+#: ui/mediaviewer/library/AlListBox.cpp:285
+#: ui/mediaviewer/library/AlListBox.cpp:291
 msgid "Add current selected albums to the Playlist as Next Tracks"
 msgstr "Dodaj odabrani album na listu izvođenja kao slijedeće pjesme"
 
 #: ui/mediaviewer/library/CoListBox.cpp:140
-#: ui/mediaviewer/library/AlListBox.cpp:297
+#: ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr "Dodaj odabrani album poslije"
 
@@ -2421,7 +2421,7 @@ msgstr "Uredi pjesme odabranih izvođača"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:344 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Stvori pametnu listu izvođenja"
@@ -2474,7 +2474,7 @@ msgstr "Pokreni trenutno odabranog izvođača"
 
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:345 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Stvori pametnu listu izvođenja iz ove pjesme"
@@ -2630,126 +2630,126 @@ msgid "Play the selected tracks"
 msgstr "Pokreni odabrane pjesme"
 
 #: ui/mediaviewer/library/AlListBox.cpp:177
-msgid "by "
-msgstr "od "
+msgid "by"
+msgstr "od"
 
-#: ui/mediaviewer/library/AlListBox.cpp:267
+#: ui/mediaviewer/library/AlListBox.cpp:265
 msgid "Play current selected albums"
 msgstr "Pokreni odabrane albume"
 
-#: ui/mediaviewer/library/AlListBox.cpp:273
+#: ui/mediaviewer/library/AlListBox.cpp:271
 msgid "Add current selected albums to the Playlist"
 msgstr "Dodaj odabrane albume na listu izvođenja"
 
-#: ui/mediaviewer/library/AlListBox.cpp:303
+#: ui/mediaviewer/library/AlListBox.cpp:301
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
 msgid "Edit the labels assigned to the selected albums"
 msgstr "Uredi etikete dodjeljene izabranim albumima"
 
-#: ui/mediaviewer/library/AlListBox.cpp:311
+#: ui/mediaviewer/library/AlListBox.cpp:309
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
 msgid "Edit the selected songs"
 msgstr "Uredi odabrane pjesme"
 
-#: ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/library/AlListBox.cpp:319
 msgid "Albums are sorted by name"
 msgstr "Albumi su poredani prema nazivu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:320
 msgid "Albums are sorted by year"
 msgstr "Albumi su poredani prema godini"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:321
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:427
 msgid "Year Descending"
 msgstr "Godine padajući"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:321
 msgid "Albums are sorted by year descending"
 msgstr "Albumi su poredani prema godini padajući"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Artist, Name"
 msgstr "Izvođač, Naziv"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Albums are sorted by artist and album name"
 msgstr "Albumi su poredani prema izvođaču i nazivu albuma"
 
-#: ui/mediaviewer/library/AlListBox.cpp:325
+#: ui/mediaviewer/library/AlListBox.cpp:323
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:435
 msgid "Artist, Year"
 msgstr "Izvođač, Godina"
 
-#: ui/mediaviewer/library/AlListBox.cpp:325
+#: ui/mediaviewer/library/AlListBox.cpp:323
 msgid "Albums are sorted by artist and year"
 msgstr "Albumi su poredani prema izvođaču i godini"
 
-#: ui/mediaviewer/library/AlListBox.cpp:326
+#: ui/mediaviewer/library/AlListBox.cpp:324
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:439
 msgid "Artist, Year Descending"
 msgstr "Izvođač, Godine padajući"
 
-#: ui/mediaviewer/library/AlListBox.cpp:326
+#: ui/mediaviewer/library/AlListBox.cpp:324
 msgid "Albums are sorted by artist and year descending"
 msgstr "Albumi su poredani prema izvođaču i godini padajući"
 
-#: ui/mediaviewer/library/AlListBox.cpp:331
+#: ui/mediaviewer/library/AlListBox.cpp:329
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:447
 msgid "Sort By"
 msgstr "Poredaj prema"
 
-#: ui/mediaviewer/library/AlListBox.cpp:331
+#: ui/mediaviewer/library/AlListBox.cpp:329
 msgid "Sets the albums order"
 msgstr "Postavi poredak albuma"
 
-#: ui/mediaviewer/library/AlListBox.cpp:352
+#: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download Cover"
 msgstr "Skini naslovnicu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:352
+#: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download cover for the current selected album"
 msgstr "Skini naslovnicu za odbrani album"
 
-#: ui/mediaviewer/library/AlListBox.cpp:356
+#: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select Cover"
 msgstr "Odaberi naslovnicu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:356
+#: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select the cover image file from disk"
 msgstr "Odaberi sliku naslovnice sa diska"
 
-#: ui/mediaviewer/library/AlListBox.cpp:360
+#: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete Cover"
 msgstr "Obriši naslovnicu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:360
+#: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete the cover for the selected album"
 msgstr "Obriši naslovnicu za odabrani album"
 
-#: ui/mediaviewer/library/AlListBox.cpp:367
+#: ui/mediaviewer/library/AlListBox.cpp:365
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:408
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2001
 msgid "Embed Cover"
 msgstr "Spoji naslovnicu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:367
+#: ui/mediaviewer/library/AlListBox.cpp:365
 msgid "Embed the current cover to the album files"
 msgstr "Spoji naslovnicu sa pjesmama na albumu"
 
@@ -2824,7 +2824,7 @@ msgid "Playlist"
 msgstr "Lista Izvođenja"
 
 #: ui/mediaviewer/MediaViewer.cpp:2101
-msgid "The best of "
+msgid "The best of"
 msgstr ""
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
@@ -4386,7 +4386,7 @@ msgid "Remove source files"
 msgstr "Izbriši originalnu datoteku"
 
 #: ui/preferences/Preferences.cpp:2314
-msgid " Define patterns using "
+msgid "Define patterns using"
 msgstr "Odredi kopiranje koristeći"
 
 #: ui/preferences/Preferences.cpp:2320

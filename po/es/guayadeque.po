@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 15:28-0300\n"
+"POT-Creation-Date: 2024-12-01 16:01-0300\n"
 "PO-Revision-Date: 2024-11-29 22:38+0100\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>, 2020\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -46,7 +46,7 @@ msgstr "Soporte"
 
 #: misc/Accelerators.cpp:114 ui/mediaviewer/library/ArListBox.cpp:195
 #: ui/mediaviewer/library/SoListBox.cpp:591
-#: ui/mediaviewer/library/AlListBox.cpp:302
+#: ui/mediaviewer/library/AlListBox.cpp:300
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
@@ -70,7 +70,7 @@ msgstr "Editar pistas"
 #: ui/mediaviewer/library/PcListBox.cpp:118
 #: ui/mediaviewer/library/SoListBox.cpp:525
 #: ui/mediaviewer/library/RaListBox.cpp:150
-#: ui/mediaviewer/library/AlListBox.cpp:272
+#: ui/mediaviewer/library/AlListBox.cpp:270
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:340
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1933
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068
@@ -121,7 +121,7 @@ msgstr "Ayuda"
 #: ui/mediaviewer/library/PcListBox.cpp:111
 #: ui/mediaviewer/library/SoListBox.cpp:518
 #: ui/mediaviewer/library/RaListBox.cpp:143
-#: ui/mediaviewer/library/AlListBox.cpp:266
+#: ui/mediaviewer/library/AlListBox.cpp:264
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2064
@@ -153,7 +153,7 @@ msgstr "Reproducir radio"
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:249
+#: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
 #: ui/player/PlayList.cpp:1699 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
@@ -203,7 +203,7 @@ msgstr "Salvar Disposición"
 #: ui/mediaviewer/library/PcListBox.cpp:165
 #: ui/mediaviewer/library/SoListBox.cpp:646
 #: ui/mediaviewer/library/RaListBox.cpp:197
-#: ui/mediaviewer/library/AlListBox.cpp:338
+#: ui/mediaviewer/library/AlListBox.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2110
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
@@ -496,7 +496,7 @@ msgid "Generate Smart Playlist"
 msgstr "Generar lista de reproducción inteligente"
 
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
-#: ui/mediaviewer/library/AlListBox.cpp:492
+#: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
 #: ui/preferences/Preferences.cpp:1729 ui/preferences/Preferences.cpp:1824
 #: ui/player/PlayerFilters.cpp:107
@@ -639,8 +639,8 @@ msgid "No lyrics found"
 msgstr "No se ha encontrado ninguna letra"
 
 #: ui/lyrics/LyricsPanel.cpp:812
-msgid "Lyrics from "
-msgstr "Letra proporcionada por "
+msgid "Lyrics from"
+msgstr "Letra proporcionada por"
 
 #: ui/lyrics/LyricsPanel.cpp:1969
 msgid "Lyrics Target Editor"
@@ -651,7 +651,7 @@ msgid "Lyrics Source Editor"
 msgstr "Editor de origen de letras"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -1249,7 +1249,7 @@ msgstr "Copiar el año a todas las canciones que estás editando"
 
 #: ui/trackedit/TrackEdit.cpp:276 ui/trackedit/TrackEdit.cpp:533
 #: ui/filebrowser/FileRenamer.cpp:87 ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:320
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:423
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:743
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:56
@@ -1427,7 +1427,7 @@ msgstr "Ver archivos del sistema"
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:249
+#: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1699
 msgid "Add commands in preferences"
 msgstr "Añadir comandos en preferencias"
@@ -1437,7 +1437,7 @@ msgstr "Añadir comandos en preferencias"
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
 #: ui/mediaviewer/library/SoListBox.cpp:460
-#: ui/mediaviewer/library/AlListBox.cpp:252
+#: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:279
 #: ui/preferences/Preferences.cpp:2067 ui/player/PlayList.cpp:1702
 msgid "Commands"
@@ -1462,7 +1462,7 @@ msgstr "Añadir la carpeta seleccionada a la lista de reproducción"
 #: ui/mediaviewer/library/PcListBox.cpp:127
 #: ui/mediaviewer/library/SoListBox.cpp:534
 #: ui/mediaviewer/library/RaListBox.cpp:159
-#: ui/mediaviewer/library/AlListBox.cpp:280
+#: ui/mediaviewer/library/AlListBox.cpp:278
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:347
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1940
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2075
@@ -1512,7 +1512,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:134
 #: ui/mediaviewer/library/SoListBox.cpp:541
 #: ui/mediaviewer/library/RaListBox.cpp:166
-#: ui/mediaviewer/library/AlListBox.cpp:286
+#: ui/mediaviewer/library/AlListBox.cpp:284
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:353
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1946
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2081
@@ -1562,7 +1562,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:141
 #: ui/mediaviewer/library/SoListBox.cpp:548
 #: ui/mediaviewer/library/RaListBox.cpp:173
-#: ui/mediaviewer/library/AlListBox.cpp:292
+#: ui/mediaviewer/library/AlListBox.cpp:290
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:359
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1952
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2087
@@ -1612,7 +1612,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:147
 #: ui/mediaviewer/library/SoListBox.cpp:554
 #: ui/mediaviewer/library/RaListBox.cpp:179
-#: ui/mediaviewer/library/AlListBox.cpp:297
+#: ui/mediaviewer/library/AlListBox.cpp:295
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:364
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1957
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2092
@@ -1684,8 +1684,8 @@ msgid "Are you sure to delete the selected path ?"
 msgstr "¿ Seguro que quiere borrar la ruta seleccionada ?"
 
 #: ui/filebrowser/FileBrowser.cpp:558
-msgid "Error deleting the folder "
-msgstr "Error borrando la carpeta "
+msgid "Error deleting the folder"
+msgstr "Error borrando la carpeta"
 
 #: ui/filebrowser/FileBrowser.cpp:559 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
@@ -1743,11 +1743,11 @@ msgstr "Sin Nombre"
 msgid "Are you sure to delete the selected files ?"
 msgstr "¿Seguro que quiere borrar los archivos seleccionados ?"
 
-#: ui/filebrowser/FileBrowser.cpp:2000
-msgid "There was an error deleting "
-msgstr "Hubo un error borrando "
-
 #: ui/filebrowser/FileBrowser.cpp:2001
+msgid "There was an error deleting"
+msgstr "Hubo un error borrando"
+
+#: ui/filebrowser/FileBrowser.cpp:2002
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1755,7 +1755,7 @@ msgstr ""
 "\n"
 "¿Continuar borrando?"
 
-#: ui/filebrowser/FileBrowser.cpp:2002
+#: ui/filebrowser/FileBrowser.cpp:2003
 msgid "Continue"
 msgstr "Continua"
 
@@ -1916,8 +1916,8 @@ msgid "Download Albums torrents"
 msgstr "Descargar álbumes via torrentes"
 
 #: ui/MainFrame.cpp:154
-msgid "Welcome to Guayadeque "
-msgstr "Bienvenido a Guayadeque "
+msgid "Welcome to Guayadeque"
+msgstr "Bienvenido a Guayadeque"
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
@@ -2308,7 +2308,7 @@ msgstr "Añadir las pistas seleccionadas a la lista de reproducción"
 #: ui/mediaviewer/library/PcListBox.cpp:156
 #: ui/mediaviewer/library/SoListBox.cpp:599
 #: ui/mediaviewer/library/RaListBox.cpp:188
-#: ui/mediaviewer/library/AlListBox.cpp:310
+#: ui/mediaviewer/library/AlListBox.cpp:308
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
@@ -2327,7 +2327,7 @@ msgstr "Editar la pistas seleccionadas"
 
 #: ui/mediaviewer/library/YeListBox.cpp:159
 #: ui/mediaviewer/library/AAListBox.cpp:204
-#: ui/mediaviewer/library/AlListBox.cpp:339
+#: ui/mediaviewer/library/AlListBox.cpp:337
 msgid "Save the selected tracks to Playlist"
 msgstr "Guardar las pistas seleccionadas en una lista de rep"
 
@@ -2383,16 +2383,16 @@ msgstr "Reproducir el compositor seleccionado"
 #: ui/mediaviewer/library/CoListBox.cpp:121
 #: ui/mediaviewer/library/CoListBox.cpp:128
 #: ui/mediaviewer/library/CoListBox.cpp:135
-#: ui/mediaviewer/library/AlListBox.cpp:281
-#: ui/mediaviewer/library/AlListBox.cpp:287
-#: ui/mediaviewer/library/AlListBox.cpp:293
+#: ui/mediaviewer/library/AlListBox.cpp:279
+#: ui/mediaviewer/library/AlListBox.cpp:285
+#: ui/mediaviewer/library/AlListBox.cpp:291
 msgid "Add current selected albums to the Playlist as Next Tracks"
 msgstr ""
 "Añadir los álbumes seleccionados a la lista de reproducción como las "
 "siguientes pistas"
 
 #: ui/mediaviewer/library/CoListBox.cpp:140
-#: ui/mediaviewer/library/AlListBox.cpp:297
+#: ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr "Añadir el album seleccionado después de"
 
@@ -2427,7 +2427,7 @@ msgstr "Editar las canciones de los artistas seleccionados"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:344 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
 msgid "Create Best of Playlist"
 msgstr "Crear lista de reproducción de lo mejor de (Best of)"
 
@@ -2478,7 +2478,7 @@ msgstr "Reproducir el artista del álbum seleccionado"
 
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:345 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 msgid "Create a playlist with the best of this artist"
 msgstr "Crear lista de reproducción de lo mejor de este artista (Best of)"
 
@@ -2634,126 +2634,126 @@ msgid "Play the selected tracks"
 msgstr "Reproducir las pistas seleccionadas"
 
 #: ui/mediaviewer/library/AlListBox.cpp:177
-msgid "by "
-msgstr "por  "
+msgid "by"
+msgstr "por"
 
-#: ui/mediaviewer/library/AlListBox.cpp:267
+#: ui/mediaviewer/library/AlListBox.cpp:265
 msgid "Play current selected albums"
 msgstr "Reproducir los álbumes selccionados"
 
-#: ui/mediaviewer/library/AlListBox.cpp:273
+#: ui/mediaviewer/library/AlListBox.cpp:271
 msgid "Add current selected albums to the Playlist"
 msgstr "Añadir los álbumes seleccionados al final de la lista de reproducción"
 
-#: ui/mediaviewer/library/AlListBox.cpp:303
+#: ui/mediaviewer/library/AlListBox.cpp:301
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
 msgid "Edit the labels assigned to the selected albums"
 msgstr "Editar las etiquetas asignadas a los álbumes seleccionados"
 
-#: ui/mediaviewer/library/AlListBox.cpp:311
+#: ui/mediaviewer/library/AlListBox.cpp:309
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
 msgid "Edit the selected songs"
 msgstr "Editar las canciones seleccionadas"
 
-#: ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/library/AlListBox.cpp:319
 msgid "Albums are sorted by name"
 msgstr "Albumes ordenados por nombre"
 
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:320
 msgid "Albums are sorted by year"
 msgstr "Albumes ordenados por año"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:321
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:427
 msgid "Year Descending"
 msgstr "Año descendiente"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:321
 msgid "Albums are sorted by year descending"
 msgstr "Albumes ordenados por año descendiente"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Artist, Name"
 msgstr "Artista, Nombre"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Albums are sorted by artist and album name"
 msgstr "Albumes ordenados por artista y nombre"
 
-#: ui/mediaviewer/library/AlListBox.cpp:325
+#: ui/mediaviewer/library/AlListBox.cpp:323
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:435
 msgid "Artist, Year"
 msgstr "Artista, Año"
 
-#: ui/mediaviewer/library/AlListBox.cpp:325
+#: ui/mediaviewer/library/AlListBox.cpp:323
 msgid "Albums are sorted by artist and year"
 msgstr "Albumes ordenados por artista y año"
 
-#: ui/mediaviewer/library/AlListBox.cpp:326
+#: ui/mediaviewer/library/AlListBox.cpp:324
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:439
 msgid "Artist, Year Descending"
 msgstr "Artista, Año descendiente"
 
-#: ui/mediaviewer/library/AlListBox.cpp:326
+#: ui/mediaviewer/library/AlListBox.cpp:324
 msgid "Albums are sorted by artist and year descending"
 msgstr "Albumes ordenados por artista y año descendente"
 
-#: ui/mediaviewer/library/AlListBox.cpp:331
+#: ui/mediaviewer/library/AlListBox.cpp:329
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:447
 msgid "Sort By"
 msgstr "Ordenar por"
 
-#: ui/mediaviewer/library/AlListBox.cpp:331
+#: ui/mediaviewer/library/AlListBox.cpp:329
 msgid "Sets the albums order"
 msgstr "Configura el orden de los álbumes"
 
-#: ui/mediaviewer/library/AlListBox.cpp:352
+#: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download Cover"
 msgstr "Descargar carátula"
 
-#: ui/mediaviewer/library/AlListBox.cpp:352
+#: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download cover for the current selected album"
 msgstr "Descargar la carátula para el álbum seleccionado"
 
-#: ui/mediaviewer/library/AlListBox.cpp:356
+#: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select Cover"
 msgstr "Seleccionar carátula"
 
-#: ui/mediaviewer/library/AlListBox.cpp:356
+#: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select the cover image file from disk"
 msgstr "Seleccione la carátula desde el disco"
 
-#: ui/mediaviewer/library/AlListBox.cpp:360
+#: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete Cover"
 msgstr "Borrar carátula"
 
-#: ui/mediaviewer/library/AlListBox.cpp:360
+#: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete the cover for the selected album"
 msgstr "Eliminar la carátula del álbum seleccionado"
 
-#: ui/mediaviewer/library/AlListBox.cpp:367
+#: ui/mediaviewer/library/AlListBox.cpp:365
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:408
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2001
 msgid "Embed Cover"
 msgstr "Incrustar carátula"
 
-#: ui/mediaviewer/library/AlListBox.cpp:367
+#: ui/mediaviewer/library/AlListBox.cpp:365
 msgid "Embed the current cover to the album files"
 msgstr "Incrustar carátula en de los archivos"
 
@@ -2828,8 +2828,8 @@ msgid "Playlist"
 msgstr "Lista de Reproducción"
 
 #: ui/mediaviewer/MediaViewer.cpp:2101
-msgid "The best of "
-msgstr "Lo mejor de (Best of) "
+msgid "The best of"
+msgstr "Lo mejor de (Best of)"
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
 #, c-format
@@ -4383,8 +4383,8 @@ msgid "Remove source files"
 msgstr "Elimina archivos de origen"
 
 #: ui/preferences/Preferences.cpp:2314
-msgid " Define patterns using "
-msgstr " Definir patrones con "
+msgid "Define patterns using"
+msgstr "Definir patrones con"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""

@@ -172,15 +172,13 @@ void guAlListBox::DrawItem( wxDC &dc, const wxRect &rect, const int row, const i
 
     if( !Item->m_ArtistName.IsEmpty() )
     {
-        m_Attr.m_Font->SetPointSize( m_SysFontPointSize - 2 );
-        dc.SetFont( * m_Attr.m_Font );
-        dc.DrawText( _( "by " ) + Item->m_ArtistName, rect.x + 45, rect.y + 22 );
+        m_Attr.m_Font->SetPointSize(m_SysFontPointSize - 2);
+        dc.SetFont(* m_Attr.m_Font);
+        dc.DrawText(wxString::Format("%s ", _("by")) + Item->m_ArtistName, rect.x + 45, rect.y + 22);
     }
 
     if( Item->m_Thumb )
-    {
         dc.DrawBitmap( * Item->m_Thumb, rect.x + 1, rect.y + 1, false );
-    }
 //    else if( Item->m_Thumb )
 //    {
 //        guLogError( wxT( "Thumb image corrupt or not correctly loaded" ) );

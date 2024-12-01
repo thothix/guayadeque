@@ -151,7 +151,7 @@ guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
 	m_MainStatusBar = new guStatusBar( this );
 	SetStatusBar(  m_MainStatusBar );
 	//MainFrameSizer = new wxBoxSizer( wxVERTICAL );
-	SetStatusText( _( "Welcome to Guayadeque " ) );
+	SetStatusText(wxString::Format("%s ", _("Welcome to Guayadeque")));
 	SetStatusBarPane( 0 );
 
     if ( m_VisiblePanels & guPANEL_MAIN_PLAYERVUMETERS )

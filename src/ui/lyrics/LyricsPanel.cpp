@@ -809,7 +809,7 @@ void guLyricsPanel::UpdatedTrack( const guTrack * track )
 wxString guLyricsPanel::GetLyricSource( void )
 {
     if( !m_CurrentLyricText.IsEmpty() )
-        return _( "Lyrics from " ) + m_CurrentSourceName;
+        return wxString::Format("%s ", _("Lyrics from")) + m_CurrentSourceName;
     else if( m_LyricText->GetValue() == _( "Searching..." ) )
         return _( "Searching..." );
     else

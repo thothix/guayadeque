@@ -2311,7 +2311,7 @@ void guPrefDialog::BuildCopyToPage()
 	CopyToMainSizer->Add( CopyToLabelSizer, 1, wxEXPAND|wxALL, 5 );
 
 	wxStaticBoxSizer* CopyToHelpSizer;
-	CopyToHelpSizer = new wxStaticBoxSizer( new wxStaticBox( m_CopyPanel, wxID_ANY, _(" Define patterns using ") ), wxHORIZONTAL );
+	CopyToHelpSizer = new wxStaticBoxSizer(new wxStaticBox(m_CopyPanel, wxID_ANY, wxString::Format(" %s ", _("Define patterns using"))), wxHORIZONTAL);
 
 	wxStaticText * CopyToHelpText = new wxStaticText( m_CopyPanel, wxID_ANY, wxT( "{a}:\n{aa}:\n{A}:\n{b}:" ), wxDefaultPosition, wxDefaultSize, 0 );
 	CopyToHelpText->Wrap( -1 );
