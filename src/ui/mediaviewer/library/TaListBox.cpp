@@ -183,7 +183,7 @@ void guTaListBox::CreateContextMenu( wxMenu * Menu ) const
 void guTaListBox::AddLabel( wxCommandEvent &event )
 {
     //wxMessageBox( wxT( "AddLabel" ), wxT( "Information" ) );
-    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Label Name: " ), _( "Please enter the label name" ) );
+    wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Label Name")), _("Please enter the label name"));
     if( EntryDialog->ShowModal() == wxID_OK )
     {
         //wxMessageBox( EntryDialog->GetValue(), wxT( "Entered..." ) );
@@ -224,7 +224,7 @@ void guTaListBox::EditLabel( wxCommandEvent &event )
         {
             unsigned long cookie;
             int Item = GetFirstSelected( cookie );
-            wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, _( "Label Name: " ),
+            wxTextEntryDialog * EntryDialog = new wxTextEntryDialog( this, wxString::Format("%s: ", _("Label Name")),
                                                     _( "Enter the new label name" ), ( * m_Items )[ Item ] .m_Name );
             if( EntryDialog->ShowModal() == wxID_OK &&
                 ( * m_Items )[ Item ].m_Name != EntryDialog->GetValue() )

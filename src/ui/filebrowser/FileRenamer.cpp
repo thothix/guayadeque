@@ -65,7 +65,7 @@ guFileRenamer::guFileRenamer( wxWindow * parent, guDbLibrary * db, const wxArray
 	EditSizer->SetFlexibleDirection( wxBOTH );
 	EditSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	wxStaticText * NameStaticText = new wxStaticText( this, wxID_ANY, _("Name:"), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * NameStaticText = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Name")), wxDefaultPosition, wxDefaultSize, 0 );
 	NameStaticText->Wrap( -1 );
 	EditSizer->Add( NameStaticText, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 

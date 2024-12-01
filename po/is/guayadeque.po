@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 23:53-0300\n"
+"POT-Creation-Date: 2024-12-01 15:28-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Hreinn Jónsson <hreinnjons@gmail.com>, 2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/anonbeat/"
@@ -466,8 +466,8 @@ msgstr "Villtu halda áfram í forriti?"
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
-#: ui/mediaviewer/treeview/TreePanel.cpp:1211 ui/radios/ShoutcastRadio.cpp:365
-#: ui/radios/ShoutcastRadio.cpp:444 ui/podcasts/PodcastsPanel.cpp:1241
+#: ui/mediaviewer/treeview/TreePanel.cpp:1211 ui/radios/ShoutcastRadio.cpp:369
+#: ui/radios/ShoutcastRadio.cpp:448 ui/podcasts/PodcastsPanel.cpp:1241
 #: ui/podcasts/PodcastsPanel.cpp:1616
 msgid "Confirm"
 msgstr "Staðfesta"
@@ -650,13 +650,16 @@ msgid "Lyrics Source Editor"
 msgstr "Breyta Textum"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
+#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
-#: ui/radios/RadioEditor.cpp:45 ui/preferences/Preferences.cpp:2010
-#: ui/preferences/Preferences.cpp:2129 ui/preferences/Preferences.cpp:2249
-msgid "Name:"
-msgstr "Nafn:"
+#: ui/radios/RadioEditor.cpp:45 ui/radios/RadioPanel.cpp:311
+#: ui/preferences/Preferences.cpp:2010 ui/preferences/Preferences.cpp:2129
+#: ui/preferences/Preferences.cpp:2249
+msgid "Name"
+msgstr "Nafn"
 
 #: ui/lyrics/LyricsPanel.cpp:2002
 msgid "Type:"
@@ -1097,8 +1100,8 @@ msgstr "Afritar völd merki við alla hluti"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 #: ui/mediaviewer/library/TaListBox.cpp:227
-msgid "Label Name: "
-msgstr "Nafn merki: "
+msgid "Label Name"
+msgstr "Nafn merki"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 msgid "Please enter the label name"
@@ -1234,7 +1237,7 @@ msgstr "Afrita nafn flokks við allar skrár sem þú breytir"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3369
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3367
 #: ui/player/PlayList.cpp:1792
 msgid "Genre"
 msgstr "Flokkur"
@@ -1406,7 +1409,7 @@ msgid "Album Artist"
 msgstr "Flytjandi Plata"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:917
-#: ui/preferences/Preferences.cpp:3443
+#: ui/preferences/Preferences.cpp:3441
 msgid "or"
 msgstr "eða"
 
@@ -1681,12 +1684,6 @@ msgstr "Villa getur ekki eytt Möppu"
 msgid "Error"
 msgstr "Villa"
 
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
-#: ui/radios/RadioPanel.cpp:311
-msgid "Name"
-msgstr "Nafn"
-
 #: ui/filebrowser/FileBrowser.cpp:750
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
@@ -1728,7 +1725,7 @@ msgstr "Eyða völdum skrám"
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1441
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
 #: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2132
 msgid "UnNamed"
@@ -2342,20 +2339,20 @@ msgstr "Ertu viss um að þú viljir eyða völdu plötualbúm"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1334
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
 #: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2280
 msgid "Tracks Labels Editor"
 msgstr "Breyta Merkjum Laga"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1676
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1608
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1604
 #: ui/mediaviewer/treeview/TreePanel.cpp:1574
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:1088
 msgid "Field Editor"
 msgstr "Svæða Ritill"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1823
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
 #: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
@@ -2365,7 +2362,7 @@ msgstr ""
 "Þetta mun endanlega eyða völdum lögum."
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1824
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
 #: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Eyða lögum af drifi"
@@ -2788,11 +2785,12 @@ msgstr "Breyta valdri síu"
 msgid "New Filter"
 msgstr "Ný Sía"
 
-#: ui/mediaviewer/MediaViewer.cpp:947
+#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2820
+#: ui/preferences/Preferences.cpp:2840
 msgid "Collection"
 msgstr "Safn"
 
-#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2973
+#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2971
 msgid "Select library path"
 msgstr "Velja staðsetningu safns"
 
@@ -3114,8 +3112,8 @@ msgstr "Síað sem Ekki Leyft "
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1026
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1163
-msgid "Playlist Name: "
-msgstr "Nafn Lagalista: "
+msgid "Playlist Name"
+msgstr "Nafn Lagalista"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1027
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1164
@@ -3127,11 +3125,11 @@ msgid "Are you sure to delete the selected Playlist?"
 msgstr "Ertu viss um að þú viljir eyða þessum Lagalista?"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1147
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1220
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1216
 msgid "Select the playlist file"
 msgstr "Velja lagalista skrá"
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1175
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1172
 msgid "New Playlist"
 msgstr "Nýr Lagalsti"
 
@@ -3658,19 +3656,19 @@ msgstr "Uppfæra útvarpsstöðvar"
 msgid "Searches"
 msgstr "Leitir"
 
-#: ui/radios/ShoutcastRadio.cpp:338
-msgid "Genre Name: "
-msgstr "Flokkur Nafn: "
+#: ui/radios/ShoutcastRadio.cpp:340
+msgid "Genre Name"
+msgstr "Flokkur Nafn"
 
-#: ui/radios/ShoutcastRadio.cpp:338
+#: ui/radios/ShoutcastRadio.cpp:341
 msgid "Enter the new Genre Name"
 msgstr "Bæta nýju Nafni við Flokk"
 
-#: ui/radios/ShoutcastRadio.cpp:364
+#: ui/radios/ShoutcastRadio.cpp:368
 msgid "Are you sure to delete the selected radio genres?"
 msgstr "Ertu viss um að þú viljir eyða þessum útvarps flokki?"
 
-#: ui/radios/ShoutcastRadio.cpp:443
+#: ui/radios/ShoutcastRadio.cpp:447
 msgid "Are you sure to delete the selected radio searches?"
 msgstr "Ertu viss um að þú viljir eyða þessum útvarps leitum?"
 
@@ -4055,14 +4053,14 @@ msgstr "Lögum bætt við hvert sinn"
 msgid "Max played tracks kept in playlist"
 msgstr "Hámark laga í lagalista"
 
-#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3440
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
 msgstr[0] "Ekki endurtaka síðustu"
 msgstr[1] "Ekki endurtaka síðustu"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3443
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
@@ -4422,46 +4420,42 @@ msgid "Key"
 msgstr "Lykill"
 
 #: ui/preferences/Preferences.cpp:2820 ui/preferences/Preferences.cpp:2840
-msgid "Collection: "
-msgstr "Safn:"
-
-#: ui/preferences/Preferences.cpp:2820 ui/preferences/Preferences.cpp:2840
 msgid "Enter the collection name"
 msgstr "Setja inn nafn safns"
 
-#: ui/preferences/Preferences.cpp:2951
+#: ui/preferences/Preferences.cpp:2949
 msgid "Change library path"
 msgstr "Breyta slóð safns"
 
-#: ui/preferences/Preferences.cpp:3029 ui/preferences/Preferences.cpp:3049
-msgid "Word: "
-msgstr "Orð: "
+#: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
+msgid "Word"
+msgstr "Orð"
 
-#: ui/preferences/Preferences.cpp:3029 ui/preferences/Preferences.cpp:3049
+#: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
 msgid "Enter the text to find covers"
 msgstr "Leit til að finna Plötualbúm"
 
-#: ui/preferences/Preferences.cpp:3369
+#: ui/preferences/Preferences.cpp:3367
 msgid "Enter the genre to disable"
 msgstr "Velja flokk til að afengja"
 
-#: ui/preferences/Preferences.cpp:3570 ui/preferences/Preferences.cpp:3601
-msgid "Filter: "
-msgstr "Sía: "
+#: ui/preferences/Preferences.cpp:3568 ui/preferences/Preferences.cpp:3599
+msgid "Filter"
+msgstr "Sía"
 
-#: ui/preferences/Preferences.cpp:3571
+#: ui/preferences/Preferences.cpp:3569
 msgid "Enter the text to filter"
 msgstr "Leit með síu"
 
-#: ui/preferences/Preferences.cpp:3601
+#: ui/preferences/Preferences.cpp:3599
 msgid "Edit the text to filter"
 msgstr "Breyta texta Síu"
 
-#: ui/preferences/Preferences.cpp:4127
+#: ui/preferences/Preferences.cpp:4125
 msgid "Select path"
 msgstr "Velja slóð"
 
-#: ui/preferences/Preferences.cpp:4305
+#: ui/preferences/Preferences.cpp:4303
 msgid "Key used by '"
 msgstr "Lykill notaður af '"
 
@@ -4496,8 +4490,8 @@ msgid "%u Categories, %u Channels"
 msgstr "%u Flokkar, %u Veitur"
 
 #: ui/podcasts/NewChannel.cpp:365
-msgid "Filter Text: "
-msgstr "Síaður Texti: "
+msgid "Filter Text"
+msgstr "Síaður Texti"
 
 #: ui/podcasts/NewChannel.cpp:365
 msgid "Enter the text to filter podcasts channels"

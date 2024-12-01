@@ -43,7 +43,7 @@ guTreeViewFilterEditor::guTreeViewFilterEditor( wxWindow * parent, const wxStrin
 
 	wxBoxSizer * NameSizer = new wxBoxSizer( wxHORIZONTAL );
 
-	wxStaticText * NameLabel = new wxStaticText( this, wxID_ANY, _( "Name:" ), wxDefaultPosition, wxDefaultSize, 0 );
+	wxStaticText * NameLabel = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Name")), wxDefaultPosition, wxDefaultSize, 0 );
 	NameLabel->Wrap( -1 );
 	NameSizer->Add( NameLabel, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 

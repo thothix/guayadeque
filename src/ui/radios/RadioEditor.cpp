@@ -42,7 +42,7 @@ guRadioEditor::guRadioEditor( wxWindow* parent, const wxString& title, const wxS
     FlexGridSizer->SetFlexibleDirection( wxBOTH );
     FlexGridSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-    NameLabel = new wxStaticText( this, wxID_ANY, _( "Name:" ), wxDefaultPosition, wxDefaultSize, 0 );
+    NameLabel = new wxStaticText( this, wxID_ANY, wxString::Format("%s:", _("Name")), wxDefaultPosition, wxDefaultSize, 0 );
     NameLabel->Wrap( -1 );
     FlexGridSizer->Add( NameLabel, 0, wxALL|wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 5 );
 
