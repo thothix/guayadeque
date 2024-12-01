@@ -2098,7 +2098,7 @@ void guMediaViewer::CreateBestOfPlaylist( const guTrack &track )
 // -------------------------------------------------------------------------------- //
 void guMediaViewer::CreateBestOfPlaylist( const wxString &artistname )
 {
-    wxString PlaylistName = _( "The best of " ) + artistname;
+    wxString PlaylistName = wxString::Format("%s ", _("The best of")) + artistname;
     wxLogMessage( wxT( "Creating the playlist: %s" ), PlaylistName );
     guLastFM * lfm = new guLastFM();
 

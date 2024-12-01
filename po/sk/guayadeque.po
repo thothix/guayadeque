@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 15:28-0300\n"
+"POT-Creation-Date: 2024-12-01 16:01-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/"
@@ -50,7 +50,7 @@ msgstr "Komunitné fóra"
 
 #: misc/Accelerators.cpp:114 ui/mediaviewer/library/ArListBox.cpp:195
 #: ui/mediaviewer/library/SoListBox.cpp:591
-#: ui/mediaviewer/library/AlListBox.cpp:302
+#: ui/mediaviewer/library/AlListBox.cpp:300
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
@@ -74,7 +74,7 @@ msgstr "Upraviť skladby"
 #: ui/mediaviewer/library/PcListBox.cpp:118
 #: ui/mediaviewer/library/SoListBox.cpp:525
 #: ui/mediaviewer/library/RaListBox.cpp:150
-#: ui/mediaviewer/library/AlListBox.cpp:272
+#: ui/mediaviewer/library/AlListBox.cpp:270
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:340
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1933
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068
@@ -125,7 +125,7 @@ msgstr "Pomocník"
 #: ui/mediaviewer/library/PcListBox.cpp:111
 #: ui/mediaviewer/library/SoListBox.cpp:518
 #: ui/mediaviewer/library/RaListBox.cpp:143
-#: ui/mediaviewer/library/AlListBox.cpp:266
+#: ui/mediaviewer/library/AlListBox.cpp:264
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2064
@@ -157,7 +157,7 @@ msgstr "Prehrať Stream"
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:249
+#: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
 #: ui/player/PlayList.cpp:1699 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
@@ -207,7 +207,7 @@ msgstr "Uložiť Vzhľad"
 #: ui/mediaviewer/library/PcListBox.cpp:165
 #: ui/mediaviewer/library/SoListBox.cpp:646
 #: ui/mediaviewer/library/RaListBox.cpp:197
-#: ui/mediaviewer/library/AlListBox.cpp:338
+#: ui/mediaviewer/library/AlListBox.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2110
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
@@ -500,7 +500,7 @@ msgid "Generate Smart Playlist"
 msgstr "Vygenerovať Inteligentný Playlist"
 
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
-#: ui/mediaviewer/library/AlListBox.cpp:492
+#: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
 #: ui/preferences/Preferences.cpp:1729 ui/preferences/Preferences.cpp:1824
 #: ui/player/PlayerFilters.cpp:107
@@ -643,8 +643,8 @@ msgid "No lyrics found"
 msgstr "Text nenájdený"
 
 #: ui/lyrics/LyricsPanel.cpp:812
-msgid "Lyrics from "
-msgstr "Texty z "
+msgid "Lyrics from"
+msgstr "Texty z"
 
 #: ui/lyrics/LyricsPanel.cpp:1969
 msgid "Lyrics Target Editor"
@@ -655,7 +655,7 @@ msgid "Lyrics Source Editor"
 msgstr "Editor zdrojov textov"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -1254,7 +1254,7 @@ msgstr "Kopírovať rok do všetkých upravovaných skladieb"
 
 #: ui/trackedit/TrackEdit.cpp:276 ui/trackedit/TrackEdit.cpp:533
 #: ui/filebrowser/FileRenamer.cpp:87 ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:320
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:423
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:743
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:56
@@ -1437,7 +1437,7 @@ msgstr "Pozrieť systémové súbory"
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:249
+#: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1699
 msgid "Add commands in preferences"
 msgstr "Pridať príkazy v nastaveniach"
@@ -1447,7 +1447,7 @@ msgstr "Pridať príkazy v nastaveniach"
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
 #: ui/mediaviewer/library/SoListBox.cpp:460
-#: ui/mediaviewer/library/AlListBox.cpp:252
+#: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:279
 #: ui/preferences/Preferences.cpp:2067 ui/player/PlayList.cpp:1702
 msgid "Commands"
@@ -1472,7 +1472,7 @@ msgstr "Pridať zvolenú zložku do Playlistu"
 #: ui/mediaviewer/library/PcListBox.cpp:127
 #: ui/mediaviewer/library/SoListBox.cpp:534
 #: ui/mediaviewer/library/RaListBox.cpp:159
-#: ui/mediaviewer/library/AlListBox.cpp:280
+#: ui/mediaviewer/library/AlListBox.cpp:278
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:347
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1940
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2075
@@ -1520,7 +1520,7 @@ msgstr "Pridať vybrané skladby do Playlistu za prehrávanú skladbu"
 #: ui/mediaviewer/library/PcListBox.cpp:134
 #: ui/mediaviewer/library/SoListBox.cpp:541
 #: ui/mediaviewer/library/RaListBox.cpp:166
-#: ui/mediaviewer/library/AlListBox.cpp:286
+#: ui/mediaviewer/library/AlListBox.cpp:284
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:353
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1946
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2081
@@ -1568,7 +1568,7 @@ msgstr "Pridať vybrané skladby do Playlistu za prehrávaný album"
 #: ui/mediaviewer/library/PcListBox.cpp:141
 #: ui/mediaviewer/library/SoListBox.cpp:548
 #: ui/mediaviewer/library/RaListBox.cpp:173
-#: ui/mediaviewer/library/AlListBox.cpp:292
+#: ui/mediaviewer/library/AlListBox.cpp:290
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:359
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1952
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2087
@@ -1616,7 +1616,7 @@ msgstr "Pridať vybrané skladby do Playlistu za prehrávaného umelca"
 #: ui/mediaviewer/library/PcListBox.cpp:147
 #: ui/mediaviewer/library/SoListBox.cpp:554
 #: ui/mediaviewer/library/RaListBox.cpp:179
-#: ui/mediaviewer/library/AlListBox.cpp:297
+#: ui/mediaviewer/library/AlListBox.cpp:295
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:364
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1957
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2092
@@ -1688,8 +1688,8 @@ msgid "Are you sure to delete the selected path ?"
 msgstr "Naozaj chcete odstrániť zvolenú cestu?"
 
 #: ui/filebrowser/FileBrowser.cpp:558
-msgid "Error deleting the folder "
-msgstr "Chyba pri odstraňovaní priečinka  "
+msgid "Error deleting the folder"
+msgstr "Chyba pri odstraňovaní priečinka"
 
 #: ui/filebrowser/FileBrowser.cpp:559 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
@@ -1747,11 +1747,11 @@ msgstr "Nepomenované"
 msgid "Are you sure to delete the selected files ?"
 msgstr "Naozaj chcete vymazať vybrané súbory?"
 
-#: ui/filebrowser/FileBrowser.cpp:2000
-msgid "There was an error deleting "
-msgstr "Nastala chyba pri vymazávaní "
-
 #: ui/filebrowser/FileBrowser.cpp:2001
+msgid "There was an error deleting"
+msgstr "Nastala chyba pri vymazávaní"
+
+#: ui/filebrowser/FileBrowser.cpp:2002
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1759,7 +1759,7 @@ msgstr ""
 "\n"
 "Pokračovať s vymazávaním?"
 
-#: ui/filebrowser/FileBrowser.cpp:2002
+#: ui/filebrowser/FileBrowser.cpp:2003
 msgid "Continue"
 msgstr "Pokračovať"
 
@@ -1919,8 +1919,8 @@ msgid "Download Albums torrents"
 msgstr "Stiahnuť torrenty albumov"
 
 #: ui/MainFrame.cpp:154
-msgid "Welcome to Guayadeque "
-msgstr "Vitajte v Guayadeque "
+msgid "Welcome to Guayadeque"
+msgstr "Vitajte v Guayadeque"
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
@@ -2312,7 +2312,7 @@ msgstr "Pridať vybrané skladby do Playlistu"
 #: ui/mediaviewer/library/PcListBox.cpp:156
 #: ui/mediaviewer/library/SoListBox.cpp:599
 #: ui/mediaviewer/library/RaListBox.cpp:188
-#: ui/mediaviewer/library/AlListBox.cpp:310
+#: ui/mediaviewer/library/AlListBox.cpp:308
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
@@ -2331,7 +2331,7 @@ msgstr "Upraviť vybrané skladby"
 
 #: ui/mediaviewer/library/YeListBox.cpp:159
 #: ui/mediaviewer/library/AAListBox.cpp:204
-#: ui/mediaviewer/library/AlListBox.cpp:339
+#: ui/mediaviewer/library/AlListBox.cpp:337
 msgid "Save the selected tracks to Playlist"
 msgstr "Uložiť vybrané skladby do Playlistu"
 
@@ -2387,14 +2387,14 @@ msgstr "Prehrávať práve vybraného skladateľa"
 #: ui/mediaviewer/library/CoListBox.cpp:121
 #: ui/mediaviewer/library/CoListBox.cpp:128
 #: ui/mediaviewer/library/CoListBox.cpp:135
-#: ui/mediaviewer/library/AlListBox.cpp:281
-#: ui/mediaviewer/library/AlListBox.cpp:287
-#: ui/mediaviewer/library/AlListBox.cpp:293
+#: ui/mediaviewer/library/AlListBox.cpp:279
+#: ui/mediaviewer/library/AlListBox.cpp:285
+#: ui/mediaviewer/library/AlListBox.cpp:291
 msgid "Add current selected albums to the Playlist as Next Tracks"
 msgstr "Pridať aktuálne zvolený album do playlistu ako Ďalšie skladby"
 
 #: ui/mediaviewer/library/CoListBox.cpp:140
-#: ui/mediaviewer/library/AlListBox.cpp:297
+#: ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr "Pridať zvolené albumy za"
 
@@ -2429,7 +2429,7 @@ msgstr "Upraviť skladby vybraného umelca"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:344 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Vytvoriť Inteligentný Playlist"
@@ -2482,7 +2482,7 @@ msgstr "Prehrať vybraného umelca"
 
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:345 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Vytvoriť Inteligentný Playlist pomocou zvolenej skladby"
@@ -2638,126 +2638,126 @@ msgid "Play the selected tracks"
 msgstr "Prehrať zvolené skladby"
 
 #: ui/mediaviewer/library/AlListBox.cpp:177
-msgid "by "
-msgstr " "
+msgid "by"
+msgstr ""
 
-#: ui/mediaviewer/library/AlListBox.cpp:267
+#: ui/mediaviewer/library/AlListBox.cpp:265
 msgid "Play current selected albums"
 msgstr "Prehrať aktuálne zvolené albumy"
 
-#: ui/mediaviewer/library/AlListBox.cpp:273
+#: ui/mediaviewer/library/AlListBox.cpp:271
 msgid "Add current selected albums to the Playlist"
 msgstr "Pridať aktuálne zvolené albumy do playlistu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:303
+#: ui/mediaviewer/library/AlListBox.cpp:301
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
 msgid "Edit the labels assigned to the selected albums"
 msgstr "Upraviť menovky zvolených albumov"
 
-#: ui/mediaviewer/library/AlListBox.cpp:311
+#: ui/mediaviewer/library/AlListBox.cpp:309
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
 msgid "Edit the selected songs"
 msgstr "Upraviť zvolené skladby"
 
-#: ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/library/AlListBox.cpp:319
 msgid "Albums are sorted by name"
 msgstr "Albumy sú radené podľa mena"
 
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:320
 msgid "Albums are sorted by year"
 msgstr "Albumy sú radené podľa roku"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:321
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:427
 msgid "Year Descending"
 msgstr "Rok zostupne"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:321
 msgid "Albums are sorted by year descending"
 msgstr "Albumy sú radené podľa roku zostupne"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Artist, Name"
 msgstr "Umelec, meno"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Albums are sorted by artist and album name"
 msgstr "Albumy sú radené podľa umelca a mena albumu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:325
+#: ui/mediaviewer/library/AlListBox.cpp:323
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:435
 msgid "Artist, Year"
 msgstr "Umelec, rok"
 
-#: ui/mediaviewer/library/AlListBox.cpp:325
+#: ui/mediaviewer/library/AlListBox.cpp:323
 msgid "Albums are sorted by artist and year"
 msgstr "Albumy sú radené podľa umelca a roku"
 
-#: ui/mediaviewer/library/AlListBox.cpp:326
+#: ui/mediaviewer/library/AlListBox.cpp:324
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:439
 msgid "Artist, Year Descending"
 msgstr "Umelec a rok zostupne"
 
-#: ui/mediaviewer/library/AlListBox.cpp:326
+#: ui/mediaviewer/library/AlListBox.cpp:324
 msgid "Albums are sorted by artist and year descending"
 msgstr "Albumy sú radené podľa umelca a roku zostupne"
 
-#: ui/mediaviewer/library/AlListBox.cpp:331
+#: ui/mediaviewer/library/AlListBox.cpp:329
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:447
 msgid "Sort By"
 msgstr "Radiť podľa"
 
-#: ui/mediaviewer/library/AlListBox.cpp:331
+#: ui/mediaviewer/library/AlListBox.cpp:329
 msgid "Sets the albums order"
 msgstr "Nastaviť poradie albumov"
 
-#: ui/mediaviewer/library/AlListBox.cpp:352
+#: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download Cover"
 msgstr "Stiahnuť obal"
 
-#: ui/mediaviewer/library/AlListBox.cpp:352
+#: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download cover for the current selected album"
 msgstr "Stiahnuť obal aktuálne zvoleného albumu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:356
+#: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select Cover"
 msgstr "Zvoliť album"
 
-#: ui/mediaviewer/library/AlListBox.cpp:356
+#: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select the cover image file from disk"
 msgstr "Zvoliť obrázok obalu zo súboru na disku"
 
-#: ui/mediaviewer/library/AlListBox.cpp:360
+#: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete Cover"
 msgstr "Odstrániť obal"
 
-#: ui/mediaviewer/library/AlListBox.cpp:360
+#: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete the cover for the selected album"
 msgstr "Odstrániť obal zvoleného albumu"
 
-#: ui/mediaviewer/library/AlListBox.cpp:367
+#: ui/mediaviewer/library/AlListBox.cpp:365
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:408
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2001
 msgid "Embed Cover"
 msgstr "Zahrnúť obal"
 
-#: ui/mediaviewer/library/AlListBox.cpp:367
+#: ui/mediaviewer/library/AlListBox.cpp:365
 msgid "Embed the current cover to the album files"
 msgstr "zahrnúť aktuálny obal do súborov albumu"
 
@@ -2832,7 +2832,7 @@ msgid "Playlist"
 msgstr "Playlist"
 
 #: ui/mediaviewer/MediaViewer.cpp:2101
-msgid "The best of "
+msgid "The best of"
 msgstr ""
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
@@ -4394,8 +4394,8 @@ msgid "Remove source files"
 msgstr "Odstrániť zdrojové súbory"
 
 #: ui/preferences/Preferences.cpp:2314
-msgid " Define patterns using "
-msgstr " Definuje použité vzory "
+msgid "Define patterns using"
+msgstr "Definuje použité vzory"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""

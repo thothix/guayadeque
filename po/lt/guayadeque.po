@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 15:28-0300\n"
+"POT-Creation-Date: 2024-12-01 16:01-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Moo, 2017-2018,2020,2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/anonbeat/guayadeque/"
@@ -44,7 +44,7 @@ msgstr "Bendruomenės forumai"
 
 #: misc/Accelerators.cpp:114 ui/mediaviewer/library/ArListBox.cpp:195
 #: ui/mediaviewer/library/SoListBox.cpp:591
-#: ui/mediaviewer/library/AlListBox.cpp:302
+#: ui/mediaviewer/library/AlListBox.cpp:300
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
@@ -68,7 +68,7 @@ msgstr "Taisyti takelius"
 #: ui/mediaviewer/library/PcListBox.cpp:118
 #: ui/mediaviewer/library/SoListBox.cpp:525
 #: ui/mediaviewer/library/RaListBox.cpp:150
-#: ui/mediaviewer/library/AlListBox.cpp:272
+#: ui/mediaviewer/library/AlListBox.cpp:270
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:340
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1933
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068
@@ -119,7 +119,7 @@ msgstr "Žinynas"
 #: ui/mediaviewer/library/PcListBox.cpp:111
 #: ui/mediaviewer/library/SoListBox.cpp:518
 #: ui/mediaviewer/library/RaListBox.cpp:143
-#: ui/mediaviewer/library/AlListBox.cpp:266
+#: ui/mediaviewer/library/AlListBox.cpp:264
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2064
@@ -151,7 +151,7 @@ msgstr ""
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:249
+#: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
 #: ui/player/PlayList.cpp:1699 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
@@ -201,7 +201,7 @@ msgstr "Įrašyti išdėstymą"
 #: ui/mediaviewer/library/PcListBox.cpp:165
 #: ui/mediaviewer/library/SoListBox.cpp:646
 #: ui/mediaviewer/library/RaListBox.cpp:197
-#: ui/mediaviewer/library/AlListBox.cpp:338
+#: ui/mediaviewer/library/AlListBox.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2110
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
@@ -494,7 +494,7 @@ msgid "Generate Smart Playlist"
 msgstr ""
 
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
-#: ui/mediaviewer/library/AlListBox.cpp:492
+#: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
 #: ui/preferences/Preferences.cpp:1729 ui/preferences/Preferences.cpp:1824
 #: ui/player/PlayerFilters.cpp:107
@@ -637,8 +637,8 @@ msgid "No lyrics found"
 msgstr "Dainos žodžių nerasta"
 
 #: ui/lyrics/LyricsPanel.cpp:812
-msgid "Lyrics from "
-msgstr "Dainos žodžiai iš "
+msgid "Lyrics from"
+msgstr "Dainos žodžiai iš"
 
 #: ui/lyrics/LyricsPanel.cpp:1969
 msgid "Lyrics Target Editor"
@@ -649,7 +649,7 @@ msgid "Lyrics Source Editor"
 msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -1247,7 +1247,7 @@ msgstr "Kopijuoti metus į visas jūsų taisomas dainas"
 
 #: ui/trackedit/TrackEdit.cpp:276 ui/trackedit/TrackEdit.cpp:533
 #: ui/filebrowser/FileRenamer.cpp:87 ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:320
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:423
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:743
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:56
@@ -1425,7 +1425,7 @@ msgstr ""
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:249
+#: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1699
 msgid "Add commands in preferences"
 msgstr ""
@@ -1435,7 +1435,7 @@ msgstr ""
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
 #: ui/mediaviewer/library/SoListBox.cpp:460
-#: ui/mediaviewer/library/AlListBox.cpp:252
+#: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:279
 #: ui/preferences/Preferences.cpp:2067 ui/player/PlayList.cpp:1702
 msgid "Commands"
@@ -1460,7 +1460,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:127
 #: ui/mediaviewer/library/SoListBox.cpp:534
 #: ui/mediaviewer/library/RaListBox.cpp:159
-#: ui/mediaviewer/library/AlListBox.cpp:280
+#: ui/mediaviewer/library/AlListBox.cpp:278
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:347
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1940
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2075
@@ -1509,7 +1509,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:134
 #: ui/mediaviewer/library/SoListBox.cpp:541
 #: ui/mediaviewer/library/RaListBox.cpp:166
-#: ui/mediaviewer/library/AlListBox.cpp:286
+#: ui/mediaviewer/library/AlListBox.cpp:284
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:353
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1946
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2081
@@ -1557,7 +1557,7 @@ msgstr "Pridėti šiuo metu pažymėtus takelius į grojaraštį po dabartinio a
 #: ui/mediaviewer/library/PcListBox.cpp:141
 #: ui/mediaviewer/library/SoListBox.cpp:548
 #: ui/mediaviewer/library/RaListBox.cpp:173
-#: ui/mediaviewer/library/AlListBox.cpp:292
+#: ui/mediaviewer/library/AlListBox.cpp:290
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:359
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1952
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2087
@@ -1606,7 +1606,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:147
 #: ui/mediaviewer/library/SoListBox.cpp:554
 #: ui/mediaviewer/library/RaListBox.cpp:179
-#: ui/mediaviewer/library/AlListBox.cpp:297
+#: ui/mediaviewer/library/AlListBox.cpp:295
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:364
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1957
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2092
@@ -1677,7 +1677,7 @@ msgid "Are you sure to delete the selected path ?"
 msgstr "Ar tikrai norite ištrinti pažymėtą kelią ?"
 
 #: ui/filebrowser/FileBrowser.cpp:558
-msgid "Error deleting the folder "
+msgid "Error deleting the folder"
 msgstr "Klaida, ištrinant aplanką"
 
 #: ui/filebrowser/FileBrowser.cpp:559 ui/mediaviewer/MediaViewer.cpp:1415
@@ -1736,11 +1736,11 @@ msgstr ""
 msgid "Are you sure to delete the selected files ?"
 msgstr "Ar tikrai norite ištrinti pažymėtus failus ?"
 
-#: ui/filebrowser/FileBrowser.cpp:2000
-msgid "There was an error deleting "
+#: ui/filebrowser/FileBrowser.cpp:2001
+msgid "There was an error deleting"
 msgstr "Ištrinant, įvyko klaida"
 
-#: ui/filebrowser/FileBrowser.cpp:2001
+#: ui/filebrowser/FileBrowser.cpp:2002
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1748,7 +1748,7 @@ msgstr ""
 "\n"
 "Tęsti ištrynimą?"
 
-#: ui/filebrowser/FileBrowser.cpp:2002
+#: ui/filebrowser/FileBrowser.cpp:2003
 msgid "Continue"
 msgstr "Tęsti"
 
@@ -1908,7 +1908,7 @@ msgid "Download Albums torrents"
 msgstr ""
 
 #: ui/MainFrame.cpp:154
-msgid "Welcome to Guayadeque "
+msgid "Welcome to Guayadeque"
 msgstr "Sveiki atvykę į Guayadeque"
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
@@ -2300,7 +2300,7 @@ msgstr "Pridėti šiuo metu pažymėtus takelius į grojaraštį"
 #: ui/mediaviewer/library/PcListBox.cpp:156
 #: ui/mediaviewer/library/SoListBox.cpp:599
 #: ui/mediaviewer/library/RaListBox.cpp:188
-#: ui/mediaviewer/library/AlListBox.cpp:310
+#: ui/mediaviewer/library/AlListBox.cpp:308
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
@@ -2319,7 +2319,7 @@ msgstr "Taisyti pažymėtus takelius"
 
 #: ui/mediaviewer/library/YeListBox.cpp:159
 #: ui/mediaviewer/library/AAListBox.cpp:204
-#: ui/mediaviewer/library/AlListBox.cpp:339
+#: ui/mediaviewer/library/AlListBox.cpp:337
 msgid "Save the selected tracks to Playlist"
 msgstr "Įrašyti pažymėtus takelius į grojaraštį"
 
@@ -2373,14 +2373,14 @@ msgstr "Groti šiuo metu pažymėtą kompozitorių"
 #: ui/mediaviewer/library/CoListBox.cpp:121
 #: ui/mediaviewer/library/CoListBox.cpp:128
 #: ui/mediaviewer/library/CoListBox.cpp:135
-#: ui/mediaviewer/library/AlListBox.cpp:281
-#: ui/mediaviewer/library/AlListBox.cpp:287
-#: ui/mediaviewer/library/AlListBox.cpp:293
+#: ui/mediaviewer/library/AlListBox.cpp:279
+#: ui/mediaviewer/library/AlListBox.cpp:285
+#: ui/mediaviewer/library/AlListBox.cpp:291
 msgid "Add current selected albums to the Playlist as Next Tracks"
 msgstr ""
 
 #: ui/mediaviewer/library/CoListBox.cpp:140
-#: ui/mediaviewer/library/AlListBox.cpp:297
+#: ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr ""
 
@@ -2415,7 +2415,7 @@ msgstr "Taisyti pažymėtų atlikėjų dainas"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:344 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Sukurti išmanųjį grojaraštį"
@@ -2468,7 +2468,7 @@ msgstr "Groti šiuo metu pažymėto albumo atlikėją"
 
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:345 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Sukurti išmanųjį grojaraštį iš šio takelio"
@@ -2624,126 +2624,126 @@ msgid "Play the selected tracks"
 msgstr ""
 
 #: ui/mediaviewer/library/AlListBox.cpp:177
-msgid "by "
+msgid "by"
 msgstr ""
 
-#: ui/mediaviewer/library/AlListBox.cpp:267
+#: ui/mediaviewer/library/AlListBox.cpp:265
 msgid "Play current selected albums"
 msgstr "Groti šiuo metu pažymėtus albumus"
 
-#: ui/mediaviewer/library/AlListBox.cpp:273
+#: ui/mediaviewer/library/AlListBox.cpp:271
 msgid "Add current selected albums to the Playlist"
 msgstr "Pridėti šiuo metu pažymėtus albumus į grojaraštį"
 
-#: ui/mediaviewer/library/AlListBox.cpp:303
+#: ui/mediaviewer/library/AlListBox.cpp:301
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
 msgid "Edit the labels assigned to the selected albums"
 msgstr ""
 
-#: ui/mediaviewer/library/AlListBox.cpp:311
+#: ui/mediaviewer/library/AlListBox.cpp:309
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
 msgid "Edit the selected songs"
 msgstr "Taisyti pažymėtas dainas"
 
-#: ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/library/AlListBox.cpp:319
 msgid "Albums are sorted by name"
 msgstr "Albumai yra surikiuoti pagal pavadinimą"
 
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:320
 msgid "Albums are sorted by year"
 msgstr "Albumai yra surikiuoti pagal metus"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:321
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:427
 msgid "Year Descending"
 msgstr "Metai mažėjančia tvarka"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:321
 msgid "Albums are sorted by year descending"
 msgstr "Albumai yra surikiuoti pagal metus mažėjančia tvarka"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Artist, Name"
 msgstr "Atlikėjas, Pavadinimas"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Albums are sorted by artist and album name"
 msgstr "Albumai yra surikiuoti pagal atlikėją ir albumo pavadinimą"
 
-#: ui/mediaviewer/library/AlListBox.cpp:325
+#: ui/mediaviewer/library/AlListBox.cpp:323
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:435
 msgid "Artist, Year"
 msgstr "Atlikėjas, Metai"
 
-#: ui/mediaviewer/library/AlListBox.cpp:325
+#: ui/mediaviewer/library/AlListBox.cpp:323
 msgid "Albums are sorted by artist and year"
 msgstr "Albumai yra surikiuoti pagal atlikėją ir metus"
 
-#: ui/mediaviewer/library/AlListBox.cpp:326
+#: ui/mediaviewer/library/AlListBox.cpp:324
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:439
 msgid "Artist, Year Descending"
 msgstr "Atlikėjas, Metai mažėjančia tvarka"
 
-#: ui/mediaviewer/library/AlListBox.cpp:326
+#: ui/mediaviewer/library/AlListBox.cpp:324
 msgid "Albums are sorted by artist and year descending"
 msgstr "Albumai yra surikiuoti pagal atlikėją ir metus mažėjančia tvarka"
 
-#: ui/mediaviewer/library/AlListBox.cpp:331
+#: ui/mediaviewer/library/AlListBox.cpp:329
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:447
 msgid "Sort By"
 msgstr "Rikiuoti pagal"
 
-#: ui/mediaviewer/library/AlListBox.cpp:331
+#: ui/mediaviewer/library/AlListBox.cpp:329
 msgid "Sets the albums order"
 msgstr "Nustato albumų tvarką"
 
-#: ui/mediaviewer/library/AlListBox.cpp:352
+#: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download Cover"
 msgstr "Atsisiųsti viršelį"
 
-#: ui/mediaviewer/library/AlListBox.cpp:352
+#: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download cover for the current selected album"
 msgstr "Atsisiųsti esamam albumui viršelį"
 
-#: ui/mediaviewer/library/AlListBox.cpp:356
+#: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select Cover"
 msgstr "Pasirinkti viršelį"
 
-#: ui/mediaviewer/library/AlListBox.cpp:356
+#: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select the cover image file from disk"
 msgstr "Pasirinkti viršelio paveikslo failą iš disko"
 
-#: ui/mediaviewer/library/AlListBox.cpp:360
+#: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete Cover"
 msgstr "Ištrinti viršelį"
 
-#: ui/mediaviewer/library/AlListBox.cpp:360
+#: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete the cover for the selected album"
 msgstr "Ištrinti pažymėto albumo viršelį"
 
-#: ui/mediaviewer/library/AlListBox.cpp:367
+#: ui/mediaviewer/library/AlListBox.cpp:365
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:408
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2001
 msgid "Embed Cover"
 msgstr "Įtaisyti viršelį"
 
-#: ui/mediaviewer/library/AlListBox.cpp:367
+#: ui/mediaviewer/library/AlListBox.cpp:365
 msgid "Embed the current cover to the album files"
 msgstr "Įtaisyti dabartinį viršelį į albumo failus"
 
@@ -2818,7 +2818,7 @@ msgid "Playlist"
 msgstr "Grojaraštis"
 
 #: ui/mediaviewer/MediaViewer.cpp:2101
-msgid "The best of "
+msgid "The best of"
 msgstr ""
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
@@ -4362,8 +4362,8 @@ msgid "Remove source files"
 msgstr "Šalinti šaltinio failus"
 
 #: ui/preferences/Preferences.cpp:2314
-msgid " Define patterns using "
-msgstr "Apibrėžkite šablonus, naudodami "
+msgid "Define patterns using"
+msgstr "Apibrėžkite šablonus, naudodami"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
