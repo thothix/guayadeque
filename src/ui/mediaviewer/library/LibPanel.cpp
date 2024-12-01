@@ -2787,8 +2787,8 @@ void guLibPanel::OnSongDeleteDrive( wxCommandEvent &event )
 {
     if( m_SongListCtrl->GetSelectedCount() )
     {
-        if( wxMessageBox( _( "Are you sure to delete the selected tracks from your drive?\nThis will permanently erase the selected tracks." ),
-            _( "Remove tracks from drive" ), wxICON_QUESTION|wxYES|wxNO|wxNO_DEFAULT ) == wxYES )
+        if (wxMessageBox(_("Are you sure to delete the selected tracks from your drive?\nThis will permanently erase the selected tracks."),
+            _("Remove tracks from drive"), wxICON_QUESTION|wxYES|wxNO|wxNO_DEFAULT) == wxYES)
         {
             guTrackArray Tracks;
 
