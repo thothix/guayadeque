@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:01-0300\n"
+"POT-Creation-Date: 2024-12-01 16:18-0300\n"
 "PO-Revision-Date: 2024-11-28 20:35+0100\n"
 "Last-Translator: Rodolfo Gonella Diaza <rudygonella@gmail.com>\n"
 "Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/"
@@ -2423,8 +2423,11 @@ msgid "Create Best of Playlist"
 msgstr "Crea playlist di il Meglio di (Best of)"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
-msgid "Create a playlist with the best of this aretist"
-msgstr "Crea una playlist con il Meglio (Best of) di questo artista"
+#: ui/mediaviewer/library/AAListBox.cpp:210
+#: ui/mediaviewer/library/SoListBox.cpp:655
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
+msgid "Create a playlist with the best of this artist"
+msgstr "Crea una playlist con il meglio di (Best of) questo artista"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
 #: ui/mediaviewer/treeview/TreePanel.cpp:360
@@ -2466,12 +2469,6 @@ msgstr "Aggiungi i generi selezionati alla playlist"
 #: ui/mediaviewer/library/AAListBox.cpp:150
 msgid "Play current selected album artist"
 msgstr "Riproduci l'artista dell' album selezionato"
-
-#: ui/mediaviewer/library/AAListBox.cpp:210
-#: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
-msgid "Create a playlist with the best of this artist"
-msgstr "Crea una playlist con il meglio di (Best of) questo artista"
 
 #: ui/mediaviewer/library/PcListBox.cpp:112
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:645

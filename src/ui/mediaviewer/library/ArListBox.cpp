@@ -216,7 +216,7 @@ void guArListBox::CreateContextMenu( wxMenu * Menu ) const
 
         MenuItem = new wxMenuItem( Menu, ID_ARTIST_CREATE_BESTOF_PLAYLIST,
                             wxString( _( "Create Best of Playlist" ) ),
-                            _( "Create a playlist with the best of this aretist" ) );
+                            _( "Create a playlist with the best of this artist" ) );
         Menu->Append( MenuItem );
 
         if( ( ContextMenuFlags & guCONTEXTMENU_COPY_TO ) ||

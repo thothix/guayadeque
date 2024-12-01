@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:01-0300\n"
+"POT-Creation-Date: 2024-12-01 16:18-0300\n"
 "PO-Revision-Date: 2024-12-01 14:05+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
@@ -2436,8 +2436,11 @@ msgid "Create Best of Playlist"
 msgstr "Intelligente Wiedergabeliste erstellen"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
+#: ui/mediaviewer/library/AAListBox.cpp:210
+#: ui/mediaviewer/library/SoListBox.cpp:655
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 #, fuzzy
-msgid "Create a playlist with the best of this aretist"
+msgid "Create a playlist with the best of this artist"
 msgstr "Intelligente Wiedergabeliste anhand dieses Tracks erstellen"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
@@ -2480,13 +2483,6 @@ msgstr "Aktuell ausgewählte Genres zur Wiedergabeliste hinzufügen"
 #: ui/mediaviewer/library/AAListBox.cpp:150
 msgid "Play current selected album artist"
 msgstr "Aktuell ausgewählter Album-Interpret wiedergeben"
-
-#: ui/mediaviewer/library/AAListBox.cpp:210
-#: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
-#, fuzzy
-msgid "Create a playlist with the best of this artist"
-msgstr "Intelligente Wiedergabeliste anhand dieses Tracks erstellen"
 
 #: ui/mediaviewer/library/PcListBox.cpp:112
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:645

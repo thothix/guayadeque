@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:01-0300\n"
+"POT-Creation-Date: 2024-12-01 16:18-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Hreinn Jónsson <hreinnjons@gmail.com>, 2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/anonbeat/"
@@ -2422,8 +2422,11 @@ msgid "Create Best of Playlist"
 msgstr "Búa til Sjall Lagalista"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
+#: ui/mediaviewer/library/AAListBox.cpp:210
+#: ui/mediaviewer/library/SoListBox.cpp:655
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 #, fuzzy
-msgid "Create a playlist with the best of this aretist"
+msgid "Create a playlist with the best of this artist"
 msgstr " Búa til snjall lagalista frá þessu lagi"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
@@ -2466,13 +2469,6 @@ msgstr "Bæta við völdum flokkum við lagalista"
 #: ui/mediaviewer/library/AAListBox.cpp:150
 msgid "Play current selected album artist"
 msgstr "Spila valdar plötur flytjanda"
-
-#: ui/mediaviewer/library/AAListBox.cpp:210
-#: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
-#, fuzzy
-msgid "Create a playlist with the best of this artist"
-msgstr " Búa til snjall lagalista frá þessu lagi"
 
 #: ui/mediaviewer/library/PcListBox.cpp:112
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:645
