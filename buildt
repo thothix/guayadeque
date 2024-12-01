@@ -2,7 +2,7 @@ echo "-- Building .pot file and updating translations ..."
 POT=guayadeque.pot
 
 cd src
-find . -name "*.cpp" | xargs xgettext -d guayadeque -o ${POT} -C -k_ -kwxPLURAL
+find . -name "*.cpp" | xargs xgettext -d guayadeque -o ${POT} -C -k_ -kwxPLURAL:1,2
 cat ../po/external.pot >>${POT}
 mv ${POT} ../po
 
