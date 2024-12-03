@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:18-0300\n"
-"PO-Revision-Date: 2024-12-01 14:05+0100\n"
+"POT-Creation-Date: 2024-12-03 15:11-0300\n"
+"PO-Revision-Date: 2024-12-03 14:51+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
 "guayadeque/language/de_DE/)\n"
@@ -457,11 +457,11 @@ msgstr "Groß"
 
 #: MainApp.cpp:395
 msgid "Another program instance is already running."
-msgstr ""
+msgstr "Es läuft bereits eine andere Programminstanz."
 
 #: MainApp.cpp:395
 msgid "Do you want to continue with the program?"
-msgstr ""
+msgstr "Möchten Sie mit dem Programm fortfahren?"
 
 #: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
@@ -879,9 +879,8 @@ msgid "Directories"
 msgstr "Verzeichnisse"
 
 #: ui/locationpanel/LocationPanel.cpp:418
-#, fuzzy
 msgid "View the library Directories"
-msgstr "Genres in Musiksammlung ansehen"
+msgstr "Die Bibliotheksverzeichnisse anzeigen"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
 #: ui/MainFrame.cpp:1177 ui/mediaviewer/library/LibPanel.cpp:241
@@ -1118,7 +1117,7 @@ msgstr "Track Editor"
 
 #: ui/trackedit/TrackEdit.cpp:105
 msgid "Songs"
-msgstr "Tracks"
+msgstr "Lieder"
 
 #: ui/trackedit/TrackEdit.cpp:113
 msgid "Move the track to the previous position"
@@ -1395,9 +1394,8 @@ msgid "Pattern"
 msgstr "Muster"
 
 #: ui/filebrowser/FileRenamer.cpp:86
-#, fuzzy
 msgid "Pattern flags"
-msgstr "Muster"
+msgstr "Mustereinstellungen"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/mediaviewer/library/LibPanel.cpp:374
 #: ui/mediaviewer/library/LibPanel.cpp:381
@@ -1649,9 +1647,8 @@ msgid "Paste to the selected folder"
 msgstr "In dem ausgewählten Ordner einfügen"
 
 #: ui/filebrowser/FileBrowser.cpp:411 ui/mediaviewer/library/DiBrowser.cpp:328
-#, fuzzy
 msgid "Update the selected folder"
-msgstr "In dem ausgewählten Ordner einfügen"
+msgstr "Den ausgewählten Ordner aktualisieren"
 
 #: ui/filebrowser/FileBrowser.cpp:417 ui/filebrowser/FileBrowser.cpp:472
 #: ui/filebrowser/FileBrowser.cpp:476
@@ -1867,19 +1864,17 @@ msgstr "Aktuellen Track der Wiedergabeliste wiederholen"
 
 #: ui/taskbar/TaskBar.cpp:179
 msgid "Shu&ffle"
-msgstr ""
+msgstr "Zufallswiedergabe"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
 #: ui/player/PlayList.cpp:1827
-#, fuzzy
 msgid "Shuffle the tracks in the playlist"
-msgstr "Tracks der Wiedergabeliste wiederholen"
+msgstr "Zufallswiedergabe der Titel in der Wiedergabeliste"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
-#, fuzzy
 msgid "Force &Gapless Mode"
-msgstr "Unterbrechungsfreie &Wiedergabe erzwingen"
+msgstr "Force &Gapless Modus"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1550
 msgid "Set playback in gapless mode"
@@ -1969,9 +1964,8 @@ msgid "Play a online music stream"
 msgstr "Online-Musik-Stream öffnen"
 
 #: ui/MainFrame.cpp:1059
-#, fuzzy
 msgid "View the audio cd panel"
-msgstr "Internet-Radioleiste ein- oder ausblenden"
+msgstr "Ansicht des Audio-CD-Bedienfeldes"
 
 #: ui/MainFrame.cpp:1090
 msgid "Show the selected portable devices"
@@ -1990,9 +1984,8 @@ msgid "Exits the application"
 msgstr "Beendet die Anwendung"
 
 #: ui/MainFrame.cpp:1172
-#, fuzzy
 msgid "View the library directories"
-msgstr "Genres in Musiksammlung ansehen"
+msgstr "Die Bibliotheksverzeichnisse anzeigen"
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
@@ -2022,9 +2015,8 @@ msgid "Sources"
 msgstr "Quellen"
 
 #: ui/MainFrame.cpp:1327
-#, fuzzy
 msgid "Show/Hide the locations"
-msgstr "Orte ein- oder ausblenden"
+msgstr "Standorte ein-/ausblenden"
 
 #: ui/MainFrame.cpp:1334
 msgid "Player Filters"
@@ -2160,9 +2152,8 @@ msgid "Set the rating of the current track"
 msgstr "Aktuellen Track bewerten"
 
 #: ui/MainFrame.cpp:1523
-#, fuzzy
 msgid "Repeat the Playlist"
-msgstr "Wiedergabeliste wiederholen"
+msgstr "Wiederholen der Wiedergabeliste"
 
 #: ui/MainFrame.cpp:1529
 msgid "Repeat Track"
@@ -2431,17 +2422,15 @@ msgstr "Tracks der ausgewählten Interpreten bearbeiten"
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
 #: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
-#, fuzzy
 msgid "Create Best of Playlist"
-msgstr "Intelligente Wiedergabeliste erstellen"
+msgstr "Best-of-Wiedergabeliste erstellen"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
 #: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
-#, fuzzy
 msgid "Create a playlist with the best of this artist"
-msgstr "Intelligente Wiedergabeliste anhand dieses Tracks erstellen"
+msgstr "Wiedergabeliste mit den besten Titel dieses Künstlers erstellen"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
 #: ui/mediaviewer/treeview/TreePanel.cpp:360
@@ -2798,9 +2787,8 @@ msgstr "Neuer Filter"
 
 #: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2820
 #: ui/preferences/Preferences.cpp:2840
-#, fuzzy
 msgid "Collection"
-msgstr "Collections"
+msgstr "Collection"
 
 #: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2971
 msgid "Select library path"
@@ -2832,7 +2820,7 @@ msgstr "Wiedergabeliste"
 
 #: ui/mediaviewer/MediaViewer.cpp:2101
 msgid "The best of"
-msgstr ""
+msgstr "Das Beste aus"
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
 #, c-format
@@ -2842,7 +2830,7 @@ msgstr "Keine Tracks gefunden für %s."
 #: ui/mediaviewer/MediaViewer.cpp:2127
 #, c-format
 msgid "Best tracks for '%s' not found."
-msgstr ""
+msgstr "Beste Tracks für '%s' nicht gefunden."
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
@@ -3421,7 +3409,7 @@ msgstr "Erneut suchen"
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:681
 msgid "Search again for cd metadata"
-msgstr ""
+msgstr "Erneut nach cd-Metadaten suchen"
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:695
 #: ui/podcasts/PodcastsPanel.cpp:2092
@@ -3429,9 +3417,8 @@ msgid "No selected items..."
 msgstr "Keine ausgewählten Objekte..."
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:695
-#, fuzzy
 msgid "Copy the current selected tracks to a directory or device"
-msgstr "Ausgewählte Tracks in einen Ordner oder auf ein Gerät kopieren "
+msgstr "Ausgewählte Tracks in einen Ordner oder auf ein Gerät kopieren"
 
 #: ui/confirmexit/ConfirmExit.cpp:27
 msgid "Please confirm"
@@ -3470,9 +3457,8 @@ msgid "From:"
 msgstr "Von:"
 
 #: ui/cover/CoverEdit.cpp:604
-#, fuzzy
 msgid "Cover Url"
-msgstr "Url-Cover"
+msgstr "Cover Url"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:456 ui/lastfmpanel/LastFMPanel.cpp:703
 msgid "Less..."
@@ -3695,14 +3681,12 @@ msgid "Listeners"
 msgstr "Zuhörer"
 
 #: ui/radios/RadioPanel.cpp:443
-#, fuzzy
 msgid "Add to User Radio"
-msgstr "Internet-Radio hinzufügen"
+msgstr "Zum Benutzerradio hinzufügen"
 
 #: ui/radios/RadioPanel.cpp:444
-#, fuzzy
 msgid "Add selected radios as user radios"
-msgstr "Ausgewähltes Album hinzufügen nach"
+msgstr "Ausgewählte Radios als Benutzerradios hinzufügen"
 
 #: ui/radios/RadioPanel.cpp:584 ui/radios/RadioPanel.cpp:596
 msgid "Stations"
@@ -3714,7 +3698,7 @@ msgstr "Keine Einträge für diese Internet-Radiostation vorhanden"
 
 #: ui/radios/RadioPanel.cpp:1165
 msgid "Radio Search"
-msgstr "Internet-Radiosuche"
+msgstr "Radio-Suche"
 
 #: ui/radios/RadioPanel.cpp:1180
 msgid "Search in now playing info"
@@ -3791,11 +3775,11 @@ msgstr "Japanisch"
 
 #: ui/preferences/Preferences.cpp:140
 msgid "Lithuanian"
-msgstr ""
+msgstr "Litauisch"
 
 #: ui/preferences/Preferences.cpp:141
 msgid "Malay (Malaysia)"
-msgstr ""
+msgstr "Malaiisch (Malaysia)"
 
 #: ui/preferences/Preferences.cpp:142
 msgid "Norwegian Bokmal"
@@ -3888,7 +3872,7 @@ msgstr "Tastenkombinationen"
 
 #: ui/preferences/Preferences.cpp:369
 msgid "Accept"
-msgstr "OK"
+msgstr "Akzeptieren"
 
 #: ui/preferences/Preferences.cpp:447
 msgid "On Start"
@@ -3931,7 +3915,7 @@ msgstr "Verhalten"
 
 #: ui/preferences/Preferences.cpp:503
 msgid "Activate system tray icon"
-msgstr "Startleistensymbol aktivieren"
+msgstr "Systemleistensymbol aktivieren"
 
 #: ui/preferences/Preferences.cpp:514
 msgid "Integrate into SoundMenu"
@@ -3972,7 +3956,7 @@ msgstr "Wiedergabeliste beim Schließen speichern"
 
 #: ui/preferences/Preferences.cpp:554
 msgid "Close minimizes to system tray icon"
-msgstr "Guayadeque in taskbar minimieren"
+msgstr "Schließen minimiert das Symbol in der Taskleiste"
 
 #: ui/preferences/Preferences.cpp:559
 msgid "Ask confirmation on exit"
@@ -3984,7 +3968,7 @@ msgstr "Pfade"
 
 #: ui/preferences/Preferences.cpp:671
 msgid "Words to detect covers"
-msgstr "Schlüsselwörter für die CD-Cover-Suche"
+msgstr "Begriffe zur Identifizierung von Cover-Versionen"
 
 #: ui/preferences/Preferences.cpp:700 ui/preferences/Preferences.cpp:2242
 msgid "Options"
@@ -4056,11 +4040,11 @@ msgstr "PreAmp:"
 
 #: ui/preferences/Preferences.cpp:871
 msgid "Random / Smart play modes"
-msgstr "Zufallswiedergabe / Intelligente-Wiedergabe-Modus"
+msgstr "Zufalls-/Smartplay-Modus"
 
 #: ui/preferences/Preferences.cpp:881
 msgid "Minimum number of tracks to play required to add new ones"
-msgstr "verbleibende Tracks bis zur neuen Suche"
+msgstr "Mindestanzahl der abzuspielenden Titel, um neue hinzuzufügen"
 
 #: ui/preferences/Preferences.cpp:889
 msgid "Tracks added each time"
@@ -4071,18 +4055,16 @@ msgid "Max played tracks kept in playlist"
 msgstr "Maximum wiedergegebener Tracks, die in der Wiedergabeliste verbleiben"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3440
-#, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
-msgstr[0] "Nicht wiederholen: letzten"
+msgstr[0] "Letztes nicht wiederholen"
 msgstr[1] "Nicht wiederholen: letzten"
 
 #: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
-#, fuzzy
 msgid "artist"
 msgid_plural "artists"
-msgstr[0] "Interpret"
-msgstr[1] "Interpreten"
+msgstr[0] "Künstler"
+msgstr[1] "Interpret"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
@@ -4186,7 +4168,7 @@ msgstr "Tracks löschen, die kürzer sind als"
 
 #: ui/preferences/Preferences.cpp:1223
 msgid "Last.fm audioscrobble"
-msgstr "Last.fm audioscrobble"
+msgstr "Last.fm Audioscrobble"
 
 #: ui/preferences/Preferences.cpp:1225 ui/preferences/Preferences.cpp:1259
 msgid "Enabled"
@@ -4204,7 +4186,7 @@ msgstr "Passwort:"
 
 #: ui/preferences/Preferences.cpp:1257
 msgid "Libre.fm audioscrobble"
-msgstr "Libre.fm audioscrobble"
+msgstr "Libre.fm Audioscrobble"
 
 #: ui/preferences/Preferences.cpp:1358
 msgid "Targets"
@@ -4240,7 +4222,7 @@ msgstr "Benutzername:"
 
 #: ui/preferences/Preferences.cpp:1507
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: ui/preferences/Preferences.cpp:1575
 msgid "Browser command"
@@ -4248,11 +4230,11 @@ msgstr "Browser-Befehl"
 
 #: ui/preferences/Preferences.cpp:1583
 msgid "Minimum radio allowed bit rate"
-msgstr "Mindestbitrate für Internet-Radios"
+msgstr "Minimale erlaubte Bitrate für Radio"
 
 #: ui/preferences/Preferences.cpp:1590
 msgid "Player online buffer size"
-msgstr "Puffergröße bei Online-Wiedergaben"
+msgstr "Online-Puffergröße des Players"
 
 #: ui/preferences/Preferences.cpp:1628
 msgid "Destination directory:"
@@ -4352,7 +4334,7 @@ msgstr "URL:"
 
 #: ui/preferences/Preferences.cpp:2028
 msgid "Define URLs using"
-msgstr "URL definieren mit"
+msgstr "URLs definieren mit"
 
 #: ui/preferences/Preferences.cpp:2034
 msgid ""
@@ -4378,7 +4360,7 @@ msgstr ""
 
 #: ui/preferences/Preferences.cpp:2186
 msgid "Patterns"
-msgstr "Muster"
+msgstr "Pattern"
 
 #: ui/preferences/Preferences.cpp:2297
 msgid "Remove source files"
@@ -4426,7 +4408,7 @@ msgstr ""
 
 #: ui/preferences/Preferences.cpp:2387
 msgid "Accelerators"
-msgstr "Tastenkürzel"
+msgstr "Tastenbefehle"
 
 #: ui/preferences/Preferences.cpp:2392
 msgid "Action"
@@ -4651,9 +4633,8 @@ msgid "Go to the playlist next track"
 msgstr "Vorwärts"
 
 #: ui/player/PlayerPanel.cpp:170
-#, fuzzy
 msgid "Stops the current track"
-msgstr "Stoppen des aktuellen Track"
+msgstr "Stoppt den aktuellen Track"
 
 #: ui/player/PlayerPanel.cpp:174
 msgid "Record to file"
@@ -4669,7 +4650,7 @@ msgstr "Crossfading deaktivieren"
 
 #: ui/player/PlayerPanel.cpp:197
 msgid "Show the equalizer (right click for on/off)"
-msgstr "Equalizer anzeigen"
+msgstr "Equalizer anzeigen (Rechtsklick für An/Aus)"
 
 #: ui/player/PlayerPanel.cpp:201 ui/player/PlayerPanel.cpp:2842
 msgid "Volume"
@@ -4700,9 +4681,8 @@ msgid "Show the current position and song length of the current track"
 msgstr "Wiedergabeposition und Dauer des aktuellen Tracks anzeigen"
 
 #: ui/player/PlayerPanel.cpp:283
-#, fuzzy
 msgid "Show the file format of the current track"
-msgstr "Bitrate des aktuellen Tracks anzeigen"
+msgstr "Dateiformat des aktuellen Track anzeigen"
 
 #: ui/player/PlayerPanel.cpp:290
 msgid "Show the bit rate of the current track"
@@ -4714,21 +4694,19 @@ msgstr "Pufferung..."
 
 #: ui/player/PlayerPanel.cpp:2559
 msgid "Smart mode enabled"
-msgstr ""
+msgstr "Smart-Modus aktiviert"
 
 #: ui/player/PlayerPanel.cpp:2565
-#, fuzzy
 msgid "Repeat all"
-msgstr "Wiederholen: "
+msgstr "Alles wiederholen"
 
 #: ui/player/PlayerPanel.cpp:2570
-#, fuzzy
 msgid "Repeat one"
 msgstr "Track wiederholen"
 
 #: ui/player/PlayerPanel.cpp:2577
 msgid "Smart mode disabled"
-msgstr ""
+msgstr "Smart-Modus deaktiviert"
 
 #: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1740
 msgid "Set as Next Track"
@@ -4736,19 +4714,19 @@ msgstr "Als nächsten Track festlegen"
 
 #: ui/player/PlayList.cpp:67
 msgid "Move the selected tracks to the top"
-msgstr "Verschiebe die ausgewählten Titel an den Anfang"
+msgstr "Ausgewählte Tracks an den Anfang verschieben"
 
 #: ui/player/PlayList.cpp:71
 msgid "Move the selected tracks up"
-msgstr "Verschiebe die ausgewählten Titel nach oben"
+msgstr "Ausgewählten Tracks nach oben verschieben"
 
 #: ui/player/PlayList.cpp:75
 msgid "Move the selected tracks down"
-msgstr "Verschiebe die ausgewählten Titel nach unten"
+msgstr "Ausgewählte Tracks nach unten verschieben"
 
 #: ui/player/PlayList.cpp:79
 msgid "Move the selected tracks to the bottom"
-msgstr "Verschiebe die ausgewählten Titel ans Ende der Liste"
+msgstr "Ausgewählte Tracks nach unten verschieben"
 
 #: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1841
 msgid "Remove the selected tracks from playlist"
@@ -4812,7 +4790,7 @@ msgstr "Ausgewählte Tracks vom Datenträger entfernen"
 
 #: ui/player/PlayList.cpp:2166
 msgid "Can't create a playlist without mediaviewer."
-msgstr ""
+msgstr "Kann keine Wiedergabeliste ohne Mediaviewer erstellen."
 
 #: ui/player/PlayList.cpp:2307
 msgid "Please enter the search term"
@@ -4897,8 +4875,9 @@ msgstr "In Datei"
 #~ msgid "Get guayadeque support from guayadeque.org"
 #~ msgstr "Hilfe durch Guayadeque.org erhalten"
 
+#~ msgid "Show the equalizer"
+#~ msgstr "Equalizer anzeigen"
+
 #~ msgid "Join the Guayadeque Last.fm users group"
 #~ msgstr "Der Guayadeque-Gruppe auf Last.fm beitreten"
 
-#~ msgid "R&andomize"
-#~ msgstr "Tracks mischen"
