@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 15:11-0300\n"
-"PO-Revision-Date: 2024-12-03 14:51+0100\n"
+"PO-Revision-Date: 2024-12-04 19:05+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
 "guayadeque/language/de_DE/)\n"
@@ -863,13 +863,13 @@ msgstr "Podcast-Einstellungen festlegen"
 
 #: ui/locationpanel/LocationPanel.cpp:398 ui/MainFrame.cpp:1153
 msgid "Open the music collection"
-msgstr "Musik-Collection öffnen"
+msgstr "Musiksammlung öffnen"
 
 #: ui/locationpanel/LocationPanel.cpp:411
 #: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1165
 #: ui/MainFrame.cpp:1226
 msgid "View the collection library"
-msgstr "Collection-Musiksammlung ansehen"
+msgstr "Sammlung-Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:418 ui/filebrowser/FileBrowser.cpp:1366
 #: ui/filebrowser/FileBrowser.cpp:1382 ui/MainFrame.cpp:1172
@@ -880,7 +880,7 @@ msgstr "Verzeichnisse"
 
 #: ui/locationpanel/LocationPanel.cpp:418
 msgid "View the library Directories"
-msgstr "Verzeichnisse der Musiksammlung ansehen"
+msgstr "Die Bibliotheksverzeichnisse anzeigen"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
 #: ui/MainFrame.cpp:1177 ui/mediaviewer/library/LibPanel.cpp:241
@@ -892,11 +892,11 @@ msgstr "Labels"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/MainFrame.cpp:1177
 msgid "View the library labels"
-msgstr "Musiksammlung-Labels ansehen"
+msgstr "Bibliothek-Labels ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:428 ui/MainFrame.cpp:1182
 msgid "View the library genres"
-msgstr "Genres in Musiksammlung ansehen"
+msgstr "Genres in Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:433 ui/MainFrame.cpp:1187
 #: ui/mediaviewer/library/LibPanel.cpp:260
@@ -907,7 +907,7 @@ msgstr "Interpreten"
 
 #: ui/locationpanel/LocationPanel.cpp:433 ui/MainFrame.cpp:1187
 msgid "View the library artists"
-msgstr "Interpreten in Musiksammlung ansehen"
+msgstr "Interpreten in Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:438 ui/MainFrame.cpp:1202
 #: ui/mediaviewer/library/LibPanel.cpp:355
@@ -918,7 +918,7 @@ msgstr "Komponisten"
 
 #: ui/locationpanel/LocationPanel.cpp:438 ui/MainFrame.cpp:1202
 msgid "View the library composers"
-msgstr "Komponisten in Musiksammlung ansehen"
+msgstr "Komponisten in Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:443 ui/MainFrame.cpp:1192
 #: ui/mediaviewer/library/LibPanel.cpp:577
@@ -927,7 +927,7 @@ msgstr "Album-Interpreten"
 
 #: ui/locationpanel/LocationPanel.cpp:443 ui/MainFrame.cpp:1192
 msgid "View the library album artists"
-msgstr "Album-Interpreten in Musiksammlung ansehen"
+msgstr "Album-Interpreten in Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:448 ui/MainFrame.cpp:1197
 #: ui/mediaviewer/library/LibPanel.cpp:279
@@ -939,7 +939,7 @@ msgstr "Alben"
 
 #: ui/locationpanel/LocationPanel.cpp:448 ui/MainFrame.cpp:1197
 msgid "View the library albums"
-msgstr "Alben in Musiksammlung ansehen"
+msgstr "Alben in Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:453 ui/MainFrame.cpp:1207
 #: ui/mediaviewer/library/LibPanel.cpp:298
@@ -950,7 +950,7 @@ msgstr "Jahre"
 
 #: ui/locationpanel/LocationPanel.cpp:453 ui/MainFrame.cpp:1207
 msgid "View the library years"
-msgstr "»Jahr« in Musiksammlung ansehen"
+msgstr "»Jahr« in Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:458 ui/MainFrame.cpp:1212
 #: ui/mediaviewer/library/LibPanel.cpp:317
@@ -961,15 +961,15 @@ msgstr "Bewertungen"
 
 #: ui/locationpanel/LocationPanel.cpp:458 ui/MainFrame.cpp:1212
 msgid "View the library ratings"
-msgstr "Bewertungen in Musiksammlung ansehen"
+msgstr "Bewertungen in Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:463
 msgid "Play Counts"
-msgstr "Wiedergabenummer" 
+msgstr "Wiedergabenummer"
 
 #: ui/locationpanel/LocationPanel.cpp:463 ui/MainFrame.cpp:1217
 msgid "View the library play counts"
-msgstr "Wiedergabenummer in Musiksammlung ansehen"
+msgstr "Wiedergabenummerr in Bibliothek ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:468
 #: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1222
@@ -983,7 +983,7 @@ msgstr "Album-Browser"
 
 #: ui/locationpanel/LocationPanel.cpp:478 ui/MainFrame.cpp:1232
 msgid "View the collection album browser"
-msgstr "Collection-Album-Browser ansehen"
+msgstr "Musiksammlung-Album-Browser ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:483 ui/MainFrame.cpp:1237
 #: ui/mediaviewer/treeview/TreePanel.cpp:814
@@ -993,7 +993,7 @@ msgstr "Verzeichnisstruktur"
 
 #: ui/locationpanel/LocationPanel.cpp:483 ui/MainFrame.cpp:1237
 msgid "View the collection tree view"
-msgstr "Baumansicht der Collection ansehen"
+msgstr "Baumansicht der Sammlung ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:488 ui/MainFrame.cpp:1242
 #: ui/mediaviewer/MediaViewer.cpp:253
@@ -1005,7 +1005,7 @@ msgstr "Wiedergabelisten"
 
 #: ui/locationpanel/LocationPanel.cpp:488 ui/MainFrame.cpp:1242
 msgid "View the collection playlists"
-msgstr "Collection-Wiedergabelisten ansehen"
+msgstr "Sammlung-Wiedergabelisten ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:499 ui/MainFrame.cpp:1253
 #: ui/mediaviewer/MediaViewer.cpp:923
@@ -1015,7 +1015,7 @@ msgstr "Pfad hinzufügen"
 #: ui/locationpanel/LocationPanel.cpp:499 ui/MainFrame.cpp:1253
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add path to the collection"
-msgstr "Pfad zur Collection hinzufügen"
+msgstr "Pfad zur Sammlung hinzufügen"
 
 #: ui/locationpanel/LocationPanel.cpp:503 ui/MainFrame.cpp:1257
 #: ui/mediaviewer/MediaViewer.cpp:926
@@ -1026,14 +1026,14 @@ msgstr "Dateien importieren"
 #: ui/locationpanel/LocationPanel.cpp:503 ui/MainFrame.cpp:1257
 #: ui/mediaviewer/MediaViewer.cpp:926
 msgid "Import files into the collection"
-msgstr "Dateien in die Collection importieren"
+msgstr "Dateien in die Sammlung importieren"
 
 #: ui/locationpanel/LocationPanel.cpp:512 ui/jamendo/Jamendo.cpp:1114
 #: ui/MainFrame.cpp:1266 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
 msgid "Update the collection library"
-msgstr "Collection-Musiksammlung aktualisieren"
+msgstr "Sammlung-Bibliothek aktualisieren"
 
 #: ui/locationpanel/LocationPanel.cpp:517 ui/jamendo/Jamendo.cpp:1117
 #: ui/MainFrame.cpp:1271 ui/mediaviewer/MediaViewer.cpp:935
@@ -1047,7 +1047,7 @@ msgstr "Erneut einlesen"
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1027
 msgid "Rescan the collection library"
-msgstr "Collection-Musiksammlung erneut einlesen"
+msgstr "Sammlung-Bibliothek erneut einlesen"
 
 #: ui/locationpanel/LocationPanel.cpp:523 ui/jamendo/Jamendo.cpp:1120
 #: ui/MainFrame.cpp:1277 ui/mediaviewer/MediaViewer.cpp:938
@@ -1061,7 +1061,7 @@ msgstr "CD-Covers suchen"
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1030
 msgid "Search the collection missing covers"
-msgstr "Collection nach fehlenden CD-Covern suchen"
+msgstr "Sammlung nach fehlenden CD-Covern suchen"
 
 #: ui/locationpanel/LocationPanel.cpp:532 ui/MainFrame.cpp:1286
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
@@ -1080,7 +1080,7 @@ msgstr "Gerät aushängen"
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1035
 msgid "Show collection properties"
-msgstr "Collection-Eigenschaften anzeigen"
+msgstr "Sammlung-Eigenschaften anzeigen"
 
 #: ui/labeleditor/LabelEditor.cpp:71
 msgid "Items"
@@ -1301,7 +1301,8 @@ msgstr "Album-Cover suchen"
 
 #: ui/trackedit/TrackEdit.cpp:363
 msgid "Copy the current picture to all the tracks you are editing"
-msgstr "Das aktuelle Bild in alle Tracks kopieren, die gerade bearbeitet werden"
+msgstr ""
+"Das aktuelle Bild in alle Tracks kopieren, die gerade bearbeitet werden"
 
 #: ui/trackedit/TrackEdit.cpp:371
 msgid "Pictures"
@@ -1985,7 +1986,7 @@ msgstr "Beendet die Anwendung"
 
 #: ui/MainFrame.cpp:1172
 msgid "View the library directories"
-msgstr "Ansicht die Musiksammlung-Verzeichnisse"
+msgstr "Ansicht die Bibliothek-Verzeichnisse"
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
@@ -2007,7 +2008,7 @@ msgstr "Wiedergabe-Wiedergabeliste"
 
 #: ui/MainFrame.cpp:1319
 msgid "Show/Hide the player playlist panel"
-msgstr "Wiedergabelistenbereich im Player anzeigen/ausblenden"
+msgstr "Wiedergabelispanel im Player anzeigen/ausblenden"
 
 #: ui/MainFrame.cpp:1326 ui/MainFrame.cpp:1600 ui/MainFrame.cpp:4074
 #: ui/preferences/Preferences.cpp:1315
@@ -2309,7 +2310,7 @@ msgstr "Aktuell ausgewählte Tracks zur Wiedergabeliste hinzufügen"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
 #: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1730
 msgid "Edit Songs"
-msgstr "Tracks bearbeiten"
+msgstr "Lieder bearbeiten"
 
 #: ui/mediaviewer/library/YeListBox.cpp:150
 #: ui/mediaviewer/library/CoListBox.cpp:150
@@ -2392,7 +2393,7 @@ msgstr "Ausgewähltes Album hinzufügen nach"
 
 #: ui/mediaviewer/library/CoListBox.cpp:149
 msgid "Edit songs"
-msgstr "Lieder bearbeiten"
+msgstr "Tracks bearbeiten"
 
 #: ui/mediaviewer/library/CoListBox.cpp:159
 #: ui/mediaviewer/library/ArListBox.cpp:213
@@ -2435,7 +2436,7 @@ msgstr "Eine Wiedergabeliste mit dem Best of dieses Interpreten anlegen"
 #: ui/mediaviewer/library/TaListBox.cpp:105
 #: ui/mediaviewer/treeview/TreePanel.cpp:360
 msgid "Create"
-msgstr "Anlegen"
+msgstr "Festlegen"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
 msgid "Create a new label"
@@ -2553,7 +2554,7 @@ msgstr "Aktuell ausgewählten Lieder zur Wiedergabeliste hinzufügen"
 
 #: ui/mediaviewer/library/SoListBox.cpp:566
 msgid "Selects the genre of the current song"
-msgstr "Wählt Genre des aktuellen Liedes aus"
+msgstr "Wählt Genre des akutellen Liedes aus"
 
 #: ui/mediaviewer/library/SoListBox.cpp:570 ui/player/PlayList.cpp:1777
 msgid "Selects the artist of the current song"
@@ -2609,7 +2610,7 @@ msgstr "Aus Musiksammlung entfernen"
 
 #: ui/mediaviewer/library/SoListBox.cpp:663
 msgid "Remove the current selected tracks from library"
-msgstr "Aktuell ausgewählte Tracks aus der Musiksammlung entfernen"
+msgstr "Aktuell ausgewählte Tracks aus der Bibliothek entfernen"
 
 #: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1854
 msgid "Delete from Drive"
@@ -3275,7 +3276,7 @@ msgstr "Tracks nach jedem Kriterium hinzufügen"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:91
 msgid "Copy to Option:"
-msgstr "Option für Kopieren nach"
+msgstr "Option für Kopieren nach:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:119
 msgid "Destination Folder:"
@@ -3843,7 +3844,7 @@ msgstr "Allgemein"
 
 #: ui/preferences/Preferences.cpp:224 ui/preferences/Preferences.cpp:606
 msgid "Collections"
-msgstr "Sammlung"
+msgstr "Sammlungen"
 
 #: ui/preferences/Preferences.cpp:229
 msgid "Playback"
@@ -3956,7 +3957,7 @@ msgstr "Wiedergabeliste beim Schließen speichern"
 
 #: ui/preferences/Preferences.cpp:554
 msgid "Close minimizes to system tray icon"
-msgstr "Schließen minimiert Guayadeque in den Infobereich (System-Tray)."
+msgstr "Schließen minimiert Guayadeque in den Infobereich (System-Tray)"
 
 #: ui/preferences/Preferences.cpp:559
 msgid "Ask confirmation on exit"
@@ -4238,7 +4239,7 @@ msgstr "Online-Puffergröße des Players"
 
 #: ui/preferences/Preferences.cpp:1628
 msgid "Destination directory:"
-msgstr "Zielverzeichnis"
+msgstr "Zielverzeichnis:"
 
 #: ui/preferences/Preferences.cpp:1632
 msgid "Select podcasts folder"
@@ -4494,7 +4495,7 @@ msgstr "Textfilter"
 
 #: ui/podcasts/NewChannel.cpp:365
 msgid "Enter the text to filter podcasts channels"
-msgstr "Podcast-Kanäle filtern eingeben"
+msgstr "Text zum Filtern von Podcast-Kanälen eingeben"
 
 #: ui/podcasts/ChannelEditor.cpp:37
 msgid "Podcast Channel Editor"
@@ -4622,7 +4623,7 @@ msgstr "Abweisen:"
 
 #: ui/player/PlayerPanel.cpp:156
 msgid "Go to the playlist previous track"
-msgstr "Zum vorherigen Titel in der Wiedergabeliste gehen"
+msgstr "Zum vorherigen Track in der Wiedergabeliste gehen"
 
 #: ui/player/PlayerPanel.cpp:161
 msgid "Play or pause the current track"
@@ -4630,7 +4631,7 @@ msgstr "Wiedergabe-/Pausentaste das aktuellen Track"
 
 #: ui/player/PlayerPanel.cpp:166
 msgid "Go to the playlist next track"
-msgstr "Zum nächsten Titel in der Wiedergabeliste wechseln"
+msgstr "Zum nächsten Track in der Wiedergabeliste wechseln"
 
 #: ui/player/PlayerPanel.cpp:170
 msgid "Stops the current track"
@@ -4782,7 +4783,7 @@ msgstr "Alle Tracks aus Wiedergabeliste entfernen"
 
 #: ui/player/PlayList.cpp:1849
 msgid "Remove the selected tracks from library"
-msgstr "Ausgewählte Tracks aus Musiksammlung entfernen"
+msgstr "Ausgewählte Tracks aus Bibliothek entfernen"
 
 #: ui/player/PlayList.cpp:1855
 msgid "Remove the selected tracks from drive"
@@ -4880,4 +4881,3 @@ msgstr "In Datei"
 
 #~ msgid "Join the Guayadeque Last.fm users group"
 #~ msgstr "Der Guayadeque-Gruppe auf Last.fm beitreten"
-
