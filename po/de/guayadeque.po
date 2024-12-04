@@ -2007,7 +2007,7 @@ msgstr "Wiedergabe-Wiedergabeliste"
 
 #: ui/MainFrame.cpp:1319
 msgid "Show/Hide the player playlist panel"
-msgstr "Wiedergabelistenbereich im Player anzeigen/ausblenden
+msgstr "Wiedergabelistenbereich im Player anzeigen/ausblenden"
 
 #: ui/MainFrame.cpp:1326 ui/MainFrame.cpp:1600 ui/MainFrame.cpp:4074
 #: ui/preferences/Preferences.cpp:1315
@@ -3706,7 +3706,7 @@ msgstr "In den Informationen zur aktuellen Wiedergabe suchen"
 
 #: ui/radios/RadioPanel.cpp:1184
 msgid "Search in genre names"
-msgstr "Über Genre-Namen suchen
+msgstr "Über Genre-Namen suchen"
 
 #: ui/radios/RadioPanel.cpp:1188
 msgid "Search in station names"
