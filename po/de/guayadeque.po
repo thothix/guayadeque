@@ -103,7 +103,7 @@ msgstr "Vollbild"
 
 #: misc/Accelerators.cpp:122
 msgid "Gapless/Crossfading"
-msgstr "Gapless/Crossfading"
+msgstr "Lückenlos/Überblendung"
 
 #: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1572
 #: ui/MainFrame.cpp:1615
@@ -146,7 +146,7 @@ msgstr "Wiedergabe/Pause"
 
 #: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1053 ui/MainFrame.cpp:1884
 msgid "Play Stream"
-msgstr "Stream öffnen"
+msgstr "Stream wiedergeben"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:322
 #: ui/filebrowser/FileBrowser.cpp:948 ui/MainFrame.cpp:1414
@@ -704,11 +704,11 @@ msgstr "Nicht gefunden:"
 
 #: ui/lyrics/LyricsPanel.cpp:2449
 msgid "Replace option editor"
-msgstr "Suchen und ersetzen"
+msgstr "Option-Editor für ersetzen"
 
 #: ui/lyrics/LyricsPanel.cpp:2455
 msgid "Extract option editor"
-msgstr "Editor für Extraktoptionen"
+msgstr "Option-Editor für extrahieren"
 
 #: ui/lyrics/LyricsPanel.cpp:2456 ui/lyrics/LyricsPanel.cpp:2462
 msgid "Begin:"
@@ -720,7 +720,7 @@ msgstr "Ende:"
 
 #: ui/lyrics/LyricsPanel.cpp:2461
 msgid "Exclude option editor"
-msgstr "Option Editor ausschließen"
+msgstr "Option-Editor für ausschließen"
 
 #: ui/lyrics/LyricsPanel.cpp:2467
 msgid "Not Found option editor"
@@ -783,7 +783,7 @@ msgstr "Anzeigen"
 
 #: ui/locationpanel/LocationPanel.cpp:310 ui/MainFrame.cpp:968
 msgid "Show/Hide the radio panel"
-msgstr "Internet-Radioleiste ein- oder ausblenden"
+msgstr "Radio-Panel ein- oder ausblenden"
 
 #: ui/locationpanel/LocationPanel.cpp:316 ui/MainFrame.cpp:974
 #: ui/radios/RadioPanel.cpp:552 ui/radios/RadioPanel.cpp:592
@@ -831,7 +831,7 @@ msgstr "Internet-Radio-Einstellungen festlegen"
 
 #: ui/locationpanel/LocationPanel.cpp:352 ui/MainFrame.cpp:1010
 msgid "Show/Hide the podcasts panel"
-msgstr "Podcast-Leiste ein- oder ausblenden"
+msgstr "Podcast-Panel ein- oder ausblenden"
 
 #: ui/locationpanel/LocationPanel.cpp:358 ui/MainFrame.cpp:1016
 #: ui/podcasts/PodcastsPanel.cpp:890 ui/podcasts/PodcastsPanel.cpp:898
@@ -880,7 +880,7 @@ msgstr "Verzeichnisse"
 
 #: ui/locationpanel/LocationPanel.cpp:418
 msgid "View the library Directories"
-msgstr "Die Bibliotheksverzeichnisse anzeigen"
+msgstr "Verzeichnisse der Musiksammlung ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
 #: ui/MainFrame.cpp:1177 ui/mediaviewer/library/LibPanel.cpp:241
@@ -965,11 +965,11 @@ msgstr "Bewertungen in Musiksammlung ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:463
 msgid "Play Counts"
-msgstr "Wiedergabezähler"
+msgstr "Wiedergabenummer" 
 
 #: ui/locationpanel/LocationPanel.cpp:463 ui/MainFrame.cpp:1217
 msgid "View the library play counts"
-msgstr "Wiedergabezähler in Musiksammlung ansehen"
+msgstr "Wiedergabenummer in Musiksammlung ansehen"
 
 #: ui/locationpanel/LocationPanel.cpp:468
 #: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1222
@@ -1113,7 +1113,7 @@ msgstr "Möchten Sie die ausgewählten Labels wirklich löschen?"
 
 #: ui/trackedit/TrackEdit.cpp:92
 msgid "Songs Editor"
-msgstr "Track Editor"
+msgstr "Lieder Editor"
 
 #: ui/trackedit/TrackEdit.cpp:105
 msgid "Songs"
@@ -1121,11 +1121,11 @@ msgstr "Lieder"
 
 #: ui/trackedit/TrackEdit.cpp:113
 msgid "Move the track to the previous position"
-msgstr "Titel zur vorherigen Position verschieben"
+msgstr "Track zur vorherigen Position verschieben"
 
 #: ui/trackedit/TrackEdit.cpp:119
 msgid "Move the track to the next position"
-msgstr "Titel zur nächsten Position verschieben"
+msgstr "Track zur nächsten Position verschieben"
 
 #: ui/trackedit/TrackEdit.cpp:149
 msgid "Copy the title to all the tracks you are editing"
@@ -1216,7 +1216,7 @@ msgstr "Tracks in der Reihenfolge nummerieren, wie sie hinzugefügt wurden"
 
 #: ui/trackedit/TrackEdit.cpp:246
 msgid "Copy the disk to all the tracks you are editing"
-msgstr "CD für alle Tracks übernehmen"
+msgstr "CD in allen Tracks kopieren, die gerade bearbeitet werden"
 
 #: ui/trackedit/TrackEdit.cpp:250 ui/filebrowser/FileRenamer.cpp:87
 #: ui/mediaviewer/library/SoListBox.cpp:65
@@ -1301,7 +1301,7 @@ msgstr "Album-Cover suchen"
 
 #: ui/trackedit/TrackEdit.cpp:363
 msgid "Copy the current picture to all the tracks you are editing"
-msgstr "Kopiere das aktuelle Bild auf alle Titel, die du bearbeitest"
+msgstr "Das aktuelle Bild in alle Tracks kopieren, die gerade bearbeitet werden"
 
 #: ui/trackedit/TrackEdit.cpp:371
 msgid "Pictures"
@@ -1330,27 +1330,27 @@ msgstr "Alben auf MusicBrainz suchen"
 
 #: ui/trackedit/TrackEdit.cpp:467
 msgid "Copy the content of the album to the edited tracks"
-msgstr "Angaben des Albums übernehmen"
+msgstr "Angaben des Albums in alle bearbeiteten Tracks kopieren"
 
 #: ui/trackedit/TrackEdit.cpp:493
 msgid "Copy the song names to the edited tracks"
-msgstr "Titelbezeichnungen für alle bearbeiteten Tracks übernehmen"
+msgstr "Liednamen in alle bearbeiteten Tracks kopieren"
 
 #: ui/trackedit/TrackEdit.cpp:505
 msgid "Copy the artist to the edited tracks"
-msgstr "Interpret für alle bearbeiteten Tracks übernehmen"
+msgstr "Interpret in alle bearbeiteten Tracks kopieren"
 
 #: ui/trackedit/TrackEdit.cpp:517
 msgid "Copy the album artist to the edited tracks"
-msgstr "Album-Interpret für alle bearbeiteten Tracks übernehmen"
+msgstr "Album-Interpret in alle bearbeiteten Tracks kopieren"
 
 #: ui/trackedit/TrackEdit.cpp:529
 msgid "Copy the album to the edited tracks"
-msgstr "Album-Name für alle bearbeiteten Tracks übernehmen"
+msgstr "Album-Name in alle bearbeiteten Tracks kopieren"
 
 #: ui/trackedit/TrackEdit.cpp:541
 msgid "Copy the date to the edited tracks"
-msgstr "Datum für alle bearbeiteten Tracks übernehmen"
+msgstr "Datum in alle bearbeiteten Tracks kopieren"
 
 #: ui/trackedit/TrackEdit.cpp:545 ui/podcasts/PodcastsPanel.cpp:1024
 msgid "Length:"
@@ -1358,12 +1358,12 @@ msgstr "Dauer:"
 
 #: ui/trackedit/TrackEdit.cpp:567
 msgid "Copy the number to the edited tracks"
-msgstr "Nummerierung für alle bearbeiteten Tracks übernehmen"
+msgstr "Nummerierung in alle bearbeiteten Tracks kopieren"
 
 #: ui/trackedit/TrackEdit.cpp:1587
 #, c-format
 msgid "Error: The album have %lu tracks and you are editing %lu"
-msgstr "Fehler: Das Album hat %lu Titel, Sie bearbeiten %lu"
+msgstr "Fehler: Das Album hat %lu Tracks, Sie bearbeiten %lu"
 
 #: ui/trackedit/TrackEdit.cpp:1593
 msgid "Warning: The length of some edited tracks don't match"
@@ -1395,7 +1395,7 @@ msgstr "Muster"
 
 #: ui/filebrowser/FileRenamer.cpp:86
 msgid "Pattern flags"
-msgstr "Mustereinstellungen"
+msgstr "Muster-Flaggen"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/mediaviewer/library/LibPanel.cpp:374
 #: ui/mediaviewer/library/LibPanel.cpp:381
@@ -1417,7 +1417,7 @@ msgstr "oder"
 
 #: ui/filebrowser/FileBrowser.cpp:224 ui/filebrowser/FileBrowser.cpp:581
 msgid "See used locations"
-msgstr "Speicherort zeigen"
+msgstr "Verwendeten Standorte zeigen"
 
 #: ui/filebrowser/FileBrowser.cpp:225 ui/filebrowser/FileBrowser.cpp:582
 msgid "See system files"
@@ -1712,11 +1712,11 @@ msgstr "Aktuell ausgewählte Dateien bearbeiten"
 
 #: ui/filebrowser/FileBrowser.cpp:1014
 msgid "Add the current selected tracks to a playlist"
-msgstr "Aktuell ausgewählte TItel zur Wiedergabeliste hinzufügen"
+msgstr "Aktuell ausgewählte Tracks zur Wiedergabeliste hinzufügen"
 
 #: ui/filebrowser/FileBrowser.cpp:1025
 msgid "Paste to the selected dir"
-msgstr "Ins Verzeichnis einfügen"
+msgstr "Ins ausgewählte Verzeichnis einfügen"
 
 #: ui/filebrowser/FileBrowser.cpp:1042
 msgid "Rename the current selected file"
@@ -1778,7 +1778,7 @@ msgstr "Nächster Track"
 
 #: ui/taskbar/TaskBar.cpp:124
 msgid "Skip to next track in current playlist"
-msgstr "Zum nächsten Track der Wiedergabeliste springen"
+msgstr "Zum nächsten Track der aktuellen Wiedergabeliste springen"
 
 #: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1444
 msgid "Next Album"
@@ -1786,15 +1786,15 @@ msgstr "Nächstes Album"
 
 #: ui/taskbar/TaskBar.cpp:128
 msgid "Skip to next album track in current playlist"
-msgstr "Zum nächsten Album-Track der Wiedergabeliste springen"
+msgstr "Zum nächsten Album-Track der aktuellen Wiedergabeliste springen"
 
 #: ui/taskbar/TaskBar.cpp:132
 msgid "Prev Track"
-msgstr "Vorheriger Titel"
+msgstr "Vorheriger Track"
 
 #: ui/taskbar/TaskBar.cpp:132
 msgid "Skip to previous track in current playlist"
-msgstr "Zu dem vorherigen Track der Wiedergabeliste springen"
+msgstr "Zum vorherigen Track der aktuellen Wiedergabeliste springen"
 
 #: ui/taskbar/TaskBar.cpp:136
 msgid "Prev Album"
@@ -1864,21 +1864,21 @@ msgstr "Aktuellen Track der Wiedergabeliste wiederholen"
 
 #: ui/taskbar/TaskBar.cpp:179
 msgid "Shu&ffle"
-msgstr "Zufallswiedergabe"
+msgstr "&Mischen"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
 #: ui/player/PlayList.cpp:1827
 msgid "Shuffle the tracks in the playlist"
-msgstr "Zufallswiedergabe der Titel in der Wiedergabeliste"
+msgstr "Tracks der Wiedergabeliste mischen"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
 msgid "Force &Gapless Mode"
-msgstr "Force &Gapless Modus"
+msgstr "&Unterbrechungsfreie Wiedergabe erzwingen"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1550
 msgid "Set playback in gapless mode"
-msgstr "Unterbrechungsfreie Wiedergabe"
+msgstr "Unterbrechungsfreie Wiedergabe festlegen"
 
 #: ui/taskbar/TaskBar.cpp:189
 msgid "Audioscrobbling"
@@ -1925,7 +1925,7 @@ msgstr "Filter"
 #: ui/MainFrame.cpp:2738 ui/MainFrame.cpp:2755 ui/radios/RadioPanel.cpp:315
 #: ui/player/PlayList.cpp:215
 msgid "Now Playing"
-msgstr "Wiedergabe"
+msgstr "Jetzt wiedergeben"
 
 #: ui/MainFrame.cpp:313
 msgid "My Music"
@@ -1953,11 +1953,11 @@ msgstr "Internet-Radio"
 
 #: ui/MainFrame.cpp:1002
 msgid "Set the radio visible panels"
-msgstr "Internet-Radioleisten festlegen"
+msgstr "Internet-Radio-Panels sichtbar machen"
 
 #: ui/MainFrame.cpp:1039
 msgid "Set the podcasts visible panels"
-msgstr "Podcast-Leisten festlegen"
+msgstr "Podcast-Panels sichtbar machen"
 
 #: ui/MainFrame.cpp:1054
 msgid "Play a online music stream"
@@ -1965,7 +1965,7 @@ msgstr "Online-Musik-Stream öffnen"
 
 #: ui/MainFrame.cpp:1059
 msgid "View the audio cd panel"
-msgstr "Ansicht des Audio-CD-Bedienfeldes"
+msgstr "Ansicht des Audio-CD-Panels"
 
 #: ui/MainFrame.cpp:1090
 msgid "Show the selected portable devices"
@@ -1985,7 +1985,7 @@ msgstr "Beendet die Anwendung"
 
 #: ui/MainFrame.cpp:1172
 msgid "View the library directories"
-msgstr "Die Bibliotheksverzeichnisse anzeigen"
+msgstr "Ansicht die Musiksammlung-Verzeichnisse"
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
@@ -2003,11 +2003,11 @@ msgstr "Aktuelles Layout speichern"
 
 #: ui/MainFrame.cpp:1318
 msgid "Player Playlist"
-msgstr "Aktive Wiedergabeliste"
+msgstr "Wiedergabe-Wiedergabeliste"
 
 #: ui/MainFrame.cpp:1319
 msgid "Show/Hide the player playlist panel"
-msgstr "Wiedergabeleiste ein- oder ausblenden"
+msgstr "Wiedergabelistenbereich im Player anzeigen/ausblenden
 
 #: ui/MainFrame.cpp:1326 ui/MainFrame.cpp:1600 ui/MainFrame.cpp:4074
 #: ui/preferences/Preferences.cpp:1315
@@ -2024,7 +2024,7 @@ msgstr "Wiedergabefilter"
 
 #: ui/MainFrame.cpp:1335
 msgid "Show/Hide the player filters panel"
-msgstr "Filterleiste ein- oder ausblenden"
+msgstr "Wiedergaber-Filter-Panel ein- oder ausblenden"
 
 #: ui/MainFrame.cpp:1343
 msgid "Show/Hide the player vumeter"
@@ -2040,7 +2040,7 @@ msgstr "CD-Cover ein- oder ausblenden"
 
 #: ui/MainFrame.cpp:1362
 msgid "Show/Hide the file browser panel"
-msgstr "Dateibrowserleiste ein- oder ausblenden"
+msgstr "Dateibrowser-Panel ein- oder ausblenden"
 
 #: ui/MainFrame.cpp:1369 ui/MainFrame.cpp:2562
 msgid "Last.fm"
@@ -2048,11 +2048,11 @@ msgstr "Last.fm"
 
 #: ui/MainFrame.cpp:1370
 msgid "Show/Hide the Last.fm panel"
-msgstr "Last.fm-Leiste ein- oder ausblenden"
+msgstr "Last.fm-Panel ein- oder ausblenden"
 
 #: ui/MainFrame.cpp:1378
 msgid "Show/Hide the lyrics panel"
-msgstr "Liedtexleiste ein- oder ausblenden"
+msgstr "Liedtext-Panel ein- oder ausblenden"
 
 #: ui/MainFrame.cpp:1388
 msgid "Show/Restore the main window in full screen"
@@ -2128,7 +2128,7 @@ msgstr "Vorheriges Album der Wiedergabeliste wiedergeben"
 
 #: ui/MainFrame.cpp:1457
 msgid "Play or Pause the current track in the playlist"
-msgstr "Wiedergabe oder unterbrechen des aktuellen Titles"
+msgstr "Wiedergabe oder unterbrechen des aktuellen Track"
 
 #: ui/MainFrame.cpp:1461
 msgid "Stop the current played track"
@@ -2145,11 +2145,11 @@ msgstr "Aktive Wiedergabeliste löschen"
 #: ui/MainFrame.cpp:1508 ui/mediaviewer/library/SoListBox.cpp:640
 #: ui/player/PlayList.cpp:1759
 msgid "Set Rating"
-msgstr "Bewertung"
+msgstr "Bewertung festlegen"
 
 #: ui/MainFrame.cpp:1508
 msgid "Set the rating of the current track"
-msgstr "Aktuellen Track bewerten"
+msgstr "Bewertung des aktuellen Track festlegen"
 
 #: ui/MainFrame.cpp:1523
 msgid "Repeat the Playlist"
@@ -2197,7 +2197,7 @@ msgstr "Stream:"
 
 #: ui/MainFrame.cpp:2055
 msgid "Select destination directory"
-msgstr "Zielordner auswählen"
+msgstr "Zielverzeichnis auswählen"
 
 #: ui/MainFrame.cpp:2070 ui/MainFrame.cpp:2106 ui/MainFrame.cpp:2149
 #: ui/MainFrame.cpp:2182 ui/MainFrame.cpp:4243
@@ -2223,11 +2223,11 @@ msgstr "Podcasts"
 
 #: ui/MainFrame.cpp:3106
 msgid "dir"
-msgstr "Ordner"
+msgstr "Verzeichnis"
 
 #: ui/MainFrame.cpp:3106
 msgid "dirs"
-msgstr "Ordner"
+msgstr "Verzeichnisse"
 
 #: ui/MainFrame.cpp:3108
 msgid "file"
@@ -2274,7 +2274,7 @@ msgstr "Layout %lu"
 
 #: ui/MainFrame.cpp:4210 ui/MainFrame.cpp:4231
 msgid "Copy the current selected songs to a directory or device"
-msgstr "Ausgewählte Tracks in einen Ordner oder auf ein Gerät kopieren"
+msgstr "Ausgewählte Lieder in ein Verzeichnis oder auf ein Gerät kopieren"
 
 #: ui/MainFrame.cpp:4240
 msgid "Add 'Copy to' patterns in preferences"
@@ -2392,7 +2392,7 @@ msgstr "Ausgewähltes Album hinzufügen nach"
 
 #: ui/mediaviewer/library/CoListBox.cpp:149
 msgid "Edit songs"
-msgstr "Tracks bearbeiten"
+msgstr "Lieder bearbeiten"
 
 #: ui/mediaviewer/library/CoListBox.cpp:159
 #: ui/mediaviewer/library/ArListBox.cpp:213
@@ -2416,21 +2416,21 @@ msgstr "Label der ausgewählten Interpreten bearbeiten"
 
 #: ui/mediaviewer/library/ArListBox.cpp:204
 msgid "Edit the songs from the selected artists"
-msgstr "Tracks der ausgewählten Interpreten bearbeiten"
+msgstr "Lieder der ausgewählten Interpreten bearbeiten"
 
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
 #: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
 msgid "Create Best of Playlist"
-msgstr "Best-of-Wiedergabeliste erstellen"
+msgstr "Best of-Wiedergabeliste anlegen"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
 #: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 msgid "Create a playlist with the best of this artist"
-msgstr "Wiedergabeliste mit den besten Titel dieses Künstlers erstellen"
+msgstr "Eine Wiedergabeliste mit dem Best of dieses Interpreten anlegen"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
 #: ui/mediaviewer/treeview/TreePanel.cpp:360
@@ -2543,21 +2543,21 @@ msgstr "Angeklickte Spalte für ausgewählte Tracks festlegen"
 #: ui/mediaviewer/treeview/TreePanel.cpp:381 ui/radios/RadioPanel.cpp:405
 #: ui/podcasts/PodcastsPanel.cpp:2040
 msgid "Play current selected songs"
-msgstr "Aktuell ausgewählte Tracks wiedergeben"
+msgstr "Aktuell ausgewählte Lieder wiedergeben"
 
 #: ui/mediaviewer/library/SoListBox.cpp:526
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:231
 #: ui/mediaviewer/treeview/TreePanel.cpp:387
 msgid "Add current selected songs to the playlist"
-msgstr "Aktuell ausgewählten Tracks zur Wiedergabeliste hinzufügen"
+msgstr "Aktuell ausgewählten Lieder zur Wiedergabeliste hinzufügen"
 
 #: ui/mediaviewer/library/SoListBox.cpp:566
 msgid "Selects the genre of the current song"
-msgstr "Wählt Genre des akutellen Titels aus"
+msgstr "Wählt Genre des aktuellen Liedes aus"
 
 #: ui/mediaviewer/library/SoListBox.cpp:570 ui/player/PlayList.cpp:1777
 msgid "Selects the artist of the current song"
-msgstr "Wählt Interpret des aktuellen Track aus"
+msgstr "Wählt Interpret des aktuellen Liedes aus"
 
 #: ui/mediaviewer/library/SoListBox.cpp:574
 msgid "Selects the album artist of the current song"
@@ -2569,7 +2569,7 @@ msgstr "Wählt Komponist des aktuellen Liedes aus"
 
 #: ui/mediaviewer/library/SoListBox.cpp:582 ui/player/PlayList.cpp:1786
 msgid "Select the album of the current song"
-msgstr "Album des aktuellen Tracks auswählen"
+msgstr "Wählt Album des aktuellen Liedes aus"
 
 #: ui/mediaviewer/library/SoListBox.cpp:585 ui/player/PlayList.cpp:1795
 msgid "Search in the library"
@@ -2581,7 +2581,7 @@ msgstr "Label der ausgewählten Tracks bearbeiten"
 
 #: ui/mediaviewer/library/SoListBox.cpp:600
 msgid "Edit the songs selected"
-msgstr "Ausgewählte Tracks bearbeiten"
+msgstr "Ausgewählte Lieder bearbeiten"
 
 #: ui/mediaviewer/library/SoListBox.cpp:640 ui/player/PlayList.cpp:1759
 msgid "Set the current selected tracks rating"
@@ -2595,7 +2595,7 @@ msgstr "Alle ausgewählten Tracks als Wiedergabeliste speichern"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
 #: ui/player/PlayList.cpp:1818
 msgid "Create Smart Playlist"
-msgstr "Intelligente Wiedergabeliste erstellen"
+msgstr "Intelligente Wiedergabeliste anlegen"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
@@ -2617,7 +2617,7 @@ msgstr "Vom Laufwerk löschen"
 
 #: ui/mediaviewer/library/SoListBox.cpp:668
 msgid "Remove the current selected tracks from drive"
-msgstr "Aktuell ausgewählte Tracks vom Datenträger entfernen"
+msgstr "Aktuell ausgewählte Tracks vom Laufwerk entfernen"
 
 #: ui/mediaviewer/library/RaListBox.cpp:144
 msgid "Play the selected tracks"
@@ -2640,14 +2640,14 @@ msgstr "Ausgewählte Alben zur Wiedergabeliste hinzufügen"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
 msgid "Edit the labels assigned to the selected albums"
-msgstr "Labels für das ausgewählten Album bearbeiten"
+msgstr "Labels der ausgewählten Alben bearbeiten"
 
 #: ui/mediaviewer/library/AlListBox.cpp:309
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
 msgid "Edit the selected songs"
-msgstr "Ausgewählte Tracks bearbeiten"
+msgstr "Ausgewählte Lieder bearbeiten"
 
 #: ui/mediaviewer/library/AlListBox.cpp:319
 msgid "Albums are sorted by name"
@@ -2672,7 +2672,7 @@ msgstr "Interpret, Name"
 
 #: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Albums are sorted by artist and album name"
-msgstr "Alben sind nach Album-Namen und Interpreten sortiert"
+msgstr "Alben sind nach Interpreten und Album-Namen sortiert"
 
 #: ui/mediaviewer/library/AlListBox.cpp:323
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:435
@@ -2724,7 +2724,7 @@ msgstr "CD-Cover auswählen"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select the cover image file from disk"
-msgstr "CD-Cover aus Bilddatei wählen"
+msgstr "CD-Cover aus Laufwerk wählen"
 
 #: ui/mediaviewer/library/AlListBox.cpp:358
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
@@ -2788,7 +2788,7 @@ msgstr "Neuer Filter"
 #: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2820
 #: ui/preferences/Preferences.cpp:2840
 msgid "Collection"
-msgstr "Collection"
+msgstr "Sammlung"
 
 #: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2971
 msgid "Select library path"
@@ -2800,7 +2800,7 @@ msgstr "Dieser Pfad ist bereits in der Musiksammlung"
 
 #: ui/mediaviewer/MediaViewer.cpp:1140
 msgid "Adding path error"
-msgstr "Fehlerpfad hinzufügen"
+msgstr "Fehler beim Hinzufügen des Pfads"
 
 #: ui/mediaviewer/MediaViewer.cpp:1414 ui/cover/SelCoverFile.cpp:42
 msgid ""
@@ -3108,7 +3108,7 @@ msgstr "Diese Wiedergabeliste als Zulassungsfilter festlegen"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:307
 msgid "Set as Deny Filter"
-msgstr "Verweigerungsfilter erstellen"
+msgstr "Als Verweigerungsfilter festlegen"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1026
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1163
@@ -3118,7 +3118,7 @@ msgstr "Wiedergabelistenname"
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1027
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1164
 msgid "Enter the new playlist name"
-msgstr "Neuer Wiedergabelistenname"
+msgstr "Neuer Wiedergabelistenname eingeben"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1066
 msgid "Are you sure to delete the selected Playlist?"
@@ -3275,7 +3275,7 @@ msgstr "Tracks nach jedem Kriterium hinzufügen"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:91
 msgid "Copy to Option:"
-msgstr "Kopieroption:"
+msgstr "Option für Kopieren nach"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:119
 msgid "Destination Folder:"
@@ -3418,7 +3418,7 @@ msgstr "Keine ausgewählten Objekte..."
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:695
 msgid "Copy the current selected tracks to a directory or device"
-msgstr "Ausgewählte Tracks in einen Ordner oder auf ein Gerät kopieren"
+msgstr "Ausgewählte Tracks in einen Verzeichnis oder auf ein Gerät kopieren"
 
 #: ui/confirmexit/ConfirmExit.cpp:27
 msgid "Please confirm"
@@ -3500,7 +3500,7 @@ msgstr "Künstlerseite anzeigen"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1089 ui/lastfmpanel/LastFMPanel.cpp:1297
 msgid "Update the information with the current selected artist"
-msgstr "Künstlerinfo aktualisieren"
+msgstr "Interpretinfo zu dem aktuell ausgewählten Interpret aktualisieren"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1091
 msgid "Copy the artist info to clipboard"
@@ -3516,7 +3516,7 @@ msgstr "Track in Musiksammlung suchen"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1300 ui/lastfmpanel/LastFMPanel.cpp:1512
 msgid "Copy the track info to clipboard"
-msgstr "Titelinfo in die Zwischenablage kopieren"
+msgstr "Trackinfo in die Zwischenablage kopieren"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1404
 #, c-format
@@ -3529,7 +3529,7 @@ msgstr ""
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1676
 msgid "Artist Info"
-msgstr "Künstlerseite"
+msgstr "Interpretinfo"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1711
 msgid "Top Albums"
@@ -3541,7 +3541,7 @@ msgstr "Top-Tracks"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1793
 msgid "Similar Artists"
-msgstr "Ähnliche Künstler"
+msgstr "Ähnliche Interpreten"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1834
 msgid "Similar Tracks"
@@ -3702,11 +3702,11 @@ msgstr "Radio-Suche"
 
 #: ui/radios/RadioPanel.cpp:1180
 msgid "Search in now playing info"
-msgstr "Unter Wiedergabe suchen"
+msgstr "In den Informationen zur aktuellen Wiedergabe suchen"
 
 #: ui/radios/RadioPanel.cpp:1184
 msgid "Search in genre names"
-msgstr "Über Genres suchen"
+msgstr "Über Genre-Namen suchen
 
 #: ui/radios/RadioPanel.cpp:1188
 msgid "Search in station names"
@@ -3843,7 +3843,7 @@ msgstr "Allgemein"
 
 #: ui/preferences/Preferences.cpp:224 ui/preferences/Preferences.cpp:606
 msgid "Collections"
-msgstr "Collections"
+msgstr "Sammlung"
 
 #: ui/preferences/Preferences.cpp:229
 msgid "Playback"
@@ -3868,7 +3868,7 @@ msgstr "Verweise"
 
 #: ui/preferences/Preferences.cpp:289
 msgid "Shortcuts"
-msgstr "Tastenkombinationen"
+msgstr "Tastenkürzel"
 
 #: ui/preferences/Preferences.cpp:369
 msgid "Accept"
@@ -3897,7 +3897,7 @@ msgstr "Mit Kompaktansicht öffnen"
 
 #: ui/preferences/Preferences.cpp:478
 msgid "Restore position for tracks longer than"
-msgstr "Letzte Wiedergabeposition merken, wenn Titel länger ist als"
+msgstr "Letzte Wiedergabeposition merken, wenn Track länger ist als"
 
 #: ui/preferences/Preferences.cpp:485
 msgid "set the minimum length in minutes to save track position"
@@ -3915,7 +3915,7 @@ msgstr "Verhalten"
 
 #: ui/preferences/Preferences.cpp:503
 msgid "Activate system tray icon"
-msgstr "Systemleistensymbol aktivieren"
+msgstr "Startleistensymbol aktivieren"
 
 #: ui/preferences/Preferences.cpp:514
 msgid "Integrate into SoundMenu"
@@ -3923,15 +3923,15 @@ msgstr "In das Klang-Menü integrieren"
 
 #: ui/preferences/Preferences.cpp:520
 msgid "Enqueue as default action"
-msgstr "Auswahl in Wiedergabeliste einreihen statt direkt abspielen"
+msgstr "Warteschlangen als Standardaktion"
 
 #: ui/preferences/Preferences.cpp:524
 msgid "Drop files clear playlist"
-msgstr "Wiedergabeliste wird geleert, sobald neue Dateien hinzugefügt werden."
+msgstr "Abgelegte Dateien ersetzen die aktuelle Wiedergabeliste"
 
 #: ui/preferences/Preferences.cpp:528
 msgid "Instant text search"
-msgstr "Sofortsuche"
+msgstr "Sofortige Textsuche"
 
 #: ui/preferences/Preferences.cpp:532
 msgid "When searching, pressing enter queues the result"
@@ -3956,7 +3956,7 @@ msgstr "Wiedergabeliste beim Schließen speichern"
 
 #: ui/preferences/Preferences.cpp:554
 msgid "Close minimizes to system tray icon"
-msgstr "Schließen minimiert das Symbol in der Taskleiste"
+msgstr "Schließen minimiert Guayadeque in den Infobereich (System-Tray)."
 
 #: ui/preferences/Preferences.cpp:559
 msgid "Ask confirmation on exit"
@@ -3980,19 +3980,19 @@ msgstr "Aktualisieren beim Öffnen "
 
 #: ui/preferences/Preferences.cpp:706
 msgid "Create playlists on scan"
-msgstr "Wiedergabelisten während des Einlesens anlegen"
+msgstr "Wiedergabelisten während des Scans anlegen"
 
 #: ui/preferences/Preferences.cpp:711
 msgid "Follow symbolic links on scan"
-msgstr "Beim Abfragen der Daten symbolischen Verknüpfungen folgen"
+msgstr "Symbolischen Links beim Scannen folgen"
 
 #: ui/preferences/Preferences.cpp:715
 msgid "Scan embedded covers in audio files"
-msgstr "Audiodateien nach eingebetteten CD-Covern durchsuchen"
+msgstr "Audiodateien nach eingebetteten CD-Covern scannen"
 
 #: ui/preferences/Preferences.cpp:720
 msgid "Embed rating, play count and labels"
-msgstr "Bewertung, Wiedergabeanzahl and Labels einbetten"
+msgstr "Bewertung, Wiedergabenummer and Labels einbetten"
 
 #: ui/preferences/Preferences.cpp:726
 msgid "Default copy action"
@@ -4044,7 +4044,7 @@ msgstr "Zufalls-/Smartplay-Modus"
 
 #: ui/preferences/Preferences.cpp:881
 msgid "Minimum number of tracks to play required to add new ones"
-msgstr "Mindestanzahl der abzuspielenden Titel, um neue hinzuzufügen"
+msgstr "Mindestanzahl der abzuspielenden Tracks, um neue hinzuzufügen"
 
 #: ui/preferences/Preferences.cpp:889
 msgid "Tracks added each time"
@@ -4238,7 +4238,7 @@ msgstr "Online-Puffergröße des Players"
 
 #: ui/preferences/Preferences.cpp:1628
 msgid "Destination directory:"
-msgstr "Zielordner:"
+msgstr "Zielverzeichnis"
 
 #: ui/preferences/Preferences.cpp:1632
 msgid "Select podcasts folder"
@@ -4456,7 +4456,7 @@ msgstr "Pfad auswählen"
 
 #: ui/preferences/Preferences.cpp:4303
 msgid "Key used by '"
-msgstr "Key used by '"
+msgstr "Taste verwendet von '"
 
 #: ui/podcasts/NewChannel.cpp:87
 msgid "New Podcast Channel"
@@ -4494,7 +4494,7 @@ msgstr "Textfilter"
 
 #: ui/podcasts/NewChannel.cpp:365
 msgid "Enter the text to filter podcasts channels"
-msgstr "Podcast-Kanäle filtern"
+msgstr "Podcast-Kanäle filtern eingeben"
 
 #: ui/podcasts/ChannelEditor.cpp:37
 msgid "Podcast Channel Editor"
@@ -4550,7 +4550,7 @@ msgstr "Datum:"
 
 #: ui/podcasts/PodcastsPanel.cpp:1045
 msgid "Podcast Details"
-msgstr "Podcast-Details"
+msgstr "Podcast Einzelheiten"
 
 #: ui/podcasts/PodcastsPanel.cpp:1240
 msgid "Are you sure to delete the selected podcast channel?"
@@ -4610,7 +4610,7 @@ msgstr "Aktuell ausgewählte Podcasts herunterladen"
 
 #: ui/podcasts/PodcastsPanel.cpp:2092
 msgid "Copy the current selected podcasts to a directory or device"
-msgstr "Ausgewählte Podcasts in einen Ordner oder auf ein Gerät kopieren"
+msgstr "Ausgewählte Podcasts in einen Verzeichnis oder auf ein Gerät kopieren"
 
 #: ui/player/PlayerFilters.cpp:43
 msgid "Allow:"
@@ -4622,15 +4622,15 @@ msgstr "Abweisen:"
 
 #: ui/player/PlayerPanel.cpp:156
 msgid "Go to the playlist previous track"
-msgstr "Zurück"
+msgstr "Zum vorherigen Titel in der Wiedergabeliste gehen"
 
 #: ui/player/PlayerPanel.cpp:161
 msgid "Play or pause the current track"
-msgstr "Wiedergabe-/Pausentaste"
+msgstr "Wiedergabe-/Pausentaste das aktuellen Track"
 
 #: ui/player/PlayerPanel.cpp:166
 msgid "Go to the playlist next track"
-msgstr "Vorwärts"
+msgstr "Zum nächsten Titel in der Wiedergabeliste wechseln"
 
 #: ui/player/PlayerPanel.cpp:170
 msgid "Stops the current track"
@@ -4694,7 +4694,7 @@ msgstr "Pufferung..."
 
 #: ui/player/PlayerPanel.cpp:2559
 msgid "Smart mode enabled"
-msgstr "Smart-Modus aktiviert"
+msgstr "Intelligente Mode aktiviert"
 
 #: ui/player/PlayerPanel.cpp:2565
 msgid "Repeat all"
@@ -4706,7 +4706,7 @@ msgstr "Track wiederholen"
 
 #: ui/player/PlayerPanel.cpp:2577
 msgid "Smart mode disabled"
-msgstr "Smart-Modus deaktiviert"
+msgstr "Intelligente Mode deaktiviert"
 
 #: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1740
 msgid "Set as Next Track"
@@ -4758,23 +4758,23 @@ msgstr "Track nach Name in Wiedergabeliste suchen"
 
 #: ui/player/PlayList.cpp:1774
 msgid "Selects the current selected track in the library"
-msgstr "Wählt den aktuell ausgewählten Track in der Musiksammlung aus"
+msgstr "Aktuell ausgewählten Track in der Musiksammlung auswählen"
 
 #: ui/player/PlayList.cpp:1780
 msgid "Select the album artist of the current song"
-msgstr "Album-Interpret des aktuellen Track auswählen"
+msgstr "Album-Interpret des aktuellen Liedes auswählen"
 
 #: ui/player/PlayList.cpp:1783
 msgid "Select the composer of the current song"
-msgstr "Komponist des aktuellen Track auswählen"
+msgstr "Komponist des aktuellen Liedes auswählen"
 
 #: ui/player/PlayList.cpp:1789
 msgid "Select the year of the current song"
-msgstr "Jahr des aktuellen Tracks auswählen"
+msgstr "Jahr das aktuellen Liedes auswählen"
 
 #: ui/player/PlayList.cpp:1792
 msgid "Select the genre of the current song"
-msgstr "Genre des aktuellen Tracks auswählen"
+msgstr "Genre das aktuellen Liedes auswählen"
 
 #: ui/player/PlayList.cpp:1833
 msgid "Remove all tracks from playlist"
@@ -4786,7 +4786,7 @@ msgstr "Ausgewählte Tracks aus Musiksammlung entfernen"
 
 #: ui/player/PlayList.cpp:1855
 msgid "Remove the selected tracks from drive"
-msgstr "Ausgewählte Tracks vom Datenträger entfernen"
+msgstr "Ausgewählte Tracks vom Laufwerk entfernen"
 
 #: ui/player/PlayList.cpp:2166
 msgid "Can't create a playlist without mediaviewer."
@@ -4802,7 +4802,7 @@ msgstr "Lade Track, bitte warten"
 
 #: onlinelinks/OnlineLinks.cpp:68
 msgid "Add search links in preferences"
-msgstr "Suchverweis zu den Einstellungen hinzufügen"
+msgstr "Suchbegriffe zu den Einstellungen hinzufügen"
 
 #: copyto/Transcode.cpp:298
 msgid "Keep Format"
@@ -4843,7 +4843,7 @@ msgid "Burn as DataCD using Brasero"
 msgstr "Als Daten-CD mit Brasero brennen"
 
 msgid "Open Terminal in directory"
-msgstr "Terminal im Ordner öffnen"
+msgstr "Terminal im Verzeichnis öffnen"
 
 msgid "Edit cover using GIMP"
 msgstr "Cover mit GIMP bearbeiten"
