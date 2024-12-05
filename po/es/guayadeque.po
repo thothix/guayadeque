@@ -638,10 +638,8 @@ msgid "No lyrics found"
 msgstr "No se ha encontrado ninguna letra"
 
 #: ui/lyrics/LyricsPanel.cpp:812
-#, fuzzy
-#| msgid "Lyrics from "
 msgid "Lyrics from"
-msgstr "Letra proporcionada por "
+msgstr "Letra proporcionada por"
 
 #: ui/lyrics/LyricsPanel.cpp:1969
 msgid "Lyrics Target Editor"
@@ -1101,10 +1099,8 @@ msgstr "Copiar selección de etiqueta a todos los elementos"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 #: ui/mediaviewer/library/TaListBox.cpp:227
-#, fuzzy
-#| msgid "Label Name: "
 msgid "Label Name"
-msgstr "Nombre de etiqueta: "
+msgstr "Nombre de etiqueta"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 msgid "Please enter the label name"
@@ -1687,10 +1683,8 @@ msgid "Are you sure to delete the selected path ?"
 msgstr "¿ Seguro que quiere borrar la ruta seleccionada ?"
 
 #: ui/filebrowser/FileBrowser.cpp:558
-#, fuzzy
-#| msgid "Error deleting the folder "
 msgid "Error deleting the folder"
-msgstr "Error borrando la carpeta "
+msgstr "Error borrando la carpeta"
 
 #: ui/filebrowser/FileBrowser.cpp:559 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
@@ -1749,10 +1743,8 @@ msgid "Are you sure to delete the selected files ?"
 msgstr "¿Seguro que quiere borrar los archivos seleccionados ?"
 
 #: ui/filebrowser/FileBrowser.cpp:2001
-#, fuzzy
-#| msgid "There was an error deleting "
 msgid "There was an error deleting"
-msgstr "Hubo un error borrando "
+msgstr "Hubo un error borrando"
 
 #: ui/filebrowser/FileBrowser.cpp:2002
 msgid ""
@@ -1923,10 +1915,8 @@ msgid "Download Albums torrents"
 msgstr "Descargar álbumes via torrentes"
 
 #: ui/MainFrame.cpp:154
-#, fuzzy
-#| msgid "Welcome to Guayadeque "
 msgid "Welcome to Guayadeque"
-msgstr "Bienvenido a Guayadeque "
+msgstr "Bienvenido a Guayadeque"
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
@@ -2640,10 +2630,8 @@ msgid "Play the selected tracks"
 msgstr "Reproducir las pistas seleccionadas"
 
 #: ui/mediaviewer/library/AlListBox.cpp:177
-#, fuzzy
-#| msgid "by "
 msgid "by"
-msgstr "por  "
+msgstr "por"
 
 #: ui/mediaviewer/library/AlListBox.cpp:265
 msgid "Play current selected albums"
@@ -2836,10 +2824,8 @@ msgid "Playlist"
 msgstr "Lista de Reproducción"
 
 #: ui/mediaviewer/MediaViewer.cpp:2101
-#, fuzzy
-#| msgid "The best of "
 msgid "The best of"
-msgstr "Lo mejor de (Best of) "
+msgstr "Lo mejor de (Best of)"
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
 #, c-format
@@ -3133,10 +3119,8 @@ msgstr "Definir como Filtro Para Denegar"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1026
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1163
-#, fuzzy
-#| msgid "Playlist Name: "
 msgid "Playlist Name"
-msgstr "Nombre de la lista de reproducción: "
+msgstr "Nombre de la lista de reproducción"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1027
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1164
@@ -3680,10 +3664,8 @@ msgid "Searches"
 msgstr "Búsquedas"
 
 #: ui/radios/ShoutcastRadio.cpp:340
-#, fuzzy
-#| msgid "Genre Name: "
 msgid "Genre Name"
-msgstr "Nombre del Género: "
+msgstr "Nombre del Género"
 
 #: ui/radios/ShoutcastRadio.cpp:341
 msgid "Enter the new Genre Name"
@@ -4079,20 +4061,16 @@ msgstr ""
 "Maximo de pistas ya reproducidas conservadas en la lista de reproducción"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3440
-#, fuzzy
-#| msgid "Don't repeat last"
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
-msgstr[0] "No repetir último"
-msgstr[1] "No repetir último"
+msgstr[0] "No repetir el último"
+msgstr[1] "No repetir los últimos"
 
 #: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
-#, fuzzy
-#| msgid "Artist"
 msgid "artist"
 msgid_plural "artists"
 msgstr[0] "Artista"
-msgstr[1] "Artista"
+msgstr[1] "Artistas"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
@@ -4399,10 +4377,8 @@ msgid "Remove source files"
 msgstr "Elimina archivos de origen"
 
 #: ui/preferences/Preferences.cpp:2314
-#, fuzzy
-#| msgid " Define patterns using "
 msgid "Define patterns using"
-msgstr " Definir patrones con "
+msgstr " Definir patrones con"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -4461,10 +4437,8 @@ msgid "Change library path"
 msgstr "Cambiar la ruta de la biblioteca"
 
 #: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
-#, fuzzy
-#| msgid "Word: "
 msgid "Word"
-msgstr "Palabra: "
+msgstr "Palabra"
 
 #: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
 msgid "Enter the text to find covers"
@@ -4475,10 +4449,8 @@ msgid "Enter the genre to disable"
 msgstr "Introduzca el género a desactivar"
 
 #: ui/preferences/Preferences.cpp:3568 ui/preferences/Preferences.cpp:3599
-#, fuzzy
-#| msgid "Filters"
 msgid "Filter"
-msgstr "Filtros"
+msgstr "Filtro"
 
 #: ui/preferences/Preferences.cpp:3569
 msgid "Enter the text to filter"
@@ -4527,10 +4499,8 @@ msgid "%u Categories, %u Channels"
 msgstr "%u Categorías, %u Canales"
 
 #: ui/podcasts/NewChannel.cpp:365
-#, fuzzy
-#| msgid "Filter Text: "
 msgid "Filter Text"
-msgstr "Filtrar texto: "
+msgstr "Texto del filtro"
 
 #: ui/podcasts/NewChannel.cpp:365
 msgid "Enter the text to filter podcasts channels"
@@ -4899,15 +4869,3 @@ msgstr "De un archivo"
 
 msgid "To file"
 msgstr "A un archivo"
-
-#~ msgid "Name:"
-#~ msgstr "Nombre:"
-
-#~ msgid "Create a playlist with the best of this aretist"
-#~ msgstr "Crear lista de reproducción de lo mejor de este artista (Best of)"
-
-#~ msgid "Collection: "
-#~ msgstr "Colección: "
-
-#~ msgid "Filter: "
-#~ msgstr "Filtro: "
