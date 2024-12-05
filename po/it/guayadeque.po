@@ -636,10 +636,8 @@ msgid "No lyrics found"
 msgstr "Testo non trovato"
 
 #: ui/lyrics/LyricsPanel.cpp:812
-#, fuzzy
-#| msgid "Lyrics from "
 msgid "Lyrics from"
-msgstr "Testi da "
+msgstr "Testi da"
 
 #: ui/lyrics/LyricsPanel.cpp:1969
 msgid "Lyrics Target Editor"
@@ -758,8 +756,6 @@ msgstr "Podcasts"
 
 #: ui/locationpanel/LocationPanel.cpp:214 ui/MainFrame.cpp:1059
 #: ui/MainFrame.cpp:2589
-#, fuzzy
-#| msgid "Audio"
 msgid "Audio CD"
 msgstr "Audio CD"
 
@@ -1101,10 +1097,8 @@ msgstr "Assegna l'etichetta selezionata a tutti gli elementi"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 #: ui/mediaviewer/library/TaListBox.cpp:227
-#, fuzzy
-#| msgid "Label Name: "
 msgid "Label Name"
-msgstr "Nome dell'etichetta: "
+msgstr "Nome dell'etichetta"
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 msgid "Please enter the label name"
@@ -1683,10 +1677,8 @@ msgid "Are you sure to delete the selected path ?"
 msgstr "Sei sicuro di voler eliminare il percorso selezionato?"
 
 #: ui/filebrowser/FileBrowser.cpp:558
-#, fuzzy
-#| msgid "Error deleting the folder "
 msgid "Error deleting the folder"
-msgstr "Errore durante l'eliminazione della cartella "
+msgstr "Errore durante l'eliminazione della cartella"
 
 #: ui/filebrowser/FileBrowser.cpp:559 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
@@ -1745,10 +1737,8 @@ msgid "Are you sure to delete the selected files ?"
 msgstr "Sei sicuro di voler eliminare i file selezionati?"
 
 #: ui/filebrowser/FileBrowser.cpp:2001
-#, fuzzy
-#| msgid "There was an error deleting "
 msgid "There was an error deleting"
-msgstr "E' stato riscontrato un errore eliminando "
+msgstr "E' stato riscontrato un errore eliminando"
 
 #: ui/filebrowser/FileBrowser.cpp:2002
 msgid ""
@@ -1918,10 +1908,8 @@ msgid "Download Albums torrents"
 msgstr "Scarica i torrent degli album"
 
 #: ui/MainFrame.cpp:154
-#, fuzzy
-#| msgid "Welcome to Guayadeque "
 msgid "Welcome to Guayadeque"
-msgstr "Benvenuto in Guayadeque "
+msgstr "Benvenuto in Guayadeque"
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
@@ -2631,10 +2619,8 @@ msgid "Play the selected tracks"
 msgstr "Riproduci i brani selezionati"
 
 #: ui/mediaviewer/library/AlListBox.cpp:177
-#, fuzzy
-#| msgid "by "
 msgid "by"
-msgstr "da "
+msgstr "da"
 
 #: ui/mediaviewer/library/AlListBox.cpp:265
 msgid "Play current selected albums"
@@ -2827,10 +2813,8 @@ msgid "Playlist"
 msgstr "Playlist"
 
 #: ui/mediaviewer/MediaViewer.cpp:2101
-#, fuzzy
-#| msgid "The best of "
 msgid "The best of"
-msgstr "Il Meglio di (Best of) "
+msgstr "Il Meglio di (Best of)"
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
 #, c-format
@@ -3122,10 +3106,8 @@ msgstr "Imposta come filtro Escludi"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1026
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1163
-#, fuzzy
-#| msgid "Playlist Name: "
 msgid "Playlist Name"
-msgstr "Nome della Playlist: "
+msgstr "Nome della Playlist"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1027
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1164
@@ -3669,10 +3651,8 @@ msgid "Searches"
 msgstr "Ricerche"
 
 #: ui/radios/ShoutcastRadio.cpp:340
-#, fuzzy
-#| msgid "Genre Name: "
 msgid "Genre Name"
-msgstr "Nome del Genere: "
+msgstr "Nome del Genere"
 
 #: ui/radios/ShoutcastRadio.cpp:341
 msgid "Enter the new Genre Name"
@@ -4070,20 +4050,16 @@ msgid "Max played tracks kept in playlist"
 msgstr "Numero massimo di brani mantenuti nella Playlist"
 
 #: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3440
-#, fuzzy
-#| msgid "Don't repeat last"
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
-msgstr[0] "Non ripetere gli ultimi"
+msgstr[0] "Non ripetere l'ultimo"
 msgstr[1] "Non ripetere gli ultimi"
 
 #: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
-#, fuzzy
-#| msgid "Artist"
 msgid "artist"
 msgid_plural "artists"
 msgstr[0] "Artista"
-msgstr[1] "Artista"
+msgstr[1] "Artisti"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
@@ -4390,10 +4366,8 @@ msgid "Remove source files"
 msgstr "Rimuove i file della risorsa"
 
 #: ui/preferences/Preferences.cpp:2314
-#, fuzzy
-#| msgid " Define patterns using "
 msgid "Define patterns using"
-msgstr " Definisci i modello usando "
+msgstr " Definisci i modello usando"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -4452,10 +4426,8 @@ msgid "Change library path"
 msgstr "Cambia il percorso della biblioteca"
 
 #: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
-#, fuzzy
-#| msgid "Word: "
 msgid "Word"
-msgstr "Parola: "
+msgstr "Parola"
 
 #: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
 msgid "Enter the text to find covers"
@@ -4466,10 +4438,8 @@ msgid "Enter the genre to disable"
 msgstr "Inserire il genere da disabilitare"
 
 #: ui/preferences/Preferences.cpp:3568 ui/preferences/Preferences.cpp:3599
-#, fuzzy
-#| msgid "Filters"
 msgid "Filter"
-msgstr "Filtri"
+msgstr "Filtro"
 
 #: ui/preferences/Preferences.cpp:3569
 msgid "Enter the text to filter"
@@ -4518,10 +4488,8 @@ msgid "%u Categories, %u Channels"
 msgstr "%u Categorie, %u Canali"
 
 #: ui/podcasts/NewChannel.cpp:365
-#, fuzzy
-#| msgid "Filter Text: "
 msgid "Filter Text"
-msgstr "Testo del Filtro: "
+msgstr "Testo del Filtro"
 
 #: ui/podcasts/NewChannel.cpp:365
 msgid "Enter the text to filter podcasts channels"
@@ -4866,43 +4834,20 @@ msgstr "Copia dei file terminata"
 
 # Begin of Translations external from source code
 msgid "Browse in File Manager"
-msgstr ""
+msgstr "Sfogliare in Gestore file"
 
 msgid "Burn as AudioCD using Brasero"
-msgstr ""
+msgstr "Masterizzare come CD audio con Brasero"
 
 msgid "Burn as DataCD using Brasero"
-msgstr ""
+msgstr "Masterizzare come CD di dati con Brasero"
 
-#, fuzzy
-#| msgid "Select destination directory"
 msgid "Open Terminal in directory"
-msgstr "Seleziona la cartella di destinazione"
+msgstr "Aprire il terminale nella directory"
 
 msgid "Edit cover using GIMP"
-msgstr ""
+msgstr "Modificare la copertina con GIMP"
 
 msgid "To mp3"
-msgstr ""
+msgstr "in mp3"
 
-#, fuzzy
-#| msgid "mp3 files"
-msgid "From file"
-msgstr "file mp3"
-
-#, fuzzy
-#| msgid "ogg files"
-msgid "To file"
-msgstr "file ogg"
-
-#~ msgid "Name:"
-#~ msgstr "Nome:"
-
-#~ msgid "Create a playlist with the best of this aretist"
-#~ msgstr "Crea una playlist con il Meglio (Best of) di questo artista"
-
-#~ msgid "Collection: "
-#~ msgstr "Collezione: "
-
-#~ msgid "Filter: "
-#~ msgstr "Filtro: "
