@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 15:11-0300\n"
-"PO-Revision-Date: 2024-12-04 19:05+0100\n"
+"PO-Revision-Date: 2024-12-05 12:14+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
 "guayadeque/language/de_DE/)\n"
@@ -4727,7 +4727,7 @@ msgstr "Ausgewählte Tracks nach unten verschieben"
 
 #: ui/player/PlayList.cpp:79
 msgid "Move the selected tracks to the bottom"
-msgstr "Ausgewählte Tracks nach unten verschieben"
+msgstr "Ausgewählte Tracks an das Ende verschieben"
 
 #: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1841
 msgid "Remove the selected tracks from playlist"
