@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:18-0300\n"
-"PO-Revision-Date: 2024-11-30 18:27-0300\n"
+"POT-Creation-Date: 2024-11-28 13:29-0300\n"
+"PO-Revision-Date: 2024-12-05 12:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: misc/Accelerators.cpp:109
 msgid "Add Folder"
@@ -41,7 +41,7 @@ msgstr "Ιστιότοπος Συζητήσεων Κοινότητας"
 
 #: misc/Accelerators.cpp:114 ui/mediaviewer/library/ArListBox.cpp:195
 #: ui/mediaviewer/library/SoListBox.cpp:591
-#: ui/mediaviewer/library/AlListBox.cpp:300
+#: ui/mediaviewer/library/AlListBox.cpp:302
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
@@ -65,7 +65,7 @@ msgstr "Επεξεργασία Κομματιών"
 #: ui/mediaviewer/library/PcListBox.cpp:118
 #: ui/mediaviewer/library/SoListBox.cpp:525
 #: ui/mediaviewer/library/RaListBox.cpp:150
-#: ui/mediaviewer/library/AlListBox.cpp:270
+#: ui/mediaviewer/library/AlListBox.cpp:272
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:340
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1933
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068
@@ -116,7 +116,7 @@ msgstr "Βοήθεια"
 #: ui/mediaviewer/library/PcListBox.cpp:111
 #: ui/mediaviewer/library/SoListBox.cpp:518
 #: ui/mediaviewer/library/RaListBox.cpp:143
-#: ui/mediaviewer/library/AlListBox.cpp:264
+#: ui/mediaviewer/library/AlListBox.cpp:266
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2064
@@ -148,7 +148,7 @@ msgstr "Ροή Αναπαραγωγής"
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:247
+#: ui/mediaviewer/library/AlListBox.cpp:249
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
 #: ui/player/PlayList.cpp:1699 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
@@ -198,7 +198,7 @@ msgstr "Αποθήκευση Διάταξης"
 #: ui/mediaviewer/library/PcListBox.cpp:165
 #: ui/mediaviewer/library/SoListBox.cpp:646
 #: ui/mediaviewer/library/RaListBox.cpp:197
-#: ui/mediaviewer/library/AlListBox.cpp:336
+#: ui/mediaviewer/library/AlListBox.cpp:338
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2110
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
@@ -449,21 +449,21 @@ msgstr "Μενού"
 msgid "Capital"
 msgstr "Κεφαλαία"
 
-#: MainApp.cpp:395
+#: MainApp.cpp:404
 msgid "Another program instance is already running."
 msgstr "Άλλη περίπτωση προγράμματος εκτελείται ήδη."
 
-#: MainApp.cpp:395
+#: MainApp.cpp:404
 msgid "Do you want to continue with the program?"
 msgstr "Θέλετε να συνεχίσετε το πρόγραμμα;"
 
-#: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:405 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
-#: ui/mediaviewer/treeview/TreePanel.cpp:1211 ui/radios/ShoutcastRadio.cpp:369
-#: ui/radios/ShoutcastRadio.cpp:448 ui/podcasts/PodcastsPanel.cpp:1241
+#: ui/mediaviewer/treeview/TreePanel.cpp:1211 ui/radios/ShoutcastRadio.cpp:365
+#: ui/radios/ShoutcastRadio.cpp:444 ui/podcasts/PodcastsPanel.cpp:1241
 #: ui/podcasts/PodcastsPanel.cpp:1616
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
@@ -491,7 +491,7 @@ msgid "Generate Smart Playlist"
 msgstr "Δημιουργία Έξυπνης Λίστας Αναπαραγωγής"
 
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
-#: ui/mediaviewer/library/AlListBox.cpp:490
+#: ui/mediaviewer/library/AlListBox.cpp:492
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
 #: ui/preferences/Preferences.cpp:1729 ui/preferences/Preferences.cpp:1824
 #: ui/player/PlayerFilters.cpp:107
@@ -550,7 +550,7 @@ msgstr "GiBytes"
 
 #: ui/lyrics/LyricsPanel.cpp:82 ui/lastfmpanel/LastFMPanel.cpp:1625
 msgid "Follow player"
-msgstr "Ακολουθήστε την αναπαραγωγή"
+msgstr "Κύλιση κατά την αναπαραγωγή"
 
 #: ui/lyrics/LyricsPanel.cpp:83
 msgid "Search the lyrics for the current playing track"
@@ -587,8 +587,8 @@ msgstr "Αναζήτηση των στίχων στο διαδίκτυο"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1777
-#, fuzzy
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/preferences/Preferences.cpp:917
+#: ui/preferences/Preferences.cpp:3443 ui/player/PlayList.cpp:1777
 msgid "Artist"
 msgstr "Καλλιτέχνης"
 
@@ -634,8 +634,8 @@ msgid "No lyrics found"
 msgstr "Δε βρέθηκαν στίχοι"
 
 #: ui/lyrics/LyricsPanel.cpp:812
-msgid "Lyrics from"
-msgstr "Στίχοι από"
+msgid "Lyrics from "
+msgstr "Στίχοι από "
 
 #: ui/lyrics/LyricsPanel.cpp:1969
 msgid "Lyrics Target Editor"
@@ -646,16 +646,13 @@ msgid "Lyrics Source Editor"
 msgstr "Επεξεργαστής Πηγής Στίχων"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:319
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
-#: ui/radios/RadioEditor.cpp:45 ui/radios/RadioPanel.cpp:311
-#: ui/preferences/Preferences.cpp:2010 ui/preferences/Preferences.cpp:2129
-#: ui/preferences/Preferences.cpp:2249
-msgid "Name"
-msgstr "Όνομα"
+#: ui/radios/RadioEditor.cpp:45 ui/preferences/Preferences.cpp:2010
+#: ui/preferences/Preferences.cpp:2129 ui/preferences/Preferences.cpp:2249
+msgid "Name:"
+msgstr "Όνομα:"
 
 #: ui/lyrics/LyricsPanel.cpp:2002
 msgid "Type:"
@@ -858,7 +855,7 @@ msgstr "Καθορισμός προτιμήσεων των podcasts"
 
 #: ui/locationpanel/LocationPanel.cpp:398 ui/MainFrame.cpp:1153
 msgid "Open the music collection"
-msgstr "Άνοιγμα της συλλογής μουσικής"
+msgstr "Άνοιγμα της συλλογής της μουσικής"
 
 #: ui/locationpanel/LocationPanel.cpp:411
 #: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1165
@@ -1095,8 +1092,8 @@ msgstr "Αντιγραφή της επιλεγμένης ετικέτας σε �
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 #: ui/mediaviewer/library/TaListBox.cpp:227
-msgid "Label Name"
-msgstr "Όνομα ετικέτας"
+msgid "Label Name: "
+msgstr "Όνομα ετικέτας: "
 
 #: ui/labeleditor/LabelEditor.cpp:285 ui/mediaviewer/library/TaListBox.cpp:186
 msgid "Please enter the label name"
@@ -1235,7 +1232,7 @@ msgstr "Αντιγραφή του ονόματος είδους σε όλα τα
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3367
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3369
 #: ui/player/PlayList.cpp:1792
 msgid "Genre"
 msgstr "Είδος"
@@ -1246,7 +1243,7 @@ msgstr "Αντιγραφή του έτους σε όλα τα επεξεργαζ
 
 #: ui/trackedit/TrackEdit.cpp:276 ui/trackedit/TrackEdit.cpp:533
 #: ui/filebrowser/FileRenamer.cpp:87 ui/mediaviewer/library/SoListBox.cpp:67
-#: ui/mediaviewer/library/AlListBox.cpp:320
+#: ui/mediaviewer/library/AlListBox.cpp:322
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:423
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:743
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:56
@@ -1408,7 +1405,7 @@ msgid "Album Artist"
 msgstr "Καλλιτέχνης Δίσκου"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:917
-#: ui/preferences/Preferences.cpp:3441
+#: ui/preferences/Preferences.cpp:3443
 msgid "or"
 msgstr "ή"
 
@@ -1425,7 +1422,7 @@ msgstr "Προβολή φακέλων συστήματος"
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
-#: ui/mediaviewer/library/AlListBox.cpp:247
+#: ui/mediaviewer/library/AlListBox.cpp:249
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1699
 msgid "Add commands in preferences"
 msgstr "Προσθήκη εντολών στις προτιμήσεις"
@@ -1435,7 +1432,7 @@ msgstr "Προσθήκη εντολών στις προτιμήσεις"
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
 #: ui/mediaviewer/library/SoListBox.cpp:460
-#: ui/mediaviewer/library/AlListBox.cpp:250
+#: ui/mediaviewer/library/AlListBox.cpp:252
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:279
 #: ui/preferences/Preferences.cpp:2067 ui/player/PlayList.cpp:1702
 msgid "Commands"
@@ -1460,7 +1457,7 @@ msgstr "Προσθήκη επιλεγμένου φακέλου στη λίστα
 #: ui/mediaviewer/library/PcListBox.cpp:127
 #: ui/mediaviewer/library/SoListBox.cpp:534
 #: ui/mediaviewer/library/RaListBox.cpp:159
-#: ui/mediaviewer/library/AlListBox.cpp:278
+#: ui/mediaviewer/library/AlListBox.cpp:280
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:347
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1940
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2075
@@ -1510,7 +1507,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:134
 #: ui/mediaviewer/library/SoListBox.cpp:541
 #: ui/mediaviewer/library/RaListBox.cpp:166
-#: ui/mediaviewer/library/AlListBox.cpp:284
+#: ui/mediaviewer/library/AlListBox.cpp:286
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:353
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1946
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2081
@@ -1560,7 +1557,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:141
 #: ui/mediaviewer/library/SoListBox.cpp:548
 #: ui/mediaviewer/library/RaListBox.cpp:173
-#: ui/mediaviewer/library/AlListBox.cpp:290
+#: ui/mediaviewer/library/AlListBox.cpp:292
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:359
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1952
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2087
@@ -1610,7 +1607,7 @@ msgstr ""
 #: ui/mediaviewer/library/PcListBox.cpp:147
 #: ui/mediaviewer/library/SoListBox.cpp:554
 #: ui/mediaviewer/library/RaListBox.cpp:179
-#: ui/mediaviewer/library/AlListBox.cpp:295
+#: ui/mediaviewer/library/AlListBox.cpp:297
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:364
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1957
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2092
@@ -1681,13 +1678,19 @@ msgid "Are you sure to delete the selected path ?"
 msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε την επιλεγμένη διαδρομή ;"
 
 #: ui/filebrowser/FileBrowser.cpp:558
-msgid "Error deleting the folder"
-msgstr "Σφάλμα κατά τη διαγραφή του φακέλου"
+msgid "Error deleting the folder "
+msgstr "Σφάλμα κατά τη διαγραφή του φακέλου "
 
 #: ui/filebrowser/FileBrowser.cpp:559 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
 msgid "Error"
 msgstr "Σφάλμα"
+
+#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
+#: ui/radios/RadioPanel.cpp:311
+msgid "Name"
+msgstr "Όνομα"
 
 #: ui/filebrowser/FileBrowser.cpp:750
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
@@ -1730,7 +1733,7 @@ msgstr "Διαγραφή των επιλεγμένων αρχείων"
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1441
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
 #: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2132
 msgid "UnNamed"
@@ -1740,11 +1743,11 @@ msgstr "Χωρίς Όνομα"
 msgid "Are you sure to delete the selected files ?"
 msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε τα επιλεγμένα αρχεία;"
 
-#: ui/filebrowser/FileBrowser.cpp:2001
-msgid "There was an error deleting"
-msgstr "Υπήρξε σφάλμα κατά τη διαγραφή"
+#: ui/filebrowser/FileBrowser.cpp:2000
+msgid "There was an error deleting "
+msgstr "Υπήρξε σφάλμα κατά τη διαγραφή "
 
-#: ui/filebrowser/FileBrowser.cpp:2002
+#: ui/filebrowser/FileBrowser.cpp:2001
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1752,7 +1755,7 @@ msgstr ""
 "\n"
 "Συνεχίστε τη διαγραφή;"
 
-#: ui/filebrowser/FileBrowser.cpp:2003
+#: ui/filebrowser/FileBrowser.cpp:2002
 msgid "Continue"
 msgstr "Συνέχεια"
 
@@ -1913,8 +1916,8 @@ msgid "Download Albums torrents"
 msgstr "Κατέβασμα δίσκων από torrents"
 
 #: ui/MainFrame.cpp:154
-msgid "Welcome to Guayadeque"
-msgstr "Καλώς ήρθατε στο Guayadeque"
+msgid "Welcome to Guayadeque "
+msgstr "Καλώς ήρθατε στο Guayadeque "
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
@@ -2304,7 +2307,7 @@ msgstr "Προσθήκη των επιλεγμένων κομματιών στη
 #: ui/mediaviewer/library/PcListBox.cpp:156
 #: ui/mediaviewer/library/SoListBox.cpp:599
 #: ui/mediaviewer/library/RaListBox.cpp:188
-#: ui/mediaviewer/library/AlListBox.cpp:308
+#: ui/mediaviewer/library/AlListBox.cpp:310
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
@@ -2323,7 +2326,7 @@ msgstr "Επεξεργασία των επιλεγμένων κομματιών"
 
 #: ui/mediaviewer/library/YeListBox.cpp:159
 #: ui/mediaviewer/library/AAListBox.cpp:204
-#: ui/mediaviewer/library/AlListBox.cpp:337
+#: ui/mediaviewer/library/AlListBox.cpp:339
 msgid "Save the selected tracks to Playlist"
 msgstr "Αποθήκευση των επιλεγμένων κομματιών στη Λίστα Αναπαραγωγής"
 
@@ -2344,21 +2347,19 @@ msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετ�
 
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1334
 #: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2280
 msgid "Tracks Labels Editor"
 msgstr "Επεξεργαστής Ετικετών των Κομματιών"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1676
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1604
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1608
 #: ui/mediaviewer/treeview/TreePanel.cpp:1574
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:1088
 msgid "Field Editor"
 msgstr "Επεξεργαστής Πεδίων"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2368,8 +2369,6 @@ msgstr ""
 "Αυτό θα διαγράψει οριστικά τα επιλεγμένα κομμάτια."
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
 msgid "Remove tracks from drive"
 msgstr "Διαγραφή κομματιών από σκληρό δίσκο"
 
@@ -2380,14 +2379,14 @@ msgstr "Αναπαραγωγή επιλεγμένου συνθέτη"
 #: ui/mediaviewer/library/CoListBox.cpp:121
 #: ui/mediaviewer/library/CoListBox.cpp:128
 #: ui/mediaviewer/library/CoListBox.cpp:135
-#: ui/mediaviewer/library/AlListBox.cpp:279
-#: ui/mediaviewer/library/AlListBox.cpp:285
-#: ui/mediaviewer/library/AlListBox.cpp:291
+#: ui/mediaviewer/library/AlListBox.cpp:281
+#: ui/mediaviewer/library/AlListBox.cpp:287
+#: ui/mediaviewer/library/AlListBox.cpp:293
 msgid "Add current selected albums to the Playlist as Next Tracks"
 msgstr "Προσθήκη επιλεγμένων δίσκων στη Λίστα Αναπαραγωγήςσαν Επόμενα Κομμάτια"
 
 #: ui/mediaviewer/library/CoListBox.cpp:140
-#: ui/mediaviewer/library/AlListBox.cpp:295
+#: ui/mediaviewer/library/AlListBox.cpp:297
 msgid "Add the selected albums after"
 msgstr "Προσθήκη επιλεγμένων δίσκων μετά από"
 
@@ -2423,15 +2422,12 @@ msgstr "Επεξεργασία των τραγουδιών από τους επ�
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:344 ui/player/PlayList.cpp:1820
 msgid "Create Best of Playlist"
 msgstr "Δημιουργία λίστας αναπαραγωγής των Best of"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
-#: ui/mediaviewer/library/AAListBox.cpp:210
-#: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
-msgid "Create a playlist with the best of this artist"
+msgid "Create a playlist with the best of this aretist"
 msgstr "Δημιουργήστε μια λίστα αναπαραγωγής με τα Best of αυτού του καλλιτέχνη"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
@@ -2474,6 +2470,12 @@ msgstr "Προσθήκη επιλεγμένων ειδών στη λίστα α�
 #: ui/mediaviewer/library/AAListBox.cpp:150
 msgid "Play current selected album artist"
 msgstr "Αναπαραγωγή του επιλεγμένου καλλιτέχνη δίσκου"
+
+#: ui/mediaviewer/library/AAListBox.cpp:210
+#: ui/mediaviewer/library/SoListBox.cpp:655
+#: ui/mediaviewer/library/AlListBox.cpp:345 ui/player/PlayList.cpp:1820
+msgid "Create a playlist with the best of this artist"
+msgstr "Δημιουργήστε μια λίστα αναπαραγωγής με τα Best of αυτού του καλλιτέχνη"
 
 #: ui/mediaviewer/library/PcListBox.cpp:112
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:645
@@ -2626,126 +2628,126 @@ msgid "Play the selected tracks"
 msgstr "Αναπαραγωγή των επιλεγμένων κομματιών"
 
 #: ui/mediaviewer/library/AlListBox.cpp:177
-msgid "by"
-msgstr "από"
+msgid "by "
+msgstr "από "
 
-#: ui/mediaviewer/library/AlListBox.cpp:265
+#: ui/mediaviewer/library/AlListBox.cpp:267
 msgid "Play current selected albums"
 msgstr "Αναπαραγωγή επιλεγμένων δίσκων"
 
-#: ui/mediaviewer/library/AlListBox.cpp:271
+#: ui/mediaviewer/library/AlListBox.cpp:273
 msgid "Add current selected albums to the Playlist"
 msgstr "Προσθήκη επιλεγμένων δίσκων στη Λίστα Αναπαραγωγής"
 
-#: ui/mediaviewer/library/AlListBox.cpp:301
+#: ui/mediaviewer/library/AlListBox.cpp:303
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
 msgid "Edit the labels assigned to the selected albums"
 msgstr "Επεξεργασία των ετικετών που έχουν οριστεί στους επιλεγμένους δίσκους"
 
-#: ui/mediaviewer/library/AlListBox.cpp:309
+#: ui/mediaviewer/library/AlListBox.cpp:311
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
 msgid "Edit the selected songs"
 msgstr "Επεξεργασία των επιλεγμένων κομματιών"
 
-#: ui/mediaviewer/library/AlListBox.cpp:319
+#: ui/mediaviewer/library/AlListBox.cpp:321
 msgid "Albums are sorted by name"
 msgstr "Δίσκοι ταξινομημένοι κατά Όνομα"
 
-#: ui/mediaviewer/library/AlListBox.cpp:320
+#: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Albums are sorted by year"
 msgstr "Δίσκοι ταξινομημένοι κατά Έτος"
 
-#: ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/library/AlListBox.cpp:323
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:427
 msgid "Year Descending"
 msgstr "Φθίνουσα Ταξινόμηση κατά Έτος"
 
-#: ui/mediaviewer/library/AlListBox.cpp:321
+#: ui/mediaviewer/library/AlListBox.cpp:323
 msgid "Albums are sorted by year descending"
 msgstr "Δίσκοι ταξινομημένοι κατά Έτος σε φθίνουσα σειρά"
 
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:324
 msgid "Artist, Name"
 msgstr "Καλλιτέχνης, Όνομα"
 
-#: ui/mediaviewer/library/AlListBox.cpp:322
+#: ui/mediaviewer/library/AlListBox.cpp:324
 msgid "Albums are sorted by artist and album name"
 msgstr "Δίσκοι ταξινομημένοι κατά Καλλιτέχνη κι Όνομα Δίσκου"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:325
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:435
 msgid "Artist, Year"
 msgstr "Καλλιτέχνης, Έτος"
 
-#: ui/mediaviewer/library/AlListBox.cpp:323
+#: ui/mediaviewer/library/AlListBox.cpp:325
 msgid "Albums are sorted by artist and year"
 msgstr "Δίσκοι ταξινομημένοι κατά Καλλιτέχνη κι Έτος"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:326
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:439
 msgid "Artist, Year Descending"
 msgstr "Καλλιτέχνης, Έτος με Φθίνουσα Ταξινόμηση"
 
-#: ui/mediaviewer/library/AlListBox.cpp:324
+#: ui/mediaviewer/library/AlListBox.cpp:326
 msgid "Albums are sorted by artist and year descending"
 msgstr "Δίσκοι ταξινομημένοι κατά Καλλιτέχνη κι Έτος σε φθίνουσα σειρά"
 
-#: ui/mediaviewer/library/AlListBox.cpp:329
+#: ui/mediaviewer/library/AlListBox.cpp:331
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:447
 msgid "Sort By"
 msgstr "Ταξινόμηση κατά"
 
-#: ui/mediaviewer/library/AlListBox.cpp:329
+#: ui/mediaviewer/library/AlListBox.cpp:331
 msgid "Sets the albums order"
 msgstr "Καθορισμός της ταξινόμησης των δίσκων"
 
-#: ui/mediaviewer/library/AlListBox.cpp:350
+#: ui/mediaviewer/library/AlListBox.cpp:352
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download Cover"
 msgstr "Κατέβασμα Εξωφύλλου"
 
-#: ui/mediaviewer/library/AlListBox.cpp:350
+#: ui/mediaviewer/library/AlListBox.cpp:352
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download cover for the current selected album"
 msgstr "Κατέβασμα εξωφύλλου για τον επιλεγμένο δίσκο"
 
-#: ui/mediaviewer/library/AlListBox.cpp:354
+#: ui/mediaviewer/library/AlListBox.cpp:356
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select Cover"
 msgstr "Επιλογή Εξωφύλλου"
 
-#: ui/mediaviewer/library/AlListBox.cpp:354
+#: ui/mediaviewer/library/AlListBox.cpp:356
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1990
 msgid "Select the cover image file from disk"
 msgstr "Επιλογή αρχείου εικόνας εξωφύλλου από τον δίσκο"
 
-#: ui/mediaviewer/library/AlListBox.cpp:358
+#: ui/mediaviewer/library/AlListBox.cpp:360
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete Cover"
 msgstr "Διαγραφή Εξωφύλλου"
 
-#: ui/mediaviewer/library/AlListBox.cpp:358
+#: ui/mediaviewer/library/AlListBox.cpp:360
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:401
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1994
 msgid "Delete the cover for the selected album"
 msgstr "Διαγραφή εξωφύλλου του επιλεγμένου δίσκου"
 
-#: ui/mediaviewer/library/AlListBox.cpp:365
+#: ui/mediaviewer/library/AlListBox.cpp:367
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:408
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2001
 msgid "Embed Cover"
 msgstr "Ενσωμάτωση Εξωφύλλου"
 
-#: ui/mediaviewer/library/AlListBox.cpp:365
+#: ui/mediaviewer/library/AlListBox.cpp:367
 msgid "Embed the current cover to the album files"
 msgstr "Ενσωμάτωση του τρέχοντος εξωφύλλου στα αρχεία του δίσκου"
 
@@ -2786,12 +2788,11 @@ msgstr "Επεξεργασία του επιλεγμένου φίλτρου"
 msgid "New Filter"
 msgstr "Νέο Φίλτρο"
 
-#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2820
-#: ui/preferences/Preferences.cpp:2840
+#: ui/mediaviewer/MediaViewer.cpp:947
 msgid "Collection"
 msgstr "Συλλογή"
 
-#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2971
+#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2973
 msgid "Select library path"
 msgstr "Επιλογή διαδρομής της βιβλιοθήκης"
 
@@ -2820,8 +2821,8 @@ msgid "Playlist"
 msgstr "Λίστα Αναπαραγωγής"
 
 #: ui/mediaviewer/MediaViewer.cpp:2101
-msgid "The best of"
-msgstr "Το best of"
+msgid "The best of "
+msgstr "Το Best of "
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
 #, c-format
@@ -3114,8 +3115,8 @@ msgstr "Ορισμός σαν φίλτρο απόρριψης"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1026
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1163
-msgid "Playlist Name"
-msgstr "Όνομα Λίστας αναπαραγωγής"
+msgid "Playlist Name: "
+msgstr "Όνομα Λίστας αναπαραγωγής: "
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1027
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1164
@@ -3128,11 +3129,11 @@ msgstr ""
 "Είστε σίγουροι ότι θέλετε να διαγράψετε την επιλεγμένη Λίστα Αναπαραγωγής;"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1147
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1216
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1220
 msgid "Select the playlist file"
 msgstr "Επιλογή του αρχείου της λίστας αναπαραγωγής"
 
-#: ui/mediaviewer/playlists/PlayListPanel.cpp:1172
+#: ui/mediaviewer/playlists/PlayListPanel.cpp:1175
 msgid "New Playlist"
 msgstr "Νέα Λίστα Αναπαραγωγής"
 
@@ -3659,20 +3660,20 @@ msgstr "Ανανέωση Ραδιοφωνικών Σταθμών"
 msgid "Searches"
 msgstr "Αναζητήσεις"
 
-#: ui/radios/ShoutcastRadio.cpp:340
-msgid "Genre Name"
-msgstr "Είδους Όνομα"
+#: ui/radios/ShoutcastRadio.cpp:338
+msgid "Genre Name: "
+msgstr "Είδους Όνομα: "
 
-#: ui/radios/ShoutcastRadio.cpp:341
+#: ui/radios/ShoutcastRadio.cpp:338
 msgid "Enter the new Genre Name"
 msgstr "Προσθήκη νέου Ονόματος Είδους"
 
-#: ui/radios/ShoutcastRadio.cpp:368
+#: ui/radios/ShoutcastRadio.cpp:364
 msgid "Are you sure to delete the selected radio genres?"
 msgstr ""
 "Είστε σίγουροι ότι θέλετε να διαγράψετε τα επιλεγμένα ραδιοφωνικά είδη;"
 
-#: ui/radios/ShoutcastRadio.cpp:447
+#: ui/radios/ShoutcastRadio.cpp:443
 msgid "Are you sure to delete the selected radio searches?"
 msgstr ""
 "Είστε σίγουροι ότι θέλετε να διαγράψετε τις επιλεγμένες ραδιοφωνικές "
@@ -4061,19 +4062,9 @@ msgstr "Κομμάτια που προστίθενται κάθε φορά"
 msgid "Max played tracks kept in playlist"
 msgstr "Μέγιστος αριθμός αναπαραγμένων κομματιών που διατηρούνται στη λίστα"
 
-#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3440
-#, fuzzy
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3442
 msgid "Don't repeat last"
-msgid_plural "Don't repeat last"
-msgstr[0] "Να μην επαναλαμβάνεται ο τελευταίος"
-msgstr[1] "Να μην επαναλαμβάνονται οι τελευταίοι"
-
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
-#, fuzzy
-msgid "artist"
-msgid_plural "artists"
-msgstr[0] "καλλιτέχνηςt"
-msgstr[1] "καλλιτέχνες"
+msgstr "Να μην επαναλαμβάνονται οι τελευταίοι"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
@@ -4381,8 +4372,8 @@ msgid "Remove source files"
 msgstr "Αφαίρεση αρχείων προέλευσης"
 
 #: ui/preferences/Preferences.cpp:2314
-msgid "Define patterns using"
-msgstr "Προσδιορισμός προτύπων με χρήση"
+msgid " Define patterns using "
+msgstr " Προσδιορισμός προτύπων με χρήση "
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -4433,42 +4424,46 @@ msgid "Key"
 msgstr "Κλειδί"
 
 #: ui/preferences/Preferences.cpp:2820 ui/preferences/Preferences.cpp:2840
-msgid "Enter the collection name"
-msgstr "Εισαγωγή ονόματος συλλογής"
+msgid "Collection: "
+msgstr "Συλλογή: "
 
-#: ui/preferences/Preferences.cpp:2949
+#: ui/preferences/Preferences.cpp:2820 ui/preferences/Preferences.cpp:2840
+msgid "Enter the collection name"
+msgstr "Εισαγωγή ονόματος της συλλογής"
+
+#: ui/preferences/Preferences.cpp:2951
 msgid "Change library path"
 msgstr "Αλλαγή διαδρομής βιβλιοθήκης"
 
-#: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
-msgid "Word"
-msgstr "Λέξη"
+#: ui/preferences/Preferences.cpp:3029 ui/preferences/Preferences.cpp:3049
+msgid "Word: "
+msgstr "Λέξη: "
 
-#: ui/preferences/Preferences.cpp:3027 ui/preferences/Preferences.cpp:3047
+#: ui/preferences/Preferences.cpp:3029 ui/preferences/Preferences.cpp:3049
 msgid "Enter the text to find covers"
 msgstr "Εισαγωγή κειμένου για φιλτράρισμα"
 
-#: ui/preferences/Preferences.cpp:3367
+#: ui/preferences/Preferences.cpp:3369
 msgid "Enter the genre to disable"
 msgstr "Εισάγετε το είδος για να απενεργοποιήσετε"
 
-#: ui/preferences/Preferences.cpp:3568 ui/preferences/Preferences.cpp:3599
-msgid "Filter"
-msgstr "Φίλτρο"
+#: ui/preferences/Preferences.cpp:3570 ui/preferences/Preferences.cpp:3601
+msgid "Filter: "
+msgstr "Φίλτρο: "
 
-#: ui/preferences/Preferences.cpp:3569
+#: ui/preferences/Preferences.cpp:3571
 msgid "Enter the text to filter"
 msgstr "Εισαγωγή κειμένου για φιλτράρισμα"
 
-#: ui/preferences/Preferences.cpp:3599
+#: ui/preferences/Preferences.cpp:3601
 msgid "Edit the text to filter"
 msgstr "Επεξεργασία κειμένου για φιλτράρισμα"
 
-#: ui/preferences/Preferences.cpp:4125
+#: ui/preferences/Preferences.cpp:4127
 msgid "Select path"
 msgstr "Επιλογή διαδρομής"
 
-#: ui/preferences/Preferences.cpp:4303
+#: ui/preferences/Preferences.cpp:4305
 msgid "Key used by '"
 msgstr "Κλειδί χρησιμοποιημένο από '"
 
@@ -4503,8 +4498,8 @@ msgid "%u Categories, %u Channels"
 msgstr "%u Κατηγορίες, %u Κανάλια"
 
 #: ui/podcasts/NewChannel.cpp:365
-msgid "Filter Text"
-msgstr "Κείμενο Φίλτρου"
+msgid "Filter Text: "
+msgstr "Κείμενο Φίλτρου: "
 
 #: ui/podcasts/NewChannel.cpp:365
 msgid "Enter the text to filter podcasts channels"
