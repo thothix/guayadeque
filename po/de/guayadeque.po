@@ -4857,27 +4857,3 @@ msgstr "Aus einer Datei"
 
 msgid "To file"
 msgstr "In Datei"
-
-#~ msgid "&Repeat Playlist"
-#~ msgstr "&Wiedergabeliste wiederholen"
-
-#~ msgid "&Repeat Track"
-#~ msgstr "&Track wiederholen"
-
-#~ msgid "Community"
-#~ msgstr "Community"
-
-#~ msgid "Copy the event info to clipboard"
-#~ msgstr "Event-Infos in die Zwischenablage kopieren"
-
-#~ msgid "Events"
-#~ msgstr "Events"
-
-#~ msgid "Get guayadeque support from guayadeque.org"
-#~ msgstr "Hilfe durch Guayadeque.org erhalten"
-
-#~ msgid "Show the equalizer"
-#~ msgstr "Equalizer anzeigen"
-
-#~ msgid "Join the Guayadeque Last.fm users group"
-#~ msgstr "Der Guayadeque-Gruppe auf Last.fm beitreten"
