@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-28 13:29-0300\n"
-"PO-Revision-Date: 2024-12-05 12:26+0100\n"
+"PO-Revision-Date: 2024-12-05 12:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -553,7 +553,7 @@ msgstr "Gigaoctets= Go"
 
 #: ui/lyrics/LyricsPanel.cpp:82 ui/lastfmpanel/LastFMPanel.cpp:1625
 msgid "Follow player"
-msgstr "Défile avec la lecture"
+msgstr "Défile pendant la lecture"
 
 #: ui/lyrics/LyricsPanel.cpp:83
 msgid "Search the lyrics for the current playing track"
