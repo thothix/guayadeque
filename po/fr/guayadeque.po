@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-01 16:18-0300\n"
-"PO-Revision-Date: 2024-12-05 13:12+0100\n"
+"PO-Revision-Date: 2024-12-05 14:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -4069,8 +4069,8 @@ msgstr[1] "Ne pas répéter les derniers"
 #: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
 msgid "artist"
 msgid_plural "artists"
-msgstr[0] "Artiste"
-msgstr[1] "Artiste"
+msgstr[0] "artiste"
+msgstr[1] "artistes"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
@@ -4376,7 +4376,7 @@ msgstr "Supprimer les fichiers d'origine"
 
 #: ui/preferences/Preferences.cpp:2314
 msgid "Define patterns using"
-msgstr " Définir les modèles avec"
+msgstr "Définir les modèles avec"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
