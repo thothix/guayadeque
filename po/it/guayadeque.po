@@ -4832,7 +4832,6 @@ msgstr ""
 msgid "Finished copying files"
 msgstr "Copia dei file terminata"
 
-# Begin of Translations external from source code
 msgid "Browse in File Manager"
 msgstr "Sfogliare in Gestore file"
 
@@ -4851,3 +4850,8 @@ msgstr "Modificare la copertina con GIMP"
 msgid "To mp3"
 msgstr "in mp3"
 
+msgid "From file"
+msgstr "Da un file"
+
+msgid "To file"
+msgstr "In un file"
