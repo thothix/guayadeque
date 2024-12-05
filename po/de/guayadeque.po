@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 15:11-0300\n"
-"PO-Revision-Date: 2024-12-05 12:14+0100\n"
+"PO-Revision-Date: 2024-12-05 14:31+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
 "guayadeque/language/de_DE/)\n"
@@ -1228,7 +1228,7 @@ msgstr "CD"
 
 #: ui/trackedit/TrackEdit.cpp:261
 msgid "Copy the genre name to all songs you are editing"
-msgstr "Genre in alle Tracks kopieren, die gerade bearbeitet werden"
+msgstr "Genre in alle Lieder kopieren, die gerade bearbeitet werden"
 
 #: ui/trackedit/TrackEdit.cpp:264 ui/filebrowser/FileRenamer.cpp:86
 #: ui/mediaviewer/library/SoListBox.cpp:63
@@ -1245,7 +1245,7 @@ msgstr "Genre"
 
 #: ui/trackedit/TrackEdit.cpp:273
 msgid "Copy the year to all songs you are editing"
-msgstr "»Jahr« in alle Tracks kopieren, die gerade bearbeitet werden"
+msgstr "»Jahr« in alle Lieder kopieren, die gerade bearbeitet werden"
 
 #: ui/trackedit/TrackEdit.cpp:276 ui/trackedit/TrackEdit.cpp:533
 #: ui/filebrowser/FileRenamer.cpp:87 ui/mediaviewer/library/SoListBox.cpp:67
@@ -2393,7 +2393,7 @@ msgstr "Ausgewähltes Album hinzufügen nach"
 
 #: ui/mediaviewer/library/CoListBox.cpp:149
 msgid "Edit songs"
-msgstr "Tracks bearbeiten"
+msgstr "Lieder bearbeiten"
 
 #: ui/mediaviewer/library/CoListBox.cpp:159
 #: ui/mediaviewer/library/ArListBox.cpp:213
@@ -2578,7 +2578,7 @@ msgstr "In der Musiksammlung suchen"
 
 #: ui/mediaviewer/library/SoListBox.cpp:592
 msgid "Edit the labels assigned to the selected songs"
-msgstr "Label der ausgewählten Tracks bearbeiten"
+msgstr "Label der ausgewählten Lieder bearbeiten"
 
 #: ui/mediaviewer/library/SoListBox.cpp:600
 msgid "Edit the songs selected"
@@ -2808,8 +2808,8 @@ msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
 msgstr ""
-"Album konnte nicht in der Musiksammlung gefunden werden.\n"
-"Sie sollten die Musiksammlung aktualisieren."
+"Album konnte nicht in der Lieder-Bibliothek gefunden werden.\n"
+"Sie sollten die Bibliothek aktualisieren."
 
 #: ui/mediaviewer/MediaViewer.cpp:2057
 msgid "smart playlist"
@@ -3402,7 +3402,7 @@ msgstr "Möchten Sie den ausgewählten Filter wirklich löschen?"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:651 ui/radios/RadioPanel.cpp:411
 #: ui/podcasts/PodcastsPanel.cpp:2046
 msgid "Add current selected songs to playlist"
-msgstr "Aktuell ausgewählte Tracks zur Wiedergabeliste hinzufügen"
+msgstr "Aktuell ausgewählte Lieder zur Wiedergabeliste hinzufügen"
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680
 msgid "Search again"
@@ -4679,7 +4679,7 @@ msgstr "00:00 von 00:00"
 
 #: ui/player/PlayerPanel.cpp:264
 msgid "Show the current position and song length of the current track"
-msgstr "Wiedergabeposition und Dauer des aktuellen Tracks anzeigen"
+msgstr "Wiedergabeposition und Liedlänge des aktuellen Track anzeigen"
 
 #: ui/player/PlayerPanel.cpp:283
 msgid "Show the file format of the current track"
@@ -4747,7 +4747,7 @@ msgstr "Aktuell ausgewählte Track-Labels bearbeiten"
 
 #: ui/player/PlayList.cpp:1731
 msgid "Edit the current selected songs"
-msgstr "Aktuell ausgewählte Tracks bearbeiten"
+msgstr "Aktuell ausgewählte Lieder bearbeiten"
 
 #: ui/player/PlayList.cpp:1741
 msgid "Move the selected tracks to be played next"
