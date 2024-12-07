@@ -2187,7 +2187,7 @@ msgstr "Afficher des informations au sujet du lecteur de musique Guayadeque"
 
 #: ui/MainFrame.cpp:1605
 msgid "View"
-msgstr ""
+msgstr "Affichage"
 
 #: ui/MainFrame.cpp:1610
 msgid "Controls"
