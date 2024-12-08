@@ -26,6 +26,7 @@ Unreleased (2024-11-xx)
   * Updated French, Greek and Italian translations. Thanks to filochard.
   * Updated German translations. Thanks to martinkg.
   * Updated Portuguese and Brazilian Portuguese translations.
+  * Small UI adjustments.
 
 0.6.1 (2024-11-12)
 ------------------
