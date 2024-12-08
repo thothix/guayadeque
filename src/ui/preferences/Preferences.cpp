@@ -119,8 +119,8 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     WindowPos.x = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_POSX, -1, CONFIG_PATH_PREFERENCES );
     WindowPos.y = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_POSY, -1, CONFIG_PATH_PREFERENCES );
     wxSize WindowSize;
-    WindowSize.x = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_WIDTH, 600, CONFIG_PATH_PREFERENCES );
-    WindowSize.y = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_HEIGHT, 530, CONFIG_PATH_PREFERENCES );
+    WindowSize.x = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_WIDTH, 740, CONFIG_PATH_PREFERENCES );
+    WindowSize.y = m_Config->ReadNum( CONFIG_KEY_PREFERENCES_HEIGHT, 680, CONFIG_PATH_PREFERENCES );
 
     //wxDialog( parent, wxID_ANY, _( "Songs Editor" ), wxDefaultPosition, wxSize( 625, 440 ), wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER )
     Create( parent, wxID_ANY, _( "Preferences" ), WindowPos, WindowSize, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER | wxMAXIMIZE_BOX );
