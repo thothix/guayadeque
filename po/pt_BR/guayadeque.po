@@ -4039,7 +4039,7 @@ msgstr "Habilitar Equalizador"
 
 #: ui/preferences/Preferences.cpp:837
 msgid "Enable volume and fader"
-msgstr "Habilitar volume e fader/transição suave"
+msgstr "Habilitar volume e fader (transição suave)"
 
 #: ui/preferences/Preferences.cpp:843
 msgid "ReplayGain mode:"
