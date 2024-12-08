@@ -1793,7 +1793,6 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
         SubMenu->Append( MenuItem );
 
         Menu->AppendSubMenu( SubMenu, _( "Select" ), _( "Search in the library" ) );
-        Menu->AppendSeparator();
     }
 
     Menu->AppendSeparator();
@@ -1856,6 +1855,8 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
         MenuItem->SetBitmap( guImage( guIMAGE_INDEX_edit_delete ) );
         Menu->Append( MenuItem );
     }
+
+    Menu->AppendSeparator();
 
     m_MainFrame->CreateCopyToMenu( Menu );
 
