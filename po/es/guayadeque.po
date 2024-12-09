@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-01 16:18-0300\n"
-"PO-Revision-Date: 2024-12-05 13:11+0100\n"
+"PO-Revision-Date: 2024-12-09 18:25+0100\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>, 2020\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/anonbeat/guayadeque/"
 "language/es_ES/)\n"
@@ -102,7 +102,7 @@ msgstr "Pantalla completa"
 
 #: misc/Accelerators.cpp:122
 msgid "Gapless/Crossfading"
-msgstr "Reproducción sin pausas/Solapamiento"
+msgstr "Reproducción sin silencio/Solapamiento (crossfading)"
 
 #: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1572
 #: ui/MainFrame.cpp:1615
@@ -178,7 +178,7 @@ msgstr "Baraja la Lista de reproducción"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:70
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 msgid "Rating"
-msgstr "Evaluación"
+msgstr "Valoración"
 
 #: misc/Accelerators.cpp:138
 msgid "Repeat All Tracks"
@@ -210,7 +210,7 @@ msgstr "Salvar Disposición"
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
 #: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1811
 msgid "Save to Playlist"
-msgstr "Guardar en lista estática"
+msgstr "Guardar en lista de reproducción estática"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
 #: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1764
@@ -460,7 +460,7 @@ msgstr "Otra instancia del programa está ejecutándose."
 
 #: MainApp.cpp:395
 msgid "Do you want to continue with the program?"
-msgstr "Quieres que continúe la ejecución del programa ?"
+msgstr "¿Quieres que continúe la ejecución del programa ?"
 
 #: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
@@ -643,7 +643,7 @@ msgstr "Letra proporcionada por"
 
 #: ui/lyrics/LyricsPanel.cpp:1969
 msgid "Lyrics Target Editor"
-msgstr "Donde salvar las letras"
+msgstr "Editor de destino para las letras"
 
 #: ui/lyrics/LyricsPanel.cpp:1969
 msgid "Lyrics Source Editor"
@@ -679,7 +679,7 @@ msgstr "Comando"
 
 #: ui/lyrics/LyricsPanel.cpp:2011 ui/podcasts/PodcastsPanel.cpp:2080
 msgid "Download"
-msgstr "Descargado"
+msgstr "Bajar"
 
 #: ui/lyrics/LyricsPanel.cpp:2018
 msgid "Source:"
@@ -956,11 +956,11 @@ msgstr "Ver años de la biblioteca"
 #: ui/mediaviewer/library/LibPanel.cpp:324
 #: ui/mediaviewer/library/LibPanel.cpp:571
 msgid "Ratings"
-msgstr "Evaluaciones"
+msgstr "Valoraciones"
 
 #: ui/locationpanel/LocationPanel.cpp:458 ui/MainFrame.cpp:1212
 msgid "View the library ratings"
-msgstr "Ver evaluaciones de la biblioteca"
+msgstr "Ver valoraciones de la biblioteca"
 
 #: ui/locationpanel/LocationPanel.cpp:463
 msgid "Play Counts"
@@ -1227,7 +1227,7 @@ msgstr "Disco"
 
 #: ui/trackedit/TrackEdit.cpp:261
 msgid "Copy the genre name to all songs you are editing"
-msgstr "Copiar el género a todas las canciones que estás editando"
+msgstr "Copiar el nombre del género a todas las canciones que estás editando"
 
 #: ui/trackedit/TrackEdit.cpp:264 ui/filebrowser/FileRenamer.cpp:86
 #: ui/mediaviewer/library/SoListBox.cpp:63
@@ -1284,7 +1284,7 @@ msgstr "Tamaño de archivo"
 
 #: ui/trackedit/TrackEdit.cpp:342
 msgid "Add a picture from file to the current track"
-msgstr "Añadir una imágen desde una carpeta a la pista actual"
+msgstr "Añadir una imágen desde un archivo a la pista actual"
 
 #: ui/trackedit/TrackEdit.cpp:346
 msgid "Delete the picture from the current track"
@@ -1393,7 +1393,7 @@ msgstr "Patrón"
 
 #: ui/filebrowser/FileRenamer.cpp:86
 msgid "Pattern flags"
-msgstr "Patrones"
+msgstr "Banderas de patrones"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/mediaviewer/library/LibPanel.cpp:374
 #: ui/mediaviewer/library/LibPanel.cpp:381
@@ -1718,7 +1718,7 @@ msgstr "Añadir las pistas seleccionados a una lista de reproducción"
 
 #: ui/filebrowser/FileBrowser.cpp:1025
 msgid "Paste to the selected dir"
-msgstr "Pegar en la carpeta seleccionada"
+msgstr "Pegar en el directorio seleccionado"
 
 #: ui/filebrowser/FileBrowser.cpp:1042
 msgid "Rename the current selected file"
@@ -1810,36 +1810,36 @@ msgstr ""
 #: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1480
 #: ui/mediaviewer/library/SoListBox.cpp:612 ui/player/PlayList.cpp:1746
 msgid "Set the rating to 0"
-msgstr "Fija la evaluación en 0"
+msgstr "Fija la valoración en 0"
 
 #: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1485
 #: ui/mediaviewer/library/SoListBox.cpp:617 ui/player/PlayList.cpp:1748
 msgid "Set the rating to 1"
-msgstr "Fija la evaluación en 1"
+msgstr "Fija la valoración en 1"
 
 #: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1490
 #: ui/mediaviewer/library/SoListBox.cpp:622 ui/player/PlayList.cpp:1750
 msgid "Set the rating to 2"
-msgstr "Fija la evaluación en 2"
+msgstr "Fija la valoración en 2"
 
 #: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1495
 #: ui/mediaviewer/library/SoListBox.cpp:627 ui/player/PlayList.cpp:1752
 msgid "Set the rating to 3"
-msgstr "Fija la evaluación en 3"
+msgstr "Fija la valoración en 3"
 
 #: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1500
 #: ui/mediaviewer/library/SoListBox.cpp:632 ui/player/PlayList.cpp:1754
 msgid "Set the rating to 4"
-msgstr "Fija la evaluación en 4"
+msgstr "Fija la valoración en 4"
 
 #: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1505
 #: ui/mediaviewer/library/SoListBox.cpp:637 ui/player/PlayList.cpp:1756
 msgid "Set the rating to 5"
-msgstr "Fija la evaluación en 5"
+msgstr "Fija la valoración en 5"
 
 #: ui/taskbar/TaskBar.cpp:164
 msgid "Set the current track rating"
-msgstr "Fija la evaluación de la pista actual"
+msgstr "Fija la valoración de la pista actual"
 
 #: ui/taskbar/TaskBar.cpp:167
 msgid "&Smart Play"
@@ -1863,7 +1863,7 @@ msgstr "Repetir la &Pista"
 
 #: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1530
 msgid "Repeat the current track in the playlist"
-msgstr "Repetir la pista actual de la lista"
+msgstr "Repetir la pista actual de la lista de reproducción"
 
 #: ui/taskbar/TaskBar.cpp:179
 msgid "Shu&ffle"
@@ -1877,11 +1877,11 @@ msgstr "Baraja las pistas de la lista de reproducción"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
 msgid "Force &Gapless Mode"
-msgstr "Reproducción &Sin Pausas"
+msgstr "Reproducción &Sin Silencio"
 
 #: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1550
 msgid "Set playback in gapless mode"
-msgstr "Configura la reproducción sin pausas"
+msgstr "Configura la reproducción sin silencio"
 
 #: ui/taskbar/TaskBar.cpp:189
 msgid "Audioscrobbling"
@@ -1902,17 +1902,17 @@ msgstr "Salir del programa"
 #: ui/jamendo/Jamendo.cpp:1095 ui/jamendo/Jamendo.cpp:1105
 #: ui/magnatune/Magnatune.cpp:1010 ui/magnatune/Magnatune.cpp:1017
 msgid "Download Albums"
-msgstr "Descargar álbumes"
+msgstr "Bajar álbumes"
 
 #: ui/jamendo/Jamendo.cpp:1095 ui/jamendo/Jamendo.cpp:1098
 #: ui/jamendo/Jamendo.cpp:1105 ui/jamendo/Jamendo.cpp:1108
 #: ui/magnatune/Magnatune.cpp:1010 ui/magnatune/Magnatune.cpp:1017
 msgid "Download the current selected album"
-msgstr "Descargar el álbum seleccionado"
+msgstr "Bajar el álbum seleccionado"
 
 #: ui/jamendo/Jamendo.cpp:1098 ui/jamendo/Jamendo.cpp:1108
 msgid "Download Albums torrents"
-msgstr "Descargar álbumes via torrentes"
+msgstr "Bajar álbumes via torrentes"
 
 #: ui/MainFrame.cpp:154
 msgid "Welcome to Guayadeque"
@@ -2083,7 +2083,7 @@ msgstr "Cerrar pestaña actual"
 
 #: ui/MainFrame.cpp:1408
 msgid "Close the current selected tab"
-msgstr "Cerrar pestaña actual"
+msgstr "Cerrar pestaña actual seleccionada"
 
 #: ui/MainFrame.cpp:1415
 msgid "View the preferences"
@@ -2119,7 +2119,7 @@ msgstr "Ir a la pista anterior en la lista de reproducción"
 
 #: ui/MainFrame.cpp:1445
 msgid "Play the next album in the playlist"
-msgstr "Ir al siguiente álbum de la lista"
+msgstr "Ir al siguiente álbum de la lista de reproducción"
 
 #: ui/MainFrame.cpp:1449
 msgid "Prev. Album"
@@ -2127,7 +2127,7 @@ msgstr "Album anterior"
 
 #: ui/MainFrame.cpp:1450
 msgid "Play the previous album in the playlist"
-msgstr "Ir al álbum anterior en la lista"
+msgstr "Ir al álbum anterior en la lista de reproducción"
 
 #: ui/MainFrame.cpp:1457
 msgid "Play or Pause the current track in the playlist"
@@ -2140,7 +2140,7 @@ msgstr "Detiene la pista reproducida actualmente"
 #: ui/MainFrame.cpp:1466
 msgid "Stop after current playing or selected track"
 msgstr ""
-"Detiene después dela pista reproducida actualmente o el trask seleccionado"
+"Detiene después dela pista reproducida actualmente o la pista seleccionada"
 
 #: ui/MainFrame.cpp:1473
 msgid "Clear the now playing playlist"
@@ -2149,11 +2149,11 @@ msgstr "Vaciar lista de reproducción actual"
 #: ui/MainFrame.cpp:1508 ui/mediaviewer/library/SoListBox.cpp:640
 #: ui/player/PlayList.cpp:1759
 msgid "Set Rating"
-msgstr "Evalua la pista"
+msgstr "Fija la valoración"
 
 #: ui/MainFrame.cpp:1508
 msgid "Set the rating of the current track"
-msgstr "Fija la evalutacion de la pista actual"
+msgstr "Fija la valoración de la pista actual"
 
 #: ui/MainFrame.cpp:1523
 msgid "Repeat the Playlist"
@@ -2227,11 +2227,11 @@ msgstr "podcasts"
 
 #: ui/MainFrame.cpp:3106
 msgid "dir"
-msgstr "carpeta"
+msgstr "directorio"
 
 #: ui/MainFrame.cpp:3106
 msgid "dirs"
-msgstr "carpetas"
+msgstr "directorios"
 
 #: ui/MainFrame.cpp:3108
 msgid "file"
@@ -2328,7 +2328,7 @@ msgstr "Editar la pistas seleccionadas"
 #: ui/mediaviewer/library/AAListBox.cpp:204
 #: ui/mediaviewer/library/AlListBox.cpp:337
 msgid "Save the selected tracks to Playlist"
-msgstr "Guardar las pistas seleccionadas en una lista de rep"
+msgstr "Guardar las pistas seleccionadas en la lista de reproducción"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1026
 #: ui/mediaviewer/treeview/TreePanel.cpp:1039
@@ -2350,7 +2350,7 @@ msgstr "¿Seguro que quiere eliminar la carátula?"
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
 #: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2280
 msgid "Tracks Labels Editor"
-msgstr "Editor de etiquetas"
+msgstr "Editor de Etiquetas de Pistas"
 
 #: ui/mediaviewer/library/LibPanel.cpp:1676
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1604
@@ -2409,7 +2409,7 @@ msgstr "Editar canciones"
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
 #: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1812
 msgid "Save the selected tracks to playlist"
-msgstr "Guardar pistas seleccionadas en una lista"
+msgstr "Guardar pistas seleccionadas en la lista de reproducción"
 
 #: ui/mediaviewer/library/ArListBox.cpp:160
 msgid "Add current selected artists to playlist"
@@ -2428,14 +2428,14 @@ msgstr "Editar las canciones de los artistas seleccionados"
 #: ui/mediaviewer/library/SoListBox.cpp:655
 #: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
 msgid "Create Best of Playlist"
-msgstr "Crear lista de reproducción de lo mejor de (Best of)"
+msgstr "Crear una lista de reproducción de lo mejor de (Best of)"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
 #: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
 msgid "Create a playlist with the best of this artist"
-msgstr "Crear lista de reproducción de lo mejor de este artista (Best of)"
+msgstr "Crear una lista de reproducción de lo mejor (Best of) de este artista"
 
 #: ui/mediaviewer/library/TaListBox.cpp:105
 #: ui/mediaviewer/treeview/TreePanel.cpp:360
@@ -2460,7 +2460,7 @@ msgstr "Reproducir las etiquetas selccionados"
 
 #: ui/mediaviewer/library/TaListBox.cpp:132
 msgid "Add current selected labels to playlist"
-msgstr "Añadir etiquetas seleccionadas al final de  la lista de reproducción"
+msgstr "Añadir etiquetas seleccionadas al final de la lista de reproducción"
 
 #: ui/mediaviewer/library/TaListBox.cpp:228
 msgid "Enter the new label name"
@@ -2591,11 +2591,11 @@ msgstr "Editar las canciones seleccionadas"
 
 #: ui/mediaviewer/library/SoListBox.cpp:640 ui/player/PlayList.cpp:1759
 msgid "Set the current selected tracks rating"
-msgstr "Fija la evaluación de las pistas seleccionadas"
+msgstr "Fija la valoración de las pistas seleccionadas"
 
 #: ui/mediaviewer/library/SoListBox.cpp:647
 msgid "Save all selected tracks as a playlist"
-msgstr "Guardar las pistas seleccionadas como una lista"
+msgstr "Guardar las pistas seleccionadas como una lista de reproducción"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
@@ -2607,7 +2607,7 @@ msgstr "Crear lista de reproducción inteligente"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
 #: ui/player/PlayList.cpp:1818
 msgid "Create a smart playlist from this track"
-msgstr "Crear lista inteligente con esta pista"
+msgstr "Crear lista de reproducción inteligente con esta pista"
 
 #: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1848
 msgid "Remove from Library"
@@ -2678,7 +2678,7 @@ msgstr "Artista, Nombre"
 
 #: ui/mediaviewer/library/AlListBox.cpp:322
 msgid "Albums are sorted by artist and album name"
-msgstr "Albumes ordenados por artista y nombre"
+msgstr "Albumes ordenados por artista y nombre de l'album"
 
 #: ui/mediaviewer/library/AlListBox.cpp:323
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:435
@@ -2711,13 +2711,13 @@ msgstr "Configura el orden de los álbumes"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download Cover"
-msgstr "Descargar carátula"
+msgstr "Bajar la carátula"
 
 #: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
 msgid "Download cover for the current selected album"
-msgstr "Descargar la carátula para el álbum seleccionado"
+msgstr "Bajar la carátula para el álbum seleccionado"
 
 #: ui/mediaviewer/library/AlListBox.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:397
@@ -2771,7 +2771,7 @@ msgstr "Ver el árbol"
 
 #: ui/mediaviewer/MediaViewer.cpp:265
 msgid "View the current defined filters"
-msgstr "Ver los filtros actualmente definidos"
+msgstr "Ver el árbol"
 
 #: ui/mediaviewer/MediaViewer.cpp:270
 msgid "Add a new album browser filter"
@@ -2812,7 +2812,7 @@ msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
 msgstr ""
-"El álbum no se encuentra en la biblioteca de canciones:\n"
+"El álbum no se encuentra en la biblioteca de canciones.\n"
 "Tiene que actualizar la biblioteca."
 
 #: ui/mediaviewer/MediaViewer.cpp:2057
@@ -2849,7 +2849,8 @@ msgstr "Reproducir las pistas del álbum"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2068
 #: ui/lastfmpanel/LastFMPanel.cpp:851
 msgid "Enqueue the album tracks to the playlist"
-msgstr "Añadir al final de la cola las pistas del álbum"
+msgstr ""
+"Añadir al final de la cola de la lista de reproducción las pistas del álbum"
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:381
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1974
@@ -3024,7 +3025,7 @@ msgstr "Formato de Audio"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1148
 msgid "Playlist format"
-msgstr "Tipo de formato de la lista de reproducción"
+msgstr "Formato de la lista de reproducción"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1199
 msgid "Cover format"
@@ -3103,7 +3104,7 @@ msgstr "Cambiar el nombre de la lista de reproducción seleccionada"
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:297
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:307
 msgid "Delete the selected playlist"
-msgstr "Borrar las listas de reproducción seleccionadas"
+msgstr "Borrar la lista de reproducción seleccionada"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:303
 msgid "Set as Allow Filter"
@@ -3134,7 +3135,7 @@ msgstr "¿Seguro que quiere borrar la lista de reproducción seleccionada ?"
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1147
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1216
 msgid "Select the playlist file"
-msgstr "Seleccionar el archivo de lista de reproducción de reproducción"
+msgstr "Seleccionar el archivo de la lista de reproducción"
 
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1172
 msgid "New Playlist"
@@ -3282,7 +3283,7 @@ msgstr "Añadir pistas por cualquier criterio"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:91
 msgid "Copy to Option:"
-msgstr "Opcion de copia:"
+msgstr "Opción para Copiar en:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:119
 msgid "Destination Folder:"
@@ -3363,7 +3364,7 @@ msgstr "Editor de Filtro"
 
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:71
 msgid "Play Count"
-msgstr "Recuento de Reproducciones"
+msgstr "Número de Reproducciones"
 
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:119
 msgid "Filter:"
@@ -3371,7 +3372,7 @@ msgstr "Filtro:"
 
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 msgid "PlayCount"
-msgstr "Número de Reproducciones"
+msgstr "Recuento de Reproducciones"
 
 #: ui/mediaviewer/treeview/TreePanel.cpp:67
 msgid "Genres,Artists,Albums"
@@ -3485,7 +3486,7 @@ msgstr "Reproduce las pistas del artista"
 #: ui/lastfmpanel/LastFMPanel.cpp:1254 ui/lastfmpanel/LastFMPanel.cpp:1469
 #: ui/lastfmpanel/LastFMPanel.cpp:2934
 msgid "Enqueue the artist tracks to the playlist"
-msgstr "Añadir al final de la cola las pistas del artista"
+msgstr "Añadir al final de la lista de reproducción las pistas del artista"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:620
 msgid "Copy the artist name to clipboard"
@@ -3544,7 +3545,7 @@ msgstr "Mejores Albumes"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1752
 msgid "Top Tracks"
-msgstr "Mejores Canciones"
+msgstr "Mejores Pistas"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:1793
 msgid "Similar Artists"
@@ -3875,7 +3876,7 @@ msgstr "Enlaces"
 
 #: ui/preferences/Preferences.cpp:289
 msgid "Shortcuts"
-msgstr "Aceleradores"
+msgstr "Atajo"
 
 #: ui/preferences/Preferences.cpp:369
 msgid "Accept"
@@ -3997,7 +3998,7 @@ msgstr "Escanear carátulas incrustadas en los archivos"
 
 #: ui/preferences/Preferences.cpp:720
 msgid "Embed rating, play count and labels"
-msgstr "Incrustar evaluación, cuenta de reproducciones y etiquetas"
+msgstr "Incrustar valoración, numero de reproducciones y etiquetas"
 
 #: ui/preferences/Preferences.cpp:726
 msgid "Default copy action"
@@ -4069,8 +4070,8 @@ msgstr[1] "No repetir los últimos"
 #: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3441
 msgid "artist"
 msgid_plural "artists"
-msgstr[0] "Artista"
-msgstr[1] "Artistas"
+msgstr[0] "artista"
+msgstr[1] "artistas"
 
 #: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
@@ -4208,7 +4209,7 @@ msgstr "Géneros deshabilitados"
 
 #: ui/preferences/Preferences.cpp:1420 ui/preferences/Preferences.cpp:1422
 msgid "Font"
-msgstr "Fuente"
+msgstr "Tipo de letra"
 
 #: ui/preferences/Preferences.cpp:1434
 msgid "Align:"
@@ -4316,7 +4317,7 @@ msgstr "Streaming"
 
 #: ui/preferences/Preferences.cpp:1852
 msgid "Downloading"
-msgstr "Descargando"
+msgstr "Bajando"
 
 #: ui/preferences/Preferences.cpp:1865
 msgid "Username :"
@@ -4332,11 +4333,11 @@ msgstr "Escuchar en formato:"
 
 #: ui/preferences/Preferences.cpp:1905
 msgid "Download as :"
-msgstr "Descargar como:"
+msgstr "Bajar como:"
 
 #: ui/preferences/Preferences.cpp:1909
 msgid "Download Page"
-msgstr "Descarga de página"
+msgstr "Bajar la página"
 
 #: ui/preferences/Preferences.cpp:2003
 msgid "URL:"
@@ -4378,7 +4379,7 @@ msgstr "Elimina archivos de origen"
 
 #: ui/preferences/Preferences.cpp:2314
 msgid "Define patterns using"
-msgstr " Definir patrones con"
+msgstr "Definir patrones con"
 
 #: ui/preferences/Preferences.cpp:2320
 msgid ""
@@ -4528,7 +4529,7 @@ msgstr "Propietario:"
 
 #: ui/podcasts/ChannelEditor.cpp:133
 msgid "Download:"
-msgstr "Descargar:"
+msgstr "Bajar:"
 
 #: ui/podcasts/ChannelEditor.cpp:140
 msgid "Manually"
@@ -4616,7 +4617,7 @@ msgstr "Borrar los podcasts seleccionados"
 
 #: ui/podcasts/PodcastsPanel.cpp:2080
 msgid "Download the current selected podcasts"
-msgstr "Descargar los podcasts seleccionados"
+msgstr "Bajar los podcasts seleccionados"
 
 #: ui/podcasts/PodcastsPanel.cpp:2092
 msgid "Copy the current selected podcasts to a directory or device"
@@ -4632,7 +4633,7 @@ msgstr "Rechazar:"
 
 #: ui/player/PlayerPanel.cpp:156
 msgid "Go to the playlist previous track"
-msgstr "Ir a la pista anterior en la lista"
+msgstr "Ir a la pista anterior en la lista de reproducción"
 
 #: ui/player/PlayerPanel.cpp:161
 msgid "Play or pause the current track"
@@ -4640,7 +4641,7 @@ msgstr "Reproducir o parar la pista"
 
 #: ui/player/PlayerPanel.cpp:166
 msgid "Go to the playlist next track"
-msgstr "Ir a la siguiente pista de la lista"
+msgstr "Ir a la siguiente pista de la lista de reproducción"
 
 #: ui/player/PlayerPanel.cpp:170
 msgid "Stops the current track"
@@ -4652,11 +4653,11 @@ msgstr "Grabar como archivo"
 
 #: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3176
 msgid "Enable crossfading"
-msgstr "Habilitar solapamiento"
+msgstr "Habilitar solapamiento (crossfading)"
 
 #: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3176
 msgid "Disable crossfading"
-msgstr "Cancelar solapamiento"
+msgstr "Cancelar solapamiento (crossfading)"
 
 #: ui/player/PlayerPanel.cpp:197
 msgid "Show the equalizer (right click for on/off)"
