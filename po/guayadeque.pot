@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 10:18-0300\n"
+"POT-Creation-Date: 2024-12-08 21:58-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -872,8 +872,8 @@ msgstr ""
 msgid "Directories"
 msgstr ""
 
-#: ui/locationpanel/LocationPanel.cpp:418
-msgid "View the library Directories"
+#: ui/locationpanel/LocationPanel.cpp:418 ui/MainFrame.cpp:1172
+msgid "View the library directories"
 msgstr ""
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
@@ -1968,10 +1968,6 @@ msgstr ""
 
 #: ui/MainFrame.cpp:1107
 msgid "Exits the application"
-msgstr ""
-
-#: ui/MainFrame.cpp:1172
-msgid "View the library directories"
 msgstr ""
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
