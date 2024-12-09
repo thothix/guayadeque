@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:18-0300\n"
+"POT-Creation-Date: 2024-12-08 21:36-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/"
@@ -36,7 +36,7 @@ msgid "Audio Scrobbling"
 msgstr "Audio Scrobbling"
 
 #: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1472 ui/player/PlayList.cpp:93
-#: ui/player/PlayList.cpp:1832
+#: ui/player/PlayList.cpp:1831
 msgid "Clear the Playlist"
 msgstr "Vyprázdniť Playlist"
 
@@ -168,7 +168,7 @@ msgid "Quit"
 msgstr "Ukončiť"
 
 #: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1519
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1826
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1825
 msgid "Shuffle the Playlist"
 msgstr "Náhodné poradie v Playliste"
 
@@ -212,13 +212,13 @@ msgstr "Uložiť Vzhľad"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1811
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1810
 msgid "Save to Playlist"
 msgstr "Uložiť do Playlistu"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
 #: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1764
-#: ui/player/PlayList.cpp:2307
+#: ui/player/PlayList.cpp:2308
 msgid "Search"
 msgstr "Hľadať"
 
@@ -883,9 +883,8 @@ msgstr "Zobraziť knižnicu zbierky"
 msgid "Directories"
 msgstr "Priečinky"
 
-#: ui/locationpanel/LocationPanel.cpp:418
-#, fuzzy
-msgid "View the library Directories"
+#: ui/locationpanel/LocationPanel.cpp:418 ui/MainFrame.cpp:1172
+msgid "View the library directories"
 msgstr "Zobraziť žánre knižnice"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
@@ -1739,7 +1738,7 @@ msgstr "Vymazať vybrané súbory"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2132
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2133
 msgid "UnNamed"
 msgstr "Nepomenované"
 
@@ -1875,7 +1874,7 @@ msgstr "&Náhodne"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
-#: ui/player/PlayList.cpp:1827
+#: ui/player/PlayList.cpp:1826
 msgid "Shuffle the tracks in the playlist"
 msgstr "Náhodné poradie skladieb v Playliste"
 
@@ -1990,11 +1989,6 @@ msgstr "Nezistené žiadne prenosné zariadenie"
 #: ui/MainFrame.cpp:1107
 msgid "Exits the application"
 msgstr "Ukončiť aplikáciu"
-
-#: ui/MainFrame.cpp:1172
-#, fuzzy
-msgid "View the library directories"
-msgstr "Zobraziť žánre knižnice"
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
@@ -2353,7 +2347,7 @@ msgstr "Naozaj chcete odstrániť obaly zvolených albumov?"
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2280
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2281
 msgid "Tracks Labels Editor"
 msgstr "Editor menoviek skladieb"
 
@@ -2366,7 +2360,7 @@ msgstr "Editor polí"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2004
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2376,7 +2370,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2005
 msgid "Remove tracks from drive"
 msgstr "Odstrániť skladby zo zariadenia"
 
@@ -2410,7 +2404,7 @@ msgstr "Upraviť skladby"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1812
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1811
 msgid "Save the selected tracks to playlist"
 msgstr "Uložiť vybrané skladby do playlistu"
 
@@ -2429,7 +2423,7 @@ msgstr "Upraviť skladby vybraného umelca"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1819
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Vytvoriť Inteligentný Playlist"
@@ -2437,7 +2431,7 @@ msgstr "Vytvoriť Inteligentný Playlist"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1819
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Vytvoriť Inteligentný Playlist pomocou zvolenej skladby"
@@ -2603,17 +2597,17 @@ msgstr "Uložiť všetky zvolené skladby ako Playlist"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1818
+#: ui/player/PlayList.cpp:1817
 msgid "Create Smart Playlist"
 msgstr "Vytvoriť Inteligentný Playlist"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1818
+#: ui/player/PlayList.cpp:1817
 msgid "Create a smart playlist from this track"
 msgstr "Vytvoriť Inteligentný Playlist pomocou zvolenej skladby"
 
-#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1848
+#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1847
 msgid "Remove from Library"
 msgstr "Odstrániť z knižnice"
 
@@ -2621,7 +2615,7 @@ msgstr "Odstrániť z knižnice"
 msgid "Remove the current selected tracks from library"
 msgstr "Odstrániť aktuálne zvolené skladby z knižnice"
 
-#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1854
+#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1853
 msgid "Delete from Drive"
 msgstr "Odstrániť zo zariadenia"
 
@@ -3050,7 +3044,7 @@ msgstr "Kde:"
 msgid "Beginning"
 msgstr "Začiatok"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1840
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1839
 msgid "Remove from Playlist"
 msgstr "Odstrániť z Playlistu"
 
@@ -4760,7 +4754,7 @@ msgstr "Presunúť zvolené skladby, aby boli prehrané ako ďalšie"
 msgid "Move the selected tracks to the bottom"
 msgstr "Presunúť zvolené skladby, aby boli prehrané ako ďalšie"
 
-#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1841
+#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1840
 msgid "Remove the selected tracks from playlist"
 msgstr "Odstrániť zvolené skladby z Playlistu"
 
@@ -4808,27 +4802,27 @@ msgstr "Vyberie rok aktuálnej skladby"
 msgid "Select the genre of the current song"
 msgstr "Vyberie žáner aktuálnej skladby"
 
-#: ui/player/PlayList.cpp:1833
+#: ui/player/PlayList.cpp:1832
 msgid "Remove all tracks from playlist"
 msgstr "Odstrániť všetky skladby z playlistu"
 
-#: ui/player/PlayList.cpp:1849
+#: ui/player/PlayList.cpp:1848
 msgid "Remove the selected tracks from library"
 msgstr "Odstrániť zvolené skladby z  knižnice"
 
-#: ui/player/PlayList.cpp:1855
+#: ui/player/PlayList.cpp:1854
 msgid "Remove the selected tracks from drive"
 msgstr "Odstrániť zvolené skladby zo zariadenia"
 
-#: ui/player/PlayList.cpp:2166
+#: ui/player/PlayList.cpp:2167
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2307
+#: ui/player/PlayList.cpp:2308
 msgid "Please enter the search term"
 msgstr "Prosím, zadajte hľadaný výraz"
 
-#: ui/player/PlayList.cpp:2852
+#: ui/player/PlayList.cpp:2853
 msgid "Loading tracks. Please wait"
 msgstr "Načítavam skladby. Prosím počkajte"
 

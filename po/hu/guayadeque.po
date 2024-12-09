@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:18-0300\n"
+"POT-Creation-Date: 2024-12-08 21:36-0300\n"
 "PO-Revision-Date: 2013-11-29 15:53+0000\n"
 "Last-Translator: László Andrássy <andrassy.laszlo@gmail.com>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/"
@@ -28,7 +28,7 @@ msgid "Audio Scrobbling"
 msgstr "Audiótovábbítás (Audio Scrobbling)"
 
 #: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1472 ui/player/PlayList.cpp:93
-#: ui/player/PlayList.cpp:1832
+#: ui/player/PlayList.cpp:1831
 msgid "Clear the Playlist"
 msgstr "Várólista törlése"
 
@@ -160,7 +160,7 @@ msgid "Quit"
 msgstr "Kilépés"
 
 #: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1519
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1826
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1825
 msgid "Shuffle the Playlist"
 msgstr "Véletlenszerű sorrend a várólistában"
 
@@ -204,13 +204,13 @@ msgstr "Elrendezés mentése"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1811
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1810
 msgid "Save to Playlist"
 msgstr "Mentés lejátszási listába"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
 #: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1764
-#: ui/player/PlayList.cpp:2307
+#: ui/player/PlayList.cpp:2308
 msgid "Search"
 msgstr "Keresés"
 
@@ -875,9 +875,8 @@ msgstr "Zenekatalógus megjelenítése"
 msgid "Directories"
 msgstr "Könyvtárak"
 
-#: ui/locationpanel/LocationPanel.cpp:418
-#, fuzzy
-msgid "View the library Directories"
+#: ui/locationpanel/LocationPanel.cpp:418 ui/MainFrame.cpp:1172
+msgid "View the library directories"
 msgstr "Zenekatalógus műfajainak megjelenítése"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
@@ -1733,7 +1732,7 @@ msgstr "A kiválasztott fájl törlése"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2132
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2133
 msgid "UnNamed"
 msgstr "Névtelen"
 
@@ -1869,7 +1868,7 @@ msgstr "Vé&letleszerű"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
-#: ui/player/PlayList.cpp:1827
+#: ui/player/PlayList.cpp:1826
 msgid "Shuffle the tracks in the playlist"
 msgstr "Véletlenszerű sorrend a várólistában"
 
@@ -1984,11 +1983,6 @@ msgstr "Hordozható eszköz nem található"
 #: ui/MainFrame.cpp:1107
 msgid "Exits the application"
 msgstr "Kilépés az alkalmazásból"
-
-#: ui/MainFrame.cpp:1172
-#, fuzzy
-msgid "View the library directories"
-msgstr "Zenekatalógus műfajainak megjelenítése"
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
@@ -2347,7 +2341,7 @@ msgstr "Biztos, hogy törli a kiválasztott albumborítót?"
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2280
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2281
 msgid "Tracks Labels Editor"
 msgstr "Dalcímke szerkesztő"
 
@@ -2360,7 +2354,7 @@ msgstr "Mező szerkesztő"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2004
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2370,7 +2364,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2005
 msgid "Remove tracks from drive"
 msgstr "Dalok eltávolítása a meghajtóról"
 
@@ -2404,7 +2398,7 @@ msgstr "Dalok szerkesztése"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1812
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1811
 msgid "Save the selected tracks to playlist"
 msgstr "A kiválasztott dalok mentése a lejátszási listába"
 
@@ -2423,7 +2417,7 @@ msgstr "A kiválasztott előadó dalainak szerkesztése"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1819
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Intellingens lejátszási lista létrehozása"
@@ -2431,7 +2425,7 @@ msgstr "Intellingens lejátszási lista létrehozása"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1819
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Intellingens lejátszási lista létrehozása ebből a dalból"
@@ -2597,17 +2591,17 @@ msgstr "Az összes kiválasztott dal mentése lejátszási listaként"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1818
+#: ui/player/PlayList.cpp:1817
 msgid "Create Smart Playlist"
 msgstr "Intellingens lejátszási lista létrehozása"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1818
+#: ui/player/PlayList.cpp:1817
 msgid "Create a smart playlist from this track"
 msgstr "Intellingens lejátszási lista létrehozása ebből a dalból"
 
-#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1848
+#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1847
 msgid "Remove from Library"
 msgstr "Eltávolítás a zenekatalógusból"
 
@@ -2615,7 +2609,7 @@ msgstr "Eltávolítás a zenekatalógusból"
 msgid "Remove the current selected tracks from library"
 msgstr "A kiválasztott dalok eltávolítása a zenekatalógusból"
 
-#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1854
+#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1853
 msgid "Delete from Drive"
 msgstr "Törlés a meghajtóról"
 
@@ -3044,7 +3038,7 @@ msgstr "Hová:"
 msgid "Beginning"
 msgstr "Elejére"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1840
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1839
 msgid "Remove from Playlist"
 msgstr "Eltávolítás a várólistából"
 
@@ -4754,7 +4748,7 @@ msgstr "A kiválasztott dalok beállítása következőnek"
 msgid "Move the selected tracks to the bottom"
 msgstr "A kiválasztott dalok beállítása következőnek"
 
-#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1841
+#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1840
 msgid "Remove the selected tracks from playlist"
 msgstr "A kiválasztott dalok eltávolítása a várólistából"
 
@@ -4802,27 +4796,27 @@ msgstr "Az aktuális dal évszámának kiválasztása"
 msgid "Select the genre of the current song"
 msgstr "Az aktuális dal műfajának kiválasztása"
 
-#: ui/player/PlayList.cpp:1833
+#: ui/player/PlayList.cpp:1832
 msgid "Remove all tracks from playlist"
 msgstr "Az összes dal eltávolítása a várólistából"
 
-#: ui/player/PlayList.cpp:1849
+#: ui/player/PlayList.cpp:1848
 msgid "Remove the selected tracks from library"
 msgstr "A kiválasztott dalok eltávolítása a zenekatalógusból"
 
-#: ui/player/PlayList.cpp:1855
+#: ui/player/PlayList.cpp:1854
 msgid "Remove the selected tracks from drive"
 msgstr "A kiválasztott dalok eltávolítása a meghajtóról"
 
-#: ui/player/PlayList.cpp:2166
+#: ui/player/PlayList.cpp:2167
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2307
+#: ui/player/PlayList.cpp:2308
 msgid "Please enter the search term"
 msgstr "Adja meg a keresési feltételt"
 
-#: ui/player/PlayList.cpp:2852
+#: ui/player/PlayList.cpp:2853
 msgid "Loading tracks. Please wait"
 msgstr "Számok olvasása. Kérem várjon"
 
