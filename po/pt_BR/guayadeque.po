@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 10:18-0300\n"
-"PO-Revision-Date: 2024-12-01 00:01-0300\n"
+"POT-Creation-Date: 2024-12-08 21:36-0300\n"
+"PO-Revision-Date: 2024-12-08 21:19-0300\n"
 "Last-Translator: Tiago T Barrionuevo <thothix@protonmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
 "guayadeque/language/pt_BR/)\n"
@@ -106,7 +106,7 @@ msgstr "Tela cheia"
 
 #: misc/Accelerators.cpp:122
 msgid "Gapless/Crossfading"
-msgstr "Sem intervalo/transição suave "
+msgstr "Sem intervalo/Transição suave"
 
 #: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1572
 #: ui/MainFrame.cpp:1615
@@ -460,11 +460,11 @@ msgstr "Maiúscula"
 
 #: MainApp.cpp:395
 msgid "Another program instance is already running."
-msgstr ""
+msgstr "Uma outra instância do programa já está rodando."
 
 #: MainApp.cpp:395
 msgid "Do you want to continue with the program?"
-msgstr ""
+msgstr "Você quer continuar com o programa?"
 
 #: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
@@ -762,9 +762,8 @@ msgstr "Podcasts"
 
 #: ui/locationpanel/LocationPanel.cpp:214 ui/MainFrame.cpp:1059
 #: ui/MainFrame.cpp:2589
-#, fuzzy
 msgid "Audio CD"
-msgstr "Áudio"
+msgstr "Áudio CD"
 
 #: ui/locationpanel/LocationPanel.cpp:276 ui/MainFrame.cpp:1361
 #: ui/MainFrame.cpp:2676
@@ -882,10 +881,9 @@ msgstr "Visualizar a biblioteca da coleção"
 msgid "Directories"
 msgstr "Diretórios"
 
-#: ui/locationpanel/LocationPanel.cpp:418
-#, fuzzy
-msgid "View the library Directories"
-msgstr "Visualizar os gêneros da biblioteca"
+#: ui/locationpanel/LocationPanel.cpp:418 ui/MainFrame.cpp:1172
+msgid "View the library directories"
+msgstr "Visualizar os diretórios da biblioteca"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
 #: ui/MainFrame.cpp:1177 ui/mediaviewer/library/LibPanel.cpp:241
@@ -1122,7 +1120,7 @@ msgstr "Editor de músicas"
 
 #: ui/trackedit/TrackEdit.cpp:105
 msgid "Songs"
-msgstr " Músicas "
+msgstr "Músicas"
 
 #: ui/trackedit/TrackEdit.cpp:113
 msgid "Move the track to the previous position"
@@ -1162,7 +1160,7 @@ msgstr "Artista do A."
 
 #: ui/trackedit/TrackEdit.cpp:178
 msgid "shows the album artist of the track"
-msgstr "Exibe o nome do artista do álbum da faixa"
+msgstr "exibe o artista do álbum da faixa"
 
 #: ui/trackedit/TrackEdit.cpp:187
 msgid "Copy the album name to all the tracks you are editing"
@@ -1367,21 +1365,17 @@ msgid "Copy the number to the edited tracks"
 msgstr "Copiar o número para as faixas editadas"
 
 #: ui/trackedit/TrackEdit.cpp:1587
-#, fuzzy, c-format
+#, c-format
 msgid "Error: The album have %lu tracks and you are editing %lu"
-msgstr "Erro: o álbum tem %u faixas e você está editando %u"
+msgstr "Erro: o álbum tem %lu faixas e você está editando %lu"
 
 #: ui/trackedit/TrackEdit.cpp:1593
-#, fuzzy
 msgid "Warning: The length of some edited tracks don't match"
-msgstr ""
-"\n"
-"Aviso: a duração de algumas faixas editadas não corresponde"
+msgstr "Aviso: A duração de algumas faixas editadas não corresponde"
 
 #: ui/trackedit/TrackEdit.cpp:1596
-#, fuzzy
 msgid "Everything ok"
-msgstr "Tudo"
+msgstr "Tudo ok"
 
 #: ui/itemlistbox/ListView.cpp:1425
 msgid "Select Columns"
@@ -1397,7 +1391,7 @@ msgstr "Renomear arquivos"
 
 #: ui/filebrowser/FileRenamer.cpp:56
 msgid "Names Preview"
-msgstr " Pré-visualização dos nomes"
+msgstr "Pré-visualização dos nomes"
 
 #: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2256
 msgid "Pattern"
@@ -1655,9 +1649,8 @@ msgid "Paste to the selected folder"
 msgstr "Colar na pasta selecionada"
 
 #: ui/filebrowser/FileBrowser.cpp:411 ui/mediaviewer/library/DiBrowser.cpp:328
-#, fuzzy
 msgid "Update the selected folder"
-msgstr "Colar na pasta selecionada"
+msgstr "Atualiza a pasta selecionada"
 
 #: ui/filebrowser/FileBrowser.cpp:417 ui/filebrowser/FileBrowser.cpp:472
 #: ui/filebrowser/FileBrowser.cpp:476
@@ -1973,9 +1966,8 @@ msgid "Play a online music stream"
 msgstr "Reproduzir um fluxo de música on-line"
 
 #: ui/MainFrame.cpp:1059
-#, fuzzy
 msgid "View the audio cd panel"
-msgstr "Mostrar/Ocultar o painel do rádio"
+msgstr "Exibir o painel do CD de áudio"
 
 #: ui/MainFrame.cpp:1090
 msgid "Show the selected portable devices"
@@ -1992,11 +1984,6 @@ msgstr "Nenhum dispositivo portátil foi detectado"
 #: ui/MainFrame.cpp:1107
 msgid "Exits the application"
 msgstr "Sai do aplicativo"
-
-#: ui/MainFrame.cpp:1172
-#, fuzzy
-msgid "View the library directories"
-msgstr "Visualizar os gêneros da biblioteca"
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
@@ -2279,9 +2266,9 @@ msgid "Layout:"
 msgstr "Layout:"
 
 #: ui/MainFrame.cpp:3591
-#, fuzzy, c-format
+#, c-format
 msgid "Layout %lu"
-msgstr "Layout %u"
+msgstr "Layout %lu"
 
 #: ui/MainFrame.cpp:4210 ui/MainFrame.cpp:4231
 msgid "Copy the current selected songs to a directory or device"
@@ -2440,7 +2427,6 @@ msgstr "Criar lista de reprodução melhor de"
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
 #: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1819
-#, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Criar lista de reprodução melhor de deste artista"
 
@@ -2834,14 +2820,14 @@ msgid "The best of"
 msgstr "O melhor de"
 
 #: ui/mediaviewer/MediaViewer.cpp:2124
-#, fuzzy, c-format
+#, c-format
 msgid "No tracks found for %s."
-msgstr "Letra não encontrada"
+msgstr "Nenhuma faixa encontrada para %s."
 
 #: ui/mediaviewer/MediaViewer.cpp:2127
 #, c-format
 msgid "Best tracks for '%s' not found."
-msgstr ""
+msgstr "Melhores faixas para '%s' não encontradas."
 
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1929
@@ -3354,9 +3340,8 @@ msgid "mpc files"
 msgstr "arquivos mpc"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:254
-#, fuzzy
 msgid "other files"
-msgstr "arquivos ogg"
+msgstr "outros arquivos"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:338
 msgid "No files added"
@@ -3416,13 +3401,12 @@ msgid "Add current selected songs to playlist"
 msgstr "Adicionar as músicas selecionadas à lista de reprodução"
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680
-#, fuzzy
 msgid "Search again"
-msgstr "Pesquisar faixa"
+msgstr "Pesquisar novamente"
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:681
 msgid "Search again for cd metadata"
-msgstr ""
+msgstr "Procurar os metadados do CD novamente"
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:695
 #: ui/podcasts/PodcastsPanel.cpp:2092
@@ -3430,9 +3414,8 @@ msgid "No selected items..."
 msgstr "Nenhum item selecionado..."
 
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:695
-#, fuzzy
 msgid "Copy the current selected tracks to a directory or device"
-msgstr "Copiar as músicas selecionadas para uma pasta ou dispositivo"
+msgstr "Copiar as músicas selecionadas para um diretório ou dispositivo"
 
 #: ui/confirmexit/ConfirmExit.cpp:27
 msgid "Please confirm"
@@ -3471,9 +3454,8 @@ msgid "From:"
 msgstr "De:"
 
 #: ui/cover/CoverEdit.cpp:604
-#, fuzzy
 msgid "Cover Url"
-msgstr "Capa"
+msgstr "URL da Capa"
 
 #: ui/lastfmpanel/LastFMPanel.cpp:456 ui/lastfmpanel/LastFMPanel.cpp:703
 msgid "Less..."
@@ -3696,14 +3678,12 @@ msgid "Listeners"
 msgstr "Ouvintes"
 
 #: ui/radios/RadioPanel.cpp:443
-#, fuzzy
 msgid "Add to User Radio"
-msgstr "Adicionar rádio"
+msgstr "Adicionar às rádios do usuário"
 
 #: ui/radios/RadioPanel.cpp:444
-#, fuzzy
 msgid "Add selected radios as user radios"
-msgstr "Adicionar os álbuns selecionados após"
+msgstr "Adicionar as rádios selecionadas às rádios do usuário"
 
 #: ui/radios/RadioPanel.cpp:584 ui/radios/RadioPanel.cpp:596
 msgid "Stations"
@@ -3792,11 +3772,11 @@ msgstr "Japonês"
 
 #: ui/preferences/Preferences.cpp:140
 msgid "Lithuanian"
-msgstr ""
+msgstr "Lituano"
 
 #: ui/preferences/Preferences.cpp:141
 msgid "Malay (Malaysia)"
-msgstr ""
+msgstr "Malaio"
 
 #: ui/preferences/Preferences.cpp:142
 msgid "Norwegian Bokmal"
@@ -3991,7 +3971,7 @@ msgstr "Opções"
 
 #: ui/preferences/Preferences.cpp:702
 msgid "Update when opened "
-msgstr "Atualizar quando aberto"
+msgstr "Atualizar quando aberto "
 
 #: ui/preferences/Preferences.cpp:706
 msgid "Create playlists on scan"
@@ -4047,7 +4027,7 @@ msgstr "Modo de ganho na reprodução:"
 
 #: ui/preferences/Preferences.cpp:847
 msgid "Disabled"
-msgstr " desativado"
+msgstr "Desativado"
 
 #: ui/preferences/Preferences.cpp:854
 msgid "PreAmp:"
@@ -4187,7 +4167,7 @@ msgstr "Filtro colaborativo da Last.fm"
 
 #: ui/preferences/Preferences.cpp:1225 ui/preferences/Preferences.cpp:1259
 msgid "Enabled"
-msgstr " ativado"
+msgstr "Ativado"
 
 #: ui/preferences/Preferences.cpp:1233 ui/preferences/Preferences.cpp:1267
 #: ui/preferences/Preferences.cpp:1518
@@ -4225,20 +4205,19 @@ msgstr "Centro"
 
 #: ui/preferences/Preferences.cpp:1485
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: ui/preferences/Preferences.cpp:1487
 msgid "Proxy Enabled"
 msgstr "Proxy habilitado"
 
 #: ui/preferences/Preferences.cpp:1496
-#, fuzzy
 msgid "Hostname:"
-msgstr "Nome de usuário:"
+msgstr "Nome do Host:"
 
 #: ui/preferences/Preferences.cpp:1507
 msgid "Port:"
-msgstr ""
+msgstr "Porta:"
 
 #: ui/preferences/Preferences.cpp:1575
 msgid "Browser command"
@@ -4266,19 +4245,19 @@ msgstr "Verificar a cada"
 
 #: ui/preferences/Preferences.cpp:1645
 msgid "Hour"
-msgstr "hora"
+msgstr "Hora"
 
 #: ui/preferences/Preferences.cpp:1645
 msgid "Day"
-msgstr "dia"
+msgstr "Dia"
 
 #: ui/preferences/Preferences.cpp:1645
 msgid "Week"
-msgstr "semana"
+msgstr "Semana"
 
 #: ui/preferences/Preferences.cpp:1645
 msgid "Month"
-msgstr "mês"
+msgstr "Mês"
 
 #: ui/preferences/Preferences.cpp:1656
 msgid "Delete after"
@@ -4286,15 +4265,15 @@ msgstr "Apagar depois"
 
 #: ui/preferences/Preferences.cpp:1665
 msgid "Days"
-msgstr "dias"
+msgstr "Dias"
 
 #: ui/preferences/Preferences.cpp:1665
 msgid "Weeks"
-msgstr "semanas"
+msgstr "Semanas"
 
 #: ui/preferences/Preferences.cpp:1665
 msgid "Months"
-msgstr "meses"
+msgstr "Meses"
 
 #: ui/preferences/Preferences.cpp:1674
 msgid "Only if played"
@@ -4318,11 +4297,11 @@ msgstr "Serviço :"
 
 #: ui/preferences/Preferences.cpp:1851
 msgid "Streaming"
-msgstr "por fluxo"
+msgstr "Por fluxo"
 
 #: ui/preferences/Preferences.cpp:1852
 msgid "Downloading"
-msgstr "por download"
+msgstr "Por download"
 
 #: ui/preferences/Preferences.cpp:1865
 msgid "Username :"
@@ -4697,9 +4676,8 @@ msgid "Show the current position and song length of the current track"
 msgstr "Mostrar a posição atual e a duração da música da faixa atual"
 
 #: ui/player/PlayerPanel.cpp:283
-#, fuzzy
 msgid "Show the file format of the current track"
-msgstr "Mostar a taxa de bits da faixa atual"
+msgstr "Mostrar o formato de arquivo da faixa atual"
 
 #: ui/player/PlayerPanel.cpp:290
 msgid "Show the bit rate of the current track"
@@ -4808,6 +4786,7 @@ msgstr "Remover as faixas selecionadas da unidade de disco"
 #: ui/player/PlayList.cpp:2167
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
+"Não é possível criar uma lista de reprodução sem o visualizador de mídia."
 
 #: ui/player/PlayList.cpp:2308
 msgid "Please enter the search term"
