@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 16:18-0300\n"
+"POT-Creation-Date: 2024-12-08 21:36-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/"
@@ -30,7 +30,7 @@ msgid "Audio Scrobbling"
 msgstr "Scrobble(曲のデータ送信)"
 
 #: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1472 ui/player/PlayList.cpp:93
-#: ui/player/PlayList.cpp:1832
+#: ui/player/PlayList.cpp:1831
 msgid "Clear the Playlist"
 msgstr "プレイリストを消去"
 
@@ -162,7 +162,7 @@ msgid "Quit"
 msgstr "終了"
 
 #: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1519
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1826
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1825
 msgid "Shuffle the Playlist"
 msgstr "再生リストをランダム化"
 
@@ -206,13 +206,13 @@ msgstr "レイアウトを保存"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1811
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1810
 msgid "Save to Playlist"
 msgstr "プレイリストに保存"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
 #: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1764
-#: ui/player/PlayList.cpp:2307
+#: ui/player/PlayList.cpp:2308
 msgid "Search"
 msgstr "検索"
 
@@ -877,9 +877,8 @@ msgstr "コレクションライブラリを表示"
 msgid "Directories"
 msgstr "ディレクトリ"
 
-#: ui/locationpanel/LocationPanel.cpp:418
-#, fuzzy
-msgid "View the library Directories"
+#: ui/locationpanel/LocationPanel.cpp:418 ui/MainFrame.cpp:1172
+msgid "View the library directories"
 msgstr "ライブラリのジャンルを表示"
 
 #: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
@@ -1732,7 +1731,7 @@ msgstr "選択したファイルを削除"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2132
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2133
 msgid "UnNamed"
 msgstr "名前なし"
 
@@ -1868,7 +1867,7 @@ msgstr "Shu&ffle"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
-#: ui/player/PlayList.cpp:1827
+#: ui/player/PlayList.cpp:1826
 msgid "Shuffle the tracks in the playlist"
 msgstr "再生リストをランダムにする"
 
@@ -1983,11 +1982,6 @@ msgstr "携帯デバイスを検出できません"
 #: ui/MainFrame.cpp:1107
 msgid "Exits the application"
 msgstr "アプリケーションの終了"
-
-#: ui/MainFrame.cpp:1172
-#, fuzzy
-msgid "View the library directories"
-msgstr "ライブラリのジャンルを表示"
 
 #: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
@@ -2346,7 +2340,7 @@ msgstr "本当に選択したアルバムカバーを削除しますか?"
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2280
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2281
 msgid "Tracks Labels Editor"
 msgstr "曲のラベル編集"
 
@@ -2359,7 +2353,7 @@ msgstr "フィールド・エディタ"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2003
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2004
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2369,7 +2363,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2004
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2005
 msgid "Remove tracks from drive"
 msgstr "ドライブから曲を削除"
 
@@ -2403,7 +2397,7 @@ msgstr "曲の編集"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1812
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1811
 msgid "Save the selected tracks to playlist"
 msgstr "選択した曲をプレイリストに保存"
 
@@ -2422,7 +2416,7 @@ msgstr "選択したアーティストの曲を編集"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1819
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "スマート再生リストの作成"
@@ -2430,7 +2424,7 @@ msgstr "スマート再生リストの作成"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1820
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1819
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "この曲からスマート再生リストを作成"
@@ -2596,17 +2590,17 @@ msgstr "選択した曲を再生リストに保存"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1818
+#: ui/player/PlayList.cpp:1817
 msgid "Create Smart Playlist"
 msgstr "スマート再生リストの作成"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1818
+#: ui/player/PlayList.cpp:1817
 msgid "Create a smart playlist from this track"
 msgstr "この曲からスマート再生リストを作成"
 
-#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1848
+#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1847
 msgid "Remove from Library"
 msgstr "ライブラリから削除"
 
@@ -2614,7 +2608,7 @@ msgstr "ライブラリから削除"
 msgid "Remove the current selected tracks from library"
 msgstr "選択した曲をライブラリから削除"
 
-#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1854
+#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1853
 msgid "Delete from Drive"
 msgstr "ドライブから削除"
 
@@ -3043,7 +3037,7 @@ msgstr "Where:"
 msgid "Beginning"
 msgstr "Beginning"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1840
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1839
 msgid "Remove from Playlist"
 msgstr "再生リストから削除"
 
@@ -4749,7 +4743,7 @@ msgstr "選択した曲を次の再生にセット"
 msgid "Move the selected tracks to the bottom"
 msgstr "選択した曲を次の再生にセット"
 
-#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1841
+#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1840
 msgid "Remove the selected tracks from playlist"
 msgstr "選択した曲を再生リストから削除"
 
@@ -4797,27 +4791,27 @@ msgstr "現在の曲の年を選択"
 msgid "Select the genre of the current song"
 msgstr "現在の曲のジャンルを選択"
 
-#: ui/player/PlayList.cpp:1833
+#: ui/player/PlayList.cpp:1832
 msgid "Remove all tracks from playlist"
 msgstr "再生リストからすべての曲を削除"
 
-#: ui/player/PlayList.cpp:1849
+#: ui/player/PlayList.cpp:1848
 msgid "Remove the selected tracks from library"
 msgstr "選択した曲をライブラリから削除"
 
-#: ui/player/PlayList.cpp:1855
+#: ui/player/PlayList.cpp:1854
 msgid "Remove the selected tracks from drive"
 msgstr "選択した曲をドライブから削除"
 
-#: ui/player/PlayList.cpp:2166
+#: ui/player/PlayList.cpp:2167
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2307
+#: ui/player/PlayList.cpp:2308
 msgid "Please enter the search term"
 msgstr "検索条件を入力"
 
-#: ui/player/PlayList.cpp:2852
+#: ui/player/PlayList.cpp:2853
 msgid "Loading tracks. Please wait"
 msgstr "曲を読み込み中"
 
