@@ -4,15 +4,15 @@ Guayadeque Music Player
 Changelog
 =========
 
-Unreleased (2024-11-xx)
+0.6.2 (2024-12-11)
 ------------------
 
 ### Features
   * Check/set the proper default commands for the current desktop manager.
     Gnome (including compatible DEs like Cinnamon and Mate), KDE, xfce and
-    LXQT are currently detected and configured. Fallback to Gnome commands.
-  * Added a external.pot file to store external to the source code messages
-    to translation. 
+    LXQT are currently detected and configured (fallback to Gnome commands).
+  * Added a external.pot file to store messages external to the source code
+    to enable its translation through merging it into guayadeque.pot.
 
 ### Enhancements
   * Lyrics preferences: Change source embedded default to true.
@@ -23,10 +23,10 @@ Unreleased (2024-11-xx)
     automatically (after the .pot generation). This will:
     - Update all .po files with the new messages from .pot file to further translation.
     - Comment out messages in the .po files that aren't in the .pot file anymore.
-  * Updated French, Greek and Italian translations. Thanks to filochard.
+  * Updated French, Greek, Italian, Spanish and Catalan translations. Thanks to filochard.
   * Updated German translations. Thanks to martinkg.
   * Updated Portuguese and Brazilian Portuguese translations.
-  * Small UI adjustments.
+  * Small UI adjustments (playlist context menu, taskbar menu, preferences).
 
 0.6.1 (2024-11-12)
 ------------------
@@ -42,7 +42,7 @@ Unreleased (2024-11-xx)
       "icons/hicolor/64x64/apps/"
   * Added RADIOS.md for radios related information.
   * Added missing license headers.
-  * Small UI adjustments (Songs Editor).
+  * Small UI adjustments (songs editor).
 
 ### Removed
   * Removed deprecated collection database index.
