@@ -290,7 +290,7 @@ msgstr "Ves a l'anterior àlbum"
 
 #: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1513
 msgid "Smart Play"
-msgstr "Reproducció intelligent"
+msgstr "Reproducció intel·ligent"
 
 #: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1460
 msgid "Stop"
