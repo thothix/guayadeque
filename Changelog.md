@@ -4,6 +4,12 @@ Guayadeque Music Player
 Changelog
 =========
 
+Unreleased (2025-01-xx)
+------------------
+
+### Enhancements
+  * Updated Catalan translations.
+
 0.6.2 (2024-12-11)
 ------------------
 
