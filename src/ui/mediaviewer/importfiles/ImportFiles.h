@@ -62,25 +62,24 @@ class guImportFiles : public wxDialog
 
     wxButton *          m_DlgButtonsOK;
 
-    void                CreateControls( void );
+    void                CreateControls();
     void                OnConfigUpdated( wxCommandEvent &event );
     void                OnCopyToSetupClicked( wxCommandEvent &event );
 	void                OnFileSelected( wxCommandEvent &event );
 	void                OnAddFilesClicked( wxCommandEvent &event );
 	void                OnDelFilesClicked( wxCommandEvent &event );
 
-	void                CheckButtons( void );
-	void                UpdateCounters( void );
+	void                CheckButtons();
+	void                UpdateCounters();
 
   public :
     guImportFiles( wxWindow * parent, guMediaViewer * mediaviewer, guTrackArray * tracks );
     ~guImportFiles();
 
-    wxString GetCopyToOption( void ) { return m_CopyToChoice->GetStringSelection(); }
-    wxString GetCopyToPath( void ) { return m_DestPathDirPicker->GetPath(); }
+    wxString GetCopyToOption() { return m_CopyToChoice->GetStringSelection(); }
+    wxString GetCopyToPath() { return m_DestPathDirPicker->GetPath(); }
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

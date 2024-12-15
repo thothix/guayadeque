@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 21:36-0300\n"
+"POT-Creation-Date: 2024-12-15 14:58-0300\n"
 "PO-Revision-Date: 2024-12-05 14:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -473,7 +473,7 @@ msgstr "Confirmer"
 
 #: db/DbLibrary.cpp:295 db/DbLibrary.cpp:307 db/DbLibrary.cpp:1764
 #: db/DbLibrary.cpp:1776 db/DbLibrary.cpp:1849 db/DbLibrary.cpp:1861
-#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1426
+#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1377
 msgid "Unknown"
 msgstr "Inconnu"
 
@@ -2237,14 +2237,14 @@ msgstr "fichiers"
 
 #: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:328
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326
 #: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "morceau"
 
 #: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:328
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326
 #: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "morceaux"
@@ -3275,76 +3275,76 @@ msgstr "Ajouter des morceaux selon un critère"
 msgid "Copy to Option:"
 msgstr "Option pour la destination de la copie:"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:119
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:117
 msgid "Destination Folder:"
 msgstr "Dossier de destination :"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:123
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:121
 #: ui/preferences/Preferences.cpp:1130
 msgid "Select a folder"
 msgstr "Sélectionner un dossier"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:129
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:127
 msgid "Files"
 msgstr "Fichiers"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:241
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:238
 msgid "Select files"
 msgstr "Sélectionner les fichiers"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:242
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:239
 msgid "Audio files"
 msgstr "Fichiers audio"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:243
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:240
 msgid "mp3 files"
 msgstr "fichiers mp3"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:244
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:241
 msgid "ogg files"
 msgstr "fichiers ogg"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:245
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:242
 msgid "flac files"
 msgstr "fichiers flac"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:246
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:243
 msgid "mp4 files"
 msgstr "fichiers mp4"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:247
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:244
 msgid "wma files"
 msgstr "fichiers wma"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:248
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:245
 msgid "ape files"
 msgstr "fichiers ape"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:249
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:246
 msgid "waf files"
 msgstr "fichiers waf"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:250
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:247
 msgid "aif files"
 msgstr "fichiers aif"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:251
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:248
 msgid "wv files"
 msgstr "fichiers wv"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:252
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:249
 msgid "tta files"
 msgstr "fichiers tta"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:253
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:250
 msgid "mpc files"
 msgstr "fichiers mpc"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:254
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:251
 msgid "other files"
 msgstr "autres fichiers"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:338
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:334
 msgid "No files added"
 msgstr "Pas de fichier ajouté"
 
@@ -4624,91 +4624,91 @@ msgstr "Autoriser:"
 msgid "Deny:"
 msgstr "Exclure:"
 
-#: ui/player/PlayerPanel.cpp:156
+#: ui/player/PlayerPanel.cpp:150
 msgid "Go to the playlist previous track"
 msgstr "Aller vers le précédent morceau de la file"
 
-#: ui/player/PlayerPanel.cpp:161
+#: ui/player/PlayerPanel.cpp:154
 msgid "Play or pause the current track"
 msgstr "Lire ou mettre en pause le morceau en cours"
 
-#: ui/player/PlayerPanel.cpp:166
+#: ui/player/PlayerPanel.cpp:158
 msgid "Go to the playlist next track"
 msgstr "Aller vers le prochain morceau de la file"
 
-#: ui/player/PlayerPanel.cpp:170
+#: ui/player/PlayerPanel.cpp:162
 msgid "Stops the current track"
 msgstr "Arrête la lecture du morceau actuel"
 
-#: ui/player/PlayerPanel.cpp:174
+#: ui/player/PlayerPanel.cpp:166
 msgid "Record to file"
 msgstr "Enregistrer vers un fichier"
 
-#: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3176
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Enable crossfading"
 msgstr "Activer le fondu enchaîné"
 
-#: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3176
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Disable crossfading"
 msgstr "Désactiver le fondu enchaîné"
 
-#: ui/player/PlayerPanel.cpp:197
+#: ui/player/PlayerPanel.cpp:188
 msgid "Show the equalizer (right click for on/off)"
 msgstr "Afficher l'égaliseur (click droit on/off)"
 
-#: ui/player/PlayerPanel.cpp:201 ui/player/PlayerPanel.cpp:2842
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
 msgid "Volume"
 msgstr "Volume"
 
-#: ui/player/PlayerPanel.cpp:230
+#: ui/player/PlayerPanel.cpp:220
 msgid "Show the name of the current track"
 msgstr "Affiche le nom du morceau en cours"
 
-#: ui/player/PlayerPanel.cpp:239
+#: ui/player/PlayerPanel.cpp:228
 msgid "Show the album name of the current track"
 msgstr "Affiche le nom de l'album du morceau en cours"
 
-#: ui/player/PlayerPanel.cpp:250
+#: ui/player/PlayerPanel.cpp:237
 msgid "Show the artist name of the current track"
 msgstr "Affiche le nom de l'artiste du morceau en cours"
 
-#: ui/player/PlayerPanel.cpp:260
+#: ui/player/PlayerPanel.cpp:246
 msgid "Show the year of the current track"
 msgstr "Affiche l'année du morceau en cours"
 
-#: ui/player/PlayerPanel.cpp:263
+#: ui/player/PlayerPanel.cpp:249
 msgid "00:00 of 00:00"
 msgstr "00:00 sur 00:00"
 
-#: ui/player/PlayerPanel.cpp:264
+#: ui/player/PlayerPanel.cpp:250
 msgid "Show the current position and song length of the current track"
 msgstr "Affiche la position actuelle et la durée du morceau en cours"
 
-#: ui/player/PlayerPanel.cpp:283
+#: ui/player/PlayerPanel.cpp:269
 msgid "Show the file format of the current track"
 msgstr "Affiche le format du morceau en cours de lecture"
 
-#: ui/player/PlayerPanel.cpp:290
+#: ui/player/PlayerPanel.cpp:276
 msgid "Show the bit rate of the current track"
 msgstr "Affiche le débit du morceau en cours"
 
-#: ui/player/PlayerPanel.cpp:1339
+#: ui/player/PlayerPanel.cpp:1292
 msgid "Buffering..."
 msgstr "Mise en cache..."
 
-#: ui/player/PlayerPanel.cpp:2559
+#: ui/player/PlayerPanel.cpp:2478
 msgid "Smart mode enabled"
 msgstr "Fondu enchaîné activé"
 
-#: ui/player/PlayerPanel.cpp:2565
+#: ui/player/PlayerPanel.cpp:2484
 msgid "Repeat all"
 msgstr "Tout rejouer"
 
-#: ui/player/PlayerPanel.cpp:2570
+#: ui/player/PlayerPanel.cpp:2489
 msgid "Repeat one"
 msgstr "Rejouer un morceau"
 
-#: ui/player/PlayerPanel.cpp:2577
+#: ui/player/PlayerPanel.cpp:2496
 msgid "Smart mode disabled"
 msgstr "Fondu enchaîné désactivé"
 

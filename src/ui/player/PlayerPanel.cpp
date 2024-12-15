@@ -57,11 +57,14 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     wxPanel( parent, wxID_ANY, wxDefaultPosition, wxSize( 310, 170 ), wxTAB_TRAVERSAL )
 {
     double SavedVol;
+    guConfig * Config;
+    wxArrayString Songs;
+    wxArrayInt Equalizer;
 
     m_Db = db;
-    m_MainFrame = ( guMainFrame * ) parent;
+    m_MainFrame = (guMainFrame *) parent;
     m_PlayListCtrl = playlist;
-    m_NotifySrv = NULL;
+    m_NotifySrv = nullptr;
     m_PlayerFilters = filters;
     m_BufferGaugeId = wxNOT_FOUND;
     //m_PendingNewRecordName = false;
@@ -72,12 +75,8 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
 
 	wxFont CurrentFont = wxSystemSettings::GetFont( wxSYS_SYSTEM_FONT );
 
-    // For the Load configuration
-    wxArrayString Songs;
-    guConfig * Config;
-
     m_LastVolume = wxNOT_FOUND;
-    m_PlayerVumeters = NULL;
+    m_PlayerVumeters = nullptr;
     ResetVumeterLevel();
 
     m_LastCurPos = 0;
@@ -87,9 +86,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     m_TrackStartPos = 0;
     m_NextTrackId = 0;
     m_CurTrackId = 0;
-
-    wxArrayInt Equalizer;
-
     m_SilenceDetectorTime = 0;
 
     m_PendingScrob = false;
@@ -99,12 +95,11 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     m_AboutToEndDetected = false;
     m_SliderIsDragged = false;
     m_SmartSearchEnabled = false;
-    m_SmartAddTracksThread = NULL;
-    //m_UpdateCoverThread = NULL;
+    m_SmartAddTracksThread = nullptr;
 
     // Load configuration
-    Config = ( guConfig * ) guConfig::Get();
-    Config->RegisterObject( this );
+    Config = (guConfig *) guConfig::Get();
+    Config->RegisterObject(this);
 
     //guLogDebug( wxT( "Reading PlayerPanel Config" ) );
     SavedVol = Config->ReadNum( CONFIG_KEY_GENERAL_PLAYER_VOLUME, 50, CONFIG_PATH_GENERAL );
@@ -145,8 +140,7 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     // ---------------------------------------------------------------------------- //
     // The player controls
     // ---------------------------------------------------------------------------- //
-//    wxPanel * PlayerPanel;
-//	PlayerPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+    // wxPanel * PlayerPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 
 	wxBoxSizer * PlayerMainSizer = new wxBoxSizer( wxVERTICAL );
 	wxBoxSizer * PlayerBtnSizer = new wxBoxSizer( wxHORIZONTAL );
@@ -156,12 +150,10 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
 	m_PrevTrackButton->SetToolTip( _( "Go to the playlist previous track" ) );
 	PlayerBtnSizer->Add( m_PrevTrackButton, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, guPLAYER_ICONS_SEPARATOR );
 
-	//m_PlayButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_player_normal_play ), wxDefaultPosition, wxDefaultSize, 0 );
     m_PlayButton = new guRoundButton( this, guImage( guIMAGE_INDEX_player_normal_play ), guImage( guIMAGE_INDEX_player_highlight_play ) );
 	m_PlayButton->SetToolTip( _( "Play or pause the current track" ) );
 	PlayerBtnSizer->Add( m_PlayButton, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, guPLAYER_ICONS_SEPARATOR );
 
-	//m_NextTrackButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_player_normal_next ), wxDefaultPosition, wxDefaultSize, 0 );
     m_NextTrackButton = new guRoundButton( this, guImage( guIMAGE_INDEX_player_normal_next ), guImage( guIMAGE_INDEX_player_highlight_next ) );
 	m_NextTrackButton->SetToolTip( _( "Go to the playlist next track" ) );
 	PlayerBtnSizer->Add( m_NextTrackButton, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, guPLAYER_ICONS_SEPARATOR );
@@ -192,7 +184,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
 
     PlayerBtnSizer->Add( guPLAYER_ICONS_GROUPSEPARATOR, 0, 0, wxEXPAND, 5 );
 
-    //m_EqualizerButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_player_normal_equalizer ), wxDefaultPosition, wxDefaultSize, 0 );
     m_EqualizerButton = new guRoundButton( this, guImage( m_EnableEq ? guIMAGE_INDEX_player_normal_equalizer : guIMAGE_INDEX_player_light_equalizer ), guImage( guIMAGE_INDEX_player_highlight_equalizer ) );
     m_EqualizerButton->SetToolTip( _( "Show the equalizer (right click for on/off)" ) );
     PlayerBtnSizer->Add( m_EqualizerButton, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, guPLAYER_ICONS_SEPARATOR );
@@ -212,7 +203,6 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     else
         m_VolumeBar->Hide();
     PlayerMainSizer->Add( PlayerBtnSizer, 0, wxEXPAND, 2 );
-    //m_VolumeButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_player_normal_vol_mid ), wxDefaultPosition, wxDefaultSize, 0 );
 
     // Cover
     m_PlayerDetailsSizer = new wxBoxSizer( wxHORIZONTAL );
@@ -234,10 +224,8 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
 
     PlayerLabelsSizer->Add( m_TitleLabel, 1, wxEXPAND|wxLEFT, 2 );
 
-	//m_AlbumLabel = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	m_AlbumLabel = new guAutoScrollText( this, wxEmptyString );
 	m_AlbumLabel->SetToolTip( _( "Show the album name of the current track" ) );
-	//m_AlbumLabel->Wrap( -1 );
     CurrentFont.SetPointSize( CurrentFont.GetPointSize() - 1 );
 	CurrentFont.SetWeight( wxFONTWEIGHT_NORMAL );
 	CurrentFont.SetStyle( wxFONTSTYLE_ITALIC );
@@ -245,10 +233,8 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
 
     PlayerLabelsSizer->Add( m_AlbumLabel, 1, wxEXPAND|wxLEFT, 2 );
 
-	//m_ArtistLabel = new wxStaticText( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	m_ArtistLabel = new guAutoScrollText( this, wxEmptyString );
 	m_ArtistLabel->SetToolTip( _( "Show the artist name of the current track" ) );
-	//m_ArtistLabel->Wrap( -1 );
 	CurrentFont.SetStyle( wxFONTSTYLE_NORMAL );
 	m_ArtistLabel->SetFont( CurrentFont );
 
@@ -353,15 +339,15 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     m_PlayButton->Bind( wxEVT_BUTTON, &guPlayerPanel::OnPlayButtonClick, this );
     m_StopButton->Bind( wxEVT_BUTTON, &guPlayerPanel::OnStopButtonClick, this );
     m_RecordButton->Bind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnRecordButtonClick, this );
-    if( m_ForceGaplessButton != NULL )
+    if( m_ForceGaplessButton != nullptr )
         m_ForceGaplessButton->Bind( wxEVT_BUTTON, &guPlayerPanel::OnForceGaplessClick, this );
-    if( m_VolumeButton != NULL )
+    if( m_VolumeButton != nullptr )
     {
         m_VolumeButton->Bind( wxEVT_MOUSEWHEEL, &guPlayerPanel::OnVolumeMouseWheel, this );
         m_VolumeButton->Bind( wxEVT_BUTTON, &guPlayerPanel::OnVolumeClicked, this );
         m_VolumeButton->Bind( wxEVT_COMMAND_RIGHT_CLICK, &guPlayerPanel::OnVolumeRightClicked, this );
     }
-    if( m_VolumeBar != NULL )
+    if( m_VolumeBar != nullptr )
     {
         m_VolumeBar->Bind( wxEVT_SCROLL_CHANGED	, &guPlayerPanel::OnVolumeChanged, this );
         m_VolumeBar->Bind( wxEVT_SCROLL_THUMBTRACK, &guPlayerPanel::OnVolumeChanged, this );
@@ -369,7 +355,7 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     }
     //m_SmartPlayButton->Bind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnSmartPlayButtonClick, this );
     //m_RepeatPlayButton->Bind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnRepeatPlayButtonClick, this );
-    if( m_EqualizerButton != NULL )
+    if( m_EqualizerButton != nullptr )
     {
         m_EqualizerButton->Bind( wxEVT_BUTTON, &guPlayerPanel::OnEqualizerButtonClicked, this );
         m_EqualizerButton->Bind( wxEVT_COMMAND_RIGHT_CLICK, &guPlayerPanel::OnEqualizerRightButtonClicked, this );
@@ -424,7 +410,7 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     Bind( wxEVT_MENU, &guPlayerPanel::OnRandom, this, ID_PLAYERPANEL_SETRANDOM );
     Bind( wxEVT_MENU, &guPlayerPanel::OnSetVolume, this, ID_PLAYERPANEL_SETVOLUME );
 
-    m_AudioScrobble = NULL;
+    m_AudioScrobble = nullptr;
     if( m_AudioScrobbleEnabled )
         m_AudioScrobble = new guAudioScrobble( m_Db );
 }
@@ -456,7 +442,7 @@ guPlayerPanel::~guPlayerPanel()
         //printf( "guPlayerPanel::guConfig Save\n" );
         //Config->WriteBool( wxT( "PlayerStopped" ), m_MediaCtrl->GetState() != guMEDIASTATE_PLAYING, CONFIG_PATH_GENERAL );
         Config->WriteNum( CONFIG_KEY_GENERAL_PLAYER_VOLUME, m_LastVolume == wxNOT_FOUND ? m_CurVolume : m_LastVolume, CONFIG_PATH_GENERAL );
-        if( m_VolumeBar != NULL )
+        if( m_VolumeBar != nullptr )
             Config->WriteBool( CONFIG_KEY_GENERAL_PLAYER_VOLUME_VISIBLE, m_VolumeBar->IsShown(), CONFIG_PATH_GENERAL );
         //Config->WriteNum( CONFIG_KEY_GENERAL_PLAYER_LOOP, m_PlayLoop, CONFIG_PATH_GENERAL );
         //Config->WriteBool( CONFIG_KEY_GENERAL_PLAYER_SMART, m_PlaySmart, CONFIG_PATH_GENERAL );
@@ -474,9 +460,8 @@ guPlayerPanel::~guPlayerPanel()
 
         wxArrayInt Equalizer;
         for( int index = 0; index < guEQUALIZER_BAND_COUNT; index++ )
-        {
             Equalizer.Add( m_MediaCtrl->GetEqualizerBand( index ) );
-        }
+
         Config->WriteANum( CONFIG_KEY_EQUALIZER_BAND, Equalizer, CONFIG_PATH_EQUALIZER );
 
         Config->WriteBool( CONFIG_KEY_GENERAL_SHOW_REV_TIME, m_ShowRevTime, CONFIG_PATH_GENERAL );
@@ -489,13 +474,13 @@ guPlayerPanel::~guPlayerPanel()
     m_PlayButton->Unbind( wxEVT_BUTTON, &guPlayerPanel::OnPlayButtonClick, this );
     m_StopButton->Unbind( wxEVT_BUTTON, &guPlayerPanel::OnStopButtonClick, this );
     m_RecordButton->Unbind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnRecordButtonClick, this );
-    if( m_ForceGaplessButton != NULL )
+    if( m_ForceGaplessButton != nullptr )
         m_ForceGaplessButton->Unbind( wxEVT_BUTTON, &guPlayerPanel::OnForceGaplessClick, this );
-    if( m_VolumeButton != NULL )
+    if( m_VolumeButton != nullptr )
         m_VolumeButton->Unbind( wxEVT_MOUSEWHEEL, &guPlayerPanel::OnVolumeMouseWheel, this );
     //m_SmartPlayButton->Unbind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnSmartPlayButtonClick, this );
     //m_RepeatPlayButton->Unbind( wxEVT_TOGGLEBUTTON, &guPlayerPanel::OnRepeatPlayButtonClick, this );
-    if( m_EqualizerButton != NULL )
+    if( m_EqualizerButton != nullptr )
     {
         m_EqualizerButton->Unbind( wxEVT_BUTTON, &guPlayerPanel::OnEqualizerButtonClicked, this );
         m_EqualizerButton->Unbind( wxEVT_COMMAND_RIGHT_CLICK, &guPlayerPanel::OnEqualizerRightButtonClicked, this );
@@ -550,7 +535,7 @@ guPlayerPanel::~guPlayerPanel()
     Unbind( wxEVT_MENU, &guPlayerPanel::OnRandom, this, ID_PLAYERPANEL_SETRANDOM );
     Unbind( wxEVT_MENU, &guPlayerPanel::OnSetVolume, this, ID_PLAYERPANEL_SETVOLUME );
 
-    if( m_MediaCtrl )
+    if (m_MediaCtrl)
         delete m_MediaCtrl;
 }
 
@@ -655,8 +640,6 @@ void guPlayerPanel::SetArtistLabel( const wxString &artistname )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::SetAlbumLabel( const wxString &albumname )
 {
-//    wxString Label = albumname;
-//    Label.Replace( wxT( "&" ), wxT( "&&" ) );
     m_AlbumLabel->SetLabel( albumname );
     m_AlbumLabel->SetToolTip( albumname );
 }
@@ -664,8 +647,6 @@ void guPlayerPanel::SetAlbumLabel( const wxString &albumname )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::SetTitleLabel( const wxString &trackname )
 {
-//    wxString Label = trackname;
-//    Label.Replace( wxT( "&" ), wxT( "&&" ) );
     m_TitleLabel->SetLabel( trackname );
     m_TitleLabel->SetToolTip( trackname );
 }
@@ -734,9 +715,7 @@ void guPlayerPanel::SetBitRateLabel( int bitrate )
 {
     //guLogDebug( wxT( "SetBitRateLabel( %i )" ), bitrate );
     if( bitrate )
-    {
         m_BitRateLabel->SetLabel( wxString::Format( wxT( "[%ukbps]" ), bitrate ) );
-    }
     else
         m_BitRateLabel->SetLabel( wxT( "[kbps]" ) );
     m_BitRateSizer->Layout();
@@ -774,38 +753,23 @@ void guPlayerPanel::SetCodec( const wxString &codec )
 {
     wxString Tooltip = codec.Lower();
     wxString AudioCodec = "other";
+
     if( Tooltip.Contains( "mp3" ) )
-    {
         AudioCodec = "mp3";
-    }
     else if( Tooltip.Contains( "aac" ) )
-    {
         AudioCodec = "aac";
-    }
     else if( Tooltip.Contains( "vorbis" ) )
-    {
         AudioCodec = "ogg";
-    }
     else if( Tooltip.Contains( "wma" ) )
-    {
         AudioCodec = "wma";
-    }
     else if( Tooltip.Contains( "flac" ) )
-    {
         AudioCodec = "flac";
-    }
     else if( Tooltip.Contains( "monkey" ) )
-    {
         AudioCodec = "ape";
-    }
     else if( Tooltip.Contains( "apple lossless" ) )
-    {
         AudioCodec = "m4a";
-    }
     else if( Tooltip.Contains( "musepack" ) )
-    {
         AudioCodec = "mpc";
-    }
 
     SetCodecLabel( AudioCodec, Tooltip );
 }
@@ -827,7 +791,7 @@ void guPlayerPanel::SetPlayList( const guTrackArray &SongList )
         {
             m_SmartAddTracksThread->Pause();
             m_SmartAddTracksThread->Delete();
-            m_SmartAddTracksThread = NULL;
+            m_SmartAddTracksThread = nullptr;
             m_SmartSearchEnabled = false;
         }
 
@@ -840,20 +804,18 @@ void guPlayerPanel::SetPlayList( const guTrackArray &SongList )
         int Count = SongList.Count();
 
         // We only insert the last CACHEITEMS as the rest should be forgiven
-        if( Count > m_SmartMaxTracksList )
+        if (Count > m_SmartMaxTracksList)
             Index = Count - m_SmartMaxTracksList;
-        for( ; Index < Count; Index++ )
-        {
+
+        for (; Index < Count; Index++)
             m_SmartAddedTracks.Add( SongList[ Index ].m_SongId );
-        }
 
         Index = 0;
-        if( Count > m_SmartMaxArtistsList )
+        if (Count > m_SmartMaxArtistsList)
             Index = Count - m_SmartMaxArtistsList;
-        for( ; Index < Count; Index++ )
-        {
+
+        for (; Index < Count; Index++)
             m_SmartAddedArtists.Add( SongList[ Index ].m_ArtistName.Upper() );
-        }
     }
 }
 
@@ -863,10 +825,9 @@ void guPlayerPanel::SetPlayList( const wxArrayString &files )
     m_PlayListCtrl->ClearItems();
 
     int Count = files.Count();
-    for( int Index = 0; Index < Count; Index++ )
-    {
+    for (int Index = 0; Index < Count; Index++)
         m_PlayListCtrl->AddPlayListItem( files[ Index ], guINSERT_AFTER_CURRENT_NONE, wxNOT_FOUND );
-    }
+
     m_PlayListCtrl->ReloadItems();
     if( m_PlayListCtrl->GetItemCount() )
     {
@@ -884,7 +845,7 @@ void guPlayerPanel::SetPlayList( const wxArrayString &files )
             {
                 m_SmartAddTracksThread->Pause();
                 m_SmartAddTracksThread->Delete();
-                m_SmartAddTracksThread = NULL;
+                m_SmartAddTracksThread = nullptr;
                 m_SmartSearchEnabled = false;
             }
 
@@ -1004,10 +965,8 @@ void guPlayerPanel::AddToPlayList( const wxArrayString &files, const int aftercu
     int PrevTrackCount = m_PlayListCtrl->GetItemCount();
 
     int Count = files.Count();
-    for( int Index = 0; Index < Count; Index++ )
-    {
+    for (int Index = 0; Index < Count; Index++)
         m_PlayListCtrl->AddPlayListItem( files[ Index ], aftercurrent, aftercurrent ? Index : wxNOT_FOUND );
-    }
 
     m_PlayListCtrl->ReloadItems();
     TrackListChanged();
@@ -1026,7 +985,6 @@ void guPlayerPanel::AddToPlayList( const wxArrayString &files, const int aftercu
 
             if( m_SmartAddedArtists.Index( Track->m_ArtistName.Upper() ) == wxNOT_FOUND )
                 m_SmartAddedArtists.Add( Track->m_ArtistName.Upper() );
-
         }
 
         if( ( Count = m_SmartAddedTracks.Count() ) > m_SmartMaxTracksList )
@@ -1051,10 +1009,8 @@ void guPlayerPanel::AddToPlayList( const wxArrayString &files, const bool allowp
     int PrevTrackCount = m_PlayListCtrl->GetItemCount();
 
     int Count = files.Count();
-    for( int Index = 0; Index < Count; Index++ )
-    {
+    for (int Index = 0; Index < Count; Index++)
         m_PlayListCtrl->AddPlayListItem( files[ Index ], aftercurrent, Index );
-    }
 
     m_PlayListCtrl->ReloadItems();
     TrackListChanged();
@@ -1073,7 +1029,6 @@ void guPlayerPanel::AddToPlayList( const wxArrayString &files, const bool allowp
 
             if( m_SmartAddedArtists.Index( Track->m_ArtistName.Upper() ) == wxNOT_FOUND )
                 m_SmartAddedArtists.Add( Track->m_ArtistName.Upper() );
-
         }
 
         if( ( Count = m_SmartAddedTracks.Count() ) > m_SmartMaxTracksList )
@@ -1092,7 +1047,7 @@ void guPlayerPanel::AddToPlayList( const wxArrayString &files, const bool allowp
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::TrackListChanged( void )
+void guPlayerPanel::TrackListChanged()
 {
 //    m_PlayListLenStaticText->SetLabel( m_PlayListCtrl->GetLengthStr() );
 //   	m_PlayListLabelsSizer->Layout();
@@ -1134,7 +1089,7 @@ void guPlayerPanel::OnPlayListUpdated( wxCommandEvent &event )
         {
             m_SmartAddTracksThread->Pause();
             m_SmartAddTracksThread->Delete();
-            m_SmartAddTracksThread = NULL;
+            m_SmartAddTracksThread = nullptr;
             m_SmartSearchEnabled = false;
         }
 
@@ -1145,6 +1100,7 @@ void guPlayerPanel::OnPlayListUpdated( wxCommandEvent &event )
         int Count;
         int Index = 0;
         Count = m_PlayListCtrl->GetCount();
+
         // We only insert the last CACHEITEMS as the rest should be forgiven
         if( Count > m_SmartMaxTracksList )
             Index = Count - m_SmartMaxTracksList;
@@ -1170,7 +1126,7 @@ void guPlayerPanel::OnPlayListUpdated( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::OnSmartEndThread( wxCommandEvent &event )
 {
-    m_SmartAddTracksThread = NULL;
+    m_SmartAddTracksThread = nullptr;
     m_SmartSearchEnabled = false;
 }
 
@@ -1182,9 +1138,7 @@ void guPlayerPanel::OnSmartAddTracks( wxCommandEvent &event )
     {
         //guLogMessage( wxT( "Tracks %i" ), Tracks->Count() );
         if( Tracks->Count() )
-        {
             AddToPlayList( * Tracks );
-        }
         delete Tracks;
     }
     m_SmartSearchEnabled = false;
@@ -1249,7 +1203,6 @@ void guPlayerPanel::SetNextTrack( const guTrack * Song )
 
     m_NextSong = * Song;
     //m_NextTrackId = true;
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1283,9 +1236,9 @@ void guPlayerPanel::LoadMedia( guFADERPLAYBIN_PLAYTYPE playtype, const bool forc
     if( gst_uri_is_valid( param ) )
         fn_uri = param;
     else
-        fn_uri = gst_filename_to_uri( param, NULL );
+        fn_uri = gst_filename_to_uri( param, nullptr );
 
-    wxString Uri = wxString( fn_uri );
+    auto Uri = wxString(fn_uri);
 
     try {
         if( ( playtype == guFADERPLAYBIN_PLAYTYPE_AFTER_EOS ) && ( m_MediaSong.m_Offset || m_NextSong.m_Offset ) )
@@ -1417,14 +1370,11 @@ void guPlayerPanel::OnMediaError( guMediaEvent &event )
     wxString * ErrorStr = ( wxString * ) event.GetClientData();
     if( ErrorStr )
     {
-        m_NotifySrv->Notify( wxEmptyString, wxT( "Guayadeque: GStreamer Error" ), * ErrorStr, NULL );
-
+        m_NotifySrv->Notify( wxEmptyString, wxT( "Guayadeque: GStreamer Error" ), * ErrorStr, nullptr );
         delete ErrorStr;
     }
     else
-    {
-        m_NotifySrv->Notify( wxEmptyString, wxT( "Guayadeque: GStreamer Error" ), _( "Unknown" ), NULL );
-    }
+        m_NotifySrv->Notify( wxEmptyString, wxT( "Guayadeque: GStreamer Error" ), _( "Unknown" ), nullptr );
 
     if( m_MediaCtrl->GetState() == guMEDIASTATE_PLAYING )
         m_ErrorFound = true;
@@ -1432,7 +1382,6 @@ void guPlayerPanel::OnMediaError( guMediaEvent &event )
     m_MediaCtrl->ClearError();
 
     int CurItem = m_PlayListCtrl->GetCurItem();
-
     m_NextTrackId = 0;
 
     wxCommandEvent CmdEvent;
@@ -1555,9 +1504,7 @@ void  guPlayerPanel::OnMediaPosition( guMediaEvent &event )
         UpdatePositionLabel( CurPos );
 
         if( m_LastLength )
-        {
             m_PlayerPositionSlider->SetValue( CurPos / ( m_LastLength / 1000 ) );
-        }
 
         m_MediaSong.m_PlayTime = CurPos;
 
@@ -1603,7 +1550,6 @@ void  guPlayerPanel::OnMediaLength( guMediaEvent &event )
     if( CurLen != m_LastLength )
     {
         m_LastLength = CurLen;
-
         UpdatePositionLabel( m_LastCurPos );
         m_MediaSong.m_Length = CurLen;
     }
@@ -1626,24 +1572,18 @@ void ExtractMetaData( wxString &title, wxString &artist, wxString &trackname )
             if( FindPos == wxNOT_FOUND )
                 FindPos = title.Find( wxT( "_-_" ) );
             if( FindPos != wxNOT_FOUND )
-            {
                 trackname = title.Mid( 0, FindPos );
-            }
             else
-            {
                 trackname = title;
-            }
         }
         else
-        {
             trackname = title;
-        }
     }
 }
 
 
 //// -------------------------------------------------------------------------------- //
-//void guPlayerPanel::SendRecordSplitEvent( void )
+//void guPlayerPanel::SendRecordSplitEvent()
 //{
 //    guLogMessage( wxT( "guPlayerPanel::SendRecordSplitEvent" ) );
 //    // If its buffering
@@ -1676,21 +1616,16 @@ void guPlayerPanel::OnMediaTags( guMediaEvent &event )
                     while( m_NextSong.m_AlbumName.StartsWith( wxT( "." ) ) )
                         m_NextSong.m_AlbumName = m_NextSong.m_AlbumName.Mid( 1 );
                     if( m_MediaRecordCtrl && m_MediaRecordCtrl->IsRecording() )
-                    {
                         m_MediaRecordCtrl->SetStation( m_NextSong.m_AlbumName );
-                    }
                 }
                 else
                 {
                     m_MediaSong.m_AlbumName = wxString( RadioTag->m_Organization, wxConvUTF8 );
                     SetAlbumLabel( m_MediaSong.m_AlbumName );
                     if( m_MediaRecordCtrl && m_MediaRecordCtrl->IsRecording() )
-                    {
                         m_MediaRecordCtrl->SetStation( m_MediaSong.m_AlbumName );
-                    }
                 }
             }
-
 
             if( RadioTag->m_Genre )
             {
@@ -1699,17 +1634,13 @@ void guPlayerPanel::OnMediaTags( guMediaEvent &event )
                 {
                     m_NextSong.m_GenreName = wxString( RadioTag->m_Genre, wxConvUTF8 );
                     if( m_MediaRecordCtrl && m_MediaRecordCtrl->IsRecording() )
-                    {
                         m_MediaRecordCtrl->SetGenre( m_NextSong.m_GenreName );
-                    }
                 }
                 else
                 {
                     m_MediaSong.m_GenreName = wxString( RadioTag->m_Genre, wxConvUTF8 );
                     if( m_MediaRecordCtrl && m_MediaRecordCtrl->IsRecording() )
-                    {
                         m_MediaRecordCtrl->SetGenre( m_MediaSong.m_GenreName );
-                    }
                 }
             }
 
@@ -1791,21 +1722,13 @@ void guPlayerPanel::OnMediaBitrate( guMediaEvent &event )
 //    }
     //SetBitRateLabel( BitRate );
     if( event.GetExtraLong() == m_CurTrackId )
-    {
         SetBitRate( event.GetInt() );
-    }
     else
     {
         int BitRate = ( event.GetInt() / 1000 );
-        if( event.GetExtraLong() == m_NextTrackId )
-        {
-            if( m_NextSong.m_Bitrate != BitRate )
-            {
-                m_NextSong.m_Bitrate = BitRate;
-            }
-        }
+        if (event.GetExtraLong() == m_NextTrackId && m_NextSong.m_Bitrate != BitRate)
+            m_NextSong.m_Bitrate = BitRate;
     }
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1822,7 +1745,7 @@ void guPlayerPanel::OnMediaCodec( guMediaEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::OnMediaLoaded( guMediaEvent &event )
 {
-    guLogDebug( wxT( "OnMediaLoaded Cur: %i %i   %li" ), m_PlayListCtrl->GetCurItem(), event.GetInt(), m_NextTrackId );
+    guLogMessage( wxT( "OnMediaLoaded Cur: %i %i   %li" ), m_PlayListCtrl->GetCurItem(), event.GetInt(), m_NextTrackId );
 
     try {
         if( event.GetInt() )
@@ -1837,7 +1760,7 @@ void guPlayerPanel::OnMediaLoaded( guMediaEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::OnMediaPlayStarted( void )
+void guPlayerPanel::OnMediaPlayStarted()
 {
     guLogDebug( wxT( "OnMediaPlayStarted  %li %li" ), m_CurTrackId, m_NextTrackId );
 
@@ -1957,7 +1880,7 @@ void guPlayerPanel::UpdateCover( const bool shownotify, const bool deleted )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::OnCoverUpdated( wxCommandEvent &event )
 {
-//    m_UpdateCoverThread = NULL;
+//    m_UpdateCoverThread = nullptr;
     UpdateCoverImage( event.GetInt() );
 }
 
@@ -2104,13 +2027,13 @@ void guPlayerPanel::OnMediaFadeInStarted( guMediaEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-const guMediaState guPlayerPanel::GetState( void )
+const guMediaState guPlayerPanel::GetState()
 {
     return m_MediaCtrl->GetState();
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::CheckFiltersEnable( void )
+void guPlayerPanel::CheckFiltersEnable()
 {
     bool IsEnabled = ( m_PlayMode == guPLAYER_PLAYMODE_SMART ) ||
             ( ( m_PlayMode == guPLAYER_PLAYMODE_NONE ) && m_PlayRandom );
@@ -2507,13 +2430,9 @@ void guPlayerPanel::OnRecordButtonClick( wxCommandEvent& event )
 {
     bool IsEnabled = event.IsChecked();
     if( IsEnabled )
-    {
         m_MediaRecordCtrl->Start( &m_MediaSong );
-    }
     else
-    {
         m_MediaRecordCtrl->Stop();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2638,21 +2557,17 @@ void guPlayerPanel::OnUpdatePipeline( wxCommandEvent &event )
 {
     guLogDebug( "guPlayerPanel::OnUpdatePipeline <<" );
     auto wpp = (guFaderPlaybin::WeakPtr *)event.GetClientData();
-    if( wpp != NULL )
+    if( wpp != nullptr )
     {
         if( auto sp = wpp->lock() )
-        {
             (*sp)->RefreshPlaybackItems();
-        }
         else
             guLogTrace( "Player update: target fader playbin is gone" );
 
         delete wpp;
     }
     else
-    {
         guLogTrace( "Player update: target fader playbin is null" );
-    }
 
     guConfig * Config = ( guConfig * ) guConfig::Get();
 
@@ -2692,7 +2607,6 @@ void guPlayerPanel::OnUpdatePipeline( wxCommandEvent &event )
     m_RecordButton->SetValue( m_MediaCtrl->IsRecording() );
     Layout();
     guLogDebug( " guPlayerPanel::OnUpdatePipeline (eq=%i vol=%i fg=%i) >> ", m_EnableEq, m_EnableVolCtls, fg );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2816,7 +2730,7 @@ void guPlayerPanel::SetVolume( double volume )
 
     m_CurVolume = volume;
 
-    if( m_VolumeButton != NULL )
+    if( m_VolumeButton != nullptr )
     {
         if( m_CurVolume > 75 )
         {
@@ -2843,7 +2757,7 @@ void guPlayerPanel::SetVolume( double volume )
     }
 
     m_MediaCtrl->SetVolume(  volume / ( double ) 100.0 );
-    if( m_VolumeBar != NULL )
+    if( m_VolumeBar != nullptr )
         m_VolumeBar->SetValue( m_CurVolume );
 
     wxCommandEvent evt( wxEVT_MENU, ID_PLAYERPANEL_VOLUMECHANGED );
@@ -2988,7 +2902,7 @@ void guPlayerPanel::UpdatedTrack( const guTrack * track )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::UpdateLabels( void )
+void guPlayerPanel::UpdateLabels()
 {
     guLogDebug( wxT( "UpdateLabels..." ) );
     // Update the Current Playing Song Info
@@ -2999,9 +2913,7 @@ void guPlayerPanel::UpdateLabels( void )
 //    m_LoveBanButton->SetValue( m_MediaSong.m_ASRating );
 
     if( m_MediaSong.m_Year > 0 )
-    {
         m_YearLabel->SetLabel( wxString::Format( wxT( "%u" ), m_MediaSong.m_Year ) );
-    }
     else
         m_YearLabel->SetLabel( wxEmptyString );
 
@@ -3009,7 +2921,7 @@ void guPlayerPanel::UpdateLabels( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::ResetVumeterLevel( void )
+void guPlayerPanel::ResetVumeterLevel()
 {
     guLevelInfo LevelInfo;
     LevelInfo.m_Decay_L = -INFINITY;
@@ -3017,9 +2929,7 @@ void guPlayerPanel::ResetVumeterLevel( void )
     LevelInfo.m_Peak_L  = -INFINITY;
     LevelInfo.m_Peak_R  = -INFINITY;
     if( m_PlayerVumeters )
-    {
         m_PlayerVumeters->SetLevels( LevelInfo );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -3041,24 +2951,20 @@ void guPlayerPanel::SendNotifyInfo( wxImage * image )
 
         wxString Body;
         if( m_MediaSong.m_Length )
-        {
             Body = LenToString( m_MediaSong.m_Length );
-        }
+
         if( m_MediaSong.m_Rating > 0 )
         {
             Body += wxT( "  " );
             //Body.Append( wxT( "★" ), m_MediaSong.m_Rating );
             // There is a wxWidgets bug that dont append the count characters but only one allways
             for( int Index = 0; Index < m_MediaSong.m_Rating; Index++ )
-            {
                 Body += wxT( "★" );
-            }
         }
         Body +=  wxT( "\n" ) + m_MediaSong.m_ArtistName;
         if( !m_MediaSong.m_AlbumName.IsEmpty() )
-        {
             Body += wxT( " / " ) + m_MediaSong.m_AlbumName;
-        }
+
         Notify_Normalize_String( Body );
 
         m_NotifySrv->Notify( wxEmptyString, m_MediaSong.m_SongName, Body, image );
@@ -3092,7 +2998,7 @@ void guPlayerPanel::OnVolumeChanged( wxScrollEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::OnVolumeClicked( wxCommandEvent &event )
 {
-    if (m_VolumeBar == NULL)
+    if (m_VolumeBar == nullptr)
         return;
 
     if( m_VolumeBar->IsShown() )
@@ -3169,7 +3075,7 @@ void guPlayerPanel::OnForceGaplessClick( wxCommandEvent &event )
     m_ForceGapless = !m_ForceGapless;
     m_MediaCtrl->ForceGapless( m_ForceGapless );
 
-    if( m_ForceGaplessButton != NULL )
+    if( m_ForceGaplessButton != nullptr )
     {
         m_ForceGaplessButton->SetBitmapLabel( guImage( m_ForceGapless ? guIMAGE_INDEX_player_normal_gapless : guIMAGE_INDEX_player_normal_crossfading ) );
         m_ForceGaplessButton->SetBitmapHover( guImage( m_ForceGapless ? guIMAGE_INDEX_player_highlight_gapless : guIMAGE_INDEX_player_highlight_crossfading ) );
@@ -3181,18 +3087,14 @@ void guPlayerPanel::OnForceGaplessClick( wxCommandEvent &event )
 void guPlayerPanel::MediaViewerClosed( guMediaViewer * mediaviewer )
 {
     if( m_MediaSong.m_MediaViewer == mediaviewer )
-    {
-        m_MediaSong.m_MediaViewer = NULL;
-    }
+        m_MediaSong.m_MediaViewer = nullptr;
 
     if( m_NextSong.m_MediaViewer == mediaviewer )
-    {
-        m_NextSong.m_MediaViewer = NULL;
-    }
+        m_NextSong.m_MediaViewer = nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::CheckStartPlaying( void )
+void guPlayerPanel::CheckStartPlaying()
 {
     guConfig * Config = ( guConfig * ) guConfig::Get();
     guLogDebug( wxT( "CheckStartPlaying: %i" ), m_PlayListCtrl->StartPlaying() );
@@ -3261,7 +3163,7 @@ guUpdatePlayerCoverThread::ExitCode guUpdatePlayerCoverThread::Entry()
     if( TestDestroy() )
         return 0;
 
-    wxImage * CoverImage = NULL;
+    wxImage * CoverImage = nullptr;
 
     if( m_Deleted )
     {

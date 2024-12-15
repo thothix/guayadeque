@@ -73,7 +73,7 @@ guImportFiles::~guImportFiles()
 }
 
 // -------------------------------------------------------------------------------- //
-void guImportFiles::CreateControls( void )
+void guImportFiles::CreateControls()
 {
     guConfig * Config = ( guConfig * ) guConfig::Get();
 
@@ -99,9 +99,7 @@ void guImportFiles::CreateControls( void )
     if( Count )
     {
         for( int Index = 0; Index < Count; Index++ )
-        {
             CopyToOptions[ Index ] = CopyToOptions[ Index ].BeforeFirst( wxT( ':' ) );
-        }
     }
 
     guMediaCollection * MediaCollection = m_MediaViewer->GetMediaCollection();
@@ -139,7 +137,6 @@ void guImportFiles::CreateControls( void )
             CurFile += wxT( "@" ) + LenToString( CurTrack.m_Offset );
             CurFile += wxT( " / " ) + LenToString( CurTrack.m_Length );
 	    }
-
 	    m_FilesListBox->Append( CurFile );
 	}
 	FilesSizer->Add( m_FilesListBox, 1, wxEXPAND|wxALL, 5 );
@@ -152,7 +149,6 @@ void guImportFiles::CreateControls( void )
 	m_DelFilesBtn = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_tiny_del ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
 	m_DelFilesBtn->Enable( false );
 	AddFilesSizer->Add( m_DelFilesBtn, 0, wxRIGHT, 5 );
-
 
 	AddFilesSizer->Add( 0, 0, 1, wxEXPAND, 5 );
 
@@ -204,9 +200,7 @@ void guImportFiles::OnConfigUpdated( wxCommandEvent &event )
         if( Count )
         {
             for( int Index = 0; Index < Count; Index++ )
-            {
                 CopyToOptions[ Index ] = CopyToOptions[ Index ].BeforeFirst( wxT( ':' ) );
-            }
         }
         wxString CurSelected = m_CopyToChoice->GetStringSelection();
         m_CopyToChoice->Clear();
@@ -234,11 +228,14 @@ void guImportFiles::OnAddFilesClicked( wxCommandEvent &event )
 {
     wxArrayString mf_exts = guGstTypeFinder::getGTF().GetExtensions();
     wxString gst_ext_str = "";
-    for( size_t i = 0; i<mf_exts.Count(); ++i )
-        gst_ext_str = gst_ext_str + "*." + mf_exts[ i ] + ";";
-    if( gst_ext_str.Len() )
-        gst_ext_str.Truncate( gst_ext_str.Len() - 1 );
-    wxFileDialog * FileDialog = new wxFileDialog( this, _( "Select files" ), wxGetHomeDir(), wxEmptyString,
+
+	for (size_t i = 0; i<mf_exts.Count(); ++i)
+		gst_ext_str = gst_ext_str + "*." + mf_exts[i] + ";";
+	if (gst_ext_str.Len())
+		gst_ext_str.Truncate(gst_ext_str.Len() - 1);
+
+	wxFileDialog * FileDialog = new wxFileDialog(
+    	this, _( "Select files" ), wxGetHomeDir(), wxEmptyString,
                 wxString( _( "Audio files" ) ) + "|*.mp3;*.ogg;*.oga;*.flac;*.mp4;*.m4a;*.m4b;*.m4p;*.aac;*.wma;*.asf;*.ape;*.wav;*.aif;*.wv;*.tta;*.mpc;" + gst_ext_str + "|" +
                 wxString( _( "mp3 files" ) ) + wxT( " (*.mp3)|*.mp3|" ) +
                 wxString( _( "ogg files" ) ) + wxT( " (*.ogg;*.oga)|*.ogg;*.oga|" ) +
@@ -253,39 +250,36 @@ void guImportFiles::OnAddFilesClicked( wxCommandEvent &event )
                 wxString( _( "mpc files" ) ) + wxT( " (*.mpc)|*.mpc|" ) +
                 wxString( _( "other files" ) ) + "|" + gst_ext_str,
                 wxFD_OPEN|wxFD_FILE_MUST_EXIST|wxFD_MULTIPLE|wxFD_PREVIEW );
-    if( FileDialog )
+    if (!FileDialog)
+		return;
+
+    if (FileDialog->ShowModal() == wxID_OK)
     {
-        if( FileDialog->ShowModal() == wxID_OK )
+        wxArrayString NewFiles;
+        FileDialog->GetPaths( NewFiles );
+        int Count = NewFiles.Count();
+        for( int Index = 0; Index < Count; Index++ )
         {
-            wxArrayString NewFiles;
-            FileDialog->GetPaths( NewFiles );
-            int Count = NewFiles.Count();
-            for( int Index = 0; Index < Count; Index++ )
+            wxString NewFile = NewFiles[ Index ];
+            //guLogMessage( wxT( "Openning file '%s'" ), NewFile.c_str() );
+            if( wxFileExists( NewFile ) && guIsValidAudioFile( NewFile.Lower() ) )
             {
-                wxString NewFile = NewFiles[ Index ];
-                //guLogMessage( wxT( "Openning file '%s'" ), NewFile.c_str() );
-                if( wxFileExists( NewFile ) && guIsValidAudioFile( NewFile.Lower() ) )
+                guTrack * Track = new guTrack();
+                if( Track->ReadFromFile( NewFile ) )
                 {
-                    guTrack * Track = new guTrack();
-                    if( Track->ReadFromFile( NewFile ) )
-                    {
-                        Track->m_Type = guTRACK_TYPE_NOTDB;
-                        m_Tracks->Add( Track );
-                        m_FilesListBox->Append( NewFile.AfterLast( wxT( '/' ) ) );
-
-                    }
-                    else
-                    {
-                        delete Track;
-                    }
+                    Track->m_Type = guTRACK_TYPE_NOTDB;
+                    m_Tracks->Add( Track );
+                    m_FilesListBox->Append( NewFile.AfterLast( wxT( '/' ) ) );
                 }
+                else
+                    delete Track;
             }
-
-            UpdateCounters();
-            CheckButtons();
         }
-        FileDialog->Destroy();
+
+        UpdateCounters();
+        CheckButtons();
     }
+    FileDialog->Destroy();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -304,42 +298,42 @@ void guImportFiles::OnDelFilesClicked( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guImportFiles::CheckButtons( void )
+void guImportFiles::CheckButtons()
 {
-	m_DlgButtonsOK->Enable( !m_CopyToChoice->GetStringSelection().IsEmpty() && !m_DestPathDirPicker->GetPath().IsEmpty() && !m_FilesListBox->IsEmpty() );
+	m_DlgButtonsOK->Enable(
+		!m_CopyToChoice->GetStringSelection().IsEmpty()
+		&& !m_DestPathDirPicker->GetPath().IsEmpty()
+		&& !m_FilesListBox->IsEmpty()
+	);
 }
 
 // -------------------------------------------------------------------------------- //
-void guImportFiles::UpdateCounters( void )
+void guImportFiles::UpdateCounters()
 {
     wxLongLong Size = 0;
     wxLongLong Length = 0;
     int Count = m_Tracks->Count();
-    if( Count )
-    {
-        for( int Index = 0; Index < Count; Index++ )
-        {
-            guTrack &Track = m_Tracks->Item( Index );
-            Size += Track.m_FileSize;
-            Length += Track.m_Length;
-        }
+	if (Count)
+	{
+		for( int Index = 0; Index < Count; Index++ )
+		{
+		    guTrack &Track = m_Tracks->Item( Index );
+		    Size += Track.m_FileSize;
+		    Length += Track.m_Length;
+		}
 
-        wxString SelInfo = wxString::Format( wxT( "%u " ), Count );
-        SelInfo += Count == 1 ? _( "track" ) : _( "tracks" );
-        SelInfo += wxString::Format( wxT( ",  %s,  %s" ),
-            LenToString( Length.GetValue() ).c_str(),
-            SizeToString( Size.GetValue() ).c_str() );
+		wxString SelInfo = wxString::Format( wxT( "%u " ), Count );
+		SelInfo += Count == 1 ? _( "track" ) : _( "tracks" );
+		SelInfo += wxString::Format( wxT( ",  %s,  %s" ),
+		    LenToString( Length.GetValue() ).c_str(),
+		    SizeToString( Size.GetValue() ).c_str() );
 
-        m_FilesLabel->SetLabel( SelInfo );
-        Layout();
+		m_FilesLabel->SetLabel( SelInfo );
     }
-    else
-    {
-        m_FilesLabel->SetLabel( _( "No files added" ) );
-        Layout();
-    }
+	else
+    	m_FilesLabel->SetLabel(_( "No files added"));
+
+	Layout();
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

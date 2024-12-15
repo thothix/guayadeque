@@ -17,7 +17,6 @@
    You should have received a copy of the GNU General Public License
    along with Guayadeque. If not, see <https://www.gnu.org/licenses/>.
 */
-
 #include "GstTypeFinder.h"
 
 namespace Guayadeque {
@@ -27,7 +26,6 @@ namespace Guayadeque {
 // -------------------------------------------------------------------------------- //
 guMediaFileExtensions::guMediaFileExtensions() : guMediaFileExtensionsHashMap()
 {
-    // do nothing
 }
 
 // -------------------------------------------------------------------------------- //
@@ -56,14 +54,13 @@ guGstTypeFinder::guGstTypeFinder()
     FetchMedia();
 }
 
-
 // -------------------------------------------------------------------------------- //
-bool guGstTypeFinder::FetchMedia( void )
+bool guGstTypeFinder::FetchMedia()
 {
-    if( READY )
+    if (READY)
         return true;
 
-    if( !gst_is_initialized() )
+    if (!gst_is_initialized())
         return false;
 
     wxMutexLocker Lock(m_MediaMutex);
@@ -72,29 +69,29 @@ bool guGstTypeFinder::FetchMedia( void )
             gst_registry_get(),
             GST_TYPE_TYPE_FIND_FACTORY );
 
-    for( iter=plugin_features; iter != NULL; iter=iter->next )
+    for (iter=plugin_features; iter != nullptr; iter=iter->next)
     {
-        if( iter->data != NULL )
+        if (iter->data != nullptr)
         {
-            GstPluginFeature *p_feature = GST_PLUGIN_FEATURE( iter->data );
+            GstPluginFeature *p_feature = GST_PLUGIN_FEATURE(iter->data);
             GstTypeFindFactory *factory;
             const gchar *const *extensions;
             factory = GST_TYPE_FIND_FACTORY( p_feature );
             wxArrayString t_value;
             extensions = gst_type_find_factory_get_extensions( factory );
-            if( extensions != NULL )
-                for( guint i = 0; extensions[i]; i++ )
+            if (extensions != nullptr)
+                for (guint i = 0; extensions[i]; i++)
                 {
                     wxString ext = extensions[i];
-                    t_value.Add( ext.Lower() );
+                    t_value.Add(ext.Lower());
                 }
-            wxString t_name = gst_plugin_feature_get_name( p_feature );
-            m_Media[ t_name.Lower() ] = t_value;
+            wxString t_name = gst_plugin_feature_get_name(p_feature);
+            m_Media[t_name.Lower()] = t_value;
         }
     }
     gst_plugin_feature_list_free(plugin_features);
     READY = !m_Media.empty();
-    if( READY )
+    if (READY)
         InitMediaTypes();
 
     return READY;
@@ -117,7 +114,7 @@ guMediaFileExtensions guGstTypeFinder::GetMediaByPrefix( const wxString& media_t
 }
 
 // -------------------------------------------------------------------------------- //
-guMediaFileExtensions guGstTypeFinder::GetMedia( void )
+guMediaFileExtensions guGstTypeFinder::GetMedia()
 {
     guMediaFileExtensions res;
     for( size_t i = 0; i<m_MediaTypePrefixes.Count(); ++i )
@@ -126,7 +123,7 @@ guMediaFileExtensions guGstTypeFinder::GetMedia( void )
 }
 
 // -------------------------------------------------------------------------------- //
-wxArrayString guGstTypeFinder::GetMediaTypes( void )
+wxArrayString guGstTypeFinder::GetMediaTypes()
 {
     wxArrayString res;
     for( size_t i = 0; i<m_MediaTypePrefixes.Count(); ++i )
@@ -151,7 +148,7 @@ wxArrayString guGstTypeFinder::GetMediaTypesByPrefix( const wxString &media_type
 }
 
 // -------------------------------------------------------------------------------- //
-wxArrayString guGstTypeFinder::GetExtensions( void )
+wxArrayString guGstTypeFinder::GetExtensions()
 {
     wxArrayString res;
     for( size_t i = 0; i<m_MediaTypePrefixes.Count(); ++i )
@@ -188,7 +185,7 @@ void guGstTypeFinder::AddMediaTypePrefix( const wxString &media_type_prefix )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guGstTypeFinder::HasPrefixes( void )
+bool guGstTypeFinder::HasPrefixes()
 {
     return m_MediaTypePrefixes.Count() > 0;
 }
@@ -208,10 +205,9 @@ void guGstTypeFinder::AddMediaExtension( const wxString &media_type, const wxStr
 }
 
 // -------------------------------------------------------------------------------- //
-void guGstTypeFinder::InitMediaTypes( void )
+void guGstTypeFinder::InitMediaTypes()
 {
-    // supported media types
-    //
+    // Supported media types
     AddMediaTypePrefix( "audio/" ); // all gstreamer audio
     AddMediaTypePrefix( "video/" ); // all gstreamer video
     AddMediaTypePrefix( "avtype_" ); // additional gstreamer formats from libav
@@ -227,10 +223,9 @@ void guGstTypeFinder::InitMediaTypes( void )
     AddMediaTypePrefix( "application/x-ogm-audio" ); // sounds like something with sound :)
     AddMediaTypePrefix( "application/x-yuv4mpeg" ); // sounds like something with sound :)
 
-    // some gstreamer supported formats (DSD & exotic tracker audio)
+    // Some gstreamer supported formats (DSD & exotic tracker audio)
     // are not listed as GST_TYPE_FIND_FACTORY for some reason
     // but those are tested to work with gstreamer-libav 1.16.2
-    //
     AddMediaExtension( "application/x-gst-av-dsf",  "dsf" ); // DSD
     AddMediaExtension( "application/x-gst-av-iff", "maud"  ); // Amiga MAUD audio format
     AddMediaExtension( "audio/x-ay",  "emul" ); // AY Emul
@@ -243,5 +238,3 @@ void guGstTypeFinder::InitMediaTypes( void )
 }
 
 }
-
-// the end :)
