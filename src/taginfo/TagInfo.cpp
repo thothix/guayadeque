@@ -119,6 +119,8 @@ guTagInfo * guGetTagInfoHandler( const wxString &filename )
         case  6 :
         case  7 : return new guMp4TagInfo( filename );
 
+        case  8 : return new guTagInfo( filename );     // aac
+
         case  9 :
         case 10 : return new guASFTagInfo( filename );
 
@@ -134,8 +136,6 @@ guTagInfo * guGetTagInfoHandler( const wxString &filename )
         case 15 : return new guTrueAudioTagInfo( filename );
 
         case 16 : return new guMpcTagInfo( filename );
-
-        case  8 : // aac -Tags not supported
 
         default :
             break;
@@ -216,7 +216,7 @@ wxImage *GetID3v2ImageType(TagLib::ID3v2::FrameList &framelist,
     {
         PicFrame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(iter);
 
-      if ((frametype == ID3v2::AttachedPictureFrame::Type::Other) || (PicFrame->type() == frametype))
+        if ((frametype == ID3v2::AttachedPictureFrame::Type::Other) || (PicFrame->type() == frametype))
         {
             int ImgDataSize = PicFrame->picture().size();
 
@@ -234,8 +234,7 @@ wxImage *GetID3v2ImageType(TagLib::ID3v2::FrameList &framelist,
                 {
                     if (CoverImage->IsOk())
                         return CoverImage;
-                    else
-                        delete CoverImage;
+                    delete CoverImage;
                 }
     //		    wxFileOutputStream FOut( wxT( "~/test.jpg" ) );
     //		    FOut.Write( PicFrame->picture().data(), ImgDataSize );
@@ -367,35 +366,32 @@ wxImage * GetXiphCommentCoverArt( Ogg::XiphComment * xiphcomment )
 // -------------------------------------------------------------------------------- //
 bool SetXiphCommentCoverArt( Ogg::XiphComment * xiphcomment, const wxImage * image )
 {
-    if( xiphcomment )
+    if (!xiphcomment)
+        return false;
+
+    if (xiphcomment->contains("COVERART"))
     {
-        if( xiphcomment->contains( "COVERART" ) )
-        {
-            xiphcomment->removeFields("COVERARTMIME");
-            xiphcomment->removeFields("COVERART");
-        }
-        if( image )
-        {
-            wxMemoryOutputStream ImgOutputStream;
-            if( image->SaveFile( ImgOutputStream, wxBITMAP_TYPE_JPEG ) )
-            {
-                //ByteVector ImgData( ( TagLib::uint ) ImgOutputStream.GetSize() );
-                //ImgOutputStream.CopyTo( ImgData.data(), ImgOutputStream.GetSize() );
-                char * ImgData = ( char * ) malloc( ImgOutputStream.GetSize() );
-                if( ImgData )
-                {
-                    ImgOutputStream.CopyTo( ImgData, ImgOutputStream.GetSize() );
-                    xiphcomment->addField( "COVERARTMIME", "image/jpeg" );
-                    xiphcomment->addField( "COVERART", wxStringToTString( wxBase64Encode( ImgData, ImgOutputStream.GetSize() ) ) );
-                    free( ImgData );
-                    return true;
-                }
-                else
-                    guLogMessage( wxT( "Couldnt allocate memory saving the image to ogg" ) );
-            }
-            return false;
-        }
+        xiphcomment->removeFields("COVERARTMIME");
+        xiphcomment->removeFields("COVERART");
+    }
+    if (!image)
         return true;
+
+    wxMemoryOutputStream ImgOutputStream;
+    if (image->SaveFile(ImgOutputStream, wxBITMAP_TYPE_JPEG))
+    {
+        //ByteVector ImgData( ( TagLib::uint ) ImgOutputStream.GetSize() );
+        //ImgOutputStream.CopyTo( ImgData.data(), ImgOutputStream.GetSize() );
+        char * ImgData = (char *) malloc(ImgOutputStream.GetSize());
+        if (ImgData)
+        {
+            ImgOutputStream.CopyTo(ImgData, ImgOutputStream.GetSize());
+            xiphcomment->addField("COVERARTMIME", "image/jpeg");
+            xiphcomment->addField("COVERART", wxStringToTString(wxBase64Encode(ImgData, ImgOutputStream.GetSize())));
+            free(ImgData);
+            return true;
+        }
+        guLogMessage(wxT("Couldnt allocate memory saving the image to ogg"));
     }
     return false;
 }
@@ -568,20 +564,19 @@ wxString GetApeLyrics( APE::Tag * apetag )
 // -------------------------------------------------------------------------------- //
 bool SetApeLyrics( APE::Tag * apetag, const wxString &lyrics )
 {
-    if( apetag )
+    if (!apetag)
+        return false;
+
+    if( apetag->itemListMap().contains( "LYRICS" ) )
+        apetag->removeItem( "LYRICS" );
+    if( apetag->itemListMap().contains( "UNSYNCED LYRICS" ) )
+        apetag->removeItem( "UNSYNCED LYRICS" );
+    if( !lyrics.IsEmpty() )
     {
-        if( apetag->itemListMap().contains( "LYRICS" ) )
-            apetag->removeItem( "LYRICS" );
-        if( apetag->itemListMap().contains( "UNSYNCED LYRICS" ) )
-            apetag->removeItem( "UNSYNCED LYRICS" );
-        if( !lyrics.IsEmpty() )
-        {
-            const TagLib::String Lyrics = wxStringToTString( lyrics );
-            apetag->addValue( "Lyrics", Lyrics );
-        }
-        return true;
+        const TagLib::String Lyrics = wxStringToTString( lyrics );
+        apetag->addValue( "Lyrics", Lyrics );
     }
-    return false;
+    return true;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2615,5 +2610,3 @@ void guUpdateLyrics( const guTrackArray &songs, const wxArrayString &lyrics, con
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

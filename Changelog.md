@@ -7,6 +7,9 @@ Changelog
 Unreleased (2025-01-xx)
 ------------------
 
+### Features
+  * Added tagging support for AAC files (removed in 0.5.0 due a bug).
+
 ### Enhancements
   * Updated Catalan translations.
 
