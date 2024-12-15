@@ -17,7 +17,6 @@
    You should have received a copy of the GNU General Public License
    along with Guayadeque. If not, see <https://www.gnu.org/licenses/>.
 */
-
 #ifndef __GSTTYPEFINDER_H__
 #define __GSTTYPEFINDER_H__
 
@@ -27,7 +26,6 @@
 #include <wx/arrstr.h>
 #include <wx/thread.h>
 #include <wx/hashmap.h>
-
 
 namespace Guayadeque {
 
@@ -66,8 +64,8 @@ class guGstTypeFinder
 	bool 			READY = false;
 
 	void AddMediaExtension( const wxString &media_type, const wxString &extension = wxEmptyString );
-	bool FetchMedia( void );
-	void InitMediaTypes( void );
+	bool FetchMedia();
+	void InitMediaTypes();
 	guMediaFileExtensions GetMediaByPrefix( const wxString &media_type_prefix = wxEmptyString );
 	wxArrayString GetExtensionsByPrefix( const wxString &media_type_prefix = wxEmptyString );
 	wxArrayString GetMediaTypesByPrefix( const wxString &media_type_prefix = wxEmptyString );
@@ -77,15 +75,14 @@ class guGstTypeFinder
 
 	static guGstTypeFinder& getGTF() { static guGstTypeFinder inst; return inst; }
 
-	bool HasPrefixes( void );
+	bool HasPrefixes();
 
-	wxArrayString GetExtensions( void );
-	wxArrayString GetMediaTypes( void );
-	guMediaFileExtensions GetMedia( void );
+	wxArrayString GetExtensions();
+	wxArrayString GetMediaTypes();
+	guMediaFileExtensions GetMedia();
 
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

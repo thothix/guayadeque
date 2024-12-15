@@ -17,14 +17,12 @@
    You should have received a copy of the GNU General Public License
    along with Guayadeque. If not, see <https://www.gnu.org/licenses/>.
 */
-// -------------------------------------------------------------------------------- //
 #include "TimeLine.h"
 
 #include "Utils.h"
 
 namespace Guayadeque {
 
-// -------------------------------------------------------------------------------- //
 static const float pi = 3.14159265359;
 static const float halfPi = pi / 2.0;
 
@@ -97,10 +95,7 @@ void guTimeLine::ChangeCurrentTime( const int msecs )
     }
 
     if( LastValue != CurrentValue() )
-    {
         ValueChanged( CurrentValue() );
-        //guLogMessage( wxT( "************** Value: %0.2f" ), CurrentValue() );
-    }
 
     if( LastFrame != CurrentFrame() )
     {
@@ -206,19 +201,14 @@ void guTimeLine::Start( void )
     }
 
     if( m_CurrentTime == m_Duration && m_Direction == guTimeLine::Forward )
-    {
         m_CurrentTime = 0;
-    }
     else if( m_CurrentTime == 0 && m_Direction == guTimeLine::Backward )
-    {
         m_CurrentTime = m_Duration;
-    }
 
     //m_TimerId = g_timeout_add( m_UpdateInterval, GSourceFunc( TimerUpdated ), this );
     m_TimerId = TimerCreate();
     m_StartTime = m_CurrentTime;
     SetState( guTimeLine::Running );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -260,7 +250,6 @@ void guTimeLine::ValueChanged( float value )
     guLogMessage( wxT( "guTimeLine::ValueChanged to %0.2f" ), value );
 }
 
-
 // -------------------------------------------------------------------------------- //
 void guTimeLine::FrameChanged( int frame )
 {
@@ -277,5 +266,3 @@ void guTimeLine::Finished( void )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

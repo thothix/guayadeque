@@ -86,7 +86,7 @@ class guCurrentTrack : public guTrack
     guCurrentTrack()
     {
         m_Loaded = false;
-        m_CoverImage = NULL;
+        m_CoverImage = nullptr;
         m_ASRating = guAS_RATING_NONE;
         m_Number = 0;
         m_Rating = 0;
@@ -150,7 +150,7 @@ class guCurrentTrack : public guTrack
         m_CoverPath = wxEmptyString;
         if( m_CoverImage )
             delete m_CoverImage;
-        m_CoverImage = NULL;
+        m_CoverImage = nullptr;
         return *this;
     }
 
@@ -197,7 +197,7 @@ class guCurrentTrack : public guTrack
         if( m_CoverImage )
         {
             delete m_CoverImage;
-            m_CoverImage = NULL;
+            m_CoverImage = nullptr;
         }
     }
 
@@ -340,9 +340,9 @@ class guPlayerPanel : public wxPanel
 
     void                        LoadMedia( guFADERPLAYBIN_PLAYTYPE playtype, const bool forceskip = false );
     void                        OnMediaLoaded( guMediaEvent &event );
-    void                        OnMediaPlayStarted( void );
+    void                        OnMediaPlayStarted();
     void                        SavePlayedTrack( const bool forcesave = false );
-    void                        ResetPlayerTrack(void);
+    void                        ResetPlayerTrack();
     void                        OnMediaFinished( guMediaEvent &event );
     void                        OnMediaFadeOutFinished( guMediaEvent &event );
     void                        OnMediaFadeInStarted( guMediaEvent &event );
@@ -371,11 +371,11 @@ class guPlayerPanel : public wxPanel
     void                        OnTimeDClicked( wxMouseEvent &event ) { m_ShowRevTime = !m_ShowRevTime;
                                                                 UpdatePositionLabel( GetPosition() ); }
     void                        OnRatingChanged( guRatingEvent &event );
-    void                        CheckFiltersEnable( void );
+    void                        CheckFiltersEnable();
 
     void                        OnConfigUpdated( wxCommandEvent &event );
 
-    void                        SendRecordSplitEvent( void );
+    void                        SendRecordSplitEvent();
 
     void                        OnCoverUpdated( wxCommandEvent &event ); // Once the cover have been found shows it
 
@@ -394,22 +394,22 @@ class guPlayerPanel : public wxPanel
                    guPlayList * playlist, guPlayerFilters * filters );
     virtual ~guPlayerPanel();
 
-    guMainFrame *               MainFrame( void ) { return m_MainFrame; }
+    guMainFrame *               MainFrame() { return m_MainFrame; }
 
     void                        SetPlayList( const guTrackArray &SongList );
     void                        AddToPlayList( const guTrackArray &SongList, const bool allowplay = true, const int aftercurrent = guINSERT_AFTER_CURRENT_NONE );
     void                        AddToPlayList( const wxString &FileName, const int aftercurrent = guINSERT_AFTER_CURRENT_NONE );
     void                        AddToPlayList( const wxArrayString &files, const int aftercurrent = guINSERT_AFTER_CURRENT_NONE );
     void                        AddToPlayList( const wxArrayString &files, const bool play, const int aftercurrent );
-    void                        ClearPlayList( void ) { m_PlayListCtrl->ClearItems(); }
+    void                        ClearPlayList() { m_PlayListCtrl->ClearItems(); }
     void                        SetPlayList( const wxArrayString &files );
-    guPlayList *                PlayListCtrl( void ) { return m_PlayListCtrl; }
+    guPlayList *                PlayListCtrl() { return m_PlayListCtrl; }
 
     double                      GetVolume() { return m_CurVolume; }
     void                        SetVolume( double volume );
     bool                        SetPosition( int pos );
     int                         GetPosition();
-    void                        TrackListChanged( void );
+    void                        TrackListChanged();
     const guCurrentTrack *      GetCurrentTrack() { return &m_MediaSong; }
     int                         GetCurrentItem();
     int                         GetItemCount();
@@ -421,14 +421,14 @@ class guPlayerPanel : public wxPanel
     int                         GetPlayMode();
     void                        SetPlayMode( const int playmode );
 
-    void                        UpdatePlayListFilters( void );
+    void                        UpdatePlayListFilters();
 
     void                        SetCurrentCoverImage( wxImage * coverimage, const guSongCoverType CoverType, const wxString &CoverPath = wxEmptyString );
     void                        UpdateCoverImage( const bool shownotify = true );
 
     int                         GetCaps();
 
-    const guMediaState          GetState( void );
+    const guMediaState          GetState();
 
     void                        OnPrevTrackButtonClick( wxCommandEvent &event );
     void                        OnNextTrackButtonClick( wxCommandEvent &event );
@@ -453,7 +453,7 @@ class guPlayerPanel : public wxPanel
     void                        SetAlbumLabel( const wxString &albumname );
     void                        SetTitleLabel( const wxString &trackname );
     void                        SetRatingLabel( const int Rating );
-    int                         GetRating( void ) { return m_MediaSong.m_Rating; }
+    int                         GetRating() { return m_MediaSong.m_Rating; }
     void                        SetRating( const int rating );
     void                        UpdatePositionLabel( const unsigned int curpos );
     void                        SetCodecLabel( const wxString &codec, const wxString &tooltip );
@@ -464,29 +464,29 @@ class guPlayerPanel : public wxPanel
     void                        UpdatedTracks( const guTrackArray * tracks );
     void                        UpdatedTrack( const guTrack * track );
 
-    void                        UpdateLabels( void );
+    void                        UpdateLabels();
 
     void                        SetPlayerVumeters( guPlayerVumeters * vumeters ) { m_PlayerVumeters = vumeters; }
-    void                        ResetVumeterLevel( void );
+    void                        ResetVumeterLevel();
 
     void                        SetNotifySrv( guDBusNotify * notify ) { m_NotifySrv = notify; }
     void                        SendNotifyInfo( wxImage * image );
 
     void                        SetForceGapless( const bool forcegapless );
-    bool                        GetForceGapless( void ) { return m_ForceGapless; }
+    bool                        GetForceGapless() { return m_ForceGapless; }
 
-    bool                        GetAudioScrobbleEnabled( void ) { return m_AudioScrobbleEnabled; }
+    bool                        GetAudioScrobbleEnabled() { return m_AudioScrobbleEnabled; }
 
     void                        UpdateCover( const bool shownotify = true, const bool deleted = false );    // Start the thread that search for the cover
 
-    wxString                    LastTmpCoverFile( void ) { return m_LastTmpCoverFile; }
+    wxString                    LastTmpCoverFile() { return m_LastTmpCoverFile; }
     void                        SetLastTmpCoverFile( const wxString &lastcoverfile ) { m_LastTmpCoverFile = lastcoverfile; }
 
-    void                        StopAtEnd( void ) { m_MediaSong.m_Type = guTrackType( ( int ) m_MediaSong.m_Type ^ guTRACK_TYPE_STOP_HERE ); }
+    void                        StopAtEnd() { m_MediaSong.m_Type = guTrackType( ( int ) m_MediaSong.m_Type ^ guTRACK_TYPE_STOP_HERE ); }
 
     void                        MediaViewerClosed( guMediaViewer * mediaviewer );
 
-    void                        CheckStartPlaying( void );
+    void                        CheckStartPlaying();
 
     void                        OnUpdatePipeline( wxCommandEvent &event );
 

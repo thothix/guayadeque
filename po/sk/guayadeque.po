@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 21:36-0300\n"
+"POT-Creation-Date: 2024-12-15 14:58-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/"
@@ -479,7 +479,7 @@ msgstr "Potvrdiť"
 
 #: db/DbLibrary.cpp:295 db/DbLibrary.cpp:307 db/DbLibrary.cpp:1764
 #: db/DbLibrary.cpp:1776 db/DbLibrary.cpp:1849 db/DbLibrary.cpp:1861
-#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1426
+#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1377
 msgid "Unknown"
 msgstr "Neznámy"
 
@@ -2242,14 +2242,14 @@ msgstr "súbory"
 
 #: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:328
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326
 #: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "skladba"
 
 #: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:328
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326
 #: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "skladby"
@@ -3280,77 +3280,77 @@ msgstr "Pridať skladby pod akýmkoľvek kritériom"
 msgid "Copy to Option:"
 msgstr "Kopírovať do Option:"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:119
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:117
 msgid "Destination Folder:"
 msgstr "Cieľový priečinok"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:123
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:121
 #: ui/preferences/Preferences.cpp:1130
 msgid "Select a folder"
 msgstr "Vyberať priečinok"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:129
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:127
 msgid "Files"
 msgstr "Súbory"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:241
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:238
 msgid "Select files"
 msgstr "Vyberať súbory"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:242
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:239
 msgid "Audio files"
 msgstr "Zvukové súbory"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:243
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:240
 msgid "mp3 files"
 msgstr "súbory mp3"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:244
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:241
 msgid "ogg files"
 msgstr "súbory ogg"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:245
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:242
 msgid "flac files"
 msgstr "súbory flac"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:246
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:243
 msgid "mp4 files"
 msgstr "súbory mp4"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:247
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:244
 msgid "wma files"
 msgstr "súbory wma"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:248
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:245
 msgid "ape files"
 msgstr "súbory ape"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:249
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:246
 msgid "waf files"
 msgstr "súbory waf"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:250
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:247
 msgid "aif files"
 msgstr "súbory aif"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:251
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:248
 msgid "wv files"
 msgstr "súbory wv"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:252
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:249
 msgid "tta files"
 msgstr "súbory tta"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:253
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:250
 msgid "mpc files"
 msgstr "súbory mpc"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:254
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:251
 #, fuzzy
 msgid "other files"
 msgstr "súbory ogg"
 
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:338
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:334
 msgid "No files added"
 msgstr "Nie sú pridané žiadne súbory"
 
@@ -4638,95 +4638,95 @@ msgstr "Povoliť:"
 msgid "Deny:"
 msgstr "Zakázať:"
 
-#: ui/player/PlayerPanel.cpp:156
+#: ui/player/PlayerPanel.cpp:150
 msgid "Go to the playlist previous track"
 msgstr "Prejsť na predošlú skladbu v Playliste"
 
-#: ui/player/PlayerPanel.cpp:161
+#: ui/player/PlayerPanel.cpp:154
 msgid "Play or pause the current track"
 msgstr "Prehrať alebo zastaviť aktuálnu stopu"
 
-#: ui/player/PlayerPanel.cpp:166
+#: ui/player/PlayerPanel.cpp:158
 msgid "Go to the playlist next track"
 msgstr "Prejsť na ďalšiu skladbu v Playliste"
 
-#: ui/player/PlayerPanel.cpp:170
+#: ui/player/PlayerPanel.cpp:162
 #, fuzzy
 msgid "Stops the current track"
 msgstr "Zastaviť prehrávanie aktuálnej skladby"
 
-#: ui/player/PlayerPanel.cpp:174
+#: ui/player/PlayerPanel.cpp:166
 msgid "Record to file"
 msgstr "Nahrať do súboru"
 
-#: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3176
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Enable crossfading"
 msgstr "Povoliť prelínanie"
 
-#: ui/player/PlayerPanel.cpp:188 ui/player/PlayerPanel.cpp:3176
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Disable crossfading"
 msgstr "Zakázať prelínanie"
 
-#: ui/player/PlayerPanel.cpp:197
+#: ui/player/PlayerPanel.cpp:188
 msgid "Show the equalizer (right click for on/off)"
 msgstr "Zobraziť ekvalizér"
 
-#: ui/player/PlayerPanel.cpp:201 ui/player/PlayerPanel.cpp:2842
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
 msgid "Volume"
 msgstr "Hlasitosť"
 
-#: ui/player/PlayerPanel.cpp:230
+#: ui/player/PlayerPanel.cpp:220
 msgid "Show the name of the current track"
 msgstr "Zobraziť názov aktuálnej skladby"
 
-#: ui/player/PlayerPanel.cpp:239
+#: ui/player/PlayerPanel.cpp:228
 msgid "Show the album name of the current track"
 msgstr "Zobraziť názov albumu aktuálnej skladby"
 
-#: ui/player/PlayerPanel.cpp:250
+#: ui/player/PlayerPanel.cpp:237
 msgid "Show the artist name of the current track"
 msgstr "Zobraziť meno umelca aktuálnej skladby"
 
-#: ui/player/PlayerPanel.cpp:260
+#: ui/player/PlayerPanel.cpp:246
 msgid "Show the year of the current track"
 msgstr "Zobraziť rok aktuálnej skladby"
 
-#: ui/player/PlayerPanel.cpp:263
+#: ui/player/PlayerPanel.cpp:249
 msgid "00:00 of 00:00"
 msgstr "00:00 z 00:00"
 
-#: ui/player/PlayerPanel.cpp:264
+#: ui/player/PlayerPanel.cpp:250
 msgid "Show the current position and song length of the current track"
 msgstr "Zobraziť aktuálnu pozíciu a dĺžku aktuálnej skladby"
 
-#: ui/player/PlayerPanel.cpp:283
+#: ui/player/PlayerPanel.cpp:269
 #, fuzzy
 msgid "Show the file format of the current track"
 msgstr "Zobraziť dátový tok aktuálnej skladby"
 
-#: ui/player/PlayerPanel.cpp:290
+#: ui/player/PlayerPanel.cpp:276
 msgid "Show the bit rate of the current track"
 msgstr "Zobraziť dátový tok aktuálnej skladby"
 
-#: ui/player/PlayerPanel.cpp:1339
+#: ui/player/PlayerPanel.cpp:1292
 msgid "Buffering..."
 msgstr "Načítavanie..."
 
-#: ui/player/PlayerPanel.cpp:2559
+#: ui/player/PlayerPanel.cpp:2478
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2565
+#: ui/player/PlayerPanel.cpp:2484
 #, fuzzy
 msgid "Repeat all"
 msgstr "Opakovať skladby"
 
-#: ui/player/PlayerPanel.cpp:2570
+#: ui/player/PlayerPanel.cpp:2489
 #, fuzzy
 msgid "Repeat one"
 msgstr "Opakovať skladby"
 
-#: ui/player/PlayerPanel.cpp:2577
+#: ui/player/PlayerPanel.cpp:2496
 msgid "Smart mode disabled"
 msgstr ""
 
