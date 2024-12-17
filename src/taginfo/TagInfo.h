@@ -72,6 +72,7 @@ class guTagInfo
   protected :
     FileRef *       m_TagFile;
     Tag *           m_Tag;
+    bool            m_EnableEditTag;
 
   protected :
     bool            ReadExtendedTags( ID3v2::Tag * tag );
@@ -113,6 +114,8 @@ class guTagInfo
     virtual ~guTagInfo();
 
     void                SetFileName( const wxString &filename );
+    bool                CanEditTags() const { return m_EnableEditTag; };
+
     virtual bool        Read( void );
     virtual bool        Write( const int changedflag );
 
@@ -348,6 +351,7 @@ class guGStreamerTagInfo : public guTagInfo
 class guImagePtrArray;
 
 // -------------------------------------------------------------------------------- //
+bool        guTagGetCanEdit(const wxString &filename);
 wxImage *   guTagGetPicture( const wxString &filename );
 bool        guTagSetPicture( const wxString &filename, wxImage * picture, const bool forcesave = false );
 bool        guTagSetPicture( const wxString &filename, const wxString &imagefile, const bool forcesave = false );
