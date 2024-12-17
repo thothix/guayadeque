@@ -58,10 +58,16 @@ void guImagePtrArrayClean( guImagePtrArray * images );
 class guTrackEditor : public wxDialog, guAcousticIdClient
 {
   private:
+	wxPanel *							m_DetailPanel;
+	wxPanel *							m_LyricsPanel;
+	wxPanel *							m_PicturePanel;
+	wxPanel *							m_MBrainzPanel;
+
     guTrackArray *                      m_Items;
     guImagePtrArray *                   m_Images;
     wxArrayString *                     m_Lyrics;
     wxArrayInt *                        m_ChangedFlags;
+    wxArrayShort                        m_CanEdit;
     int                                 m_CurItem;
     int                                 m_NextItem;
     guDbLibrary *                       m_Db;
@@ -174,7 +180,6 @@ class guTrackEditor : public wxDialog, guAcousticIdClient
     int                                 m_MBCurAlbum;
     wxString                            m_MBRecordingId;
 
-
     guTrackEditorGetComboDataThread *   m_GetComboDataThread;
 
     guLyricSearchEngine *               m_LyricSearchEngine;
@@ -263,6 +268,7 @@ class guTrackEditor : public wxDialog, guAcousticIdClient
 	void                                OnSelectTimeout( wxTimerEvent &event );
 
     guTrack *                           GetTrack( const int index );
+	void								EnableEdit(const bool is_enabled) const;
 
     void ReloadMBAlbums();
 
@@ -302,4 +308,3 @@ class guTrackEditorGetComboDataThread : public wxThread
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

@@ -119,7 +119,7 @@ guTagInfo * guGetTagInfoHandler( const wxString &filename )
         case  6 :
         case  7 : return new guMp4TagInfo( filename );
 
-        case  8 : return new guTagInfo( filename );     // aac
+        case  8 : return new guMp3TagInfo( filename );     // aac - As Mp3 tag (through MpegTag in Taglib 2)
 
         case  9 :
         case 10 : return new guASFTagInfo( filename );
@@ -626,6 +626,7 @@ guTagInfo::guTagInfo( const wxString &filename )
 {
     m_TagFile = nullptr;
     m_Tag = nullptr;
+    m_EnableEditTag = true;
 
     SetFileName( filename );
 
@@ -649,15 +650,20 @@ guTagInfo::~guTagInfo()
 void guTagInfo::SetFileName( const wxString &filename )
 {
     m_FileName = filename;
-    if( !filename.IsEmpty() )
-        m_TagFile = new TagLib::FileRef( filename.mb_str( wxConvFile ), true, TagLib::AudioProperties::Fast );
 
-    if( m_TagFile && !m_TagFile->isNull() )
+    if (!filename.IsEmpty())
+        m_TagFile = new TagLib::FileRef(filename.mb_str(wxConvFile), true, TagLib::AudioProperties::Fast);
+
+    if (!m_TagFile || m_TagFile->isNull())
     {
-        m_Tag = m_TagFile->tag();
-        if( !m_Tag )
-            guLogWarning( wxT( "Cant get tag object from '%s'" ), filename.c_str() );
+        m_EnableEditTag = false;
+        //guLogError(wxT("TagInfo could not open file '%s'"), filename.c_str());
+        return;
     }
+
+    m_Tag = m_TagFile->tag();
+    if( !m_Tag )
+        guLogWarning( wxT( "Cannot get tag object from '%s'" ), filename.c_str() );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1407,8 +1413,8 @@ bool guTagInfo::WriteExtendedTags( ASF::Tag * tag, const int changedflag ) const
 // -------------------------------------------------------------------------------- //
 guMp3TagInfo::guMp3TagInfo( const wxString &filename ) : guTagInfo( filename )
 {
-    if( m_TagFile && !m_TagFile->isNull() )
-        m_TagId3v2 = ( ( TagLib::MPEG::File * ) m_TagFile->file() )->ID3v2Tag();
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
+        m_TagId3v2 = (( TagLib::MPEG::File *) m_TagFile->file())->ID3v2Tag();
     else
         m_TagId3v2 = nullptr;
 }
@@ -1419,14 +1425,15 @@ guMp3TagInfo::~guMp3TagInfo() = default;
 // -------------------------------------------------------------------------------- //
 bool guMp3TagInfo::Read()
 {
-    if( guTagInfo::Read() )
+    if (!guTagInfo::Read())
     {
-        // If its a ID3v2 Tag try to load the labels
-        if( m_TagId3v2 )
-            ReadExtendedTags( m_TagId3v2 );
+        guLogError(wxT("Could not read MP3 tags from file '%s'"), m_FileName.c_str());
+        return false;
     }
-    else
-      guLogError( wxT( "Could not read tags from file '%s'" ), m_FileName.c_str() );
+
+    // If its a ID3v2 Tag try to load the labels
+    if (m_TagId3v2)
+        ReadExtendedTags( m_TagId3v2 );
 
     return true;
 }
@@ -1494,7 +1501,7 @@ bool guMp3TagInfo::SetLyrics( const wxString &lyrics )
 // -------------------------------------------------------------------------------- //
 guFlacTagInfo::guFlacTagInfo( const wxString &filename ) : guTagInfo( filename )
 {
-    if (m_TagFile && !m_TagFile->isNull())
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
         m_XiphComment = ((TagLib::FLAC::File *) m_TagFile->file())->xiphComment();
     else
         m_XiphComment = nullptr;
@@ -1633,7 +1640,7 @@ bool guFlacTagInfo::SetLyrics( const wxString &lyrics )
 // -------------------------------------------------------------------------------- //
 guOggTagInfo::guOggTagInfo( const wxString &filename ) : guTagInfo( filename )
 {
-    if (m_TagFile && !m_TagFile->isNull())
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
         m_XiphComment = ((TagLib::Ogg::Vorbis::File *) m_TagFile->file())->tag();
     else
         m_XiphComment = nullptr;
@@ -1701,10 +1708,10 @@ bool guOggTagInfo::SetLyrics( const wxString &lyrics )
 // -------------------------------------------------------------------------------- //
 guMp4TagInfo::guMp4TagInfo( const wxString &filename ) : guTagInfo( filename )
 {
-    if (m_TagFile && !m_TagFile->isNull())
-        m_Mp4Tag = ((TagLib::MP4::File *) m_TagFile->file())->tag();
-    else
+    if (!m_EnableEditTag || !m_TagFile || m_TagFile->isNull())
         m_Mp4Tag = nullptr;
+    else
+        m_Mp4Tag = ((TagLib::MP4::File *) m_TagFile->file())->tag();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1714,7 +1721,10 @@ guMp4TagInfo::~guMp4TagInfo() = default;
 bool guMp4TagInfo::Read()
 {
     if (!guTagInfo::Read())
+    {
+        guLogError( wxT( "Could not read MP4 tags from file '%s'" ), m_FileName.c_str() );
         return false;
+    }
 
     ReadExtendedTags( m_Mp4Tag );
     return true;
@@ -1783,7 +1793,7 @@ bool guMp4TagInfo::SetLyrics( const wxString &lyrics )
 // -------------------------------------------------------------------------------- //
 guMpcTagInfo::guMpcTagInfo( const wxString &filename ) : guTagInfo( filename )
 {
-    if (m_TagFile && !m_TagFile->isNull())
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
         m_ApeTag = ((TagLib::MPC::File *) m_TagFile->file())->APETag();
     else
         m_ApeTag = nullptr;
@@ -1834,7 +1844,7 @@ bool guMpcTagInfo::SetImage( const wxImage * image )
 // -------------------------------------------------------------------------------- //
 guWavPackTagInfo::guWavPackTagInfo( const wxString &filename ) : guTagInfo( filename )
 {
-    if (m_TagFile && !m_TagFile->isNull())
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
         m_ApeTag = ((TagLib::WavPack::File *) m_TagFile->file())->APETag();
     else
         m_ApeTag = nullptr;
@@ -1905,7 +1915,7 @@ guApeTagInfo::guApeTagInfo( const wxString &filename ) : guTagInfo( filename )
 {
     m_TagId3v1 = nullptr;
     m_ApeTag = nullptr;
-    if (m_TagFile && !m_TagFile->isNull())
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
     {
         m_TagId3v1 = ((TagLib::APE::File *) m_TagFile->file())->ID3v1Tag();
         m_ApeTag = ((TagLib::APE::File *) m_TagFile->file())->APETag();
@@ -1957,7 +1967,7 @@ bool guApeTagInfo::SetLyrics( const wxString &lyrics )
 // -------------------------------------------------------------------------------- //
 guTrueAudioTagInfo::guTrueAudioTagInfo( const wxString &filename ) : guTagInfo( filename )
 {
-    if (m_TagFile && !m_TagFile->isNull())
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
         m_TagId3v2 = ((TagLib::TrueAudio::File *) m_TagFile->file())->ID3v2Tag();
     else
         m_TagId3v2 = nullptr;
@@ -2042,7 +2052,7 @@ bool guTrueAudioTagInfo::SetLyrics( const wxString &lyrics )
 // -------------------------------------------------------------------------------- //
 guASFTagInfo::guASFTagInfo( const wxString &filename ) : guTagInfo( filename )
 {
-    if (m_TagFile && !m_TagFile->isNull())
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
         m_ASFTag = ((TagLib::ASF::File *) m_TagFile->file())->tag();
     else
         m_ASFTag = nullptr;
@@ -2127,7 +2137,7 @@ bool guASFTagInfo::SetLyrics( const wxString &lyrics )
 guGStreamerTagInfo::guGStreamerTagInfo( const wxString &filename ) : guTagInfo( filename )
 {
     guLogDebug("guGStreamerTagInfo::guGStreamerTagInfo");
-    if( m_TagFile && !m_TagFile->isNull() )
+    if (m_EnableEditTag && m_TagFile && !m_TagFile->isNull())
         ReadGStreamerTags( m_TagFile->file()->name() );
 }
 
@@ -2414,6 +2424,20 @@ wxImage *guGStreamerTagInfo::GetImage()
 
 // -------------------------------------------------------------------------------- //
 // Other functions
+// -------------------------------------------------------------------------------- //
+bool guTagGetCanEdit(const wxString &filename)
+{
+    bool RetVal = false;
+
+    guTagInfo *TagInfo = guGetTagInfoHandler(filename);
+    if (TagInfo)
+    {
+        RetVal = TagInfo->CanEditTags();
+        delete TagInfo;
+    }
+    return RetVal;
+}
+
 // -------------------------------------------------------------------------------- //
 wxImage * guTagGetPicture( const wxString &filename )
 {

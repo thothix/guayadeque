@@ -8,7 +8,11 @@ Unreleased (2025-01-xx)
 ------------------
 
 ### Features
-  * Added tagging support for AAC files (removed in 0.5.0 due a bug).
+  * Added back support for AAC files to the library (removed in 0.5.0 due a bug).
+    Now Guayadeque can:
+    * Add AAC files to the library through collection scan/update. 
+    * Edit AAC tags through Track Editor when using TagLib 2.
+      If using Taglib 1 the editor fields will be disabled for editing.
 
 ### Enhancements
   * Updated Catalan translations.
