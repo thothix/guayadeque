@@ -584,9 +584,9 @@ void guPrefDialog::BuildLibraryPage()
     m_VisiblePanels |= guPREFERENCE_PAGE_FLAG_LIBRARY;
 
     //
-    // Library Preferences Panel
+    // Collections/Library Preferences Panel
     //
-    m_CollectSelected = wxNOT_FOUND;
+	m_CollectSelected = 0;
     m_PathSelected = wxNOT_FOUND;
     m_CoverSelected = wxNOT_FOUND;
 
@@ -784,6 +784,8 @@ void guPrefDialog::BuildLibraryPage()
     m_LibOptEmbedTagsChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnLibEmbeddMetadataChanged, this );
     m_LibOptCopyToChoice->Bind( wxEVT_CHOICE, &guPrefDialog::OnLibDefaultCopyToChanged, this );
 
+	m_LibCollectListBox->SetSelection(m_CollectSelected);
+	OnLibOptionsLoadControls();
 	m_LibCollectListBox->SetFocus();
 }
 
