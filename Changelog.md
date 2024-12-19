@@ -28,19 +28,19 @@ Unreleased (2025-01-xx)
   * Check/set the proper default commands for the current desktop manager.
     Gnome (including compatible DEs like Cinnamon and Mate), KDE, xfce and
     LXQT are currently detected and configured (fallback to Gnome commands).
-  * Added a external.pot file to store messages external to the source code
-    to enable its translation through merging it into guayadeque.pot.
 
 ### Enhancements
   * Lyrics preferences: Change source embedded default to true.
   * "Randomize" playlist feature renamed to "Shuffle".
-  * Added translation to source and target lyrics options.
-  * Lots of translation refactorings (all languages).
+  * Added a external.pot file to store messages external to the source code
+    to enable its translation through merging it into guayadeque.pot.
   * Change the Guayadeque build to update the translations .po files
     automatically (after the .pot generation). This will:
     - Update all .po files with the new messages from .pot file to further 
       translation.
     - Comment out messages in the .po files that aren't in the .pot file anymore.
+  * Lots of translation refactorings (all languages).
+  * Added translation to source and target lyrics options.
   * Updated French, Greek, Italian, Spanish and Catalan translations. 
     Thanks to filochard.
   * Updated German translations. Thanks to martinkg.
