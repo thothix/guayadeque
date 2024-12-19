@@ -1269,10 +1269,10 @@ wxString guPlayList::FindCoverFile( const wxString &dirname )
     wxString        CurFile;
     wxString        RetVal = wxEmptyString;
     wxArrayString   CoverSearchWords;
+    wxString        FirstAudioFile;
+    wxString        album_name;
 
-    DirName = dirname;
-    if( !DirName.EndsWith( wxT( "/" ) ) )
-        DirName += wxT( '/' );
+    DirName = GetPathAddTrailSep(dirname);
 
     // Get the SearchCoverWords array
     m_MainFrame->GetCollectionsCoverNames( CoverSearchWords );
@@ -1287,9 +1287,22 @@ wxString guPlayList::FindCoverFile( const wxString &dirname )
                 CurFile = FileName.Lower();
                 //guLogMessage( wxT( "Searching %s : %s" ), DirName.c_str(), FileName.c_str() );
 
-                if( SearchCoverWords( CurFile, CoverSearchWords ) )
+                if (guIsValidAudioFile(CurFile))
                 {
-                    if( guIsValidImageFile( CurFile ) )
+                    if (FirstAudioFile.IsEmpty() && !m_Db->FindDeletedFile(DirName + FileName, false))
+                    {
+                        FirstAudioFile = DirName + FileName;
+                        guTagInfo *TagInfo = guGetTagInfoHandler(FirstAudioFile);
+                        if (TagInfo && TagInfo->ReadAlbumName())
+                        {
+                            album_name = TagInfo->m_AlbumName.Lower();
+                            delete TagInfo;
+                        }
+                    }
+                }
+                else if (SearchCoverWords(CurFile, CoverSearchWords, album_name))
+                {
+                    if (guIsValidImageFile(CurFile))
                     {
                         //printf( "Found Cover: " ); printf( CurFile.char_str() ); printf( "\n" );
                         RetVal = DirName + FileName;
@@ -1547,10 +1560,8 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
         }
         else if( wxDirExists( FileName ) )
         {
-            wxString DirName = FileName;
             wxDir Dir;
-            if( !DirName.EndsWith( wxT( "/" ) ) )
-                DirName += wxT( "/" );
+            wxString DirName = GetPathAddTrailSep(FileName);
 
             int InsertPos = pos;
             Dir.Open( DirName );

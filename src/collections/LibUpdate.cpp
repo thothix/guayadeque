@@ -46,7 +46,6 @@ guLibUpdateThread::guLibUpdateThread( guMediaViewer * mediaviewer, int gaugeid, 
     if( scanpath.IsEmpty() )
     {
         m_LibPaths = mediaviewer->GetPaths();
-
         CheckSymLinks( m_LibPaths );
     }
 
@@ -68,9 +67,7 @@ guLibUpdateThread::~guLibUpdateThread()
     if( !TestDestroy() )
     {
         if( m_MediaViewer )
-        {
             m_MediaViewer->UpdateFinished();
-        }
     }
     wxCommandEvent event( wxEVT_MENU, ID_STATUSBAR_GAUGE_REMOVE );
     event.SetInt( m_GaugeId );
@@ -85,9 +82,9 @@ int guLibUpdateThread::ScanDirectory( wxString dirname, bool includedir )
   wxString      LowerFileName;
   bool          FoundCover = false;
   wxString      FirstAudioFile;
+  wxArrayString cover_files, dir_files;
 
-  if( !dirname.EndsWith( wxT( "/" ) ) )
-    dirname += wxT( "/" );
+  dirname = GetPathAddTrailSep(dirname);
 
   //guLogMessage( wxT( "Scanning dir (%i) '%s'" ), includedir, dirname.c_str() );
   Dir.Open( dirname );
@@ -126,46 +123,54 @@ int guLibUpdateThread::ScanDirectory( wxString dirname, bool includedir )
               if( !m_Db->FindDeletedFile( dirname + FileName, false ) )
               {
                 m_TrackFiles.Add( dirname + FileName );
-                if( m_ScanEmbeddedCovers && FirstAudioFile.IsEmpty() )
+                if (FirstAudioFile.IsEmpty() )
                     FirstAudioFile = dirname + FileName;
               }
             }
-            else if( guIsValidImageFile( LowerFileName ) )
+            else if (guIsValidImageFile(LowerFileName))
             {
-              if( SearchCoverWords( LowerFileName, m_CoverSearchWords ) )
-              {
-                //guLogMessage( wxT( "Adding image '%s'" ), wxString( dirname + FileName ).c_str() );
-                m_ImageFiles.Add( dirname + FileName );
-                FoundCover = true;
-              }
+                // To process covers in the end
+                dir_files.Add(LowerFileName);
+                cover_files.Add(dirname + FileName);
             }
             else if( m_ScanAddPlayLists && guPlaylistFile::IsValidPlayList( LowerFileName ) )
-            {
               m_PlayListFiles.Add( dirname + FileName );
-            }
             else if( guCuePlaylistFile::IsValidFile( LowerFileName ) )
-            {
-              //
               m_CueFiles.Add( dirname + FileName );
-            }
             //else
-            //{
             //    guLogMessage( wxT( "Unknown file: '%s'"), ( dirname + FileName ).c_str() );
-            //}
           }
         }
       } while( !TestDestroy() && Dir.GetNext( &FileName ) );
 
-      if( m_ScanEmbeddedCovers && !FoundCover && !FirstAudioFile.IsEmpty() )
+      wxString album_name;
+      if (!FirstAudioFile.IsEmpty())
       {
-        m_ImageFiles.Add( FirstAudioFile );
+          guTagInfo *TagInfo = guGetTagInfoHandler(FirstAudioFile);
+          if (TagInfo && TagInfo->ReadAlbumName())
+          {
+              album_name = TagInfo->m_AlbumName.Lower();
+              delete TagInfo;
+          }
       }
+
+      for (size_t index = 0; index < dir_files.Count(); index++)
+      {
+          if (SearchCoverWords(dir_files[index], m_CoverSearchWords, album_name))
+          {
+              //guLogMessage( wxT( "Adding image '%s'" ), wxString( dirname + FileName ).c_str() );
+              m_ImageFiles.Add(cover_files[index]);
+              FoundCover = true;
+          }
+      }
+
+      if( m_ScanEmbeddedCovers && !FoundCover && !FirstAudioFile.IsEmpty() )
+        m_ImageFiles.Add( FirstAudioFile );
     }
   }
   else
-  {
       guLogMessage( wxT( "Could not open the dir '%s'" ), dirname.c_str() );
-  }
+
   return 1;
 }
 
@@ -194,9 +199,7 @@ int GetFirstCoverPath( const wxArrayString &words, const wxArrayString &paths )
         for( PathsIndex = 0; PathsIndex < PathsCount; PathsIndex++ )
         {
             if( paths[ PathsIndex ].Lower().Find( words[ WordsIndex ].Lower() ) != wxNOT_FOUND )
-            {
                 return PathsIndex;
-            }
         }
     }
     return wxNOT_FOUND;
@@ -471,9 +474,7 @@ guLibCleanThread::ExitCode guLibCleanThread::Entry()
     if( !TestDestroy() )
     {
         CheckSymLinks( LibPaths );
-
         query = wxT( "SELECT DISTINCT song_id, song_filename, song_path FROM songs " );
-
         dbRes = m_Db->ExecuteQuery( query );
 
         while( !TestDestroy() && dbRes.NextRow() )
@@ -482,28 +483,21 @@ guLibCleanThread::ExitCode guLibCleanThread::Entry()
             //guLogMessage( wxT( "Checking %s" ), FileName.c_str() );
 
             if( !wxFileExists( FileName ) || !CheckFileLibPath( LibPaths, FileName ) )
-            {
                 SongsToDel.Add( dbRes.GetInt( 0 ) );
-            }
         }
         dbRes.Finalize();
-
 
         if( !TestDestroy() )
         {
             query = wxT( "SELECT DISTINCT cover_id, cover_path FROM covers;" );
-
             dbRes = m_Db->ExecuteQuery( query );
 
             while( !TestDestroy() && dbRes.NextRow() )
             {
                 if( !wxFileExists( dbRes.GetString( 1 ) ) )
-                {
                     CoversToDel.Add( dbRes.GetInt( 0 ) );
-                }
             }
             dbRes.Finalize();
-
 
             if( !TestDestroy() )
             {
@@ -511,14 +505,10 @@ guLibCleanThread::ExitCode guLibCleanThread::Entry()
 
                 //m_Db->CleanItems( SongsToDel, CoversToDel );
                 if( SongsToDel.Count() )
-                {
                     Queries.Add( wxT( "DELETE FROM songs WHERE " ) + ArrayToFilter( SongsToDel, wxT( "song_id" ) ) );
-                }
 
                 if( CoversToDel.Count() )
-                {
                     Queries.Add( wxT( "DELETE FROM covers WHERE " ) + ArrayToFilter( CoversToDel, wxT( "cover_id" ) ) );
-                }
 
                 // Delete all posible orphan entries
                 Queries.Add( wxT( "DELETE FROM covers WHERE cover_id NOT IN ( SELECT DISTINCT song_coverid FROM songs );" ) );
@@ -543,5 +533,3 @@ guLibCleanThread::ExitCode guLibCleanThread::Entry()
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

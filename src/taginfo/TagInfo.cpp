@@ -692,6 +692,16 @@ bool guTagInfo::Read( )
 }
 
 // -------------------------------------------------------------------------------- //
+bool guTagInfo::ReadAlbumName( )
+{
+    if (!m_Tag)
+        return false;
+
+    m_AlbumName = TStringTowxString(m_Tag->album());
+    return true;
+}
+
+// -------------------------------------------------------------------------------- //
 bool guTagInfo::Write( const int changedflag )
 {
     if( m_Tag && ( changedflag & guTRACK_CHANGED_DATA_TAGS ) )
