@@ -11,13 +11,14 @@ Unreleased (2025-01-xx)
   * Added back support for AAC files to the library (removed in 0.5.0 due a bug).
     Now Guayadeque can:
     * Add AAC files to the library through collection scan/update and import files. 
-    * Edit AAC tags through Track Editor only when using TagLib 2.
-      If using Taglib 1 the editor fields will be disabled for editing.
-  *  Library Scan and Edit Cover aside from find covers with the "Words to detect covers"
-     in collection preferences, now they find covers that has the album name
-     (by default and as a second option to "Words to detect covers").
+    * Edit AAC tags through Track Editor only when using Taglib 2.
+      If using Taglib 1 the editor will be disabled for editing.
 
 ### Enhancements
+  * Library Scan and Edit Cover aside from find covers with the "Words to detect covers"
+    in collection preferences, now they find covers that has the album name
+    (by default and as a second option to "Words to detect covers").
+  * Select the first collection by default when open Preferences -> Collections
   * Updated Catalan translations.
 
 0.6.2 (2024-12-11)
