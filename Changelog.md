@@ -10,9 +10,12 @@ Unreleased (2025-01-xx)
 ### Features
   * Added back support for AAC files to the library (removed in 0.5.0 due a bug).
     Now Guayadeque can:
-    * Add AAC files to the library through collection scan/update. 
-    * Edit AAC tags through Track Editor when using TagLib 2.
+    * Add AAC files to the library through collection scan/update and import files. 
+    * Edit AAC tags through Track Editor only when using TagLib 2.
       If using Taglib 1 the editor fields will be disabled for editing.
+  *  Library Scan and Edit Cover aside from find covers with the "Words to detect covers"
+     in collection preferences, now they find covers that has the album name
+     (by default and as a second option to "Words to detect covers").
 
 ### Enhancements
   * Updated Catalan translations.
@@ -34,9 +37,11 @@ Unreleased (2025-01-xx)
   * Lots of translation refactorings (all languages).
   * Change the Guayadeque build to update the translations .po files
     automatically (after the .pot generation). This will:
-    - Update all .po files with the new messages from .pot file to further translation.
+    - Update all .po files with the new messages from .pot file to further 
+      translation.
     - Comment out messages in the .po files that aren't in the .pot file anymore.
-  * Updated French, Greek, Italian, Spanish and Catalan translations. Thanks to filochard.
+  * Updated French, Greek, Italian, Spanish and Catalan translations. 
+    Thanks to filochard.
   * Updated German translations. Thanks to martinkg.
   * Updated Portuguese and Brazilian Portuguese translations.
   * Small UI adjustments (playlist context menu, taskbar menu, preferences).

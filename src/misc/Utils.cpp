@@ -167,9 +167,8 @@ wxString RemoveSearchFilters( const wxString &SearchStr )
     guConfig * Config = ( guConfig * ) guConfig::Get();
     wxArrayString Filters;
     if( Config )
-    {
         Filters = Config->ReadAStr( CONFIG_KEY_SEARCH_FILTERS_FILTER, wxEmptyString, CONFIG_PATH_SEARCH_FILTERS );
-    }
+
     int Count = Filters.Count();
     for( int Index = 0; Index < Count; Index++ )
     {
@@ -189,14 +188,19 @@ wxString RemoveSearchFilters( const wxString &SearchStr )
 }
 
 // -------------------------------------------------------------------------------- //
-bool SearchCoverWords( const wxString &FileName, const wxArrayString &Strings )
+bool SearchCoverWords(const wxString &FileName, const wxArrayString &Strings, const wxString &album_name)
 {
     int count = Strings.Count();
-    for( int index = 0; index < count; index++ )
+
+    for (int index = 0; index < count; index++)
     {
-        if( FileName.Find( Strings[ index ] ) != wxNOT_FOUND )
+        if (FileName.Find(Strings[index]) != wxNOT_FOUND)
             return true;
     }
+
+    if (!album_name.IsEmpty() && FileName.Find(album_name) != wxNOT_FOUND)
+        return true;
+
     return false;
 }
 

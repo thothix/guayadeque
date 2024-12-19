@@ -117,6 +117,7 @@ class guTagInfo
     bool                CanEditTags() const { return m_EnableEditTag; };
 
     virtual bool        Read( void );
+    bool                ReadAlbumName();
     virtual bool        Write( const int changedflag );
 
     virtual bool        CanHandleImages( void );
