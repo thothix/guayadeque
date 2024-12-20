@@ -21,9 +21,9 @@ was no longer actively maintained let us very sad because you know, we Guayadequ
 That said, I want to say I am following @anonbeat track and continuing the Guayadeque development.
 The main focus right now is keeping it running in the most recent Linux releases and fixing issues.
 
-**We want to thank @anonbeat** for his amazing work to bring us the incredible music player that Guayadeque is and
-thank him for his support throughout the years. **We also want to thank @openmonk** for his invaluable
-contributions to Guayadeque development.
+**We want to thank @anonbeat** for his amazing work to bring us the incredible music player that
+Guayadeque is and thank him for his support throughout the years. **We also want to thank @openmonk**
+for his invaluable contributions to Guayadeque development.
 
 # General
 
@@ -41,25 +41,26 @@ for the icon and splash designed for guayadeque.
 
 Main features include:
 
-- Play mp3, ogg, flac, wav, wma, mpc, mp4, ape, ...
+- Play MP3, Ogg, Opus, FLAC, WAV, WMA, ASF, AIFF, MP4, AAC, WV (WavPack), MPC (Musepack Audio), 
+  APE (Monkey's Audio), TrueAudio.
 - Read and write tags in all supported formats.
 - Smart play mode that add tracks that fit your music taste using the tracks in the playlist.
 - Allow to catalogue your music using labels. Any track, artist or album can have as many
   labels you want.
-- Allow fast access to any music file by genre, artist, album
-- Audio equalizer
-- Configurable cross fader engine
-- Configurable Silence detector to avoid listening to silence between tracks
+- Allow fast access to any music file by genre, artist, album.
+- Audio equalizer.
+- Configurable cross fader engine.
+- Configurable Silence detector to avoid listening to silence between tracks.
 - Dynamic and static playlists management.
 - Tracks tag editor with automatically fetching of tags information for easily completion.
-- Ability to download covers manually or automatically
+- Ability to download covers manually or automatically.
 - Lyrics downloads from different lyrics providers.
 - You can rate the tracks from 0 to 5 stars.
 - Desktop notifications.
 - MPRIS D-Bus interface support so it can easily controlled from music applets for example.
 - Allow to resume play status and position when closed and reopened.
 - Allow to subscribe to podcasts and download all new episodes automatically or manually.
-- Play and Record shoutcast radios
+- Play and Record shoutcast radios.
 - Suggest music using last.fm service.
 - Last.fm audioscrobbling support.
 - Easily expandable contextual links support. With it you can find information about 
