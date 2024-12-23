@@ -61,12 +61,14 @@ bool guIsValidAudioFile( const wxString &filename )
 
         guSupportedFormats.Add( wxT( "ogg"  ) );
         guSupportedFormats.Add( wxT( "oga"  ) );
+        guSupportedFormats.Add( wxT( "opus"  ) );   // >= 1.9
 
-        guSupportedFormats.Add( wxT( "mp4"  ) );  // MP4 files
+        guSupportedFormats.Add( wxT( "mp4"  ) );
         guSupportedFormats.Add( wxT( "m4a"  ) );
         guSupportedFormats.Add( wxT( "m4b"  ) );
         guSupportedFormats.Add( wxT( "m4p"  ) );
-        guSupportedFormats.Add( wxT( "aac"  ) );
+        //guSupportedFormats.Add( wxT( "3g2"  ) );
+        guSupportedFormats.Add( wxT( "aac"  ) );    // >= 2.0
 
         guSupportedFormats.Add( wxT( "wma"  ) );
         guSupportedFormats.Add( wxT( "asf"  ) );
@@ -75,6 +77,7 @@ bool guIsValidAudioFile( const wxString &filename )
 
         guSupportedFormats.Add( wxT( "wav"  ) );
         guSupportedFormats.Add( wxT( "aif"  ) );
+        guSupportedFormats.Add( wxT( "aiff"  ) );
 
         guSupportedFormats.Add( wxT( "wv"   ) );
 
@@ -82,8 +85,8 @@ bool guIsValidAudioFile( const wxString &filename )
 
         guSupportedFormats.Add( wxT( "mpc"  ) );
 
-        //guSupportedFormats.Add( wxT( "rmj"  ) );
-        guSupportedFormats.Add( wxT( "opus"  ) );
+        guSupportedFormats.Add( wxT( "dsf"  ) );    // >= 2.0
+        //guSupportedFormats.Add( wxT( "rmj"  ) );  // Real Media Jukebox
     }
 
     wxString file_ext = filename.Lower().AfterLast( wxT( '.' ) );
@@ -112,30 +115,33 @@ guTagInfo * guGetTagInfoHandler( const wxString &filename )
 
         case  2 :
         case  3 :
-        case 17 : return new guOggTagInfo( filename );
+        case  4 : return new guOggTagInfo( filename );
 
-        case  4 :
         case  5 :
         case  6 :
-        case  7 : return new guMp4TagInfo( filename );
+        case  7 :
+        case  8 : return new guMp4TagInfo( filename );
 
-        case  8 : return new guMp3TagInfo( filename );     // aac - As Mp3 tag (through MpegTag in Taglib 2)
+        case  9 : return new guMp3TagInfo( filename );     // aac - As Mp3 tag (through MpegTag in Taglib 2)
 
-        case  9 :
-        case 10 : return new guASFTagInfo( filename );
+        case 10 :
+        case 11 : return new guASFTagInfo( filename );
 
 #ifdef TAGLIB_WITH_APE_SUPPORT
-        case 11 : return new guApeTagInfo( filename );
+        case 12 : return new guApeTagInfo( filename );
 #endif
 
-        case 12 :
-        case 13 : return new guTagInfo( filename );
+        case 13 :
+        case 14 :
+        case 15 : return new guTagInfo( filename );
 
-        case 14 : return new guWavPackTagInfo( filename );
+        case 16 : return new guWavPackTagInfo( filename );
 
-        case 15 : return new guTrueAudioTagInfo( filename );
+        case 17 : return new guTrueAudioTagInfo( filename );
 
-        case 16 : return new guMpcTagInfo( filename );
+        case 18 : return new guMpcTagInfo( filename );
+
+        case 19 : return new guMp3TagInfo( filename );     // DSD, DSF - TODO: Create a custom TagInfo
 
         default :
             break;
