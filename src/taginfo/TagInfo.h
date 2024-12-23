@@ -44,10 +44,10 @@
 #endif
 #include <apetag.h>
 #include <asftag.h>
-#include <gst/gst.h>
 #include <id3v2tag.h>
 #include <mp4tag.h>
 
+#include <gst/gst.h>
 #include <wx/string.h>
 #include <wx/arrstr.h>
 #include <wx/image.h>

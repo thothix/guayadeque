@@ -8,9 +8,9 @@ Unreleased (2025-01-xx)
 ------------------
 
 ### Features
-  * Added back support for AAC files to the library (removed in 0.5.0 due a bug).
+  * Added support to DSF files and added back support for AAC files (removed in 0.5.0). 
     Now Guayadeque can:
-    * Add AAC files to the library through collection scan/update and import files. 
+    * Add AAC and DSF files to the library. 
     * Edit AAC tags through Track Editor only when using Taglib 2.
       If using Taglib 1 the editor will be disabled for editing.
 
