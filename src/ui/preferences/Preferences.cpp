@@ -126,6 +126,7 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     Create( parent, wxID_ANY, _( "Preferences" ), WindowPos, WindowSize, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER | wxMAXIMIZE_BOX );
 
     m_MainLangChoices.Add( _( "Default" ) );
+    m_MainLangChoices.Add( _( "Croatian" ) );
     m_MainLangChoices.Add( _( "Czech" ) );
     m_MainLangChoices.Add( _( "Danish" ) );
     m_MainLangChoices.Add( _( "Dutch" ) );
@@ -155,6 +156,7 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     m_MainLangChoices.Add( _( "Serbian" ) );
 
     m_MainLangCodes.Add( wxLANGUAGE_DEFAULT );
+    m_MainLangCodes.Add( wxLANGUAGE_CROATIAN );
     m_MainLangCodes.Add( wxLANGUAGE_CZECH );
     m_MainLangCodes.Add( wxLANGUAGE_DANISH );
     m_MainLangCodes.Add( wxLANGUAGE_DUTCH );
