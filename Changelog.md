@@ -8,18 +8,24 @@ Unreleased (2025-01-xx)
 ------------------
 
 ### Features
-  * Added support to DSF files and added back support for AAC files (removed in 0.5.0). 
+  * Audio formats support:
+    * Added support for DSF files.
+    * Added back support for AAC files (removed in 0.5.0). 
     Now Guayadeque can:
-    * Add AAC and DSF files to the library. 
-    * Edit AAC tags through Track Editor only when using Taglib 2.
-      If using Taglib 1 the editor will be disabled for editing.
+      * Add AAC and DSF files to the library. 
+      * Edit AAC tags through Track Editor, only when using Taglib 2.
+        If using Taglib 1, the editor will be disabled for editing.
 
 ### Enhancements
-  * Library Scan and Edit Cover aside from find covers with the "Words to detect covers"
-    in collection preferences, now they find covers that has the album name
-    (by default and as a second option to "Words to detect covers").
+  * Library Scan and Edit Cover now can find covers that has the album name
+    (by default and as a second option to "Words to detect covers" in collection
+    preferences).
   * Select the first collection by default when open Preferences -> Collections
+  * Updated Croatian translations. Thanks to Mario (@mtadic). 
   * Updated Catalan translations.
+
+### Bugfixes
+  * Added missing Croatian language to preferences.
 
 0.6.2 (2024-12-11)
 ------------------
