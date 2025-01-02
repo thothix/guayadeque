@@ -3,10 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Bo <skippylooks-transifex@yahoo.de>, 2013
-# Bo <skippylooks-transifex@yahoo.de>, 2011, 2012
+# Bo <skippylooks-transifex@yahoo.de>, 2011-2013
 # Der_Xte_Mensch <C_3_P_O@web.de>, 2012
-# Julian Ospald <julian.ospald@googlemail.com>, 2011, 2012
+# Julian Ospald <julian.ospald@googlemail.com>, 2011-2012
 # quaec0 <quaec.0@gmail.com>, 2012
 msgid ""
 msgstr ""
