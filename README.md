@@ -52,21 +52,23 @@ Main features include:
 - Configurable cross fader engine.
 - Configurable Silence detector to avoid listening to silence between tracks.
 - Dynamic and static playlists management.
+- Audio CD playback.
+- CUE sheet support.
 - Tracks tag editor with automatically fetching of tags information for easily completion.
 - Ability to download covers manually or automatically.
 - Lyrics downloads from different lyrics providers.
-- You can rate the tracks from 0 to 5 stars.
+- Rate tracks from 0 to 5 stars.
 - Desktop notifications.
-- MPRIS D-Bus interface support so it can easily controlled from music applets for example.
+- MPRIS D-Bus interface support so it can be easily controlled from music applets for example.
 - Allow to resume play status and position when closed and reopened.
 - Allow to subscribe to podcasts and download all new episodes automatically or manually.
 - Play and Record shoutcast radios.
 - Suggest music using last.fm service.
 - Last.fm audioscrobbling support.
-- Easily expandable contextual links support. With it you can find information about 
-  a track, an artist or an album on your favourite site.
-- Easily expandable contextual commands support. For example you can right click on
-  any album and click in option to record the album in a burning application.
+- Easily expandable contextual links support. Find information about a track, an artist or
+  an album on your favourite site.
+- Easily expandable contextual commands support. Set of preconfigured commands like an option
+  to record the album in a burning application. Create custom commands easily.
 - Option to copy the selection you want to a directory or device like USB players and IPod
   using a configurable pattern.
 - Partial GNOME session support to detect when GNOME session is about to close and save
