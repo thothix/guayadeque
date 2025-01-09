@@ -78,7 +78,7 @@ Main features include:
 # Copyright
 
 Copyright (C) 2008-2023 J.Rios <anonbeat@gmail.com>\
-Copyright (C) 2024 Tiago T Barrionuevo <thothix@protonmail.com>
+Copyright (C) 2024-2025 Tiago T Barrionuevo <thothix@protonmail.com>
 
 Guayadeque is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
