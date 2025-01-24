@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-02 11:48-0300\n"
+"POT-Creation-Date: 2025-01-24 12:47-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3526,15 +3526,15 @@ msgstr ""
 msgid "Unnamed"
 msgstr ""
 
-#: ui/statusbar/StatusBar.cpp:155 ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:148 ui/statusbar/StatusBar.cpp:208
 msgid "Enable audioscrobbling"
 msgstr ""
 
-#: ui/statusbar/StatusBar.cpp:158
+#: ui/statusbar/StatusBar.cpp:151
 msgid "Shows information about the selected items"
 msgstr ""
 
-#: ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:208
 msgid "Disable audioscrobbling"
 msgstr ""
 
@@ -4599,11 +4599,11 @@ msgstr ""
 msgid "Record to file"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Enable crossfading"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Disable crossfading"
 msgstr ""
 
@@ -4611,7 +4611,7 @@ msgstr ""
 msgid "Show the equalizer (right click for on/off)"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2757
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
 msgid "Volume"
 msgstr ""
 
@@ -4651,19 +4651,19 @@ msgstr ""
 msgid "Buffering..."
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2479
+#: ui/player/PlayerPanel.cpp:2478
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2485
+#: ui/player/PlayerPanel.cpp:2484
 msgid "Repeat all"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2490
+#: ui/player/PlayerPanel.cpp:2489
 msgid "Repeat one"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2497
+#: ui/player/PlayerPanel.cpp:2496
 msgid "Smart mode disabled"
 msgstr ""
 

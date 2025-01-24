@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-26 20:17-0300\n"
+"POT-Creation-Date: 2025-01-24 12:47-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Piotr Strębski <strebski@gmail.com>, 2017,2022\n"
 "Language-Team: Polish (http://www.transifex.com/anonbeat/guayadeque/language/"
@@ -3553,15 +3553,15 @@ msgstr "Podobne utwory"
 msgid "Unnamed"
 msgstr "Bez nazwy"
 
-#: ui/statusbar/StatusBar.cpp:155 ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:148 ui/statusbar/StatusBar.cpp:208
 msgid "Enable audioscrobbling"
 msgstr "Włącz audioscrobbling"
 
-#: ui/statusbar/StatusBar.cpp:158
+#: ui/statusbar/StatusBar.cpp:151
 msgid "Shows information about the selected items"
 msgstr "Wyświetl informacje o wybranym elemencie"
 
-#: ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:208
 msgid "Disable audioscrobbling"
 msgstr "Wyłącz audioscrobbling"
 
@@ -4653,11 +4653,11 @@ msgstr "Zatrzymuje bieżący utwór"
 msgid "Record to file"
 msgstr "Nagraj do pliku"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Enable crossfading"
 msgstr "Włącz przenikanie"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Disable crossfading"
 msgstr "Wyłącz przenikanie"
 
@@ -4665,7 +4665,7 @@ msgstr "Wyłącz przenikanie"
 msgid "Show the equalizer (right click for on/off)"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2757
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
 msgid "Volume"
 msgstr "Głośność"
 
@@ -4705,19 +4705,19 @@ msgstr "Wyświetl gęstość bitową aktualnego utworu"
 msgid "Buffering..."
 msgstr "Buforowanie..."
 
-#: ui/player/PlayerPanel.cpp:2479
+#: ui/player/PlayerPanel.cpp:2478
 msgid "Smart mode enabled"
 msgstr "Tryb inteligentny włączony"
 
-#: ui/player/PlayerPanel.cpp:2485
+#: ui/player/PlayerPanel.cpp:2484
 msgid "Repeat all"
 msgstr "Powtórz wszystko"
 
-#: ui/player/PlayerPanel.cpp:2490
+#: ui/player/PlayerPanel.cpp:2489
 msgid "Repeat one"
 msgstr "Powtórz jeden"
 
-#: ui/player/PlayerPanel.cpp:2497
+#: ui/player/PlayerPanel.cpp:2496
 msgid "Smart mode disabled"
 msgstr "Tryb inteligentny wyłączony"
 

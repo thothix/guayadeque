@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-26 20:17-0300\n"
+"POT-Creation-Date: 2025-01-24 12:47-0300\n"
 "PO-Revision-Date: 2020-03-29 15:40+0000\n"
 "Last-Translator: abc Def <hdogan1974@gmail.com>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/anonbeat/"
@@ -3553,15 +3553,15 @@ msgstr "Benzer Parçalar"
 msgid "Unnamed"
 msgstr "İsimlendirilmemiş"
 
-#: ui/statusbar/StatusBar.cpp:155 ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:148 ui/statusbar/StatusBar.cpp:208
 msgid "Enable audioscrobbling"
 msgstr "Müzik Skroplamayı etkinleştir"
 
-#: ui/statusbar/StatusBar.cpp:158
+#: ui/statusbar/StatusBar.cpp:151
 msgid "Shows information about the selected items"
 msgstr "Seçili öğeler için bilgileri göster"
 
-#: ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:208
 msgid "Disable audioscrobbling"
 msgstr "Müzik Skroplamayı devre dışı bırak"
 
@@ -4657,11 +4657,11 @@ msgstr "Şu an çalınan parçayı durdur"
 msgid "Record to file"
 msgstr "Dosyaya kaydet"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Enable crossfading"
 msgstr "Çapraz geçişi etkinleştir"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Disable crossfading"
 msgstr "Çapraz geçişi devre dışı bırak"
 
@@ -4669,7 +4669,7 @@ msgstr "Çapraz geçişi devre dışı bırak"
 msgid "Show the equalizer (right click for on/off)"
 msgstr "Ekolayzeri göster"
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2757
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
 msgid "Volume"
 msgstr "Ses Yüksekliği"
 
@@ -4710,21 +4710,21 @@ msgstr "Geçerli parçanın bit rate değerini göster"
 msgid "Buffering..."
 msgstr "Yükleniyor..."
 
-#: ui/player/PlayerPanel.cpp:2479
+#: ui/player/PlayerPanel.cpp:2478
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2485
+#: ui/player/PlayerPanel.cpp:2484
 #, fuzzy
 msgid "Repeat all"
 msgstr "Parçayı Tekrarla"
 
-#: ui/player/PlayerPanel.cpp:2490
+#: ui/player/PlayerPanel.cpp:2489
 #, fuzzy
 msgid "Repeat one"
 msgstr "Parçayı Tekrarla"
 
-#: ui/player/PlayerPanel.cpp:2497
+#: ui/player/PlayerPanel.cpp:2496
 msgid "Smart mode disabled"
 msgstr ""
 
