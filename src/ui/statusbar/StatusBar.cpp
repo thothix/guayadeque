@@ -52,15 +52,12 @@ guGauge::guGauge( wxWindow * parent, const wxString &label, bool showporcent,
     m_LastValue = wxNOT_FOUND;
     m_ShowPorcent = showporcent;
     m_PaintWidth = 0;
-    //m_Value     = 0;
-    //m_Range     = max;
     m_Label     = label;
     m_Font      = wxSystemSettings::GetFont( wxSYS_DEVICE_DEFAULT_FONT );
     m_FgColor1  = wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOWTEXT );
     m_FgColor2  = wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHTTEXT );
     m_GradStart = wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT );
     m_GradEnd   = wxSystemSettings::GetColour( wxSYS_COLOUR_HOTLIGHT );
-
 
     SetRange( max );
     SetValue( 0 );
@@ -79,7 +76,6 @@ void guGauge::OnPaint( wxPaintEvent &event )
     wxSize s = GetSize();
 
     wxPaintDC dc( this );
-
     dc.SetFont( m_Font );
 
     dc.SetPen( * wxTRANSPARENT_PEN );
@@ -89,13 +85,10 @@ void guGauge::OnPaint( wxPaintEvent &event )
     dc.SetTextForeground( m_FgColor1 );
     wxString LabelStr;
     if( m_ShowPorcent )
-    {
         LabelStr = m_Label + wxString::Format( wxT( " %u%%" ), ( ( m_PaintWidth * 100 ) / s.x ) );
-    }
     else
-    {
         LabelStr = m_Label + wxString::Format( wxT( " %i / %i" ), m_Value, m_Range );
-    }
+
     dc.DrawText( LabelStr, 4, 2 );
 
     if( m_PaintWidth )
@@ -189,7 +182,7 @@ void guStatusBar::OnSize( wxSizeEvent &event )
     wxRect rect;
 
     UpdateGauges();
-    //
+
     if( m_ASBitmap )
     {
         //size = ASBitmap->GetSize();
@@ -229,9 +222,7 @@ void guStatusBar::OnButtonClick( wxMouseEvent &event )
     //guLogMessage( wxT( "OnButtonClick") );
     m_LastClickAction = guSTATUSBAR_CLICK_ACTION_NONE;
     if( event.GetEventObject() == m_ASBitmap )
-    {
         m_LastClickAction = guSTATUSBAR_CLICK_ACTION_AUDIOSCROBBLE;
-    }
 
     if( m_ClickTimer.IsRunning() )
         m_ClickTimer.Stop();
@@ -246,9 +237,7 @@ void guStatusBar::OnButtonDClick( wxMouseEvent &event )
         m_ClickTimer.Stop();
 
     if( event.GetEventObject() == m_ASBitmap )
-    {
         OnAudioScrobbleDClicked();
-    }
 
     m_LastClickAction = guSTATUSBAR_CLICK_ACTION_NONE;
 }
@@ -409,13 +398,9 @@ void guStatusBar::SetSelInfo( const wxString &label )
     if( PrevState != NextState )
     {
         if( NextState )
-        {
             FieldCount++;
-        }
         else
-        {
             FieldCount--;
-        }
     }
 
     SetSizes( FieldCount );
@@ -447,5 +432,3 @@ void guStatusBar::DrawField( wxDC &dc, int i, int textHeight )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
