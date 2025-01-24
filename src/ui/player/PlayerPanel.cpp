@@ -1751,7 +1751,7 @@ void guPlayerPanel::OnMediaLoaded( guMediaEvent &event )
         if( event.GetInt() )
             m_MediaCtrl->Play();
 
-        m_PlayListCtrl->RefreshAll( m_PlayListCtrl->GetCurItem() );
+        // m_PlayListCtrl->RefreshAll( m_PlayListCtrl->GetCurItem() );
     }
     catch(...)
     {
