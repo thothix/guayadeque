@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-02 16:01-0300\n"
+"POT-Creation-Date: 2025-01-24 12:47-0300\n"
 "PO-Revision-Date: 2024-12-05 13:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -3549,15 +3549,15 @@ msgstr "Παρόμοια κομμάτια"
 msgid "Unnamed"
 msgstr "Χωρίς Όνομα"
 
-#: ui/statusbar/StatusBar.cpp:155 ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:148 ui/statusbar/StatusBar.cpp:208
 msgid "Enable audioscrobbling"
 msgstr "Ενεργοποίηση του scrobbling ήχου"
 
-#: ui/statusbar/StatusBar.cpp:158
+#: ui/statusbar/StatusBar.cpp:151
 msgid "Shows information about the selected items"
 msgstr "Εμφάνιση πληροφοριών για τα επιλεγμένα στοιχεία"
 
-#: ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:208
 msgid "Disable audioscrobbling"
 msgstr "Απενεργοποίηση του scrobbling ήχου"
 
@@ -4653,11 +4653,11 @@ msgstr "Διακοπή του τρέχοντος κομματιού"
 msgid "Record to file"
 msgstr "Εγγραφή σε αρχείο"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Enable crossfading"
 msgstr "Ενεργοποίηση crossfading (διασταυρωμένου ρυθμιστής)"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Disable crossfading"
 msgstr "Απενεργοποίηση crossfading (διασταυρωμένου ρυθμιστής)"
 
@@ -4665,7 +4665,7 @@ msgstr "Απενεργοποίηση crossfading (διασταυρωμένου �
 msgid "Show the equalizer (right click for on/off)"
 msgstr "Εμφανίστε αντισταθμιστής(δεξί κλικ on/off)"
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2757
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
 msgid "Volume"
 msgstr "Ένταση"
 
@@ -4705,19 +4705,19 @@ msgstr "Εμφάνιση της συχνότητας Bit του τρέχοντο
 msgid "Buffering..."
 msgstr "Γίνεται σύνδεση..."
 
-#: ui/player/PlayerPanel.cpp:2479
+#: ui/player/PlayerPanel.cpp:2478
 msgid "Smart mode enabled"
 msgstr "Ενεργοποίηση έξυπνη λειτουργία"
 
-#: ui/player/PlayerPanel.cpp:2485
+#: ui/player/PlayerPanel.cpp:2484
 msgid "Repeat all"
 msgstr "Eπαναλάβετε όλα"
 
-#: ui/player/PlayerPanel.cpp:2490
+#: ui/player/PlayerPanel.cpp:2489
 msgid "Repeat one"
 msgstr "Eπαναλάβετε ένα"
 
-#: ui/player/PlayerPanel.cpp:2497
+#: ui/player/PlayerPanel.cpp:2496
 msgid "Smart mode disabled"
 msgstr "Απενεργοποιημένη έξυπνη λειτουργία"
 

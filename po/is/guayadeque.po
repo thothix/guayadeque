@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-26 20:17-0300\n"
+"POT-Creation-Date: 2025-01-24 12:47-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Hreinn Jónsson <hreinnjons@gmail.com>, 2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/anonbeat/"
@@ -3541,15 +3541,15 @@ msgstr "Lík Lög"
 msgid "Unnamed"
 msgstr "Ónefnt"
 
-#: ui/statusbar/StatusBar.cpp:155 ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:148 ui/statusbar/StatusBar.cpp:208
 msgid "Enable audioscrobbling"
 msgstr "Virkja audioscrobbling"
 
-#: ui/statusbar/StatusBar.cpp:158
+#: ui/statusbar/StatusBar.cpp:151
 msgid "Shows information about the selected items"
 msgstr "Sýnir upplýsingar um valin atriði."
 
-#: ui/statusbar/StatusBar.cpp:215
+#: ui/statusbar/StatusBar.cpp:208
 msgid "Disable audioscrobbling"
 msgstr "Aftengja audioscrobble "
 
@@ -4635,11 +4635,11 @@ msgstr "Stoppar núverandi lag"
 msgid "Record to file"
 msgstr "Upptaka"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Enable crossfading"
 msgstr "Virkja krossvíxlun"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3083
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
 msgid "Disable crossfading"
 msgstr "Aftengja krossvíxlun"
 
@@ -4647,7 +4647,7 @@ msgstr "Aftengja krossvíxlun"
 msgid "Show the equalizer (right click for on/off)"
 msgstr "Sýna Tónjafnara (Hægri smella  Á/Af)"
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2757
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
 msgid "Volume"
 msgstr "Hljóð"
 
@@ -4687,19 +4687,19 @@ msgstr "Sýna bitahraða valins lags"
 msgid "Buffering..."
 msgstr "Hleður niður..."
 
-#: ui/player/PlayerPanel.cpp:2479
+#: ui/player/PlayerPanel.cpp:2478
 msgid "Smart mode enabled"
 msgstr "Snjall hamur virkur"
 
-#: ui/player/PlayerPanel.cpp:2485
+#: ui/player/PlayerPanel.cpp:2484
 msgid "Repeat all"
 msgstr "Endurtaka allt"
 
-#: ui/player/PlayerPanel.cpp:2490
+#: ui/player/PlayerPanel.cpp:2489
 msgid "Repeat one"
 msgstr "Endurtaka eitt"
 
-#: ui/player/PlayerPanel.cpp:2497
+#: ui/player/PlayerPanel.cpp:2496
 msgid "Smart mode disabled"
 msgstr "Sjall hamur óvirkur"
 
