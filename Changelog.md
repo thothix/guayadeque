@@ -4,13 +4,13 @@ Guayadeque Music Player
 Changelog
 =========
 
-Unreleased (2025-01-xx)
+0.6.3 (2025-01-24)
 ------------------
 
 ### Features
   * Audio formats support:
-    * Added support for DSF files.
-    * Added back support for AAC files (removed in 0.5.0). 
+    * Added support for DSF files in the library (without tagging support by now).
+    * Added back support for AAC files in the library (removed in 0.5.0). 
     Now Guayadeque can:
       * Add AAC and DSF files to the library. 
       * Edit AAC tags through Track Editor, only when using Taglib 2.
