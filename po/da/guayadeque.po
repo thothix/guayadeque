@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 12:47-0300\n"
+"POT-Creation-Date: 2025-01-25 00:09-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2015,2017,2020-2021\n"
 "Language-Team: Danish (http://www.transifex.com/anonbeat/guayadeque/language/"
@@ -450,15 +450,15 @@ msgstr "Menu"
 msgid "Capital"
 msgstr "Versal"
 
-#: MainApp.cpp:395
+#: MainApp.cpp:396
 msgid "Another program instance is already running."
 msgstr "En anden programinstans kører allerede."
 
-#: MainApp.cpp:395
+#: MainApp.cpp:396
 msgid "Do you want to continue with the program?"
 msgstr "Ønsker du at fortsætte med programmet?"
 
-#: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:397 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204

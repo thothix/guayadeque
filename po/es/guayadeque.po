@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 12:47-0300\n"
+"POT-Creation-Date: 2025-01-25 00:09-0300\n"
 "PO-Revision-Date: 2024-12-09 18:46+0100\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>, 2020\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -453,15 +453,15 @@ msgstr "Menú"
 msgid "Capital"
 msgstr "Mayúscula"
 
-#: MainApp.cpp:395
+#: MainApp.cpp:396
 msgid "Another program instance is already running."
 msgstr "Otra instancia del programa está ejecutándose."
 
-#: MainApp.cpp:395
+#: MainApp.cpp:396
 msgid "Do you want to continue with the program?"
 msgstr "¿Quieres que continúe la ejecución del programa ?"
 
-#: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:397 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204

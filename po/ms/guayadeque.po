@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 12:47-0300\n"
+"POT-Creation-Date: 2025-01-25 00:09-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2017-2018,2020,2022\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/anonbeat/"
@@ -451,15 +451,15 @@ msgstr "Menu"
 msgid "Capital"
 msgstr "Huruf Besar"
 
-#: MainApp.cpp:395
+#: MainApp.cpp:396
 msgid "Another program instance is already running."
 msgstr "Ada tika program lain masih berjalan."
 
-#: MainApp.cpp:395
+#: MainApp.cpp:396
 msgid "Do you want to continue with the program?"
 msgstr "Anda pasti mahu teruskan dengan program?"
 
-#: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:397 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 12:47-0300\n"
+"POT-Creation-Date: 2025-01-25 00:09-0300\n"
 "PO-Revision-Date: 2024-12-05 14:13+0100\n"
 "Last-Translator: filochard\n"
 "Language-Team: French (France) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -457,15 +457,15 @@ msgstr "Menu"
 msgid "Capital"
 msgstr "Capitale"
 
-#: MainApp.cpp:395
+#: MainApp.cpp:396
 msgid "Another program instance is already running."
 msgstr "Un autre programme fonctionne déjà."
 
-#: MainApp.cpp:395
+#: MainApp.cpp:396
 msgid "Do you want to continue with the program?"
 msgstr "Voulez-vous continuer avec le programme?"
 
-#: MainApp.cpp:396 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:397 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
