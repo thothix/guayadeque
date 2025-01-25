@@ -4,7 +4,7 @@
 cd $(readlink -f $(dirname $0))
 
 ./buildt
-rm CMakeCache.txt
+rm -f CMakeCache.txt
 
 cmake ${1} . \
  -DCMAKE_BUILD_TYPE='Release' \
