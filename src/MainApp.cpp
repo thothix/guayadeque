@@ -192,7 +192,8 @@ void guMainApp::checkDesktopConfig()
 
     // Read the current/New default .conf
     auto default_config = new guConfig(wxT(DATADIR "/guayadeque.default.conf"));
-    wxArrayString desktops = guDESKTOP_MANAGERS;
+    wxString ws_desktops[] = guDESKTOP_MANAGERS;
+    wxArrayString desktops(WXSIZEOF(ws_desktops), ws_desktops);
     wxArrayString default_cmds;
     bool found;
 
