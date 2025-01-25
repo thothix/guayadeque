@@ -4,13 +4,12 @@ Guayadeque Music Player
 Changelog
 =========
 
-
 0.6.4 (2025-01-25)
 ------------------
-  * 
-  * Fix bug in conversion of preferences commands (introduced in 0.6.2)
 
 ### Bugfixes
+  * Fix compatibility with wxWidgets prior to 3.2 (regression from 0.6.2)
+  * Fix bug in conversion of preferences commands (introduced in 0.6.2)
 
 0.6.3 (2025-01-24)
 ------------------
