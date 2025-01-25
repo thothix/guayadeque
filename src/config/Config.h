@@ -59,7 +59,7 @@ class guConfig
     bool                AddBackupFile( const wxString &filename );
 
   public :
-    guConfig( const wxString &conffile = guPATH_CONFIG_FILENAME );
+    guConfig( const wxString &conffile = guPATH_CONFIG_FILENAME, const bool backup = true );
     virtual ~guConfig();
 
     static guConfig *   Get( void );

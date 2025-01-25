@@ -31,22 +31,27 @@
 
 namespace Guayadeque {
 
-static guConfig * m_Config = NULL;
+static guConfig * m_Config = nullptr;
 
 wxDEFINE_EVENT( guConfigUpdatedEvent, wxCommandEvent );
 
 #define guCONFIG_DEFAULT_VERSION    1
 
 // -------------------------------------------------------------------------------- //
-guConfig::guConfig( const wxString &conffile )
+guConfig::guConfig( const wxString &conffile, const bool backup )
 {
     m_IgnoreLayouts = false;
     m_Version = guCONFIG_DEFAULT_VERSION;
     m_FileName = conffile;
-    m_XmlDocument = NULL;
-    m_RootNode = NULL;
+    m_XmlDocument = nullptr;
+    m_RootNode = nullptr;
 
-    if( LoadWithBackup( m_FileName ) )
+    if (backup)
+    {
+        if (LoadWithBackup(m_FileName))
+            return;
+    }
+    else if (LoadFile(m_FileName))
         return;
 
     // The file could not be read so create it
@@ -58,10 +63,8 @@ guConfig::~guConfig()
 {
     Flush();
 
-    if( m_XmlDocument )
-    {
+    if (m_XmlDocument)
         delete m_XmlDocument;
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -83,14 +86,12 @@ bool guConfig::LoadFile( const wxString &filename )
                     m_RootNode->GetAttribute( wxT( "version" ), &VersionStr );
                     long Version;
                     if( VersionStr.ToLong( &Version ) )
-                    {
                         m_Version = Version;
-                    }
                     return true;
                 }
             }
             delete m_XmlDocument;
-            m_XmlDocument = NULL;
+            m_XmlDocument = nullptr;
         }
     }
     return false;
@@ -181,9 +182,7 @@ long guConfig::ReadNum( const wxString &keyname, const long defval, const wxStri
     {
         long RetVal;
         if( KeyValue.ToLong( &RetVal ) )
-        {
             return RetVal;
-        }
     }
     return defval;
 }
@@ -213,12 +212,10 @@ inline wxXmlNode * FindNodeByName( wxXmlNode * xmlnode, const wxString &category
     while( XmlNode )
     {
         if( XmlNode->GetName() == category )
-        {
             return XmlNode;
-        }
         XmlNode = XmlNode->GetNext();
     }
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -240,7 +237,7 @@ inline wxXmlNode * guConfig::FindNode( const wxString &category )
             XmlNode = FindNodeByName( XmlNode->GetChildren(), Keys[ Index ] );
         }
     }
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -250,12 +247,10 @@ inline wxXmlAttribute * FindPropertyByName( wxXmlAttribute * property, const wxS
     while( Property )
     {
         if( Property->GetName() == category )
-        {
             return Property;
-        }
         Property = Property->GetNext();
     }
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -277,7 +272,6 @@ wxString guConfig::ReadStr( const wxString &keyname, const wxString &defval, con
             return RetVal;
         }
     }
-    //guLogMessage( wxT( "******************** FAILED!!!!!!!!!!!!" ) );
     return defval;
 }
 
@@ -322,7 +316,7 @@ bool guConfig::WriteStr( const wxString &keyname, const wxString &value, const w
     if( !XmlNode )
     {
         XmlNode = new wxXmlNode( wxXML_ELEMENT_NODE, keyname );
-        wxXmlAttribute * Properties = new wxXmlAttribute( wxT( "value" ), value, NULL );
+        wxXmlAttribute * Properties = new wxXmlAttribute( wxT( "value" ), value, nullptr );
         XmlNode->SetAttributes( Properties );
         CatNode->AddChild( XmlNode );
     }
@@ -331,7 +325,7 @@ bool guConfig::WriteStr( const wxString &keyname, const wxString &value, const w
         wxXmlAttribute * Property = FindPropertyByName( XmlNode->GetAttributes(), wxT( "value" ) );
         if( !Property )
         {
-            Property = new wxXmlAttribute( wxT( "value" ), value, NULL );
+            Property = new wxXmlAttribute( wxT( "value" ), value, nullptr );
             XmlNode->SetAttributes( Property );
         }
         else
@@ -458,9 +452,8 @@ int guConfig::LoadCollections( guMediaCollectionArray * collections, const int t
                 LoadCount++;
             }
             else
-            {
                 delete Collection;
-            }
+
             XmlNode = XmlNode->GetNext();
         }
     }
@@ -471,7 +464,7 @@ int guConfig::LoadCollections( guMediaCollectionArray * collections, const int t
 void WriteStr( wxXmlNode * xmlnode, const wxString &name, const wxString &value )
 {
     wxXmlNode * XmlNode = new wxXmlNode( wxXML_ELEMENT_NODE, name );
-    wxXmlAttribute * Properties = new wxXmlAttribute( wxT( "value" ), value, NULL );
+    wxXmlAttribute * Properties = new wxXmlAttribute( wxT( "value" ), value, nullptr );
     XmlNode->SetAttributes( Properties );
     xmlnode->AddChild( XmlNode );
 }
@@ -521,9 +514,7 @@ void guConfig::SaveCollections( guMediaCollectionArray * collections, const bool
 
     wxXmlNode * XmlNode = FindNode( wxT( "collections" ) );
     if( !XmlNode )
-    {
         XmlNode = CreateCategoryNode( m_RootNode, wxT( "collections" ) );
-    }
 
     int Count = collections->Count();
     for( int Index = 0; Index < Count; Index++ )
@@ -618,9 +609,7 @@ void guConfig::UnRegisterObject( wxEvtHandler * object )
     wxMutexLocker Lock( m_ObjectsMutex );
     int Index = m_Objects.Index( object );
     if( Index != wxNOT_FOUND )
-    {
         m_Objects.RemoveAt( Index );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -683,36 +672,21 @@ void ReadTrack( wxXmlNode * xmlnode, guTrack &track )
             track.m_Type = ( guTrackType ) StrToInt( Value );
         }
         else if( Name == wxT( "MediaViewer" ) )
-        {
-        }
+        {}
         else if( Name == wxT( "Name" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &track.m_SongName );
-        }
         else if( Name == wxT( "Artist" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &track.m_ArtistName );
-        }
         else if( Name == wxT( "AlbumArtist" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &track.m_AlbumArtist );
-        }
         else if( Name == wxT( "Composer" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &track.m_Composer );
-        }
         else if( Name == wxT( "Album" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &track.m_AlbumName );
-        }
         else if( Name == wxT( "Path" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &track.m_Path );
-        }
         else if( Name == wxT( "FileName" ) )
-        {
             xmlnode->GetAttribute( wxT( "value" ), &track.m_FileName );
-        }
         else if( Name == wxT( "Number" ) )
         {
             xmlnode->GetAttribute( wxT( "value" ), &Value );
@@ -781,5 +755,3 @@ int guConfig::LoadPlaylistTracks( guTrackArray &tracks )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
