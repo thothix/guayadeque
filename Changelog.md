@@ -4,6 +4,14 @@ Guayadeque Music Player
 Changelog
 =========
 
+
+0.6.4 (2025-01-25)
+------------------
+  * 
+  * Fix bug in conversion of preferences commands (introduced in 0.6.2)
+
+### Bugfixes
+
 0.6.3 (2025-01-24)
 ------------------
 
