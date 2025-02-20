@@ -4,6 +4,16 @@ Guayadeque Music Player
 Changelog
 =========
 
+0.6.5 (2025-02-20)
+------------------
+
+### Enhancements
+* Add CXX20 compiling compatibility.
+* Updated Croatian translations.
+
+### Bugfixes
+  * Fix crash when opening Jamendo and Magnatune sources (introduced in 0.6.0).
+
 0.6.4 (2025-01-25)
 ------------------
 
