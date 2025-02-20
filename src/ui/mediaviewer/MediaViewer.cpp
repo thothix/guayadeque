@@ -195,7 +195,7 @@ void guMediaViewer::InitMediaViewer( const int mode )
     m_MainFrame->MediaViewerCreated( m_MediaCollection->m_UniqueId, this );
 
     // FIXME: Setting DirectoryPath is not working with added "Collection root item"
-    if (!m_MediaCollection->m_DirectoryPath)
+    if (!m_MediaCollection->m_DirectoryPath && m_MediaCollection->m_Paths.Count() > 0)
         m_MediaCollection->m_DirectoryPath = m_MediaCollection->m_Paths[0];
 
     if (m_LibPanel)
