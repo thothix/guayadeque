@@ -46,8 +46,8 @@ class guGauge : public wxControl
 
   public :
     guGauge() : wxControl() { m_LastValue = wxNOT_FOUND; m_PaintWidth = 0; }
-    guGauge( wxWindow * parent, const wxString &label = wxEmptyString, bool showporcent = true, wxWindowID id = wxID_ANY, unsigned int max = 100,
-               const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxDefaultSize, long style = wxGA_HORIZONTAL | wxBORDER_NONE );
+    guGauge(wxWindow * parent, const wxString &label = wxEmptyString, bool showporcent = true, wxWindowID id = wxID_ANY, unsigned int max = 100,
+            const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxDefaultSize, long style = wxGA_HORIZONTAL | static_cast<int>(wxBORDER_NONE));
     ~guGauge( void );
 
     void    SetRange( int range );
