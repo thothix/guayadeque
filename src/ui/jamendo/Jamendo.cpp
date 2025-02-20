@@ -653,7 +653,7 @@ void ReadJamendoXmlArtist( wxXmlNode * xmlnode, guJamendoUpdateThread * thread, 
 }
 
 // -------------------------------------------------------------------------------- //
-bool guJamendoUpdateThread::UpgradeDatabase( void )
+bool guJamendoUpdateThread::UpgradeDatabase()
 {
     if( DownloadFile( guJAMENDO_DATABASE_DUMP_URL, guPATH_JAMENDO wxT( "dbdump_artistalbumtrack.xml.gz" ) ) )
     {
@@ -921,7 +921,7 @@ guMediaViewerJamendo::guMediaViewerJamendo( wxWindow * parent, guMediaCollection
         const int basecmd, guMainFrame * mainframe, const int mode, guPlayerPanel * playerpanel ) :
     guMediaViewer( parent, mediacollection, basecmd, mainframe, mode, playerpanel )
 {
-    m_DownloadThread = NULL;
+    m_DownloadThread = nullptr;
     m_ContextMenuFlags = ( guCONTEXTMENU_DOWNLOAD_COVERS | guCONTEXTMENU_LINKS );
 
     Bind( wxEVT_MENU, &guMediaViewerJamendo::OnCoverDownloaded, this, ID_JAMENDO_COVER_DOWNLAODED );
@@ -938,7 +938,7 @@ guMediaViewerJamendo::~guMediaViewerJamendo()
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerJamendo::LoadMediaDb( void )
+void guMediaViewerJamendo::LoadMediaDb()
 {
     guLogMessage( wxT( "LoadMediaDb... JAMENDO..." ) );
     m_Db = new guJamendoLibrary( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId + wxT( "/guayadeque.db" ) );
@@ -961,7 +961,7 @@ void guMediaViewerJamendo::OnConfigUpdated( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerJamendo::UpdateLibrary( void )
+void guMediaViewerJamendo::UpdateLibrary()
 {
     int GaugeId;
     GaugeId = m_MainFrame->AddGauge( m_MediaCollection->m_Name );
@@ -976,7 +976,7 @@ void guMediaViewerJamendo::UpdateLibrary( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerJamendo::UpgradeLibrary( void )
+void guMediaViewerJamendo::UpgradeLibrary()
 {
     int GaugeId;
     GaugeId = m_MainFrame->AddGauge( m_MediaCollection->m_Name );
@@ -1056,16 +1056,16 @@ void guMediaViewerJamendo::OnCoverDownloaded( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerJamendo::EndUpdateThread( void )
+void guMediaViewerJamendo::EndUpdateThread()
 {
-    m_UpdateThread = NULL;
+    m_UpdateThread = nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerJamendo::EndDownloadThread( void )
+void guMediaViewerJamendo::EndDownloadThread()
 {
     wxMutexLocker Lock( m_DownloadThreadMutex );
-    m_DownloadThread = NULL;
+    m_DownloadThread = nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1130,7 +1130,7 @@ void guMediaViewerJamendo::CreateContextMenu( wxMenu * menu, const int windowid 
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewerJamendo::CreateLibraryView( void )
+bool guMediaViewerJamendo::CreateLibraryView()
 {
     guLogMessage( wxT( "CreateLibraryView... Jamendo...") );
     m_LibPanel = new guJamendoPanel( this, this );
@@ -1139,21 +1139,21 @@ bool guMediaViewerJamendo::CreateLibraryView( void )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewerJamendo::CreateAlbumBrowserView( void )
+bool guMediaViewerJamendo::CreateAlbumBrowserView()
 {
     m_AlbumBrowser = new guJamendoAlbumBrowser( this, this );
     return true;
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewerJamendo::CreateTreeView( void )
+bool guMediaViewerJamendo::CreateTreeView()
 {
     m_TreeViewPanel = new guJamendoTreePanel( this, this );
     return true;
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewerJamendo::CreatePlayListView( void )
+bool guMediaViewerJamendo::CreatePlayListView()
 {
     m_PlayListPanel = new guJamendoPlayListPanel( this, this );
     return true;
@@ -1189,7 +1189,7 @@ wxImage * guMediaViewerJamendo::GetAlbumCover( const int albumid, int &coverid,
 
     AddDownload( albumid );
 
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1258,7 +1258,7 @@ bool guMediaViewerJamendo::FindMissingCover( const int albumid, const wxString &
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerJamendo::EditProperties( void )
+void guMediaViewerJamendo::EditProperties()
 {
     wxCommandEvent CmdEvent( wxEVT_MENU, ID_MENU_PREFERENCES );
     CmdEvent.SetInt( guPREFERENCE_PAGE_JAMENDO );
@@ -1266,5 +1266,3 @@ void guMediaViewerJamendo::EditProperties( void )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

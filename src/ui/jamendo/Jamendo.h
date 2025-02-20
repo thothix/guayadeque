@@ -76,7 +76,7 @@ class guJamendoUpdateThread : public wxThread
     wxArrayInt                      m_AllowedGenres;
     guTrack                         m_CurrentTrack;
 
-    bool                UpgradeDatabase( void );
+    bool                UpgradeDatabase();
 
   protected :
 
@@ -101,7 +101,7 @@ class guJamendoPanel : public guLibPanel
     guJamendoPanel( wxWindow * parent, guMediaViewer * mediaviewer );
     ~guJamendoPanel();
 
-    guJamendoLibrary *          GetJamendoDb( void ) { return ( guJamendoLibrary * ) m_Db; }
+    guJamendoLibrary *          GetJamendoDb() { return ( guJamendoLibrary * ) m_Db; }
 };
 
 // -------------------------------------------------------------------------------- //
@@ -172,14 +172,14 @@ class guMediaViewerJamendo : public guMediaViewer
     wxMutex                     m_DownloadThreadMutex;
 
 
-    virtual void            LoadMediaDb( void );
+    virtual void            LoadMediaDb();
     virtual void            OnConfigUpdated( wxCommandEvent &event );
 
     void                    OnCoverDownloaded( wxCommandEvent &event );
     void                    OnUpdateFinished( wxCommandEvent &event );
 
-    void                    EndUpdateThread( void );
-    void                    EndDownloadThread( void );
+    void                    EndUpdateThread();
+    void                    EndDownloadThread();
 
   public :
     guMediaViewerJamendo( wxWindow * parent, guMediaCollection &mediacollection,
@@ -190,8 +190,8 @@ class guMediaViewerJamendo : public guMediaViewer
     virtual wxImage *       GetAlbumCover( const int albumid, int &coverid, wxString &coverpath,
                                 const wxString &artistname = wxEmptyString, const wxString &albumname = wxEmptyString );
 
-    virtual void            UpdateLibrary( void );
-    virtual void            UpgradeLibrary( void );
+    virtual void            UpdateLibrary();
+    virtual void            UpgradeLibrary();
     virtual void            NormalizeTracks( guTrackArray * tracks, const bool isdrag = false );
 
     void                    AddDownload( const int albumid, const bool iscover = true );
@@ -203,10 +203,10 @@ class guMediaViewerJamendo : public guMediaViewer
 
     virtual void            CreateContextMenu( wxMenu * menu, const int windowid = wxNOT_FOUND );
 
-    virtual bool            CreateLibraryView( void );
-    virtual bool            CreateAlbumBrowserView( void );
-    virtual bool            CreateTreeView( void );
-    virtual bool            CreatePlayListView( void );
+    virtual bool            CreateLibraryView();
+    virtual bool            CreateAlbumBrowserView();
+    virtual bool            CreateTreeView();
+    virtual bool            CreatePlayListView();
 
     virtual wxString        GetCoverName( const int albumid );
     virtual void            SelectAlbumCover( const int albumid );
@@ -214,7 +214,7 @@ class guMediaViewerJamendo : public guMediaViewer
     virtual bool            FindMissingCover( const int albumid, const wxString &artistname,
                                               const wxString &albumname, const wxString &albumpath );
 
-    virtual void            EditProperties( void );
+    virtual void            EditProperties();
 
     friend class guJamendoDownloadThread;
     friend class guJamendoUpdateThread;
@@ -223,4 +223,3 @@ class guMediaViewerJamendo : public guMediaViewer
 }
 
 #endif
-// -------------------------------------------------------------------------------- //
