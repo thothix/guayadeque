@@ -56,7 +56,7 @@ namespace Guayadeque {
         guTRACK_TYPE_NOTDB,
         guTRACK_TYPE_RADIOSTATION,
         guTRACK_TYPE_PODCAST,
-        guTRACK_TYPE_JAMENDO,
+        guTRACK_TYPE_JAMENDO_DISABLED,      // DONT REMOVE (for .config compatibility)
         guTRACK_TYPE_MAGNATUNE,
         guTRACK_TYPE_IPOD,
         guTRACK_TYPE_AUDIOCD

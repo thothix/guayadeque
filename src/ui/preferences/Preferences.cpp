@@ -209,14 +209,13 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
     m_ImageList->Add( guImage( guIMAGE_INDEX_pref_lyrics ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_pref_online_services ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_pref_podcasts ) );
-    m_ImageList->Add( guImage( guIMAGE_INDEX_pref_jamendo ) );
+    //m_ImageList->Add( guImage( guIMAGE_INDEX_pref_magnatune ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_pref_magnatune ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_pref_links ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_pref_commands ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_pref_copy_to ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_pref_accelerators ) );
     m_MainNotebook->AssignImageList( m_ImageList );
-
 
 	m_GenPanel = new wxScrolledWindow( m_MainNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL|wxTAB_TRAVERSAL );
 	m_MainNotebook->AddPage( m_GenPanel, _("General"), true, 0 );
@@ -262,34 +261,29 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
 	m_MainNotebook->SetPageImage( 8, 8 );
 	m_PodcastPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
-	m_JamendoPanel = new wxScrolledWindow( m_MainNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL|wxTAB_TRAVERSAL );
-	m_MainNotebook->AddPage( m_JamendoPanel, wxT("Jamendo"), false );
-	m_MainNotebook->SetPageImage( 9, 9 );
-	m_JamendoPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
-
 	m_MagnatunePanel = new wxScrolledWindow( m_MainNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL|wxTAB_TRAVERSAL );
 	m_MainNotebook->AddPage( m_MagnatunePanel, wxT("Magnatune"), false );
-	m_MainNotebook->SetPageImage( 10, 10 );
+	m_MainNotebook->SetPageImage( 9, 9 );
 	m_MagnatunePanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
 	m_LinksPanel = new wxScrolledWindow( m_MainNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL|wxTAB_TRAVERSAL );
 	m_MainNotebook->AddPage( m_LinksPanel, _("Links"), false );
-	m_MainNotebook->SetPageImage( 11, 11 );
+	m_MainNotebook->SetPageImage( 10, 10 );
 	m_LinksPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
 	m_CmdPanel = new wxScrolledWindow( m_MainNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL|wxTAB_TRAVERSAL );
 	m_MainNotebook->AddPage( m_CmdPanel, _( "Commands" ), false );
-	m_MainNotebook->SetPageImage( 12, 12 );
+	m_MainNotebook->SetPageImage( 11, 11 );
 	m_CmdPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
 	m_CopyPanel = new wxScrolledWindow( m_MainNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL|wxTAB_TRAVERSAL );
 	m_MainNotebook->AddPage( m_CopyPanel, _( "Copy to" ), false );
-	m_MainNotebook->SetPageImage( 13, 13 );
+	m_MainNotebook->SetPageImage( 12, 12 );
 	m_CopyPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
 	m_AccelPanel = new wxScrolledWindow( m_MainNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL|wxTAB_TRAVERSAL );
 	m_MainNotebook->AddPage( m_AccelPanel, _( "Shortcuts" ), false );
-	m_MainNotebook->SetPageImage( 14, 14 );
+	m_MainNotebook->SetPageImage( 13, 13 );
 	m_AccelPanel->SetScrollRate( PREFERENCES_SCROLL_STEP, PREFERENCES_SCROLL_STEP );
 
     if( pagenum == guPREFERENCE_PAGE_LASTUSED )
@@ -331,10 +325,6 @@ guPrefDialog::guPrefDialog( wxWindow* parent, guDbLibrary * db, int pagenum )
 
         case guPREFERENCE_PAGE_PODCASTS :
             BuildPodcastsPage();
-            break;
-
-        case guPREFERENCE_PAGE_JAMENDO :
-            BuildJamendoPage();
             break;
 
         case guPREFERENCE_PAGE_MAGNATUNE :
@@ -424,7 +414,6 @@ void guPrefDialog::OnPageChanged( wxCommandEvent &event )
         case guPREFERENCE_PAGE_LYRICS           : BuildLyricsPage();        break;
         case guPREFERENCE_PAGE_ONLINE           : BuildOnlinePage();        break;
         case guPREFERENCE_PAGE_PODCASTS         : BuildPodcastsPage();      break;
-        case guPREFERENCE_PAGE_JAMENDO          : BuildJamendoPage();       break;
         case guPREFERENCE_PAGE_MAGNATUNE        : BuildMagnatunePage();     break;
         case guPREFERENCE_PAGE_LINKS            : BuildLinksPage();         break;
         case guPREFERENCE_PAGE_COMMANDS         : BuildCommandsPage();      break;
@@ -1690,98 +1679,6 @@ void guPrefDialog::BuildPodcastsPage()
 }
 
 // -------------------------------------------------------------------------------- //
-void guPrefDialog::BuildJamendoPage()
-{
-    if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_JAMENDO )
-        return;
-
-    m_VisiblePanels |= guPREFERENCE_PAGE_FLAG_JAMENDO;
-
-    //
-    // Jamendo
-    //
-    wxBoxSizer * JamMainSizer = new wxBoxSizer( wxVERTICAL );
-
-    wxStaticBoxSizer * JamGenresSizer = new wxStaticBoxSizer( new wxStaticBox( m_JamendoPanel, wxID_ANY, wxString::Format(" %s ", _("Genres"))), wxHORIZONTAL );
-
-    wxArrayString JamendoGenres;
-    int Index = 0;
-    do {
-        wxString GenreName = TStringTowxString( TagLib::ID3v1::genre( Index++ ) );
-
-        if( !GenreName.IsEmpty() )
-            JamendoGenres.Add( GenreName );
-        else
-            break;
-
-    } while( true );
-
-    m_LastJamendoGenres = m_Config->ReadANum( CONFIG_KEY_JAMENDO_GENRES_GENRE, 0, CONFIG_PATH_JAMENDO_GENRES );
-    guLogMessage( wxT( "Read %li jamendo genres" ), m_LastJamendoGenres.Count() );
-
-    m_JamGenresListBox = new wxCheckListBox( m_JamendoPanel, wxID_ANY, wxDefaultPosition, wxSize( -1, guPREFERENCES_LISTBOX_HEIGHT ), JamendoGenres, 0 );
-    int Count = m_LastJamendoGenres.Count();
-    for( int Index = 0; Index < Count; Index++ )
-    {
-        m_JamGenresListBox->Check( m_LastJamendoGenres[ Index ] );
-        //guLogMessage( wxT( "Checking %i" ), m_LastJamendoGenres[ Index ] );
-    }
-    JamGenresSizer->Add( m_JamGenresListBox, 1, wxALL|wxEXPAND, 5 );
-
-    wxBoxSizer * JamGenresBtnSizer = new wxBoxSizer( wxVERTICAL );
-
-    m_JamSelAllBtn = new wxButton( m_JamendoPanel, wxID_ANY, _( "All" ), wxDefaultPosition, wxDefaultSize, 0 );
-    JamGenresBtnSizer->Add( m_JamSelAllBtn, 0, wxTOP|wxBOTTOM|wxLEFT, 5 );
-
-    m_JamSelNoneBtn = new wxButton( m_JamendoPanel, wxID_ANY, _( "None" ), wxDefaultPosition, wxDefaultSize, 0 );
-    JamGenresBtnSizer->Add( m_JamSelNoneBtn, 0, wxTOP|wxBOTTOM|wxLEFT, 5 );
-
-    m_JamInvertBtn = new wxButton( m_JamendoPanel, wxID_ANY, _("Invert"), wxDefaultPosition, wxDefaultSize, 0 );
-    JamGenresBtnSizer->Add( m_JamInvertBtn, 0, wxTOP|wxBOTTOM|wxLEFT, 5 );
-
-    JamGenresSizer->Add( JamGenresBtnSizer, 0, wxEXPAND, 5 );
-
-    JamMainSizer->Add( JamGenresSizer, 1, wxEXPAND|wxALL, 5 );
-
-    wxStaticBoxSizer * JamOtherSizer = new wxStaticBoxSizer( new wxStaticBox( m_JamendoPanel, wxID_ANY, wxEmptyString ), wxVERTICAL );
-
-    wxFlexGridSizer * JamFlexSizer = new wxFlexGridSizer( 2, 0, 0 );
-    JamFlexSizer->AddGrowableCol( 1 );
-    JamFlexSizer->SetFlexibleDirection( wxBOTH );
-    JamFlexSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-
-    wxStaticText * JamFormatLabel = new wxStaticText( m_JamendoPanel, wxID_ANY, _( "Audio format:" ), wxDefaultPosition, wxDefaultSize, 0 );
-    JamFormatLabel->Wrap( -1 );
-    JamFlexSizer->Add( JamFormatLabel, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxALIGN_RIGHT, 5 );
-
-    wxArrayString m_JamFormatChoices;
-    m_JamFormatChoices.Add( wxT( "mp3" ) );
-    m_JamFormatChoices.Add( wxT( "ogg" ) );
-    m_JamFormatChoice = new wxChoice( m_JamendoPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_JamFormatChoices, 0 );
-    m_JamFormatChoice->SetSelection( m_Config->ReadNum( CONFIG_KEY_JAMENDO_AUDIOFORMAT, 1, CONFIG_PATH_JAMENDO ) );
-    JamFlexSizer->Add( m_JamFormatChoice, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxRIGHT|wxLEFT, 5 );
-
-    wxStaticText * JamBTCmdLabel = new wxStaticText( m_JamendoPanel, wxID_ANY, _( "Torrent command:" ), wxDefaultPosition, wxDefaultSize, 0 );
-    JamBTCmdLabel->Wrap( -1 );
-    JamFlexSizer->Add( JamBTCmdLabel, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxLEFT|wxALIGN_RIGHT, 5 );
-
-    m_JamBTCmd = new wxTextCtrl( m_JamendoPanel, wxID_ANY, m_Config->ReadStr( CONFIG_KEY_JAMENDO_TORRENT_COMMAND, wxT( "transmission" ), CONFIG_PATH_JAMENDO ), wxDefaultPosition, wxDefaultSize, 0 );
-    JamFlexSizer->Add( m_JamBTCmd, 1, wxEXPAND|wxALL, 5 );
-
-    JamOtherSizer->Add( JamFlexSizer, 1, wxEXPAND, 5 );
-
-    JamMainSizer->Add( JamOtherSizer, 0, wxEXPAND|wxALL, 5 );
-
-    m_JamendoPanel->SetSizer( JamMainSizer );
-    m_JamendoPanel->Layout();
-    JamMainSizer->FitInside( m_JamendoPanel );
-
-    m_JamSelAllBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnJamendoSelectAll, this );
-    m_JamSelNoneBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnJamendoSelectNone, this );
-    m_JamInvertBtn->Bind( wxEVT_BUTTON, &guPrefDialog::OnJamendoInvertSelection, this );
-}
-
-// -------------------------------------------------------------------------------- //
 void guPrefDialog::BuildMagnatunePage()
 {
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_MAGNATUNE )
@@ -2478,7 +2375,6 @@ void guPrefDialog::SaveSettings()
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_LIBRARY )
     {
         guMediaCollectionArray  OtherCollections;
-        m_Config->LoadCollections( &OtherCollections, guMEDIA_COLLECTION_TYPE_JAMENDO );
         m_Config->LoadCollections( &OtherCollections, guMEDIA_COLLECTION_TYPE_MAGNATUNE );
 
         m_Config->SaveCollections( &m_Collections );
@@ -2586,36 +2482,6 @@ void guPrefDialog::SaveSettings()
         m_Config->WriteStr( CONFIG_KEY_LYRICS_FONT, m_LyricFontPicker->GetSelectedFont().GetNativeFontInfoDesc(), CONFIG_PATH_LYRICS );
         m_Config->WriteNum( CONFIG_KEY_LYRICS_TEXT_ALIGN, m_LyricsAlignChoice->GetSelection(), CONFIG_PATH_LYRICS );
         m_Config->WriteAStr( CONFIG_KEY_LYRICS_DISGENRE, m_LyricDisabledGenres, CONFIG_PATH_LYRICS_DISGENRES );
-    }
-
-    if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_JAMENDO )
-    {
-        wxArrayInt EnabledGenres;
-        int Count = m_JamGenresListBox->GetCount();
-        for( int Index = 0; Index < Count; Index++ )
-        {
-            if( m_JamGenresListBox->IsChecked( Index ) )
-                EnabledGenres.Add( Index );
-        }
-
-        m_Config->WriteANum( CONFIG_KEY_JAMENDO_GENRES_GENRE, EnabledGenres, CONFIG_PATH_JAMENDO_GENRES );
-        bool DoUpgrade = ( EnabledGenres.Count() != m_LastJamendoGenres.Count() );
-        if( !DoUpgrade )
-        {
-            int Count = EnabledGenres.Count();
-            for( int Index = 0; Index < Count; Index++ )
-            {
-                if( m_LastJamendoGenres.Index( EnabledGenres[ Index ] ) == wxNOT_FOUND )
-                {
-                    DoUpgrade = true;
-                    break;
-                }
-            }
-        }
-
-        m_Config->WriteBool( CONFIG_KEY_JAMENDO_NEED_UPGRADE, DoUpgrade, CONFIG_PATH_JAMENDO );
-        m_Config->WriteNum( CONFIG_KEY_JAMENDO_AUDIOFORMAT, m_JamFormatChoice->GetSelection(), CONFIG_PATH_JAMENDO );
-        m_Config->WriteStr( CONFIG_KEY_JAMENDO_TORRENT_COMMAND, m_JamBTCmd->GetValue(), CONFIG_PATH_JAMENDO );
     }
 
     if( m_VisiblePanels & guPREFERENCE_PAGE_FLAG_MAGNATUNE )
@@ -3678,30 +3544,6 @@ void guPrefDialog::OnOnlineProxyEnabledChanged( wxCommandEvent &event )
     m_OnlineProxyPortTextCtrl->Enable( Enabled );;
     m_OnlineProxyUserTextCtrl->Enable( Enabled );;
     m_OnlineProxyPasswdTextCtrl->Enable( Enabled );;
-}
-
-// -------------------------------------------------------------------------------- //
-void guPrefDialog::OnJamendoSelectAll( wxCommandEvent& event )
-{
-    int Count = m_JamGenresListBox->GetCount();
-    for( int Index = 0; Index < Count; Index++ )
-        m_JamGenresListBox->Check( Index );
-}
-
-// -------------------------------------------------------------------------------- //
-void guPrefDialog::OnJamendoSelectNone( wxCommandEvent& event )
-{
-    int Count = m_JamGenresListBox->GetCount();
-    for( int Index = 0; Index < Count; Index++ )
-        m_JamGenresListBox->Check( Index, false );
-}
-
-// -------------------------------------------------------------------------------- //
-void guPrefDialog::OnJamendoInvertSelection( wxCommandEvent& event )
-{
-    int Count = m_JamGenresListBox->GetCount();
-    for( int Index = 0; Index < Count; Index++ )
-        m_JamGenresListBox->Check( Index, !m_JamGenresListBox->IsChecked( Index ) );
 }
 
 // -------------------------------------------------------------------------------- //

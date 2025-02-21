@@ -95,7 +95,6 @@ namespace Guayadeque {
 #include "./images/pref_podcasts.h"
 #include "./images/pref_record.h"
 #include "./images/pref_crossfader.h"
-#include "./images/pref_jamendo.h"
 #include "./images/pref_magnatune.h"
 #include "./images/pref_accelerators.h"
 //
@@ -104,7 +103,6 @@ namespace Guayadeque {
 #include "./images/loc_net_radio.h"
 #include "./images/loc_podcast.h"
 #include "./images/loc_magnatune.h"
-#include "./images/loc_jamendo.h"
 #include "./images/loc_lastfm.h"
 #include "./images/loc_lyrics.h"
 //
@@ -275,7 +273,6 @@ guImage_Item guImage_Items[] = {
     GUIMAGE( guImage_pref_podcasts,                 wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_pref_record,                   wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_pref_crossfader,		        wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_pref_jamendo,		            wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_pref_magnatune,		        wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_pref_accelerators,		        wxBITMAP_TYPE_PNG ),
     //
@@ -284,7 +281,6 @@ guImage_Item guImage_Items[] = {
     GUIMAGE( guImage_loc_net_radio,	                wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_loc_podcast,	                wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_loc_magnatune,	                wxBITMAP_TYPE_PNG ),
-    GUIMAGE( guImage_loc_jamendo,	                wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_loc_lastfm,	                wxBITMAP_TYPE_PNG ),
     GUIMAGE( guImage_loc_lyrics,			        wxBITMAP_TYPE_PNG ),
     //

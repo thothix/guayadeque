@@ -36,7 +36,6 @@
 #include "DbLibrary.h"
 #include "DbCache.h"
 #include "FileBrowser.h"
-#include "Jamendo.h"
 #include "LastFM.h"
 #include "LastFMPanel.h"
 #include "LibPanel.h"
@@ -78,12 +77,11 @@ namespace Guayadeque {
 #define     guPANEL_MAIN_PODCASTS           ( 1 << 8 )
 #define     guPANEL_MAIN_ALBUMBROWSER       ( 1 << 9 )
 #define     guPANEL_MAIN_FILEBROWSER        ( 1 << 10 )
-#define     guPANEL_MAIN_JAMENDO            ( 1 << 11 )
-#define     guPANEL_MAIN_MAGNATUNE          ( 1 << 12 )
-#define     guPANEL_MAIN_LOCATIONS          ( 1 << 13 )
-#define     guPANEL_MAIN_SHOWCOVER          ( 1 << 14 )
-#define     guPANEL_MAIN_TREEVIEW           ( 1 << 15 )
-#define     guPANEL_MAIN_AUDIOCD            ( 1 << 16 )
+#define     guPANEL_MAIN_MAGNATUNE          ( 1 << 11 )
+#define     guPANEL_MAIN_LOCATIONS          ( 1 << 12 )
+#define     guPANEL_MAIN_SHOWCOVER          ( 1 << 13 )
+#define     guPANEL_MAIN_TREEVIEW           ( 1 << 14 )
+#define     guPANEL_MAIN_AUDIOCD            ( 1 << 15 )
 
 #define     guPANEL_MAIN_SELECTOR           ( guPANEL_MAIN_RADIOS | guPANEL_MAIN_LASTFM | guPANEL_MAIN_LYRICS | guPANEL_MAIN_PODCASTS )
 #define     guPANEL_MAIN_VISIBLE_DEFAULT    ( guPANEL_MAIN_PLAYERPLAYLIST | guPANEL_MAIN_PLAYERFILTERS | \

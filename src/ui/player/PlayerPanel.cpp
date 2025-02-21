@@ -1918,7 +1918,6 @@ void guPlayerPanel::SavePlayedTrack( const bool forcesave )
         {
             SupportedPlayCountTypes.Add( guTRACK_TYPE_DB );
             SupportedPlayCountTypes.Add( guTRACK_TYPE_IPOD );
-            SupportedPlayCountTypes.Add( guTRACK_TYPE_JAMENDO );
             SupportedPlayCountTypes.Add( guTRACK_TYPE_MAGNATUNE );
             SupportedPlayCountTypes.Add( guTRACK_TYPE_PODCAST );
         }

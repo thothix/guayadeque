@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-25 00:09-0300\n"
+"POT-Creation-Date: 2025-02-21 19:09-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2015,2017,2020-2021\n"
 "Language-Team: Danish (http://www.transifex.com/anonbeat/guayadeque/language/"
@@ -309,7 +309,7 @@ msgstr "Opdater omslag"
 #: ui/MainFrame.cpp:1265 ui/mediaviewer/library/DiBrowser.cpp:327
 #: ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1014
 #: ui/podcasts/PodcastsPanel.cpp:1752
 msgid "Update"
 msgstr "Opdater"
@@ -816,8 +816,8 @@ msgstr "Opdater radiostationslisterne"
 #: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:677
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1035
-#: ui/preferences/Preferences.cpp:1141 ui/podcasts/PodcastsPanel.cpp:1758
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1025
+#: ui/preferences/Preferences.cpp:1130 ui/podcasts/PodcastsPanel.cpp:1758
 msgid "Properties"
 msgstr "Egenskaber"
 
@@ -1027,35 +1027,35 @@ msgstr "Importer filer til samlingen"
 #: ui/locationpanel/LocationPanel.cpp:512 ui/jamendo/Jamendo.cpp:1114
 #: ui/MainFrame.cpp:1266 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1014
 msgid "Update the collection library"
 msgstr "Opdater bibliotekssamlingen"
 
 #: ui/locationpanel/LocationPanel.cpp:517 ui/jamendo/Jamendo.cpp:1117
 #: ui/MainFrame.cpp:1271 ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1027
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1017
 msgid "Rescan"
 msgstr "Skan igen"
 
 #: ui/locationpanel/LocationPanel.cpp:518 ui/jamendo/Jamendo.cpp:1117
 #: ui/MainFrame.cpp:1272 ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1027
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1017
 msgid "Rescan the collection library"
 msgstr "Skan bibliotekssamlingen igen"
 
 #: ui/locationpanel/LocationPanel.cpp:523 ui/jamendo/Jamendo.cpp:1120
 #: ui/MainFrame.cpp:1277 ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1030
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1020
 msgid "Search Covers"
 msgstr "Søg efter omslag"
 
 #: ui/locationpanel/LocationPanel.cpp:524 ui/jamendo/Jamendo.cpp:1120
 #: ui/MainFrame.cpp:1278 ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1030
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1020
 msgid "Search the collection missing covers"
 msgstr "Søg efter samlingens manglende omslag"
 
@@ -1074,7 +1074,7 @@ msgstr "Afmonter enheden"
 #: ui/locationpanel/LocationPanel.cpp:539 ui/jamendo/Jamendo.cpp:1125
 #: ui/MainFrame.cpp:1293 ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1035
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1025
 msgid "Show collection properties"
 msgstr "Vis samlingens egenskaber"
 
@@ -3549,6 +3549,14 @@ msgstr "Vis information om de valgte elementer"
 #: ui/statusbar/StatusBar.cpp:208
 msgid "Disable audioscrobbling"
 msgstr "Deaktiver audioscrobbling"
+
+#: ui/magnatune/Magnatune.cpp:1000 ui/magnatune/Magnatune.cpp:1007
+msgid "Download Albums"
+msgstr "Hent album"
+
+#: ui/magnatune/Magnatune.cpp:1000 ui/magnatune/Magnatune.cpp:1007
+msgid "Download the current selected album"
+msgstr "Hent det valgte album"
 
 #: ui/splash/SplashWin.cpp:83
 msgid "Please Donate!"

@@ -68,13 +68,6 @@ guMainApp::guMainApp() : wxApp()
         guLogMessage(wxT("Created the Radios folder"));
     }
 
-    if (!wxDirExists(guPATH_JAMENDO))
-    {
-        wxMkdir(guPATH_JAMENDO, 0770);
-        wxMkdir(guPATH_JAMENDO_COVERS, 0770);
-        guLogMessage(wxT("Created the Jamendo folder"));
-    }
-
     if (!wxDirExists(guPATH_MAGNATUNE))
     {
         wxMkdir(guPATH_MAGNATUNE, 0770);

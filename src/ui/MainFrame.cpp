@@ -261,7 +261,6 @@ void guMainFrame::InitAttributes(guDbCache * dbcache)
     m_Db = nullptr;
     m_DbCache = dbcache;
     m_DbPodcasts = NULL;
-//    m_JamendoDb = NULL;
 //    m_MagnatuneDb = NULL;
     m_CopyToThread = NULL;
     m_LoadLayoutPending = wxNOT_FOUND;
@@ -315,15 +314,6 @@ bool guMainFrame::LoadMediaCollections(guConfig * Config)
         MediaCollection->m_CoverWords.Add( wxT( "cover" ) );
         MediaCollection->m_CoverWords.Add( wxT( "front" ) );
         MediaCollection->m_CoverWords.Add( wxT( "folder" ) );
-        m_Collections.Add( MediaCollection );
-        NeedSaveCollections = true;
-    }
-
-    if ( !Config->LoadCollections( &m_Collections, guMEDIA_COLLECTION_TYPE_JAMENDO ) )
-    {
-        guMediaCollection * MediaCollection = new guMediaCollection( guMEDIA_COLLECTION_TYPE_JAMENDO );
-        MediaCollection->m_Name = wxT( "Jamendo" );
-        MediaCollection->m_UniqueId = wxT( "Jamendo" );
         m_Collections.Add( MediaCollection );
         NeedSaveCollections = true;
     }
@@ -489,7 +479,6 @@ void guMainFrame::BindControls()
     Bind( wxEVT_MENU, &guMainFrame::OnAudioScrobbleUpdate, this, ID_AUDIOSCROBBLE_UPDATED );
 
     //Bind( wxEVT_MENU, &guMainFrame::LibraryUpdated, this, ID_LIBRARY_UPDATED );
-    //Bind( wxEVT_MENU, &guMainFrame::OnJamendoUpdated, this, ID_JAMENDO_UPDATE_FINISHED );
     //Bind( wxEVT_MENU, &guMainFrame::OnMagnatuneUpdated, this, ID_MAGNATUNE_UPDATE_FINISHED );
     //Bind( wxEVT_MENU, &guMainFrame::DoLibraryClean, this, ID_LIBRARY_DOCLEANDB );
     //Bind( wxEVT_MENU, &guMainFrame::LibraryCleanFinished, this, ID_LIBRARY_CLEANFINISHED );
@@ -640,7 +629,6 @@ void guMainFrame::UnbindControls()
 
     //Unbind( wxEVT_ICONIZE, &guMainFrame::OnIconizeWindow, this );
     //Unbind( wxEVT_MENU, &guMainFrame::LibraryUpdated, this, ID_LIBRARY_UPDATED );
-    //Unbind( wxEVT_MENU, &guMainFrame::OnJamendoUpdated, this, ID_JAMENDO_UPDATE_FINISHED );
     //Unbind( wxEVT_MENU, &guMainFrame::OnMagnatuneUpdated, this, ID_MAGNATUNE_UPDATE_FINISHED );
     //Unbind( wxEVT_MENU, &guMainFrame::DoLibraryClean, this, ID_LIBRARY_DOCLEANDB );
     //Unbind( wxEVT_MENU, &guMainFrame::LibraryCleanFinished, this, ID_LIBRARY_CLEANFINISHED );
@@ -1041,11 +1029,8 @@ void guMainFrame::CreateCollectionsMenu( wxMenu * menu )
     CollectionBaseCommand = ID_COLLECTIONS_BASE;
     for ( int Index = 0; Index < Count; Index++ )
     {
-        if ( ( m_Collections[ Index ].m_Type == guMEDIA_COLLECTION_TYPE_JAMENDO ) ||
-            ( m_Collections[ Index ].m_Type == guMEDIA_COLLECTION_TYPE_MAGNATUNE ) )
-        {
+        if (m_Collections[Index].m_Type == guMEDIA_COLLECTION_TYPE_MAGNATUNE)
             CreateCollectionMenu( menu, m_Collections[ Index ], CollectionBaseCommand, m_Collections[ Index ].m_Type );
-        }
         CollectionBaseCommand += guCOLLECTION_ACTION_COUNT;
     }
 
@@ -2323,10 +2308,6 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                             MediaViewer = ( guMediaViewer * ) new guMediaViewerLibrary( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel );
                             break;
 
-                        case guMEDIA_COLLECTION_TYPE_JAMENDO :
-                            MediaViewer = ( guMediaViewer * ) new guMediaViewerJamendo( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel );
-                            break;
-
                         case guMEDIA_COLLECTION_TYPE_MAGNATUNE :
                             MediaViewer = ( guMediaViewer * ) new guMediaViewerMagnatune( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel );
                             break;
@@ -2417,12 +2398,6 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
             {
                 wxCommandEvent CmdEvent( wxEVT_MENU, ID_MENU_PREFERENCES );
                 CmdEvent.SetInt( guPREFERENCE_PAGE_LIBRARY );
-                AddPendingEvent( CmdEvent );
-            }
-            else if ( Collection.m_Type == guMEDIA_COLLECTION_TYPE_JAMENDO )
-            {
-                wxCommandEvent CmdEvent( wxEVT_MENU, ID_MENU_PREFERENCES );
-                CmdEvent.SetInt( guPREFERENCE_PAGE_JAMENDO );
                 AddPendingEvent( CmdEvent );
             }
             else if ( Collection.m_Type == guMEDIA_COLLECTION_TYPE_MAGNATUNE )
@@ -4373,7 +4348,6 @@ void guMainFrame::OnConfigUpdated( wxCommandEvent &event )
         guConfig * Config = ( guConfig * ) guConfig::Get();
         guMediaCollectionArray  Collections;
         Config->LoadCollections( &Collections, guMEDIA_COLLECTION_TYPE_NORMAL );
-        Config->LoadCollections( &Collections, guMEDIA_COLLECTION_TYPE_JAMENDO );
         Config->LoadCollections( &Collections, guMEDIA_COLLECTION_TYPE_MAGNATUNE );
         Config->LoadCollections( &Collections, guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE );
         Config->LoadCollections( &Collections, guMEDIA_COLLECTION_TYPE_IPOD );

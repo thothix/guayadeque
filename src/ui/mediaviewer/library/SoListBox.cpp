@@ -899,9 +899,9 @@ void guSoListBox::UpdatedTracks( const guTrackArray * tracks )
 
         for ( int ItemIndex = 0; ItemIndex < ItemCount; ItemIndex++ )
         {
-            if( ( ( CurTrack.m_SongId == m_Items[ ItemIndex ].m_SongId ) &&
-                    ( ( CurTrack.m_Type == guTRACK_TYPE_JAMENDO ) || ( CurTrack.m_Type == guTRACK_TYPE_MAGNATUNE ) ) ) ||
-                ( CurTrack.m_FileName == m_Items[ ItemIndex ].m_FileName ) )
+            if (((CurTrack.m_SongId == m_Items[ItemIndex].m_SongId) &&
+                 (CurTrack.m_Type == guTRACK_TYPE_MAGNATUNE)) ||
+                 (CurTrack.m_FileName == m_Items[ItemIndex].m_FileName))
             {
                 m_Items[ ItemIndex ] = CurTrack;
                 RefreshRow( ItemIndex + m_ItemsFirst );

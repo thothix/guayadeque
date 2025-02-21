@@ -42,9 +42,6 @@ namespace Guayadeque {
 #define guPATH_PODCASTS                     guPATH_CONFIG wxT( "Podcasts/" )
 #define guPATH_PODCASTS_DBNAME              guPATH_PODCASTS wxT( "podcasts.db" )
 
-#define guPATH_JAMENDO                      guPATH_COLLECTIONS wxT( "Jamendo/" )
-#define guPATH_JAMENDO_COVERS               guPATH_JAMENDO wxT( "Covers/" )
-
 #define guPATH_MAGNATUNE                    guPATH_COLLECTIONS wxT( "Magnatune/" )
 #define guPATH_MAGNATUNE_COVERS             guPATH_MAGNATUNE wxT( "Covers/" )
 

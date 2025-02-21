@@ -36,7 +36,6 @@
 
 namespace Guayadeque {
 
-
 // -------------------------------------------------------------------------------- //
 // guMagnatuneLibrary
 // -------------------------------------------------------------------------------- //
@@ -289,7 +288,6 @@ void guMagnatunePanel::OnDownloadTrackAlbum( wxCommandEvent &event )
 }
 
 
-
 // -------------------------------------------------------------------------------- //
 // guMagnatuneAlbumBrowser
 // -------------------------------------------------------------------------------- //
@@ -316,6 +314,7 @@ void guMagnatuneAlbumBrowser::OnDownloadAlbum( wxCommandEvent &event )
         ( ( guMediaViewerMagnatune * ) m_MediaViewer )->DownloadAlbums( Albums );
     }
 }
+
 
 // -------------------------------------------------------------------------------- //
 // guMagnatuneTreePanel
@@ -370,8 +369,6 @@ void guMagnatuneTreePanel::OnDownloadTrackAlbum( wxCommandEvent &event )
 }
 
 
-
-
 // -------------------------------------------------------------------------------- //
 // guMagnatunePlayListPanel
 // -------------------------------------------------------------------------------- //
@@ -405,7 +402,6 @@ void guMagnatunePlayListPanel::OnDownloadTrackAlbum( wxCommandEvent &event )
 
     ( ( guMediaViewerMagnatune * ) m_MediaViewer )->DownloadAlbums( Albums );
 }
-
 
 
 // -------------------------------------------------------------------------------- //
@@ -477,6 +473,7 @@ guMagnatuneDownloadThread::ExitCode guMagnatuneDownloadThread::Entry()
     }
     return 0;
 }
+
 
 // -------------------------------------------------------------------------------- //
 // guMagnatuneUpdateThread
@@ -577,8 +574,6 @@ bool inline IsGenreEnabled( const wxArrayString &genrelist, const wxString &curr
     }
     return false;
 }
-
-
 
 // -------------------------------------------------------------------------------- //
 void guMagnatuneUpdateThread::AddGenres( const wxString &genres )
@@ -828,10 +823,8 @@ guMagnatuneUpdateThread::ExitCode guMagnatuneUpdateThread::Entry()
 }
 
 
-
-
 // -------------------------------------------------------------------------------- //
-//
+// guMediaViewerMagnatune
 // -------------------------------------------------------------------------------- //
 guMediaViewerMagnatune::guMediaViewerMagnatune( wxWindow * parent, guMediaCollection &mediacollection,
         const int basecmd, guMainFrame * mainframe, const int mode, guPlayerPanel * playerpanel ) :
@@ -862,7 +855,7 @@ guMediaViewerMagnatune::~guMediaViewerMagnatune()
 void guMediaViewerMagnatune::LoadMediaDb( void )
 {
     guLogMessage( wxT( "LoadMediaDb... MAGNATUNE..." ) );
-    m_Db = new guJamendoLibrary( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId + wxT( "/guayadeque.db" ) );
+    m_Db = new guMagnatuneLibrary( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId + wxT( "/guayadeque.db" ) );
     m_Db->SetMediaViewer( this );
 }
 
@@ -958,9 +951,7 @@ void guMediaViewerMagnatune::AddDownload( const int albumid, const wxString &art
     guMagnatuneDownloadThread * DownloadThread = new guMagnatuneDownloadThread( this, albumid, artist, album );
 
     if( !DownloadThread )
-    {
         guLogMessage( wxT( "Could not create the magnatune download thread" ) );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -979,7 +970,6 @@ void guMediaViewerMagnatune::EndUpdateThread( void )
 void guMediaViewerMagnatune::OnUpdateFinished( wxCommandEvent &event )
 {
     EndUpdateThread();
-
     LibraryUpdated();
 }
 
@@ -1113,9 +1103,7 @@ wxString guMediaViewerMagnatune::GetCoverName( const int albumid )
     wxString Artist;
     wxString Album;
     if( m_Db->GetAlbumInfo( albumid, &Album, &Artist, NULL ) )
-    {
         return wxString::Format( wxT( "%s-%s" ), Artist.c_str(), Album.c_str() );
-    }
     return wxEmptyString;
 }
 
@@ -1142,7 +1130,6 @@ void guMediaViewerMagnatune::SelectAlbumCover( const int albumid )
         SelCoverFile->Destroy();
     }
 }
-
 
 //<RESULT>
 //  <CC_AMOUNT>$</CC_AMOUNT>
@@ -1239,5 +1226,3 @@ void guMediaViewerMagnatune::EditProperties( void )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

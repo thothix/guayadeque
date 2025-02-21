@@ -81,7 +81,6 @@ guLocationTreeCtrl::guLocationTreeCtrl( wxWindow * parent, guMainFrame * mainfra
     m_ImageList->Add( guImage( guIMAGE_INDEX_loc_net_radio ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_loc_podcast ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_loc_magnatune ) );
-    m_ImageList->Add( guImage( guIMAGE_INDEX_loc_jamendo ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_loc_lastfm ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_tiny_shoutcast ) );
     m_ImageList->Add( guImage( guIMAGE_INDEX_loc_lyrics ) );
@@ -232,13 +231,6 @@ void guLocationTreeCtrl::ReloadItems( const bool loadstate )
             {
                 CurrentItem = AppendItem( m_LocalMusicId, Collection.m_Name, -1, -1,
                                           new guLocationItemData( CollectionBaseCommand, IsActive, Collection.m_UniqueId, guMEDIA_COLLECTION_TYPE_NORMAL ) );
-                break;
-            }
-
-            case guMEDIA_COLLECTION_TYPE_JAMENDO :
-            {
-                CurrentItem = AppendItem( m_OnlineMusicId, wxT( "Jamendo" ), 5, -1,
-                                          new guLocationItemData( CollectionBaseCommand, IsActive, Collection.m_UniqueId, guMEDIA_COLLECTION_TYPE_JAMENDO ) );
                 break;
             }
 

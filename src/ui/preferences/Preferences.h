@@ -66,12 +66,12 @@ namespace Guayadeque {
 #define  guPREFERENCE_PAGE_FLAG_LYRICS           ( 1 << 6 )
 #define  guPREFERENCE_PAGE_FLAG_ONLINE           ( 1 << 7 )
 #define  guPREFERENCE_PAGE_FLAG_PODCASTS         ( 1 << 8 )
-#define  guPREFERENCE_PAGE_FLAG_JAMENDO          ( 1 << 9 )
-#define  guPREFERENCE_PAGE_FLAG_MAGNATUNE        ( 1 << 10 )
-#define  guPREFERENCE_PAGE_FLAG_LINKS            ( 1 << 11 )
-#define  guPREFERENCE_PAGE_FLAG_COMMANDS         ( 1 << 12 )
-#define  guPREFERENCE_PAGE_FLAG_COPYTO           ( 1 << 13 )
-#define  guPREFERENCE_PAGE_FLAG_ACCELERATORS     ( 1 << 14 )
+// #define  guPREFERENCE_PAGE_FLAG_JAMENDO_DISABLED ( 1 << 9 )
+#define  guPREFERENCE_PAGE_FLAG_MAGNATUNE        ( 1 << 9 )
+#define  guPREFERENCE_PAGE_FLAG_LINKS            ( 1 << 10 )
+#define  guPREFERENCE_PAGE_FLAG_COMMANDS         ( 1 << 11 )
+#define  guPREFERENCE_PAGE_FLAG_COPYTO           ( 1 << 12 )
+#define  guPREFERENCE_PAGE_FLAG_ACCELERATORS     ( 1 << 13 )
 
 enum guPreference_Page {
     guPREFERENCE_PAGE_LASTUSED = -1,
@@ -84,7 +84,6 @@ enum guPreference_Page {
     guPREFERENCE_PAGE_LYRICS,
     guPREFERENCE_PAGE_ONLINE,
     guPREFERENCE_PAGE_PODCASTS,
-    guPREFERENCE_PAGE_JAMENDO,
     guPREFERENCE_PAGE_MAGNATUNE,
     guPREFERENCE_PAGE_LINKS,
     guPREFERENCE_PAGE_COMMANDS,
@@ -317,15 +316,6 @@ class guPrefDialog : public wxDialog
 
     wxCheckBox *                m_PodcastDeletePlayed;
 
-    wxScrolledWindow *          m_JamendoPanel;
-    wxCheckListBox *            m_JamGenresListBox;
-    wxButton *                  m_JamSelAllBtn;
-    wxButton *                  m_JamSelNoneBtn;
-    wxButton *                  m_JamInvertBtn;
-    wxChoice *                  m_JamFormatChoice;
-    wxTextCtrl *                m_JamBTCmd;
-    wxArrayInt                  m_LastJamendoGenres;
-
     wxScrolledWindow *          m_MagnatunePanel;
     wxCheckListBox *            m_MagGenresListBox;
     wxButton *                  m_MagSelAllBtn;
@@ -376,7 +366,6 @@ class guPrefDialog : public wxDialog
     void                        BuildLyricsPage();
     void                        BuildOnlinePage();
     void                        BuildPodcastsPage();
-    void                        BuildJamendoPage();
     void                        BuildMagnatunePage();
     void                        BuildLinksPage();
     void                        BuildCommandsPage();
@@ -453,10 +442,6 @@ class guPrefDialog : public wxDialog
 	void OnOnlineListBoxDClicked( wxCommandEvent &event );
 	void OnOnlineMinBitRateChanged( wxScrollEvent &event );
     void OnOnlineProxyEnabledChanged( wxCommandEvent &event );
-
-    void OnJamendoSelectAll( wxCommandEvent &event );
-    void OnJamendoSelectNone( wxCommandEvent &event );
-    void OnJamendoInvertSelection( wxCommandEvent &event );
 
     void OnMagnatuneSelectAll( wxCommandEvent &event );
     void OnMagnatuneSelectNone( wxCommandEvent &event );

@@ -131,15 +131,6 @@ namespace Guayadeque {
 #define CONFIG_KEY_IMPORT_FILES_WIDTH                    "Width"
 #define CONFIG_KEY_IMPORT_FILES_HEIGHT                   "Height"
 
-// Jamendo
-#define CONFIG_PATH_JAMENDO                              "jamendo"
-#define CONFIG_KEY_JAMENDO_AUDIOFORMAT                   "AudioFormat"
-#define CONFIG_KEY_JAMENDO_TORRENT_COMMAND               "TorrentCommand"
-#define CONFIG_KEY_JAMENDO_LAST_UPDATE                   "LastUpdate"
-#define CONFIG_KEY_JAMENDO_NEED_UPGRADE                  "NeedUpgrade"
-#define CONFIG_PATH_JAMENDO_GENRES                       "jamendo/genres"
-#define CONFIG_KEY_JAMENDO_GENRES_GENRE                  "Genre"
-
 // LastFm
 #define CONFIG_PATH_LASTFM                               "lastfm"
 #define CONFIG_KEY_LASTFM_USERNAME                       "UserName"

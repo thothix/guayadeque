@@ -49,8 +49,8 @@ namespace Guayadeque {
 #define     guLOCATION_ID_ALBUM_BROWSER         ( 1 << 2 )
 #define     guLOCATION_ID_PLAYLISTS             ( 1 << 3 )
 #define     guLOCATION_ID_FILE_BROWSER          ( 1 << 4 )
-#define     guLOCATION_ID_JAMENDO               ( 1 << 5 )
-#define     guLOCATION_ID_MAGNATUNE             ( 1 << 6 )
+//#define     guLOCATION_ID_JAMENDO_DISABLED      ( 1 << 5 )
+#define     guLOCATION_ID_MAGNATUNE             ( 1 << 5 )
 
 #define     guLOCATION_ID_MY_MUSIC              ( 1 << 15 )
 #define     guLOCATION_ID_PORTABLE_DEVICE       ( 1 << 16 )

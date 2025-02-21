@@ -364,12 +364,6 @@ void guPlayList::OnConfigUpdated( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-bool inline guIsJamendoFile( const wxString &filename )
-{
-    return filename.Find( wxT( "/api.jamendo.com/get2/" ) ) != wxNOT_FOUND;
-}
-
-// -------------------------------------------------------------------------------- //
 bool inline guIsMagnatuneFile( const wxString &filename )
 {
     return filename.Find( wxT( ".magnatune.com/all/" ) ) != wxNOT_FOUND;
@@ -396,13 +390,11 @@ void guPlayList::OnDropBegin( void )
 void guPlayList::OnDropFile( const wxString &filename )
 {
     guLogMessage( wxT( "Dropping '%s'" ), filename.c_str() );
-    if( guIsJamendoFile( filename ) || guIsMagnatuneFile( filename ) )
-    {
+    if (guIsMagnatuneFile(filename))
         AddPlayListItem( wxT( "http:/" ) + filename, guINSERT_AFTER_CURRENT_NONE, wxNOT_FOUND );
-    }
-    else if( guIsValidAudioFile( filename ) ||
-             guPlaylistFile::IsValidPlayList( filename ) ||
-             guCuePlaylistFile::IsValidFile( filename ) )
+    else if (guIsValidAudioFile(filename) ||
+             guPlaylistFile::IsValidPlayList(filename) ||
+             guCuePlaylistFile::IsValidFile(filename))
     {
         AddPlayListItem( filename, guINSERT_AFTER_CURRENT_NONE, wxNOT_FOUND );
     }
@@ -1579,39 +1571,6 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
         else
             guLogError( wxT( "File doesnt exist '%s'" ), filename.c_str() );
     }
-    else if( guIsJamendoFile( filename ) )
-    {
-        //http://api.jamendo.com/get2/stream/track/redirect/?id=594731&streamencoding=ogg2
-        Track.m_CoverId  = 0;
-        Track.m_SongName = filename;
-        //Track.m_AlbumName = FileName;
-        Track.m_Length   = 0;
-        Track.m_Year     = 0;
-        Track.m_Bitrate  = 0;
-        Track.m_Rating   = wxNOT_FOUND;
-
-        long Id;
-        FileName = filename;
-        wxString IdStr = FileName.Mid( FileName.Find( wxT( "/?id=" ) ) + 5 );
-        IdStr = IdStr.Mid( 0, IdStr.Find( wxT( "&" ) ) );
-        IdStr.ToLong( &Id );
-        if( Id )
-        {
-            guMediaViewer * JamendoMediaViewer = m_MainFrame->FindCollectionMediaViewer( wxT( "Jamendo" ) );
-            if( JamendoMediaViewer )
-            {
-                guJamendoLibrary * JamendoDb = ( guJamendoLibrary *  ) JamendoMediaViewer->GetDb();
-                if( JamendoDb )
-                    JamendoDb->FindTrackId( Id, &Track );
-            }
-            else if( m_PendingLoadIds.Index( wxT( "Jamendo" ) ) == wxNOT_FOUND )
-                m_PendingLoadIds.Add( wxT( "Jamendo" ) );
-        }
-
-        Track.m_Type     = guTRACK_TYPE_JAMENDO;
-        Track.m_FileName = FileName;
-        AddItem( Track, InsertPosition + wxMax( 0, pos ) );
-    }
     else if( guIsMagnatuneFile( filename ) )
     {
         FileName = filename;
@@ -2029,7 +1988,6 @@ void guPlayList::OnDeleteFromDrive( wxCommandEvent &event )
                     SelectedTracks.Add( new guTrack( Track ) );
 
                 if( Track.m_Type != guTRACK_TYPE_RADIOSTATION &&
-                    Track.m_Type != guTRACK_TYPE_JAMENDO &&
                     Track.m_Type != guTRACK_TYPE_MAGNATUNE )
                 {
                     if( !wxRemoveFile( Track.m_FileName ) )
@@ -2760,9 +2718,7 @@ void guPlayList::CheckPendingLoadItems( const wxString &uniqueid, guMediaViewer 
     if( !mediaviewer )
         return;
 
-    if( uniqueid == wxT( "Jamendo" ) )
-        Type = guTRACK_TYPE_JAMENDO;
-    else if( uniqueid == wxT( "Magnatune" ) )
+    if( uniqueid == wxT( "Magnatune" ) )
         Type = guTRACK_TYPE_MAGNATUNE;
     else
         return;
@@ -2779,47 +2735,29 @@ void guPlayList::CheckPendingLoadItems( const wxString &uniqueid, guMediaViewer 
         if( Track.m_Type == Type )
         {
             //guLogMessage( wxT( "Trying: '%s'" ), Track.m_FileName.c_str() );
-            if( Type == guTRACK_TYPE_JAMENDO )
+            FileName = Track.m_FileName;
+            FileName.Replace( wxT( " " ), wxT( "%20" ) );
+            wxString SearchStr = FileName;
+            int FoundPos;
+            if( ( FoundPos = SearchStr.Find( wxT( "@stream.magnatune" ) ) ) != wxNOT_FOUND )
             {
-                long Id;
-                FileName = Track.m_FileName;
-                wxString IdStr = FileName.Mid( FileName.Find( wxT( "/?id=" ) ) + 5 );
-                IdStr = IdStr.Mid( 0, IdStr.Find( wxT( "&" ) ) );
-                IdStr.ToLong( &Id );
-                if( Id )
-                {
-                    Db->FindTrackId( Id, &Track );
-                    Track.m_Type     = guTRACK_TYPE_JAMENDO;
-                    Track.m_FileName = FileName;
-                    Track.m_MediaViewer = mediaviewer;
-                }
+                SearchStr = SearchStr.Mid( FoundPos );
+                SearchStr.Replace( wxT( "@stream." ), wxT( "http://he3." ) );
+                SearchStr.Replace( wxT( "_nospeech" ), wxEmptyString );
             }
-            else
+            else if( ( FoundPos = SearchStr.Find( wxT( "@download.magnatune" ) ) ) != wxNOT_FOUND )
             {
-                FileName = Track.m_FileName;
-                FileName.Replace( wxT( " " ), wxT( "%20" ) );
-                wxString SearchStr = FileName;
-                int FoundPos;
-                if( ( FoundPos = SearchStr.Find( wxT( "@stream.magnatune" ) ) ) != wxNOT_FOUND )
-                {
-                    SearchStr = SearchStr.Mid( FoundPos );
-                    SearchStr.Replace( wxT( "@stream." ), wxT( "http://he3." ) );
-                    SearchStr.Replace( wxT( "_nospeech" ), wxEmptyString );
-                }
-                else if( ( FoundPos = SearchStr.Find( wxT( "@download.magnatune" ) ) ) != wxNOT_FOUND )
-                {
-                    SearchStr = SearchStr.Mid( FoundPos );
-                    SearchStr.Replace( wxT( "@download." ), wxT( "http://he3." ) );
-                    SearchStr.Replace( wxT( "_nospeech" ), wxEmptyString );
-                }
-
-                guLogMessage( wxT( "Searching for track '%s'" ), SearchStr.c_str() );
-
-                ( ( guMagnatuneLibrary * ) Db )->GetTrackId( SearchStr, &Track );
-                Track.m_Type     = guTRACK_TYPE_MAGNATUNE;
-                Track.m_FileName = FileName;
-                Track.m_MediaViewer = mediaviewer;
+                SearchStr = SearchStr.Mid( FoundPos );
+                SearchStr.Replace( wxT( "@download." ), wxT( "http://he3." ) );
+                SearchStr.Replace( wxT( "_nospeech" ), wxEmptyString );
             }
+
+            guLogMessage( wxT( "Searching for track '%s'" ), SearchStr.c_str() );
+
+            ( ( guMagnatuneLibrary * ) Db )->GetTrackId( SearchStr, &Track );
+            Track.m_Type     = guTRACK_TYPE_MAGNATUNE;
+            Track.m_FileName = FileName;
+            Track.m_MediaViewer = mediaviewer;
         }
     }
 }
