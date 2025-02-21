@@ -4,6 +4,15 @@ Guayadeque Music Player
 Changelog
 =========
 
+Unreleased (2025-03-XX)
+------------------
+
+### Enhancements
+  * Updated the Help menu link.
+
+### Removed
+  * Removed Jamendo support.
+
 0.6.5 (2025-02-20)
 ------------------
 
