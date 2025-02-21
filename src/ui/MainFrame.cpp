@@ -1984,7 +1984,7 @@ void guMainFrame::OnAbout( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guMainFrame::OnHelp( wxCommandEvent &event )
 {
-    guWebExecute( wxT( "https://github.com/anonbeat/guayadeque/wiki" ) );
+    guWebExecute( wxT( "https://github.com/thothix/guayadeque/wiki" ) );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -4633,5 +4633,3 @@ guUpdatePodcastsThread::ExitCode guUpdatePodcastsThread::Entry()
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
