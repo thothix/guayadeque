@@ -8,7 +8,7 @@
 # Benoit THIBAUD <frombenny@gmail.com>, 2011-2013
 # filochard, 2024
 #
-# Corrector : filochard
+# Corrector: filochard
 #
 msgid ""
 msgstr ""
