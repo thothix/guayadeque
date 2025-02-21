@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-25 00:09-0300\n"
+"POT-Creation-Date: 2025-02-21 19:09-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/"
@@ -29,8 +29,8 @@ msgstr "フォルダーを追加"
 msgid "Audio Scrobbling"
 msgstr "Scrobble(曲のデータ送信)"
 
-#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1472 ui/player/PlayList.cpp:93
-#: ui/player/PlayList.cpp:1842
+#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1457 ui/player/PlayList.cpp:93
+#: ui/player/PlayList.cpp:1801
 msgid "Clear the Playlist"
 msgstr "プレイリストを消去"
 
@@ -48,7 +48,7 @@ msgstr "フォーラムにアクセス"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
-#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1734
+#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1693
 msgid "Edit Labels"
 msgstr "ラベルを編集"
 
@@ -94,7 +94,7 @@ msgstr "キューに追加（アルバムの後）"
 msgid "Enqueue After Artist"
 msgstr "キューに追加（アーティストの後）"
 
-#: misc/Accelerators.cpp:121 ui/MainFrame.cpp:1387
+#: misc/Accelerators.cpp:121 ui/MainFrame.cpp:1372
 msgid "Full Screen"
 msgstr "フルスクリーン"
 
@@ -102,14 +102,14 @@ msgstr "フルスクリーン"
 msgid "Gapless/Crossfading"
 msgstr "クロスフェード"
 
-#: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1572
-#: ui/MainFrame.cpp:1615
+#: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1557
+#: ui/MainFrame.cpp:1600
 msgid "Help"
 msgstr "ヘルプ"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:337
 #: ui/filebrowser/FileBrowser.cpp:963 ui/taskbar/TaskBar.cpp:114
-#: ui/MainFrame.cpp:1456 ui/mediaviewer/library/DiBrowser.cpp:264
+#: ui/MainFrame.cpp:1441 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
 #: ui/mediaviewer/library/ArListBox.cpp:152
@@ -141,28 +141,28 @@ msgstr "全曲を再生"
 msgid "Play/Pause"
 msgstr "再生/一時停止"
 
-#: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1053 ui/MainFrame.cpp:1884
+#: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1038 ui/MainFrame.cpp:1869
 msgid "Play Stream"
 msgstr "ストリームを再生"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:322
-#: ui/filebrowser/FileBrowser.cpp:948 ui/MainFrame.cpp:1414
-#: ui/MainFrame.cpp:4240 ui/mediaviewer/library/DiBrowser.cpp:249
+#: ui/filebrowser/FileBrowser.cpp:948 ui/MainFrame.cpp:1399
+#: ui/MainFrame.cpp:4215 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
-#: ui/player/PlayList.cpp:1710 onlinelinks/OnlineLinks.cpp:68
+#: ui/player/PlayList.cpp:1669 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
 msgstr "設定"
 
-#: misc/Accelerators.cpp:129 ui/MainFrame.cpp:1106
+#: misc/Accelerators.cpp:129 ui/MainFrame.cpp:1091
 msgid "Quit"
 msgstr "終了"
 
-#: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1519
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1836
+#: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1504
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1795
 msgid "Shuffle the Playlist"
 msgstr "再生リストをランダム化"
 
@@ -186,7 +186,7 @@ msgstr "全曲リピート"
 msgid "Repeat Current Track"
 msgstr "1曲リピート"
 
-#: misc/Accelerators.cpp:140 ui/MainFrame.cpp:1307 ui/MainFrame.cpp:3590
+#: misc/Accelerators.cpp:140 ui/MainFrame.cpp:1292 ui/MainFrame.cpp:3565
 msgid "Save Layout"
 msgstr "レイアウトを保存"
 
@@ -206,13 +206,13 @@ msgstr "レイアウトを保存"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1821
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1780
 msgid "Save to Playlist"
 msgstr "プレイリストに保存"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
-#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1775
-#: ui/player/PlayList.cpp:2319
+#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1734
+#: ui/player/PlayList.cpp:2277
 msgid "Search"
 msgstr "検索"
 
@@ -288,15 +288,15 @@ msgstr "前へ"
 msgid "Skip Previous Album"
 msgstr "前のアルバムへ"
 
-#: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1513
+#: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1498
 msgid "Smart Play"
 msgstr "スマート再生"
 
-#: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1460
+#: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1445
 msgid "Stop"
 msgstr "停止"
 
-#: misc/Accelerators.cpp:166 ui/MainFrame.cpp:1465
+#: misc/Accelerators.cpp:166 ui/MainFrame.cpp:1450
 msgid "Stop at End"
 msgstr "最後まで再生して停止"
 
@@ -304,14 +304,13 @@ msgstr "最後まで再生して停止"
 msgid "Update Covers"
 msgstr "カバーをアップデート"
 
-#: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:333
-#: ui/locationpanel/LocationPanel.cpp:371
-#: ui/locationpanel/LocationPanel.cpp:511 ui/filebrowser/FileBrowser.cpp:410
-#: ui/jamendo/Jamendo.cpp:1114 ui/MainFrame.cpp:991 ui/MainFrame.cpp:1029
-#: ui/MainFrame.cpp:1265 ui/mediaviewer/library/DiBrowser.cpp:327
-#: ui/mediaviewer/MediaViewer.cpp:932
+#: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
+#: ui/locationpanel/LocationPanel.cpp:363
+#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:410
+#: ui/MainFrame.cpp:979 ui/MainFrame.cpp:1017 ui/MainFrame.cpp:1250
+#: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1014
 #: ui/podcasts/PodcastsPanel.cpp:1752
 msgid "Update"
 msgstr "更新"
@@ -324,11 +323,11 @@ msgstr "強制的に更新"
 msgid "Update Podcasts"
 msgstr "Podcastを更新"
 
-#: misc/Accelerators.cpp:171 ui/MainFrame.cpp:1542
+#: misc/Accelerators.cpp:171 ui/MainFrame.cpp:1527
 msgid "Volume Down"
 msgstr "音量を下げる"
 
-#: misc/Accelerators.cpp:172 ui/MainFrame.cpp:1537
+#: misc/Accelerators.cpp:172 ui/MainFrame.cpp:1522
 msgid "Volume Up"
 msgstr "音量を上げる"
 
@@ -372,7 +371,7 @@ msgstr "Return"
 msgid "Enter"
 msgstr "Enter"
 
-#: misc/Accelerators.cpp:339 ui/preferences/Preferences.cpp:1443
+#: misc/Accelerators.cpp:339 ui/preferences/Preferences.cpp:1432
 msgid "Left"
 msgstr "左"
 
@@ -380,7 +379,7 @@ msgstr "左"
 msgid "Up"
 msgstr "上"
 
-#: misc/Accelerators.cpp:345 ui/preferences/Preferences.cpp:1445
+#: misc/Accelerators.cpp:345 ui/preferences/Preferences.cpp:1434
 msgid "Right"
 msgstr "右"
 
@@ -424,7 +423,7 @@ msgid "Separator"
 msgstr "Separator"
 
 #: misc/Accelerators.cpp:395 ui/mediaviewer/library/SoListBox.cpp:585
-#: ui/player/PlayList.cpp:1806
+#: ui/player/PlayList.cpp:1765
 msgid "Select"
 msgstr "選択"
 
@@ -440,7 +439,7 @@ msgstr "実行"
 msgid "Snapshot"
 msgstr "スナップショット"
 
-#: misc/Accelerators.cpp:401 ui/preferences/Preferences.cpp:373
+#: misc/Accelerators.cpp:401 ui/preferences/Preferences.cpp:363
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -452,15 +451,15 @@ msgstr "メニュー"
 msgid "Capital"
 msgstr "大文字"
 
-#: MainApp.cpp:396
+#: MainApp.cpp:389
 msgid "Another program instance is already running."
 msgstr ""
 
-#: MainApp.cpp:396
+#: MainApp.cpp:389
 msgid "Do you want to continue with the program?"
 msgstr ""
 
-#: MainApp.cpp:397 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
@@ -473,7 +472,7 @@ msgstr "確認"
 
 #: db/DbLibrary.cpp:269 db/DbLibrary.cpp:281 db/DbLibrary.cpp:1725
 #: db/DbLibrary.cpp:1738 db/DbLibrary.cpp:1799 db/DbLibrary.cpp:1812
-#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1377
+#: ui/player/PlayerPanel.cpp:1377
 msgid "Unknown"
 msgstr "不明"
 
@@ -496,8 +495,7 @@ msgstr "スマート再生リストを作成"
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
 #: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
-#: ui/preferences/Preferences.cpp:1733 ui/preferences/Preferences.cpp:1828
-#: ui/player/PlayerFilters.cpp:107
+#: ui/preferences/Preferences.cpp:1725 ui/player/PlayerFilters.cpp:107
 msgid "All"
 msgstr "すべて"
 
@@ -513,9 +511,9 @@ msgstr "許可"
 msgid "Deny"
 msgstr "拒否"
 
-#: info/smartmode/SmartMode.cpp:448 ui/preferences/Preferences.cpp:733
-#: ui/preferences/Preferences.cpp:1736 ui/preferences/Preferences.cpp:1831
-#: ui/preferences/Preferences.cpp:1854 ui/player/PlayerFilters.cpp:122
+#: info/smartmode/SmartMode.cpp:448 ui/preferences/Preferences.cpp:722
+#: ui/preferences/Preferences.cpp:1728 ui/preferences/Preferences.cpp:1751
+#: ui/player/PlayerFilters.cpp:122
 msgid "None"
 msgstr "なし"
 
@@ -590,14 +588,14 @@ msgstr "ウェブで歌詞を探す"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1788
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1747
 #, fuzzy
 msgid "Artist"
 msgstr "アーティスト"
 
 #: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:388
-#: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:851
-#: ui/player/PlayList.cpp:1785
+#: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:840
+#: ui/player/PlayList.cpp:1744
 msgid "Track"
 msgstr "曲"
 
@@ -655,8 +653,8 @@ msgstr "歌詞ソースエディタ"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
 #: ui/radios/RadioEditor.cpp:45 ui/radios/RadioPanel.cpp:311
-#: ui/preferences/Preferences.cpp:2014 ui/preferences/Preferences.cpp:2133
-#: ui/preferences/Preferences.cpp:2253
+#: ui/preferences/Preferences.cpp:1911 ui/preferences/Preferences.cpp:2030
+#: ui/preferences/Preferences.cpp:2150
 msgid "Name"
 msgstr "名前"
 
@@ -672,7 +670,7 @@ msgstr "埋め込み"
 msgid "File"
 msgstr "ファイル"
 
-#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2126
+#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2023
 msgid "Command"
 msgstr "コマンド"
 
@@ -728,207 +726,207 @@ msgstr "オプション・エディタが見つかりません"
 msgid "Tag:"
 msgstr "タグ:"
 
-#: ui/locationpanel/LocationPanel.cpp:96
+#: ui/locationpanel/LocationPanel.cpp:95
 msgid "Local Music"
 msgstr "ローカル・ミュージック"
 
-#: ui/locationpanel/LocationPanel.cpp:98
+#: ui/locationpanel/LocationPanel.cpp:97
 msgid "Online Music"
 msgstr "オンライン・ミュージック"
 
-#: ui/locationpanel/LocationPanel.cpp:100
+#: ui/locationpanel/LocationPanel.cpp:99
 msgid "Portable Devices"
 msgstr "携帯デバイス"
 
-#: ui/locationpanel/LocationPanel.cpp:102
+#: ui/locationpanel/LocationPanel.cpp:101
 msgid "Context"
 msgstr "コンテキスト"
 
-#: ui/locationpanel/LocationPanel.cpp:204 ui/radios/ShoutcastRadio.cpp:269
+#: ui/locationpanel/LocationPanel.cpp:203 ui/radios/ShoutcastRadio.cpp:269
 msgid "Radios"
 msgstr "ラジオ"
 
-#: ui/locationpanel/LocationPanel.cpp:209 ui/MainFrame.cpp:1039
-#: ui/MainFrame.cpp:2643 ui/MainFrame.cpp:3337
-#: ui/preferences/Preferences.cpp:261 ui/preferences/Preferences.cpp:1628
+#: ui/locationpanel/LocationPanel.cpp:208 ui/MainFrame.cpp:1027
+#: ui/MainFrame.cpp:2618 ui/MainFrame.cpp:3312
+#: ui/preferences/Preferences.cpp:260 ui/preferences/Preferences.cpp:1617
 #: ui/podcasts/PodcastsPanel.cpp:916
 msgid "Podcasts"
 msgstr "Podcast"
 
-#: ui/locationpanel/LocationPanel.cpp:214 ui/MainFrame.cpp:1059
-#: ui/MainFrame.cpp:2589
+#: ui/locationpanel/LocationPanel.cpp:213 ui/MainFrame.cpp:1044
+#: ui/MainFrame.cpp:2564
 #, fuzzy
 msgid "Audio CD"
 msgstr "音楽"
 
-#: ui/locationpanel/LocationPanel.cpp:276 ui/MainFrame.cpp:1361
-#: ui/MainFrame.cpp:2676
+#: ui/locationpanel/LocationPanel.cpp:268 ui/MainFrame.cpp:1346
+#: ui/MainFrame.cpp:2651
 msgid "File Browser"
 msgstr "ファイルブラウザ"
 
-#: ui/locationpanel/LocationPanel.cpp:288 ui/trackedit/TrackEdit.cpp:407
-#: ui/MainFrame.cpp:1377 ui/MainFrame.cpp:2616
-#: ui/preferences/Preferences.cpp:251
+#: ui/locationpanel/LocationPanel.cpp:280 ui/trackedit/TrackEdit.cpp:407
+#: ui/MainFrame.cpp:1362 ui/MainFrame.cpp:2591
+#: ui/preferences/Preferences.cpp:250
 msgid "Lyrics"
 msgstr "歌詞"
 
-#: ui/locationpanel/LocationPanel.cpp:309
-#: ui/locationpanel/LocationPanel.cpp:351
-#: ui/locationpanel/LocationPanel.cpp:398
-#: ui/locationpanel/LocationPanel.cpp:411 ui/MainFrame.cpp:967
-#: ui/MainFrame.cpp:1009 ui/MainFrame.cpp:1153 ui/MainFrame.cpp:1165
+#: ui/locationpanel/LocationPanel.cpp:301
+#: ui/locationpanel/LocationPanel.cpp:343
+#: ui/locationpanel/LocationPanel.cpp:390
+#: ui/locationpanel/LocationPanel.cpp:403 ui/MainFrame.cpp:955
+#: ui/MainFrame.cpp:997 ui/MainFrame.cpp:1138 ui/MainFrame.cpp:1150
 msgid "Show"
 msgstr "表示"
 
-#: ui/locationpanel/LocationPanel.cpp:310 ui/MainFrame.cpp:968
+#: ui/locationpanel/LocationPanel.cpp:302 ui/MainFrame.cpp:956
 msgid "Show/Hide the radio panel"
 msgstr "ラジオパネルの表示/非表示"
 
-#: ui/locationpanel/LocationPanel.cpp:316 ui/MainFrame.cpp:974
+#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:962
 #: ui/radios/RadioPanel.cpp:552 ui/radios/RadioPanel.cpp:592
 msgid "Text Search"
 msgstr "テキスト検索"
 
-#: ui/locationpanel/LocationPanel.cpp:316 ui/MainFrame.cpp:974
+#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:962
 msgid "Show/Hide the radio text search"
 msgstr "ラジオ・テキスト検索の表示/非表示"
 
-#: ui/locationpanel/LocationPanel.cpp:326
-#: ui/locationpanel/LocationPanel.cpp:428 ui/MainFrame.cpp:984
-#: ui/MainFrame.cpp:1182 ui/mediaviewer/library/LibPanel.cpp:221
+#: ui/locationpanel/LocationPanel.cpp:318
+#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:972
+#: ui/MainFrame.cpp:1167 ui/mediaviewer/library/LibPanel.cpp:221
 #: ui/mediaviewer/library/LibPanel.cpp:229
 #: ui/mediaviewer/library/LibPanel.cpp:561
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/radios/RadioPanel.cpp:594 ui/radios/RadioGenreEditor.cpp:38
-#: ui/preferences/Preferences.cpp:1705 ui/preferences/Preferences.cpp:1797
+#: ui/preferences/Preferences.cpp:1694
 msgid "Genres"
 msgstr "ジャンル"
 
-#: ui/locationpanel/LocationPanel.cpp:326 ui/MainFrame.cpp:984
+#: ui/locationpanel/LocationPanel.cpp:318 ui/MainFrame.cpp:972
 msgid "Show/Hide the radio genres"
 msgstr "ラジオ・ジャンルの表示/非表示"
 
-#: ui/locationpanel/LocationPanel.cpp:333 ui/radios/ShoutcastRadio.cpp:120
+#: ui/locationpanel/LocationPanel.cpp:325 ui/radios/ShoutcastRadio.cpp:120
 msgid "Update the radio station lists"
 msgstr "ラジオ局リストの更新"
 
-#: ui/locationpanel/LocationPanel.cpp:340
-#: ui/locationpanel/LocationPanel.cpp:379
-#: ui/locationpanel/LocationPanel.cpp:539 ui/jamendo/Jamendo.cpp:1125
-#: ui/MainFrame.cpp:998 ui/MainFrame.cpp:1036 ui/MainFrame.cpp:1293
+#: ui/locationpanel/LocationPanel.cpp:332
+#: ui/locationpanel/LocationPanel.cpp:371
+#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:986
+#: ui/MainFrame.cpp:1024 ui/MainFrame.cpp:1278
 #: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:677
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1035
-#: ui/preferences/Preferences.cpp:1141 ui/podcasts/PodcastsPanel.cpp:1758
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1025
+#: ui/preferences/Preferences.cpp:1130 ui/podcasts/PodcastsPanel.cpp:1758
 msgid "Properties"
 msgstr "設定"
 
-#: ui/locationpanel/LocationPanel.cpp:341 ui/MainFrame.cpp:999
+#: ui/locationpanel/LocationPanel.cpp:333 ui/MainFrame.cpp:987
 msgid "Set the radio preferences"
 msgstr "ラジオ局の設定"
 
-#: ui/locationpanel/LocationPanel.cpp:352 ui/MainFrame.cpp:1010
+#: ui/locationpanel/LocationPanel.cpp:344 ui/MainFrame.cpp:998
 msgid "Show/Hide the podcasts panel"
 msgstr "podcastパネルの表示/非表示"
 
-#: ui/locationpanel/LocationPanel.cpp:358 ui/MainFrame.cpp:1016
+#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1004
 #: ui/podcasts/PodcastsPanel.cpp:890 ui/podcasts/PodcastsPanel.cpp:898
 #: ui/podcasts/PodcastsPanel.cpp:1057
 msgid "Channels"
 msgstr "チャンネル"
 
-#: ui/locationpanel/LocationPanel.cpp:358 ui/MainFrame.cpp:1016
+#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1004
 msgid "Show/Hide the podcasts channels"
 msgstr "podcastチャンネルの表示/非表示"
 
-#: ui/locationpanel/LocationPanel.cpp:363 ui/trackedit/TrackEdit.cpp:319
-#: ui/trackedit/TrackEdit.cpp:474 ui/MainFrame.cpp:1021
+#: ui/locationpanel/LocationPanel.cpp:355 ui/trackedit/TrackEdit.cpp:319
+#: ui/trackedit/TrackEdit.cpp:474 ui/MainFrame.cpp:1009
 #: ui/podcasts/PodcastsPanel.cpp:928 ui/podcasts/PodcastsPanel.cpp:1060
 msgid "Details"
 msgstr "詳細"
 
-#: ui/locationpanel/LocationPanel.cpp:363 ui/MainFrame.cpp:1021
+#: ui/locationpanel/LocationPanel.cpp:355 ui/MainFrame.cpp:1009
 msgid "Show/Hide the podcasts details"
 msgstr "podcast詳細の表示/非表示"
 
-#: ui/locationpanel/LocationPanel.cpp:372 ui/MainFrame.cpp:1030
+#: ui/locationpanel/LocationPanel.cpp:364 ui/MainFrame.cpp:1018
 msgid "Update the podcasts added"
 msgstr "追加したpodcastの更新"
 
-#: ui/locationpanel/LocationPanel.cpp:380 ui/MainFrame.cpp:1036
+#: ui/locationpanel/LocationPanel.cpp:372 ui/MainFrame.cpp:1024
 msgid "Set the podcasts preferences"
 msgstr "podcastの設定"
 
-#: ui/locationpanel/LocationPanel.cpp:398 ui/MainFrame.cpp:1153
+#: ui/locationpanel/LocationPanel.cpp:390 ui/MainFrame.cpp:1138
 msgid "Open the music collection"
 msgstr "音楽コレクションを開く"
 
-#: ui/locationpanel/LocationPanel.cpp:411
-#: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1165
-#: ui/MainFrame.cpp:1226
+#: ui/locationpanel/LocationPanel.cpp:403
+#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1150
+#: ui/MainFrame.cpp:1211
 msgid "View the collection library"
 msgstr "コレクションライブラリを表示"
 
-#: ui/locationpanel/LocationPanel.cpp:418 ui/filebrowser/FileBrowser.cpp:1366
-#: ui/filebrowser/FileBrowser.cpp:1382 ui/MainFrame.cpp:1172
+#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1366
+#: ui/filebrowser/FileBrowser.cpp:1382 ui/MainFrame.cpp:1157
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
 msgstr "ディレクトリ"
 
-#: ui/locationpanel/LocationPanel.cpp:418 ui/MainFrame.cpp:1172
+#: ui/locationpanel/LocationPanel.cpp:410 ui/MainFrame.cpp:1157
 msgid "View the library directories"
 msgstr "ライブラリのジャンルを表示"
 
-#: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
-#: ui/MainFrame.cpp:1177 ui/mediaviewer/library/LibPanel.cpp:241
+#: ui/locationpanel/LocationPanel.cpp:415 ui/labeleditor/LabelEditor.cpp:91
+#: ui/MainFrame.cpp:1162 ui/mediaviewer/library/LibPanel.cpp:241
 #: ui/mediaviewer/library/LibPanel.cpp:248
 #: ui/mediaviewer/library/LibPanel.cpp:563
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:63
 msgid "Labels"
 msgstr "ラベル"
 
-#: ui/locationpanel/LocationPanel.cpp:423 ui/MainFrame.cpp:1177
+#: ui/locationpanel/LocationPanel.cpp:415 ui/MainFrame.cpp:1162
 msgid "View the library labels"
 msgstr "ライブラリのラベルを表示"
 
-#: ui/locationpanel/LocationPanel.cpp:428 ui/MainFrame.cpp:1182
+#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:1167
 msgid "View the library genres"
 msgstr "ライブラリのジャンルを表示"
 
-#: ui/locationpanel/LocationPanel.cpp:433 ui/MainFrame.cpp:1187
+#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1172
 #: ui/mediaviewer/library/LibPanel.cpp:260
 #: ui/mediaviewer/library/LibPanel.cpp:267
 #: ui/mediaviewer/library/LibPanel.cpp:565
 msgid "Artists"
 msgstr "アーティスト"
 
-#: ui/locationpanel/LocationPanel.cpp:433 ui/MainFrame.cpp:1187
+#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1172
 msgid "View the library artists"
 msgstr "ライブラリのアーティストを表示"
 
-#: ui/locationpanel/LocationPanel.cpp:438 ui/MainFrame.cpp:1202
+#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1187
 #: ui/mediaviewer/library/LibPanel.cpp:355
 #: ui/mediaviewer/library/LibPanel.cpp:362
 #: ui/mediaviewer/library/LibPanel.cpp:575
 msgid "Composers"
 msgstr "作曲者"
 
-#: ui/locationpanel/LocationPanel.cpp:438 ui/MainFrame.cpp:1202
+#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1187
 msgid "View the library composers"
 msgstr "ライブラリの作曲者を表示"
 
-#: ui/locationpanel/LocationPanel.cpp:443 ui/MainFrame.cpp:1192
+#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1177
 #: ui/mediaviewer/library/LibPanel.cpp:577
 msgid "Album Artists"
 msgstr "アルバム・アーティスト"
 
-#: ui/locationpanel/LocationPanel.cpp:443 ui/MainFrame.cpp:1192
+#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1177
 msgid "View the library album artists"
 msgstr "ライブラリのアルバム・アーティストを表示"
 
-#: ui/locationpanel/LocationPanel.cpp:448 ui/MainFrame.cpp:1197
+#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1182
 #: ui/mediaviewer/library/LibPanel.cpp:279
 #: ui/mediaviewer/library/LibPanel.cpp:286
 #: ui/mediaviewer/library/LibPanel.cpp:567
@@ -936,65 +934,65 @@ msgstr "ライブラリのアルバム・アーティストを表示"
 msgid "Albums"
 msgstr "アルバム"
 
-#: ui/locationpanel/LocationPanel.cpp:448 ui/MainFrame.cpp:1197
+#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1182
 msgid "View the library albums"
 msgstr "ライブラリのアルバムを表示"
 
-#: ui/locationpanel/LocationPanel.cpp:453 ui/MainFrame.cpp:1207
+#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1192
 #: ui/mediaviewer/library/LibPanel.cpp:298
 #: ui/mediaviewer/library/LibPanel.cpp:305
 #: ui/mediaviewer/library/LibPanel.cpp:569
 msgid "Years"
 msgstr "年"
 
-#: ui/locationpanel/LocationPanel.cpp:453 ui/MainFrame.cpp:1207
+#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1192
 msgid "View the library years"
 msgstr "ライブラリの年を表示"
 
-#: ui/locationpanel/LocationPanel.cpp:458 ui/MainFrame.cpp:1212
+#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1197
 #: ui/mediaviewer/library/LibPanel.cpp:317
 #: ui/mediaviewer/library/LibPanel.cpp:324
 #: ui/mediaviewer/library/LibPanel.cpp:571
 msgid "Ratings"
 msgstr "評価"
 
-#: ui/locationpanel/LocationPanel.cpp:458 ui/MainFrame.cpp:1212
+#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1197
 msgid "View the library ratings"
 msgstr "ライブラリの評価を表示"
 
-#: ui/locationpanel/LocationPanel.cpp:463
+#: ui/locationpanel/LocationPanel.cpp:455
 msgid "Play Counts"
 msgstr "再生カウント"
 
-#: ui/locationpanel/LocationPanel.cpp:463 ui/MainFrame.cpp:1217
+#: ui/locationpanel/LocationPanel.cpp:455 ui/MainFrame.cpp:1202
 msgid "View the library play counts"
 msgstr "ライブラリ再生カウントの表示"
 
-#: ui/locationpanel/LocationPanel.cpp:468
-#: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1222
-#: ui/MainFrame.cpp:1226 ui/mediaviewer/treeview/TreePanel.cpp:82
+#: ui/locationpanel/LocationPanel.cpp:460
+#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1207
+#: ui/MainFrame.cpp:1211 ui/mediaviewer/treeview/TreePanel.cpp:82
 msgid "Library"
 msgstr "ライブラリ"
 
-#: ui/locationpanel/LocationPanel.cpp:478 ui/MainFrame.cpp:1232
+#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1217
 msgid "Album Browser"
 msgstr "アルバム・ブラウザ"
 
-#: ui/locationpanel/LocationPanel.cpp:478 ui/MainFrame.cpp:1232
+#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1217
 msgid "View the collection album browser"
 msgstr "アルバム・ブラウザでコレクションを表示"
 
-#: ui/locationpanel/LocationPanel.cpp:483 ui/MainFrame.cpp:1237
+#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1222
 #: ui/mediaviewer/treeview/TreePanel.cpp:814
 #: ui/mediaviewer/treeview/TreePanel.cpp:839
 msgid "Tree"
 msgstr "ツリー"
 
-#: ui/locationpanel/LocationPanel.cpp:483 ui/MainFrame.cpp:1237
+#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1222
 msgid "View the collection tree view"
 msgstr "コレクションのツリー表示"
 
-#: ui/locationpanel/LocationPanel.cpp:488 ui/MainFrame.cpp:1242
+#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1227
 #: ui/mediaviewer/MediaViewer.cpp:253
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:852
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:763
@@ -1002,82 +1000,82 @@ msgstr "コレクションのツリー表示"
 msgid "Playlists"
 msgstr "再生リスト"
 
-#: ui/locationpanel/LocationPanel.cpp:488 ui/MainFrame.cpp:1242
+#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1227
 msgid "View the collection playlists"
 msgstr "コレクション再生リストの表示"
 
-#: ui/locationpanel/LocationPanel.cpp:499 ui/MainFrame.cpp:1253
+#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1238
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add Path"
 msgstr "パスの追加"
 
-#: ui/locationpanel/LocationPanel.cpp:499 ui/MainFrame.cpp:1253
+#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1238
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add path to the collection"
 msgstr "コレクションのパスの追加"
 
-#: ui/locationpanel/LocationPanel.cpp:503 ui/MainFrame.cpp:1257
+#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1242
 #: ui/mediaviewer/MediaViewer.cpp:926
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:49
 msgid "Import Files"
 msgstr "ファイルのインポート"
 
-#: ui/locationpanel/LocationPanel.cpp:503 ui/MainFrame.cpp:1257
+#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1242
 #: ui/mediaviewer/MediaViewer.cpp:926
 msgid "Import files into the collection"
 msgstr "コレクションにファイルをインポート"
 
-#: ui/locationpanel/LocationPanel.cpp:512 ui/jamendo/Jamendo.cpp:1114
-#: ui/MainFrame.cpp:1266 ui/mediaviewer/MediaViewer.cpp:932
+#: ui/locationpanel/LocationPanel.cpp:504 ui/MainFrame.cpp:1251
+#: ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1014
 msgid "Update the collection library"
 msgstr "コレクション・ライブラリを更新"
 
-#: ui/locationpanel/LocationPanel.cpp:517 ui/jamendo/Jamendo.cpp:1117
-#: ui/MainFrame.cpp:1271 ui/mediaviewer/MediaViewer.cpp:935
+#: ui/locationpanel/LocationPanel.cpp:509 ui/MainFrame.cpp:1256
+#: ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1027
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1017
 msgid "Rescan"
 msgstr "再スキャン"
 
-#: ui/locationpanel/LocationPanel.cpp:518 ui/jamendo/Jamendo.cpp:1117
-#: ui/MainFrame.cpp:1272 ui/mediaviewer/MediaViewer.cpp:935
+#: ui/locationpanel/LocationPanel.cpp:510 ui/MainFrame.cpp:1257
+#: ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1027
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1017
 msgid "Rescan the collection library"
 msgstr "コレクション・ライブラリの再スキャン"
 
-#: ui/locationpanel/LocationPanel.cpp:523 ui/jamendo/Jamendo.cpp:1120
-#: ui/MainFrame.cpp:1277 ui/mediaviewer/MediaViewer.cpp:938
+#: ui/locationpanel/LocationPanel.cpp:515 ui/MainFrame.cpp:1262
+#: ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1030
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1020
 msgid "Search Covers"
 msgstr "カバーを探す"
 
-#: ui/locationpanel/LocationPanel.cpp:524 ui/jamendo/Jamendo.cpp:1120
-#: ui/MainFrame.cpp:1278 ui/mediaviewer/MediaViewer.cpp:938
+#: ui/locationpanel/LocationPanel.cpp:516 ui/MainFrame.cpp:1263
+#: ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1030
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1020
 msgid "Search the collection missing covers"
 msgstr "カバーのないコレクションを検索"
 
-#: ui/locationpanel/LocationPanel.cpp:532 ui/MainFrame.cpp:1286
+#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1271
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1457
 msgid "Unmount"
 msgstr "アンマウント"
 
-#: ui/locationpanel/LocationPanel.cpp:532 ui/MainFrame.cpp:1286
+#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1271
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1457
 msgid "Unmount the device"
 msgstr "デバイスのアンマウント"
 
-#: ui/locationpanel/LocationPanel.cpp:539 ui/jamendo/Jamendo.cpp:1125
-#: ui/MainFrame.cpp:1293 ui/mediaviewer/MediaViewer.cpp:943
+#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1278
+#: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1035
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1025
 msgid "Show collection properties"
 msgstr "コレクション設定の表示"
 
@@ -1171,7 +1169,7 @@ msgstr "編集中の曲すべてにアルバム名をコピー"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361 ui/cover/CoverEdit.cpp:80
-#: ui/preferences/Preferences.cpp:851 ui/player/PlayList.cpp:1797
+#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1756
 msgid "Album"
 msgstr "アルバム"
 
@@ -1185,7 +1183,7 @@ msgstr "編集中の曲すべてに作曲者をコピー"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1794
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1753
 msgid "Composer"
 msgstr "作曲者"
 
@@ -1236,8 +1234,8 @@ msgstr "編集中の曲すべてにジャンルをコピー"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3371
-#: ui/player/PlayList.cpp:1803
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3237
+#: ui/player/PlayList.cpp:1762
 msgid "Genre"
 msgstr "ジャンル"
 
@@ -1254,7 +1252,7 @@ msgstr "編集中の曲すべてに年をコピー"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:69
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1800
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1759
 msgid "Year"
 msgstr "年（昇順）"
 
@@ -1390,7 +1388,7 @@ msgstr "ファイル名の変更"
 msgid "Names Preview"
 msgstr "名前のプレビュー"
 
-#: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2260
+#: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2157
 msgid "Pattern"
 msgstr "パターン"
 
@@ -1407,12 +1405,12 @@ msgstr "パターン・フラッグ"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:129
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:67
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1791
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1750
 msgid "Album Artist"
 msgstr "アルバム・アーティスト"
 
-#: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:921
-#: ui/preferences/Preferences.cpp:3445
+#: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:910
+#: ui/preferences/Preferences.cpp:3311
 msgid "or"
 msgstr "か"
 
@@ -1430,7 +1428,7 @@ msgstr "システムファイルを表示"
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
 #: ui/mediaviewer/library/AlListBox.cpp:247
-#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1710
+#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1669
 msgid "Add commands in preferences"
 msgstr "設定にコマンドを追加"
 
@@ -1440,8 +1438,8 @@ msgstr "設定にコマンドを追加"
 #: ui/mediaviewer/library/AAListBox.cpp:136
 #: ui/mediaviewer/library/SoListBox.cpp:460
 #: ui/mediaviewer/library/AlListBox.cpp:250
-#: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:281
-#: ui/preferences/Preferences.cpp:2071 ui/player/PlayList.cpp:1713
+#: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:275
+#: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1672
 msgid "Commands"
 msgstr "コマンド"
 
@@ -1731,7 +1729,7 @@ msgstr "選択したファイルを削除"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2144
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2102
 msgid "UnNamed"
 msgstr "名前なし"
 
@@ -1771,7 +1769,7 @@ msgstr "一時停止"
 msgid "Play current playlist"
 msgstr "再生リストを再生"
 
-#: ui/taskbar/TaskBar.cpp:124 ui/MainFrame.cpp:1435
+#: ui/taskbar/TaskBar.cpp:124 ui/MainFrame.cpp:1420
 msgid "Next Track"
 msgstr "次の曲"
 
@@ -1779,7 +1777,7 @@ msgstr "次の曲"
 msgid "Skip to next track in current playlist"
 msgstr "次の曲へスキップ"
 
-#: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1444
+#: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1429
 msgid "Next Album"
 msgstr "次のアルバム"
 
@@ -1803,33 +1801,33 @@ msgstr "前のアルバム"
 msgid "Skip to previous album track in current playlist"
 msgstr "前のアルバムにスキップ"
 
-#: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1480
-#: ui/mediaviewer/library/SoListBox.cpp:612 ui/player/PlayList.cpp:1757
+#: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1465
+#: ui/mediaviewer/library/SoListBox.cpp:612 ui/player/PlayList.cpp:1716
 msgid "Set the rating to 0"
 msgstr "評価を0にセット"
 
-#: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1485
-#: ui/mediaviewer/library/SoListBox.cpp:617 ui/player/PlayList.cpp:1759
+#: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1470
+#: ui/mediaviewer/library/SoListBox.cpp:617 ui/player/PlayList.cpp:1718
 msgid "Set the rating to 1"
 msgstr "評価を1にセット"
 
-#: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1490
-#: ui/mediaviewer/library/SoListBox.cpp:622 ui/player/PlayList.cpp:1761
+#: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1475
+#: ui/mediaviewer/library/SoListBox.cpp:622 ui/player/PlayList.cpp:1720
 msgid "Set the rating to 2"
 msgstr "評価を2にセット"
 
-#: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1495
-#: ui/mediaviewer/library/SoListBox.cpp:627 ui/player/PlayList.cpp:1763
+#: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1480
+#: ui/mediaviewer/library/SoListBox.cpp:627 ui/player/PlayList.cpp:1722
 msgid "Set the rating to 3"
 msgstr "評価を3にセット"
 
-#: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1500
-#: ui/mediaviewer/library/SoListBox.cpp:632 ui/player/PlayList.cpp:1765
+#: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1485
+#: ui/mediaviewer/library/SoListBox.cpp:632 ui/player/PlayList.cpp:1724
 msgid "Set the rating to 4"
 msgstr "評価を4にセット"
 
-#: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1505
-#: ui/mediaviewer/library/SoListBox.cpp:637 ui/player/PlayList.cpp:1767
+#: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1490
+#: ui/mediaviewer/library/SoListBox.cpp:637 ui/player/PlayList.cpp:1726
 msgid "Set the rating to 5"
 msgstr "評価を5にセット"
 
@@ -1841,7 +1839,7 @@ msgstr "現在の曲の評価をセット"
 msgid "&Smart Play"
 msgstr "&Smart 再生"
 
-#: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1514
+#: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1499
 msgid "Update playlist based on Last.fm statics"
 msgstr "Last.fmで再生リストを更新"
 
@@ -1849,7 +1847,7 @@ msgstr "Last.fmで再生リストを更新"
 msgid "Repeat the &Playlist"
 msgstr "&Repeat 再生リスト"
 
-#: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1524
+#: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1509
 msgid "Repeat the tracks in the playlist"
 msgstr "再生リストの曲をリピート"
 
@@ -1857,7 +1855,7 @@ msgstr "再生リストの曲をリピート"
 msgid "Repeat &Track"
 msgstr "&Repeat 曲"
 
-#: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1530
+#: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1515
 msgid "Repeat the current track in the playlist"
 msgstr "再生リストの現在の曲をリピート"
 
@@ -1865,17 +1863,17 @@ msgstr "再生リストの現在の曲をリピート"
 msgid "Shu&ffle"
 msgstr "Shu&ffle"
 
-#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
+#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1505
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
-#: ui/player/PlayList.cpp:1837
+#: ui/player/PlayList.cpp:1796
 msgid "Shuffle the tracks in the playlist"
 msgstr "再生リストをランダムにする"
 
-#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
+#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1534
 msgid "Force &Gapless Mode"
 msgstr "強制的にギャップレス・モードを使う"
 
-#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1550
+#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1535
 msgid "Set playback in gapless mode"
 msgstr "ギャップレス・モードで再生"
 
@@ -1883,7 +1881,7 @@ msgstr "ギャップレス・モードで再生"
 msgid "Audioscrobbling"
 msgstr "オーディオスクローブル"
 
-#: ui/taskbar/TaskBar.cpp:189 ui/MainFrame.cpp:1556
+#: ui/taskbar/TaskBar.cpp:189 ui/MainFrame.cpp:1541
 msgid "Send played tracks information"
 msgstr "再生した曲の情報を送る"
 
@@ -1895,95 +1893,80 @@ msgstr "終了"
 msgid "Exit this program"
 msgstr "プログラムを終了"
 
-#: ui/jamendo/Jamendo.cpp:1095 ui/jamendo/Jamendo.cpp:1105
-#: ui/magnatune/Magnatune.cpp:1010 ui/magnatune/Magnatune.cpp:1017
-msgid "Download Albums"
-msgstr "アルバムをダウンロード"
-
-#: ui/jamendo/Jamendo.cpp:1095 ui/jamendo/Jamendo.cpp:1098
-#: ui/jamendo/Jamendo.cpp:1105 ui/jamendo/Jamendo.cpp:1108
-#: ui/magnatune/Magnatune.cpp:1010 ui/magnatune/Magnatune.cpp:1017
-msgid "Download the current selected album"
-msgstr "選択したアルバムをダウンロード"
-
-#: ui/jamendo/Jamendo.cpp:1098 ui/jamendo/Jamendo.cpp:1108
-msgid "Download Albums torrents"
-msgstr "トレントでアルバムをダウンロード"
-
 #: ui/MainFrame.cpp:154
 msgid "Welcome to Guayadeque"
 msgstr "Guayadequeにようこそ"
 
-#: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
+#: ui/MainFrame.cpp:164 ui/MainFrame.cpp:392
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
-#: ui/preferences/Preferences.cpp:1544
+#: ui/preferences/Preferences.cpp:1533
 msgid "Filters"
 msgstr "フィルター"
 
-#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:404 ui/MainFrame.cpp:2020
-#: ui/MainFrame.cpp:2738 ui/MainFrame.cpp:2755 ui/radios/RadioPanel.cpp:315
+#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:394 ui/MainFrame.cpp:2005
+#: ui/MainFrame.cpp:2713 ui/MainFrame.cpp:2730 ui/radios/RadioPanel.cpp:315
 #: ui/player/PlayList.cpp:215
 msgid "Now Playing"
 msgstr "再生中"
 
-#: ui/MainFrame.cpp:313
+#: ui/MainFrame.cpp:312
 msgid "My Music"
 msgstr "マイミュージック"
 
-#: ui/MainFrame.cpp:400 ui/MainFrame.cpp:1342 ui/MainFrame.cpp:4056
+#: ui/MainFrame.cpp:390 ui/MainFrame.cpp:1327 ui/MainFrame.cpp:4031
 msgid "VU Meters"
 msgstr "VUメーター"
 
-#: ui/MainFrame.cpp:942
+#: ui/MainFrame.cpp:930
 msgid "New Collection"
 msgstr "新しいコレクション"
 
-#: ui/MainFrame.cpp:942
+#: ui/MainFrame.cpp:930
 msgid "Create a new collection"
 msgstr "新しいコレクションを作る"
 
-#: ui/MainFrame.cpp:991
+#: ui/MainFrame.cpp:979
 msgid "Update the radio stations"
 msgstr "ラジオ局の更新"
 
-#: ui/MainFrame.cpp:1002 ui/MainFrame.cpp:2462
+#: ui/MainFrame.cpp:990 ui/MainFrame.cpp:2437
 msgid "Radio"
 msgstr "ラジオ局"
 
-#: ui/MainFrame.cpp:1002
+#: ui/MainFrame.cpp:990
 msgid "Set the radio visible panels"
 msgstr "ラジオ局パネルをセット"
 
-#: ui/MainFrame.cpp:1039
+#: ui/MainFrame.cpp:1027
 msgid "Set the podcasts visible panels"
 msgstr "podcastパネルをセット"
 
-#: ui/MainFrame.cpp:1054
+#: ui/MainFrame.cpp:1039
 msgid "Play a online music stream"
 msgstr "オンライン・ストリームを再生"
 
-#: ui/MainFrame.cpp:1059
+#: ui/MainFrame.cpp:1044
 #, fuzzy
 msgid "View the audio cd panel"
 msgstr "ラジオパネルの表示/非表示"
 
-#: ui/MainFrame.cpp:1090
+#: ui/MainFrame.cpp:1075
 msgid "Show the selected portable devices"
 msgstr "選択した携帯デバイスを表示"
 
-#: ui/MainFrame.cpp:1097
+#: ui/MainFrame.cpp:1082
 msgid "No Device Found"
 msgstr "デバイスが見つかりません"
 
-#: ui/MainFrame.cpp:1097
+#: ui/MainFrame.cpp:1082
 msgid "No portable device was detected"
 msgstr "携帯デバイスを検出できません"
 
-#: ui/MainFrame.cpp:1107
+#: ui/MainFrame.cpp:1092
 msgid "Exits the application"
 msgstr "アプリケーションの終了"
 
-#: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
+#: ui/MainFrame.cpp:1202 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
 #: ui/mediaviewer/library/LibPanel.cpp:573
 #: ui/mediaviewer/library/SoListBox.cpp:70
@@ -1993,290 +1976,290 @@ msgstr "アプリケーションの終了"
 msgid "Plays"
 msgstr "再生"
 
-#: ui/MainFrame.cpp:1308
+#: ui/MainFrame.cpp:1293
 msgid "Saves the current layout"
 msgstr "現在のレイアウトを保存"
 
-#: ui/MainFrame.cpp:1318
+#: ui/MainFrame.cpp:1303
 msgid "Player Playlist"
 msgstr "プレイヤー 再生リスト"
 
-#: ui/MainFrame.cpp:1319
+#: ui/MainFrame.cpp:1304
 msgid "Show/Hide the player playlist panel"
 msgstr "再生リストパネルの表示/非表示"
 
-#: ui/MainFrame.cpp:1326 ui/MainFrame.cpp:1600 ui/MainFrame.cpp:4074
-#: ui/preferences/Preferences.cpp:1319
+#: ui/MainFrame.cpp:1311 ui/MainFrame.cpp:1585 ui/MainFrame.cpp:4049
+#: ui/preferences/Preferences.cpp:1308
 msgid "Sources"
 msgstr "ミュージックソース"
 
-#: ui/MainFrame.cpp:1327
+#: ui/MainFrame.cpp:1312
 msgid "Show/Hide the locations"
 msgstr "場所の表示/非表示"
 
-#: ui/MainFrame.cpp:1334
+#: ui/MainFrame.cpp:1319
 msgid "Player Filters"
 msgstr "プレイヤー・フィルター"
 
-#: ui/MainFrame.cpp:1335
+#: ui/MainFrame.cpp:1320
 msgid "Show/Hide the player filters panel"
 msgstr "プレイヤー・フィルターパネルの表示/非表示"
 
-#: ui/MainFrame.cpp:1343
+#: ui/MainFrame.cpp:1328
 msgid "Show/Hide the player vumeter"
 msgstr "VUメーターの表示/非表示"
 
-#: ui/MainFrame.cpp:1350 ui/MainFrame.cpp:4090
+#: ui/MainFrame.cpp:1335 ui/MainFrame.cpp:4065
 msgid "Cover"
 msgstr "カバー"
 
-#: ui/MainFrame.cpp:1351
+#: ui/MainFrame.cpp:1336
 msgid "Show/Hide the cover"
 msgstr "カバーの表示/非表示"
 
-#: ui/MainFrame.cpp:1362
+#: ui/MainFrame.cpp:1347
 msgid "Show/Hide the file browser panel"
 msgstr "ファイルブラウザの表示/非表示"
 
-#: ui/MainFrame.cpp:1369 ui/MainFrame.cpp:2562
+#: ui/MainFrame.cpp:1354 ui/MainFrame.cpp:2537
 msgid "Last.fm"
 msgstr "ラストFM"
 
-#: ui/MainFrame.cpp:1370
+#: ui/MainFrame.cpp:1355
 msgid "Show/Hide the Last.fm panel"
 msgstr "Last.fmパネルの表示/非表示"
 
-#: ui/MainFrame.cpp:1378
+#: ui/MainFrame.cpp:1363
 msgid "Show/Hide the lyrics panel"
 msgstr "歌詞パネルの表示/非表示"
 
-#: ui/MainFrame.cpp:1388
+#: ui/MainFrame.cpp:1373
 msgid "Show/Restore the main window in full screen"
 msgstr "フルスクリーンの表示/非表示"
 
-#: ui/MainFrame.cpp:1393
+#: ui/MainFrame.cpp:1378
 msgid "Statusbar"
 msgstr "ステータスバー"
 
-#: ui/MainFrame.cpp:1394
+#: ui/MainFrame.cpp:1379
 msgid "Show/Hide the statusbar"
 msgstr "ステータスバーの表示/非表示"
 
-#: ui/MainFrame.cpp:1399
+#: ui/MainFrame.cpp:1384
 msgid "Show Captions"
 msgstr "説明の表示"
 
-#: ui/MainFrame.cpp:1400
+#: ui/MainFrame.cpp:1385
 msgid "Show/Hide the windows caption"
 msgstr "説明ウィンドウの表示/非表示"
 
-#: ui/MainFrame.cpp:1407
+#: ui/MainFrame.cpp:1392
 msgid "Close Current Tab"
 msgstr "現在のタブを閉じる"
 
-#: ui/MainFrame.cpp:1408
+#: ui/MainFrame.cpp:1393
 msgid "Close the current selected tab"
 msgstr "選択したタブを閉じる"
 
-#: ui/MainFrame.cpp:1415
+#: ui/MainFrame.cpp:1400
 msgid "View the preferences"
 msgstr "設定の表示"
 
-#: ui/MainFrame.cpp:1425
+#: ui/MainFrame.cpp:1410
 msgid "Load Layout"
 msgstr "レイアウトを読み込む"
 
-#: ui/MainFrame.cpp:1425
+#: ui/MainFrame.cpp:1410
 msgid "Set current view from a user defined layout"
 msgstr "ユーザー定義のレイアウトをセット"
 
-#: ui/MainFrame.cpp:1426
+#: ui/MainFrame.cpp:1411
 msgid "Delete Layout"
 msgstr "レイアウトの削除"
 
-#: ui/MainFrame.cpp:1426
+#: ui/MainFrame.cpp:1411
 msgid "Delete a user defined layout"
 msgstr "ユーザー定義のレイアウトを削除"
 
-#: ui/MainFrame.cpp:1436
+#: ui/MainFrame.cpp:1421
 msgid "Play the next track in the playlist"
 msgstr "再生リストの次の曲"
 
-#: ui/MainFrame.cpp:1439
+#: ui/MainFrame.cpp:1424
 msgid "Prev. Track"
 msgstr "前の曲"
 
-#: ui/MainFrame.cpp:1440
+#: ui/MainFrame.cpp:1425
 msgid "Play the previous track in the playlist"
 msgstr "再生リストの前の曲"
 
-#: ui/MainFrame.cpp:1445
+#: ui/MainFrame.cpp:1430
 msgid "Play the next album in the playlist"
 msgstr "再生リストの次のアルバム"
 
-#: ui/MainFrame.cpp:1449
+#: ui/MainFrame.cpp:1434
 msgid "Prev. Album"
 msgstr "前のアルバム"
 
-#: ui/MainFrame.cpp:1450
+#: ui/MainFrame.cpp:1435
 msgid "Play the previous album in the playlist"
 msgstr "再生リストの前のアルバム"
 
-#: ui/MainFrame.cpp:1457
+#: ui/MainFrame.cpp:1442
 msgid "Play or Pause the current track in the playlist"
 msgstr "再生/一時停止"
 
-#: ui/MainFrame.cpp:1461
+#: ui/MainFrame.cpp:1446
 msgid "Stop the current played track"
 msgstr "再生中の曲を停止"
 
-#: ui/MainFrame.cpp:1466
+#: ui/MainFrame.cpp:1451
 msgid "Stop after current playing or selected track"
 msgstr "再生中または選んだ曲の後で停止"
 
-#: ui/MainFrame.cpp:1473
+#: ui/MainFrame.cpp:1458
 msgid "Clear the now playing playlist"
 msgstr "再生リストをクリア"
 
-#: ui/MainFrame.cpp:1508 ui/mediaviewer/library/SoListBox.cpp:640
-#: ui/player/PlayList.cpp:1770
+#: ui/MainFrame.cpp:1493 ui/mediaviewer/library/SoListBox.cpp:640
+#: ui/player/PlayList.cpp:1729
 msgid "Set Rating"
 msgstr "評価をセット"
 
-#: ui/MainFrame.cpp:1508
+#: ui/MainFrame.cpp:1493
 msgid "Set the rating of the current track"
 msgstr "現在の曲の評価をセット"
 
-#: ui/MainFrame.cpp:1523
+#: ui/MainFrame.cpp:1508
 msgid "Repeat the Playlist"
 msgstr "再生リストをリピート"
 
-#: ui/MainFrame.cpp:1529
+#: ui/MainFrame.cpp:1514
 msgid "Repeat Track"
 msgstr "曲をリピート"
 
-#: ui/MainFrame.cpp:1538
+#: ui/MainFrame.cpp:1523
 msgid "Increment the volume level"
 msgstr "音量を上げる"
 
-#: ui/MainFrame.cpp:1543
+#: ui/MainFrame.cpp:1528
 msgid "Decrement the volume level"
 msgstr "音量を下げる"
 
-#: ui/MainFrame.cpp:1555 ui/preferences/Preferences.cpp:246
+#: ui/MainFrame.cpp:1540 ui/preferences/Preferences.cpp:245
 msgid "Audioscrobble"
 msgstr "スクローブル"
 
-#: ui/MainFrame.cpp:1573
+#: ui/MainFrame.cpp:1558
 msgid "Get help using guayadeque"
 msgstr "Get help using guayadeque"
 
-#: ui/MainFrame.cpp:1583
+#: ui/MainFrame.cpp:1568
 msgid "About"
 msgstr "情報"
 
-#: ui/MainFrame.cpp:1584
+#: ui/MainFrame.cpp:1569
 msgid "Show information about guayadeque music player"
 msgstr "Guayadequeミュージックプレイヤーの情報"
 
-#: ui/MainFrame.cpp:1605
+#: ui/MainFrame.cpp:1590
 msgid "View"
 msgstr "表示"
 
-#: ui/MainFrame.cpp:1610
+#: ui/MainFrame.cpp:1595
 msgid "Controls"
 msgstr "コントロール"
 
-#: ui/MainFrame.cpp:1883
+#: ui/MainFrame.cpp:1868
 msgid "Stream:"
 msgstr "ストリーム"
 
-#: ui/MainFrame.cpp:2055
+#: ui/MainFrame.cpp:2040
 msgid "Select destination directory"
 msgstr "保存するディレクトリを選択"
 
-#: ui/MainFrame.cpp:2070 ui/MainFrame.cpp:2106 ui/MainFrame.cpp:2149
-#: ui/MainFrame.cpp:2182 ui/MainFrame.cpp:4243
-#: ui/preferences/Preferences.cpp:286
+#: ui/MainFrame.cpp:2055 ui/MainFrame.cpp:2091 ui/MainFrame.cpp:2134
+#: ui/MainFrame.cpp:2167 ui/MainFrame.cpp:4218
+#: ui/preferences/Preferences.cpp:280
 msgid "Copy to"
 msgstr "コピー先"
 
-#: ui/MainFrame.cpp:3082
+#: ui/MainFrame.cpp:3057
 msgid "station"
 msgstr "局"
 
-#: ui/MainFrame.cpp:3082
+#: ui/MainFrame.cpp:3057
 msgid "stations"
 msgstr "局"
 
-#: ui/MainFrame.cpp:3091
+#: ui/MainFrame.cpp:3066
 msgid "podcast"
 msgstr "podcast"
 
-#: ui/MainFrame.cpp:3091
+#: ui/MainFrame.cpp:3066
 msgid "podcasts"
 msgstr "podcasts"
 
-#: ui/MainFrame.cpp:3106
+#: ui/MainFrame.cpp:3081
 msgid "dir"
 msgstr "ディレクトリ"
 
-#: ui/MainFrame.cpp:3106
+#: ui/MainFrame.cpp:3081
 msgid "dirs"
 msgstr "ディレクトリ"
 
-#: ui/MainFrame.cpp:3108
+#: ui/MainFrame.cpp:3083
 msgid "file"
 msgstr "ファイル"
 
-#: ui/MainFrame.cpp:3108
+#: ui/MainFrame.cpp:3083
 msgid "files"
 msgstr "ファイル"
 
-#: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
+#: ui/MainFrame.cpp:3098 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326
-#: ui/preferences/Preferences.cpp:815
+#: ui/preferences/Preferences.cpp:804
 msgid "track"
 msgstr "曲"
 
-#: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
+#: ui/MainFrame.cpp:3098 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326
-#: ui/preferences/Preferences.cpp:929
+#: ui/preferences/Preferences.cpp:918
 msgid "tracks"
 msgstr "曲"
 
-#: ui/MainFrame.cpp:3490 ui/MainFrame.cpp:3496 ui/MainFrame.cpp:3499
+#: ui/MainFrame.cpp:3465 ui/MainFrame.cpp:3471 ui/MainFrame.cpp:3474
 msgid "Load this user defined layout"
 msgstr "ユーザーレイアウトを読み込み"
 
-#: ui/MainFrame.cpp:3491
+#: ui/MainFrame.cpp:3466
 msgid "Delete this user defined layout"
 msgstr "ユーザーレイアウトを削除"
 
-#: ui/MainFrame.cpp:3496 ui/MainFrame.cpp:3499
+#: ui/MainFrame.cpp:3471 ui/MainFrame.cpp:3474
 msgid "No Layouts Defined"
 msgstr "レイアウトが指定されていません"
 
-#: ui/MainFrame.cpp:3591
+#: ui/MainFrame.cpp:3566
 msgid "Layout:"
 msgstr "レイアウト:"
 
-#: ui/MainFrame.cpp:3591
+#: ui/MainFrame.cpp:3566
 #, fuzzy, c-format
 msgid "Layout %lu"
 msgstr "レイアウト %u"
 
-#: ui/MainFrame.cpp:4210 ui/MainFrame.cpp:4231
+#: ui/MainFrame.cpp:4185 ui/MainFrame.cpp:4206
 msgid "Copy the current selected songs to a directory or device"
 msgstr "選択した曲をディレクトリ/デバイスにコピー"
 
-#: ui/MainFrame.cpp:4240
+#: ui/MainFrame.cpp:4215
 msgid "Add 'Copy to' patterns in preferences"
 msgstr "コピー先のパターンを追加"
 
-#: ui/MainFrame.cpp:4243
+#: ui/MainFrame.cpp:4218
 msgid "Copy the selected tracks to a folder or device"
 msgstr "選択した曲をフォルダ/デバイスにコピー"
 
@@ -2303,7 +2286,7 @@ msgstr "選択した曲をプレイリストに追加"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
-#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1741
+#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1700
 msgid "Edit Songs"
 msgstr "曲の情報を編集"
 
@@ -2340,7 +2323,7 @@ msgstr "本当に選択したアルバムカバーを削除しますか?"
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2292
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2250
 msgid "Tracks Labels Editor"
 msgstr "曲のラベル編集"
 
@@ -2353,7 +2336,7 @@ msgstr "フィールド・エディタ"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2015
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1974
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2363,7 +2346,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2016
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1975
 msgid "Remove tracks from drive"
 msgstr "ドライブから曲を削除"
 
@@ -2397,7 +2380,7 @@ msgstr "曲の編集"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1822
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1781
 msgid "Save the selected tracks to playlist"
 msgstr "選択した曲をプレイリストに保存"
 
@@ -2416,7 +2399,7 @@ msgstr "選択したアーティストの曲を編集"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1830
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1789
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "スマート再生リストの作成"
@@ -2424,7 +2407,7 @@ msgstr "スマート再生リストの作成"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1830
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1789
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "この曲からスマート再生リストを作成"
@@ -2552,7 +2535,7 @@ msgstr "選択した曲を再生リストに追加"
 msgid "Selects the genre of the current song"
 msgstr "現在の曲のジャンルを選択"
 
-#: ui/mediaviewer/library/SoListBox.cpp:570 ui/player/PlayList.cpp:1788
+#: ui/mediaviewer/library/SoListBox.cpp:570 ui/player/PlayList.cpp:1747
 msgid "Selects the artist of the current song"
 msgstr "現在の曲のアーティストを選択"
 
@@ -2564,11 +2547,11 @@ msgstr "現在の曲のアルバム・アーティストを選択"
 msgid "Selects the composer of the current song"
 msgstr "現在の曲の作曲者を選択"
 
-#: ui/mediaviewer/library/SoListBox.cpp:582 ui/player/PlayList.cpp:1797
+#: ui/mediaviewer/library/SoListBox.cpp:582 ui/player/PlayList.cpp:1756
 msgid "Select the album of the current song"
 msgstr "現在の曲のアルバムを選択"
 
-#: ui/mediaviewer/library/SoListBox.cpp:585 ui/player/PlayList.cpp:1806
+#: ui/mediaviewer/library/SoListBox.cpp:585 ui/player/PlayList.cpp:1765
 msgid "Search in the library"
 msgstr "ライブラリの検索"
 
@@ -2580,7 +2563,7 @@ msgstr "選択した曲のラベルを編集"
 msgid "Edit the songs selected"
 msgstr "選択した曲の編集"
 
-#: ui/mediaviewer/library/SoListBox.cpp:640 ui/player/PlayList.cpp:1770
+#: ui/mediaviewer/library/SoListBox.cpp:640 ui/player/PlayList.cpp:1729
 msgid "Set the current selected tracks rating"
 msgstr "選択した曲の評価をセット"
 
@@ -2590,17 +2573,17 @@ msgstr "選択した曲を再生リストに保存"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1828
+#: ui/player/PlayList.cpp:1787
 msgid "Create Smart Playlist"
 msgstr "スマート再生リストの作成"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1828
+#: ui/player/PlayList.cpp:1787
 msgid "Create a smart playlist from this track"
 msgstr "この曲からスマート再生リストを作成"
 
-#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1858
+#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1817
 msgid "Remove from Library"
 msgstr "ライブラリから削除"
 
@@ -2608,7 +2591,7 @@ msgstr "ライブラリから削除"
 msgid "Remove the current selected tracks from library"
 msgstr "選択した曲をライブラリから削除"
 
-#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1864
+#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1823
 msgid "Delete from Drive"
 msgstr "ドライブから削除"
 
@@ -2781,12 +2764,12 @@ msgstr "選択したフィルターの編集"
 msgid "New Filter"
 msgstr "新しいフィルター"
 
-#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2824
-#: ui/preferences/Preferences.cpp:2844
+#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2690
+#: ui/preferences/Preferences.cpp:2710
 msgid "Collection"
 msgstr "コレクション"
 
-#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2975
+#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2841
 msgid "Select library path"
 msgstr "ライブラリ・パスの選択"
 
@@ -2930,7 +2913,7 @@ msgid "Portable Media Properties"
 msgstr "携帯メディアの設定"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:693
-#: ui/preferences/Preferences.cpp:2285
+#: ui/preferences/Preferences.cpp:2182
 msgid "Path:"
 msgstr "パス"
 
@@ -2972,7 +2955,7 @@ msgid "always"
 msgstr "常にオン"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:801
-#: ui/preferences/Preferences.cpp:1160
+#: ui/preferences/Preferences.cpp:1149
 msgid "Quality:"
 msgstr "品質"
 
@@ -3037,7 +3020,7 @@ msgstr "Where:"
 msgid "Beginning"
 msgstr "Beginning"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1850
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1809
 msgid "Remove from Playlist"
 msgstr "再生リストから削除"
 
@@ -3217,7 +3200,7 @@ msgid "Random"
 msgstr "ランダム"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:145
-#: ui/preferences/Preferences.cpp:491
+#: ui/preferences/Preferences.cpp:480
 msgid "minutes"
 msgstr "秒"
 
@@ -3278,7 +3261,7 @@ msgid "Destination Folder:"
 msgstr "保存するフォルダ:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:121
-#: ui/preferences/Preferences.cpp:1134
+#: ui/preferences/Preferences.cpp:1123
 msgid "Select a folder"
 msgstr "フォルダを選択"
 
@@ -3563,6 +3546,14 @@ msgstr "選択したアイテムの情報"
 msgid "Disable audioscrobbling"
 msgstr "オーディオスクローブルを無効"
 
+#: ui/magnatune/Magnatune.cpp:1000 ui/magnatune/Magnatune.cpp:1007
+msgid "Download Albums"
+msgstr "アルバムをダウンロード"
+
+#: ui/magnatune/Magnatune.cpp:1000 ui/magnatune/Magnatune.cpp:1007
+msgid "Download the current selected album"
+msgstr "選択したアルバムをダウンロード"
+
 #: ui/splash/SplashWin.cpp:83
 msgid "Please Donate!"
 msgstr "寄付を！"
@@ -3727,7 +3718,7 @@ msgid "Other:"
 msgstr "その他:"
 
 #: ui/preferences/Preferences.cpp:128 ui/preferences/Preferences.cpp:188
-#: ui/preferences/Preferences.cpp:2430
+#: ui/preferences/Preferences.cpp:2327
 msgid "Default"
 msgstr "デフォルト"
 
@@ -3844,509 +3835,501 @@ msgstr "カタロニア語"
 msgid "Serbian"
 msgstr "セルビア語"
 
-#: ui/preferences/Preferences.cpp:222
+#: ui/preferences/Preferences.cpp:221
 msgid "General"
 msgstr "一般"
 
-#: ui/preferences/Preferences.cpp:226 ui/preferences/Preferences.cpp:608
+#: ui/preferences/Preferences.cpp:225 ui/preferences/Preferences.cpp:597
 msgid "Collections"
 msgstr "コレクション"
 
-#: ui/preferences/Preferences.cpp:231
+#: ui/preferences/Preferences.cpp:230
 msgid "Playback"
 msgstr "再生"
 
-#: ui/preferences/Preferences.cpp:236 ui/preferences/Preferences.cpp:1030
+#: ui/preferences/Preferences.cpp:235 ui/preferences/Preferences.cpp:1019
 msgid "Crossfader"
 msgstr "クロスフェーダー"
 
-#: ui/preferences/Preferences.cpp:241 ui/preferences/Preferences.cpp:1122
+#: ui/preferences/Preferences.cpp:240 ui/preferences/Preferences.cpp:1111
 msgid "Record"
 msgstr "録音"
 
-#: ui/preferences/Preferences.cpp:256
+#: ui/preferences/Preferences.cpp:255
 msgid "Online"
 msgstr "オンライン"
 
-#: ui/preferences/Preferences.cpp:276 ui/preferences/Preferences.cpp:1953
+#: ui/preferences/Preferences.cpp:270 ui/preferences/Preferences.cpp:1850
 #: onlinelinks/OnlineLinks.cpp:71
 msgid "Links"
 msgstr "リンク"
 
-#: ui/preferences/Preferences.cpp:291
+#: ui/preferences/Preferences.cpp:285
 msgid "Shortcuts"
 msgstr "ショートカット"
 
-#: ui/preferences/Preferences.cpp:371
+#: ui/preferences/Preferences.cpp:361
 msgid "Accept"
 msgstr "設定"
 
-#: ui/preferences/Preferences.cpp:449
+#: ui/preferences/Preferences.cpp:438
 msgid "On Start"
 msgstr "起動時"
 
-#: ui/preferences/Preferences.cpp:453 ui/preferences/Preferences.cpp:1562
-#: ui/preferences/Preferences.cpp:1564
+#: ui/preferences/Preferences.cpp:442 ui/preferences/Preferences.cpp:1551
+#: ui/preferences/Preferences.cpp:1553
 msgid "Language"
 msgstr "言語"
 
-#: ui/preferences/Preferences.cpp:464
+#: ui/preferences/Preferences.cpp:453
 msgid "(Needs restart)"
 msgstr "（再起動が必要）"
 
-#: ui/preferences/Preferences.cpp:470
+#: ui/preferences/Preferences.cpp:459
 msgid "Show splash screen"
 msgstr "起動画面を表示する"
 
-#: ui/preferences/Preferences.cpp:474
+#: ui/preferences/Preferences.cpp:463
 msgid "Start minimized"
 msgstr "最小化して起動する"
 
-#: ui/preferences/Preferences.cpp:480
+#: ui/preferences/Preferences.cpp:469
 msgid "Restore position for tracks longer than"
 msgstr "これ以上長いと再生位置を記憶する"
 
-#: ui/preferences/Preferences.cpp:487
+#: ui/preferences/Preferences.cpp:476
 msgid "set the minimum length in minutes to save track position"
 msgstr "再生位置を記憶する最小の秒数をセット"
 
-#: ui/preferences/Preferences.cpp:497
+#: ui/preferences/Preferences.cpp:486
 msgid "Load default layout"
 msgstr "デフォルト・レイアウトをロードする"
 
-#: ui/preferences/Preferences.cpp:503
+#: ui/preferences/Preferences.cpp:492
 msgid "Behaviour"
 msgstr "動作"
 
-#: ui/preferences/Preferences.cpp:505
+#: ui/preferences/Preferences.cpp:494
 msgid "Activate system tray icon"
 msgstr "タスクバーアイコンを有効にする"
 
-#: ui/preferences/Preferences.cpp:516
+#: ui/preferences/Preferences.cpp:505
 msgid "Integrate into SoundMenu"
 msgstr "サウンドメニューに統合する"
 
-#: ui/preferences/Preferences.cpp:522
+#: ui/preferences/Preferences.cpp:511
 msgid "Enqueue as default action"
 msgstr "デフォルト動作でキューに入れる"
 
-#: ui/preferences/Preferences.cpp:526
+#: ui/preferences/Preferences.cpp:515
 msgid "Drop files clear playlist"
 msgstr "ファイルをドロップすると再生リストを消去する"
 
-#: ui/preferences/Preferences.cpp:530
+#: ui/preferences/Preferences.cpp:519
 msgid "Instant text search"
 msgstr "簡易テキスト検索"
 
-#: ui/preferences/Preferences.cpp:534
+#: ui/preferences/Preferences.cpp:523
 msgid "When searching, pressing enter queues the result"
 msgstr "Enterで検索結果をキューに入れる"
 
-#: ui/preferences/Preferences.cpp:540
+#: ui/preferences/Preferences.cpp:529
 #, fuzzy
 msgid "Show album cover in the player"
 msgstr "プレイヤーのCDカバーフレームを表示"
 
-#: ui/preferences/Preferences.cpp:544
+#: ui/preferences/Preferences.cpp:533
 #, fuzzy
 msgid "Show CD cover frame in the cover editor"
 msgstr "プレイヤーのCDカバーフレームを表示"
 
-#: ui/preferences/Preferences.cpp:550
+#: ui/preferences/Preferences.cpp:539
 msgid "On Close"
 msgstr "終了時"
 
-#: ui/preferences/Preferences.cpp:552
+#: ui/preferences/Preferences.cpp:541
 msgid "Save playlist on close"
 msgstr "終了時に再生リストを保存"
 
-#: ui/preferences/Preferences.cpp:556
+#: ui/preferences/Preferences.cpp:545
 msgid "Close minimizes to system tray icon"
 msgstr "タスクバー・アイコンを閉じる"
 
-#: ui/preferences/Preferences.cpp:561
+#: ui/preferences/Preferences.cpp:550
 msgid "Ask confirmation on exit"
 msgstr "終了時に確認する"
 
-#: ui/preferences/Preferences.cpp:653
+#: ui/preferences/Preferences.cpp:642
 msgid "Paths"
 msgstr "パス"
 
-#: ui/preferences/Preferences.cpp:673
+#: ui/preferences/Preferences.cpp:662
 msgid "Words to detect covers"
 msgstr "カバーを検出する言葉"
 
-#: ui/preferences/Preferences.cpp:702 ui/preferences/Preferences.cpp:2246
+#: ui/preferences/Preferences.cpp:691 ui/preferences/Preferences.cpp:2143
 msgid "Options"
 msgstr "オプション"
 
-#: ui/preferences/Preferences.cpp:704
+#: ui/preferences/Preferences.cpp:693
 msgid "Update when opened "
 msgstr "起動時に更新 "
 
-#: ui/preferences/Preferences.cpp:708
+#: ui/preferences/Preferences.cpp:697
 msgid "Create playlists on scan"
 msgstr "スキャンして再生リストを作成"
 
-#: ui/preferences/Preferences.cpp:713
+#: ui/preferences/Preferences.cpp:702
 msgid "Follow symbolic links on scan"
 msgstr "シンボリックリンクもスキャン"
 
-#: ui/preferences/Preferences.cpp:717
+#: ui/preferences/Preferences.cpp:706
 msgid "Scan embedded covers in audio files"
 msgstr "音声ファイルに埋め込まれたカバーをスキャン"
 
-#: ui/preferences/Preferences.cpp:722
+#: ui/preferences/Preferences.cpp:711
 msgid "Embed rating, play count and labels"
 msgstr "評価、再生カウント、ラベルを埋め込む"
 
-#: ui/preferences/Preferences.cpp:728
+#: ui/preferences/Preferences.cpp:717
 msgid "Default copy action"
 msgstr "デフォルトのコピー動作"
 
-#: ui/preferences/Preferences.cpp:811
+#: ui/preferences/Preferences.cpp:800
 msgid "Play random"
 msgstr "再生リストが空のときランダムに"
 
-#: ui/preferences/Preferences.cpp:815
+#: ui/preferences/Preferences.cpp:804
 msgid "album"
 msgstr "アルバム"
 
-#: ui/preferences/Preferences.cpp:823
+#: ui/preferences/Preferences.cpp:812
 msgid "when playlist is empty"
 msgstr "を選ぶ"
 
-#: ui/preferences/Preferences.cpp:829
+#: ui/preferences/Preferences.cpp:818
 msgid "Delete played tracks from playlist"
 msgstr "再生した曲をリストから消去"
 
-#: ui/preferences/Preferences.cpp:833
+#: ui/preferences/Preferences.cpp:822
 msgid "Show notifications"
 msgstr "通知を表示"
 
-#: ui/preferences/Preferences.cpp:837
+#: ui/preferences/Preferences.cpp:826
 #, fuzzy
 msgid "Enable equalizer"
 msgstr "イコライザー"
 
-#: ui/preferences/Preferences.cpp:841
+#: ui/preferences/Preferences.cpp:830
 msgid "Enable volume and fader"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:847
+#: ui/preferences/Preferences.cpp:836
 msgid "ReplayGain mode:"
 msgstr "ゲイン・モード"
 
-#: ui/preferences/Preferences.cpp:851
+#: ui/preferences/Preferences.cpp:840
 msgid "Disabled"
 msgstr "無効"
 
-#: ui/preferences/Preferences.cpp:858
+#: ui/preferences/Preferences.cpp:847
 msgid "PreAmp:"
 msgstr "プリアンプ"
 
-#: ui/preferences/Preferences.cpp:875
+#: ui/preferences/Preferences.cpp:864
 msgid "Random / Smart play modes"
 msgstr "ランダム/スマート再生モード"
 
-#: ui/preferences/Preferences.cpp:885
+#: ui/preferences/Preferences.cpp:874
 msgid "Minimum number of tracks to play required to add new ones"
 msgstr "サーチを始める残り曲数"
 
-#: ui/preferences/Preferences.cpp:893
+#: ui/preferences/Preferences.cpp:882
 msgid "Tracks added each time"
 msgstr "加える曲数"
 
-#: ui/preferences/Preferences.cpp:902
+#: ui/preferences/Preferences.cpp:891
 msgid "Max played tracks kept in playlist"
 msgstr "再生リストに保持する曲数"
 
-#: ui/preferences/Preferences.cpp:912 ui/preferences/Preferences.cpp:3444
+#: ui/preferences/Preferences.cpp:901 ui/preferences/Preferences.cpp:3310
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
 msgstr[0] "除外 最近再生した"
 
-#: ui/preferences/Preferences.cpp:921 ui/preferences/Preferences.cpp:3445
+#: ui/preferences/Preferences.cpp:910 ui/preferences/Preferences.cpp:3311
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
 msgstr[0] "アーティスト"
 
-#: ui/preferences/Preferences.cpp:937
+#: ui/preferences/Preferences.cpp:926
 msgid "Silence detector"
 msgstr "無音検出"
 
-#: ui/preferences/Preferences.cpp:942
+#: ui/preferences/Preferences.cpp:931
 msgid "Skip at"
 msgstr "スキップ音量"
 
-#: ui/preferences/Preferences.cpp:961
+#: ui/preferences/Preferences.cpp:950
 msgid "In the last"
 msgstr "曲の最後から"
 
-#: ui/preferences/Preferences.cpp:971 ui/preferences/Preferences.cpp:1198
+#: ui/preferences/Preferences.cpp:960 ui/preferences/Preferences.cpp:1187
 msgid "seconds"
 msgstr "秒"
 
-#: ui/preferences/Preferences.cpp:979
+#: ui/preferences/Preferences.cpp:968
 msgid "Output device"
 msgstr "出力デバイス"
 
-#: ui/preferences/Preferences.cpp:982
+#: ui/preferences/Preferences.cpp:971
 msgid "Automatic"
 msgstr "自動"
 
-#: ui/preferences/Preferences.cpp:983
+#: ui/preferences/Preferences.cpp:972
 msgid "GConf Defined"
 msgstr "GConfの設定"
 
-#: ui/preferences/Preferences.cpp:1037
+#: ui/preferences/Preferences.cpp:1026
 msgid "Fade-out length:"
 msgstr "フェードアウト 長さ:"
 
-#: ui/preferences/Preferences.cpp:1046
+#: ui/preferences/Preferences.cpp:1035
 msgid "Select the length of the fade out. 0 for gapless playback"
 msgstr "フェードアウトの長さ ギャップレス再生は０"
 
-#: ui/preferences/Preferences.cpp:1049
+#: ui/preferences/Preferences.cpp:1038
 msgid "Fade-in length:"
 msgstr "フェードイン 長さ:"
 
-#: ui/preferences/Preferences.cpp:1058
+#: ui/preferences/Preferences.cpp:1047
 msgid "Select the length of the fade in"
 msgstr "フェードインの長さを選択"
 
-#: ui/preferences/Preferences.cpp:1061
+#: ui/preferences/Preferences.cpp:1050
 msgid "Fade-in volume:"
 msgstr "フェードイン 音量"
 
-#: ui/preferences/Preferences.cpp:1070
+#: ui/preferences/Preferences.cpp:1059
 msgid "Select the initial volume of the fade in"
 msgstr "フェードインの初期音量を選択"
 
-#: ui/preferences/Preferences.cpp:1073
+#: ui/preferences/Preferences.cpp:1062
 msgid "Fade-in start:"
 msgstr "フェードイン 開始"
 
-#: ui/preferences/Preferences.cpp:1082
+#: ui/preferences/Preferences.cpp:1071
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "フェードを始める音量の選択"
 
-#: ui/preferences/Preferences.cpp:1124
+#: ui/preferences/Preferences.cpp:1113
 msgid "Enable recording"
 msgstr "録音を有効にする"
 
-#: ui/preferences/Preferences.cpp:1130
+#: ui/preferences/Preferences.cpp:1119
 msgid "Save to:"
 msgstr "保存先："
 
-#: ui/preferences/Preferences.cpp:1148 ui/preferences/Preferences.cpp:2267
+#: ui/preferences/Preferences.cpp:1137 ui/preferences/Preferences.cpp:2164
 msgid "Format:"
 msgstr "フォーマット:"
 
-#: ui/preferences/Preferences.cpp:1165 copyto/Transcode.cpp:322
+#: ui/preferences/Preferences.cpp:1154 copyto/Transcode.cpp:322
 msgid "Very High"
 msgstr "非常に高い"
 
-#: ui/preferences/Preferences.cpp:1166 copyto/Transcode.cpp:323
+#: ui/preferences/Preferences.cpp:1155 copyto/Transcode.cpp:323
 msgid "High"
 msgstr "高"
 
-#: ui/preferences/Preferences.cpp:1167 copyto/Transcode.cpp:326
+#: ui/preferences/Preferences.cpp:1156 copyto/Transcode.cpp:326
 msgid "Normal"
 msgstr "中"
 
-#: ui/preferences/Preferences.cpp:1168 copyto/Transcode.cpp:327
+#: ui/preferences/Preferences.cpp:1157 copyto/Transcode.cpp:327
 msgid "Low"
 msgstr "低"
 
-#: ui/preferences/Preferences.cpp:1169 copyto/Transcode.cpp:328
+#: ui/preferences/Preferences.cpp:1158 copyto/Transcode.cpp:328
 msgid "Very Low"
 msgstr "非常に低い"
 
-#: ui/preferences/Preferences.cpp:1181
+#: ui/preferences/Preferences.cpp:1170
 msgid "Split tracks"
 msgstr "一曲づつ録音"
 
-#: ui/preferences/Preferences.cpp:1188
+#: ui/preferences/Preferences.cpp:1177
 msgid "Delete tracks shorter than"
 msgstr "これ以下の曲は削除"
 
-#: ui/preferences/Preferences.cpp:1227
+#: ui/preferences/Preferences.cpp:1216
 msgid "Last.fm audioscrobble"
 msgstr "Last.fm オーディオスクローブル"
 
-#: ui/preferences/Preferences.cpp:1229 ui/preferences/Preferences.cpp:1263
+#: ui/preferences/Preferences.cpp:1218 ui/preferences/Preferences.cpp:1252
 msgid "Enabled"
 msgstr "有効"
 
-#: ui/preferences/Preferences.cpp:1237 ui/preferences/Preferences.cpp:1271
-#: ui/preferences/Preferences.cpp:1522
+#: ui/preferences/Preferences.cpp:1226 ui/preferences/Preferences.cpp:1260
+#: ui/preferences/Preferences.cpp:1511
 msgid "Username:"
 msgstr "Username:"
 
-#: ui/preferences/Preferences.cpp:1245 ui/preferences/Preferences.cpp:1279
-#: ui/preferences/Preferences.cpp:1531
+#: ui/preferences/Preferences.cpp:1234 ui/preferences/Preferences.cpp:1268
+#: ui/preferences/Preferences.cpp:1520
 msgid "Password:"
 msgstr "Password:"
 
-#: ui/preferences/Preferences.cpp:1261
+#: ui/preferences/Preferences.cpp:1250
 msgid "Libre.fm audioscrobble"
 msgstr "Libre.fm オーディオスクローブル"
 
-#: ui/preferences/Preferences.cpp:1362
+#: ui/preferences/Preferences.cpp:1351
 msgid "Targets"
 msgstr "ターゲット"
 
-#: ui/preferences/Preferences.cpp:1403
+#: ui/preferences/Preferences.cpp:1392
 #, fuzzy
 msgid "Disabled Genres"
 msgstr "無効"
 
-#: ui/preferences/Preferences.cpp:1424 ui/preferences/Preferences.cpp:1426
+#: ui/preferences/Preferences.cpp:1413 ui/preferences/Preferences.cpp:1415
 msgid "Font"
 msgstr "フォント"
 
-#: ui/preferences/Preferences.cpp:1438
+#: ui/preferences/Preferences.cpp:1427
 msgid "Align:"
 msgstr "配置"
 
-#: ui/preferences/Preferences.cpp:1444
+#: ui/preferences/Preferences.cpp:1433
 msgid "Center"
 msgstr "中央"
 
-#: ui/preferences/Preferences.cpp:1489
+#: ui/preferences/Preferences.cpp:1478
 msgid "Proxy"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1491
+#: ui/preferences/Preferences.cpp:1480
 #, fuzzy
 msgid "Proxy Enabled"
 msgstr "有効"
 
-#: ui/preferences/Preferences.cpp:1500
+#: ui/preferences/Preferences.cpp:1489
 #, fuzzy
 msgid "Hostname:"
 msgstr "Username:"
 
-#: ui/preferences/Preferences.cpp:1511
+#: ui/preferences/Preferences.cpp:1500
 msgid "Port:"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1579
+#: ui/preferences/Preferences.cpp:1568
 msgid "Browser command"
 msgstr "ブラウザ・コマンド"
 
-#: ui/preferences/Preferences.cpp:1587
+#: ui/preferences/Preferences.cpp:1576
 msgid "Minimum radio allowed bit rate"
 msgstr "許可する最小ビットレート"
 
-#: ui/preferences/Preferences.cpp:1594
+#: ui/preferences/Preferences.cpp:1583
 msgid "Player online buffer size"
 msgstr "オンライン・プレイヤーのバッファサイズ"
 
-#: ui/preferences/Preferences.cpp:1632
+#: ui/preferences/Preferences.cpp:1621
 msgid "Destination directory:"
 msgstr "保存するディレクトリ:"
 
-#: ui/preferences/Preferences.cpp:1636
+#: ui/preferences/Preferences.cpp:1625
 msgid "Select podcasts folder"
 msgstr "Podcastフォルダの選択"
 
-#: ui/preferences/Preferences.cpp:1644
+#: ui/preferences/Preferences.cpp:1633
 msgid "Check every"
 msgstr "チェック間隔"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1638
 msgid "Hour"
 msgstr "毎時"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1638
 msgid "Day"
 msgstr "毎日"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1638
 msgid "Week"
 msgstr "毎週"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1638
 msgid "Month"
 msgstr "毎月"
 
-#: ui/preferences/Preferences.cpp:1660
+#: ui/preferences/Preferences.cpp:1649
 msgid "Delete after"
 msgstr "保存期限"
 
-#: ui/preferences/Preferences.cpp:1669
+#: ui/preferences/Preferences.cpp:1658
 msgid "Days"
 msgstr "日"
 
-#: ui/preferences/Preferences.cpp:1669
+#: ui/preferences/Preferences.cpp:1658
 msgid "Weeks"
 msgstr "週"
 
-#: ui/preferences/Preferences.cpp:1669
+#: ui/preferences/Preferences.cpp:1658
 msgid "Months"
 msgstr "月"
 
-#: ui/preferences/Preferences.cpp:1678
+#: ui/preferences/Preferences.cpp:1667
 msgid "Only if played"
 msgstr "再生されたものだけ"
 
-#: ui/preferences/Preferences.cpp:1739 ui/preferences/Preferences.cpp:1834
+#: ui/preferences/Preferences.cpp:1731
 msgid "Invert"
 msgstr "反転"
 
-#: ui/preferences/Preferences.cpp:1753
-msgid "Audio format:"
-msgstr "音声フォーマット"
-
-#: ui/preferences/Preferences.cpp:1764
-msgid "Torrent command:"
-msgstr "使用するトレント:"
-
-#: ui/preferences/Preferences.cpp:1848
+#: ui/preferences/Preferences.cpp:1745
 msgid "Membership :"
 msgstr "メンバーシップ :"
 
-#: ui/preferences/Preferences.cpp:1855
+#: ui/preferences/Preferences.cpp:1752
 msgid "Streaming"
 msgstr "ストリーミング"
 
-#: ui/preferences/Preferences.cpp:1856
+#: ui/preferences/Preferences.cpp:1753
 msgid "Downloading"
 msgstr "ダウンロード"
 
-#: ui/preferences/Preferences.cpp:1869
+#: ui/preferences/Preferences.cpp:1766
 msgid "Username :"
 msgstr "Username :"
 
-#: ui/preferences/Preferences.cpp:1877
+#: ui/preferences/Preferences.cpp:1774
 msgid "Password :"
 msgstr "Password :"
 
-#: ui/preferences/Preferences.cpp:1895
+#: ui/preferences/Preferences.cpp:1792
 msgid "Stream as :"
 msgstr "ストリームの種類"
 
-#: ui/preferences/Preferences.cpp:1909
+#: ui/preferences/Preferences.cpp:1806
 msgid "Download as :"
 msgstr "名前をつけてダウンロード:"
 
-#: ui/preferences/Preferences.cpp:1913
+#: ui/preferences/Preferences.cpp:1810
 msgid "Download Page"
 msgstr "ダウンロード・ページ"
 
-#: ui/preferences/Preferences.cpp:2007
+#: ui/preferences/Preferences.cpp:1904
 msgid "URL:"
 msgstr "URL:"
 
-#: ui/preferences/Preferences.cpp:2032
+#: ui/preferences/Preferences.cpp:1929
 msgid "Define URLs using"
 msgstr "URLの定義"
 
-#: ui/preferences/Preferences.cpp:2038
+#: ui/preferences/Preferences.cpp:1935
 msgid ""
 "2 letters language code\n"
 "Text to search"
@@ -4354,11 +4337,11 @@ msgstr ""
 "2文字の文字コード\n"
 "検索する文字"
 
-#: ui/preferences/Preferences.cpp:2151
+#: ui/preferences/Preferences.cpp:2048
 msgid "Define commands using"
 msgstr "コマンドの定義"
 
-#: ui/preferences/Preferences.cpp:2157
+#: ui/preferences/Preferences.cpp:2054
 msgid ""
 "Album path\n"
 "Album cover file path\n"
@@ -4368,19 +4351,19 @@ msgstr ""
 "アルバムカバーファイルのパス\n"
 "曲のパス"
 
-#: ui/preferences/Preferences.cpp:2190
+#: ui/preferences/Preferences.cpp:2087
 msgid "Patterns"
 msgstr "パターン"
 
-#: ui/preferences/Preferences.cpp:2301
+#: ui/preferences/Preferences.cpp:2198
 msgid "Remove source files"
 msgstr "ソースファイルの削除"
 
-#: ui/preferences/Preferences.cpp:2318
+#: ui/preferences/Preferences.cpp:2215
 msgid "Define patterns using"
 msgstr "パターンの定義"
 
-#: ui/preferences/Preferences.cpp:2324
+#: ui/preferences/Preferences.cpp:2221
 msgid ""
 "Artist\n"
 "Album Artist\n"
@@ -4392,7 +4375,7 @@ msgstr ""
 "{aa} か {a}\n"
 "アルバム"
 
-#: ui/preferences/Preferences.cpp:2332
+#: ui/preferences/Preferences.cpp:2229
 msgid ""
 "Composer\n"
 "Disk\n"
@@ -4404,7 +4387,7 @@ msgstr ""
 "ファイル名\n"
 "ジャンル"
 
-#: ui/preferences/Preferences.cpp:2340
+#: ui/preferences/Preferences.cpp:2237
 msgid ""
 "Index\n"
 "Number\n"
@@ -4416,56 +4399,56 @@ msgstr ""
 "タイトル\n"
 "年"
 
-#: ui/preferences/Preferences.cpp:2391
+#: ui/preferences/Preferences.cpp:2288
 msgid "Accelerators"
 msgstr "アクセレータ"
 
-#: ui/preferences/Preferences.cpp:2396
+#: ui/preferences/Preferences.cpp:2293
 msgid "Action"
 msgstr "動作"
 
-#: ui/preferences/Preferences.cpp:2400
+#: ui/preferences/Preferences.cpp:2297
 msgid "Key"
 msgstr "キー"
 
-#: ui/preferences/Preferences.cpp:2824 ui/preferences/Preferences.cpp:2844
+#: ui/preferences/Preferences.cpp:2690 ui/preferences/Preferences.cpp:2710
 msgid "Enter the collection name"
 msgstr "コレクション名を入力"
 
-#: ui/preferences/Preferences.cpp:2953
+#: ui/preferences/Preferences.cpp:2819
 msgid "Change library path"
 msgstr "ライブラリのパスを変更"
 
-#: ui/preferences/Preferences.cpp:3031 ui/preferences/Preferences.cpp:3051
+#: ui/preferences/Preferences.cpp:2897 ui/preferences/Preferences.cpp:2917
 msgid "Word"
 msgstr "ワード"
 
-#: ui/preferences/Preferences.cpp:3031 ui/preferences/Preferences.cpp:3051
+#: ui/preferences/Preferences.cpp:2897 ui/preferences/Preferences.cpp:2917
 msgid "Enter the text to find covers"
 msgstr "カバーを探す文字を入力"
 
-#: ui/preferences/Preferences.cpp:3371
+#: ui/preferences/Preferences.cpp:3237
 #, fuzzy
 msgid "Enter the genre to disable"
 msgstr "フィルターする文字を入力"
 
-#: ui/preferences/Preferences.cpp:3572 ui/preferences/Preferences.cpp:3603
+#: ui/preferences/Preferences.cpp:3438 ui/preferences/Preferences.cpp:3469
 msgid "Filter"
 msgstr "フィルター"
 
-#: ui/preferences/Preferences.cpp:3573
+#: ui/preferences/Preferences.cpp:3439
 msgid "Enter the text to filter"
 msgstr "フィルターする文字を入力"
 
-#: ui/preferences/Preferences.cpp:3603
+#: ui/preferences/Preferences.cpp:3469
 msgid "Edit the text to filter"
 msgstr "フィルターする文字の編集"
 
-#: ui/preferences/Preferences.cpp:4129
+#: ui/preferences/Preferences.cpp:3971
 msgid "Select path"
 msgstr "パスを選択"
 
-#: ui/preferences/Preferences.cpp:4307
+#: ui/preferences/Preferences.cpp:4149
 msgid "Key used by '"
 msgstr "使用するキー '"
 
@@ -4652,11 +4635,11 @@ msgstr "再生中の曲を停止"
 msgid "Record to file"
 msgstr "ファイルに録音"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3081
 msgid "Enable crossfading"
 msgstr "クロスフェードを有効"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3081
 msgid "Disable crossfading"
 msgstr "クロスフェードを無効"
 
@@ -4664,7 +4647,7 @@ msgstr "クロスフェードを無効"
 msgid "Show the equalizer (right click for on/off)"
 msgstr "イコライザーを表示"
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2755
 msgid "Volume"
 msgstr "音量"
 
@@ -4705,25 +4688,25 @@ msgstr "現在の曲のビットレートを表示"
 msgid "Buffering..."
 msgstr "バッファ中…"
 
-#: ui/player/PlayerPanel.cpp:2478
+#: ui/player/PlayerPanel.cpp:2477
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2484
+#: ui/player/PlayerPanel.cpp:2483
 #, fuzzy
 msgid "Repeat all"
 msgstr "曲をリピート"
 
-#: ui/player/PlayerPanel.cpp:2489
+#: ui/player/PlayerPanel.cpp:2488
 #, fuzzy
 msgid "Repeat one"
 msgstr "曲をリピート"
 
-#: ui/player/PlayerPanel.cpp:2496
+#: ui/player/PlayerPanel.cpp:2495
 msgid "Smart mode disabled"
 msgstr ""
 
-#: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1751
+#: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1710
 msgid "Set as Next Track"
 msgstr "次の曲にセット"
 
@@ -4747,75 +4730,75 @@ msgstr "選択した曲を次の再生にセット"
 msgid "Move the selected tracks to the bottom"
 msgstr "選択した曲を次の再生にセット"
 
-#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1851
+#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1810
 msgid "Remove the selected tracks from playlist"
 msgstr "選択した曲を再生リストから削除"
 
-#: ui/player/PlayList.cpp:1724
+#: ui/player/PlayList.cpp:1683
 msgid "Empty Playlist"
 msgstr "再生リストが空"
 
-#: ui/player/PlayList.cpp:1724
+#: ui/player/PlayList.cpp:1683
 msgid "The playlist is empty"
 msgstr "この再生リストが空"
 
-#: ui/player/PlayList.cpp:1735
+#: ui/player/PlayList.cpp:1694
 msgid "Edit the current selected tracks labels"
 msgstr "セット曲のラベルを編集"
 
-#: ui/player/PlayList.cpp:1742
+#: ui/player/PlayList.cpp:1701
 msgid "Edit the current selected songs"
 msgstr "選択した曲を編集"
 
-#: ui/player/PlayList.cpp:1752
+#: ui/player/PlayList.cpp:1711
 msgid "Move the selected tracks to be played next"
 msgstr "選択した曲を次の再生にセット"
 
-#: ui/player/PlayList.cpp:1776
+#: ui/player/PlayList.cpp:1735
 msgid "Search a track in the playlist by name"
 msgstr "再生リストを名前で検索"
 
-#: ui/player/PlayList.cpp:1785
+#: ui/player/PlayList.cpp:1744
 msgid "Selects the current selected track in the library"
 msgstr "ライブラリの現在選択した曲"
 
-#: ui/player/PlayList.cpp:1791
+#: ui/player/PlayList.cpp:1750
 msgid "Select the album artist of the current song"
 msgstr "現在の曲のアルバム・アーティストを選択"
 
-#: ui/player/PlayList.cpp:1794
+#: ui/player/PlayList.cpp:1753
 msgid "Select the composer of the current song"
 msgstr "現在の曲の作曲者を選択"
 
-#: ui/player/PlayList.cpp:1800
+#: ui/player/PlayList.cpp:1759
 msgid "Select the year of the current song"
 msgstr "現在の曲の年を選択"
 
-#: ui/player/PlayList.cpp:1803
+#: ui/player/PlayList.cpp:1762
 msgid "Select the genre of the current song"
 msgstr "現在の曲のジャンルを選択"
 
-#: ui/player/PlayList.cpp:1843
+#: ui/player/PlayList.cpp:1802
 msgid "Remove all tracks from playlist"
 msgstr "再生リストからすべての曲を削除"
 
-#: ui/player/PlayList.cpp:1859
+#: ui/player/PlayList.cpp:1818
 msgid "Remove the selected tracks from library"
 msgstr "選択した曲をライブラリから削除"
 
-#: ui/player/PlayList.cpp:1865
+#: ui/player/PlayList.cpp:1824
 msgid "Remove the selected tracks from drive"
 msgstr "選択した曲をドライブから削除"
 
-#: ui/player/PlayList.cpp:2178
+#: ui/player/PlayList.cpp:2136
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2319
+#: ui/player/PlayList.cpp:2277
 msgid "Please enter the search term"
 msgstr "検索条件を入力"
 
-#: ui/player/PlayList.cpp:2864
+#: ui/player/PlayList.cpp:2802
 msgid "Loading tracks. Please wait"
 msgstr "曲を読み込み中"
 
@@ -4879,6 +4862,15 @@ msgstr "mp3ファイル"
 #, fuzzy
 msgid "To file"
 msgstr "oggファイル"
+
+#~ msgid "Download Albums torrents"
+#~ msgstr "トレントでアルバムをダウンロード"
+
+#~ msgid "Audio format:"
+#~ msgstr "音声フォーマット"
+
+#~ msgid "Torrent command:"
+#~ msgstr "使用するトレント:"
 
 #~ msgid "Community"
 #~ msgstr "コミュニティ"

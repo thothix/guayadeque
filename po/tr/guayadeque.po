@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-25 00:09-0300\n"
+"POT-Creation-Date: 2025-02-21 19:09-0300\n"
 "PO-Revision-Date: 2020-03-29 15:40+0000\n"
 "Last-Translator: abc Def <hdogan1974@gmail.com>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/anonbeat/"
@@ -30,8 +30,8 @@ msgstr "Klasör Ekle"
 msgid "Audio Scrobbling"
 msgstr "Müzik Skroplama"
 
-#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1472 ui/player/PlayList.cpp:93
-#: ui/player/PlayList.cpp:1842
+#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1457 ui/player/PlayList.cpp:93
+#: ui/player/PlayList.cpp:1801
 msgid "Clear the Playlist"
 msgstr "Çalma Listesini Temizle"
 
@@ -49,7 +49,7 @@ msgstr "Topluluk Forumları"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
-#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1734
+#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1693
 msgid "Edit Labels"
 msgstr "Etiketleri Düzenle"
 
@@ -95,7 +95,7 @@ msgstr "Albümden sonra kuyruğa ekle"
 msgid "Enqueue After Artist"
 msgstr "Sanatçıdan sonra kuyruğa ekle"
 
-#: misc/Accelerators.cpp:121 ui/MainFrame.cpp:1387
+#: misc/Accelerators.cpp:121 ui/MainFrame.cpp:1372
 msgid "Full Screen"
 msgstr "Tam Ekran"
 
@@ -103,14 +103,14 @@ msgstr "Tam Ekran"
 msgid "Gapless/Crossfading"
 msgstr "Boşluksuz mod/Çapraz Geçiş"
 
-#: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1572
-#: ui/MainFrame.cpp:1615
+#: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1557
+#: ui/MainFrame.cpp:1600
 msgid "Help"
 msgstr "Yardım"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:337
 #: ui/filebrowser/FileBrowser.cpp:963 ui/taskbar/TaskBar.cpp:114
-#: ui/MainFrame.cpp:1456 ui/mediaviewer/library/DiBrowser.cpp:264
+#: ui/MainFrame.cpp:1441 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
 #: ui/mediaviewer/library/ArListBox.cpp:152
@@ -142,28 +142,28 @@ msgstr "Tümünü Çal"
 msgid "Play/Pause"
 msgstr "Çal/Duraklat"
 
-#: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1053 ui/MainFrame.cpp:1884
+#: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1038 ui/MainFrame.cpp:1869
 msgid "Play Stream"
 msgstr "Akışı Çal"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:322
-#: ui/filebrowser/FileBrowser.cpp:948 ui/MainFrame.cpp:1414
-#: ui/MainFrame.cpp:4240 ui/mediaviewer/library/DiBrowser.cpp:249
+#: ui/filebrowser/FileBrowser.cpp:948 ui/MainFrame.cpp:1399
+#: ui/MainFrame.cpp:4215 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
-#: ui/player/PlayList.cpp:1710 onlinelinks/OnlineLinks.cpp:68
+#: ui/player/PlayList.cpp:1669 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: misc/Accelerators.cpp:129 ui/MainFrame.cpp:1106
+#: misc/Accelerators.cpp:129 ui/MainFrame.cpp:1091
 msgid "Quit"
 msgstr "Çıkış"
 
-#: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1519
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1836
+#: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1504
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1795
 msgid "Shuffle the Playlist"
 msgstr "Çalma Listesi'ni karıştır"
 
@@ -187,7 +187,7 @@ msgstr "Tüm Parçaları Yeniden Çal"
 msgid "Repeat Current Track"
 msgstr "Çalınan Parçayı Tekrarla"
 
-#: misc/Accelerators.cpp:140 ui/MainFrame.cpp:1307 ui/MainFrame.cpp:3590
+#: misc/Accelerators.cpp:140 ui/MainFrame.cpp:1292 ui/MainFrame.cpp:3565
 msgid "Save Layout"
 msgstr "Düzeni Kaydet"
 
@@ -207,13 +207,13 @@ msgstr "Düzeni Kaydet"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1821
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1780
 msgid "Save to Playlist"
 msgstr "Çalma Listesine Kaydet"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
-#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1775
-#: ui/player/PlayList.cpp:2319
+#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1734
+#: ui/player/PlayList.cpp:2277
 msgid "Search"
 msgstr "Arama"
 
@@ -289,15 +289,15 @@ msgstr "Öncekine Geç"
 msgid "Skip Previous Album"
 msgstr "Önceki Albüme Geç"
 
-#: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1513
+#: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1498
 msgid "Smart Play"
 msgstr "Akıllı Çalma"
 
-#: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1460
+#: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1445
 msgid "Stop"
 msgstr "Durdur"
 
-#: misc/Accelerators.cpp:166 ui/MainFrame.cpp:1465
+#: misc/Accelerators.cpp:166 ui/MainFrame.cpp:1450
 msgid "Stop at End"
 msgstr "Sonunda durdur"
 
@@ -305,14 +305,13 @@ msgstr "Sonunda durdur"
 msgid "Update Covers"
 msgstr "Albüm Kapaklarını Güncelle"
 
-#: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:333
-#: ui/locationpanel/LocationPanel.cpp:371
-#: ui/locationpanel/LocationPanel.cpp:511 ui/filebrowser/FileBrowser.cpp:410
-#: ui/jamendo/Jamendo.cpp:1114 ui/MainFrame.cpp:991 ui/MainFrame.cpp:1029
-#: ui/MainFrame.cpp:1265 ui/mediaviewer/library/DiBrowser.cpp:327
-#: ui/mediaviewer/MediaViewer.cpp:932
+#: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
+#: ui/locationpanel/LocationPanel.cpp:363
+#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:410
+#: ui/MainFrame.cpp:979 ui/MainFrame.cpp:1017 ui/MainFrame.cpp:1250
+#: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1014
 #: ui/podcasts/PodcastsPanel.cpp:1752
 msgid "Update"
 msgstr "Güncelle"
@@ -325,11 +324,11 @@ msgstr "Güncelle (Zorlayarak)"
 msgid "Update Podcasts"
 msgstr "Podcast'leri Güncelle"
 
-#: misc/Accelerators.cpp:171 ui/MainFrame.cpp:1542
+#: misc/Accelerators.cpp:171 ui/MainFrame.cpp:1527
 msgid "Volume Down"
 msgstr "Sesi Azalt"
 
-#: misc/Accelerators.cpp:172 ui/MainFrame.cpp:1537
+#: misc/Accelerators.cpp:172 ui/MainFrame.cpp:1522
 msgid "Volume Up"
 msgstr "Sesi Arttır"
 
@@ -373,7 +372,7 @@ msgstr "Geri Dön"
 msgid "Enter"
 msgstr "Enter"
 
-#: misc/Accelerators.cpp:339 ui/preferences/Preferences.cpp:1443
+#: misc/Accelerators.cpp:339 ui/preferences/Preferences.cpp:1432
 msgid "Left"
 msgstr "Sol"
 
@@ -381,7 +380,7 @@ msgstr "Sol"
 msgid "Up"
 msgstr "Yukarı"
 
-#: misc/Accelerators.cpp:345 ui/preferences/Preferences.cpp:1445
+#: misc/Accelerators.cpp:345 ui/preferences/Preferences.cpp:1434
 msgid "Right"
 msgstr "Sağ"
 
@@ -425,7 +424,7 @@ msgid "Separator"
 msgstr "Seperator"
 
 #: misc/Accelerators.cpp:395 ui/mediaviewer/library/SoListBox.cpp:585
-#: ui/player/PlayList.cpp:1806
+#: ui/player/PlayList.cpp:1765
 msgid "Select"
 msgstr "Seç"
 
@@ -441,7 +440,7 @@ msgstr "Sergile"
 msgid "Snapshot"
 msgstr "Ekran görüntüsü"
 
-#: misc/Accelerators.cpp:401 ui/preferences/Preferences.cpp:373
+#: misc/Accelerators.cpp:401 ui/preferences/Preferences.cpp:363
 msgid "Cancel"
 msgstr "İptal"
 
@@ -453,15 +452,15 @@ msgstr "Menü"
 msgid "Capital"
 msgstr "Baş"
 
-#: MainApp.cpp:396
+#: MainApp.cpp:389
 msgid "Another program instance is already running."
 msgstr ""
 
-#: MainApp.cpp:396
+#: MainApp.cpp:389
 msgid "Do you want to continue with the program?"
 msgstr ""
 
-#: MainApp.cpp:397 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
@@ -474,7 +473,7 @@ msgstr "Onayla"
 
 #: db/DbLibrary.cpp:269 db/DbLibrary.cpp:281 db/DbLibrary.cpp:1725
 #: db/DbLibrary.cpp:1738 db/DbLibrary.cpp:1799 db/DbLibrary.cpp:1812
-#: ui/jamendo/Jamendo.cpp:622 ui/player/PlayerPanel.cpp:1377
+#: ui/player/PlayerPanel.cpp:1377
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
@@ -497,8 +496,7 @@ msgstr "Akıllı Çalma Listesi oluştur"
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
 #: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
-#: ui/preferences/Preferences.cpp:1733 ui/preferences/Preferences.cpp:1828
-#: ui/player/PlayerFilters.cpp:107
+#: ui/preferences/Preferences.cpp:1725 ui/player/PlayerFilters.cpp:107
 msgid "All"
 msgstr "Tümü"
 
@@ -514,9 +512,9 @@ msgstr "İzin Ver"
 msgid "Deny"
 msgstr "Reddet"
 
-#: info/smartmode/SmartMode.cpp:448 ui/preferences/Preferences.cpp:733
-#: ui/preferences/Preferences.cpp:1736 ui/preferences/Preferences.cpp:1831
-#: ui/preferences/Preferences.cpp:1854 ui/player/PlayerFilters.cpp:122
+#: info/smartmode/SmartMode.cpp:448 ui/preferences/Preferences.cpp:722
+#: ui/preferences/Preferences.cpp:1728 ui/preferences/Preferences.cpp:1751
+#: ui/player/PlayerFilters.cpp:122
 msgid "None"
 msgstr "Hiç biri"
 
@@ -591,14 +589,14 @@ msgstr "İnternette şarkı sözü ara"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1788
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1747
 #, fuzzy
 msgid "Artist"
 msgstr "Sanatçı"
 
 #: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:388
-#: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:851
-#: ui/player/PlayList.cpp:1785
+#: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:840
+#: ui/player/PlayList.cpp:1744
 msgid "Track"
 msgstr "Parça"
 
@@ -656,8 +654,8 @@ msgstr "Şarkı sözü kaynak editörü"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
 #: ui/radios/RadioEditor.cpp:45 ui/radios/RadioPanel.cpp:311
-#: ui/preferences/Preferences.cpp:2014 ui/preferences/Preferences.cpp:2133
-#: ui/preferences/Preferences.cpp:2253
+#: ui/preferences/Preferences.cpp:1911 ui/preferences/Preferences.cpp:2030
+#: ui/preferences/Preferences.cpp:2150
 msgid "Name"
 msgstr "İsim"
 
@@ -673,7 +671,7 @@ msgstr "Eşleştirildi"
 msgid "File"
 msgstr "Dosya"
 
-#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2126
+#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2023
 msgid "Command"
 msgstr "Konut"
 
@@ -729,207 +727,207 @@ msgstr "Seçenek düzenleyicisi bulunamadı"
 msgid "Tag:"
 msgstr "Etiket:"
 
-#: ui/locationpanel/LocationPanel.cpp:96
+#: ui/locationpanel/LocationPanel.cpp:95
 msgid "Local Music"
 msgstr "Yerel Müzik"
 
-#: ui/locationpanel/LocationPanel.cpp:98
+#: ui/locationpanel/LocationPanel.cpp:97
 msgid "Online Music"
 msgstr "Çevrimiçi Müzik"
 
-#: ui/locationpanel/LocationPanel.cpp:100
+#: ui/locationpanel/LocationPanel.cpp:99
 msgid "Portable Devices"
 msgstr "Taşınabilir Cihazlar"
 
-#: ui/locationpanel/LocationPanel.cpp:102
+#: ui/locationpanel/LocationPanel.cpp:101
 msgid "Context"
 msgstr "Kaynak"
 
-#: ui/locationpanel/LocationPanel.cpp:204 ui/radios/ShoutcastRadio.cpp:269
+#: ui/locationpanel/LocationPanel.cpp:203 ui/radios/ShoutcastRadio.cpp:269
 msgid "Radios"
 msgstr "Radyolar"
 
-#: ui/locationpanel/LocationPanel.cpp:209 ui/MainFrame.cpp:1039
-#: ui/MainFrame.cpp:2643 ui/MainFrame.cpp:3337
-#: ui/preferences/Preferences.cpp:261 ui/preferences/Preferences.cpp:1628
+#: ui/locationpanel/LocationPanel.cpp:208 ui/MainFrame.cpp:1027
+#: ui/MainFrame.cpp:2618 ui/MainFrame.cpp:3312
+#: ui/preferences/Preferences.cpp:260 ui/preferences/Preferences.cpp:1617
 #: ui/podcasts/PodcastsPanel.cpp:916
 msgid "Podcasts"
 msgstr "Podcast'ler"
 
-#: ui/locationpanel/LocationPanel.cpp:214 ui/MainFrame.cpp:1059
-#: ui/MainFrame.cpp:2589
+#: ui/locationpanel/LocationPanel.cpp:213 ui/MainFrame.cpp:1044
+#: ui/MainFrame.cpp:2564
 #, fuzzy
 msgid "Audio CD"
 msgstr "Ses"
 
-#: ui/locationpanel/LocationPanel.cpp:276 ui/MainFrame.cpp:1361
-#: ui/MainFrame.cpp:2676
+#: ui/locationpanel/LocationPanel.cpp:268 ui/MainFrame.cpp:1346
+#: ui/MainFrame.cpp:2651
 msgid "File Browser"
 msgstr "Dosya Tarayıcısı"
 
-#: ui/locationpanel/LocationPanel.cpp:288 ui/trackedit/TrackEdit.cpp:407
-#: ui/MainFrame.cpp:1377 ui/MainFrame.cpp:2616
-#: ui/preferences/Preferences.cpp:251
+#: ui/locationpanel/LocationPanel.cpp:280 ui/trackedit/TrackEdit.cpp:407
+#: ui/MainFrame.cpp:1362 ui/MainFrame.cpp:2591
+#: ui/preferences/Preferences.cpp:250
 msgid "Lyrics"
 msgstr "Şarkı Sözleri"
 
-#: ui/locationpanel/LocationPanel.cpp:309
-#: ui/locationpanel/LocationPanel.cpp:351
-#: ui/locationpanel/LocationPanel.cpp:398
-#: ui/locationpanel/LocationPanel.cpp:411 ui/MainFrame.cpp:967
-#: ui/MainFrame.cpp:1009 ui/MainFrame.cpp:1153 ui/MainFrame.cpp:1165
+#: ui/locationpanel/LocationPanel.cpp:301
+#: ui/locationpanel/LocationPanel.cpp:343
+#: ui/locationpanel/LocationPanel.cpp:390
+#: ui/locationpanel/LocationPanel.cpp:403 ui/MainFrame.cpp:955
+#: ui/MainFrame.cpp:997 ui/MainFrame.cpp:1138 ui/MainFrame.cpp:1150
 msgid "Show"
 msgstr "Göster"
 
-#: ui/locationpanel/LocationPanel.cpp:310 ui/MainFrame.cpp:968
+#: ui/locationpanel/LocationPanel.cpp:302 ui/MainFrame.cpp:956
 msgid "Show/Hide the radio panel"
 msgstr "Radyo panelini göster/gizle"
 
-#: ui/locationpanel/LocationPanel.cpp:316 ui/MainFrame.cpp:974
+#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:962
 #: ui/radios/RadioPanel.cpp:552 ui/radios/RadioPanel.cpp:592
 msgid "Text Search"
 msgstr "Metin Arama"
 
-#: ui/locationpanel/LocationPanel.cpp:316 ui/MainFrame.cpp:974
+#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:962
 msgid "Show/Hide the radio text search"
 msgstr "Radyo metin aramasını Göster/Gizle"
 
-#: ui/locationpanel/LocationPanel.cpp:326
-#: ui/locationpanel/LocationPanel.cpp:428 ui/MainFrame.cpp:984
-#: ui/MainFrame.cpp:1182 ui/mediaviewer/library/LibPanel.cpp:221
+#: ui/locationpanel/LocationPanel.cpp:318
+#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:972
+#: ui/MainFrame.cpp:1167 ui/mediaviewer/library/LibPanel.cpp:221
 #: ui/mediaviewer/library/LibPanel.cpp:229
 #: ui/mediaviewer/library/LibPanel.cpp:561
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/radios/RadioPanel.cpp:594 ui/radios/RadioGenreEditor.cpp:38
-#: ui/preferences/Preferences.cpp:1705 ui/preferences/Preferences.cpp:1797
+#: ui/preferences/Preferences.cpp:1694
 msgid "Genres"
 msgstr "Türler"
 
-#: ui/locationpanel/LocationPanel.cpp:326 ui/MainFrame.cpp:984
+#: ui/locationpanel/LocationPanel.cpp:318 ui/MainFrame.cpp:972
 msgid "Show/Hide the radio genres"
 msgstr "Radyo türlerini göster/gizle"
 
-#: ui/locationpanel/LocationPanel.cpp:333 ui/radios/ShoutcastRadio.cpp:120
+#: ui/locationpanel/LocationPanel.cpp:325 ui/radios/ShoutcastRadio.cpp:120
 msgid "Update the radio station lists"
 msgstr "Radyo istasyonu listesini güncelle"
 
-#: ui/locationpanel/LocationPanel.cpp:340
-#: ui/locationpanel/LocationPanel.cpp:379
-#: ui/locationpanel/LocationPanel.cpp:539 ui/jamendo/Jamendo.cpp:1125
-#: ui/MainFrame.cpp:998 ui/MainFrame.cpp:1036 ui/MainFrame.cpp:1293
+#: ui/locationpanel/LocationPanel.cpp:332
+#: ui/locationpanel/LocationPanel.cpp:371
+#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:986
+#: ui/MainFrame.cpp:1024 ui/MainFrame.cpp:1278
 #: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:677
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1035
-#: ui/preferences/Preferences.cpp:1141 ui/podcasts/PodcastsPanel.cpp:1758
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1025
+#: ui/preferences/Preferences.cpp:1130 ui/podcasts/PodcastsPanel.cpp:1758
 msgid "Properties"
 msgstr "Özellikler"
 
-#: ui/locationpanel/LocationPanel.cpp:341 ui/MainFrame.cpp:999
+#: ui/locationpanel/LocationPanel.cpp:333 ui/MainFrame.cpp:987
 msgid "Set the radio preferences"
 msgstr "Radyo tercihlerini ayarla"
 
-#: ui/locationpanel/LocationPanel.cpp:352 ui/MainFrame.cpp:1010
+#: ui/locationpanel/LocationPanel.cpp:344 ui/MainFrame.cpp:998
 msgid "Show/Hide the podcasts panel"
 msgstr "Podcast panelini Göster/Gizle"
 
-#: ui/locationpanel/LocationPanel.cpp:358 ui/MainFrame.cpp:1016
+#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1004
 #: ui/podcasts/PodcastsPanel.cpp:890 ui/podcasts/PodcastsPanel.cpp:898
 #: ui/podcasts/PodcastsPanel.cpp:1057
 msgid "Channels"
 msgstr "Kanallar"
 
-#: ui/locationpanel/LocationPanel.cpp:358 ui/MainFrame.cpp:1016
+#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1004
 msgid "Show/Hide the podcasts channels"
 msgstr "Podcast kanallarını Göster/Gizle"
 
-#: ui/locationpanel/LocationPanel.cpp:363 ui/trackedit/TrackEdit.cpp:319
-#: ui/trackedit/TrackEdit.cpp:474 ui/MainFrame.cpp:1021
+#: ui/locationpanel/LocationPanel.cpp:355 ui/trackedit/TrackEdit.cpp:319
+#: ui/trackedit/TrackEdit.cpp:474 ui/MainFrame.cpp:1009
 #: ui/podcasts/PodcastsPanel.cpp:928 ui/podcasts/PodcastsPanel.cpp:1060
 msgid "Details"
 msgstr "Detaylar"
 
-#: ui/locationpanel/LocationPanel.cpp:363 ui/MainFrame.cpp:1021
+#: ui/locationpanel/LocationPanel.cpp:355 ui/MainFrame.cpp:1009
 msgid "Show/Hide the podcasts details"
 msgstr "Podcast detaylarını Göster/Gizle"
 
-#: ui/locationpanel/LocationPanel.cpp:372 ui/MainFrame.cpp:1030
+#: ui/locationpanel/LocationPanel.cpp:364 ui/MainFrame.cpp:1018
 msgid "Update the podcasts added"
 msgstr "Eklenen podcastleri güncelle"
 
-#: ui/locationpanel/LocationPanel.cpp:380 ui/MainFrame.cpp:1036
+#: ui/locationpanel/LocationPanel.cpp:372 ui/MainFrame.cpp:1024
 msgid "Set the podcasts preferences"
 msgstr "Podcast tercihlerini ayarla"
 
-#: ui/locationpanel/LocationPanel.cpp:398 ui/MainFrame.cpp:1153
+#: ui/locationpanel/LocationPanel.cpp:390 ui/MainFrame.cpp:1138
 msgid "Open the music collection"
 msgstr "Müzik koleksiyonunu aç"
 
-#: ui/locationpanel/LocationPanel.cpp:411
-#: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1165
-#: ui/MainFrame.cpp:1226
+#: ui/locationpanel/LocationPanel.cpp:403
+#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1150
+#: ui/MainFrame.cpp:1211
 msgid "View the collection library"
 msgstr "Koleksiyon kütüphanesine bak"
 
-#: ui/locationpanel/LocationPanel.cpp:418 ui/filebrowser/FileBrowser.cpp:1366
-#: ui/filebrowser/FileBrowser.cpp:1382 ui/MainFrame.cpp:1172
+#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1366
+#: ui/filebrowser/FileBrowser.cpp:1382 ui/MainFrame.cpp:1157
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
 msgstr "Dizinler"
 
-#: ui/locationpanel/LocationPanel.cpp:418 ui/MainFrame.cpp:1172
+#: ui/locationpanel/LocationPanel.cpp:410 ui/MainFrame.cpp:1157
 msgid "View the library directories"
 msgstr "Kütüphane türlerine bak"
 
-#: ui/locationpanel/LocationPanel.cpp:423 ui/labeleditor/LabelEditor.cpp:91
-#: ui/MainFrame.cpp:1177 ui/mediaviewer/library/LibPanel.cpp:241
+#: ui/locationpanel/LocationPanel.cpp:415 ui/labeleditor/LabelEditor.cpp:91
+#: ui/MainFrame.cpp:1162 ui/mediaviewer/library/LibPanel.cpp:241
 #: ui/mediaviewer/library/LibPanel.cpp:248
 #: ui/mediaviewer/library/LibPanel.cpp:563
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:63
 msgid "Labels"
 msgstr "Etiketler"
 
-#: ui/locationpanel/LocationPanel.cpp:423 ui/MainFrame.cpp:1177
+#: ui/locationpanel/LocationPanel.cpp:415 ui/MainFrame.cpp:1162
 msgid "View the library labels"
 msgstr "Kütüphane etiketlerine bak"
 
-#: ui/locationpanel/LocationPanel.cpp:428 ui/MainFrame.cpp:1182
+#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:1167
 msgid "View the library genres"
 msgstr "Kütüphane türlerine bak"
 
-#: ui/locationpanel/LocationPanel.cpp:433 ui/MainFrame.cpp:1187
+#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1172
 #: ui/mediaviewer/library/LibPanel.cpp:260
 #: ui/mediaviewer/library/LibPanel.cpp:267
 #: ui/mediaviewer/library/LibPanel.cpp:565
 msgid "Artists"
 msgstr "Sanatçılar"
 
-#: ui/locationpanel/LocationPanel.cpp:433 ui/MainFrame.cpp:1187
+#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1172
 msgid "View the library artists"
 msgstr "Kütüphane sanatçılarına bak"
 
-#: ui/locationpanel/LocationPanel.cpp:438 ui/MainFrame.cpp:1202
+#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1187
 #: ui/mediaviewer/library/LibPanel.cpp:355
 #: ui/mediaviewer/library/LibPanel.cpp:362
 #: ui/mediaviewer/library/LibPanel.cpp:575
 msgid "Composers"
 msgstr "Besteciler"
 
-#: ui/locationpanel/LocationPanel.cpp:438 ui/MainFrame.cpp:1202
+#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1187
 msgid "View the library composers"
 msgstr "Kütüphane bestecilerine bak"
 
-#: ui/locationpanel/LocationPanel.cpp:443 ui/MainFrame.cpp:1192
+#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1177
 #: ui/mediaviewer/library/LibPanel.cpp:577
 msgid "Album Artists"
 msgstr "Albüm Sanatçıları"
 
-#: ui/locationpanel/LocationPanel.cpp:443 ui/MainFrame.cpp:1192
+#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1177
 msgid "View the library album artists"
 msgstr "Kütüphane albüm sanatçılarına bak"
 
-#: ui/locationpanel/LocationPanel.cpp:448 ui/MainFrame.cpp:1197
+#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1182
 #: ui/mediaviewer/library/LibPanel.cpp:279
 #: ui/mediaviewer/library/LibPanel.cpp:286
 #: ui/mediaviewer/library/LibPanel.cpp:567
@@ -937,65 +935,65 @@ msgstr "Kütüphane albüm sanatçılarına bak"
 msgid "Albums"
 msgstr "Albümler"
 
-#: ui/locationpanel/LocationPanel.cpp:448 ui/MainFrame.cpp:1197
+#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1182
 msgid "View the library albums"
 msgstr "Kütüphane albümlerine bak"
 
-#: ui/locationpanel/LocationPanel.cpp:453 ui/MainFrame.cpp:1207
+#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1192
 #: ui/mediaviewer/library/LibPanel.cpp:298
 #: ui/mediaviewer/library/LibPanel.cpp:305
 #: ui/mediaviewer/library/LibPanel.cpp:569
 msgid "Years"
 msgstr "Yıllar"
 
-#: ui/locationpanel/LocationPanel.cpp:453 ui/MainFrame.cpp:1207
+#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1192
 msgid "View the library years"
 msgstr "Kütüphanedeki yılları göster"
 
-#: ui/locationpanel/LocationPanel.cpp:458 ui/MainFrame.cpp:1212
+#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1197
 #: ui/mediaviewer/library/LibPanel.cpp:317
 #: ui/mediaviewer/library/LibPanel.cpp:324
 #: ui/mediaviewer/library/LibPanel.cpp:571
 msgid "Ratings"
 msgstr "Derecelendirmeler"
 
-#: ui/locationpanel/LocationPanel.cpp:458 ui/MainFrame.cpp:1212
+#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1197
 msgid "View the library ratings"
 msgstr "Kütüphane derecelendirmesini göster"
 
-#: ui/locationpanel/LocationPanel.cpp:463
+#: ui/locationpanel/LocationPanel.cpp:455
 msgid "Play Counts"
 msgstr "Çalma Sayacı"
 
-#: ui/locationpanel/LocationPanel.cpp:463 ui/MainFrame.cpp:1217
+#: ui/locationpanel/LocationPanel.cpp:455 ui/MainFrame.cpp:1202
 msgid "View the library play counts"
 msgstr "Kütüphanedeki çalma sayısını göster"
 
-#: ui/locationpanel/LocationPanel.cpp:468
-#: ui/locationpanel/LocationPanel.cpp:472 ui/MainFrame.cpp:1222
-#: ui/MainFrame.cpp:1226 ui/mediaviewer/treeview/TreePanel.cpp:82
+#: ui/locationpanel/LocationPanel.cpp:460
+#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1207
+#: ui/MainFrame.cpp:1211 ui/mediaviewer/treeview/TreePanel.cpp:82
 msgid "Library"
 msgstr "Kütüphane"
 
-#: ui/locationpanel/LocationPanel.cpp:478 ui/MainFrame.cpp:1232
+#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1217
 msgid "Album Browser"
 msgstr "Albüm Tarayıcısı"
 
-#: ui/locationpanel/LocationPanel.cpp:478 ui/MainFrame.cpp:1232
+#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1217
 msgid "View the collection album browser"
 msgstr "Koleksiyon albüm tarayıcısını göster"
 
-#: ui/locationpanel/LocationPanel.cpp:483 ui/MainFrame.cpp:1237
+#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1222
 #: ui/mediaviewer/treeview/TreePanel.cpp:814
 #: ui/mediaviewer/treeview/TreePanel.cpp:839
 msgid "Tree"
 msgstr "Ağaç Görünümü"
 
-#: ui/locationpanel/LocationPanel.cpp:483 ui/MainFrame.cpp:1237
+#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1222
 msgid "View the collection tree view"
 msgstr "Koleksiyonu ağaç görünümünde göster"
 
-#: ui/locationpanel/LocationPanel.cpp:488 ui/MainFrame.cpp:1242
+#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1227
 #: ui/mediaviewer/MediaViewer.cpp:253
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:852
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:763
@@ -1003,82 +1001,82 @@ msgstr "Koleksiyonu ağaç görünümünde göster"
 msgid "Playlists"
 msgstr "Çalma Listesi"
 
-#: ui/locationpanel/LocationPanel.cpp:488 ui/MainFrame.cpp:1242
+#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1227
 msgid "View the collection playlists"
 msgstr "Kolleksiyonun çalma listesini göster"
 
-#: ui/locationpanel/LocationPanel.cpp:499 ui/MainFrame.cpp:1253
+#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1238
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add Path"
 msgstr "Yol Ekle"
 
-#: ui/locationpanel/LocationPanel.cpp:499 ui/MainFrame.cpp:1253
+#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1238
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add path to the collection"
 msgstr "Yolu koleksiyona ekle"
 
-#: ui/locationpanel/LocationPanel.cpp:503 ui/MainFrame.cpp:1257
+#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1242
 #: ui/mediaviewer/MediaViewer.cpp:926
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:49
 msgid "Import Files"
 msgstr "Dosyaları İçe Aktar"
 
-#: ui/locationpanel/LocationPanel.cpp:503 ui/MainFrame.cpp:1257
+#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1242
 #: ui/mediaviewer/MediaViewer.cpp:926
 msgid "Import files into the collection"
 msgstr "Dosyaları koleksiyona aktar"
 
-#: ui/locationpanel/LocationPanel.cpp:512 ui/jamendo/Jamendo.cpp:1114
-#: ui/MainFrame.cpp:1266 ui/mediaviewer/MediaViewer.cpp:932
+#: ui/locationpanel/LocationPanel.cpp:504 ui/MainFrame.cpp:1251
+#: ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1024
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:1014
 msgid "Update the collection library"
 msgstr "Koleksiyon kütüphanesini güncelle"
 
-#: ui/locationpanel/LocationPanel.cpp:517 ui/jamendo/Jamendo.cpp:1117
-#: ui/MainFrame.cpp:1271 ui/mediaviewer/MediaViewer.cpp:935
+#: ui/locationpanel/LocationPanel.cpp:509 ui/MainFrame.cpp:1256
+#: ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1027
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1017
 msgid "Rescan"
 msgstr "Yeniden Tara"
 
-#: ui/locationpanel/LocationPanel.cpp:518 ui/jamendo/Jamendo.cpp:1117
-#: ui/MainFrame.cpp:1272 ui/mediaviewer/MediaViewer.cpp:935
+#: ui/locationpanel/LocationPanel.cpp:510 ui/MainFrame.cpp:1257
+#: ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1027
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:1017
 msgid "Rescan the collection library"
 msgstr "Koleksiyon kütüphanesini tekrar tara"
 
-#: ui/locationpanel/LocationPanel.cpp:523 ui/jamendo/Jamendo.cpp:1120
-#: ui/MainFrame.cpp:1277 ui/mediaviewer/MediaViewer.cpp:938
+#: ui/locationpanel/LocationPanel.cpp:515 ui/MainFrame.cpp:1262
+#: ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1030
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1020
 msgid "Search Covers"
 msgstr "Albüm kapaklarını ara"
 
-#: ui/locationpanel/LocationPanel.cpp:524 ui/jamendo/Jamendo.cpp:1120
-#: ui/MainFrame.cpp:1278 ui/mediaviewer/MediaViewer.cpp:938
+#: ui/locationpanel/LocationPanel.cpp:516 ui/MainFrame.cpp:1263
+#: ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1030
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:1020
 msgid "Search the collection missing covers"
 msgstr "Koleksiyondaki eksik albüm kapaklarını ara"
 
-#: ui/locationpanel/LocationPanel.cpp:532 ui/MainFrame.cpp:1286
+#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1271
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1457
 msgid "Unmount"
 msgstr "Bağlantıyı Kes"
 
-#: ui/locationpanel/LocationPanel.cpp:532 ui/MainFrame.cpp:1286
+#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1271
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1457
 msgid "Unmount the device"
 msgstr "Aygıtı çıkar"
 
-#: ui/locationpanel/LocationPanel.cpp:539 ui/jamendo/Jamendo.cpp:1125
-#: ui/MainFrame.cpp:1293 ui/mediaviewer/MediaViewer.cpp:943
+#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1278
+#: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1035
+#: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:1025
 msgid "Show collection properties"
 msgstr "Koleksiyon özelliklerini göster"
 
@@ -1172,7 +1170,7 @@ msgstr "Düzenlenen tüm parçalardaki albüm isimlerini kopyala"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361 ui/cover/CoverEdit.cpp:80
-#: ui/preferences/Preferences.cpp:851 ui/player/PlayList.cpp:1797
+#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1756
 msgid "Album"
 msgstr "Albüm"
 
@@ -1186,7 +1184,7 @@ msgstr "Düzenlenen tüm parçalardaki besteci isimlerini kopyala"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1794
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1753
 msgid "Composer"
 msgstr "Besteleyen"
 
@@ -1237,8 +1235,8 @@ msgstr "Düzenlenen tüm parçalardaki tür isimlerini kopyala"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3371
-#: ui/player/PlayList.cpp:1803
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3237
+#: ui/player/PlayList.cpp:1762
 msgid "Genre"
 msgstr "Tür"
 
@@ -1255,7 +1253,7 @@ msgstr "Düzenlenen tüm parçalardaki tarihi kopyala"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:69
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1800
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1759
 msgid "Year"
 msgstr "Yıl"
 
@@ -1392,7 +1390,7 @@ msgstr "Dosyaları yeniden isimlendir"
 msgid "Names Preview"
 msgstr "İsim Önizleme"
 
-#: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2260
+#: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2157
 msgid "Pattern"
 msgstr "Şablon"
 
@@ -1409,12 +1407,12 @@ msgstr "Şablon kısaltmaları"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:129
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:67
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1791
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1750
 msgid "Album Artist"
 msgstr "Albüm Sanatçısı"
 
-#: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:921
-#: ui/preferences/Preferences.cpp:3445
+#: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:910
+#: ui/preferences/Preferences.cpp:3311
 msgid "or"
 msgstr "ya da"
 
@@ -1432,7 +1430,7 @@ msgstr "Sistem dosyalarına bak"
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:457
 #: ui/mediaviewer/library/AlListBox.cpp:247
-#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1710
+#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1669
 msgid "Add commands in preferences"
 msgstr "Tercihlere komutlar ekle"
 
@@ -1442,8 +1440,8 @@ msgstr "Tercihlere komutlar ekle"
 #: ui/mediaviewer/library/AAListBox.cpp:136
 #: ui/mediaviewer/library/SoListBox.cpp:460
 #: ui/mediaviewer/library/AlListBox.cpp:250
-#: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:281
-#: ui/preferences/Preferences.cpp:2071 ui/player/PlayList.cpp:1713
+#: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:275
+#: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1672
 msgid "Commands"
 msgstr "Komutlar"
 
@@ -1733,7 +1731,7 @@ msgstr "Seçili dosyaları sil"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2144
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2102
 msgid "UnNamed"
 msgstr "lendirilmemiş"
 
@@ -1773,7 +1771,7 @@ msgstr "Duraklat"
 msgid "Play current playlist"
 msgstr "Geçerli çalma listesini oynat"
 
-#: ui/taskbar/TaskBar.cpp:124 ui/MainFrame.cpp:1435
+#: ui/taskbar/TaskBar.cpp:124 ui/MainFrame.cpp:1420
 msgid "Next Track"
 msgstr "Sonraki Parça"
 
@@ -1781,7 +1779,7 @@ msgstr "Sonraki Parça"
 msgid "Skip to next track in current playlist"
 msgstr "Geçerli çalma listesindeki bir sonraki parçaya atla"
 
-#: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1444
+#: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1429
 msgid "Next Album"
 msgstr "Sonraki Albüm"
 
@@ -1805,33 +1803,33 @@ msgstr "Önceki Albüm"
 msgid "Skip to previous album track in current playlist"
 msgstr "Geçerli çalma listesindeki bir önceki albüm parçasına atla"
 
-#: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1480
-#: ui/mediaviewer/library/SoListBox.cpp:612 ui/player/PlayList.cpp:1757
+#: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1465
+#: ui/mediaviewer/library/SoListBox.cpp:612 ui/player/PlayList.cpp:1716
 msgid "Set the rating to 0"
 msgstr "Derecelendirmeyi 0 olarak ayarla"
 
-#: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1485
-#: ui/mediaviewer/library/SoListBox.cpp:617 ui/player/PlayList.cpp:1759
+#: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1470
+#: ui/mediaviewer/library/SoListBox.cpp:617 ui/player/PlayList.cpp:1718
 msgid "Set the rating to 1"
 msgstr "Derecelendirmeyi 1 olarak ayarla"
 
-#: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1490
-#: ui/mediaviewer/library/SoListBox.cpp:622 ui/player/PlayList.cpp:1761
+#: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1475
+#: ui/mediaviewer/library/SoListBox.cpp:622 ui/player/PlayList.cpp:1720
 msgid "Set the rating to 2"
 msgstr "Derecelendirmeyi 2 olarak ayarla"
 
-#: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1495
-#: ui/mediaviewer/library/SoListBox.cpp:627 ui/player/PlayList.cpp:1763
+#: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1480
+#: ui/mediaviewer/library/SoListBox.cpp:627 ui/player/PlayList.cpp:1722
 msgid "Set the rating to 3"
 msgstr "Derecelendirmeyi 3 olarak ayarla"
 
-#: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1500
-#: ui/mediaviewer/library/SoListBox.cpp:632 ui/player/PlayList.cpp:1765
+#: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1485
+#: ui/mediaviewer/library/SoListBox.cpp:632 ui/player/PlayList.cpp:1724
 msgid "Set the rating to 4"
 msgstr "Derecelendirmeyi 4 olarak ayarla"
 
-#: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1505
-#: ui/mediaviewer/library/SoListBox.cpp:637 ui/player/PlayList.cpp:1767
+#: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1490
+#: ui/mediaviewer/library/SoListBox.cpp:637 ui/player/PlayList.cpp:1726
 msgid "Set the rating to 5"
 msgstr "Derecelendirmeyi 5 olarak ayarla"
 
@@ -1843,7 +1841,7 @@ msgstr "Geçerli parçanın derecelendirmesini ayarla"
 msgid "&Smart Play"
 msgstr "&Akıllı Çalma"
 
-#: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1514
+#: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1499
 msgid "Update playlist based on Last.fm statics"
 msgstr "Çalma Listes'ni Last.fm istatistiklerini baz alarak güncelle"
 
@@ -1851,7 +1849,7 @@ msgstr "Çalma Listes'ni Last.fm istatistiklerini baz alarak güncelle"
 msgid "Repeat the &Playlist"
 msgstr "&Çalma Listesini Tekrarla"
 
-#: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1524
+#: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1509
 msgid "Repeat the tracks in the playlist"
 msgstr "Çalma Listesi'ndeki parçaları tekrarla"
 
@@ -1859,7 +1857,7 @@ msgstr "Çalma Listesi'ndeki parçaları tekrarla"
 msgid "Repeat &Track"
 msgstr "&Parçayı Tekrarla"
 
-#: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1530
+#: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1515
 msgid "Repeat the current track in the playlist"
 msgstr "Çalma Listesi'ndeki geçerli parçayı tekrarla"
 
@@ -1867,17 +1865,17 @@ msgstr "Çalma Listesi'ndeki geçerli parçayı tekrarla"
 msgid "Shu&ffle"
 msgstr "&Karıştır"
 
-#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1520
+#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1505
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
-#: ui/player/PlayList.cpp:1837
+#: ui/player/PlayList.cpp:1796
 msgid "Shuffle the tracks in the playlist"
 msgstr "Çalma listesindeki parçaları karıştır"
 
-#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1549
+#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1534
 msgid "Force &Gapless Mode"
 msgstr "Boşluksuz moda zorla"
 
-#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1550
+#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1535
 msgid "Set playback in gapless mode"
 msgstr "Çalmayı boşluksuz moda ayarla"
 
@@ -1885,7 +1883,7 @@ msgstr "Çalmayı boşluksuz moda ayarla"
 msgid "Audioscrobbling"
 msgstr "Müzik Skroplama"
 
-#: ui/taskbar/TaskBar.cpp:189 ui/MainFrame.cpp:1556
+#: ui/taskbar/TaskBar.cpp:189 ui/MainFrame.cpp:1541
 msgid "Send played tracks information"
 msgstr "Çalınan parçaların bilgilerini gönder"
 
@@ -1897,95 +1895,80 @@ msgstr "Çıkış"
 msgid "Exit this program"
 msgstr "Programdan çık"
 
-#: ui/jamendo/Jamendo.cpp:1095 ui/jamendo/Jamendo.cpp:1105
-#: ui/magnatune/Magnatune.cpp:1010 ui/magnatune/Magnatune.cpp:1017
-msgid "Download Albums"
-msgstr "Albümleri İndir"
-
-#: ui/jamendo/Jamendo.cpp:1095 ui/jamendo/Jamendo.cpp:1098
-#: ui/jamendo/Jamendo.cpp:1105 ui/jamendo/Jamendo.cpp:1108
-#: ui/magnatune/Magnatune.cpp:1010 ui/magnatune/Magnatune.cpp:1017
-msgid "Download the current selected album"
-msgstr "Seçili geçerli albümleri indir"
-
-#: ui/jamendo/Jamendo.cpp:1098 ui/jamendo/Jamendo.cpp:1108
-msgid "Download Albums torrents"
-msgstr "Albüm torrentlerini indir"
-
 #: ui/MainFrame.cpp:154
 msgid "Welcome to Guayadeque"
 msgstr "Guayadeque'e hoşgeldiniz"
 
-#: ui/MainFrame.cpp:164 ui/MainFrame.cpp:402
+#: ui/MainFrame.cpp:164 ui/MainFrame.cpp:392
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
-#: ui/preferences/Preferences.cpp:1544
+#: ui/preferences/Preferences.cpp:1533
 msgid "Filters"
 msgstr "Filtreler"
 
-#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:404 ui/MainFrame.cpp:2020
-#: ui/MainFrame.cpp:2738 ui/MainFrame.cpp:2755 ui/radios/RadioPanel.cpp:315
+#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:394 ui/MainFrame.cpp:2005
+#: ui/MainFrame.cpp:2713 ui/MainFrame.cpp:2730 ui/radios/RadioPanel.cpp:315
 #: ui/player/PlayList.cpp:215
 msgid "Now Playing"
 msgstr "Şu Anda Çalınıyor"
 
-#: ui/MainFrame.cpp:313
+#: ui/MainFrame.cpp:312
 msgid "My Music"
 msgstr "Müziğim"
 
-#: ui/MainFrame.cpp:400 ui/MainFrame.cpp:1342 ui/MainFrame.cpp:4056
+#: ui/MainFrame.cpp:390 ui/MainFrame.cpp:1327 ui/MainFrame.cpp:4031
 msgid "VU Meters"
 msgstr "VU Metre"
 
-#: ui/MainFrame.cpp:942
+#: ui/MainFrame.cpp:930
 msgid "New Collection"
 msgstr "Yeni Koleksiyon"
 
-#: ui/MainFrame.cpp:942
+#: ui/MainFrame.cpp:930
 msgid "Create a new collection"
 msgstr "Yeni koleksiyon oluştur"
 
-#: ui/MainFrame.cpp:991
+#: ui/MainFrame.cpp:979
 msgid "Update the radio stations"
 msgstr "Radyo istasyonlarını güncelle"
 
-#: ui/MainFrame.cpp:1002 ui/MainFrame.cpp:2462
+#: ui/MainFrame.cpp:990 ui/MainFrame.cpp:2437
 msgid "Radio"
 msgstr "Radyo"
 
-#: ui/MainFrame.cpp:1002
+#: ui/MainFrame.cpp:990
 msgid "Set the radio visible panels"
 msgstr "Görünür radyo panellerini ayarla"
 
-#: ui/MainFrame.cpp:1039
+#: ui/MainFrame.cpp:1027
 msgid "Set the podcasts visible panels"
 msgstr "Podcastlerin görünür panellerini ayarla"
 
-#: ui/MainFrame.cpp:1054
+#: ui/MainFrame.cpp:1039
 msgid "Play a online music stream"
 msgstr "Çevrimiçi bir müzik akışını çal"
 
-#: ui/MainFrame.cpp:1059
+#: ui/MainFrame.cpp:1044
 #, fuzzy
 msgid "View the audio cd panel"
 msgstr "Radyo panelini göster/gizle"
 
-#: ui/MainFrame.cpp:1090
+#: ui/MainFrame.cpp:1075
 msgid "Show the selected portable devices"
 msgstr "Seçili taşınabilir aygıtları göster"
 
-#: ui/MainFrame.cpp:1097
+#: ui/MainFrame.cpp:1082
 msgid "No Device Found"
 msgstr "Aygıt bulunamadı"
 
-#: ui/MainFrame.cpp:1097
+#: ui/MainFrame.cpp:1082
 msgid "No portable device was detected"
 msgstr "Hiç taşınabilir aygıt bulunamadı"
 
-#: ui/MainFrame.cpp:1107
+#: ui/MainFrame.cpp:1092
 msgid "Exits the application"
 msgstr "Uygulamadan çık"
 
-#: ui/MainFrame.cpp:1217 ui/mediaviewer/library/LibPanel.cpp:336
+#: ui/MainFrame.cpp:1202 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
 #: ui/mediaviewer/library/LibPanel.cpp:573
 #: ui/mediaviewer/library/SoListBox.cpp:70
@@ -1995,290 +1978,290 @@ msgstr "Uygulamadan çık"
 msgid "Plays"
 msgstr "Çalma"
 
-#: ui/MainFrame.cpp:1308
+#: ui/MainFrame.cpp:1293
 msgid "Saves the current layout"
 msgstr "Geçerli düzeni kaydet"
 
-#: ui/MainFrame.cpp:1318
+#: ui/MainFrame.cpp:1303
 msgid "Player Playlist"
 msgstr "Player Çalma Listesi"
 
-#: ui/MainFrame.cpp:1319
+#: ui/MainFrame.cpp:1304
 msgid "Show/Hide the player playlist panel"
 msgstr "Oynatıcının çalma listesi panelini Göster/Gizle"
 
-#: ui/MainFrame.cpp:1326 ui/MainFrame.cpp:1600 ui/MainFrame.cpp:4074
-#: ui/preferences/Preferences.cpp:1319
+#: ui/MainFrame.cpp:1311 ui/MainFrame.cpp:1585 ui/MainFrame.cpp:4049
+#: ui/preferences/Preferences.cpp:1308
 msgid "Sources"
 msgstr "Kaynaklar"
 
-#: ui/MainFrame.cpp:1327
+#: ui/MainFrame.cpp:1312
 msgid "Show/Hide the locations"
 msgstr "Konumları göster/gizle"
 
-#: ui/MainFrame.cpp:1334
+#: ui/MainFrame.cpp:1319
 msgid "Player Filters"
 msgstr "Oynatıcı Filtreleri"
 
-#: ui/MainFrame.cpp:1335
+#: ui/MainFrame.cpp:1320
 msgid "Show/Hide the player filters panel"
 msgstr "Player filtre panelini göster/gizle"
 
-#: ui/MainFrame.cpp:1343
+#: ui/MainFrame.cpp:1328
 msgid "Show/Hide the player vumeter"
 msgstr "Oynatıcının VU Metre'sini Göster/Gizle"
 
-#: ui/MainFrame.cpp:1350 ui/MainFrame.cpp:4090
+#: ui/MainFrame.cpp:1335 ui/MainFrame.cpp:4065
 msgid "Cover"
 msgstr "Albüm kapağı"
 
-#: ui/MainFrame.cpp:1351
+#: ui/MainFrame.cpp:1336
 msgid "Show/Hide the cover"
 msgstr "Albüm kapağını Göster/Gizle"
 
-#: ui/MainFrame.cpp:1362
+#: ui/MainFrame.cpp:1347
 msgid "Show/Hide the file browser panel"
 msgstr "Dosya tarayıcı panelini Göster/Gizle"
 
-#: ui/MainFrame.cpp:1369 ui/MainFrame.cpp:2562
+#: ui/MainFrame.cpp:1354 ui/MainFrame.cpp:2537
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ui/MainFrame.cpp:1370
+#: ui/MainFrame.cpp:1355
 msgid "Show/Hide the Last.fm panel"
 msgstr "Last.fm panelini Göster/Gizle"
 
-#: ui/MainFrame.cpp:1378
+#: ui/MainFrame.cpp:1363
 msgid "Show/Hide the lyrics panel"
 msgstr "Şarkı sözü panelini Göster/Gizle"
 
-#: ui/MainFrame.cpp:1388
+#: ui/MainFrame.cpp:1373
 msgid "Show/Restore the main window in full screen"
 msgstr "Ana pencereyi tam ekran olarak Göster/Yenile"
 
-#: ui/MainFrame.cpp:1393
+#: ui/MainFrame.cpp:1378
 msgid "Statusbar"
 msgstr "Durum Çubuğu"
 
-#: ui/MainFrame.cpp:1394
+#: ui/MainFrame.cpp:1379
 msgid "Show/Hide the statusbar"
 msgstr "Durum çubuğunu Göster/Gizle"
 
-#: ui/MainFrame.cpp:1399
+#: ui/MainFrame.cpp:1384
 msgid "Show Captions"
 msgstr "Başlıkları Göster"
 
-#: ui/MainFrame.cpp:1400
+#: ui/MainFrame.cpp:1385
 msgid "Show/Hide the windows caption"
 msgstr "Windows başlığını göster/gizle"
 
-#: ui/MainFrame.cpp:1407
+#: ui/MainFrame.cpp:1392
 msgid "Close Current Tab"
 msgstr "Geçerli Sekmeyi Kapat"
 
-#: ui/MainFrame.cpp:1408
+#: ui/MainFrame.cpp:1393
 msgid "Close the current selected tab"
 msgstr "Geçerli seçili sekmeyi kapat"
 
-#: ui/MainFrame.cpp:1415
+#: ui/MainFrame.cpp:1400
 msgid "View the preferences"
 msgstr "Tercihleri göster"
 
-#: ui/MainFrame.cpp:1425
+#: ui/MainFrame.cpp:1410
 msgid "Load Layout"
 msgstr "Düzeni Yükle"
 
-#: ui/MainFrame.cpp:1425
+#: ui/MainFrame.cpp:1410
 msgid "Set current view from a user defined layout"
 msgstr "Geçerli görünümü kullanıcı tanımlı düzen olarak ayarla"
 
-#: ui/MainFrame.cpp:1426
+#: ui/MainFrame.cpp:1411
 msgid "Delete Layout"
 msgstr "Düzeni Sil"
 
-#: ui/MainFrame.cpp:1426
+#: ui/MainFrame.cpp:1411
 msgid "Delete a user defined layout"
 msgstr "Kullanımlı tanımlı düzeni sil"
 
-#: ui/MainFrame.cpp:1436
+#: ui/MainFrame.cpp:1421
 msgid "Play the next track in the playlist"
 msgstr "Çalma Listesi'ndeki bir sonraki parçayı çal"
 
-#: ui/MainFrame.cpp:1439
+#: ui/MainFrame.cpp:1424
 msgid "Prev. Track"
 msgstr "Önceki Parça"
 
-#: ui/MainFrame.cpp:1440
+#: ui/MainFrame.cpp:1425
 msgid "Play the previous track in the playlist"
 msgstr "Çalma listesindeki önceki parçayı çal"
 
-#: ui/MainFrame.cpp:1445
+#: ui/MainFrame.cpp:1430
 msgid "Play the next album in the playlist"
 msgstr "Çalma listesindeki sonraki albümü çal"
 
-#: ui/MainFrame.cpp:1449
+#: ui/MainFrame.cpp:1434
 msgid "Prev. Album"
 msgstr "Önceki Albüm"
 
-#: ui/MainFrame.cpp:1450
+#: ui/MainFrame.cpp:1435
 msgid "Play the previous album in the playlist"
 msgstr "Çalma listesindeki önceki albümü çal"
 
-#: ui/MainFrame.cpp:1457
+#: ui/MainFrame.cpp:1442
 msgid "Play or Pause the current track in the playlist"
 msgstr "Çalma listesindeki geçerli parçayı Çal ya da Durdur"
 
-#: ui/MainFrame.cpp:1461
+#: ui/MainFrame.cpp:1446
 msgid "Stop the current played track"
 msgstr "Şu an çalınan parçayı durdur"
 
-#: ui/MainFrame.cpp:1466
+#: ui/MainFrame.cpp:1451
 msgid "Stop after current playing or selected track"
 msgstr "Şu an çalınan ya da seçilen parçadan sonra durdur"
 
-#: ui/MainFrame.cpp:1473
+#: ui/MainFrame.cpp:1458
 msgid "Clear the now playing playlist"
 msgstr "Şu an çalınan çalma listesini temizle"
 
-#: ui/MainFrame.cpp:1508 ui/mediaviewer/library/SoListBox.cpp:640
-#: ui/player/PlayList.cpp:1770
+#: ui/MainFrame.cpp:1493 ui/mediaviewer/library/SoListBox.cpp:640
+#: ui/player/PlayList.cpp:1729
 msgid "Set Rating"
 msgstr "Derecelendirmeyi ayarla"
 
-#: ui/MainFrame.cpp:1508
+#: ui/MainFrame.cpp:1493
 msgid "Set the rating of the current track"
 msgstr "Geçerli parça için derecelendirme ayarla"
 
-#: ui/MainFrame.cpp:1523
+#: ui/MainFrame.cpp:1508
 msgid "Repeat the Playlist"
 msgstr "Çalma Listesi'ni tekrarla"
 
-#: ui/MainFrame.cpp:1529
+#: ui/MainFrame.cpp:1514
 msgid "Repeat Track"
 msgstr "Parçayı Tekrarla"
 
-#: ui/MainFrame.cpp:1538
+#: ui/MainFrame.cpp:1523
 msgid "Increment the volume level"
 msgstr "Ses seviyesini arttır"
 
-#: ui/MainFrame.cpp:1543
+#: ui/MainFrame.cpp:1528
 msgid "Decrement the volume level"
 msgstr "Ses seviyesini azalt"
 
-#: ui/MainFrame.cpp:1555 ui/preferences/Preferences.cpp:246
+#: ui/MainFrame.cpp:1540 ui/preferences/Preferences.cpp:245
 msgid "Audioscrobble"
 msgstr "Müzik Skroplama"
 
-#: ui/MainFrame.cpp:1573
+#: ui/MainFrame.cpp:1558
 msgid "Get help using guayadeque"
 msgstr "Guayadeque kullanımıyla ilgili yardım al"
 
-#: ui/MainFrame.cpp:1583
+#: ui/MainFrame.cpp:1568
 msgid "About"
 msgstr "Hakkında"
 
-#: ui/MainFrame.cpp:1584
+#: ui/MainFrame.cpp:1569
 msgid "Show information about guayadeque music player"
 msgstr "Guayadeque Müzik Oynatıcısı hakkında bilgileri göster"
 
-#: ui/MainFrame.cpp:1605
+#: ui/MainFrame.cpp:1590
 msgid "View"
 msgstr "Görünüm"
 
-#: ui/MainFrame.cpp:1610
+#: ui/MainFrame.cpp:1595
 msgid "Controls"
 msgstr "Kontroller"
 
-#: ui/MainFrame.cpp:1883
+#: ui/MainFrame.cpp:1868
 msgid "Stream:"
 msgstr "Akış:"
 
-#: ui/MainFrame.cpp:2055
+#: ui/MainFrame.cpp:2040
 msgid "Select destination directory"
 msgstr "Hedef dizin seç"
 
-#: ui/MainFrame.cpp:2070 ui/MainFrame.cpp:2106 ui/MainFrame.cpp:2149
-#: ui/MainFrame.cpp:2182 ui/MainFrame.cpp:4243
-#: ui/preferences/Preferences.cpp:286
+#: ui/MainFrame.cpp:2055 ui/MainFrame.cpp:2091 ui/MainFrame.cpp:2134
+#: ui/MainFrame.cpp:2167 ui/MainFrame.cpp:4218
+#: ui/preferences/Preferences.cpp:280
 msgid "Copy to"
 msgstr "Kopyala"
 
-#: ui/MainFrame.cpp:3082
+#: ui/MainFrame.cpp:3057
 msgid "station"
 msgstr "istasyon"
 
-#: ui/MainFrame.cpp:3082
+#: ui/MainFrame.cpp:3057
 msgid "stations"
 msgstr "istasyonlar"
 
-#: ui/MainFrame.cpp:3091
+#: ui/MainFrame.cpp:3066
 msgid "podcast"
 msgstr "podcast"
 
-#: ui/MainFrame.cpp:3091
+#: ui/MainFrame.cpp:3066
 msgid "podcasts"
 msgstr "podcastler"
 
-#: ui/MainFrame.cpp:3106
+#: ui/MainFrame.cpp:3081
 msgid "dir"
 msgstr "dizin"
 
-#: ui/MainFrame.cpp:3106
+#: ui/MainFrame.cpp:3081
 msgid "dirs"
 msgstr "dizinler"
 
-#: ui/MainFrame.cpp:3108
+#: ui/MainFrame.cpp:3083
 msgid "file"
 msgstr "dosya"
 
-#: ui/MainFrame.cpp:3108
+#: ui/MainFrame.cpp:3083
 msgid "files"
 msgstr "dosyalar"
 
-#: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
+#: ui/MainFrame.cpp:3098 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326
-#: ui/preferences/Preferences.cpp:815
+#: ui/preferences/Preferences.cpp:804
 msgid "track"
 msgstr "parça"
 
-#: ui/MainFrame.cpp:3123 ui/mediaviewer/MediaViewer.cpp:1317
+#: ui/MainFrame.cpp:3098 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326
-#: ui/preferences/Preferences.cpp:929
+#: ui/preferences/Preferences.cpp:918
 msgid "tracks"
 msgstr "parçayı tekrarlama"
 
-#: ui/MainFrame.cpp:3490 ui/MainFrame.cpp:3496 ui/MainFrame.cpp:3499
+#: ui/MainFrame.cpp:3465 ui/MainFrame.cpp:3471 ui/MainFrame.cpp:3474
 msgid "Load this user defined layout"
 msgstr "Kullanıcı tanımlı bu düzeni yükle"
 
-#: ui/MainFrame.cpp:3491
+#: ui/MainFrame.cpp:3466
 msgid "Delete this user defined layout"
 msgstr "Kullanıcı tanımlı bu şdüzeni sil"
 
-#: ui/MainFrame.cpp:3496 ui/MainFrame.cpp:3499
+#: ui/MainFrame.cpp:3471 ui/MainFrame.cpp:3474
 msgid "No Layouts Defined"
 msgstr "Kullanıcı tanımlı düzen yok"
 
-#: ui/MainFrame.cpp:3591
+#: ui/MainFrame.cpp:3566
 msgid "Layout:"
 msgstr "Düzen:"
 
-#: ui/MainFrame.cpp:3591
+#: ui/MainFrame.cpp:3566
 #, fuzzy, c-format
 msgid "Layout %lu"
 msgstr "Düzen %u"
 
-#: ui/MainFrame.cpp:4210 ui/MainFrame.cpp:4231
+#: ui/MainFrame.cpp:4185 ui/MainFrame.cpp:4206
 msgid "Copy the current selected songs to a directory or device"
 msgstr "Seçili geçerli şarkıları bir konuma ya da aygıta kopyala"
 
-#: ui/MainFrame.cpp:4240
+#: ui/MainFrame.cpp:4215
 msgid "Add 'Copy to' patterns in preferences"
 msgstr "Tercihlere 'kopyala' yolu ekle"
 
-#: ui/MainFrame.cpp:4243
+#: ui/MainFrame.cpp:4218
 msgid "Copy the selected tracks to a folder or device"
 msgstr "Seçili parçaları bir klasöre ya da aygıta kopyala"
 
@@ -2305,7 +2288,7 @@ msgstr "Seçili parçaları çalma istesine ekle"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
-#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1741
+#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1700
 msgid "Edit Songs"
 msgstr "Şarkıları Düzenle"
 
@@ -2342,7 +2325,7 @@ msgstr "Seçili albüm kapağını silmek istediğinizden emin misiniz?"
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2292
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2250
 msgid "Tracks Labels Editor"
 msgstr "Parça Etiket Düzenleyicisi"
 
@@ -2355,7 +2338,7 @@ msgstr "Alan Editörü"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:2015
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1974
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2365,7 +2348,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:2016
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1975
 msgid "Remove tracks from drive"
 msgstr "Parçaları sürücüden sil"
 
@@ -2399,7 +2382,7 @@ msgstr "Şarkıları düzenle"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1822
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1781
 msgid "Save the selected tracks to playlist"
 msgstr "Seçili parçaları çalma listesine kaydet"
 
@@ -2418,7 +2401,7 @@ msgstr "Seçili sanatçının şarkılarını düzenle"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1830
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1789
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Akıllı Çalma Listesi oluştur"
@@ -2426,7 +2409,7 @@ msgstr "Akıllı Çalma Listesi oluştur"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:655
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1830
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1789
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Bu parça için akıllı çalma listesi oluştur"
@@ -2554,7 +2537,7 @@ msgstr "Geçerli seçili şarkıları çalma listesine ekle"
 msgid "Selects the genre of the current song"
 msgstr "Geçerli şarkı için türleri seç"
 
-#: ui/mediaviewer/library/SoListBox.cpp:570 ui/player/PlayList.cpp:1788
+#: ui/mediaviewer/library/SoListBox.cpp:570 ui/player/PlayList.cpp:1747
 msgid "Selects the artist of the current song"
 msgstr "Geçerli şarkının sanatçısını seç"
 
@@ -2566,11 +2549,11 @@ msgstr "Geçerli şarkı için albüm sanatçısını seç"
 msgid "Selects the composer of the current song"
 msgstr "Geçerli şarkı için besteciyi seç"
 
-#: ui/mediaviewer/library/SoListBox.cpp:582 ui/player/PlayList.cpp:1797
+#: ui/mediaviewer/library/SoListBox.cpp:582 ui/player/PlayList.cpp:1756
 msgid "Select the album of the current song"
 msgstr "Geçerli şarkının albümünü seç"
 
-#: ui/mediaviewer/library/SoListBox.cpp:585 ui/player/PlayList.cpp:1806
+#: ui/mediaviewer/library/SoListBox.cpp:585 ui/player/PlayList.cpp:1765
 msgid "Search in the library"
 msgstr "Kütüphanede ara"
 
@@ -2582,7 +2565,7 @@ msgstr "Seçili şarkılara atanmış etiketleri düzenle"
 msgid "Edit the songs selected"
 msgstr "Seçili parçaları düzenle"
 
-#: ui/mediaviewer/library/SoListBox.cpp:640 ui/player/PlayList.cpp:1770
+#: ui/mediaviewer/library/SoListBox.cpp:640 ui/player/PlayList.cpp:1729
 msgid "Set the current selected tracks rating"
 msgstr "Seçili geçerli parçaların derecelendirmesini ayarla"
 
@@ -2592,17 +2575,17 @@ msgstr "Tüm seçili parçaları çalma listesi olarak kaydet"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1828
+#: ui/player/PlayList.cpp:1787
 msgid "Create Smart Playlist"
 msgstr "Akıllı Çalma Listesi oluştur"
 
 #: ui/mediaviewer/library/SoListBox.cpp:653
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1828
+#: ui/player/PlayList.cpp:1787
 msgid "Create a smart playlist from this track"
 msgstr "Bu parça için akıllı çalma listesi oluştur"
 
-#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1858
+#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1817
 msgid "Remove from Library"
 msgstr "Kütüphaneden çıkar"
 
@@ -2610,7 +2593,7 @@ msgstr "Kütüphaneden çıkar"
 msgid "Remove the current selected tracks from library"
 msgstr "Seçili geçerli parçaları kütüphaneden kaldır"
 
-#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1864
+#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1823
 msgid "Delete from Drive"
 msgstr "Sürücüden çıkar"
 
@@ -2783,12 +2766,12 @@ msgstr "Seçili geçerli filtreyi düzenle"
 msgid "New Filter"
 msgstr "Yeni Filtre"
 
-#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2824
-#: ui/preferences/Preferences.cpp:2844
+#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2690
+#: ui/preferences/Preferences.cpp:2710
 msgid "Collection"
 msgstr "Koleksiyon"
 
-#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2975
+#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2841
 msgid "Select library path"
 msgstr "Kütüphane yolunu seç"
 
@@ -2932,7 +2915,7 @@ msgid "Portable Media Properties"
 msgstr "Taşınabilir Medya Tercihleri"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:693
-#: ui/preferences/Preferences.cpp:2285
+#: ui/preferences/Preferences.cpp:2182
 msgid "Path:"
 msgstr "Yol."
 
@@ -2974,7 +2957,7 @@ msgid "always"
 msgstr "her zaman"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:801
-#: ui/preferences/Preferences.cpp:1160
+#: ui/preferences/Preferences.cpp:1149
 msgid "Quality:"
 msgstr "Kalite:"
 
@@ -3039,7 +3022,7 @@ msgstr "Nerede:"
 msgid "Beginning"
 msgstr "Başlangıç"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1850
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1809
 msgid "Remove from Playlist"
 msgstr "Çalma Listesi'nden çıkar"
 
@@ -3219,7 +3202,7 @@ msgid "Random"
 msgstr "Karışık"
 
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:145
-#: ui/preferences/Preferences.cpp:491
+#: ui/preferences/Preferences.cpp:480
 msgid "minutes"
 msgstr "dakika"
 
@@ -3280,7 +3263,7 @@ msgid "Destination Folder:"
 msgstr "Hedef Klasör:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:121
-#: ui/preferences/Preferences.cpp:1134
+#: ui/preferences/Preferences.cpp:1123
 msgid "Select a folder"
 msgstr "Bir klasör seç"
 
@@ -3565,6 +3548,14 @@ msgstr "Seçili öğeler için bilgileri göster"
 msgid "Disable audioscrobbling"
 msgstr "Müzik Skroplamayı devre dışı bırak"
 
+#: ui/magnatune/Magnatune.cpp:1000 ui/magnatune/Magnatune.cpp:1007
+msgid "Download Albums"
+msgstr "Albümleri İndir"
+
+#: ui/magnatune/Magnatune.cpp:1000 ui/magnatune/Magnatune.cpp:1007
+msgid "Download the current selected album"
+msgstr "Seçili geçerli albümleri indir"
+
 #: ui/splash/SplashWin.cpp:83
 msgid "Please Donate!"
 msgstr "Desteklemek ister misiniz?"
@@ -3729,7 +3720,7 @@ msgid "Other:"
 msgstr "Diğer:"
 
 #: ui/preferences/Preferences.cpp:128 ui/preferences/Preferences.cpp:188
-#: ui/preferences/Preferences.cpp:2430
+#: ui/preferences/Preferences.cpp:2327
 msgid "Default"
 msgstr "Varsayılan"
 
@@ -3846,512 +3837,504 @@ msgstr "Katalonya lehçesi"
 msgid "Serbian"
 msgstr "Sırpça"
 
-#: ui/preferences/Preferences.cpp:222
+#: ui/preferences/Preferences.cpp:221
 msgid "General"
 msgstr "Genel"
 
-#: ui/preferences/Preferences.cpp:226 ui/preferences/Preferences.cpp:608
+#: ui/preferences/Preferences.cpp:225 ui/preferences/Preferences.cpp:597
 msgid "Collections"
 msgstr "Koleksiyonlar"
 
-#: ui/preferences/Preferences.cpp:231
+#: ui/preferences/Preferences.cpp:230
 msgid "Playback"
 msgstr "Playback"
 
-#: ui/preferences/Preferences.cpp:236 ui/preferences/Preferences.cpp:1030
+#: ui/preferences/Preferences.cpp:235 ui/preferences/Preferences.cpp:1019
 msgid "Crossfader"
 msgstr "Çapraz Geçiş"
 
-#: ui/preferences/Preferences.cpp:241 ui/preferences/Preferences.cpp:1122
+#: ui/preferences/Preferences.cpp:240 ui/preferences/Preferences.cpp:1111
 msgid "Record"
 msgstr "Kayıt"
 
-#: ui/preferences/Preferences.cpp:256
+#: ui/preferences/Preferences.cpp:255
 msgid "Online"
 msgstr "Çevrimiçi"
 
-#: ui/preferences/Preferences.cpp:276 ui/preferences/Preferences.cpp:1953
+#: ui/preferences/Preferences.cpp:270 ui/preferences/Preferences.cpp:1850
 #: onlinelinks/OnlineLinks.cpp:71
 msgid "Links"
 msgstr "Bağlantılar"
 
-#: ui/preferences/Preferences.cpp:291
+#: ui/preferences/Preferences.cpp:285
 msgid "Shortcuts"
 msgstr "Kısayollar"
 
-#: ui/preferences/Preferences.cpp:371
+#: ui/preferences/Preferences.cpp:361
 msgid "Accept"
 msgstr "Uygula"
 
-#: ui/preferences/Preferences.cpp:449
+#: ui/preferences/Preferences.cpp:438
 msgid "On Start"
 msgstr "Başlangıçta"
 
-#: ui/preferences/Preferences.cpp:453 ui/preferences/Preferences.cpp:1562
-#: ui/preferences/Preferences.cpp:1564
+#: ui/preferences/Preferences.cpp:442 ui/preferences/Preferences.cpp:1551
+#: ui/preferences/Preferences.cpp:1553
 msgid "Language"
 msgstr "Dil"
 
-#: ui/preferences/Preferences.cpp:464
+#: ui/preferences/Preferences.cpp:453
 msgid "(Needs restart)"
 msgstr "(Yeniden başlatma gerekli)"
 
-#: ui/preferences/Preferences.cpp:470
+#: ui/preferences/Preferences.cpp:459
 msgid "Show splash screen"
 msgstr "Açılış ekranını göster"
 
-#: ui/preferences/Preferences.cpp:474
+#: ui/preferences/Preferences.cpp:463
 msgid "Start minimized"
 msgstr "Görev çubuğunda başlat"
 
-#: ui/preferences/Preferences.cpp:480
+#: ui/preferences/Preferences.cpp:469
 msgid "Restore position for tracks longer than"
 msgstr "'dan ucun parçaların konumunu koru"
 
-#: ui/preferences/Preferences.cpp:487
+#: ui/preferences/Preferences.cpp:476
 msgid "set the minimum length in minutes to save track position"
 msgstr "Parça konumunu kaydetmek için minimum süre dakikasını ayarla"
 
-#: ui/preferences/Preferences.cpp:497
+#: ui/preferences/Preferences.cpp:486
 msgid "Load default layout"
 msgstr "Varsayılan düzeni yükle"
 
-#: ui/preferences/Preferences.cpp:503
+#: ui/preferences/Preferences.cpp:492
 msgid "Behaviour"
 msgstr "Eylemler"
 
-#: ui/preferences/Preferences.cpp:505
+#: ui/preferences/Preferences.cpp:494
 msgid "Activate system tray icon"
 msgstr "Görev çubuğu simgesini etkinleştir"
 
-#: ui/preferences/Preferences.cpp:516
+#: ui/preferences/Preferences.cpp:505
 msgid "Integrate into SoundMenu"
 msgstr "Ses Menüsüne ilave et"
 
-#: ui/preferences/Preferences.cpp:522
+#: ui/preferences/Preferences.cpp:511
 msgid "Enqueue as default action"
 msgstr "Varsayılan eylem olarak kuyruğa ekle"
 
-#: ui/preferences/Preferences.cpp:526
+#: ui/preferences/Preferences.cpp:515
 msgid "Drop files clear playlist"
 msgstr "Dosyaları sürükle çalma listesini temizle"
 
-#: ui/preferences/Preferences.cpp:530
+#: ui/preferences/Preferences.cpp:519
 msgid "Instant text search"
 msgstr "Anlık metin arama"
 
-#: ui/preferences/Preferences.cpp:534
+#: ui/preferences/Preferences.cpp:523
 msgid "When searching, pressing enter queues the result"
 msgstr "Arama yaparken, sonuçları kuyruğa eklemesi için enter tuşuna bas"
 
-#: ui/preferences/Preferences.cpp:540
+#: ui/preferences/Preferences.cpp:529
 #, fuzzy
 msgid "Show album cover in the player"
 msgstr "Albüm kapağı çerçevesini göster"
 
-#: ui/preferences/Preferences.cpp:544
+#: ui/preferences/Preferences.cpp:533
 #, fuzzy
 msgid "Show CD cover frame in the cover editor"
 msgstr "Albüm kapağı çerçevesini göster"
 
-#: ui/preferences/Preferences.cpp:550
+#: ui/preferences/Preferences.cpp:539
 msgid "On Close"
 msgstr "Kapanışta"
 
-#: ui/preferences/Preferences.cpp:552
+#: ui/preferences/Preferences.cpp:541
 msgid "Save playlist on close"
 msgstr "Çalma listesini kapatılırken kaydet"
 
-#: ui/preferences/Preferences.cpp:556
+#: ui/preferences/Preferences.cpp:545
 msgid "Close minimizes to system tray icon"
 msgstr "Görev çubuğuna küçült"
 
-#: ui/preferences/Preferences.cpp:561
+#: ui/preferences/Preferences.cpp:550
 msgid "Ask confirmation on exit"
 msgstr "Çıkışta onay iste"
 
-#: ui/preferences/Preferences.cpp:653
+#: ui/preferences/Preferences.cpp:642
 msgid "Paths"
 msgstr "Yollar"
 
-#: ui/preferences/Preferences.cpp:673
+#: ui/preferences/Preferences.cpp:662
 msgid "Words to detect covers"
 msgstr "Albüm kapağı aranırken bakılacak kelimeler"
 
-#: ui/preferences/Preferences.cpp:702 ui/preferences/Preferences.cpp:2246
+#: ui/preferences/Preferences.cpp:691 ui/preferences/Preferences.cpp:2143
 msgid "Options"
 msgstr "Seçenekler"
 
-#: ui/preferences/Preferences.cpp:704
+#: ui/preferences/Preferences.cpp:693
 msgid "Update when opened "
 msgstr "Açılışta güncelle "
 
-#: ui/preferences/Preferences.cpp:708
+#: ui/preferences/Preferences.cpp:697
 msgid "Create playlists on scan"
 msgstr "Tarama sırasında çalma listesi oluştur"
 
-#: ui/preferences/Preferences.cpp:713
+#: ui/preferences/Preferences.cpp:702
 msgid "Follow symbolic links on scan"
 msgstr "Verileri alırken sembolik bağlantıları izle"
 
-#: ui/preferences/Preferences.cpp:717
+#: ui/preferences/Preferences.cpp:706
 msgid "Scan embedded covers in audio files"
 msgstr "Ses dosyalarındaki eşleştirilmiş albüm kapaklarını ara"
 
-#: ui/preferences/Preferences.cpp:722
+#: ui/preferences/Preferences.cpp:711
 msgid "Embed rating, play count and labels"
 msgstr "Derecelendirmeyi,çalma sayısını ve etiketleri eşleştir"
 
-#: ui/preferences/Preferences.cpp:728
+#: ui/preferences/Preferences.cpp:717
 msgid "Default copy action"
 msgstr "Varsayılan kopyalama eylemi"
 
-#: ui/preferences/Preferences.cpp:811
+#: ui/preferences/Preferences.cpp:800
 msgid "Play random"
 msgstr "Çalma listesi boşsa"
 
-#: ui/preferences/Preferences.cpp:815
+#: ui/preferences/Preferences.cpp:804
 msgid "album"
 msgstr "lbüm"
 
-#: ui/preferences/Preferences.cpp:823
+#: ui/preferences/Preferences.cpp:812
 msgid "when playlist is empty"
 msgstr "karışık çal"
 
-#: ui/preferences/Preferences.cpp:829
+#: ui/preferences/Preferences.cpp:818
 msgid "Delete played tracks from playlist"
 msgstr "Çalınan parçaları çalma listesinden sil"
 
-#: ui/preferences/Preferences.cpp:833
+#: ui/preferences/Preferences.cpp:822
 msgid "Show notifications"
 msgstr "Bildirimleri göster"
 
-#: ui/preferences/Preferences.cpp:837
+#: ui/preferences/Preferences.cpp:826
 #, fuzzy
 msgid "Enable equalizer"
 msgstr "Ekolayzer"
 
-#: ui/preferences/Preferences.cpp:841
+#: ui/preferences/Preferences.cpp:830
 msgid "Enable volume and fader"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:847
+#: ui/preferences/Preferences.cpp:836
 msgid "ReplayGain mode:"
 msgstr "ReplayGain modu:"
 
-#: ui/preferences/Preferences.cpp:851
+#: ui/preferences/Preferences.cpp:840
 msgid "Disabled"
 msgstr "Devre Dışı"
 
-#: ui/preferences/Preferences.cpp:858
+#: ui/preferences/Preferences.cpp:847
 msgid "PreAmp:"
 msgstr "PreAmp:"
 
-#: ui/preferences/Preferences.cpp:875
+#: ui/preferences/Preferences.cpp:864
 msgid "Random / Smart play modes"
 msgstr "Karışık/Akıllı Çalma Modları"
 
-#: ui/preferences/Preferences.cpp:885
+#: ui/preferences/Preferences.cpp:874
 msgid "Minimum number of tracks to play required to add new ones"
 msgstr "Yeni arama için kalan parça sayısı"
 
-#: ui/preferences/Preferences.cpp:893
+#: ui/preferences/Preferences.cpp:882
 msgid "Tracks added each time"
 msgstr "Her seferinde eklenecek parça sayısı"
 
-#: ui/preferences/Preferences.cpp:902
+#: ui/preferences/Preferences.cpp:891
 msgid "Max played tracks kept in playlist"
 msgstr "Çalma listesinde kalacak, en çok çalınan şarkı sayısı"
 
-#: ui/preferences/Preferences.cpp:912 ui/preferences/Preferences.cpp:3444
+#: ui/preferences/Preferences.cpp:901 ui/preferences/Preferences.cpp:3310
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
 msgstr[0] "En son"
 msgstr[1] "En son"
 
-#: ui/preferences/Preferences.cpp:921 ui/preferences/Preferences.cpp:3445
+#: ui/preferences/Preferences.cpp:910 ui/preferences/Preferences.cpp:3311
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
 msgstr[0] "Sanatçı"
 msgstr[1] "Sanatçı"
 
-#: ui/preferences/Preferences.cpp:937
+#: ui/preferences/Preferences.cpp:926
 msgid "Silence detector"
 msgstr "Sessizlik detektörü"
 
-#: ui/preferences/Preferences.cpp:942
+#: ui/preferences/Preferences.cpp:931
 msgid "Skip at"
 msgstr "Atla"
 
-#: ui/preferences/Preferences.cpp:961
+#: ui/preferences/Preferences.cpp:950
 msgid "In the last"
 msgstr "En son"
 
-#: ui/preferences/Preferences.cpp:971 ui/preferences/Preferences.cpp:1198
+#: ui/preferences/Preferences.cpp:960 ui/preferences/Preferences.cpp:1187
 msgid "seconds"
 msgstr "saniye"
 
-#: ui/preferences/Preferences.cpp:979
+#: ui/preferences/Preferences.cpp:968
 msgid "Output device"
 msgstr "Çıktı aygıtı"
 
-#: ui/preferences/Preferences.cpp:982
+#: ui/preferences/Preferences.cpp:971
 msgid "Automatic"
 msgstr "Otomatik"
 
-#: ui/preferences/Preferences.cpp:983
+#: ui/preferences/Preferences.cpp:972
 msgid "GConf Defined"
 msgstr " GConf Tanımlandı"
 
-#: ui/preferences/Preferences.cpp:1037
+#: ui/preferences/Preferences.cpp:1026
 msgid "Fade-out length:"
 msgstr "Fade-out uzunluğu:"
 
-#: ui/preferences/Preferences.cpp:1046
+#: ui/preferences/Preferences.cpp:1035
 msgid "Select the length of the fade out. 0 for gapless playback"
 msgstr "Kaybolma süresini ayarla. Boşluksuz mod için 0."
 
-#: ui/preferences/Preferences.cpp:1049
+#: ui/preferences/Preferences.cpp:1038
 msgid "Fade-in length:"
 msgstr "Fade-in uzunluğu:"
 
-#: ui/preferences/Preferences.cpp:1058
+#: ui/preferences/Preferences.cpp:1047
 msgid "Select the length of the fade in"
 msgstr "Sesin açılma uzunluğunu seçin"
 
-#: ui/preferences/Preferences.cpp:1061
+#: ui/preferences/Preferences.cpp:1050
 msgid "Fade-in volume:"
 msgstr "Fade-in ses yüksekliği:"
 
-#: ui/preferences/Preferences.cpp:1070
+#: ui/preferences/Preferences.cpp:1059
 msgid "Select the initial volume of the fade in"
 msgstr "Açılma noktasının başlangıç ses kuvvetini seçin."
 
-#: ui/preferences/Preferences.cpp:1073
+#: ui/preferences/Preferences.cpp:1062
 msgid "Fade-in start:"
 msgstr "Fade-in başlangıcı:"
 
-#: ui/preferences/Preferences.cpp:1082
+#: ui/preferences/Preferences.cpp:1071
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr ""
 "Başlarken ses kuvvetinin hangisinde  olduğunu açılması kapatılmasında seçin"
 
-#: ui/preferences/Preferences.cpp:1124
+#: ui/preferences/Preferences.cpp:1113
 msgid "Enable recording"
 msgstr "Kaydetmeyi etkinleştir"
 
-#: ui/preferences/Preferences.cpp:1130
+#: ui/preferences/Preferences.cpp:1119
 msgid "Save to:"
 msgstr "Kaydet:"
 
-#: ui/preferences/Preferences.cpp:1148 ui/preferences/Preferences.cpp:2267
+#: ui/preferences/Preferences.cpp:1137 ui/preferences/Preferences.cpp:2164
 msgid "Format:"
 msgstr "Biçim:"
 
-#: ui/preferences/Preferences.cpp:1165 copyto/Transcode.cpp:322
+#: ui/preferences/Preferences.cpp:1154 copyto/Transcode.cpp:322
 msgid "Very High"
 msgstr "Çok Yüksek"
 
-#: ui/preferences/Preferences.cpp:1166 copyto/Transcode.cpp:323
+#: ui/preferences/Preferences.cpp:1155 copyto/Transcode.cpp:323
 msgid "High"
 msgstr "Yüksek"
 
-#: ui/preferences/Preferences.cpp:1167 copyto/Transcode.cpp:326
+#: ui/preferences/Preferences.cpp:1156 copyto/Transcode.cpp:326
 msgid "Normal"
 msgstr "Normal"
 
-#: ui/preferences/Preferences.cpp:1168 copyto/Transcode.cpp:327
+#: ui/preferences/Preferences.cpp:1157 copyto/Transcode.cpp:327
 msgid "Low"
 msgstr "Düşük"
 
-#: ui/preferences/Preferences.cpp:1169 copyto/Transcode.cpp:328
+#: ui/preferences/Preferences.cpp:1158 copyto/Transcode.cpp:328
 msgid "Very Low"
 msgstr "Çok Düşük"
 
-#: ui/preferences/Preferences.cpp:1181
+#: ui/preferences/Preferences.cpp:1170
 msgid "Split tracks"
 msgstr "Parçaları böl"
 
-#: ui/preferences/Preferences.cpp:1188
+#: ui/preferences/Preferences.cpp:1177
 msgid "Delete tracks shorter than"
 msgstr "'dan kısa parçayı sil"
 
-#: ui/preferences/Preferences.cpp:1227
+#: ui/preferences/Preferences.cpp:1216
 msgid "Last.fm audioscrobble"
 msgstr "Last.fm Müzik Skroplama"
 
-#: ui/preferences/Preferences.cpp:1229 ui/preferences/Preferences.cpp:1263
+#: ui/preferences/Preferences.cpp:1218 ui/preferences/Preferences.cpp:1252
 msgid "Enabled"
 msgstr "Etkin"
 
-#: ui/preferences/Preferences.cpp:1237 ui/preferences/Preferences.cpp:1271
-#: ui/preferences/Preferences.cpp:1522
+#: ui/preferences/Preferences.cpp:1226 ui/preferences/Preferences.cpp:1260
+#: ui/preferences/Preferences.cpp:1511
 msgid "Username:"
 msgstr "Kullanıcı İsmi:"
 
-#: ui/preferences/Preferences.cpp:1245 ui/preferences/Preferences.cpp:1279
-#: ui/preferences/Preferences.cpp:1531
+#: ui/preferences/Preferences.cpp:1234 ui/preferences/Preferences.cpp:1268
+#: ui/preferences/Preferences.cpp:1520
 msgid "Password:"
 msgstr "Parola:"
 
-#: ui/preferences/Preferences.cpp:1261
+#: ui/preferences/Preferences.cpp:1250
 msgid "Libre.fm audioscrobble"
 msgstr "Libre.fm Müzik Skroplama"
 
-#: ui/preferences/Preferences.cpp:1362
+#: ui/preferences/Preferences.cpp:1351
 msgid "Targets"
 msgstr "Hedefler"
 
-#: ui/preferences/Preferences.cpp:1403
+#: ui/preferences/Preferences.cpp:1392
 #, fuzzy
 msgid "Disabled Genres"
 msgstr "Devre Dışı"
 
-#: ui/preferences/Preferences.cpp:1424 ui/preferences/Preferences.cpp:1426
+#: ui/preferences/Preferences.cpp:1413 ui/preferences/Preferences.cpp:1415
 msgid "Font"
 msgstr "Yazı Tipi"
 
-#: ui/preferences/Preferences.cpp:1438
+#: ui/preferences/Preferences.cpp:1427
 msgid "Align:"
 msgstr "Hizala:"
 
-#: ui/preferences/Preferences.cpp:1444
+#: ui/preferences/Preferences.cpp:1433
 msgid "Center"
 msgstr "Ortala"
 
-#: ui/preferences/Preferences.cpp:1489
+#: ui/preferences/Preferences.cpp:1478
 msgid "Proxy"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1491
+#: ui/preferences/Preferences.cpp:1480
 #, fuzzy
 msgid "Proxy Enabled"
 msgstr "Etkin"
 
-#: ui/preferences/Preferences.cpp:1500
+#: ui/preferences/Preferences.cpp:1489
 #, fuzzy
 msgid "Hostname:"
 msgstr "Kullanıcı İsmi:"
 
-#: ui/preferences/Preferences.cpp:1511
+#: ui/preferences/Preferences.cpp:1500
 msgid "Port:"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1579
+#: ui/preferences/Preferences.cpp:1568
 msgid "Browser command"
 msgstr "Tarayıcı komutu"
 
-#: ui/preferences/Preferences.cpp:1587
+#: ui/preferences/Preferences.cpp:1576
 msgid "Minimum radio allowed bit rate"
 msgstr "Radyo için izin verilen en düşük bit oranı"
 
-#: ui/preferences/Preferences.cpp:1594
+#: ui/preferences/Preferences.cpp:1583
 msgid "Player online buffer size"
 msgstr "Player online yüklenme boyutu"
 
-#: ui/preferences/Preferences.cpp:1632
+#: ui/preferences/Preferences.cpp:1621
 msgid "Destination directory:"
 msgstr "Hedef konumu:"
 
-#: ui/preferences/Preferences.cpp:1636
+#: ui/preferences/Preferences.cpp:1625
 msgid "Select podcasts folder"
 msgstr "Podcast klasörünü seç"
 
-#: ui/preferences/Preferences.cpp:1644
+#: ui/preferences/Preferences.cpp:1633
 msgid "Check every"
 msgstr "Denetle"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1638
 msgid "Hour"
 msgstr "Saat"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1638
 msgid "Day"
 msgstr "Gün"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1638
 msgid "Week"
 msgstr "Hafta"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1638
 msgid "Month"
 msgstr "Ay"
 
-#: ui/preferences/Preferences.cpp:1660
+#: ui/preferences/Preferences.cpp:1649
 msgid "Delete after"
 msgstr "Ardından sil"
 
-#: ui/preferences/Preferences.cpp:1669
+#: ui/preferences/Preferences.cpp:1658
 msgid "Days"
 msgstr "Günde"
 
-#: ui/preferences/Preferences.cpp:1669
+#: ui/preferences/Preferences.cpp:1658
 msgid "Weeks"
 msgstr "Haftada"
 
-#: ui/preferences/Preferences.cpp:1669
+#: ui/preferences/Preferences.cpp:1658
 msgid "Months"
 msgstr "Ayda"
 
-#: ui/preferences/Preferences.cpp:1678
+#: ui/preferences/Preferences.cpp:1667
 msgid "Only if played"
 msgstr "Sadece çalındıysa"
 
-#: ui/preferences/Preferences.cpp:1739 ui/preferences/Preferences.cpp:1834
+#: ui/preferences/Preferences.cpp:1731
 msgid "Invert"
 msgstr "Tersi"
 
-#: ui/preferences/Preferences.cpp:1753
-msgid "Audio format:"
-msgstr "Ses biçimi:"
-
-#: ui/preferences/Preferences.cpp:1764
-msgid "Torrent command:"
-msgstr "Torrent komutu:"
-
-#: ui/preferences/Preferences.cpp:1848
+#: ui/preferences/Preferences.cpp:1745
 msgid "Membership :"
 msgstr "Üyelik:"
 
-#: ui/preferences/Preferences.cpp:1855
+#: ui/preferences/Preferences.cpp:1752
 msgid "Streaming"
 msgstr "Akış"
 
-#: ui/preferences/Preferences.cpp:1856
+#: ui/preferences/Preferences.cpp:1753
 msgid "Downloading"
 msgstr "İndirme"
 
-#: ui/preferences/Preferences.cpp:1869
+#: ui/preferences/Preferences.cpp:1766
 msgid "Username :"
 msgstr "Kullanıcı Adı:"
 
-#: ui/preferences/Preferences.cpp:1877
+#: ui/preferences/Preferences.cpp:1774
 msgid "Password :"
 msgstr "Parola:"
 
-#: ui/preferences/Preferences.cpp:1895
+#: ui/preferences/Preferences.cpp:1792
 msgid "Stream as :"
 msgstr "Akış biçimi:"
 
-#: ui/preferences/Preferences.cpp:1909
+#: ui/preferences/Preferences.cpp:1806
 msgid "Download as :"
 msgstr "İndirme biçimi:"
 
-#: ui/preferences/Preferences.cpp:1913
+#: ui/preferences/Preferences.cpp:1810
 msgid "Download Page"
 msgstr "İndirme Sayfası"
 
-#: ui/preferences/Preferences.cpp:2007
+#: ui/preferences/Preferences.cpp:1904
 msgid "URL:"
 msgstr "URL:"
 
-#: ui/preferences/Preferences.cpp:2032
+#: ui/preferences/Preferences.cpp:1929
 msgid "Define URLs using"
 msgstr "Kullanılacak URL'leri tanımla"
 
-#: ui/preferences/Preferences.cpp:2038
+#: ui/preferences/Preferences.cpp:1935
 msgid ""
 "2 letters language code\n"
 "Text to search"
@@ -4359,11 +4342,11 @@ msgstr ""
 "2 harfli dil kodu\n"
 "Arama metni"
 
-#: ui/preferences/Preferences.cpp:2151
+#: ui/preferences/Preferences.cpp:2048
 msgid "Define commands using"
 msgstr "Kullanılacak komutları tanımla"
 
-#: ui/preferences/Preferences.cpp:2157
+#: ui/preferences/Preferences.cpp:2054
 msgid ""
 "Album path\n"
 "Album cover file path\n"
@@ -4373,19 +4356,19 @@ msgstr ""
 "Albüm kapağı dosyası yolu\n"
 "Parça yolu"
 
-#: ui/preferences/Preferences.cpp:2190
+#: ui/preferences/Preferences.cpp:2087
 msgid "Patterns"
 msgstr "Şablonlar"
 
-#: ui/preferences/Preferences.cpp:2301
+#: ui/preferences/Preferences.cpp:2198
 msgid "Remove source files"
 msgstr "Kaynak dosyalarını kaldır"
 
-#: ui/preferences/Preferences.cpp:2318
+#: ui/preferences/Preferences.cpp:2215
 msgid "Define patterns using"
 msgstr "Kullanılacak şablonları tanımla"
 
-#: ui/preferences/Preferences.cpp:2324
+#: ui/preferences/Preferences.cpp:2221
 msgid ""
 "Artist\n"
 "Album Artist\n"
@@ -4397,7 +4380,7 @@ msgstr ""
 "{aa} ya da {a}\n"
 "Albüm"
 
-#: ui/preferences/Preferences.cpp:2332
+#: ui/preferences/Preferences.cpp:2229
 msgid ""
 "Composer\n"
 "Disk\n"
@@ -4409,7 +4392,7 @@ msgstr ""
 "Dosyaadı\n"
 "Tür"
 
-#: ui/preferences/Preferences.cpp:2340
+#: ui/preferences/Preferences.cpp:2237
 msgid ""
 "Index\n"
 "Number\n"
@@ -4421,56 +4404,56 @@ msgstr ""
 "Başlık\n"
 "Yıl"
 
-#: ui/preferences/Preferences.cpp:2391
+#: ui/preferences/Preferences.cpp:2288
 msgid "Accelerators"
 msgstr "Hızlandırıcılar"
 
-#: ui/preferences/Preferences.cpp:2396
+#: ui/preferences/Preferences.cpp:2293
 msgid "Action"
 msgstr "Eylem"
 
-#: ui/preferences/Preferences.cpp:2400
+#: ui/preferences/Preferences.cpp:2297
 msgid "Key"
 msgstr "Anahtar"
 
-#: ui/preferences/Preferences.cpp:2824 ui/preferences/Preferences.cpp:2844
+#: ui/preferences/Preferences.cpp:2690 ui/preferences/Preferences.cpp:2710
 msgid "Enter the collection name"
 msgstr "Koleksiyon ismi girin"
 
-#: ui/preferences/Preferences.cpp:2953
+#: ui/preferences/Preferences.cpp:2819
 msgid "Change library path"
 msgstr "Kütüphane yolunu değiştirin"
 
-#: ui/preferences/Preferences.cpp:3031 ui/preferences/Preferences.cpp:3051
+#: ui/preferences/Preferences.cpp:2897 ui/preferences/Preferences.cpp:2917
 msgid "Word"
 msgstr "Kelime"
 
-#: ui/preferences/Preferences.cpp:3031 ui/preferences/Preferences.cpp:3051
+#: ui/preferences/Preferences.cpp:2897 ui/preferences/Preferences.cpp:2917
 msgid "Enter the text to find covers"
 msgstr "Albüm kapaklarını bulmak için metin girin"
 
-#: ui/preferences/Preferences.cpp:3371
+#: ui/preferences/Preferences.cpp:3237
 #, fuzzy
 msgid "Enter the genre to disable"
 msgstr "Filtrelemek için metin girin"
 
-#: ui/preferences/Preferences.cpp:3572 ui/preferences/Preferences.cpp:3603
+#: ui/preferences/Preferences.cpp:3438 ui/preferences/Preferences.cpp:3469
 msgid "Filter"
 msgstr "Filtre"
 
-#: ui/preferences/Preferences.cpp:3573
+#: ui/preferences/Preferences.cpp:3439
 msgid "Enter the text to filter"
 msgstr "Filtrelemek için metin girin"
 
-#: ui/preferences/Preferences.cpp:3603
+#: ui/preferences/Preferences.cpp:3469
 msgid "Edit the text to filter"
 msgstr "Düzenlemek için metin girin"
 
-#: ui/preferences/Preferences.cpp:4129
+#: ui/preferences/Preferences.cpp:3971
 msgid "Select path"
 msgstr "Yol seç"
 
-#: ui/preferences/Preferences.cpp:4307
+#: ui/preferences/Preferences.cpp:4149
 msgid "Key used by '"
 msgstr "tarafından kullanılmış anahtar"
 
@@ -4657,11 +4640,11 @@ msgstr "Şu an çalınan parçayı durdur"
 msgid "Record to file"
 msgstr "Dosyaya kaydet"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3081
 msgid "Enable crossfading"
 msgstr "Çapraz geçişi etkinleştir"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3082
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3081
 msgid "Disable crossfading"
 msgstr "Çapraz geçişi devre dışı bırak"
 
@@ -4669,7 +4652,7 @@ msgstr "Çapraz geçişi devre dışı bırak"
 msgid "Show the equalizer (right click for on/off)"
 msgstr "Ekolayzeri göster"
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2756
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2755
 msgid "Volume"
 msgstr "Ses Yüksekliği"
 
@@ -4710,25 +4693,25 @@ msgstr "Geçerli parçanın bit rate değerini göster"
 msgid "Buffering..."
 msgstr "Yükleniyor..."
 
-#: ui/player/PlayerPanel.cpp:2478
+#: ui/player/PlayerPanel.cpp:2477
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2484
+#: ui/player/PlayerPanel.cpp:2483
 #, fuzzy
 msgid "Repeat all"
 msgstr "Parçayı Tekrarla"
 
-#: ui/player/PlayerPanel.cpp:2489
+#: ui/player/PlayerPanel.cpp:2488
 #, fuzzy
 msgid "Repeat one"
 msgstr "Parçayı Tekrarla"
 
-#: ui/player/PlayerPanel.cpp:2496
+#: ui/player/PlayerPanel.cpp:2495
 msgid "Smart mode disabled"
 msgstr ""
 
-#: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1751
+#: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1710
 msgid "Set as Next Track"
 msgstr "Sonraki Parça olarak ayarla"
 
@@ -4752,75 +4735,75 @@ msgstr "Seçili parçayı bir sonra çalınacak şekilde taşı"
 msgid "Move the selected tracks to the bottom"
 msgstr "Seçili parçayı bir sonra çalınacak şekilde taşı"
 
-#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1851
+#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1810
 msgid "Remove the selected tracks from playlist"
 msgstr "Seçili parçaları çalma listesinden kaldır"
 
-#: ui/player/PlayList.cpp:1724
+#: ui/player/PlayList.cpp:1683
 msgid "Empty Playlist"
 msgstr "Boş Çalma Listesi"
 
-#: ui/player/PlayList.cpp:1724
+#: ui/player/PlayList.cpp:1683
 msgid "The playlist is empty"
 msgstr "Çalma Listesi boş"
 
-#: ui/player/PlayList.cpp:1735
+#: ui/player/PlayList.cpp:1694
 msgid "Edit the current selected tracks labels"
 msgstr "Seçili geçerli parça etiketlerini düzenle"
 
-#: ui/player/PlayList.cpp:1742
+#: ui/player/PlayList.cpp:1701
 msgid "Edit the current selected songs"
 msgstr "Seçili geçerli parçaları düzenle"
 
-#: ui/player/PlayList.cpp:1752
+#: ui/player/PlayList.cpp:1711
 msgid "Move the selected tracks to be played next"
 msgstr "Seçili parçayı bir sonra çalınacak şekilde taşı"
 
-#: ui/player/PlayList.cpp:1776
+#: ui/player/PlayList.cpp:1735
 msgid "Search a track in the playlist by name"
 msgstr "Çalma listesinde, ismine göre bir şarkı ara"
 
-#: ui/player/PlayList.cpp:1785
+#: ui/player/PlayList.cpp:1744
 msgid "Selects the current selected track in the library"
 msgstr "Seçili geçerli parçaları kütüphaneden seç"
 
-#: ui/player/PlayList.cpp:1791
+#: ui/player/PlayList.cpp:1750
 msgid "Select the album artist of the current song"
 msgstr "Geçerli şarkının albüm sanatçısını seç"
 
-#: ui/player/PlayList.cpp:1794
+#: ui/player/PlayList.cpp:1753
 msgid "Select the composer of the current song"
 msgstr "Geçerli şarkının bestecisini seç"
 
-#: ui/player/PlayList.cpp:1800
+#: ui/player/PlayList.cpp:1759
 msgid "Select the year of the current song"
 msgstr "Geçerli parça için yılı seç"
 
-#: ui/player/PlayList.cpp:1803
+#: ui/player/PlayList.cpp:1762
 msgid "Select the genre of the current song"
 msgstr "Geçerli şarkının türünü seç"
 
-#: ui/player/PlayList.cpp:1843
+#: ui/player/PlayList.cpp:1802
 msgid "Remove all tracks from playlist"
 msgstr "Tüm parçaları çalma listesinden çıkar"
 
-#: ui/player/PlayList.cpp:1859
+#: ui/player/PlayList.cpp:1818
 msgid "Remove the selected tracks from library"
 msgstr "Seçili parçalar kütüphaneden kaldır"
 
-#: ui/player/PlayList.cpp:1865
+#: ui/player/PlayList.cpp:1824
 msgid "Remove the selected tracks from drive"
 msgstr "Seçili parçaları sürücüden çıkar"
 
-#: ui/player/PlayList.cpp:2178
+#: ui/player/PlayList.cpp:2136
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2319
+#: ui/player/PlayList.cpp:2277
 msgid "Please enter the search term"
 msgstr "Lütfen arama terimini girin"
 
-#: ui/player/PlayList.cpp:2864
+#: ui/player/PlayList.cpp:2802
 msgid "Loading tracks. Please wait"
 msgstr "Parçalar yükleniyor. Lütfen bekleyin"
 
@@ -4884,6 +4867,15 @@ msgstr "mp3 dosyaları"
 #, fuzzy
 msgid "To file"
 msgstr "ogg dosyaları"
+
+#~ msgid "Download Albums torrents"
+#~ msgstr "Albüm torrentlerini indir"
+
+#~ msgid "Audio format:"
+#~ msgstr "Ses biçimi:"
+
+#~ msgid "Torrent command:"
+#~ msgstr "Torrent komutu:"
 
 #~ msgid "Community"
 #~ msgstr "Topluluk"
