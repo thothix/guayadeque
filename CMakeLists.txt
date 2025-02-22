@@ -103,14 +103,6 @@ else()
     message(" *** Disabled iPod support!")
 endif()
 
-option(CXX11_RNG "Enable CXX11 compliant random generator for better RNG" ON)
-if (CXX11_RNG)
-    add_definitions(-DCXX11_RNG=1)
-    message(" Enabling CXX11 random number generator!")
-else()
-    message(" *** Disabled CXX11 random number generator!")
-endif()
-
 # Include wxWidgets macros
 include(${wxWidgets_USE_FILE})
 

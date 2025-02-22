@@ -20,15 +20,12 @@
 #ifndef _UTILS_H
 #define _UTILS_H
 
+#include <random>
 #include <wx/wx.h>
 #include <wx/file.h>
 #include <wx/wfstream.h>
 #include <wx/mstream.h>
 #include <wx/xml/xml.h>
-
-#ifdef CXX11_RNG
-	#include <random>
-#endif
 
 namespace Guayadeque {
 
@@ -126,19 +123,13 @@ int wxCMPFUNC_CONV CompareFileTimeD( guFileItem ** item1, guFileItem ** item2 );
 int wxCMPFUNC_CONV CompareFileTypeA( guFileItem ** item1, guFileItem ** item2 );
 int wxCMPFUNC_CONV CompareFileTypeD( guFileItem ** item1, guFileItem ** item2 );
 
-#ifdef CXX11_RNG
-    std::mt19937        guSRandom();
-    extern std::mt19937 rng_default_generator;
+std::mt19937        guSRandom();
+extern std::mt19937 rng_default_generator;
 
-    // As the new CXX11 random generators needs an object to seed instead of simply initialize the library, we use a
-    // default object created below but you can create a new one in local scope, just use the guSRandom()
+// As the new CXX11 random generators needs an object to seed instead of simply initialize the library, we use a
+// default object created below but you can create a new one in local scope, just use the guSRandom()
 #define guRandomInit() (rng_default_generator = guSRandom())
 #define guRandom(x)    (rng_default_generator() % x)
-#else
-    // rand() in CXX11 or greater is equal to random()
-    #define guRandomInit() (srand(time(NULL)))
-    #define guRandom(x) (rand() % x)
-#endif
 
 static bool         guDebugMode     = std::getenv( "GU_DEBUG" ) != nullptr;
 static bool         guGatherStats   = std::getenv( "GU_STATS" ) != nullptr;
