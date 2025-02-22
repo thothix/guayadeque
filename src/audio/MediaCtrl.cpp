@@ -740,11 +740,10 @@ bool guMediaCtrl::Seek( wxFileOffset where, const bool accurate )
 {
     guLogDebug( wxT( "guMediaCtrl::Seek( %lli )" ), where );
     bool Result = false;
-    Lock();
+    wxMutexLocker Lock(m_FaderPlayBinsMutex);
     if( m_CurrentPlayBin )
         Result = m_CurrentPlayBin->Seek( where, accurate );
 
-    Unlock();
     return Result;
 }
 

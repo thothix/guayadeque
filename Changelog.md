@@ -8,10 +8,13 @@ Unreleased (2025-03-XX)
 ------------------
 
 ### Enhancements
-  * Updated the Help menu link.
+  * Updated the site wiki and the application Help menu link.
+
+### Bugfixes
+  * Fixed long time bug that playback was skipping after 20/30 minutes running.
 
 ### Removed
-  * Removed Jamendo support.
+  * Removed the no more functional Jamendo feature.
 
 0.6.5 (2025-02-20)
 ------------------

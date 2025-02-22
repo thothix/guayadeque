@@ -946,168 +946,142 @@ DBusHandlerResult guMPRIS2::HandleMessages( guDBusMessage * msg, guDBusMessage *
                     {
                         guLogMessage( wxT( "Could not read the parameter : %s" ), wxString( error.message, wxConvUTF8 ).c_str() );
                         dbus_error_free( &error );
+                        return RetVal;
                     }
-                    else
+
+                    DBusMessageIter args;
+                    DBusMessageIter dict;
+
+                    if( !strcmp( QueryIface, "org.mpris.MediaPlayer2" ) )
                     {
-                        DBusMessageIter args;
-                        DBusMessageIter dict;
+                        dbus_bool_t ReplyVal = true;
+                        guMainFrame * MainFrame = guMainFrame::GetMainFrame();
+                        dbus_bool_t FullScreen = MainFrame->IsFullScreen();
 
-                        if( !strcmp( QueryIface, "org.mpris.MediaPlayer2" ) )
-                        {
-                            dbus_bool_t ReplyVal = true;
-                            guMainFrame * MainFrame = guMainFrame::GetMainFrame();
-                            dbus_bool_t FullScreen = MainFrame->IsFullScreen();
+                        dbus_message_iter_init_append( reply->GetMessage(), &args );
 
-                            dbus_message_iter_init_append( reply->GetMessage(), &args );
+                        dbus_message_iter_open_container( &args, DBUS_TYPE_ARRAY, "{sv}", &dict );
 
-                            dbus_message_iter_open_container( &args, DBUS_TYPE_ARRAY, "{sv}", &dict );
+                        FillMetadataDetails( &dict, "CanQuit", ReplyVal );
+                        FillMetadataDetails( &dict, "Fullscreen", FullScreen );
+                        FillMetadataDetails( &dict, "CanSetFullscreen", ReplyVal );
+                        FillMetadataDetails( &dict, "CanRaise", ReplyVal );
+                        FillMetadataDetails( &dict, "HasTrackList", ReplyVal );
+                        const char * AppName = "Guayadeque Music Player";
+                        FillMetadataDetails( &dict, "Identity", AppName );
+                        const char * DesktopPath = "guayadeque";
+                        FillMetadataDetails( &dict, "DesktopEntry", DesktopPath );
+                        const char * SupportedUriSchemes[] = { "file", "http", "https", "smb", "sftp", "cdda", NULL };
+                        FillMetadataDetails( &dict, "SupportedUriSchemes", SupportedUriSchemes );
+                        FillMetadataDetails( &dict, "SupportedMimeTypes", GetSupportedMimeTypes() );
 
-                            FillMetadataDetails( &dict, "CanQuit", ReplyVal );
-                            FillMetadataDetails( &dict, "Fullscreen", FullScreen );
-                            FillMetadataDetails( &dict, "CanSetFullscreen", ReplyVal );
-                            FillMetadataDetails( &dict, "CanRaise", ReplyVal );
-                            FillMetadataDetails( &dict, "HasTrackList", ReplyVal );
-                            const char * AppName = "Guayadeque Music Player";
-                            FillMetadataDetails( &dict, "Identity", AppName );
-                            const char * DesktopPath = "guayadeque";
-                            FillMetadataDetails( &dict, "DesktopEntry", DesktopPath );
-                            const char * SupportedUriSchemes[] = { "file", "http", "https", "smb", "sftp", "cdda", NULL };
-                            FillMetadataDetails( &dict, "SupportedUriSchemes", SupportedUriSchemes );
-                            FillMetadataDetails( &dict, "SupportedMimeTypes", GetSupportedMimeTypes() );
+                        dbus_message_iter_close_container( &args, &dict );
 
-                            dbus_message_iter_close_container( &args, &dict );
+                        Send( reply );
+                        Flush();
+                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                    }
+                    else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Player" ) )
+                    {
+                        dbus_message_iter_init_append( reply->GetMessage(), &args );
 
-                            Send( reply );
-                            Flush();
-                            RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                        }
-                        else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Player" ) )
-                        {
-                            dbus_message_iter_init_append( reply->GetMessage(), &args );
+                        dbus_message_iter_open_container( &args, DBUS_TYPE_ARRAY, "{sv}", &dict );
 
-                            dbus_message_iter_open_container( &args, DBUS_TYPE_ARRAY, "{sv}", &dict );
+                        ////////////////////////////////////////////////////////////////////////
+                        const char * PlaybackStatus;
+                        guMediaState State = m_PlayerPanel->GetState();
+                        if( State == guMEDIASTATE_STOPPED )
+                            PlaybackStatus = "Stopped";
+                        else if( State == guMEDIASTATE_PAUSED )
+                            PlaybackStatus = "Paused";
+                        else //if( State == guMEDIASTATE_PLAYING )
+                            PlaybackStatus = "Playing";
 
-                            ////////////////////////////////////////////////////////////////////////
-                            const char * PlaybackStatus;
-                            guMediaState State = m_PlayerPanel->GetState();
-                            if( State == guMEDIASTATE_STOPPED )
-                                PlaybackStatus = "Stopped";
-                            else if( State == guMEDIASTATE_PAUSED )
-                                PlaybackStatus = "Paused";
-                            else //if( State == guMEDIASTATE_PLAYING )
-                                PlaybackStatus = "Playing";
+                        FillMetadataDetails( &dict, "PlaybackStatus", PlaybackStatus );
 
-                            FillMetadataDetails( &dict, "PlaybackStatus", PlaybackStatus );
+                        ////////////////////////////////////////////////////////////////////////
+                        const char * LoopStatus;
+                        int PlayLoop = m_PlayerPanel->GetPlayMode();
+                        if( PlayLoop == guPLAYER_PLAYMODE_REPEAT_TRACK )
+                            LoopStatus = "Track";
+                        else if( PlayLoop == guPLAYER_PLAYMODE_REPEAT_PLAYLIST )
+                            LoopStatus = "Playlist";
+                        else //if( PlayLoop == guPLAYER_PLAYMODE_NONE )
+                            LoopStatus = "None";
 
-                            ////////////////////////////////////////////////////////////////////////
-                            const char * LoopStatus;
-                            int PlayLoop = m_PlayerPanel->GetPlayMode();
-                            if( PlayLoop == guPLAYER_PLAYMODE_REPEAT_TRACK )
-                                LoopStatus = "Track";
-                            else if( PlayLoop == guPLAYER_PLAYMODE_REPEAT_PLAYLIST )
-                                LoopStatus = "Playlist";
-                            else //if( PlayLoop == guPLAYER_PLAYMODE_NONE )
-                                LoopStatus = "None";
+                        FillMetadataDetails( &dict, "LoopStatus", LoopStatus );
 
-                            FillMetadataDetails( &dict, "LoopStatus", LoopStatus );
+                        double Rate = 1.0;
+                        FillMetadataDetails( &dict, "Rate", Rate );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            double Rate = 1.0;
-                            FillMetadataDetails( &dict, "Rate", Rate );
+                        dbus_bool_t Shuffle = false;
+                        FillMetadataDetails( &dict, "Shuffle", Shuffle );
 
+                        const guCurrentTrack * CurTrack = m_PlayerPanel->GetCurrentTrack();
+                        FillMetadataDetails( &dict, "Metadata", CurTrack, m_PlayerPanel->GetCurrentItem() );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            dbus_bool_t Shuffle = false;
-                            FillMetadataDetails( &dict, "Shuffle", Shuffle );
+                        double CurVolume = m_PlayerPanel->GetVolume() / 100;
+                        FillMetadataDetails( &dict, "Volume", CurVolume );
 
+                        gint64 CurPosition = m_PlayerPanel->GetPosition() * 1000;
+                        FillMetadataDetails( &dict, "Position", CurPosition );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            const guCurrentTrack * CurTrack = m_PlayerPanel->GetCurrentTrack();
-                            FillMetadataDetails( &dict, "Metadata", CurTrack, m_PlayerPanel->GetCurrentItem() );
+                        FillMetadataDetails( &dict, "MinimumRate", Rate );
 
+                        FillMetadataDetails( &dict, "MaximumRate", Rate );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            double CurVolume = m_PlayerPanel->GetVolume() / 100;
-                            FillMetadataDetails( &dict, "Volume", CurVolume );
+                        dbus_bool_t CanGoNext = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_NEXT ) > 0;
+                        FillMetadataDetails( &dict, "CanGoNext", CanGoNext );
 
+                        dbus_bool_t CanGoPrev = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_PREV ) > 0;
+                        FillMetadataDetails( &dict, "CanGoPrevious", CanGoPrev );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            gint64 CurPosition = m_PlayerPanel->GetPosition() * 1000;
-                            FillMetadataDetails( &dict, "Position", CurPosition );
+                        dbus_bool_t CanPlay = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_PLAY ) > 0;
+                        FillMetadataDetails( &dict, "CanPlay", CanPlay );
 
+                        dbus_bool_t CanPause = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_PAUSE ) > 0;
+                        FillMetadataDetails( &dict, "CanPause", CanPause );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            FillMetadataDetails( &dict, "MinimumRate", Rate );
+                        dbus_bool_t CanSeek = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_SEEK ) > 0;
+                        FillMetadataDetails( &dict, "CanSeek", CanSeek );
 
+                        dbus_bool_t CanControl = true;
+                        FillMetadataDetails( &dict, "CanControl", CanControl );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            FillMetadataDetails( &dict, "MaximumRate", Rate );
+                        dbus_message_iter_close_container( &args, &dict );
 
+                        Send( reply );
+                        Flush();
+                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                    }
+                    else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Tracklist" ) )
+                    {
+                    }
+                    else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Playlists" ) )
+                    {
+                        dbus_message_iter_init_append( reply->GetMessage(), &args );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            dbus_bool_t CanGoNext = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_NEXT ) > 0;
-                            FillMetadataDetails( &dict, "CanGoNext", CanGoNext );
+                        dbus_message_iter_open_container( &args, DBUS_TYPE_ARRAY, "{sv}", &dict );
 
+                        int PlaylistCount = m_Db->GetPlayListsCount();
+                        FillMetadataDetails( &dict, "PlaylistCount", PlaylistCount );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            dbus_bool_t CanGoPrev = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_PREV ) > 0;
-                            FillMetadataDetails( &dict, "CanGoPrevious", CanGoPrev );
+                        const char * PlaylistOrders[] = {
+                           "Default",
+                           NULL };
+                        FillMetadataDetails( &dict, "Orderings", PlaylistOrders );
 
+                        dbus_bool_t plstate = false;
+                        const char * plpath = "/org/mpris/MediaPlayer2/guayadeque/Playlist/0";
+                        const char * plname = "";
+                        const char * plicon = "";
+                        FillMetadataDetails( &dict, "ActivePlaylist", plstate, plpath, plname, plicon );
 
-                            ////////////////////////////////////////////////////////////////////////
-                            dbus_bool_t CanPlay = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_PLAY ) > 0;
-                            FillMetadataDetails( &dict, "CanPlay", CanPlay );
+                        dbus_message_iter_close_container( &args, &dict );
 
-
-                            ////////////////////////////////////////////////////////////////////////
-                            dbus_bool_t CanPause = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_PAUSE ) > 0;
-                            FillMetadataDetails( &dict, "CanPause", CanPause );
-
-
-                            ////////////////////////////////////////////////////////////////////////
-                            dbus_bool_t CanSeek = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_SEEK ) > 0;
-                            FillMetadataDetails( &dict, "CanSeek", CanSeek );
-
-
-                            ////////////////////////////////////////////////////////////////////////
-                            dbus_bool_t CanControl = true;
-                            FillMetadataDetails( &dict, "CanControl", CanControl );
-
-                            dbus_message_iter_close_container( &args, &dict );
-
-                            Send( reply );
-                            Flush();
-                            RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                        }
-                        else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Tracklist" ) )
-                        {
-                        }
-                        else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Playlists" ) )
-                        {
-                            dbus_message_iter_init_append( reply->GetMessage(), &args );
-
-                            dbus_message_iter_open_container( &args, DBUS_TYPE_ARRAY, "{sv}", &dict );
-
-                            int PlaylistCount = m_Db->GetPlayListsCount();
-                            FillMetadataDetails( &dict, "PlaylistCount", PlaylistCount );
-
-                            const char * PlaylistOrders[] = {
-                               "Default",
-                               NULL };
-                            FillMetadataDetails( &dict, "Orderings", PlaylistOrders );
-
-                            dbus_bool_t plstate = false;
-                            const char * plpath = "/org/mpris/MediaPlayer2/guayadeque/Playlist/0";
-                            const char * plname = "";
-                            const char * plicon = "";
-                            FillMetadataDetails( &dict, "ActivePlaylist", plstate, plpath, plname, plicon );
-
-                            dbus_message_iter_close_container( &args, &dict );
-
-                            Send( reply );
-                            Flush();
-                            RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                        }
+                        Send( reply );
+                        Flush();
+                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
                     }
                 }
                 else
@@ -1127,384 +1101,382 @@ DBusHandlerResult guMPRIS2::HandleMessages( guDBusMessage * msg, guDBusMessage *
                     {
                         guLogMessage( wxT( "Could not read the '" GUAYADEQUE_PROPERTIES_INTERFACE "' parameter : %s" ), wxString( error.message, wxConvUTF8 ).c_str() );
                         dbus_error_free( &error );
+                        return RetVal;
                     }
-                    else
+
+                    if( !strcmp( Member, "Get" ) )
                     {
-                        if( !strcmp( Member, "Get" ) )
+                        if( !strcmp( QueryIface, "org.mpris.MediaPlayer2" ) )
                         {
-                            if( !strcmp( QueryIface, "org.mpris.MediaPlayer2" ) )
+                            if( !strcmp( QueryProperty, "CanQuit" ) )
                             {
-                                if( !strcmp( QueryProperty, "CanQuit" ) )
+                                dbus_bool_t ReplyVal = true;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &ReplyVal ) )
                                 {
-                                    dbus_bool_t ReplyVal = true;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &ReplyVal ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "Fullscreen" ) )
-                                {
-                                    guMainFrame * MainFrame = guMainFrame::GetMainFrame();
-                                    dbus_bool_t FullScreen = MainFrame->IsFullScreen();
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &FullScreen ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "CanSetFullscreen" ) )
-                                {
-                                    dbus_bool_t ReplyVal = true;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &ReplyVal ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "CanRaise" ) )
-                                {
-                                    dbus_bool_t ReplyVal = true;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &ReplyVal ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "HasTrackList" ) )
-                                {
-                                    dbus_bool_t ReplyVal = true;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &ReplyVal ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "Identity" ) )
-                                {
-                                    const char * AppName = "Guayadeque Music Player";
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_STRING, &AppName ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "DesktopEntry" ) )
-                                {
-                                    const char * DesktopPath = "guayadeque";
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_STRING, &DesktopPath ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "SupportedUriSchemes" ) )
-                                {
-                                    const char * SupportedUriSchemes[] = { "file", "http", "smb", "sftp", "cdda", NULL };
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_ARRAY, &SupportedUriSchemes ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "SupportedMimeTypes" ) )
-                                {
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_ARRAY, GetSupportedMimeTypes() ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                            }
-                            else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Player" ) )
-                            {
-                                //guLogMessage( wxT( "Query: '%s'" ), QueryProperty );
-                                if( !strcmp( QueryProperty, "PlaybackStatus" ) )
-                                {
-                                    const char * PlaybackStatus;
-                                    guMediaState State = m_PlayerPanel->GetState();
-                                    if( State == guMEDIASTATE_STOPPED )
-                                        PlaybackStatus = "Stopped";
-                                    else if( State == guMEDIASTATE_PAUSED )
-                                        PlaybackStatus = "Paused";
-                                    else //if( State == guMEDIASTATE_PLAYING )
-                                        PlaybackStatus = "Playing";
-
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_STRING, &PlaybackStatus ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "LoopStatus" ) )
-                                {
-                                    const char * LoopStatus;
-                                    int PlayLoop = m_PlayerPanel->GetPlayLoop();
-                                    if( PlayLoop == guPLAYER_PLAYMODE_NONE )
-                                        LoopStatus = "None";
-                                    else if( PlayLoop == guPLAYER_PLAYMODE_REPEAT_TRACK )
-                                        LoopStatus = "Track";
-                                    else //if( PlayLoop == guPLAYER_PLAYLOOP_PLAYLIST )
-                                        LoopStatus = "Playlist";
-
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_STRING, &LoopStatus ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "Rate" ) )
-                                {
-                                    double Rate = 1.0;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_DOUBLE, &Rate ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "Shuffle" ) )
-                                {
-                                    dbus_bool_t Shuffle = false;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &Shuffle ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "Metadata" ) )
-                                {
-                                    const guCurrentTrack * CurTrack = m_PlayerPanel->GetCurrentTrack();
-
-                                    FillMetadataArgs( reply, CurTrack, m_PlayerPanel->GetCurrentItem() );
-
                                     Send( reply );
                                     Flush();
                                     RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                 }
-                                else if( !strcmp( QueryProperty, "Volume" ) )
+                            }
+                            else if( !strcmp( QueryProperty, "Fullscreen" ) )
+                            {
+                                guMainFrame * MainFrame = guMainFrame::GetMainFrame();
+                                dbus_bool_t FullScreen = MainFrame->IsFullScreen();
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &FullScreen ) )
                                 {
-                                    double CurVolume = m_PlayerPanel->GetVolume() / 100;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_DOUBLE, &CurVolume ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "Position" ) )
-                                {
-                                    gint64 CurPosition = m_PlayerPanel->GetPosition() * 1000;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_INT64, &CurPosition ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "MinimumRate" ) )
-                                {
-                                    double Rate = 1.0;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_DOUBLE, &Rate ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "MaximumRate" ) )
-                                {
-                                    double Rate = 1.0;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_DOUBLE, &Rate ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "CanGoNext" ) )
-                                {
-                                    dbus_bool_t CanGoNext = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_NEXT ) > 0;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanGoNext ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "CanGoPrevious" ) )
-                                {
-                                    dbus_bool_t CanGoPrev = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_PREV ) > 0;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanGoPrev ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "CanPlay" ) )
-                                {
-                                    dbus_bool_t CanPlay = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_PLAY ) > 0;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanPlay ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "CanPause" ) )
-                                {
-                                    dbus_bool_t CanPause = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_PAUSE ) > 0;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanPause ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "CanSeek" ) )
-                                {
-                                    dbus_bool_t CanSeek = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_SEEK ) > 0;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanSeek ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "CanControl" ) )
-                                {
-                                    dbus_bool_t CanControl = true;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanControl ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                 }
                             }
-                            else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.TrackList" ) )
+                            else if( !strcmp( QueryProperty, "CanSetFullscreen" ) )
                             {
-                                if( !strcmp( QueryProperty, "Tracks" ) )
+                                dbus_bool_t ReplyVal = true;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &ReplyVal ) )
                                 {
-                                }
-                                else if( !strcmp( QueryProperty, "CanEditTracks" ) )
-                                {
-                                    dbus_bool_t CanEdit = true;
-                                    if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanEdit ) )
-                                    {
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                 }
                             }
-                            else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Playlists" ) )
+                            else if( !strcmp( QueryProperty, "CanRaise" ) )
                             {
-                                if( !strcmp( QueryProperty, "PlaylistCount" ) )
+                                dbus_bool_t ReplyVal = true;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &ReplyVal ) )
                                 {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                 }
-                                else if( !strcmp( QueryProperty, "Orderings" ) )
+                            }
+                            else if( !strcmp( QueryProperty, "HasTrackList" ) )
+                            {
+                                dbus_bool_t ReplyVal = true;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &ReplyVal ) )
                                 {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                 }
-                                else if( !strcmp( QueryProperty, "ActivePlaylist" ) )
+                            }
+                            else if( !strcmp( QueryProperty, "Identity" ) )
+                            {
+                                const char * AppName = "Guayadeque Music Player";
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_STRING, &AppName ) )
                                 {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "DesktopEntry" ) )
+                            {
+                                const char * DesktopPath = "guayadeque";
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_STRING, &DesktopPath ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "SupportedUriSchemes" ) )
+                            {
+                                const char * SupportedUriSchemes[] = { "file", "http", "smb", "sftp", "cdda", NULL };
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_ARRAY, &SupportedUriSchemes ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "SupportedMimeTypes" ) )
+                            {
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_ARRAY, GetSupportedMimeTypes() ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                 }
                             }
                         }
-                        else if( !strcmp( Member, "Set" ) )
+                        else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Player" ) )
                         {
-                            if( !strcmp( QueryIface, "org.mpris.MediaPlayer2" ) )
+                            //guLogMessage( wxT( "Query: '%s'" ), QueryProperty );
+                            if( !strcmp( QueryProperty, "PlaybackStatus" ) )
                             {
-                                if( !strcmp( QueryProperty, "Fullscreen" ) )
+                                const char * PlaybackStatus;
+                                guMediaState State = m_PlayerPanel->GetState();
+                                if( State == guMEDIASTATE_STOPPED )
+                                    PlaybackStatus = "Stopped";
+                                else if( State == guMEDIASTATE_PAUSED )
+                                    PlaybackStatus = "Paused";
+                                else //if( State == guMEDIASTATE_PLAYING )
+                                    PlaybackStatus = "Playing";
+
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_STRING, &PlaybackStatus ) )
                                 {
-                                    dbus_bool_t FullScreen;
-                                    if( GetVariant( msg->GetMessage(), DBUS_TYPE_BOOLEAN, &FullScreen ) )
-                                    {
-                                        guMainFrame * MainFrame = guMainFrame::GetMainFrame();
-
-                                        wxCommandEvent event( wxEVT_MENU, ID_MENU_VIEW_FULLSCREEN );
-                                        event.SetInt( FullScreen );
-                                        wxPostEvent( MainFrame, event );
-
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                            }
-                            else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Player" ) )
-                            {
-                                if( !strcmp( QueryProperty, "LoopStatus" ) )
-                                {
-                                    const char * LoopStatus;
-                                    if( GetVariant( msg->GetMessage(), DBUS_TYPE_STRING, &LoopStatus ) )
-                                    {
-                                        int PlayLoop;
-                                        if( !strcmp( LoopStatus, "None" ) )
-                                        {
-                                            PlayLoop = guPLAYER_PLAYMODE_NONE;
-                                        }
-                                        else if( !strcmp( LoopStatus, "Track" ) )
-                                        {
-                                            PlayLoop = guPLAYER_PLAYMODE_REPEAT_TRACK;
-                                        }
-                                        else //if( !strcmp( LoopStatus, "Playlist" ) )
-                                        {
-                                            PlayLoop = guPLAYER_PLAYMODE_REPEAT_PLAYLIST;
-                                        }
-
-                                        wxCommandEvent event( wxEVT_MENU, ID_PLAYERPANEL_SETLOOP );
-                                        event.SetInt( PlayLoop );
-                                        wxPostEvent( m_PlayerPanel, event );
-
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
-                                else if( !strcmp( QueryProperty, "Rate" ) )
-                                {
-                                    // We are not going to support rate
                                     Send( reply );
                                     Flush();
                                     RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                 }
-                                else if( !strcmp( QueryProperty, "Shuffle" ) )
+                            }
+                            else if( !strcmp( QueryProperty, "LoopStatus" ) )
+                            {
+                                const char * LoopStatus;
+                                int PlayLoop = m_PlayerPanel->GetPlayLoop();
+                                if( PlayLoop == guPLAYER_PLAYMODE_NONE )
+                                    LoopStatus = "None";
+                                else if( PlayLoop == guPLAYER_PLAYMODE_REPEAT_TRACK )
+                                    LoopStatus = "Track";
+                                else //if( PlayLoop == guPLAYER_PLAYLOOP_PLAYLIST )
+                                    LoopStatus = "Playlist";
+
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_STRING, &LoopStatus ) )
                                 {
-                                    wxCommandEvent event( wxEVT_MENU, ID_PLAYERPANEL_SETRANDOM );
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "Rate" ) )
+                            {
+                                double Rate = 1.0;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_DOUBLE, &Rate ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "Shuffle" ) )
+                            {
+                                dbus_bool_t Shuffle = false;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &Shuffle ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "Metadata" ) )
+                            {
+                                const guCurrentTrack * CurTrack = m_PlayerPanel->GetCurrentTrack();
+
+                                FillMetadataArgs( reply, CurTrack, m_PlayerPanel->GetCurrentItem() );
+
+                                Send( reply );
+                                Flush();
+                                RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                            }
+                            else if( !strcmp( QueryProperty, "Volume" ) )
+                            {
+                                double CurVolume = m_PlayerPanel->GetVolume() / 100;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_DOUBLE, &CurVolume ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "Position" ) )
+                            {
+                                gint64 CurPosition = m_PlayerPanel->GetPosition() * 1000;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_INT64, &CurPosition ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "MinimumRate" ) )
+                            {
+                                double Rate = 1.0;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_DOUBLE, &Rate ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "MaximumRate" ) )
+                            {
+                                double Rate = 1.0;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_DOUBLE, &Rate ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "CanGoNext" ) )
+                            {
+                                dbus_bool_t CanGoNext = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_NEXT ) > 0;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanGoNext ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "CanGoPrevious" ) )
+                            {
+                                dbus_bool_t CanGoPrev = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_GO_PREV ) > 0;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanGoPrev ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "CanPlay" ) )
+                            {
+                                dbus_bool_t CanPlay = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_PLAY ) > 0;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanPlay ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "CanPause" ) )
+                            {
+                                dbus_bool_t CanPause = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_PAUSE ) > 0;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanPause ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "CanSeek" ) )
+                            {
+                                dbus_bool_t CanSeek = ( m_PlayerPanel->GetCaps() & MPRIS_CAPS_CAN_SEEK ) > 0;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanSeek ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "CanControl" ) )
+                            {
+                                dbus_bool_t CanControl = true;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanControl ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                        }
+                        else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.TrackList" ) )
+                        {
+                            if( !strcmp( QueryProperty, "Tracks" ) )
+                            {
+                            }
+                            else if( !strcmp( QueryProperty, "CanEditTracks" ) )
+                            {
+                                dbus_bool_t CanEdit = true;
+                                if( AddVariant( reply->GetMessage(), DBUS_TYPE_BOOLEAN, &CanEdit ) )
+                                {
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                        }
+                        else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Playlists" ) )
+                        {
+                            if( !strcmp( QueryProperty, "PlaylistCount" ) )
+                            {
+                            }
+                            else if( !strcmp( QueryProperty, "Orderings" ) )
+                            {
+                            }
+                            else if( !strcmp( QueryProperty, "ActivePlaylist" ) )
+                            {
+                            }
+                        }
+                    }
+                    else if( !strcmp( Member, "Set" ) )
+                    {
+                        if( !strcmp( QueryIface, "org.mpris.MediaPlayer2" ) )
+                        {
+                            if( !strcmp( QueryProperty, "Fullscreen" ) )
+                            {
+                                dbus_bool_t FullScreen;
+                                if( GetVariant( msg->GetMessage(), DBUS_TYPE_BOOLEAN, &FullScreen ) )
+                                {
+                                    guMainFrame * MainFrame = guMainFrame::GetMainFrame();
+
+                                    wxCommandEvent event( wxEVT_MENU, ID_MENU_VIEW_FULLSCREEN );
+                                    event.SetInt( FullScreen );
+                                    wxPostEvent( MainFrame, event );
+
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                        }
+                        else if( !strcmp( QueryIface, "org.mpris.MediaPlayer2.Player" ) )
+                        {
+                            if( !strcmp( QueryProperty, "LoopStatus" ) )
+                            {
+                                const char * LoopStatus;
+                                if( GetVariant( msg->GetMessage(), DBUS_TYPE_STRING, &LoopStatus ) )
+                                {
+                                    int PlayLoop;
+                                    if( !strcmp( LoopStatus, "None" ) )
+                                    {
+                                        PlayLoop = guPLAYER_PLAYMODE_NONE;
+                                    }
+                                    else if( !strcmp( LoopStatus, "Track" ) )
+                                    {
+                                        PlayLoop = guPLAYER_PLAYMODE_REPEAT_TRACK;
+                                    }
+                                    else //if( !strcmp( LoopStatus, "Playlist" ) )
+                                    {
+                                        PlayLoop = guPLAYER_PLAYMODE_REPEAT_PLAYLIST;
+                                    }
+
+                                    wxCommandEvent event( wxEVT_MENU, ID_PLAYERPANEL_SETLOOP );
+                                    event.SetInt( PlayLoop );
+                                    wxPostEvent( m_PlayerPanel, event );
+
+                                    Send( reply );
+                                    Flush();
+                                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                                }
+                            }
+                            else if( !strcmp( QueryProperty, "Rate" ) )
+                            {
+                                // We are not going to support rate
+                                Send( reply );
+                                Flush();
+                                RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                            }
+                            else if( !strcmp( QueryProperty, "Shuffle" ) )
+                            {
+                                wxCommandEvent event( wxEVT_MENU, ID_PLAYERPANEL_SETRANDOM );
+                                wxPostEvent( m_PlayerPanel, event );
+                                Send( reply );
+                                Flush();
+                                RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                            }
+                            else if( !strcmp( QueryProperty, "Volume" ) )
+                            {
+                                double Volume;
+                                if( GetVariant( msg->GetMessage(), DBUS_TYPE_DOUBLE, &Volume ) )
+                                {
+                                    wxCommandEvent event( wxEVT_MENU, ID_PLAYERPANEL_SETVOLUME );
+                                    event.SetInt( ( int ) ( Volume * 100 ) );
                                     wxPostEvent( m_PlayerPanel, event );
                                     Send( reply );
                                     Flush();
                                     RetVal = DBUS_HANDLER_RESULT_HANDLED;
                                 }
-                                else if( !strcmp( QueryProperty, "Volume" ) )
-                                {
-                                    double Volume;
-                                    if( GetVariant( msg->GetMessage(), DBUS_TYPE_DOUBLE, &Volume ) )
-                                    {
-                                        wxCommandEvent event( wxEVT_MENU, ID_PLAYERPANEL_SETVOLUME );
-                                        event.SetInt( ( int ) ( Volume * 100 ) );
-                                        wxPostEvent( m_PlayerPanel, event );
-                                        Send( reply );
-                                        Flush();
-                                        RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                                    }
-                                }
                             }
-
                         }
                     }
                 }
@@ -1635,32 +1607,34 @@ DBusHandlerResult guMPRIS2::HandleMessages( guDBusMessage * msg, guDBusMessage *
                 }
                 else if( !strcmp( Member, "SetPosition" ) )
                 {
-                    DBusError error;
-                    dbus_error_init( &error );
-
-                    const char * TrackId;
-                    dbus_int64_t Position;
-                    dbus_message_get_args( msg->GetMessage(), &error,
-                            DBUS_TYPE_OBJECT_PATH, &TrackId,
-                            DBUS_TYPE_INT64, &Position,
-                            DBUS_TYPE_INVALID );
-
-                    if( dbus_error_is_set( &error ) )
-                    {
-                        guLogMessage( wxT( "Could not read the Position parameter : %s" ), wxString( error.message, wxConvUTF8 ).c_str() );
-                        dbus_error_free( &error );
-                    }
-                    else
-                    {
-                        if( wxString::Format( wxT( "/org/mpris/MediaPlayer2/Track/%u" ), m_PlayerPanel->GetCurrentItem() ) == wxString( TrackId, wxConvUTF8 ) )
-                        {
-                            m_PlayerPanel->SetPosition( Position / 1000 );
-
-                            Send( reply );
-                            Flush();
-                            RetVal = DBUS_HANDLER_RESULT_HANDLED;
-                        }
-                    }
+                    // FIXME: Research why it's calling SetPosition every 10 seconds after 20/30 minutes of playback
+                    // DBusError error;
+                    // dbus_error_init( &error );
+                    //
+                    // const char * TrackId;
+                    // dbus_int64_t Position;
+                    // dbus_message_get_args( msg->GetMessage(), &error,
+                    //         DBUS_TYPE_OBJECT_PATH, &TrackId,
+                    //         DBUS_TYPE_INT64, &Position,
+                    //         DBUS_TYPE_INVALID );
+                    //
+                    // if( dbus_error_is_set( &error ) )
+                    // {
+                    //     guLogMessage( wxT( "Could not read the Position parameter : %s" ), wxString( error.message, wxConvUTF8 ).c_str() );
+                    //     dbus_error_free( &error );
+                    // }
+                    // else
+                    // {
+                    //     if( wxString::Format( wxT( "/org/mpris/MediaPlayer2/Track/%u" ), m_PlayerPanel->GetCurrentItem() ) == wxString( TrackId, wxConvUTF8 ) )
+                    //     {
+                    //         m_PlayerPanel->SetPosition( Position / 1000 );
+                    //
+                    //         Send( reply );
+                    //         Flush();
+                    //         RetVal = DBUS_HANDLER_RESULT_HANDLED;
+                    //     }
+                    // }
+                    RetVal = DBUS_HANDLER_RESULT_HANDLED;
                 }
                 else if( !strcmp( Member, "OpenUri" ) )
                 {
@@ -1692,17 +1666,13 @@ DBusHandlerResult guMPRIS2::HandleMessages( guDBusMessage * msg, guDBusMessage *
             if( !strcmp( Path, GUAYADEQUE_MPRIS2_OBJECT_PATH ) )
             {
                 if( !strcmp( Member, "GetTracksMetadata" ) )
-                {
-                }
+                {}
                 else if( !strcmp( Member, "AddTrack" ) )
-                {
-                }
+                {}
                 else if( !strcmp( Member, "RemoveTrack" ) )
-                {
-                }
+                {}
                 else if( !strcmp( Member, "GoTo" ) )
-                {
-                }
+                {}
             }
         }
         else if( !strcmp( Interface, GUAYADEQUE_MPRIS2_INTERFACE_PLAYLISTS ) )
