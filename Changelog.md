@@ -4,24 +4,26 @@ Guayadeque Music Player
 Changelog
 =========
 
-Unreleased (2025-03-XX)
+0.7.0 (2025-02-22)
 ------------------
 
 ### Enhancements
-  * Updated the site wiki and the application Help menu link.
+  * Updated the wiki manual and the Guayadeque Help menu link.
 
 ### Bugfixes
   * Fixed long time bug that playback was skipping after 20/30 minutes running.
 
 ### Removed
   * Removed the no more functional Jamendo feature.
+  * Removed the build option CXX11_RNG. The srand is now fully replaced by the
+    CXX11 random number generator.
 
 0.6.5 (2025-02-20)
 ------------------
 
 ### Enhancements
-* Add CXX20 compiling compatibility.
-* Updated Croatian translations.
+  * Add CXX20 compiling compatibility.
+  * Updated Croatian translations.
 
 ### Bugfixes
   * Fix crash when opening Jamendo and Magnatune sources (introduced in 0.6.0).
