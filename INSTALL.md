@@ -123,12 +123,7 @@ ENABLE_IPOD [ON | OFF]
 - ON  - Enable IPOD support through libgpod - default
 - OFF - Disable IPOD support
 
-CXX11_RNG [ON | OFF]
- 
-- ON  - Enable CXX11 random number generator support - default
-- OFF - Disable the CXX11 random number generator and use srand() as default
-
 ```bash
-./build "-DENABLE_IPOD=OFF -DCXX11_RNG=OFF" -j$(nproc)
+./build "-DENABLE_IPOD=OFF" -j$(nproc)
 sudo make install
 ```

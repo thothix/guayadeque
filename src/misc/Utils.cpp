@@ -26,6 +26,8 @@
 #include "MediaViewer.h"
 #include "Settings.h"
 
+#include <chrono>
+#include <random>
 #include <wx/process.h>
 #include <wx/regex.h>
 #include <wx/sstream.h>
@@ -33,36 +35,29 @@
 #include <wx/protocol/http.h>
 #include <wx/zstream.h>
 
-#ifdef CXX11_RNG
-    #include <random>
-    #include <chrono>
-#endif
-
 namespace Guayadeque {
 
 // -------------------------------------------------------------------------------- //
-#ifdef CXX11_RNG
-    std::mt19937 rng_default_generator;
+std::mt19937 rng_default_generator;
 
-    std::mt19937 guSRandom()
-    {
-        std::random_device rd;      // uses /dev/urandom
+std::mt19937 guSRandom()
+{
+    std::random_device rd;      // uses /dev/urandom
 
-        // Custom improved Seed value (dev + chrono)
-        std::mt19937::result_type seed = rd() ^ (
-                (std::mt19937::result_type)
-                        std::chrono::duration_cast<std::chrono::seconds>(
-                                std::chrono::system_clock::now().time_since_epoch()
-                        ).count() +
-                (std::mt19937::result_type)
-                        std::chrono::duration_cast<std::chrono::microseconds>(
-                                std::chrono::high_resolution_clock::now().time_since_epoch()
-                        ).count() );
+    // Custom improved Seed value (dev + chrono)
+    std::mt19937::result_type seed = rd() ^ (
+            (std::mt19937::result_type)
+                    std::chrono::duration_cast<std::chrono::seconds>(
+                            std::chrono::system_clock::now().time_since_epoch()
+                    ).count() +
+            (std::mt19937::result_type)
+                    std::chrono::duration_cast<std::chrono::microseconds>(
+                            std::chrono::high_resolution_clock::now().time_since_epoch()
+                    ).count() );
 
-        std::mt19937 gen(seed);
-        return gen;
-    }
-#endif
+    std::mt19937 gen(seed);
+    return gen;
+}
 
 // -------------------------------------------------------------------------------- //
 bool IsColorDark( const wxColour &color )
