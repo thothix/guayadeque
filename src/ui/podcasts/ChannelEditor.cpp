@@ -34,7 +34,7 @@ wxDECLARE_EVENT( guChannelEditorEvent, wxCommandEvent );
 
 // -------------------------------------------------------------------------------- //
 guChannelEditor::guChannelEditor( wxWindow * parent, guPodcastChannel * channel ) :
-    wxDialog( parent, wxID_ANY, _( "Podcast Channel Editor" ), wxDefaultPosition, wxSize( 564,329 ), wxDEFAULT_DIALOG_STYLE )
+    wxDialog( parent, wxID_ANY, _( "Podcast Channel Editor" ), wxDefaultPosition, wxSize( 564,359 ), wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)
 {
     wxStaticText* DescLabel;
     wxStaticText* AuthorLabel;
@@ -172,6 +172,11 @@ guChannelEditor::guChannelEditor( wxWindow * parent, guPodcastChannel * channel 
 	ButtonsSizer->SetCancelButton( ButtonsSizerCancel );
 	ButtonsSizer->Realize();
 	MainSizer->Add( ButtonsSizer, 0, wxEXPAND|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
+
+	// Dynamic size
+	wxSize min_size = MainSizer->CalcMin() + wxSize(2, 2);
+	SetMinClientSize(min_size);
+	SetClientSize(min_size);
 
 	this->SetSizer( MainSizer );
 	this->Layout();
