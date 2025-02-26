@@ -106,14 +106,14 @@ class guMainFrame;
 class guPodcastChannel
 {
   protected :
-    bool        ReadContent( void );
+    bool        ReadContent();
     bool        ReadXmlImage( wxXmlNode * XmlNode );
     bool        ReadXml( wxXmlNode * XmlNode );
     void        ReadXmlOwner( wxXmlNode * XmlNode );
 
     int         GetUpdateItems( guDbPodcasts * db, guPodcastItemArray * items );
     int         GetPendingChannelItems( guDbPodcasts * db, int channelid, guPodcastItemArray * items );
-    void        CheckDir( void );
+    void        CheckDir();
 
   public :
     int                 m_Id;
@@ -136,7 +136,7 @@ class guPodcastChannel
                 guPodcastChannel() {}
                 guPodcastChannel( const wxString &url );
     void        Update( guDbPodcasts * db, guMainFrame * mainframe );
-    void        CheckLogo( void );
+    void        CheckLogo();
     int         CheckDownloadItems( guDbPodcasts * db, guMainFrame * mainframe );
     void        CheckDeleteItems( guDbPodcasts * db );
 
@@ -169,11 +169,10 @@ class guPodcastDownloadQueueThread : public wxThread
     void RemovePodcastItems( guPodcastItemArray * items );
     void inline Lock() { m_ItemsMutex.Lock(); }
     void inline Unlock() { m_ItemsMutex.Unlock(); }
-    int GetCount( void );
+    int GetCount();
 
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

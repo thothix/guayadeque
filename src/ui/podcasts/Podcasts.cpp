@@ -39,27 +39,28 @@ wxDEFINE_EVENT( guPodcastEvent, wxCommandEvent );
 // -------------------------------------------------------------------------------- //
 unsigned int StrLengthToInt( const wxString &length )
 {
-    if( !length.IsEmpty() )
-    {
-        // 1:02:03:04
-        wxString Rest = length.Strip( wxString::both );
-        long element;
-        int FactorIndex = 0;
-        unsigned int RetVal = 0;
-        int Factor[] = { 1, 60, 3600, 86400 };
-        do {
-            Rest.AfterLast( wxT( ':' ) ).ToLong( &element );
-            if( !element )
-                break;
-            RetVal += ( Factor[ FactorIndex ] * element );
-            if( ( ++FactorIndex > 3 ) )
-                break;
-            Rest = Rest.BeforeLast( wxT( ':' ) );
-        } while( !Rest.IsEmpty() );
-        //guLogMessage( wxT( "StrLengthToInt : '%s' -> %u" ), length.c_str(), RetVal );
-        return RetVal * 1000;
-    }
-    return 0;
+    if (length.IsEmpty())
+        return 0;
+
+    // 1:02:03:04
+    wxString Rest = length.Strip( wxString::both );
+    long element;
+    int FactorIndex = 0;
+    unsigned int RetVal = 0;
+    int Factor[] = { 1, 60, 3600, 86400 };
+
+    do {
+        Rest.AfterLast( wxT( ':' ) ).ToLong( &element );
+        if( !element )
+            break;
+        RetVal += ( Factor[ FactorIndex ] * element );
+        if( ( ++FactorIndex > 3 ) )
+            break;
+        Rest = Rest.BeforeLast( wxT( ':' ) );
+    } while( !Rest.IsEmpty() );
+
+    //guLogMessage( wxT( "StrLengthToInt : '%s' -> %u" ), length.c_str(), RetVal );
+    return RetVal * 1000;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -70,7 +71,7 @@ guPodcastChannel::guPodcastChannel( const wxString &url )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guPodcastChannel::ReadContent( void )
+bool guPodcastChannel::ReadContent()
 {
     bool RetVal = false;
 
@@ -81,18 +82,13 @@ bool guPodcastChannel::ReadContent( void )
         wxXmlDocument XmlDoc( ins );
         wxXmlNode * XmlNode = XmlDoc.GetRoot();
         if( XmlNode && XmlNode->GetName() == wxT( "rss" ) )
-        {
             RetVal = ReadXml( XmlNode->GetChildren() );
-        }
         else
-        {
             guLogMessage( wxT( "This url is not a valid podcast" ) );
-        }
     }
     else
-    {
         guLogError( wxT( "Could not get podcast content for %s" ), m_Url.c_str() );
-    }
+
     return RetVal;
 }
 
@@ -122,45 +118,25 @@ bool guPodcastChannel::ReadXml( wxXmlNode * XmlNode )
             while( XmlNode )
             {
                 if( XmlNode->GetName() == wxT( "title" ) )
-                {
                     m_Title = XmlNode->GetNodeContent();
-                }
                 else if( XmlNode->GetName() == wxT( "link" ) )
-                {
                     m_Link = XmlNode->GetNodeContent();
-                }
                 else if( XmlNode->GetName() == wxT( "language" ) )
-                {
                     m_Lang = XmlNode->GetNodeContent();
-                }
                 else if( XmlNode->GetName() == wxT( "description" ) )
-                {
                     m_Description = XmlNode->GetNodeContent();
-                }
                 else if( XmlNode->GetName() == wxT( "itunes:author" ) )
-                {
                     m_Author = XmlNode->GetNodeContent();
-                }
                 else if( XmlNode->GetName() == wxT( "itunes:owner" ) )
-                {
                     ReadXmlOwner( XmlNode->GetChildren() );
-                }
                 else if( XmlNode->GetName() == wxT( "itunes:image" ) )
-                {
                     XmlNode->GetAttribute( wxT( "href" ), &m_Image );
-                }
                 else if( XmlNode->GetName() == wxT( "image" ) )
-                {
                     ReadXmlImage( XmlNode->GetChildren() );
-                }
                 else if( XmlNode->GetName() == wxT( "itunes:category" ) )
-                {
                     XmlNode->GetAttribute( wxT( "text" ), &m_Category );
-                }
                 else if( XmlNode->GetName() == wxT( "itunes:summary" ) )
-                {
                     m_Summary = XmlNode->GetNodeContent();
-                }
                 else if( XmlNode->GetName() == wxT( "item" ) )
                 {
                     guPodcastItem * PodcastItem = new guPodcastItem( XmlNode->GetChildren() );
@@ -185,49 +161,41 @@ void guPodcastChannel::ReadXmlOwner( wxXmlNode * XmlNode )
     while( XmlNode )
     {
         if( XmlNode->GetName() == wxT( "itunes:name" ) )
-        {
             m_OwnerName = XmlNode->GetNodeContent();
-        }
         else if( XmlNode->GetName() == wxT( "itunes:email" ) )
-        {
             m_OwnerEmail = XmlNode->GetNodeContent();
-        }
+
         XmlNode = XmlNode->GetNext();
     }
 }
 
 // -------------------------------------------------------------------------------- //
-void guPodcastChannel::CheckLogo( void )
+void guPodcastChannel::CheckLogo()
 {
-    if( !m_Image.IsEmpty() )
+    if (m_Image.IsEmpty())
+        return;
+
+    guConfig * Config = ( guConfig * ) guConfig::Get();
+    wxString PodcastsPath = Config->ReadStr( CONFIG_KEY_PODCASTS_PATH,
+                                             guPATH_PODCASTS,
+                                             CONFIG_PATH_PODCASTS );
+
+    //guLogMessage( wxT( "Downloading the Image..." ) );
+    wxFileName ImageFile = wxFileName( PodcastsPath + wxT( "/" ) +
+                                       m_Title + wxT( "/" ) +
+                                       m_Title + wxT( ".jpg" ) );
+    if( ImageFile.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
     {
-        guConfig * Config = ( guConfig * ) guConfig::Get();
-
-        wxString PodcastsPath = Config->ReadStr( CONFIG_KEY_PODCASTS_PATH,
-                                                 guPATH_PODCASTS,
-                                                 CONFIG_PATH_PODCASTS );
-
-        //guLogMessage( wxT( "Downloading the Image..." ) );
-        wxFileName ImageFile = wxFileName( PodcastsPath + wxT( "/" ) +
-                                           m_Title + wxT( "/" ) +
-                                           m_Title + wxT( ".jpg" ) );
-        if( ImageFile.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
+        if( !wxFileExists( ImageFile.GetFullPath() ) )
         {
-            if( !wxFileExists( ImageFile.GetFullPath() ) )
-            {
-                if( !DownloadImage( m_Image, ImageFile.GetFullPath(), 60, 60 ) )
-                    guLogWarning( wxT( "Download image failed..." ) );
-            }
+            if( !DownloadImage( m_Image, ImageFile.GetFullPath(), 60, 60 ) )
+                guLogWarning( wxT( "Download image failed..." ) );
+        }
 //            else
-//            {
 //                guLogMessage( wxT( "Image File already exists" ) );
-//            }
-        }
-        else
-        {
-            guLogError( wxT( "Error in normalize downloading the podcast image" ) );
-        }
     }
+    else
+        guLogError( wxT( "Error in normalize downloading the podcast image" ) );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -256,9 +224,8 @@ int guPodcastChannel::GetUpdateItems( guDbPodcasts * db, guPodcastItemArray * it
   {
     wxArrayString Words;
     if( !m_DownloadText.IsEmpty() )
-    {
         Words = guSplitWords( m_DownloadText );
-    }
+
     int Count = Words.Count();
     if( Count )
     {
@@ -353,32 +320,28 @@ int guPodcastChannel::GetPendingChannelItems( guDbPodcasts * db, int channelid, 
 // -------------------------------------------------------------------------------- //
 int guPodcastChannel::CheckDownloadItems( guDbPodcasts * db, guMainFrame * mainframe )
 {
+    int Count;
+    guPodcastItemArray podcasts;
+
     if( m_DownloadType != guPODCAST_DOWNLOAD_MANUALLY )
     {
-        guPodcastItemArray UpdatePodcasts;
-
         // If there was items to be downloaded
-        int Count;
-        if( ( Count = GetUpdateItems( db, &UpdatePodcasts ) ) )
+        if ((Count = GetUpdateItems(db, &podcasts)))
         {
-            mainframe->AddPodcastsDownloadItems( &UpdatePodcasts );
+            mainframe->AddPodcastsDownloadItems( &podcasts );
             return Count;
         }
     }
-    else if( m_DownloadType == guPODCAST_DOWNLOAD_MANUALLY )
+    else
     {
         // Check if in the download thread this items are included and delete them
-        guPodcastItemArray Podcasts;
-        GetPendingChannelItems( db, m_Id, &Podcasts );
+        GetPendingChannelItems( db, m_Id, &podcasts );
 
-        int Count = Podcasts.Count();
-        if( Count )
+        if ((Count = podcasts.Count()))
         {
-            mainframe->RemovePodcastDownloadItems( &Podcasts );
+            mainframe->RemovePodcastDownloadItems( &podcasts );
             for( int Index = 0; Index < Count; Index++ )
-            {
-                db->SetPodcastItemStatus( Podcasts[ Index ].m_Id, guPODCAST_STATUS_NORMAL );
-            }
+                db->SetPodcastItemStatus( podcasts[ Index ].m_Id, guPODCAST_STATUS_NORMAL );
         }
     }
     return 0;
@@ -393,14 +356,11 @@ void guPodcastChannel::CheckDeleteItems( guDbPodcasts * db )
     if( Config->ReadBool( CONFIG_KEY_PODCASTS_DELETE, false, CONFIG_PATH_PODCASTS ) )
     {
         wxString query = wxT( "SELECT podcastitem_file FROM podcastitems, podcastchs " );
-
         wxString Condition = wxT( "WHERE podcastitem_chid = podcastch_id AND podcastch_allowdel = 1 " );
 
         int TimeOption = Config->ReadNum( CONFIG_KEY_PODCASTS_DELETETIME, 15, CONFIG_PATH_PODCASTS );
-
         wxDateTime DeleteTime = wxDateTime::Now();
 
-        //
         switch( Config->ReadNum( CONFIG_KEY_PODCASTS_DELETEPERIOD, guPODCAST_DELETE_DAY, CONFIG_PATH_PODCASTS ) )
         {
             case guPODCAST_DELETE_DAY :
@@ -422,11 +382,8 @@ void guPodcastChannel::CheckDeleteItems( guDbPodcasts * db )
 
         Condition += wxString::Format( wxT( "AND podcastitem_time < %lu " ), DeleteTime.GetTicks() );
 
-        //
         if( Config->ReadBool( CONFIG_KEY_PODCASTS_DELETEPLAYED, false, CONFIG_PATH_PODCASTS ) )
-        {
             Condition += wxT( "AND podcastitem_playcount > 0" );
-        }
 
         query += Condition;
 
@@ -439,9 +396,7 @@ void guPodcastChannel::CheckDeleteItems( guDbPodcasts * db )
             if( wxFileExists( FileToDelete ) )
             {
                 if( !wxRemoveFile( FileToDelete ) )
-                {
                     guLogError( wxT( "Could not delete the file '%s'" ), FileToDelete.c_str() );
-                }
             }
         }
         dbRes.Finalize();
@@ -460,7 +415,6 @@ void guPodcastChannel::CheckDeleteItems( guDbPodcasts * db )
 void guPodcastChannel::Update( guDbPodcasts * db, guMainFrame * mainframe )
 {
     //guLogMessage( wxT( "The address is %s" ), m_Url.c_str() );
-
     CheckDir();
 
     if( ReadContent() )
@@ -469,15 +423,13 @@ void guPodcastChannel::Update( guDbPodcasts * db, guMainFrame * mainframe )
 
         // Save only the new items in the channel
         db->SavePodcastChannel( this, true );
-
         CheckDeleteItems( db );
-
         CheckDownloadItems( db, mainframe );
     }
 }
 
 // -------------------------------------------------------------------------------- //
-void guPodcastChannel::CheckDir( void )
+void guPodcastChannel::CheckDir()
 {
     // Save the Splitter positions into the main config
     guConfig * Config = ( guConfig * ) guConfig::Get();
@@ -490,9 +442,7 @@ void guPodcastChannel::CheckDir( void )
     if( ChannelDir.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
     {
         if( !wxDirExists( ChannelDir.GetFullPath() ) )
-        {
             wxMkdir( ChannelDir.GetFullPath(), 0770 );
-        }
     }
 }
 
@@ -545,13 +495,10 @@ void guPodcastItem::ReadXml( wxXmlNode * XmlNode )
             m_Time = DateTime.GetTicks();
         }
         else if( XmlNode->GetName() == wxT( "itunes:duration" ) )
-        {
             m_Length = StrLengthToInt( XmlNode->GetNodeContent() );
-        }
         else if( XmlNode->GetName() == wxT( "itunes:author" ) )
-        {
             m_Author = XmlNode->GetNodeContent();
-        }
+
         XmlNode = XmlNode->GetNext();
     }
 }
@@ -571,9 +518,7 @@ guPodcastDownloadQueueThread::guPodcastDownloadQueueThread( guMainFrame * mainfr
     m_PodcastsPath = Config->ReadStr( CONFIG_KEY_PODCASTS_PATH, guPATH_PODCASTS, CONFIG_PATH_PODCASTS );
 
     if( Create() == wxTHREAD_NO_ERROR )
-    {
         SetPriority( WXTHREAD_DEFAULT_PRIORITY - 30 );
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -651,7 +596,7 @@ void guPodcastDownloadQueueThread::RemovePodcastItems( guPodcastItemArray * item
 }
 
 // -------------------------------------------------------------------------------- //
-int guPodcastDownloadQueueThread::GetCount( void )
+int guPodcastDownloadQueueThread::GetCount()
 {
     Lock();
     int Count = m_Items.Count();
@@ -672,7 +617,7 @@ guPodcastDownloadQueueThread::ExitCode guPodcastDownloadQueueThread::Entry()
         if( m_CurPos < Count )
         {
             IdleCount = 0;
-            //
+
             guPodcastItem * PodcastItem = &m_Items[ m_CurPos ];
 
             guLogMessage( wxT( "Ok so we have one item to download... %u %s" ),
@@ -693,6 +638,7 @@ guPodcastDownloadQueueThread::ExitCode guPodcastDownloadQueueThread::Entry()
                                             PodcastItem->m_Channel + wxT( "/" ) +
                                             //PodcastTime.Format( wxT( "%Y%m%d%H%M%S-" ) ) +
                                             Uri.GetPath().AfterLast( wxT( '/' ) ) );
+
                 if( PodcastFile.Normalize( wxPATH_NORM_DOTS | wxPATH_NORM_TILDE | wxPATH_NORM_CASE | wxPATH_NORM_ABSOLUTE | wxPATH_NORM_LONG | wxPATH_NORM_SHORTCUT | wxPATH_NORM_ENV_VARS ) )
                 {
                     PodcastItem->m_FileName = PodcastFile.GetFullPath();
@@ -736,12 +682,9 @@ guPodcastDownloadQueueThread::ExitCode guPodcastDownloadQueueThread::Entry()
                     }
                 }
                 else
-                {
                     guLogError( wxT( "Error in normalizing the podcast filename..." ) );
-                }
             }
 
-            //
             m_CurPos++;
         }
         else
@@ -764,9 +707,7 @@ guPodcastDownloadQueueThread::ExitCode guPodcastDownloadQueueThread::Entry()
                         IdleCount = 0;
                     }
                     else
-                    {
                         Sleep( 500 );
-                    }
                 }
             }
             Unlock();
@@ -777,5 +718,3 @@ guPodcastDownloadQueueThread::ExitCode guPodcastDownloadQueueThread::Entry()
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
