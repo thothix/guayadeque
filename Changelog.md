@@ -8,7 +8,7 @@ Changelog
 ------------------
 
 ### Enhancements
-  * Updated the wiki manual and the Guayadeque "Help" menu link.
+  * Updated the Wiki manual and the Guayadeque "Help" menu link.
 
 ### Bugfixes
   * Fixed long time bug that playback was skipping after 20/30 minutes running.
