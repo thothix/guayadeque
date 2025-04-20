@@ -198,8 +198,8 @@ guCoverEditor::guCoverEditor(wxWindow* parent,
     m_EngineChoice->SetSelection( m_EngineIndex );
 
     // Bind Events
-    m_ArtistTextCtrl->Bind( wxEVT_TEXT_ENTER, &guCoverEditor::OnTextCtrlEnter, this );
-    m_AlbumTextCtrl->Bind( wxEVT_TEXT_ENTER, &guCoverEditor::OnTextCtrlEnter, this );
+    m_ArtistTextCtrl->Bind( wxEVT_TEXT_ENTER, &guCoverEditor::OnCoverFindAgainClick, this );
+    m_AlbumTextCtrl->Bind( wxEVT_TEXT_ENTER, &guCoverEditor::OnCoverFindAgainClick, this );
 
     m_EngineChoice->Bind( wxEVT_CHOICE, &guCoverEditor::OnEngineChanged, this );
 
@@ -253,8 +253,8 @@ guCoverEditor::~guCoverEditor()
     }
 
     // Unbind Events
-    m_ArtistTextCtrl->Unbind( wxEVT_TEXT_ENTER, &guCoverEditor::OnTextCtrlEnter, this );
-    m_AlbumTextCtrl->Unbind( wxEVT_TEXT_ENTER, &guCoverEditor::OnTextCtrlEnter, this );
+    m_ArtistTextCtrl->Unbind( wxEVT_TEXT_ENTER, &guCoverEditor::OnCoverFindAgainClick, this );
+    m_AlbumTextCtrl->Unbind( wxEVT_TEXT_ENTER, &guCoverEditor::OnCoverFindAgainClick, this );
 
     m_EngineChoice->Unbind( wxEVT_CHOICE, &guCoverEditor::OnEngineChanged, this );
 
@@ -273,7 +273,7 @@ guCoverEditor::~guCoverEditor()
 }
 
 // -------------------------------------------------------------------------------- //
-void guCoverEditor::EndDownloadLinksThread( void )
+void guCoverEditor::EndDownloadLinksThread()
 {
     wxMutexLocker Lock(m_DownloadThreadMutex);
 
@@ -310,7 +310,7 @@ void guCoverEditor::EndDownloadCoverThread( guDownloadCoverThread * DownloadCove
 }
 
 // -------------------------------------------------------------------------------- //
-void guCoverEditor::OnPrevButtonClick( wxCommandEvent& event )
+void guCoverEditor::OnPrevButtonClick( wxCommandEvent &event )
 {
     if( m_CurrentImage )
     {
@@ -325,7 +325,7 @@ void guCoverEditor::OnPrevButtonClick( wxCommandEvent& event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guCoverEditor::OnNextButtonClick( wxCommandEvent& event )
+void guCoverEditor::OnNextButtonClick( wxCommandEvent &event )
 {
     if( m_CurrentImage < ( int ) ( m_AlbumCovers.Count() - 1 ) )
     {
@@ -385,7 +385,7 @@ void guCoverEditor::OnAddCoverImage( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guCoverEditor::UpdateCoverBitmap( void )
+void guCoverEditor::UpdateCoverBitmap()
 {
     m_InfoTextCtrl->SetLabel( wxString::Format( wxT( "%02u/%02lu" ),  m_AlbumCovers.Count() ? m_CurrentImage + 1 : 0, m_AlbumCovers.Count() ) );
 
@@ -462,7 +462,7 @@ void guCoverEditor::OnCoverLeftClick( wxMouseEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-wxString guCoverEditor::GetSelectedCoverUrl( void )
+wxString guCoverEditor::GetSelectedCoverUrl()
 {
     if (m_AlbumCovers.Count())
         return m_AlbumCovers[m_CurrentImage].m_Link;
@@ -470,7 +470,7 @@ wxString guCoverEditor::GetSelectedCoverUrl( void )
 }
 
 // -------------------------------------------------------------------------------- //
-wxImage * guCoverEditor::GetSelectedCoverImage( void )
+wxImage * guCoverEditor::GetSelectedCoverImage()
 {
     if( m_AlbumCovers.Count() )
         return m_AlbumCovers[ m_CurrentImage ].m_Image;
@@ -478,7 +478,7 @@ wxImage * guCoverEditor::GetSelectedCoverImage( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guCoverEditor::OnTextCtrlEnter( wxCommandEvent& event )
+void guCoverEditor::OnCoverFindAgainClick( wxCommandEvent &event )
 {
     m_DownloadThreadMutex.Lock();
     int count = m_DownloadThreads.Count();
@@ -529,13 +529,7 @@ void guCoverEditor::OnEngineChanged( wxCommandEvent &event )
 
     m_EngineIndex = m_EngineChoice->GetSelection();
 
-    OnTextCtrlEnter( event );
-}
-
-// -------------------------------------------------------------------------------- //
-void guCoverEditor::OnCoverFindAgainClick(wxCommandEvent &event)
-{
-    OnTextCtrlEnter(event);
+    OnCoverFindAgainClick( event );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -751,5 +745,3 @@ guDownloadCoverThread::ExitCode guDownloadCoverThread::Entry()
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

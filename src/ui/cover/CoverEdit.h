@@ -147,32 +147,30 @@ class guCoverEditor : public wxDialog
     int                         m_CurrentImage;
     int                         m_EngineIndex;
 
-
-    void OnInitDialog( wxInitDialogEvent& event );
-    void OnTextCtrlEnter( wxCommandEvent& event );
-    void OnEngineChanged( wxCommandEvent& event );
-    void OnCoverLeftDClick( wxMouseEvent& event );
-    void OnCoverLeftClick( wxMouseEvent& event );
-    void OnPrevButtonClick( wxCommandEvent& event );
-    void OnNextButtonClick( wxCommandEvent& event );
+    void OnInitDialog( wxInitDialogEvent &event );
+    void OnCoverFindAgainClick( wxCommandEvent &event );
+    void OnEngineChanged( wxCommandEvent &event );
+    void OnCoverLeftDClick( wxMouseEvent &event );
+    void OnCoverLeftClick( wxMouseEvent &event );
+    void OnPrevButtonClick( wxCommandEvent &event );
+    void OnNextButtonClick( wxCommandEvent &event );
     void OnAddCoverImage( wxCommandEvent &event );
     void UpdateCoverBitmap();
     void EndDownloadLinksThread();
     void EndDownloadCoverThread( guDownloadCoverThread * DownloadCoverThread );
     void OnDownloadedLinks( wxCommandEvent &event );
 
-    void OnCoverFindAgainClick( wxCommandEvent &event );
     void OnCoverSelectClick( wxCommandEvent &event );
     void OnCoverDownloadClick( wxCommandEvent &event );
 
     void OnMouseWheel( wxMouseEvent &event );
 
   public:
-    guCoverEditor( wxWindow * parent, const wxString &Artist, const wxString &Album, const wxString &albumpath = wxEmptyString );// wxWindowID id = wxID_ANY, const wxString& title = wxT("Cover Editor"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
+    guCoverEditor(wxWindow * parent, const wxString &Artist, const wxString &Album, const wxString &albumpath = wxEmptyString);
     ~guCoverEditor();
-    wxString    GetSelectedCoverUrl( void );
-    wxImage *   GetSelectedCoverImage( void );
-    bool        EmbedToFiles( void ) { return m_EmbedToFilesChkBox->IsChecked(); }
+    wxString    GetSelectedCoverUrl();
+    wxImage *   GetSelectedCoverImage();
+    bool        EmbedToFiles() { return m_EmbedToFilesChkBox->IsChecked(); }
 
   friend class guFetchCoverLinksThread;
   friend class guDownloadCoverThread;
@@ -181,4 +179,3 @@ class guCoverEditor : public wxDialog
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

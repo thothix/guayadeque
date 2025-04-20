@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 13:30-0300\n"
+"POT-Creation-Date: 2025-04-20 14:19-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/"
@@ -3428,7 +3428,7 @@ msgstr "Обложка:"
 msgid "Embed into tracks"
 msgstr "Включить в файлы"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:546
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:540
 msgid "Select the cover filename"
 msgstr "Выберите название файла обложки"
 
@@ -3440,7 +3440,7 @@ msgstr "Поиск обложек"
 msgid "From:"
 msgstr "От:"
 
-#: ui/cover/CoverEdit.cpp:576
+#: ui/cover/CoverEdit.cpp:570
 #, fuzzy
 msgid "Cover Url"
 msgstr "Обложка"
