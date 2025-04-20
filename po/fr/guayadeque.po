@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 19:09-0300\n"
+"POT-Creation-Date: 2025-04-20 13:30-0300\n"
 "PO-Revision-Date: 2024-12-05 14:13+0100\n"
 "Last-Translator: filochard\n"
 "Language-Team: French (France) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -2690,7 +2690,7 @@ msgstr "Définit l'ordre des albums"
 
 #: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986 ui/cover/CoverEdit.cpp:121
 msgid "Download Cover"
 msgstr "Télécharger la pochette de l'album"
 
@@ -3389,7 +3389,7 @@ msgstr "Êtes-vous sûr de supprimer le filtre sélectionné ?"
 msgid "Add current selected songs to playlist"
 msgstr "Ajouter les morceaux sélectionnés à la file de lecture"
 
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680 ui/cover/CoverEdit.cpp:113
 msgid "Search again"
 msgstr "Chercher à nouveau"
 
@@ -3418,8 +3418,8 @@ msgstr "Êtes-vous sûr de vouloir sortir du programme ?"
 msgid "Don't ask again"
 msgstr "Ne pas demander à nouveau"
 
-#: ui/cover/SelCoverFile.cpp:32
-msgid "Select Cover File"
+#: ui/cover/SelCoverFile.cpp:32 ui/cover/CoverEdit.cpp:117
+msgid "Select cover file"
 msgstr "Choisir un fichier de Pochette"
 
 #: ui/cover/SelCoverFile.cpp:58
@@ -3430,7 +3430,7 @@ msgstr "Pochette:"
 msgid "Embed into tracks"
 msgstr "Incorporer dans les morceaux"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:574
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:546
 msgid "Select the cover filename"
 msgstr "Sélectionner le fichier de la pochette"
 
@@ -3442,7 +3442,7 @@ msgstr "Éditeur de pochettes"
 msgid "From:"
 msgstr "Depuis :"
 
-#: ui/cover/CoverEdit.cpp:604
+#: ui/cover/CoverEdit.cpp:576
 msgid "Cover Url"
 msgstr "URL de la pochette"
 

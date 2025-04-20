@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 19:09-0300\n"
+"POT-Creation-Date: 2025-04-20 13:30-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2017-2018,2020,2022\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/anonbeat/"
@@ -2680,7 +2680,7 @@ msgstr "Tetapkan tertib album"
 
 #: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986 ui/cover/CoverEdit.cpp:121
 msgid "Download Cover"
 msgstr "Muat Turun Kulit Hadapan"
 
@@ -3379,7 +3379,7 @@ msgstr "Anda pasti mahu memadam penapis terpilih?"
 msgid "Add current selected songs to playlist"
 msgstr "Tambah lagu semasa yang dipilih ke dalam senarai main"
 
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680 ui/cover/CoverEdit.cpp:113
 msgid "Search again"
 msgstr "Gelintar lagi"
 
@@ -3408,8 +3408,8 @@ msgstr "Anda pasti mahu keluar dari aplikasi?"
 msgid "Don't ask again"
 msgstr "Jangan tanya lagi"
 
-#: ui/cover/SelCoverFile.cpp:32
-msgid "Select Cover File"
+#: ui/cover/SelCoverFile.cpp:32 ui/cover/CoverEdit.cpp:117
+msgid "Select cover file"
 msgstr "Pilih Fail Kulit Hadapan"
 
 #: ui/cover/SelCoverFile.cpp:58
@@ -3420,7 +3420,7 @@ msgstr "Kulit Hadapan:"
 msgid "Embed into tracks"
 msgstr "Dibenam ke dalam trek"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:574
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:546
 msgid "Select the cover filename"
 msgstr "Pilih nama fail kulit hadapan"
 
@@ -3432,7 +3432,7 @@ msgstr "Penyunting Kulit Hadapan"
 msgid "From:"
 msgstr "Daripada:"
 
-#: ui/cover/CoverEdit.cpp:604
+#: ui/cover/CoverEdit.cpp:576
 msgid "Cover Url"
 msgstr "Url Kulit Hadapan"
 

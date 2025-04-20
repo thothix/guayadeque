@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 19:09-0300\n"
+"POT-Creation-Date: 2025-04-20 13:30-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: -, 2016,2020\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/anonbeat/"
@@ -2680,7 +2680,7 @@ msgstr "Seřadit Alba"
 
 #: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986 ui/cover/CoverEdit.cpp:121
 msgid "Download Cover"
 msgstr "Stahnout Obal"
 
@@ -3379,7 +3379,7 @@ msgstr "Jste si jistí smazání tohoto filtru ?"
 msgid "Add current selected songs to playlist"
 msgstr "Přidat označené do seznamu skladeb"
 
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680 ui/cover/CoverEdit.cpp:113
 msgid "Search again"
 msgstr ""
 
@@ -3408,8 +3408,8 @@ msgstr "Opravdu ukončit ?"
 msgid "Don't ask again"
 msgstr "Neptat se znova"
 
-#: ui/cover/SelCoverFile.cpp:32
-msgid "Select Cover File"
+#: ui/cover/SelCoverFile.cpp:32 ui/cover/CoverEdit.cpp:117
+msgid "Select cover file"
 msgstr "Označit soubor obalu"
 
 #: ui/cover/SelCoverFile.cpp:58
@@ -3420,7 +3420,7 @@ msgstr "Obal:"
 msgid "Embed into tracks"
 msgstr "Vložit do souboru"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:574
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:546
 msgid "Select the cover filename"
 msgstr "Označit jméno obalu"
 
@@ -3432,7 +3432,7 @@ msgstr "Editor obalů"
 msgid "From:"
 msgstr "z:"
 
-#: ui/cover/CoverEdit.cpp:604
+#: ui/cover/CoverEdit.cpp:576
 msgid "Cover Url"
 msgstr ""
 
