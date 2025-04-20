@@ -21,46 +21,48 @@ It's been developed in XUbuntu and Linux Mint.
 
 ## Dependencies
 
+First of all, install the dependencies for your system.
+
 ### Ubuntu (pre 20.0):
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake g++ binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake g++ binutils git
 ```
 
 ### Ubuntu 20.04, Linux Mint 20
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake g++ binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake g++ binutils git
 ```
 
 ### Ubuntu 22.04, Linux Mint 21
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev gettext cmake g++ binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev gettext cmake g++ binutils git
 ```
 
 ### Ubuntu 24.04, Linux Mint 22
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev gettext cmake g++ binutils
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev gettext cmake g++ binutils git
 ```
 
 ### Debian 12
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake git
 ```
 
 ### Mageia 9
 
 ```bash
-sudo urpmi gstreamer1.0-devtools lib64wx_gtk3u_wxsqlite3_3.2-devel lib64taglib-devel lib64sqlite3-devel lib64curl-devel lib64dbus-devel lib64gio2.0_0 lib64jsoncpp-devel libicu-devel cmake binutils
+sudo urpmi gstreamer1.0-devtools lib64wx_gtk3u_wxsqlite3_3.2-devel lib64taglib-devel lib64sqlite3-devel lib64curl-devel lib64dbus-devel lib64gio2.0_0 lib64jsoncpp-devel libicu-devel cmake binutils git
 ```
 
 ### Arch Linux
 
 ```bash
-sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlite3 taglib curl dbus gdk-pixbuf2 jsoncpp libicu cmake
+sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlite3 taglib curl dbus gdk-pixbuf2 jsoncpp libicu cmake git
 ```
 
 ---
@@ -94,6 +96,20 @@ sudo pacman -S libgpod gst-libav gst-plugins-bad gst-plugins-ugly gvfs
 
 ## Build
 
+After the dependencies has been installed, get Guayadeque sources from Github before begin the build process.
+
+### Get Guayadeque sources
+
+Change to some directory where you can clone/download the sources, e.g. "/home/myuser/src", clone the repository and change into it.
+
+```bash
+cd ~/src
+git clone https://github.com/thothix/guayadeque.git
+cd guayadeque
+```
+
+With the Guayadeque repository directory as your current dir, continue with the build process described below.
+
 ### Normal build
 
 ```bash
@@ -103,6 +119,13 @@ sudo make install
 
 ### Faster build on multi-core systems
 
+#### New cmake versions (most current distributions)
+
+```bash
+./build "" -j$(nproc)
+sudo make install
+```
+
 #### Old cmake versions
 
 ```bash
@@ -110,14 +133,7 @@ sudo make install
 sudo make install
 ```
 
-#### New cmake versions
-
-```bash
-./build "" -j$(nproc)
-sudo make install
-```
-
-#### Build options
+#### Build options (optional)
 
 ENABLE_IPOD [ON | OFF]
 - ON  - Enable IPOD support through libgpod - default
