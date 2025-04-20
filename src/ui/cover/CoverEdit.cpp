@@ -109,10 +109,16 @@ guCoverEditor::guCoverEditor(wxWindow* parent,
 
     TopButtonsSizer->Add( 10, 10, wxEXPAND );
 
-    m_CoverSelectButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_download_covers ), wxDefaultPosition, wxSize( 32, 32 ), wxBU_AUTODRAW );
+    m_CoverFindAgainButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_tiny_search_again ), wxDefaultPosition, wxSize(38, 36), wxBU_AUTODRAW );
+    m_CoverFindAgainButton->SetToolTip( _( "Search again" ) );
+    TopButtonsSizer->Add( m_CoverFindAgainButton, 0, wxEXPAND | wxLEFT, 5 );
+
+    m_CoverSelectButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_download_covers ), wxDefaultPosition, wxSize(38, 36), wxBU_AUTODRAW );
+    m_CoverSelectButton->SetToolTip( _( "Select cover file" ) );
     TopButtonsSizer->Add( m_CoverSelectButton, 0, wxALIGN_RIGHT | wxLEFT, 5 );
 
-    m_CoverDownloadButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_doc_save ), wxDefaultPosition, wxSize( 32, 32 ), wxBU_AUTODRAW );
+    m_CoverDownloadButton = new wxBitmapButton( this, wxID_ANY, guImage( guIMAGE_INDEX_doc_save ), wxDefaultPosition, wxSize(38, 36), wxBU_AUTODRAW );
+    m_CoverDownloadButton->SetToolTip( _( "Download Cover" ) );
     TopButtonsSizer->Add( m_CoverDownloadButton, 0, wxALIGN_RIGHT | wxLEFT | wxRIGHT, 5 );
     MainSizer->Add( TopButtonsSizer, 0, wxEXPAND, 5 );
 
@@ -204,6 +210,7 @@ guCoverEditor::guCoverEditor(wxWindow* parent,
     m_PrevButton->Bind( wxEVT_BUTTON, &guCoverEditor::OnPrevButtonClick, this );
     m_NextButton->Bind( wxEVT_BUTTON, &guCoverEditor::OnNextButtonClick, this );
 
+    m_CoverFindAgainButton->Bind( wxEVT_BUTTON, &guCoverEditor::OnCoverFindAgainClick, this );
     m_CoverSelectButton->Bind( wxEVT_BUTTON, &guCoverEditor::OnCoverSelectClick, this );
     m_CoverDownloadButton->Bind( wxEVT_BUTTON, &guCoverEditor::OnCoverDownloadClick, this );
 
@@ -515,55 +522,20 @@ void guCoverEditor::OnTextCtrlEnter( wxCommandEvent& event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guCoverEditor::OnEngineChanged( wxCommandEvent& event )
+void guCoverEditor::OnEngineChanged( wxCommandEvent &event )
 {
     if( m_EngineIndex == m_EngineChoice->GetSelection() )
         return;
 
-    m_DownloadThreadMutex.Lock();
-
-    int count = m_DownloadThreads.Count();
-    for( int index = 0; index < count; index++ )
-    {
-        guDownloadCoverThread * DownThread = ( guDownloadCoverThread * ) m_DownloadThreads[ index ];
-        if( DownThread )
-        {
-            DownThread->Pause();
-            DownThread->Delete();
-        }
-    }
-    m_DownloadThreads.Empty();
-    m_DownloadThreadMutex.Unlock();
-
-    // If Thread still running delete it
-    if( m_DownloadCoversThread )
-    {
-        m_DownloadCoversThread->Pause();
-        m_DownloadCoversThread->Delete();
-    }
-
-    // Empty already downloaded covers
-    m_AlbumCovers.Empty();
-
-    // Reset to the 1st Image
-    m_CurrentImage = 0;
-
-    // Set blank Cover Bitmap
-    UpdateCoverBitmap();
-
-    m_Gauge->StartPulse();
-
     m_EngineIndex = m_EngineChoice->GetSelection();
 
-    // Start again the cover fetcher thread
-    m_DownloadCoversThread = new guFetchCoverLinksThread(
-            this,
-            m_ArtistTextCtrl->GetValue().c_str(),
-            m_AlbumTextCtrl->GetValue().c_str(), m_EngineIndex );
+    OnTextCtrlEnter( event );
+}
 
-    // Disable buttons till one cover is downloaded
-    m_PrevButton->Disable();
-    m_NextButton->Disable();
+// -------------------------------------------------------------------------------- //
+void guCoverEditor::OnCoverFindAgainClick(wxCommandEvent &event)
+{
+    OnTextCtrlEnter(event);
 }
 
 // -------------------------------------------------------------------------------- //
