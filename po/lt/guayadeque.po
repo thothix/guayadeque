@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 13:30-0300\n"
+"POT-Creation-Date: 2025-04-20 14:19-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Moo, 2017-2018,2020,2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/anonbeat/guayadeque/"
@@ -3416,7 +3416,7 @@ msgstr "Viršelis:"
 msgid "Embed into tracks"
 msgstr "Įtaisyti į takelius"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:546
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:540
 msgid "Select the cover filename"
 msgstr ""
 
@@ -3428,7 +3428,7 @@ msgstr "Viršelių redaktorius"
 msgid "From:"
 msgstr ""
 
-#: ui/cover/CoverEdit.cpp:576
+#: ui/cover/CoverEdit.cpp:570
 msgid "Cover Url"
 msgstr ""
 

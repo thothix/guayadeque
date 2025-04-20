@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 13:30-0300\n"
+"POT-Creation-Date: 2025-04-20 14:19-0300\n"
 "PO-Revision-Date: 2024-12-05 14:31+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
@@ -3423,7 +3423,7 @@ msgstr "CD-Cover:"
 msgid "Embed into tracks"
 msgstr "In Tracks einbetten"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:546
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:540
 msgid "Select the cover filename"
 msgstr "CD-Cover-Dateiname auswählen"
 
@@ -3435,7 +3435,7 @@ msgstr "CD-Cover-Editor"
 msgid "From:"
 msgstr "Von:"
 
-#: ui/cover/CoverEdit.cpp:576
+#: ui/cover/CoverEdit.cpp:570
 msgid "Cover Url"
 msgstr "Cover Url"
 
