@@ -29,7 +29,7 @@ namespace Guayadeque {
 
 // -------------------------------------------------------------------------------- //
 guSelCoverFile::guSelCoverFile( wxWindow * parent, guMediaViewer * mediaviewer, const int albumid ) :
-    wxDialog( parent, wxID_ANY, _( "Select Cover File" ), wxDefaultPosition, wxSize( 400, 132 ), wxDEFAULT_DIALOG_STYLE )
+    wxDialog( parent, wxID_ANY, _( "Select cover file" ), wxDefaultPosition, wxSize( 400, 132 ), wxDEFAULT_DIALOG_STYLE )
 {
     m_MediaViewer = mediaviewer;
     m_Db = mediaviewer->GetDb();

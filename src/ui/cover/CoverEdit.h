@@ -123,6 +123,7 @@ class guCoverEditor : public wxDialog
     wxChoice *                  m_EngineChoice;
 
     wxCheckBox *                m_EmbedToFilesChkBox;
+    wxBitmapButton *            m_CoverFindAgainButton;
     wxBitmapButton *            m_CoverSelectButton;
     wxBitmapButton *            m_CoverDownloadButton;
 
@@ -160,6 +161,7 @@ class guCoverEditor : public wxDialog
     void EndDownloadCoverThread( guDownloadCoverThread * DownloadCoverThread );
     void OnDownloadedLinks( wxCommandEvent &event );
 
+    void OnCoverFindAgainClick( wxCommandEvent &event );
     void OnCoverSelectClick( wxCommandEvent &event );
     void OnCoverDownloadClick( wxCommandEvent &event );
 

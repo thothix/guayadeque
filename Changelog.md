@@ -4,14 +4,23 @@ Guayadeque Music Player
 Changelog
 =========
 
+Unreleased (2025-04-XX)
+------------------
+
+### Enhancements
+  * Adjusted the Podcast Editor dialog size.
+  * Added a Find Cover button in the Cover Editor to repeat the cover searching (same as
+    hit enter in the text controls).
+  * Updated translations.
+
 0.7.0 (2025-02-22)
 ------------------
 
 ### Enhancements
-  * Updated the wiki manual and the Guayadeque "Help" menu link.
+  * Updated the wiki manual and the Guayadeque Help menu link.
 
 ### Bugfixes
-  * Fixed long time bug that playback was skipping after 20/30 minutes running.
+  * Fixed long time bug that playback was skipping after 20/30 minutes running a long track.
 
 ### Removed
   * Removed the no more functional Jamendo feature.
