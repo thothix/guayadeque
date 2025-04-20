@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 19:09-0300\n"
+"POT-Creation-Date: 2025-04-20 13:30-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Thai (Thailand) (http://www.transifex.com/projects/p/"
@@ -2676,7 +2676,7 @@ msgstr "เรียงอัลบั้ม"
 
 #: ui/mediaviewer/library/AlListBox.cpp:350
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:393
-#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986
+#: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1986 ui/cover/CoverEdit.cpp:121
 msgid "Download Cover"
 msgstr ""
 
@@ -3375,7 +3375,7 @@ msgstr ""
 msgid "Add current selected songs to playlist"
 msgstr "เพิ่มเพลงที่เลือกเข้าไปในคิวเพลง"
 
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:680 ui/cover/CoverEdit.cpp:113
 #, fuzzy
 msgid "Search again"
 msgstr "ค้นหาเพลง"
@@ -3406,8 +3406,8 @@ msgstr "คุณต้องการออกจากโปรแกรมห
 msgid "Don't ask again"
 msgstr "อย่าถามคำถามนี้อีก"
 
-#: ui/cover/SelCoverFile.cpp:32
-msgid "Select Cover File"
+#: ui/cover/SelCoverFile.cpp:32 ui/cover/CoverEdit.cpp:117
+msgid "Select cover file"
 msgstr "เลือกปก"
 
 #: ui/cover/SelCoverFile.cpp:58
@@ -3418,7 +3418,7 @@ msgstr "ปก:"
 msgid "Embed into tracks"
 msgstr ""
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:574
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:546
 msgid "Select the cover filename"
 msgstr "เลือกชื่อไฟล์สำหรับปก"
 
@@ -3430,7 +3430,7 @@ msgstr "เครื่องมือแก้ไขปก"
 msgid "From:"
 msgstr "จาก:"
 
-#: ui/cover/CoverEdit.cpp:604
+#: ui/cover/CoverEdit.cpp:576
 #, fuzzy
 msgid "Cover Url"
 msgstr "เครื่องมือแก้ไขปก"
