@@ -11,7 +11,6 @@ Unreleased (2025-04-XX)
   * Adjusted the Podcast Editor dialog size.
   * Added a Find Cover button in the Cover Editor to repeat the cover searching (same as
     hit enter in the text controls).
-  * Updated translations.
 
 0.7.0 (2025-02-22)
 ------------------

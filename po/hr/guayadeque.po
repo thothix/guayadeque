@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 14:19-0300\n"
+"POT-Creation-Date: 2025-04-23 13:11-0300\n"
 "PO-Revision-Date: 2024-12-26 19:49-0300\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Croatian (Croatia) (http://www.transifex.com/projects/p/"
@@ -2283,6 +2283,7 @@ msgid "Add current selected tracks to playlist"
 msgstr "Dodaj odabrane pjesme na listu"
 
 #: ui/mediaviewer/library/YeListBox.cpp:149
+#: ui/mediaviewer/library/CoListBox.cpp:149
 #: ui/mediaviewer/library/ArListBox.cpp:203
 #: ui/mediaviewer/library/AAListBox.cpp:194
 #: ui/mediaviewer/library/PcListBox.cpp:156
@@ -2373,10 +2374,6 @@ msgstr "Dodaj odabrani album na listu izvođenja kao slijedeće pjesme"
 #: ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr "Dodaj odabrani album poslije"
-
-#: ui/mediaviewer/library/CoListBox.cpp:149
-msgid "Edit songs"
-msgstr "Uredi pjesme"
 
 #: ui/mediaviewer/library/CoListBox.cpp:159
 #: ui/mediaviewer/library/ArListBox.cpp:213
@@ -3437,7 +3434,7 @@ msgstr "Naslovnica:"
 msgid "Embed into tracks"
 msgstr "Spoji sa pjesmama"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:540
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:539
 msgid "Select the cover filename"
 msgstr "Odaberi naziv naslovnice"
 
@@ -3449,7 +3446,7 @@ msgstr "Urednik naslovnica"
 msgid "From:"
 msgstr "Od:"
 
-#: ui/cover/CoverEdit.cpp:570
+#: ui/cover/CoverEdit.cpp:569
 #, fuzzy
 msgid "Cover Url"
 msgstr "Naslovnica"
