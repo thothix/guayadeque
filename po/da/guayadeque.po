@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 14:19-0300\n"
+"POT-Creation-Date: 2025-04-23 13:11-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2015,2017,2020-2021\n"
 "Language-Team: Danish (http://www.transifex.com/anonbeat/guayadeque/language/"
@@ -2268,6 +2268,7 @@ msgid "Add current selected tracks to playlist"
 msgstr "Tilføj valgte numre til afspilningslisten"
 
 #: ui/mediaviewer/library/YeListBox.cpp:149
+#: ui/mediaviewer/library/CoListBox.cpp:149
 #: ui/mediaviewer/library/ArListBox.cpp:203
 #: ui/mediaviewer/library/AAListBox.cpp:194
 #: ui/mediaviewer/library/PcListBox.cpp:156
@@ -2358,10 +2359,6 @@ msgstr "Tilføj valgte album til afspilningslisten som næste numre"
 #: ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr "Tilføj de valgte album efter"
-
-#: ui/mediaviewer/library/CoListBox.cpp:149
-msgid "Edit songs"
-msgstr "Rediger sange"
 
 #: ui/mediaviewer/library/CoListBox.cpp:159
 #: ui/mediaviewer/library/ArListBox.cpp:213
@@ -3414,7 +3411,7 @@ msgstr "Omslag:"
 msgid "Embed into tracks"
 msgstr "Indlejr i numre"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:540
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:539
 msgid "Select the cover filename"
 msgstr "Vælg omslagets filnavn"
 
@@ -3426,7 +3423,7 @@ msgstr "Redigeringsprogram for omslag"
 msgid "From:"
 msgstr "Fra:"
 
-#: ui/cover/CoverEdit.cpp:570
+#: ui/cover/CoverEdit.cpp:569
 msgid "Cover Url"
 msgstr "Omslagsadresse"
 

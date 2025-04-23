@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 14:19-0300\n"
+"POT-Creation-Date: 2025-04-23 13:11-0300\n"
 "PO-Revision-Date: 2024-12-05 13:11+0100\n"
 "Last-Translator: Rodolfo Gonella Diaza <rudygonella@gmail.com>\n"
 "Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/"
@@ -2273,6 +2273,7 @@ msgid "Add current selected tracks to playlist"
 msgstr "Aggiungi i brani selezionati alla playlist"
 
 #: ui/mediaviewer/library/YeListBox.cpp:149
+#: ui/mediaviewer/library/CoListBox.cpp:149
 #: ui/mediaviewer/library/ArListBox.cpp:203
 #: ui/mediaviewer/library/AAListBox.cpp:194
 #: ui/mediaviewer/library/PcListBox.cpp:156
@@ -2363,10 +2364,6 @@ msgstr "Aggiungi gli album selezionati alla playlist come prossimi brani"
 #: ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr "Aggiungi gli album selezionati dopo"
-
-#: ui/mediaviewer/library/CoListBox.cpp:149
-msgid "Edit songs"
-msgstr "Modifica i canzoni"
 
 #: ui/mediaviewer/library/CoListBox.cpp:159
 #: ui/mediaviewer/library/ArListBox.cpp:213
@@ -3417,7 +3414,7 @@ msgstr "Copertina:"
 msgid "Embed into tracks"
 msgstr "Includi nei brani"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:540
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:539
 msgid "Select the cover filename"
 msgstr "Seleziona il nomo del file di copertina"
 
@@ -3429,7 +3426,7 @@ msgstr "Editor di Copertina"
 msgid "From:"
 msgstr "Da:"
 
-#: ui/cover/CoverEdit.cpp:570
+#: ui/cover/CoverEdit.cpp:569
 msgid "Cover Url"
 msgstr "URL della Copertina"
 

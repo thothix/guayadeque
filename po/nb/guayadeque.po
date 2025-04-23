@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 14:19-0300\n"
+"POT-Creation-Date: 2025-04-23 13:11-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (Norway) (http://www.transifex.com/projects/"
@@ -2275,6 +2275,7 @@ msgid "Add current selected tracks to playlist"
 msgstr "Legg valgte spor til spilleliste"
 
 #: ui/mediaviewer/library/YeListBox.cpp:149
+#: ui/mediaviewer/library/CoListBox.cpp:149
 #: ui/mediaviewer/library/ArListBox.cpp:203
 #: ui/mediaviewer/library/AAListBox.cpp:194
 #: ui/mediaviewer/library/PcListBox.cpp:156
@@ -2365,10 +2366,6 @@ msgstr "Legg valgte album til Spillelisten som Neste spor"
 #: ui/mediaviewer/library/AlListBox.cpp:295
 msgid "Add the selected albums after"
 msgstr "Legg til valgt album etter"
-
-#: ui/mediaviewer/library/CoListBox.cpp:149
-msgid "Edit songs"
-msgstr "Rediger sanger"
 
 #: ui/mediaviewer/library/CoListBox.cpp:159
 #: ui/mediaviewer/library/ArListBox.cpp:213
@@ -3423,7 +3420,7 @@ msgstr "Omslag:"
 msgid "Embed into tracks"
 msgstr "Integrer i spor"
 
-#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:540
+#: ui/cover/SelCoverFile.cpp:120 ui/cover/CoverEdit.cpp:539
 msgid "Select the cover filename"
 msgstr "Velg filnavn for omslag"
 
@@ -3435,7 +3432,7 @@ msgstr "Rediger Omslag"
 msgid "From:"
 msgstr "Fra:"
 
-#: ui/cover/CoverEdit.cpp:570
+#: ui/cover/CoverEdit.cpp:569
 #, fuzzy
 msgid "Cover Url"
 msgstr "Rediger Omslag"

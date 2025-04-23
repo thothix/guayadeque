@@ -94,7 +94,7 @@ guCoverEditor::guCoverEditor(wxWindow* parent,
         wxT("Last.fm"),
         //wxT( "Discogs" )
         //wxT( "Yahoo" )
-        };
+    };
     int m_EngineChoiceNChoices = sizeof( m_EngineChoiceChoices ) / sizeof( wxString );
     m_EngineChoice = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_EngineChoiceNChoices, m_EngineChoiceChoices, 0 );
     EditsSizer->Add( m_EngineChoice, 0, wxTOP|wxBOTTOM|wxRIGHT, 5 );
@@ -228,25 +228,25 @@ guCoverEditor::guCoverEditor(wxWindow* parent,
 // -------------------------------------------------------------------------------- //
 guCoverEditor::~guCoverEditor()
 {
-    guConfig * Config = ( guConfig * ) guConfig::Get();
+    guConfig * Config = (guConfig *) guConfig::Get();
     Config->WriteNum( CONFIG_KEY_GENERAL_COVER_SEARCH_ENGINE, m_EngineChoice->GetSelection(), CONFIG_PATH_GENERAL );
     Config->WriteBool( CONFIG_KEY_GENERAL_EMBED_TO_FILES, m_EmbedToFilesChkBox->GetValue(), CONFIG_PATH_GENERAL );
 
     m_DownloadThreadMutex.Lock();
     int count = m_DownloadThreads.Count();
-    for( int index = 0; index < count; index++ )
+    for (int index = 0; index < count; index++)
     {
-        guDownloadCoverThread * DownThread = ( guDownloadCoverThread * ) m_DownloadThreads[ index ];
-        if( DownThread )
+        guDownloadCoverThread * DownThread = (guDownloadCoverThread *) m_DownloadThreads[index];
+        if (DownThread)
         {
             DownThread->Pause();
             DownThread->Delete();
         }
-        m_DownloadThreads[ index ] = NULL;
+        m_DownloadThreads[index] = nullptr;
     }
     m_DownloadThreadMutex.Unlock();
 
-    if( m_DownloadCoversThread )
+    if (m_DownloadCoversThread)
     {
         m_DownloadCoversThread->Pause();
         m_DownloadCoversThread->Delete();
@@ -287,7 +287,7 @@ void guCoverEditor::EndDownloadLinksThread()
 
     //m_Gauge->SetValue( 0 );
     //guLogMessage( wxT( "EndDownloadThread called" ) );
-    m_DownloadCoversThread = NULL;
+    m_DownloadCoversThread = nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -406,13 +406,12 @@ void guCoverEditor::UpdateCoverBitmap()
                     MemDC.SelectObject( * BlankCD );
                     CoverImage.Rescale( 250, 250, wxIMAGE_QUALITY_HIGH );
                     MemDC.DrawBitmap( wxBitmap( CoverImage ), 34, 4, false );
-                    // Update the Size label
+
                     m_SizeStaticText->SetLabel( m_AlbumCovers[ m_CurrentImage ].m_SizeStr );
                 }
                 else
-                {
                     m_SizeStaticText->SetLabel( wxEmptyString );
-                }
+
                 m_SizeSizer->Layout();
                 m_CoverBitmap->SetBitmap( * BlankCD );
                 m_CoverBitmap->Refresh();
@@ -426,7 +425,6 @@ void guCoverEditor::UpdateCoverBitmap()
         if( m_AlbumCovers.Count() && m_AlbumCovers[ m_CurrentImage ].m_Image )
         {
             CoverImage = m_AlbumCovers[ m_CurrentImage ].m_Image->Copy();
-            // Update the Size label
             m_SizeStaticText->SetLabel( m_AlbumCovers[ m_CurrentImage ].m_SizeStr );
         }
         else
@@ -474,13 +472,14 @@ wxImage * guCoverEditor::GetSelectedCoverImage()
 {
     if( m_AlbumCovers.Count() )
         return m_AlbumCovers[ m_CurrentImage ].m_Image;
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
 void guCoverEditor::OnCoverFindAgainClick( wxCommandEvent &event )
 {
     m_DownloadThreadMutex.Lock();
+
     int count = m_DownloadThreads.Count();
     for( int index = 0; index < count; index++ )
     {
@@ -601,13 +600,11 @@ guFetchCoverLinksThread::guFetchCoverLinksThread(
         int engineindex) :
     wxThread()
 {
-    m_CoverEditor   = owner;
-    m_CoverFetcher = NULL;
-//    m_Artist = wxString( artist );
-//    m_Album = wxString( album );
-    m_EngineIndex = engineindex;
-    m_LastDownload  = 0;
-    m_CurrentPage   = 0;
+    m_CoverEditor  = owner;
+    m_CoverFetcher = nullptr;
+    m_EngineIndex  = engineindex;
+    m_LastDownload = 0;
+    m_CurrentPage  = 0;
 
     // if( m_EngineIndex == guCOVER_SEARCH_ENGINE_GOOGLE )
     //     m_CoverFetcher = ( guCoverFetcher * ) new guGoogleCoverFetcher( this, &m_CoverLinks, artist, album );
@@ -670,10 +667,8 @@ guFetchCoverLinksThread::ExitCode guFetchCoverLinksThread::Entry()
                 if( !m_CoverFetcher->AddCoverLinks( m_CurrentPage ) )
                 {
                     NoMorePics = true;
-                    if( m_LastDownload < ( int ) m_CoverLinks.Count() )
-                    {
+                    if (m_LastDownload < (int) m_CoverLinks.Count())
                         continue;
-                    }
                     break;
                 }
                 m_CurrentPage++;
@@ -681,7 +676,7 @@ guFetchCoverLinksThread::ExitCode guFetchCoverLinksThread::Entry()
         }
     }
 
-    return 0;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -712,12 +707,12 @@ guDownloadCoverThread::~guDownloadCoverThread()
 guDownloadCoverThread::ExitCode guDownloadCoverThread::Entry()
 {
     wxBitmapType ImageType;
-    guCoverImage *  CoverImage = NULL;
-    wxImage *   Image = guGetRemoteImage( m_UrlStr, ImageType );
+    guCoverImage *CoverImage = nullptr;
+    wxImage *Image = guGetRemoteImage(m_UrlStr, ImageType);
 
-    if( Image )
+    if (Image)
     {
-        if( !TestDestroy() )
+        if (!TestDestroy())
             CoverImage = new guCoverImage( m_UrlStr, m_SizeStr, Image );
         else
         {
@@ -726,7 +721,7 @@ guDownloadCoverThread::ExitCode guDownloadCoverThread::Entry()
         }
     }
 
-    if( !TestDestroy() )
+    if (!TestDestroy())
     {
         //guLogMessage( wxT( "Done: '%s'" ), m_UrlStr.c_str() );
         //m_CoverEditor->m_DownloadEventsMutex.Lock();
@@ -738,10 +733,10 @@ guDownloadCoverThread::ExitCode guDownloadCoverThread::Entry()
     }
     else
     {
-        if( CoverImage )
+        if (CoverImage)
             delete CoverImage;
     }
-    return 0;
+    return nullptr;
 }
 
 }

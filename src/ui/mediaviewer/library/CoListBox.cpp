@@ -146,7 +146,7 @@ void guCoListBox::CreateContextMenu( wxMenu * Menu ) const
             Menu->AppendSeparator();
 
             MenuItem = new wxMenuItem( Menu, ID_COMPOSER_EDITTRACKS,
-                                    wxString( _( "Edit songs" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_EDITTRACKS ),
+                                    wxString( _( "Edit Songs" ) ) + guAccelGetCommandKeyCodeString( ID_PLAYER_PLAYLIST_EDITTRACKS ),
                                     _( "Edit the selected tracks" ) );
             MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit ) );
             Menu->Append( MenuItem );
