@@ -196,7 +196,7 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
 
     // Volume bar
     m_VolumeBar = new wxSlider( this, wxID_ANY, SavedVol, 0, 100 );
-    m_VolumeBar->SetMinSize( wxSize( 100, 40 ) );
+    m_VolumeBar->SetMinSize( wxSize( 140, 40 ) );
     PlayerBtnSizer->Add( m_VolumeBar, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxTOP|wxBOTTOM, guPLAYER_ICONS_SEPARATOR );
     if( m_EnableVolCtls && Config->ReadBool( CONFIG_KEY_GENERAL_PLAYER_VOLUME_VISIBLE, true, CONFIG_PATH_GENERAL ) )
         m_VolumeBar->Show();
