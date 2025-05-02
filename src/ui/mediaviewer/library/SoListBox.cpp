@@ -155,17 +155,7 @@ guSoListBox::~guSoListBox()
 }
 
 // -------------------------------------------------------------------------------- //
-void guSoListBox::OnConfigUpdated( wxCommandEvent &event )
-{
-    int Flags = event.GetInt();
-    if( Flags & guPREFERENCE_PAGE_FLAG_ACCELERATORS )
-    {
-        CreateAcceleratorTable();
-    }
-}
-
-// -------------------------------------------------------------------------------- //
-void guSoListBox::CreateAcceleratorTable( void )
+void guSoListBox::CreateAcceleratorTable()
 {
     wxAcceleratorTable AccelTable;
     wxArrayInt AliasAccelCmds;
@@ -189,161 +179,14 @@ void guSoListBox::CreateAcceleratorTable( void )
     RealAccelCmds.Add( ID_TRACKS_ENQUEUE_AFTER_ARTIST );
     RealAccelCmds.Add( ID_LIBRARY_SEARCH );
 
-    if( guAccelDoAcceleratorTable( AliasAccelCmds, RealAccelCmds, AccelTable ) )
-    {
+    if (guAccelDoAcceleratorTable( AliasAccelCmds, RealAccelCmds, AccelTable))
         SetAcceleratorTable( AccelTable );
-    }
-}
-
-// -------------------------------------------------------------------------------- //
-wxString guSoListBox::OnGetItemText( const int row, const int col ) const
-{
-    guTrack * Track;
-    //guLogMessage( wxT( "GetItemText( %i, %i )    %i-%i  %i" ), row, col, m_ItemsFirst, m_ItemsLast, m_Items.Count() );
-
-    Track = &m_Items[ row - m_ItemsFirst ];
-
-    switch( ( * m_Columns )[ col ].m_Id )
-    {
-        case guSONGS_COLUMN_NUMBER :
-          if( Track->m_Number )
-            return wxString::Format( wxT( "%u" ), Track->m_Number );
-          else
-            return wxEmptyString;
-
-        case guSONGS_COLUMN_TITLE  :
-          return Track->m_SongName;
-
-        case guSONGS_COLUMN_ARTIST :
-          return Track->m_ArtistName;
-
-        case guSONGS_COLUMN_ALBUMARTIST :
-            return Track->m_AlbumArtist;
-
-        case guSONGS_COLUMN_ALBUM :
-          return Track->m_AlbumName;
-
-        case guSONGS_COLUMN_GENRE :
-          return Track->m_GenreName;
-
-        case guSONGS_COLUMN_COMPOSER :
-          return Track->m_Composer;
-
-        case guSONGS_COLUMN_DISK :
-          return Track->m_Disk;
-
-        case guSONGS_COLUMN_LENGTH :
-          return LenToString( Track->m_Length );
-
-        case guSONGS_COLUMN_YEAR :
-            if( Track->m_Year )
-                return wxString::Format( wxT( "%u" ), Track->m_Year );
-            else
-                return wxEmptyString;
-
-        case guSONGS_COLUMN_BITRATE :
-            return wxString::Format( wxT( "%u" ), Track->m_Bitrate );
-
-        case guSONGS_COLUMN_RATING :
-            return wxString::Format( wxT( "%i" ), Track->m_Rating );
-
-        case guSONGS_COLUMN_PLAYCOUNT :
-        {
-            if( Track->m_PlayCount )
-                return wxString::Format( wxT( "%u" ), Track->m_PlayCount );
-            break;
-        }
-
-        case guSONGS_COLUMN_LASTPLAY :
-        {
-            if( Track->m_LastPlay )
-            {
-                wxDateTime LastPlay;
-                LastPlay.Set( ( time_t ) Track->m_LastPlay );
-                return LastPlay.FormatDate();
-            }
-            else
-                return _( "Never" );
-        }
-
-        case guSONGS_COLUMN_ADDEDDATE :
-        {
-            wxDateTime AddedDate;
-            AddedDate.Set( ( time_t ) Track->m_AddedTime );
-            return AddedDate.FormatDate();
-        }
-
-        case guSONGS_COLUMN_FORMAT :
-        {
-            return Track->m_Format;
-        }
-
-        case guSONGS_COLUMN_FILEPATH :
-        {
-            return Track->m_FileName; // contains both path and filename
-        }
-
-        case guSONGS_COLUMN_OFFSET :
-          if( Track->m_Offset )
-            return LenToString( Track->m_Offset );
-          else
-            return wxEmptyString;
-
-    }
-    return wxEmptyString;
-}
-
-// -------------------------------------------------------------------------------- //
-void guSoListBox::DrawItem( wxDC &dc, const wxRect &rect, const int row, const int col ) const
-{
-    if( ( * m_Columns )[ col ].m_Id == guSONGS_COLUMN_RATING )
-    {
-        dc.SetBackgroundMode( wxTRANSPARENT );
-        int x;
-        int w = ( ( GURATING_STYLE_MID * 2 ) + GURATING_IMAGE_SIZE );
-
-        for( x = 0; x < 5; x++ )
-        {
-           dc.DrawBitmap( ( x >= m_Items[ row - m_ItemsFirst ].m_Rating ) ? * m_NormalStar : * m_SelectStar,
-                          rect.x + 3 + ( w * x ), rect.y + 3, true );
-        }
-    }
-    else
-    {
-        guListView::DrawItem( dc, rect, row, col );
-    }
-}
-
-
-// -------------------------------------------------------------------------------- //
-void guSoListBox::ItemsCheckRange( const int start, const int end )
-{
-    //guLogMessage( wxT( "guSoListBox::ItemsCheckRange( %i, %i )" ), start, end );
-    if( m_ItemsFirst != start || m_ItemsLast != end )
-    {
-        m_Items.Empty();
-        m_Db->GetSongs( &m_Items, start, end );
-        m_ItemsFirst = start;
-        m_ItemsLast = end;
-    }
-    //guLogMessage( wxT( "Updated the items... %i" ), m_Items );
-}
-
-// -------------------------------------------------------------------------------- //
-void guSoListBox::GetItemsList( void )
-{
-    //m_Db->GetSongs( &m_Items, GetVisibleRowsBegin(), GetVisibleRowsEnd() );
-    SetItemCount( m_Db->GetSongsCount() );
-
-    wxCommandEvent event( wxEVT_MENU, ID_MAINFRAME_UPDATE_SELINFO );
-    AddPendingEvent( event );
 }
 
 // -------------------------------------------------------------------------------- //
 void guSoListBox::ReloadItems( bool reset )
 {
     //guLogMessage( wxT( "guSoListBox::ReloadItems( %i )"), reset );
-    //
     wxArrayInt Selection;
     int FirstVisible = GetVisibleRowsBegin();
 
@@ -369,6 +212,153 @@ void guSoListBox::ReloadItems( bool reset )
         ScrollToRow( FirstVisible );
     }
     RefreshAll();
+}
+
+// -------------------------------------------------------------------------------- //
+void guSoListBox::OnConfigUpdated( wxCommandEvent &event )
+{
+    int Flags = event.GetInt();
+    if (Flags & guPREFERENCE_PAGE_FLAG_ACCELERATORS)
+        CreateAcceleratorTable();
+}
+
+// -------------------------------------------------------------------------------- //
+wxString guSoListBox::OnGetItemText( const int row, const int col ) const
+{
+    guTrack * Track;
+    //guLogMessage( wxT( "GetItemText( %i, %i )    %i-%i  %i" ), row, col, m_ItemsFirst, m_ItemsLast, m_Items.Count() );
+
+    Track = &m_Items[row - m_ItemsFirst];
+
+    switch ((* m_Columns)[col].m_Id)
+    {
+        case guSONGS_COLUMN_NUMBER :
+        {
+            if (Track->m_Number)
+                return wxString::Format(wxT("%u"), Track->m_Number);
+            return wxEmptyString;
+        }
+
+        case guSONGS_COLUMN_TITLE  :
+            return Track->m_SongName;
+
+        case guSONGS_COLUMN_ARTIST :
+            return Track->m_ArtistName;
+
+        case guSONGS_COLUMN_ALBUMARTIST :
+            return Track->m_AlbumArtist;
+
+        case guSONGS_COLUMN_ALBUM :
+            return Track->m_AlbumName;
+
+        case guSONGS_COLUMN_GENRE :
+            return Track->m_GenreName;
+
+        case guSONGS_COLUMN_COMPOSER :
+            return Track->m_Composer;
+
+        case guSONGS_COLUMN_DISK :
+            return Track->m_Disk;
+
+        case guSONGS_COLUMN_LENGTH :
+            return LenToString( Track->m_Length );
+
+        case guSONGS_COLUMN_YEAR :
+        {
+            if (Track->m_Year)
+                return wxString::Format(wxT("%u"), Track->m_Year);
+            return wxEmptyString;
+        }
+
+        case guSONGS_COLUMN_BITRATE :
+            return wxString::Format(wxT("%u"), Track->m_Bitrate);
+
+        case guSONGS_COLUMN_RATING :
+            return wxString::Format(wxT("%i"), Track->m_Rating);
+
+        case guSONGS_COLUMN_PLAYCOUNT :
+        {
+            if (Track->m_PlayCount)
+                return wxString::Format(wxT("%u"), Track->m_PlayCount);
+            break;
+        }
+
+        case guSONGS_COLUMN_LASTPLAY :
+        {
+            if (Track->m_LastPlay)
+            {
+                wxDateTime LastPlay;
+                LastPlay.Set((time_t) Track->m_LastPlay);
+                return LastPlay.FormatDate();
+            }
+            return _("Never");
+        }
+
+        case guSONGS_COLUMN_ADDEDDATE :
+        {
+            wxDateTime AddedDate;
+            AddedDate.Set((time_t) Track->m_AddedTime);
+            return AddedDate.FormatDate();
+        }
+
+        case guSONGS_COLUMN_FORMAT :
+            return Track->m_Format;
+
+        case guSONGS_COLUMN_FILEPATH :
+            return Track->m_FileName;   // contains both path and filename
+
+        case guSONGS_COLUMN_OFFSET :
+        {
+            if (Track->m_Offset)
+                return LenToString(Track->m_Offset);
+            return wxEmptyString;
+        }
+    }
+    return wxEmptyString;
+}
+
+// -------------------------------------------------------------------------------- //
+void guSoListBox::DrawItem( wxDC &dc, const wxRect &rect, const int row, const int col ) const
+{
+    if( ( * m_Columns )[ col ].m_Id == guSONGS_COLUMN_RATING )
+    {
+        dc.SetBackgroundMode( wxTRANSPARENT );
+        int x;
+        int w = ( ( GURATING_STYLE_MID * 2 ) + GURATING_IMAGE_SIZE );
+
+        for( x = 0; x < 5; x++ )
+        {
+           dc.DrawBitmap( ( x >= m_Items[ row - m_ItemsFirst ].m_Rating ) ? * m_NormalStar : * m_SelectStar,
+                          rect.x + 3 + ( w * x ), rect.y + 3, true );
+        }
+    }
+    else
+        guListView::DrawItem( dc, rect, row, col );
+}
+
+
+// -------------------------------------------------------------------------------- //
+void guSoListBox::ItemsCheckRange( const int start, const int end )
+{
+    //guLogMessage( wxT( "guSoListBox::ItemsCheckRange( %i, %i )" ), start, end );
+    if( m_ItemsFirst != start || m_ItemsLast != end )
+    {
+        m_Items.Empty();
+        m_Db->GetSongs( &m_Items, start, end );
+        m_ItemsFirst = start;
+        m_ItemsLast = end;
+    }
+    //guLogMessage( wxT( "Updated the items... %i" ), m_Items );
+}
+
+// -------------------------------------------------------------------------------- //
+void guSoListBox::GetItemsList()
+{
+    //m_Db->GetSongs( &m_Items, GetVisibleRowsBegin(), GetVisibleRowsEnd() );
+    SetItemCount( m_Db->GetSongsCount() );
+
+    wxCommandEvent event( wxEVT_MENU, ID_MAINFRAME_UPDATE_SELINFO );
+    AddPendingEvent( event );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -414,7 +404,7 @@ void guSoListBox::GetAllSongs( guTrackArray * tracks )
 }
 
 // -------------------------------------------------------------------------------- //
-wxArrayString guSoListBox::GetColumnNames( void ) const
+wxArrayString guSoListBox::GetColumnNames() const
 {
     return m_ColumnNames;
 }
@@ -466,46 +456,43 @@ void guSoListBox::AppendFastEditMenu( wxMenu * menu, const int selcount ) const
 {
     wxMenuItem * MenuItem;
     //guLogMessage( wxT( "guSoLisBox::AppendFastEditMenu %i - %i" ), m_LastColumnRightClicked, m_LastRowRightClicked );
-    if( m_LastColumnRightClicked == wxNOT_FOUND || ( m_LastColumnRightClicked >= ( int ) m_Columns->Count() ) )
-    {
+    if (m_LastColumnRightClicked == wxNOT_FOUND || (m_LastColumnRightClicked >= (int) m_Columns->Count()))
         return;
-    }
 
-    int ColumnId = GetColumnId( m_LastColumnRightClicked );
+    int ColumnId = GetColumnId(m_LastColumnRightClicked);
 
     // If its a column not editable
-    if( ColumnId == guSONGS_COLUMN_RATING ||
+    if (ColumnId == guSONGS_COLUMN_RATING ||
         ColumnId == guSONGS_COLUMN_OFFSET ||
         ColumnId == guSONGS_COLUMN_LENGTH ||
         ColumnId == guSONGS_COLUMN_BITRATE ||
         ColumnId == guSONGS_COLUMN_LASTPLAY ||
         ColumnId == guSONGS_COLUMN_ADDEDDATE ||
         ColumnId == guSONGS_COLUMN_FORMAT ||
-        ColumnId == guSONGS_COLUMN_FILEPATH )
+        ColumnId == guSONGS_COLUMN_FILEPATH)
         return;
 
-    wxString MenuText = _( "Edit" );
-    MenuText += wxT( " " ) + m_ColumnNames[ ColumnId ];
+    wxString MenuText = _("Edit");
+    MenuText += wxT(" ") + m_ColumnNames[ColumnId].Lower();
 
-    MenuItem = new wxMenuItem( menu, ID_TRACKS_EDIT_COLUMN,  _( MenuText ), _( "Edit the clicked column for the selected tracks" ) );
-    MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit ) );
-    menu->Append( MenuItem );
+    MenuItem = new wxMenuItem(menu, ID_TRACKS_EDIT_COLUMN,  _(MenuText), _("Edit the clicked column for the selected tracks"));
+    MenuItem->SetBitmap(guImage(guIMAGE_INDEX_tiny_edit));
+    menu->Append(MenuItem);
 
-    if( selcount > 1 )
+    if (selcount > 1)
     {
-        MenuText = _( "Set" );
-        MenuText += wxT( " " ) + m_ColumnNames[ ColumnId ] + wxT( " " );
-        MenuText += _( "to" );
-        wxString ItemText = OnGetItemText( m_LastRowRightClicked, m_LastColumnRightClicked );
-        ItemText.Replace( wxT( "&" ), wxT( "&&" ) );
-        MenuText += wxT( " '" ) + ItemText + wxT( "'" );
+        MenuText = _("Set");
+        MenuText += wxT(" ") + m_ColumnNames[ColumnId] + wxT(" ");
+        MenuText += _("to");
+        wxString ItemText = OnGetItemText(m_LastRowRightClicked, m_LastColumnRightClicked);
+        ItemText.Replace(wxT("&"), wxT("&&"));
+        MenuText += wxT(" '") + ItemText + wxT("'");
 
-        MenuItem = new wxMenuItem( menu, ID_TRACKS_SET_COLUMN,  _( MenuText ), _( "Set the clicked column for the selected tracks" ) );
-        MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit ) );
-        menu->Append( MenuItem );
+        MenuItem = new wxMenuItem(menu, ID_TRACKS_SET_COLUMN,  _(MenuText), _("Set the clicked column for the selected tracks"));
+        MenuItem->SetBitmap(guImage(guIMAGE_INDEX_tiny_edit));
+        menu->Append(MenuItem);
     }
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
@@ -553,9 +540,9 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
 
     Menu->Append( wxID_ANY, _( "Enqueue After" ), EnqueueMenu );
 
-    if ( SelCount )
+    if (SelCount)
     {
-        if ( SelCount == 1 )
+        if (SelCount == 1)
         {
             Menu->AppendSeparator();
 
@@ -601,7 +588,6 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
             MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit ) );
             Menu->Append( MenuItem );
 
-            //Menu->AppendSeparator();
             if ( SelCount == 1 )
                 AppendFastEditMenu( Menu, SelCount );
 
@@ -693,9 +679,9 @@ void guSoListBox::CreateContextMenu( wxMenu * Menu ) const
 void guSoListBox::OnSearchLinkClicked( wxCommandEvent &event )
 {
     unsigned long cookie;
-    int Item = GetFirstSelected( cookie );
-    if ( Item != wxNOT_FOUND )
-        ExecuteOnlineLink( event.GetId(), GetSearchText( Item ) );
+    int Item = GetFirstSelected(cookie);
+    if (Item != wxNOT_FOUND)
+        ExecuteOnlineLink(event.GetId(), GetSearchText(Item));
 }
 
 // -------------------------------------------------------------------------------- //
@@ -740,9 +726,7 @@ void guSoListBox::OnCommandClicked( wxCommandEvent &event )
                 int CoverId = m_Db->GetAlbumCoverId( AlbumList[ 0 ] );
                 wxString CoverPath = wxEmptyString;
                 if( CoverId > 0 )
-                {
                     CoverPath = wxT( "\"" ) + m_Db->GetCoverPath( CoverId ) + wxT( "\"" );
-                }
                 CurCmd.Replace( guCOMMAND_COVERPATH, CoverPath );
             }
 
@@ -783,27 +767,17 @@ wxString guSoListBox::GetSearchText( int item ) const
 // -------------------------------------------------------------------------------- //
 wxString guSoListBox::GetItemName( const int row ) const
 {
-    if( row >= m_ItemsFirst && row < m_ItemsLast )
-    {
-        return m_Items[ row - m_ItemsFirst ].m_SongName;
-    }
-    else
-    {
-        return m_Db->GetSongsName( row );
-    }
+    if (row >= m_ItemsFirst && row < m_ItemsLast)
+        return m_Items[row - m_ItemsFirst].m_SongName;
+    return m_Db->GetSongsName(row);
 }
 
 // -------------------------------------------------------------------------------- //
 int guSoListBox::GetItemId( const int row ) const
 {
-    if( row >= m_ItemsFirst && row < m_ItemsLast )
-    {
-        return m_Items[ row - m_ItemsFirst ].m_SongId;
-    }
-    else
-    {
-        return m_Db->GetSongsId( row );
-    }
+    if (row >= m_ItemsFirst && row < m_ItemsLast)
+        return m_Items[row - m_ItemsFirst].m_SongId;
+    return m_Db->GetSongsId(row);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -844,12 +818,12 @@ void guSoListBox::OnItemColumnRClicked( wxListEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-wxVariant guSoListBox::GetLastDataClicked( void )
+wxVariant guSoListBox::GetLastDataClicked()
 {
     guTrack * Track = &m_Items[ m_LastRowRightClicked - m_ItemsFirst ];
 
     int ColId = GetColumnId( m_LastColumnRightClicked );
-    switch( ColId )
+    switch (ColId)
     {
         case guSONGS_COLUMN_NUMBER :
             return wxVariant( ( long ) Track->m_Number );
@@ -937,12 +911,10 @@ void guSoListBox::UpdatedTrack( const guTrack * track )
 int guSoListBox::FindItem( const int trackid )
 {
     int Count = m_Items.Count();
-    for( int Index = 0; Index < Count; Index++ )
+    for (int Index = 0; Index < Count; Index++)
     {
-        if( m_Items[ Index ].m_SongId == trackid )
-        {
+        if (m_Items[Index].m_SongId == trackid)
             return Index;
-        }
     }
     return wxNOT_FOUND;
 }
@@ -980,11 +952,9 @@ void guSoListBox::SetTracksOrder( const int order )
 void guSoListBox::OnCreateSmartPlaylist( wxCommandEvent &event )
 {
     guTrackArray Tracks;
-    GetSelectedSongs( &Tracks );
-    if( Tracks.Count() == 1 )
-    {
-        m_MediaViewer->CreateSmartPlaylist( Tracks[ 0 ].m_ArtistName, Tracks[ 0 ].m_SongName );
-    }
+    GetSelectedSongs(&Tracks);
+    if (Tracks.Count() == 1)
+        m_MediaViewer->CreateSmartPlaylist(Tracks[0].m_ArtistName, Tracks[0].m_SongName);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1001,5 +971,3 @@ void guSoListBox::OnCreateBestOfPlaylist( wxCommandEvent &event )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
