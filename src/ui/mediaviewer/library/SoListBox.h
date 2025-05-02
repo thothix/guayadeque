@@ -75,7 +75,7 @@ class guSoListBox : public guListView
     virtual void                DrawItem( wxDC &dc, const wxRect &rect, const int row, const int col ) const;
     virtual void                CreateContextMenu( wxMenu * Menu ) const;
     virtual wxString            OnGetItemText( const int row, const int column ) const;
-    virtual void                GetItemsList( void );
+    virtual void                GetItemsList();
 
     void                        OnSearchLinkClicked( wxCommandEvent &event );
     void                        OnCommandClicked( wxCommandEvent &event );
@@ -108,26 +108,24 @@ class guSoListBox : public guListView
     virtual int                 GetItemId( const int row ) const;
     virtual wxString            GetItemName( const int row ) const;
 
-    virtual wxArrayString       GetColumnNames( void ) const;
+    virtual wxArrayString       GetColumnNames() const;
 
     void                        UpdatedTracks( const guTrackArray * tracks );
     void                        UpdatedTrack( const guTrack * track );
     int                         FindItem( const int trackid );
 
-    int                         GetLastColumnClicked( void ) { return m_LastColumnRightClicked; }
-    int                         GetLastRowClicked( void ) { return m_LastRowRightClicked; }
-    wxVariant                   GetLastDataClicked( void );
+    int                         GetLastColumnClicked() { return m_LastColumnRightClicked; }
+    int                         GetLastRowClicked( ) { return m_LastRowRightClicked; }
+    wxVariant                   GetLastDataClicked();
 
-    virtual int                 GetTracksOrder( void ) { return m_TracksOrder; }
+    virtual int                 GetTracksOrder() { return m_TracksOrder; }
     virtual void                SetTracksOrder( const int order );
-    virtual bool                GetTracksOrderDesc( void ) { return m_TracksOrderDesc; }
+    virtual bool                GetTracksOrderDesc() { return m_TracksOrderDesc; }
     virtual void                SetTracksOrderDesc( const bool orderdesc ) { m_TracksOrderDesc = orderdesc; }
 
-    virtual int                 GetTrackCount( void ) { return m_Items.Count(); }
-
+    virtual int                 GetTrackCount() { return m_Items.Count(); }
 };
 
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

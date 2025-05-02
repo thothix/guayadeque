@@ -114,12 +114,12 @@ guListView::guListView( wxWindow * parent, const int flags, wxWindowID id, const
     wxScrolledWindow( parent, id, pos, size, style )
 {
     m_Columns = new guListViewColumnArray();
-    m_ImageList = ( wxImageList * ) NULL;
+    m_ImageList = nullptr;
     m_ListBox = new guListViewClient( this, flags, m_Columns, &m_Attr );
     if( !( flags & guLISTVIEW_HIDE_HEADER ) )
         m_Header = new guListViewHeader( this, m_ListBox, m_Columns, wxPoint( 0, 0 ) );
     else
-        m_Header = NULL;
+        m_Header = nullptr;
 
     m_ColSelect = ( flags & guLISTVIEW_COLUMN_SELECT );
     m_AllowDrag = ( flags & guLISTVIEW_ALLOWDRAG );
@@ -265,7 +265,7 @@ wxCoord guListView::OnMeasureItem( size_t n ) const
     dc.SetFont( GetFont() );
 
     wxCoord y;
-    dc.GetTextExtent( wxT( "Hg" ), NULL, &y );
+    dc.GetTextExtent( wxT( "Hg" ), nullptr, &y );
 
     self->SetItemHeight( y + 4 ); // 2 up, 2 down
     return y + 4;
@@ -968,7 +968,6 @@ void guListViewClient::OnDrawItem( wxDC &dc, const wxRect &rect, size_t n ) cons
 
             {
                 wxDCClipper clip( dc, cRect );
-
                 DrawItem( dc, cRect, n, index );
             }
             StartOfs += w;
@@ -987,10 +986,9 @@ void guListViewClient::SetItemHeigth( const int height )
 // -------------------------------------------------------------------------------- //
 wxCoord guListViewClient::OnMeasureItem( size_t n ) const
 {
-    if( m_ItemHeight != wxNOT_FOUND )
+    if (m_ItemHeight != wxNOT_FOUND)
         return m_ItemHeight;
-    else
-        return m_Owner->OnMeasureItem( n );
+    return m_Owner->OnMeasureItem(n);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1038,10 +1036,11 @@ void guListViewClient::OnDrawBackground( wxDC &dc, const wxRect &rect, size_t n 
     {
         if( ( * m_Columns )[ index ].m_Enabled )
         {
-            cRect.x     = StartOfs;
+            cRect.x = StartOfs;
             int w = ( * m_Columns )[ index ].m_Width;
             if( w != wxNOT_FOUND )
                 cRect.width = w;
+
             {
                 wxDCClipper clip( dc, cRect );
                 DrawBackground( dc, cRect, n, index );
@@ -1153,9 +1152,9 @@ END_EVENT_TABLE()
 // -------------------------------------------------------------------------------- //
 guListViewHeader::guListViewHeader()
 {
-    m_Owner = (guListView *) NULL;
-    m_ListViewClient = ( guListViewClient * ) NULL;
-    m_Columns = (guListViewColumnArray*) NULL;
+    m_Owner = nullptr;
+    m_ListViewClient = nullptr;
+    m_Columns = nullptr;
     m_ResizeCursor = new wxCursor( wxCURSOR_SIZEWE );
     m_IsDragging = wxNOT_FOUND;
 }
@@ -1691,7 +1690,7 @@ guListViewDropFilesThread::ExitCode guListViewDropFilesThread::Entry()
 guListViewDropTarget::guListViewDropTarget( guListView * listview ) : wxDropTarget()
 {
     m_ListView = listview;
-    m_ListViewDropFilesThread = NULL;
+    m_ListViewDropFilesThread = nullptr;
 
     wxDataObjectComposite * DataObject = new wxDataObjectComposite();
     wxCustomDataObject * TracksDataObject = new wxCustomDataObject( wxDataFormat( wxT( "x-gutracks/guayadeque-copied-tracks" ) ) );
@@ -1746,7 +1745,7 @@ wxDragResult guListViewDropTarget::OnData( wxCoord x, wxCoord y, wxDragResult de
         {
             m_ListViewDropFilesThread->Pause();
             m_ListViewDropFilesThread->Delete();
-            m_ListViewDropFilesThread = NULL;
+            m_ListViewDropFilesThread = nullptr;
         }
         wxFileDataObject * FileDataObject = ( wxFileDataObject * ) DataObject->GetDataObject( wxDataFormat( wxDF_FILENAME ) );
         if( FileDataObject )
@@ -1834,5 +1833,3 @@ void guDataObjectComposite::SetTracks( const guTrackArray &tracks )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

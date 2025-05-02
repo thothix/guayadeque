@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-23 13:11-0300\n"
+"POT-Creation-Date: 2025-04-23 17:18-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/"
@@ -43,7 +43,7 @@ msgid "Community Forums"
 msgstr "Форум сообщества"
 
 #: misc/Accelerators.cpp:114 ui/mediaviewer/library/ArListBox.cpp:195
-#: ui/mediaviewer/library/SoListBox.cpp:591
+#: ui/mediaviewer/library/SoListBox.cpp:578
 #: ui/mediaviewer/library/AlListBox.cpp:300
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
@@ -66,7 +66,7 @@ msgstr "Редактировать метаданные"
 #: ui/mediaviewer/library/GeListBox.cpp:102
 #: ui/mediaviewer/library/AAListBox.cpp:156
 #: ui/mediaviewer/library/PcListBox.cpp:118
-#: ui/mediaviewer/library/SoListBox.cpp:525
+#: ui/mediaviewer/library/SoListBox.cpp:512
 #: ui/mediaviewer/library/RaListBox.cpp:150
 #: ui/mediaviewer/library/AlListBox.cpp:270
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:340
@@ -117,7 +117,7 @@ msgstr "Справка"
 #: ui/mediaviewer/library/GeListBox.cpp:95
 #: ui/mediaviewer/library/AAListBox.cpp:149
 #: ui/mediaviewer/library/PcListBox.cpp:111
-#: ui/mediaviewer/library/SoListBox.cpp:518
+#: ui/mediaviewer/library/SoListBox.cpp:505
 #: ui/mediaviewer/library/RaListBox.cpp:143
 #: ui/mediaviewer/library/AlListBox.cpp:264
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:336
@@ -150,7 +150,7 @@ msgstr "Воспроизвести поток"
 #: ui/MainFrame.cpp:4215 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
-#: ui/mediaviewer/library/SoListBox.cpp:457
+#: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
 #: ui/player/PlayList.cpp:1669 onlinelinks/OnlineLinks.cpp:68
@@ -199,7 +199,7 @@ msgstr "Сохранить схему"
 #: ui/mediaviewer/library/GeListBox.cpp:138
 #: ui/mediaviewer/library/AAListBox.cpp:203
 #: ui/mediaviewer/library/PcListBox.cpp:165
-#: ui/mediaviewer/library/SoListBox.cpp:646
+#: ui/mediaviewer/library/SoListBox.cpp:632
 #: ui/mediaviewer/library/RaListBox.cpp:197
 #: ui/mediaviewer/library/AlListBox.cpp:336
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2110
@@ -422,7 +422,7 @@ msgstr "Удалить"
 msgid "Separator"
 msgstr "Разделитель"
 
-#: misc/Accelerators.cpp:395 ui/mediaviewer/library/SoListBox.cpp:585
+#: misc/Accelerators.cpp:395 ui/mediaviewer/library/SoListBox.cpp:572
 #: ui/player/PlayList.cpp:1765
 msgid "Select"
 msgstr "Найти в фонотеке"
@@ -581,7 +581,7 @@ msgstr "Найти текст в Сети"
 #: ui/trackedit/TrackEdit.cpp:381 ui/trackedit/TrackEdit.cpp:421
 #: ui/trackedit/TrackEdit.cpp:495 ui/filebrowser/FileRenamer.cpp:86
 #: ui/mediaviewer/library/SoListBox.cpp:60
-#: ui/mediaviewer/library/SoListBox.cpp:569
+#: ui/mediaviewer/library/SoListBox.cpp:556
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:48
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:128
@@ -1162,7 +1162,7 @@ msgstr "Копировать название альбома во все ред�
 #: ui/trackedit/TrackEdit.cpp:188 ui/trackedit/TrackEdit.cpp:447
 #: ui/trackedit/TrackEdit.cpp:519 ui/filebrowser/FileRenamer.cpp:87
 #: ui/mediaviewer/library/SoListBox.cpp:62
-#: ui/mediaviewer/library/SoListBox.cpp:581
+#: ui/mediaviewer/library/SoListBox.cpp:568
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:50
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:130
@@ -1178,7 +1178,7 @@ msgid "Copy the composer to all the tracks you are editing"
 msgstr "Копировать имя композитора во все редактируемые дорожки"
 
 #: ui/trackedit/TrackEdit.cpp:201 ui/mediaviewer/library/SoListBox.cpp:64
-#: ui/mediaviewer/library/SoListBox.cpp:577
+#: ui/mediaviewer/library/SoListBox.cpp:564
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:53
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
@@ -1230,7 +1230,7 @@ msgstr "Копировать жанр во все редактируемые д�
 
 #: ui/trackedit/TrackEdit.cpp:262 ui/filebrowser/FileRenamer.cpp:86
 #: ui/mediaviewer/library/SoListBox.cpp:63
-#: ui/mediaviewer/library/SoListBox.cpp:565
+#: ui/mediaviewer/library/SoListBox.cpp:552
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:743
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:51
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
@@ -1374,11 +1374,11 @@ msgstr ""
 msgid "Everything ok"
 msgstr "Все"
 
-#: ui/itemlistbox/ListView.cpp:1425
+#: ui/itemlistbox/ListView.cpp:1424
 msgid "Select Columns"
 msgstr "Выбор колонок"
 
-#: ui/itemlistbox/ListView.cpp:1437
+#: ui/itemlistbox/ListView.cpp:1436
 msgid "Columns"
 msgstr "Колонки"
 
@@ -1401,7 +1401,7 @@ msgstr "Шаблоны"
 #: ui/filebrowser/FileRenamer.cpp:86 ui/mediaviewer/library/LibPanel.cpp:374
 #: ui/mediaviewer/library/LibPanel.cpp:381
 #: ui/mediaviewer/library/SoListBox.cpp:61
-#: ui/mediaviewer/library/SoListBox.cpp:573
+#: ui/mediaviewer/library/SoListBox.cpp:560
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:742
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:49
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:129
@@ -1428,7 +1428,7 @@ msgstr "Просмотреть системные файлы"
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
-#: ui/mediaviewer/library/SoListBox.cpp:457
+#: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1669
 msgid "Add commands in preferences"
@@ -1438,7 +1438,7 @@ msgstr "Команды можно добавить в меню Параметр�
 #: ui/mediaviewer/library/DiBrowser.cpp:252
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
-#: ui/mediaviewer/library/SoListBox.cpp:460
+#: ui/mediaviewer/library/SoListBox.cpp:450
 #: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:275
 #: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1672
@@ -1462,7 +1462,7 @@ msgstr "Добавить выбранный каталог в плейлист"
 #: ui/mediaviewer/library/GeListBox.cpp:111
 #: ui/mediaviewer/library/AAListBox.cpp:165
 #: ui/mediaviewer/library/PcListBox.cpp:127
-#: ui/mediaviewer/library/SoListBox.cpp:534
+#: ui/mediaviewer/library/SoListBox.cpp:521
 #: ui/mediaviewer/library/RaListBox.cpp:159
 #: ui/mediaviewer/library/AlListBox.cpp:278
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:347
@@ -1486,7 +1486,7 @@ msgstr "текущей дорожки"
 #: ui/mediaviewer/library/GeListBox.cpp:112
 #: ui/mediaviewer/library/AAListBox.cpp:166
 #: ui/mediaviewer/library/PcListBox.cpp:128
-#: ui/mediaviewer/library/SoListBox.cpp:535
+#: ui/mediaviewer/library/SoListBox.cpp:522
 #: ui/mediaviewer/library/RaListBox.cpp:160
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:348
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1941
@@ -1510,7 +1510,7 @@ msgstr "Добавить выбранные дорожки в плейлист �
 #: ui/mediaviewer/library/GeListBox.cpp:118
 #: ui/mediaviewer/library/AAListBox.cpp:172
 #: ui/mediaviewer/library/PcListBox.cpp:134
-#: ui/mediaviewer/library/SoListBox.cpp:541
+#: ui/mediaviewer/library/SoListBox.cpp:528
 #: ui/mediaviewer/library/RaListBox.cpp:166
 #: ui/mediaviewer/library/AlListBox.cpp:284
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:353
@@ -1534,7 +1534,7 @@ msgstr "текущего альбома"
 #: ui/mediaviewer/library/GeListBox.cpp:119
 #: ui/mediaviewer/library/AAListBox.cpp:173
 #: ui/mediaviewer/library/PcListBox.cpp:135
-#: ui/mediaviewer/library/SoListBox.cpp:542
+#: ui/mediaviewer/library/SoListBox.cpp:529
 #: ui/mediaviewer/library/RaListBox.cpp:167
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:354
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1947
@@ -1558,7 +1558,7 @@ msgstr "Добавить выбранные дорожки в плейлист �
 #: ui/mediaviewer/library/GeListBox.cpp:125
 #: ui/mediaviewer/library/AAListBox.cpp:179
 #: ui/mediaviewer/library/PcListBox.cpp:141
-#: ui/mediaviewer/library/SoListBox.cpp:548
+#: ui/mediaviewer/library/SoListBox.cpp:535
 #: ui/mediaviewer/library/RaListBox.cpp:173
 #: ui/mediaviewer/library/AlListBox.cpp:290
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:359
@@ -1582,7 +1582,7 @@ msgstr "текущего исполнителя"
 #: ui/mediaviewer/library/GeListBox.cpp:126
 #: ui/mediaviewer/library/AAListBox.cpp:180
 #: ui/mediaviewer/library/PcListBox.cpp:142
-#: ui/mediaviewer/library/SoListBox.cpp:549
+#: ui/mediaviewer/library/SoListBox.cpp:536
 #: ui/mediaviewer/library/RaListBox.cpp:174
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:360
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1953
@@ -1606,7 +1606,7 @@ msgstr "Добавить выбранные дорожки в плейлист �
 #: ui/mediaviewer/library/GeListBox.cpp:131
 #: ui/mediaviewer/library/AAListBox.cpp:185
 #: ui/mediaviewer/library/PcListBox.cpp:147
-#: ui/mediaviewer/library/SoListBox.cpp:554
+#: ui/mediaviewer/library/SoListBox.cpp:541
 #: ui/mediaviewer/library/RaListBox.cpp:179
 #: ui/mediaviewer/library/AlListBox.cpp:295
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:364
@@ -1804,32 +1804,32 @@ msgid "Skip to previous album track in current playlist"
 msgstr "Перейти к предыдущему альбому из плейлиста"
 
 #: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1465
-#: ui/mediaviewer/library/SoListBox.cpp:612 ui/player/PlayList.cpp:1716
+#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1716
 msgid "Set the rating to 0"
 msgstr "Установить рейтинг в 0"
 
 #: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1470
-#: ui/mediaviewer/library/SoListBox.cpp:617 ui/player/PlayList.cpp:1718
+#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1718
 msgid "Set the rating to 1"
 msgstr "Установить рейтинг в 1"
 
 #: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1475
-#: ui/mediaviewer/library/SoListBox.cpp:622 ui/player/PlayList.cpp:1720
+#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1720
 msgid "Set the rating to 2"
 msgstr "Установить рейтинг в 2"
 
 #: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1480
-#: ui/mediaviewer/library/SoListBox.cpp:627 ui/player/PlayList.cpp:1722
+#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1722
 msgid "Set the rating to 3"
 msgstr "Установить рейтинг в 3"
 
 #: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1485
-#: ui/mediaviewer/library/SoListBox.cpp:632 ui/player/PlayList.cpp:1724
+#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1724
 msgid "Set the rating to 4"
 msgstr "Установить рейтинг в 4"
 
 #: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1490
-#: ui/mediaviewer/library/SoListBox.cpp:637 ui/player/PlayList.cpp:1726
+#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1726
 msgid "Set the rating to 5"
 msgstr "Установить рейтинг в 5"
 
@@ -2123,7 +2123,7 @@ msgstr "Остановить после текущей или выделенно
 msgid "Clear the now playing playlist"
 msgstr "Очистить текущий плейлист"
 
-#: ui/MainFrame.cpp:1493 ui/mediaviewer/library/SoListBox.cpp:640
+#: ui/MainFrame.cpp:1493 ui/mediaviewer/library/SoListBox.cpp:626
 #: ui/player/PlayList.cpp:1729
 msgid "Set Rating"
 msgstr "Установить рейтинг"
@@ -2283,7 +2283,7 @@ msgstr "Добавить выбранные дорожки в плейлист"
 #: ui/mediaviewer/library/ArListBox.cpp:203
 #: ui/mediaviewer/library/AAListBox.cpp:194
 #: ui/mediaviewer/library/PcListBox.cpp:156
-#: ui/mediaviewer/library/SoListBox.cpp:599
+#: ui/mediaviewer/library/SoListBox.cpp:586
 #: ui/mediaviewer/library/RaListBox.cpp:188
 #: ui/mediaviewer/library/AlListBox.cpp:308
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
@@ -2397,7 +2397,7 @@ msgstr "Редактировать метаданные выбранных ис�
 
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
-#: ui/mediaviewer/library/SoListBox.cpp:655
+#: ui/mediaviewer/library/SoListBox.cpp:641
 #: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1789
 #, fuzzy
 msgid "Create Best of Playlist"
@@ -2405,7 +2405,7 @@ msgstr "Интеллектуальный плейлист из дорожки"
 
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
-#: ui/mediaviewer/library/SoListBox.cpp:655
+#: ui/mediaviewer/library/SoListBox.cpp:641
 #: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1789
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
@@ -2485,116 +2485,116 @@ msgstr "Путь"
 msgid "Offset"
 msgstr "Сдвиг"
 
-#: ui/mediaviewer/library/SoListBox.cpp:266 ui/podcasts/PodcastsPanel.cpp:1967
+#: ui/mediaviewer/library/SoListBox.cpp:294 ui/podcasts/PodcastsPanel.cpp:1967
 msgid "Never"
 msgstr "Никогда"
 
-#: ui/mediaviewer/library/SoListBox.cpp:487
+#: ui/mediaviewer/library/SoListBox.cpp:475
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:283
 #: ui/mediaviewer/treeview/TreePanel.cpp:364
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:614
 msgid "Edit"
 msgstr "Правка"
 
-#: ui/mediaviewer/library/SoListBox.cpp:490
+#: ui/mediaviewer/library/SoListBox.cpp:478
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:617
 msgid "Edit the clicked column for the selected tracks"
 msgstr "Редактирование столбцов для выбранных дорожек"
 
-#: ui/mediaviewer/library/SoListBox.cpp:496
+#: ui/mediaviewer/library/SoListBox.cpp:484
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:623
 msgid "Set"
 msgstr "Установить"
 
-#: ui/mediaviewer/library/SoListBox.cpp:498
+#: ui/mediaviewer/library/SoListBox.cpp:486
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2557
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:625
 msgid "to"
 msgstr "в"
 
-#: ui/mediaviewer/library/SoListBox.cpp:503
+#: ui/mediaviewer/library/SoListBox.cpp:491
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:630
 msgid "Set the clicked column for the selected tracks"
 msgstr "Установка столбцов для выбранных дорожек"
 
-#: ui/mediaviewer/library/SoListBox.cpp:519
+#: ui/mediaviewer/library/SoListBox.cpp:506
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:225
 #: ui/mediaviewer/treeview/TreePanel.cpp:381 ui/radios/RadioPanel.cpp:405
 #: ui/podcasts/PodcastsPanel.cpp:2040
 msgid "Play current selected songs"
 msgstr "Воспроизвести выбранные песни"
 
-#: ui/mediaviewer/library/SoListBox.cpp:526
+#: ui/mediaviewer/library/SoListBox.cpp:513
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:231
 #: ui/mediaviewer/treeview/TreePanel.cpp:387
 msgid "Add current selected songs to the playlist"
 msgstr "Добавить выбранные песни в плейлист"
 
-#: ui/mediaviewer/library/SoListBox.cpp:566
+#: ui/mediaviewer/library/SoListBox.cpp:553
 msgid "Selects the genre of the current song"
 msgstr "Выбор жанра текущей песни"
 
-#: ui/mediaviewer/library/SoListBox.cpp:570 ui/player/PlayList.cpp:1747
+#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1747
 msgid "Selects the artist of the current song"
 msgstr "Выбор исполнителя текущей песни"
 
-#: ui/mediaviewer/library/SoListBox.cpp:574
+#: ui/mediaviewer/library/SoListBox.cpp:561
 msgid "Selects the album artist of the current song"
 msgstr "Выбор автора альбома текущей песни"
 
-#: ui/mediaviewer/library/SoListBox.cpp:578
+#: ui/mediaviewer/library/SoListBox.cpp:565
 msgid "Selects the composer of the current song"
 msgstr "Выбор композитора текущей песни"
 
-#: ui/mediaviewer/library/SoListBox.cpp:582 ui/player/PlayList.cpp:1756
+#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1756
 msgid "Select the album of the current song"
 msgstr "Выбор альбома текущей песни"
 
-#: ui/mediaviewer/library/SoListBox.cpp:585 ui/player/PlayList.cpp:1765
+#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1765
 msgid "Search in the library"
 msgstr "Поиск в фонотеке"
 
-#: ui/mediaviewer/library/SoListBox.cpp:592
+#: ui/mediaviewer/library/SoListBox.cpp:579
 msgid "Edit the labels assigned to the selected songs"
 msgstr "Редактирование меток, назначенных выбранным песням"
 
-#: ui/mediaviewer/library/SoListBox.cpp:600
+#: ui/mediaviewer/library/SoListBox.cpp:587
 msgid "Edit the songs selected"
 msgstr "Редактировать метаданные выбранных песен"
 
-#: ui/mediaviewer/library/SoListBox.cpp:640 ui/player/PlayList.cpp:1729
+#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1729
 msgid "Set the current selected tracks rating"
 msgstr "Установить рейтинг для выбранной дорожки"
 
-#: ui/mediaviewer/library/SoListBox.cpp:647
+#: ui/mediaviewer/library/SoListBox.cpp:633
 msgid "Save all selected tracks as a playlist"
 msgstr "Сохранить все выбранные дорожки как плейлист"
 
-#: ui/mediaviewer/library/SoListBox.cpp:653
+#: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
 #: ui/player/PlayList.cpp:1787
 msgid "Create Smart Playlist"
 msgstr "Интеллектуальный плейлист из дорожки"
 
-#: ui/mediaviewer/library/SoListBox.cpp:653
+#: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
 #: ui/player/PlayList.cpp:1787
 msgid "Create a smart playlist from this track"
 msgstr "Создать интеллектуальный плейлист из дорожки"
 
-#: ui/mediaviewer/library/SoListBox.cpp:663 ui/player/PlayList.cpp:1817
+#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1817
 msgid "Remove from Library"
 msgstr "Удалить из фонотеки"
 
-#: ui/mediaviewer/library/SoListBox.cpp:663
+#: ui/mediaviewer/library/SoListBox.cpp:649
 msgid "Remove the current selected tracks from library"
 msgstr "Удалить выбранные дорожки из фонотеки"
 
-#: ui/mediaviewer/library/SoListBox.cpp:668 ui/player/PlayList.cpp:1823
+#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1823
 msgid "Delete from Drive"
 msgstr "Удалить с диска"
 
-#: ui/mediaviewer/library/SoListBox.cpp:668
+#: ui/mediaviewer/library/SoListBox.cpp:654
 msgid "Remove the current selected tracks from drive"
 msgstr "Удалить выбранные дорожки с диска"
 
