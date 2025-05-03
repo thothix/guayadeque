@@ -175,10 +175,17 @@ void guGenericDirCtrl::OnBeginRenameDir( wxTreeEvent &event )
 // -------------------------------------------------------------------------------- //
 void guGenericDirCtrl::OnEndRenameDir( wxTreeEvent &event )
 {
-    OnEndEditItem( event );
+    OnEndEditItem(event);
     wxTreeCtrl * TreeCtrl = GetTreeCtrl();
-    TreeCtrl->SelectItem( m_RenameItemId );
-    m_FileBrowserDirCtrl->RenameDir( m_RenameName, GetPath() );
+    TreeCtrl->SelectItem(m_RenameItemId);
+
+    bool is_expanded = TreeCtrl->IsExpanded(m_RenameItemId);
+    TreeCtrl->Collapse(m_RenameItemId);
+
+    m_FileBrowserDirCtrl->RenameDir(m_RenameName, GetPath());
+
+    if (is_expanded)
+        TreeCtrl->Expand(m_RenameItemId);
 }
 
 // -------------------------------------------------------------------------------- //

@@ -4,7 +4,7 @@ Guayadeque Music Player
 Changelog
 =========
 
-Unreleased (2025-04-XX)
+0.7.1 (2025-05-XX)
 ------------------
 
 ### Features
@@ -18,8 +18,10 @@ Unreleased (2025-04-XX)
     hit enter in the text controls).
 
 ### Bugfixes
-  * Fixed the "Paste" option in the File Browser directories to paste the directory instead
-    only the directory content.
+  * Fixed the "Paste" context menu option, in the File Browser directory tree, to paste the 
+    directory instead only the directory content.
+  * Fixed the "Rename" context menu option, in the File Browser directory tree, not refreshing
+    the modified item tree.
 
 0.7.0 (2025-02-22)
 ------------------
