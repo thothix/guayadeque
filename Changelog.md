@@ -7,10 +7,19 @@ Changelog
 Unreleased (2025-04-XX)
 ------------------
 
+### Features
+  * Added a "Move to" feature in the File Browser directories:
+    * The new "Move to" context menu option (for directories only) moves a previous copied
+      directory to the selected target directory and updates the library as well.
+
 ### Enhancements
   * Adjusted the Podcast Editor dialog size.
   * Added a Find Cover button in the Cover Editor to repeat the cover searching (same as
     hit enter in the text controls).
+
+### Bugfixes
+  * Fixed the "Paste" option in the File Browser directories to paste the directory instead
+    only the directory content.
 
 0.7.0 (2025-02-22)
 ------------------
