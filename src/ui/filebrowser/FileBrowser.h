@@ -130,7 +130,8 @@ class guFileBrowserDirCtrl : public wxPanel
     void                SetPath( const wxString &path, guMediaViewer * mediaviewer );
     void                SetMediaViewer( guMediaViewer * mediaviewer );
 
-    void                RenamedDir( const wxString &oldname, const wxString &newname );
+    void                MoveDir( const wxString &oldname, const wxString &newname );
+    void                RenameDir( const wxString &oldname, const wxString &newname );
     void                FolderRename() { m_DirCtrl->FolderRename(); }
     void                FolderNew();
     void                FolderDelete();
@@ -259,6 +260,7 @@ class guFileBrowser : public guAuiManagerPanel
     void                    OnFolderDelete( wxCommandEvent &event );
     void                    OnFolderCopy( wxCommandEvent &event );
     void                    OnFolderPaste( wxCommandEvent &event );
+    void                    OnFolderMove( wxCommandEvent &event );
     void                    OnFolderEditTracks( wxCommandEvent &event );
     void                    OnFolderSaveToPlayList( wxCommandEvent &event );
     void                    OnFolderUpdate( wxCommandEvent &event );
