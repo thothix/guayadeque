@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-23 17:18-0300\n"
+"POT-Creation-Date: 2025-05-03 16:02-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Moo, 2017-2018,2020,2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/anonbeat/guayadeque/"
@@ -53,12 +53,12 @@ msgid "Edit Labels"
 msgstr "Taisyti etiketes"
 
 #: misc/Accelerators.cpp:115 ui/filebrowser/FileBrowser.cpp:372
-#: ui/filebrowser/FileBrowser.cpp:1005 ui/mediaviewer/library/DiBrowser.cpp:304
+#: ui/filebrowser/FileBrowser.cpp:1034 ui/mediaviewer/library/DiBrowser.cpp:304
 msgid "Edit Tracks"
 msgstr "Taisyti takelius"
 
 #: misc/Accelerators.cpp:116 ui/filebrowser/FileBrowser.cpp:343
-#: ui/filebrowser/FileBrowser.cpp:969 ui/mediaviewer/library/DiBrowser.cpp:270
+#: ui/filebrowser/FileBrowser.cpp:998 ui/mediaviewer/library/DiBrowser.cpp:270
 #: ui/mediaviewer/library/YeListBox.cpp:111
 #: ui/mediaviewer/library/CoListBox.cpp:111
 #: ui/mediaviewer/library/ArListBox.cpp:159
@@ -108,7 +108,7 @@ msgid "Help"
 msgstr "Žinynas"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:337
-#: ui/filebrowser/FileBrowser.cpp:963 ui/taskbar/TaskBar.cpp:114
+#: ui/filebrowser/FileBrowser.cpp:992 ui/taskbar/TaskBar.cpp:114
 #: ui/MainFrame.cpp:1441 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
@@ -146,7 +146,7 @@ msgid "Play Stream"
 msgstr ""
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:322
-#: ui/filebrowser/FileBrowser.cpp:948 ui/MainFrame.cpp:1399
+#: ui/filebrowser/FileBrowser.cpp:977 ui/MainFrame.cpp:1399
 #: ui/MainFrame.cpp:4215 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -191,7 +191,7 @@ msgid "Save Layout"
 msgstr "Įrašyti išdėstymą"
 
 #: misc/Accelerators.cpp:142 ui/filebrowser/FileBrowser.cpp:379
-#: ui/filebrowser/FileBrowser.cpp:1013 ui/mediaviewer/library/DiBrowser.cpp:312
+#: ui/filebrowser/FileBrowser.cpp:1042 ui/mediaviewer/library/DiBrowser.cpp:312
 #: ui/mediaviewer/library/YeListBox.cpp:158
 #: ui/mediaviewer/library/CoListBox.cpp:158
 #: ui/mediaviewer/library/ArListBox.cpp:212
@@ -306,7 +306,7 @@ msgstr "Atnaujinti viršelius"
 
 #: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
 #: ui/locationpanel/LocationPanel.cpp:363
-#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:410
+#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:419
 #: ui/MainFrame.cpp:979 ui/MainFrame.cpp:1017 ui/MainFrame.cpp:1250
 #: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
@@ -460,7 +460,7 @@ msgid "Do you want to continue with the program?"
 msgstr ""
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:548 ui/filebrowser/FileBrowser.cpp:1985
+#: ui/filebrowser/FileBrowser.cpp:577 ui/filebrowser/FileBrowser.cpp:2082
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -612,8 +612,8 @@ msgstr "Kopijuoti į iškarpinę"
 msgid "Copy the content of the lyric to clipboard"
 msgstr "Kopijuoti dainos žodžių turinį į iškarpinę"
 
-#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:393
-#: ui/filebrowser/FileBrowser.cpp:1025
+#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:405
+#: ui/filebrowser/FileBrowser.cpp:1054
 msgid "Paste"
 msgstr "Įdėti"
 
@@ -647,7 +647,7 @@ msgid "Lyrics Source Editor"
 msgstr ""
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:749 ui/mediaviewer/library/AlListBox.cpp:319
+#: ui/filebrowser/FileBrowser.cpp:778 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -867,8 +867,8 @@ msgstr "Atverti muzikos kolekciją"
 msgid "View the collection library"
 msgstr "Rodyti kolekcijos biblioteką"
 
-#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1366
-#: ui/filebrowser/FileBrowser.cpp:1382 ui/MainFrame.cpp:1157
+#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1395
+#: ui/filebrowser/FileBrowser.cpp:1411 ui/MainFrame.cpp:1157
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
@@ -1375,7 +1375,7 @@ msgstr ""
 msgid "Columns"
 msgstr "Stulpeliai"
 
-#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1042
+#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1071
 msgid "Rename Files"
 msgstr "Pervadinti failus"
 
@@ -1409,15 +1409,15 @@ msgstr "Albumo atlikėjas"
 msgid "or"
 msgstr "arba"
 
-#: ui/filebrowser/FileBrowser.cpp:224 ui/filebrowser/FileBrowser.cpp:581
+#: ui/filebrowser/FileBrowser.cpp:224 ui/filebrowser/FileBrowser.cpp:610
 msgid "See used locations"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:225 ui/filebrowser/FileBrowser.cpp:582
+#: ui/filebrowser/FileBrowser.cpp:225 ui/filebrowser/FileBrowser.cpp:611
 msgid "See system files"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:322 ui/filebrowser/FileBrowser.cpp:948
+#: ui/filebrowser/FileBrowser.cpp:322 ui/filebrowser/FileBrowser.cpp:977
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -1427,7 +1427,7 @@ msgstr ""
 msgid "Add commands in preferences"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:325 ui/filebrowser/FileBrowser.cpp:951
+#: ui/filebrowser/FileBrowser.cpp:325 ui/filebrowser/FileBrowser.cpp:980
 #: ui/mediaviewer/library/DiBrowser.cpp:252
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
@@ -1446,7 +1446,7 @@ msgstr ""
 msgid "Add the selected folder to playlist"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:351 ui/filebrowser/FileBrowser.cpp:977
+#: ui/filebrowser/FileBrowser.cpp:351 ui/filebrowser/FileBrowser.cpp:1006
 #: ui/mediaviewer/library/DiBrowser.cpp:279
 #: ui/mediaviewer/library/YeListBox.cpp:120
 #: ui/mediaviewer/library/CoListBox.cpp:120
@@ -1471,7 +1471,7 @@ msgstr ""
 msgid "Current Track"
 msgstr "Dabartinis takelis"
 
-#: ui/filebrowser/FileBrowser.cpp:352 ui/filebrowser/FileBrowser.cpp:978
+#: ui/filebrowser/FileBrowser.cpp:352 ui/filebrowser/FileBrowser.cpp:1007
 #: ui/mediaviewer/library/DiBrowser.cpp:281
 #: ui/mediaviewer/library/YeListBox.cpp:121
 #: ui/mediaviewer/library/ArListBox.cpp:169
@@ -1495,7 +1495,7 @@ msgid "Add current selected tracks to playlist after the current track"
 msgstr ""
 "Pridėti šiuo metu pažymėtus takelius į grojaraštį po dabartinio takelio"
 
-#: ui/filebrowser/FileBrowser.cpp:357 ui/filebrowser/FileBrowser.cpp:984
+#: ui/filebrowser/FileBrowser.cpp:357 ui/filebrowser/FileBrowser.cpp:1013
 #: ui/mediaviewer/library/DiBrowser.cpp:286
 #: ui/mediaviewer/library/YeListBox.cpp:127
 #: ui/mediaviewer/library/CoListBox.cpp:127
@@ -1520,7 +1520,7 @@ msgstr ""
 msgid "Current Album"
 msgstr "Dabartinis albumas"
 
-#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:985
+#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1014
 #: ui/mediaviewer/library/DiBrowser.cpp:288
 #: ui/mediaviewer/library/YeListBox.cpp:128
 #: ui/mediaviewer/library/ArListBox.cpp:176
@@ -1543,7 +1543,7 @@ msgstr "Dabartinis albumas"
 msgid "Add current selected tracks to playlist after the current album"
 msgstr "Pridėti šiuo metu pažymėtus takelius į grojaraštį po dabartinio albumo"
 
-#: ui/filebrowser/FileBrowser.cpp:363 ui/filebrowser/FileBrowser.cpp:991
+#: ui/filebrowser/FileBrowser.cpp:363 ui/filebrowser/FileBrowser.cpp:1020
 #: ui/mediaviewer/library/DiBrowser.cpp:293
 #: ui/mediaviewer/library/YeListBox.cpp:134
 #: ui/mediaviewer/library/CoListBox.cpp:134
@@ -1568,7 +1568,7 @@ msgstr "Pridėti šiuo metu pažymėtus takelius į grojaraštį po dabartinio a
 msgid "Current Artist"
 msgstr "Dabartinis atlikėjas"
 
-#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:992
+#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1021
 #: ui/mediaviewer/library/DiBrowser.cpp:295
 #: ui/mediaviewer/library/YeListBox.cpp:135
 #: ui/mediaviewer/library/ArListBox.cpp:183
@@ -1592,7 +1592,7 @@ msgid "Add current selected tracks to playlist after the current artist"
 msgstr ""
 "Pridėti šiuo metu pažymėtus takelius į grojaraštį po dabartinio atlikėjo"
 
-#: ui/filebrowser/FileBrowser.cpp:368 ui/filebrowser/FileBrowser.cpp:997
+#: ui/filebrowser/FileBrowser.cpp:368 ui/filebrowser/FileBrowser.cpp:1026
 #: ui/mediaviewer/library/DiBrowser.cpp:299
 #: ui/mediaviewer/library/YeListBox.cpp:140
 #: ui/mediaviewer/library/CoListBox.cpp:140
@@ -1625,101 +1625,110 @@ msgstr ""
 msgid "Add the tracks in the selected folder to a playlist"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:386 ui/filebrowser/FileBrowser.cpp:1021
+#: ui/filebrowser/FileBrowser.cpp:386 ui/filebrowser/FileBrowser.cpp:1050
 #: ui/mediaviewer/library/DiBrowser.cpp:320
 msgid "Copy"
 msgstr "Kopijuoti"
 
-#: ui/filebrowser/FileBrowser.cpp:387 ui/filebrowser/FileBrowser.cpp:1021
+#: ui/filebrowser/FileBrowser.cpp:387 ui/filebrowser/FileBrowser.cpp:1050
 #: ui/mediaviewer/library/DiBrowser.cpp:321
 msgid "Copy the selected folder to clipboard"
 msgstr "Kopijuoti pažymėtą aplanką į iškarpinę"
 
-#: ui/filebrowser/FileBrowser.cpp:394
+#: ui/filebrowser/FileBrowser.cpp:406
 msgid "Paste to the selected folder"
 msgstr "Įdėti į pažymėtą aplanką"
 
-#: ui/filebrowser/FileBrowser.cpp:411 ui/mediaviewer/library/DiBrowser.cpp:328
+#: ui/filebrowser/FileBrowser.cpp:411
+msgid "Move here"
+msgstr ""
+
+#: ui/filebrowser/FileBrowser.cpp:412
+#, fuzzy
+msgid "Move to the selected folder"
+msgstr "Įdėti į pažymėtą aplanką"
+
+#: ui/filebrowser/FileBrowser.cpp:420 ui/mediaviewer/library/DiBrowser.cpp:328
 msgid "Update the selected folder"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:417 ui/filebrowser/FileBrowser.cpp:472
-#: ui/filebrowser/FileBrowser.cpp:476
+#: ui/filebrowser/FileBrowser.cpp:426 ui/filebrowser/FileBrowser.cpp:501
+#: ui/filebrowser/FileBrowser.cpp:505
 msgid "New Folder"
 msgstr "Naujas aplankas"
 
-#: ui/filebrowser/FileBrowser.cpp:417
+#: ui/filebrowser/FileBrowser.cpp:426
 msgid "Create a new folder"
 msgstr "Sukurti naują aplanką"
 
-#: ui/filebrowser/FileBrowser.cpp:420 ui/mediaviewer/library/TaListBox.cpp:112
+#: ui/filebrowser/FileBrowser.cpp:429 ui/mediaviewer/library/TaListBox.cpp:112
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:292
 msgid "Rename"
 msgstr "Pervadinti"
 
-#: ui/filebrowser/FileBrowser.cpp:420
+#: ui/filebrowser/FileBrowser.cpp:429
 msgid "Rename the selected folder"
 msgstr "Pervadinti pažymėtą aplanką"
 
-#: ui/filebrowser/FileBrowser.cpp:424 ui/filebrowser/FileBrowser.cpp:1046
+#: ui/filebrowser/FileBrowser.cpp:433 ui/filebrowser/FileBrowser.cpp:1075
 msgid "Remove"
 msgstr "Šalinti"
 
-#: ui/filebrowser/FileBrowser.cpp:424
+#: ui/filebrowser/FileBrowser.cpp:433
 msgid "Remove the selected folder"
 msgstr "Šalinti pažymėtą aplanką"
 
-#: ui/filebrowser/FileBrowser.cpp:547
+#: ui/filebrowser/FileBrowser.cpp:576
 msgid "Are you sure to delete the selected path ?"
 msgstr "Ar tikrai norite ištrinti pažymėtą kelią ?"
 
-#: ui/filebrowser/FileBrowser.cpp:558
+#: ui/filebrowser/FileBrowser.cpp:587
 msgid "Error deleting the folder"
 msgstr "Klaida, ištrinant aplanką"
 
-#: ui/filebrowser/FileBrowser.cpp:559 ui/mediaviewer/MediaViewer.cpp:1415
+#: ui/filebrowser/FileBrowser.cpp:588 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
 msgid "Error"
 msgstr "Klaida"
 
-#: ui/filebrowser/FileBrowser.cpp:750
+#: ui/filebrowser/FileBrowser.cpp:779
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
 msgstr "Dydis"
 
-#: ui/filebrowser/FileBrowser.cpp:751
+#: ui/filebrowser/FileBrowser.cpp:780
 msgid "Modified"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:964
+#: ui/filebrowser/FileBrowser.cpp:993
 msgid "Play current selected files"
 msgstr "Groti šiuo metu pažymėtus failus"
 
-#: ui/filebrowser/FileBrowser.cpp:970
+#: ui/filebrowser/FileBrowser.cpp:999
 msgid "Add current selected files to playlist"
 msgstr "Pridėti šiuo metu pažymėtus failus į grojaraštį"
 
-#: ui/filebrowser/FileBrowser.cpp:1006
+#: ui/filebrowser/FileBrowser.cpp:1035
 msgid "Edit the current selected files"
 msgstr "Taisyti šiuo metu pažymėtus failus"
 
-#: ui/filebrowser/FileBrowser.cpp:1014
+#: ui/filebrowser/FileBrowser.cpp:1043
 msgid "Add the current selected tracks to a playlist"
 msgstr "Pridėti šiuo metu pažymėtus takelius į grojaraštį"
 
-#: ui/filebrowser/FileBrowser.cpp:1025
+#: ui/filebrowser/FileBrowser.cpp:1054
 msgid "Paste to the selected dir"
 msgstr "Įdėti į pažymėtą katalogą"
 
-#: ui/filebrowser/FileBrowser.cpp:1042
+#: ui/filebrowser/FileBrowser.cpp:1071
 msgid "Rename the current selected file"
 msgstr "Pervadinti šiuo metu pažymėtą failą"
 
-#: ui/filebrowser/FileBrowser.cpp:1046
+#: ui/filebrowser/FileBrowser.cpp:1075
 msgid "Delete the selected files"
 msgstr "Ištrinti pažymėtus failus"
 
-#: ui/filebrowser/FileBrowser.cpp:1754 ui/filebrowser/FileBrowser.cpp:1886
+#: ui/filebrowser/FileBrowser.cpp:1851 ui/filebrowser/FileBrowser.cpp:1983
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1729,15 +1738,15 @@ msgstr "Ištrinti pažymėtus failus"
 msgid "UnNamed"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:1984
+#: ui/filebrowser/FileBrowser.cpp:2081
 msgid "Are you sure to delete the selected files ?"
 msgstr "Ar tikrai norite ištrinti pažymėtus failus ?"
 
-#: ui/filebrowser/FileBrowser.cpp:2001
+#: ui/filebrowser/FileBrowser.cpp:2098
 msgid "There was an error deleting"
 msgstr "Ištrinant, įvyko klaida"
 
-#: ui/filebrowser/FileBrowser.cpp:2002
+#: ui/filebrowser/FileBrowser.cpp:2099
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1745,7 +1754,7 @@ msgstr ""
 "\n"
 "Tęsti ištrynimą?"
 
-#: ui/filebrowser/FileBrowser.cpp:2003
+#: ui/filebrowser/FileBrowser.cpp:2100
 msgid "Continue"
 msgstr "Tęsti"
 
