@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 16:46-0300\n"
+"POT-Creation-Date: 2025-05-11 17:07-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2017-2018,2020,2022\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/anonbeat/"
@@ -1728,7 +1728,7 @@ msgstr "Nama semula fail semasa yang dipilih"
 msgid "Delete the selected files"
 msgstr "Padam fail terpilih"
 
-#: ui/filebrowser/FileBrowser.cpp:1864 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507

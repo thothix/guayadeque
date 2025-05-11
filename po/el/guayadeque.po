@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 16:46-0300\n"
+"POT-Creation-Date: 2025-05-11 17:07-0300\n"
 "PO-Revision-Date: 2024-12-05 13:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -1732,7 +1732,7 @@ msgstr "Μετονομασία του επιλεγμένου αρχείου"
 msgid "Delete the selected files"
 msgstr "Διαγραφή των επιλεγμένων αρχείων"
 
-#: ui/filebrowser/FileBrowser.cpp:1864 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
