@@ -396,29 +396,19 @@ void guFileBrowserDirCtrl::OnContextMenu( wxTreeEvent &event )
     //MenuItem->Enable(false);
     Menu.Append( MenuItem );
 
-    bool has_clipboard_data = false;
-    wxTheClipboard->UsePrimarySelection(false);
-    if (wxTheClipboard->Open())
-    {
-        if (wxTheClipboard->IsSupported(wxDF_FILENAME))
-        {
-            wxFileDataObject data;
-            has_clipboard_data = wxTheClipboard->GetData(data);
-        }
-        wxTheClipboard->Close();
-    }
+    bool has_clipboard_data = CheckClipboardForValidFile();
 
     MenuItem = new wxMenuItem( &Menu, ID_FILESYSTEM_FOLDER_PASTE,
                             _( "Paste" ),
                             _( "Paste to the selected folder" ) );
-    MenuItem->Enable(has_clipboard_data);
     Menu.Append( MenuItem );
+    MenuItem->Enable(has_clipboard_data);
 
     MenuItem = new wxMenuItem( &Menu, ID_FILESYSTEM_FOLDER_MOVE,
                             _( "Move here" ),
                             _( "Move to the selected folder" ) );
-    MenuItem->Enable(has_clipboard_data);
     Menu.Append( MenuItem );
+    MenuItem->Enable(has_clipboard_data);
 
     if( m_DirCtrl->GetShowPaths() & guFILEBROWSER_SHOWPATH_LOCATIONS )
     {
@@ -645,6 +635,39 @@ void guFileBrowserDirCtrl::SetMediaViewer( guMediaViewer * mediaviewer )
     m_MediaViewer = mediaviewer;
     m_Db = mediaviewer ? mediaviewer->GetDb() : NULL;
 }
+
+// -------------------------------------------------------------------------------- //
+bool guFileBrowserDirCtrl::CheckClipboardForValidFile() const
+{
+    bool has_clipboard_data = false;
+
+    wxTheClipboard->UsePrimarySelection( false );
+    if (wxTheClipboard->Open())
+    {
+        if (wxTheClipboard->IsSupported(wxDF_FILENAME))
+        {
+            wxFileDataObject data;
+            if (wxTheClipboard->GetData(data))
+            {
+                const wxString curPath = GetPathRemoveTrailSep(m_DirCtrl->GetPath());
+                const wxArrayString sourceFiles = data.GetFilenames();
+                wxString sourceDir;
+
+                int count = sourceFiles.Count();
+                for (int index = 0; index < count; index++)
+                {
+                    sourceDir = GetPathRemoveTrailSep(sourceFiles[index]);
+                    has_clipboard_data = (wxDirExists(sourceDir) && (curPath != sourceDir));
+                    if (has_clipboard_data)
+                        break;
+                }
+            }
+        }
+        wxTheClipboard->Close();
+    }
+    return has_clipboard_data;
+}
+
 
 // -------------------------------------------------------------------------------- //
 // guFilesListBox
@@ -1060,6 +1083,7 @@ void guFilesListBox::CreateContextMenu( wxMenu * Menu ) const
 
     MenuItem = new wxMenuItem( Menu, ID_FILESYSTEM_ITEMS_PASTE, _( "Paste" ), _( "Paste to the selected dir" ) );
     Menu->Append( MenuItem );
+
     wxTheClipboard->UsePrimarySelection( false );
     if( wxTheClipboard->Open() )
     {

@@ -121,6 +121,8 @@ class guFileBrowserDirCtrl : public wxPanel
     void                CreateAcceleratorTable();
     static void         AppendFolderCommands( wxMenu * menu );
 
+    bool                CheckClipboardForValidFile() const;
+
   public :
     guFileBrowserDirCtrl( wxWindow * parent, guMainFrame * mainframe, guDbLibrary * db, const wxString &dirpath );
     ~guFileBrowserDirCtrl() override;
