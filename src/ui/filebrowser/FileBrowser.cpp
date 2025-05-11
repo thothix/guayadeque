@@ -1814,27 +1814,27 @@ void guFileBrowser::OnFolderEditTracks( wxCommandEvent &event )
     wxArrayString Lyrics;
     wxArrayInt ChangedFlags;
 
-    m_FilesCtrl->GetAllSongs( &Tracks );
+    m_FilesCtrl->GetAllSongs(&Tracks);
 
-    if( Tracks.Count() )
+    if (!Tracks.Count())
+        return;
+
+    guTrackEditor *TrackEditor = new guTrackEditor(this, m_Db ? m_Db : m_DefaultDb, &Tracks, &Images, &Lyrics, &ChangedFlags);
+
+    if (TrackEditor)
     {
-        guTrackEditor * TrackEditor = new guTrackEditor( this, m_Db ? m_Db : m_DefaultDb, &Tracks, &Images, &Lyrics, &ChangedFlags );
-
-        if( TrackEditor )
+        if (TrackEditor->ShowModal() == wxID_OK)
         {
-            if( TrackEditor->ShowModal() == wxID_OK )
-            {
-                guUpdateTracks( Tracks, Images, Lyrics, ChangedFlags );
-                (m_Db ? m_Db : m_DefaultDb)->UpdateSongs(&Tracks, ChangedFlags);
-                //guUpdateLyrics( Tracks, Lyrics, ChangedFlags );
-                //guUpdateImages( Tracks, Images, ChangedFlags );
+            guUpdateTracks(Tracks, Images, Lyrics, ChangedFlags);
+            (m_Db ? m_Db : m_DefaultDb)->UpdateSongs(&Tracks, ChangedFlags);
+            //guUpdateLyrics(Tracks, Lyrics, ChangedFlags);
+            //guUpdateImages(Tracks, Images, ChangedFlags);
 
-                // Update the track in database, playlist, etc
-                m_MainFrame->UpdatedTracks( guUPDATED_TRACKS_PLAYER_PLAYLIST, &Tracks );
-            }
-            guImagePtrArrayClean( &Images );
-            TrackEditor->Destroy();
+            // Update the track in database, playlist, etc
+            m_MainFrame->UpdatedTracks(guUPDATED_TRACKS_PLAYER_PLAYLIST, &Tracks);
         }
+        guImagePtrArrayClean(&Images);
+        TrackEditor->Destroy();
     }
 }
 
@@ -1843,45 +1843,45 @@ void guFileBrowser::OnFolderSaveToPlayList( wxCommandEvent &event )
 {
     guTrackArray Tracks;
 
-    m_FilesCtrl->GetAllSongs( &Tracks );
+    m_FilesCtrl->GetAllSongs(&Tracks);
     wxArrayInt TrackIds;
     int Count = Tracks.Count();
-    for( int Index = 0; Index < Count; Index++ )
-        TrackIds.Add( Tracks[ Index ].m_SongId );
+    for (int Index = 0; Index < Count; Index++)
+        TrackIds.Add(Tracks[Index].m_SongId);
 
-    if( m_Db && TrackIds.Count() )
+    if (!m_Db || !TrackIds.Count())
+        return;
+
+    guListItems PlayLists;
+    m_Db->GetPlayLists(&PlayLists,guPLAYLIST_TYPE_STATIC);
+    guPlayListAppend *PlayListAppendDlg = new guPlayListAppend(m_MainFrame, m_Db, &TrackIds, &PlayLists);
+    if (PlayListAppendDlg->ShowModal() == wxID_OK)
     {
-        guListItems PlayLists;
-        m_Db->GetPlayLists( &PlayLists,guPLAYLIST_TYPE_STATIC );
-        guPlayListAppend * PlayListAppendDlg = new guPlayListAppend( m_MainFrame, m_Db, &TrackIds, &PlayLists );
-        if( PlayListAppendDlg->ShowModal() == wxID_OK )
+        int Selected = PlayListAppendDlg->GetSelectedPlayList();
+        if (Selected == -1)
         {
-            int Selected = PlayListAppendDlg->GetSelectedPlayList();
-            if( Selected == -1 )
-            {
-                wxString PLName = PlayListAppendDlg->GetPlaylistName();
-                if( PLName.IsEmpty() )
-                    PLName = _( "UnNamed" );
+            wxString PLName = PlayListAppendDlg->GetPlaylistName();
+            if (PLName.IsEmpty())
+                PLName = _("UnNamed");
 
-                m_Db->CreateStaticPlayList( PLName, TrackIds );
+            m_Db->CreateStaticPlayList(PLName, TrackIds);
+        }
+        else
+        {
+            int PLId = PlayLists[Selected].m_Id;
+            wxArrayInt OldSongs;
+            m_Db->GetPlayListSongIds(PLId, &OldSongs);
+            if (PlayListAppendDlg->GetSelectedPosition() == 0)
+            {
+                m_Db->UpdateStaticPlayList(PLId, TrackIds);
+                m_Db->AppendStaticPlayList(PLId, OldSongs);
             }
             else
-            {
-                int PLId = PlayLists[ Selected ].m_Id;
-                wxArrayInt OldSongs;
-                m_Db->GetPlayListSongIds( PLId, &OldSongs );
-                if( PlayListAppendDlg->GetSelectedPosition() == 0 ) // BEGIN
-                {
-                    m_Db->UpdateStaticPlayList( PLId, TrackIds );
-                    m_Db->AppendStaticPlayList( PLId, OldSongs );
-                }
-                else                                                // END
-                    m_Db->AppendStaticPlayList( PLId, TrackIds );
-            }
-            m_MediaViewer->UpdatePlaylists();
+                m_Db->AppendStaticPlayList(PLId, TrackIds);
         }
-        PlayListAppendDlg->Destroy();
+        m_MediaViewer->UpdatePlaylists();
     }
+    PlayListAppendDlg->Destroy();
 }
 
 // -------------------------------------------------------------------------------- //

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 16:50-0300\n"
+"POT-Creation-Date: 2025-05-11 17:11-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1721,7 +1721,7 @@ msgstr ""
 msgid "Delete the selected files"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:1864 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507

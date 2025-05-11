@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 16:46-0300\n"
+"POT-Creation-Date: 2025-05-11 17:07-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Piotr Strębski <strebski@gmail.com>, 2017,2022\n"
 "Language-Team: Polish (http://www.transifex.com/anonbeat/guayadeque/language/"
@@ -1735,7 +1735,7 @@ msgstr "Zmień nazwę wybranego pliku"
 msgid "Delete the selected files"
 msgstr "Usuń wybrane pliki"
 
-#: ui/filebrowser/FileBrowser.cpp:1864 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 16:46-0300\n"
+"POT-Creation-Date: 2025-05-11 17:07-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/"
@@ -1732,7 +1732,7 @@ msgstr "選択したファイルの名前を変える"
 msgid "Delete the selected files"
 msgstr "選択したファイルを削除"
 
-#: ui/filebrowser/FileBrowser.cpp:1864 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507

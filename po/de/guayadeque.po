@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 16:46-0300\n"
+"POT-Creation-Date: 2025-05-11 17:07-0300\n"
 "PO-Revision-Date: 2024-12-05 14:31+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
@@ -1733,7 +1733,7 @@ msgstr "Aktuell ausgewählte Datei umbenennen"
 msgid "Delete the selected files"
 msgstr "Ausgewählte Dateien löschen"
 
-#: ui/filebrowser/FileBrowser.cpp:1864 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
