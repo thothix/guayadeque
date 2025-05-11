@@ -1646,7 +1646,7 @@ msgstr "In dem ausgewählten Ordner einfügen"
 
 #: ui/filebrowser/FileBrowser.cpp:418
 msgid "Move here"
-msgstr ""
+msgstr "Hierhin verschieben"
 
 #: ui/filebrowser/FileBrowser.cpp:419
 #, fuzzy

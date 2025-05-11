@@ -1646,7 +1646,7 @@ msgstr "Вставить в выбранный каталог"
 
 #: ui/filebrowser/FileBrowser.cpp:418
 msgid "Move here"
-msgstr ""
+msgstr "Переместить сюда"
 
 #: ui/filebrowser/FileBrowser.cpp:419
 #, fuzzy
