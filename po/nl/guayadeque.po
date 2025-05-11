@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 15:23-0300\n"
+"POT-Creation-Date: 2025-05-11 16:46-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: Adriaan Callaerts <adriaan.callaerts@gmail.com>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/projects/p/"
@@ -52,12 +52,12 @@ msgid "Edit Labels"
 msgstr "Labels bewerken"
 
 #: misc/Accelerators.cpp:115 ui/filebrowser/FileBrowser.cpp:379
-#: ui/filebrowser/FileBrowser.cpp:1064 ui/mediaviewer/library/DiBrowser.cpp:304
+#: ui/filebrowser/FileBrowser.cpp:1049 ui/mediaviewer/library/DiBrowser.cpp:304
 msgid "Edit Tracks"
 msgstr "Nummers Bewerken"
 
 #: misc/Accelerators.cpp:116 ui/filebrowser/FileBrowser.cpp:350
-#: ui/filebrowser/FileBrowser.cpp:1028 ui/mediaviewer/library/DiBrowser.cpp:270
+#: ui/filebrowser/FileBrowser.cpp:1013 ui/mediaviewer/library/DiBrowser.cpp:270
 #: ui/mediaviewer/library/YeListBox.cpp:111
 #: ui/mediaviewer/library/CoListBox.cpp:111
 #: ui/mediaviewer/library/ArListBox.cpp:159
@@ -107,7 +107,7 @@ msgid "Help"
 msgstr "Help"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:344
-#: ui/filebrowser/FileBrowser.cpp:1022 ui/taskbar/TaskBar.cpp:114
+#: ui/filebrowser/FileBrowser.cpp:1007 ui/taskbar/TaskBar.cpp:114
 #: ui/MainFrame.cpp:1441 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
@@ -145,7 +145,7 @@ msgid "Play Stream"
 msgstr "Stream Afspelen"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:329
-#: ui/filebrowser/FileBrowser.cpp:1007 ui/MainFrame.cpp:1399
+#: ui/filebrowser/FileBrowser.cpp:992 ui/MainFrame.cpp:1399
 #: ui/MainFrame.cpp:4215 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -190,7 +190,7 @@ msgid "Save Layout"
 msgstr "Sla layout op"
 
 #: misc/Accelerators.cpp:142 ui/filebrowser/FileBrowser.cpp:386
-#: ui/filebrowser/FileBrowser.cpp:1072 ui/mediaviewer/library/DiBrowser.cpp:312
+#: ui/filebrowser/FileBrowser.cpp:1057 ui/mediaviewer/library/DiBrowser.cpp:312
 #: ui/mediaviewer/library/YeListBox.cpp:158
 #: ui/mediaviewer/library/CoListBox.cpp:158
 #: ui/mediaviewer/library/ArListBox.cpp:212
@@ -305,7 +305,7 @@ msgstr "Ververs albumhoezen"
 
 #: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
 #: ui/locationpanel/LocationPanel.cpp:363
-#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:416
+#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:415
 #: ui/MainFrame.cpp:979 ui/MainFrame.cpp:1017 ui/MainFrame.cpp:1250
 #: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
@@ -459,7 +459,7 @@ msgid "Do you want to continue with the program?"
 msgstr ""
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:574 ui/filebrowser/FileBrowser.cpp:2113
+#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2089
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -611,8 +611,8 @@ msgstr "Kopieer naar klembord"
 msgid "Copy the content of the lyric to clipboard"
 msgstr "De inhoud van de lyric naar het klembord kopiëren"
 
-#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:402
-#: ui/filebrowser/FileBrowser.cpp:1084
+#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:401
+#: ui/filebrowser/FileBrowser.cpp:1069
 msgid "Paste"
 msgstr "Plakken"
 
@@ -646,7 +646,7 @@ msgid "Lyrics Source Editor"
 msgstr "Bronnen"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:808 ui/mediaviewer/library/AlListBox.cpp:319
+#: ui/filebrowser/FileBrowser.cpp:793 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -867,8 +867,8 @@ msgstr "Open de muziekverzameling"
 msgid "View the collection library"
 msgstr "Bekijk de verzameling in een overzicht"
 
-#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1426
-#: ui/filebrowser/FileBrowser.cpp:1442 ui/MainFrame.cpp:1157
+#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1411
+#: ui/filebrowser/FileBrowser.cpp:1427 ui/MainFrame.cpp:1157
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
@@ -1381,7 +1381,7 @@ msgstr "Kolommen Selecteren"
 msgid "Columns"
 msgstr "Kolommen"
 
-#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1102
+#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1087
 msgid "Rename Files"
 msgstr "Hernoem Bestanden"
 
@@ -1415,15 +1415,15 @@ msgstr "Album Artiest"
 msgid "or"
 msgstr "en"
 
-#: ui/filebrowser/FileBrowser.cpp:231 ui/filebrowser/FileBrowser.cpp:607
+#: ui/filebrowser/FileBrowser.cpp:231 ui/filebrowser/FileBrowser.cpp:593
 msgid "See used locations"
 msgstr "Bekijk gebruikte locaties"
 
-#: ui/filebrowser/FileBrowser.cpp:232 ui/filebrowser/FileBrowser.cpp:608
+#: ui/filebrowser/FileBrowser.cpp:232 ui/filebrowser/FileBrowser.cpp:594
 msgid "See system files"
 msgstr "Bekijk systeembestanden"
 
-#: ui/filebrowser/FileBrowser.cpp:329 ui/filebrowser/FileBrowser.cpp:1007
+#: ui/filebrowser/FileBrowser.cpp:329 ui/filebrowser/FileBrowser.cpp:992
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -1433,7 +1433,7 @@ msgstr "Bekijk systeembestanden"
 msgid "Add commands in preferences"
 msgstr "Opdrachten toevoegen in voorkeuren"
 
-#: ui/filebrowser/FileBrowser.cpp:332 ui/filebrowser/FileBrowser.cpp:1010
+#: ui/filebrowser/FileBrowser.cpp:332 ui/filebrowser/FileBrowser.cpp:995
 #: ui/mediaviewer/library/DiBrowser.cpp:252
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
@@ -1452,7 +1452,7 @@ msgstr "Map afspelen"
 msgid "Add the selected folder to playlist"
 msgstr "Map toevoegen aan afspeellijst"
 
-#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1036
+#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1021
 #: ui/mediaviewer/library/DiBrowser.cpp:279
 #: ui/mediaviewer/library/YeListBox.cpp:120
 #: ui/mediaviewer/library/CoListBox.cpp:120
@@ -1477,7 +1477,7 @@ msgstr "Map toevoegen aan afspeellijst"
 msgid "Current Track"
 msgstr "Huidig nummer"
 
-#: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:1037
+#: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:1022
 #: ui/mediaviewer/library/DiBrowser.cpp:281
 #: ui/mediaviewer/library/YeListBox.cpp:121
 #: ui/mediaviewer/library/ArListBox.cpp:169
@@ -1501,7 +1501,7 @@ msgid "Add current selected tracks to playlist after the current track"
 msgstr ""
 "Voeg de geselecteerde nummers toe aan de afspeellijst na het huidig nummer"
 
-#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1043
+#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1028
 #: ui/mediaviewer/library/DiBrowser.cpp:286
 #: ui/mediaviewer/library/YeListBox.cpp:127
 #: ui/mediaviewer/library/CoListBox.cpp:127
@@ -1526,7 +1526,7 @@ msgstr ""
 msgid "Current Album"
 msgstr "Huidig album"
 
-#: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:1044
+#: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:1029
 #: ui/mediaviewer/library/DiBrowser.cpp:288
 #: ui/mediaviewer/library/YeListBox.cpp:128
 #: ui/mediaviewer/library/ArListBox.cpp:176
@@ -1550,7 +1550,7 @@ msgid "Add current selected tracks to playlist after the current album"
 msgstr ""
 "Voeg de geselecteerde nummers toe aan de afspeellijst na het huidige album"
 
-#: ui/filebrowser/FileBrowser.cpp:370 ui/filebrowser/FileBrowser.cpp:1050
+#: ui/filebrowser/FileBrowser.cpp:370 ui/filebrowser/FileBrowser.cpp:1035
 #: ui/mediaviewer/library/DiBrowser.cpp:293
 #: ui/mediaviewer/library/YeListBox.cpp:134
 #: ui/mediaviewer/library/CoListBox.cpp:134
@@ -1575,7 +1575,7 @@ msgstr ""
 msgid "Current Artist"
 msgstr "Huidige artiest"
 
-#: ui/filebrowser/FileBrowser.cpp:371 ui/filebrowser/FileBrowser.cpp:1051
+#: ui/filebrowser/FileBrowser.cpp:371 ui/filebrowser/FileBrowser.cpp:1036
 #: ui/mediaviewer/library/DiBrowser.cpp:295
 #: ui/mediaviewer/library/YeListBox.cpp:135
 #: ui/mediaviewer/library/ArListBox.cpp:183
@@ -1599,7 +1599,7 @@ msgid "Add current selected tracks to playlist after the current artist"
 msgstr ""
 "Voeg de geselecteerde nummers toe aan de afspeellijst na de huidige artiest"
 
-#: ui/filebrowser/FileBrowser.cpp:375 ui/filebrowser/FileBrowser.cpp:1056
+#: ui/filebrowser/FileBrowser.cpp:375 ui/filebrowser/FileBrowser.cpp:1041
 #: ui/mediaviewer/library/DiBrowser.cpp:299
 #: ui/mediaviewer/library/YeListBox.cpp:140
 #: ui/mediaviewer/library/CoListBox.cpp:140
@@ -1632,111 +1632,111 @@ msgstr "Nummers in map bewerken"
 msgid "Add the tracks in the selected folder to a playlist"
 msgstr "Nummers in map aan een afspeellijst toevoegen"
 
-#: ui/filebrowser/FileBrowser.cpp:393 ui/filebrowser/FileBrowser.cpp:1080
+#: ui/filebrowser/FileBrowser.cpp:393 ui/filebrowser/FileBrowser.cpp:1065
 #: ui/mediaviewer/library/DiBrowser.cpp:320
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: ui/filebrowser/FileBrowser.cpp:394 ui/filebrowser/FileBrowser.cpp:1080
+#: ui/filebrowser/FileBrowser.cpp:394 ui/filebrowser/FileBrowser.cpp:1065
 #: ui/mediaviewer/library/DiBrowser.cpp:321
 msgid "Copy the selected folder to clipboard"
 msgstr "Map kopiëren naar klembord"
 
-#: ui/filebrowser/FileBrowser.cpp:403
+#: ui/filebrowser/FileBrowser.cpp:402
 msgid "Paste to the selected folder"
 msgstr "Plakken in map"
 
-#: ui/filebrowser/FileBrowser.cpp:408
+#: ui/filebrowser/FileBrowser.cpp:407
 msgid "Move here"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:409
+#: ui/filebrowser/FileBrowser.cpp:408
 #, fuzzy
 msgid "Move to the selected folder"
 msgstr "Plakken in map"
 
-#: ui/filebrowser/FileBrowser.cpp:417 ui/mediaviewer/library/DiBrowser.cpp:328
+#: ui/filebrowser/FileBrowser.cpp:416 ui/mediaviewer/library/DiBrowser.cpp:328
 #, fuzzy
 msgid "Update the selected folder"
 msgstr "Plakken in map"
 
-#: ui/filebrowser/FileBrowser.cpp:423 ui/filebrowser/FileBrowser.cpp:498
-#: ui/filebrowser/FileBrowser.cpp:502
+#: ui/filebrowser/FileBrowser.cpp:422 ui/filebrowser/FileBrowser.cpp:490
+#: ui/filebrowser/FileBrowser.cpp:494
 msgid "New Folder"
 msgstr "Nieuwe Map"
 
-#: ui/filebrowser/FileBrowser.cpp:423
+#: ui/filebrowser/FileBrowser.cpp:422
 msgid "Create a new folder"
 msgstr "Nieuwe map aanmaken"
 
-#: ui/filebrowser/FileBrowser.cpp:426 ui/mediaviewer/library/TaListBox.cpp:112
+#: ui/filebrowser/FileBrowser.cpp:425 ui/mediaviewer/library/TaListBox.cpp:112
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:292
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: ui/filebrowser/FileBrowser.cpp:426
+#: ui/filebrowser/FileBrowser.cpp:425
 msgid "Rename the selected folder"
 msgstr "Map Hernoemen"
 
-#: ui/filebrowser/FileBrowser.cpp:430 ui/filebrowser/FileBrowser.cpp:1106
+#: ui/filebrowser/FileBrowser.cpp:429 ui/filebrowser/FileBrowser.cpp:1091
 msgid "Remove"
 msgstr "Wissen"
 
-#: ui/filebrowser/FileBrowser.cpp:430
+#: ui/filebrowser/FileBrowser.cpp:429
 msgid "Remove the selected folder"
 msgstr "Map wissen"
 
-#: ui/filebrowser/FileBrowser.cpp:573
+#: ui/filebrowser/FileBrowser.cpp:565
 msgid "Are you sure to delete the selected path ?"
 msgstr "Weet u zeker dat u het geselecteerde pad wil wissen?"
 
-#: ui/filebrowser/FileBrowser.cpp:584
+#: ui/filebrowser/FileBrowser.cpp:573
 msgid "Error deleting the folder"
 msgstr "Kon map niet wissen"
 
-#: ui/filebrowser/FileBrowser.cpp:585 ui/mediaviewer/MediaViewer.cpp:1415
+#: ui/filebrowser/FileBrowser.cpp:574 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
 msgid "Error"
 msgstr "Fout"
 
-#: ui/filebrowser/FileBrowser.cpp:809
+#: ui/filebrowser/FileBrowser.cpp:794
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
 msgstr "Grootte"
 
-#: ui/filebrowser/FileBrowser.cpp:810
+#: ui/filebrowser/FileBrowser.cpp:795
 msgid "Modified"
 msgstr "Gewijzigd"
 
-#: ui/filebrowser/FileBrowser.cpp:1023
+#: ui/filebrowser/FileBrowser.cpp:1008
 msgid "Play current selected files"
 msgstr "Speel geselecteerde bestanden af"
 
-#: ui/filebrowser/FileBrowser.cpp:1029
+#: ui/filebrowser/FileBrowser.cpp:1014
 msgid "Add current selected files to playlist"
 msgstr "Voeg geselecteerde bestanden toe aan afspeellijst"
 
-#: ui/filebrowser/FileBrowser.cpp:1065
+#: ui/filebrowser/FileBrowser.cpp:1050
 msgid "Edit the current selected files"
 msgstr "Bewerk geselecteerde bestanden"
 
-#: ui/filebrowser/FileBrowser.cpp:1073
+#: ui/filebrowser/FileBrowser.cpp:1058
 msgid "Add the current selected tracks to a playlist"
 msgstr "Voeg geselecteerde bestanden toe aan een afspeellisjt"
 
-#: ui/filebrowser/FileBrowser.cpp:1084
+#: ui/filebrowser/FileBrowser.cpp:1069
 msgid "Paste to the selected dir"
 msgstr "Plakken naar de geselecteerde map"
 
-#: ui/filebrowser/FileBrowser.cpp:1102
+#: ui/filebrowser/FileBrowser.cpp:1087
 msgid "Rename the current selected file"
 msgstr "Hernoem het geselecteerde bestand"
 
-#: ui/filebrowser/FileBrowser.cpp:1106
+#: ui/filebrowser/FileBrowser.cpp:1091
 msgid "Delete the selected files"
 msgstr "Verwijder de geselecteerde bestanden"
 
-#: ui/filebrowser/FileBrowser.cpp:1882 ui/filebrowser/FileBrowser.cpp:2014
+#: ui/filebrowser/FileBrowser.cpp:1864 ui/filebrowser/FileBrowser.cpp:1993
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1746,15 +1746,15 @@ msgstr "Verwijder de geselecteerde bestanden"
 msgid "UnNamed"
 msgstr "Onbenoemd"
 
-#: ui/filebrowser/FileBrowser.cpp:2112
+#: ui/filebrowser/FileBrowser.cpp:2088
 msgid "Are you sure to delete the selected files ?"
 msgstr "Weet u zeker dat u de geselecteerde bestanden wil verwijderen?"
 
-#: ui/filebrowser/FileBrowser.cpp:2129
+#: ui/filebrowser/FileBrowser.cpp:2105
 msgid "There was an error deleting"
 msgstr "Er is een fout opgetreden bij het verwijderen van"
 
-#: ui/filebrowser/FileBrowser.cpp:2130
+#: ui/filebrowser/FileBrowser.cpp:2106
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1762,7 +1762,7 @@ msgstr ""
 "\n"
 "Doorgaan met verwijderen?"
 
-#: ui/filebrowser/FileBrowser.cpp:2131
+#: ui/filebrowser/FileBrowser.cpp:2107
 msgid "Continue"
 msgstr "Ga verder"
 
