@@ -8,9 +8,9 @@ Changelog
 ------------------
 
 ### Features
-  * Added a "Move to" feature in the File Browser directories:
-    * The new "Move to" context menu option (for directories only) moves a previous copied
-      directory to the selected target directory and updates the library as well.
+  * Added a "Move here" feature in the File Browser directory tree:
+    * The new "Move here" context menu option (for directory tree only) moves a previous
+      copied directory to the selected target directory and updates the library as well.
 
 ### Enhancements
   * Adjusted the Podcast Editor dialog size.
@@ -18,10 +18,10 @@ Changelog
     hit enter in the text controls).
 
 ### Bugfixes
-  * Fixed the "Paste" context menu option, in the File Browser directory tree, to paste the 
-    directory instead only the directory content.
-  * Fixed the "Rename" context menu option, in the File Browser directory tree, not refreshing
-    the modified item tree.
+  * Fixed the "Paste" context menu option, in the File Browser directory tree, to paste
+    the directory instead only the directory content.
+  * Fixed the "Rename" context menu option, in the File Browser directory tree, that wasn't
+    refreshing the modified item tree.
 
 0.7.0 (2025-02-22)
 ------------------
@@ -35,13 +35,13 @@ Changelog
 ### Removed
   * Removed the no more functional Jamendo feature.
   * Removed the build option CXX11_RNG. The srand is now fully replaced by the
-    CXX11 random number generator.
+    C++11 random number generator.
 
 0.6.5 (2025-02-20)
 ------------------
 
 ### Enhancements
-  * Add CXX20 compiling compatibility.
+  * Add C++20 compiling compatibility.
   * Updated Croatian translations.
 
 ### Bugfixes
@@ -141,7 +141,7 @@ Changelog
   * Added collate accents on media search.
     The search function make use of Unicode Collation to match accented characters.
   * Preload the current track in the player at startup and some other situations.
-  * Added CXX11 random number generator support and set it as default.
+  * Added C++11 random number generator support and set it as default.
     There's a new build option CXX11_RNG for srand() compatibility but it'll be
     removed in the future.
   * Moved the player randomize button to the playlist toolbar and replaced the
@@ -206,7 +206,7 @@ Changelog
 ------------------
 
 ### Enhancements
-  * Updated playlist tracks layout.
+  * Updated tracks layout in the playlist.
   * Updated Apple deprecated code.
   * ChangeLog converted to Markdown and renamed properly.
   * Updated Portuguese and Brazilian Portuguese translations.
