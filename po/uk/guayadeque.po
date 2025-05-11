@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 16:02-0300\n"
+"POT-Creation-Date: 2025-05-03 19:50-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Ukrainian (Ukraine) (http://www.transifex.com/projects/p/"
@@ -52,13 +52,13 @@ msgstr "Форум спільноти"
 msgid "Edit Labels"
 msgstr "Редагувати мітки"
 
-#: misc/Accelerators.cpp:115 ui/filebrowser/FileBrowser.cpp:372
-#: ui/filebrowser/FileBrowser.cpp:1034 ui/mediaviewer/library/DiBrowser.cpp:304
+#: misc/Accelerators.cpp:115 ui/filebrowser/FileBrowser.cpp:379
+#: ui/filebrowser/FileBrowser.cpp:1041 ui/mediaviewer/library/DiBrowser.cpp:304
 msgid "Edit Tracks"
 msgstr "Редагувати метадані треків"
 
-#: misc/Accelerators.cpp:116 ui/filebrowser/FileBrowser.cpp:343
-#: ui/filebrowser/FileBrowser.cpp:998 ui/mediaviewer/library/DiBrowser.cpp:270
+#: misc/Accelerators.cpp:116 ui/filebrowser/FileBrowser.cpp:350
+#: ui/filebrowser/FileBrowser.cpp:1005 ui/mediaviewer/library/DiBrowser.cpp:270
 #: ui/mediaviewer/library/YeListBox.cpp:111
 #: ui/mediaviewer/library/CoListBox.cpp:111
 #: ui/mediaviewer/library/ArListBox.cpp:159
@@ -107,8 +107,8 @@ msgstr "Без перекриття/Плавно"
 msgid "Help"
 msgstr "Допомога"
 
-#: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:337
-#: ui/filebrowser/FileBrowser.cpp:992 ui/taskbar/TaskBar.cpp:114
+#: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:344
+#: ui/filebrowser/FileBrowser.cpp:999 ui/taskbar/TaskBar.cpp:114
 #: ui/MainFrame.cpp:1441 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
@@ -145,8 +145,8 @@ msgstr "Грати/Пауза"
 msgid "Play Stream"
 msgstr "Грати потік"
 
-#: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:322
-#: ui/filebrowser/FileBrowser.cpp:977 ui/MainFrame.cpp:1399
+#: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:329
+#: ui/filebrowser/FileBrowser.cpp:984 ui/MainFrame.cpp:1399
 #: ui/MainFrame.cpp:4215 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -190,8 +190,8 @@ msgstr "Повторювати Поточний Трек"
 msgid "Save Layout"
 msgstr "Зберегти схему"
 
-#: misc/Accelerators.cpp:142 ui/filebrowser/FileBrowser.cpp:379
-#: ui/filebrowser/FileBrowser.cpp:1042 ui/mediaviewer/library/DiBrowser.cpp:312
+#: misc/Accelerators.cpp:142 ui/filebrowser/FileBrowser.cpp:386
+#: ui/filebrowser/FileBrowser.cpp:1049 ui/mediaviewer/library/DiBrowser.cpp:312
 #: ui/mediaviewer/library/YeListBox.cpp:158
 #: ui/mediaviewer/library/CoListBox.cpp:158
 #: ui/mediaviewer/library/ArListBox.cpp:212
@@ -306,7 +306,7 @@ msgstr "Оновити обкладинки"
 
 #: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
 #: ui/locationpanel/LocationPanel.cpp:363
-#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:419
+#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:426
 #: ui/MainFrame.cpp:979 ui/MainFrame.cpp:1017 ui/MainFrame.cpp:1250
 #: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
@@ -460,7 +460,7 @@ msgid "Do you want to continue with the program?"
 msgstr ""
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:577 ui/filebrowser/FileBrowser.cpp:2082
+#: ui/filebrowser/FileBrowser.cpp:584 ui/filebrowser/FileBrowser.cpp:2089
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -612,8 +612,8 @@ msgstr "Скопіювати до буферу обміну"
 msgid "Copy the content of the lyric to clipboard"
 msgstr "Копіювати текст пісні до буферу"
 
-#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:405
-#: ui/filebrowser/FileBrowser.cpp:1054
+#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:412
+#: ui/filebrowser/FileBrowser.cpp:1061
 msgid "Paste"
 msgstr "Вставити"
 
@@ -647,7 +647,7 @@ msgid "Lyrics Source Editor"
 msgstr "Редактор джерела тексту пісні"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:778 ui/mediaviewer/library/AlListBox.cpp:319
+#: ui/filebrowser/FileBrowser.cpp:785 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -868,8 +868,8 @@ msgstr "Відкрити музичну колекцію"
 msgid "View the collection library"
 msgstr "Показати бібліотеку колекції"
 
-#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1395
-#: ui/filebrowser/FileBrowser.cpp:1411 ui/MainFrame.cpp:1157
+#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1402
+#: ui/filebrowser/FileBrowser.cpp:1418 ui/MainFrame.cpp:1157
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
@@ -1380,7 +1380,7 @@ msgstr "Вибрати стовпці"
 msgid "Columns"
 msgstr " Стовпці"
 
-#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1071
+#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1078
 msgid "Rename Files"
 msgstr "Перейменувати файли"
 
@@ -1414,15 +1414,15 @@ msgstr "Виконавець альбому"
 msgid "or"
 msgstr "або"
 
-#: ui/filebrowser/FileBrowser.cpp:224 ui/filebrowser/FileBrowser.cpp:610
+#: ui/filebrowser/FileBrowser.cpp:231 ui/filebrowser/FileBrowser.cpp:617
 msgid "See used locations"
 msgstr "Подивитись використані місця"
 
-#: ui/filebrowser/FileBrowser.cpp:225 ui/filebrowser/FileBrowser.cpp:611
+#: ui/filebrowser/FileBrowser.cpp:232 ui/filebrowser/FileBrowser.cpp:618
 msgid "See system files"
 msgstr "Подивитись системні файли"
 
-#: ui/filebrowser/FileBrowser.cpp:322 ui/filebrowser/FileBrowser.cpp:977
+#: ui/filebrowser/FileBrowser.cpp:329 ui/filebrowser/FileBrowser.cpp:984
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -1432,7 +1432,7 @@ msgstr "Подивитись системні файли"
 msgid "Add commands in preferences"
 msgstr "Додати команди до налаштувань"
 
-#: ui/filebrowser/FileBrowser.cpp:325 ui/filebrowser/FileBrowser.cpp:980
+#: ui/filebrowser/FileBrowser.cpp:332 ui/filebrowser/FileBrowser.cpp:987
 #: ui/mediaviewer/library/DiBrowser.cpp:252
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
@@ -1443,15 +1443,15 @@ msgstr "Додати команди до налаштувань"
 msgid "Commands"
 msgstr "Команди"
 
-#: ui/filebrowser/FileBrowser.cpp:338 ui/mediaviewer/library/DiBrowser.cpp:265
+#: ui/filebrowser/FileBrowser.cpp:345 ui/mediaviewer/library/DiBrowser.cpp:265
 msgid "Play the selected folder"
 msgstr "Грати вибрану папку"
 
-#: ui/filebrowser/FileBrowser.cpp:344 ui/mediaviewer/library/DiBrowser.cpp:271
+#: ui/filebrowser/FileBrowser.cpp:351 ui/mediaviewer/library/DiBrowser.cpp:271
 msgid "Add the selected folder to playlist"
 msgstr "Додати вибрану папку до списку програвання"
 
-#: ui/filebrowser/FileBrowser.cpp:351 ui/filebrowser/FileBrowser.cpp:1006
+#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1013
 #: ui/mediaviewer/library/DiBrowser.cpp:279
 #: ui/mediaviewer/library/YeListBox.cpp:120
 #: ui/mediaviewer/library/CoListBox.cpp:120
@@ -1476,7 +1476,7 @@ msgstr "Додати вибрану папку до списку програв�
 msgid "Current Track"
 msgstr "Поточний трек"
 
-#: ui/filebrowser/FileBrowser.cpp:352 ui/filebrowser/FileBrowser.cpp:1007
+#: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:1014
 #: ui/mediaviewer/library/DiBrowser.cpp:281
 #: ui/mediaviewer/library/YeListBox.cpp:121
 #: ui/mediaviewer/library/ArListBox.cpp:169
@@ -1499,7 +1499,7 @@ msgstr "Поточний трек"
 msgid "Add current selected tracks to playlist after the current track"
 msgstr "Додати вибрані треки до списку програвання після поточного треку"
 
-#: ui/filebrowser/FileBrowser.cpp:357 ui/filebrowser/FileBrowser.cpp:1013
+#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1020
 #: ui/mediaviewer/library/DiBrowser.cpp:286
 #: ui/mediaviewer/library/YeListBox.cpp:127
 #: ui/mediaviewer/library/CoListBox.cpp:127
@@ -1524,7 +1524,7 @@ msgstr "Додати вибрані треки до списку програв�
 msgid "Current Album"
 msgstr "Поточний альбом"
 
-#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1014
+#: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:1021
 #: ui/mediaviewer/library/DiBrowser.cpp:288
 #: ui/mediaviewer/library/YeListBox.cpp:128
 #: ui/mediaviewer/library/ArListBox.cpp:176
@@ -1547,7 +1547,7 @@ msgstr "Поточний альбом"
 msgid "Add current selected tracks to playlist after the current album"
 msgstr "Додати вибрані треки до списку програвання після поточного альбому"
 
-#: ui/filebrowser/FileBrowser.cpp:363 ui/filebrowser/FileBrowser.cpp:1020
+#: ui/filebrowser/FileBrowser.cpp:370 ui/filebrowser/FileBrowser.cpp:1027
 #: ui/mediaviewer/library/DiBrowser.cpp:293
 #: ui/mediaviewer/library/YeListBox.cpp:134
 #: ui/mediaviewer/library/CoListBox.cpp:134
@@ -1572,7 +1572,7 @@ msgstr "Додати вибрані треки до списку програв�
 msgid "Current Artist"
 msgstr "Поточний виконавець"
 
-#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1021
+#: ui/filebrowser/FileBrowser.cpp:371 ui/filebrowser/FileBrowser.cpp:1028
 #: ui/mediaviewer/library/DiBrowser.cpp:295
 #: ui/mediaviewer/library/YeListBox.cpp:135
 #: ui/mediaviewer/library/ArListBox.cpp:183
@@ -1595,7 +1595,7 @@ msgstr "Поточний виконавець"
 msgid "Add current selected tracks to playlist after the current artist"
 msgstr "Додати вибрані треки до списку програвання після поточного виконавця"
 
-#: ui/filebrowser/FileBrowser.cpp:368 ui/filebrowser/FileBrowser.cpp:1026
+#: ui/filebrowser/FileBrowser.cpp:375 ui/filebrowser/FileBrowser.cpp:1033
 #: ui/mediaviewer/library/DiBrowser.cpp:299
 #: ui/mediaviewer/library/YeListBox.cpp:140
 #: ui/mediaviewer/library/CoListBox.cpp:140
@@ -1620,119 +1620,119 @@ msgstr "Додати вибрані треки до списку програв�
 msgid "Enqueue After"
 msgstr "Додати в чергу після"
 
-#: ui/filebrowser/FileBrowser.cpp:373 ui/mediaviewer/library/DiBrowser.cpp:306
+#: ui/filebrowser/FileBrowser.cpp:380 ui/mediaviewer/library/DiBrowser.cpp:306
 msgid "Edit the tracks in the selected folder"
 msgstr "Редагувати метадані треків у вибраній папці"
 
-#: ui/filebrowser/FileBrowser.cpp:380 ui/mediaviewer/library/DiBrowser.cpp:314
+#: ui/filebrowser/FileBrowser.cpp:387 ui/mediaviewer/library/DiBrowser.cpp:314
 msgid "Add the tracks in the selected folder to a playlist"
 msgstr "Додати треки вибраної папки до списку програвання"
 
-#: ui/filebrowser/FileBrowser.cpp:386 ui/filebrowser/FileBrowser.cpp:1050
+#: ui/filebrowser/FileBrowser.cpp:393 ui/filebrowser/FileBrowser.cpp:1057
 #: ui/mediaviewer/library/DiBrowser.cpp:320
 msgid "Copy"
 msgstr "Копіювати"
 
-#: ui/filebrowser/FileBrowser.cpp:387 ui/filebrowser/FileBrowser.cpp:1050
+#: ui/filebrowser/FileBrowser.cpp:394 ui/filebrowser/FileBrowser.cpp:1057
 #: ui/mediaviewer/library/DiBrowser.cpp:321
 msgid "Copy the selected folder to clipboard"
 msgstr "Копіювати вибрану папку до буферу"
 
-#: ui/filebrowser/FileBrowser.cpp:406
+#: ui/filebrowser/FileBrowser.cpp:413
 msgid "Paste to the selected folder"
 msgstr "Вставити до вибраної папки"
 
-#: ui/filebrowser/FileBrowser.cpp:411
+#: ui/filebrowser/FileBrowser.cpp:418
 msgid "Move here"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:412
+#: ui/filebrowser/FileBrowser.cpp:419
 #, fuzzy
 msgid "Move to the selected folder"
 msgstr "Вставити до вибраної папки"
 
-#: ui/filebrowser/FileBrowser.cpp:420 ui/mediaviewer/library/DiBrowser.cpp:328
+#: ui/filebrowser/FileBrowser.cpp:427 ui/mediaviewer/library/DiBrowser.cpp:328
 #, fuzzy
 msgid "Update the selected folder"
 msgstr "Вставити до вибраної папки"
 
-#: ui/filebrowser/FileBrowser.cpp:426 ui/filebrowser/FileBrowser.cpp:501
-#: ui/filebrowser/FileBrowser.cpp:505
+#: ui/filebrowser/FileBrowser.cpp:433 ui/filebrowser/FileBrowser.cpp:508
+#: ui/filebrowser/FileBrowser.cpp:512
 msgid "New Folder"
 msgstr "Нова папка"
 
-#: ui/filebrowser/FileBrowser.cpp:426
+#: ui/filebrowser/FileBrowser.cpp:433
 msgid "Create a new folder"
 msgstr "Створити нову папку"
 
-#: ui/filebrowser/FileBrowser.cpp:429 ui/mediaviewer/library/TaListBox.cpp:112
+#: ui/filebrowser/FileBrowser.cpp:436 ui/mediaviewer/library/TaListBox.cpp:112
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:292
 msgid "Rename"
 msgstr "Перейменувати"
 
-#: ui/filebrowser/FileBrowser.cpp:429
+#: ui/filebrowser/FileBrowser.cpp:436
 msgid "Rename the selected folder"
 msgstr "Перейменувати вибрану папку"
 
-#: ui/filebrowser/FileBrowser.cpp:433 ui/filebrowser/FileBrowser.cpp:1075
+#: ui/filebrowser/FileBrowser.cpp:440 ui/filebrowser/FileBrowser.cpp:1082
 msgid "Remove"
 msgstr "Видалити"
 
-#: ui/filebrowser/FileBrowser.cpp:433
+#: ui/filebrowser/FileBrowser.cpp:440
 msgid "Remove the selected folder"
 msgstr "Видалити вибрану папку"
 
-#: ui/filebrowser/FileBrowser.cpp:576
+#: ui/filebrowser/FileBrowser.cpp:583
 msgid "Are you sure to delete the selected path ?"
 msgstr "Ви впевнені, що бажаєте видалити вибрану папку?"
 
-#: ui/filebrowser/FileBrowser.cpp:587
+#: ui/filebrowser/FileBrowser.cpp:594
 msgid "Error deleting the folder"
 msgstr "Помилка видалення папки"
 
-#: ui/filebrowser/FileBrowser.cpp:588 ui/mediaviewer/MediaViewer.cpp:1415
+#: ui/filebrowser/FileBrowser.cpp:595 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
 msgid "Error"
 msgstr "Помилка"
 
-#: ui/filebrowser/FileBrowser.cpp:779
+#: ui/filebrowser/FileBrowser.cpp:786
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
 msgstr "Розмір"
 
-#: ui/filebrowser/FileBrowser.cpp:780
+#: ui/filebrowser/FileBrowser.cpp:787
 msgid "Modified"
 msgstr "Змінено"
 
-#: ui/filebrowser/FileBrowser.cpp:993
+#: ui/filebrowser/FileBrowser.cpp:1000
 msgid "Play current selected files"
 msgstr "Грати вибрані файли"
 
-#: ui/filebrowser/FileBrowser.cpp:999
+#: ui/filebrowser/FileBrowser.cpp:1006
 msgid "Add current selected files to playlist"
 msgstr "Додати вибрані файли до списку програвання"
 
-#: ui/filebrowser/FileBrowser.cpp:1035
+#: ui/filebrowser/FileBrowser.cpp:1042
 msgid "Edit the current selected files"
 msgstr "Редагувати метадані вибраних файлів"
 
-#: ui/filebrowser/FileBrowser.cpp:1043
+#: ui/filebrowser/FileBrowser.cpp:1050
 msgid "Add the current selected tracks to a playlist"
 msgstr "Додати вибрані треки до списку програвання"
 
-#: ui/filebrowser/FileBrowser.cpp:1054
+#: ui/filebrowser/FileBrowser.cpp:1061
 msgid "Paste to the selected dir"
 msgstr "Вставити до вибраної папки"
 
-#: ui/filebrowser/FileBrowser.cpp:1071
+#: ui/filebrowser/FileBrowser.cpp:1078
 msgid "Rename the current selected file"
 msgstr "Перейменувати вибраний файл"
 
-#: ui/filebrowser/FileBrowser.cpp:1075
+#: ui/filebrowser/FileBrowser.cpp:1082
 msgid "Delete the selected files"
 msgstr "Видалити вибрані файли"
 
-#: ui/filebrowser/FileBrowser.cpp:1851 ui/filebrowser/FileBrowser.cpp:1983
+#: ui/filebrowser/FileBrowser.cpp:1858 ui/filebrowser/FileBrowser.cpp:1990
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1742,15 +1742,15 @@ msgstr "Видалити вибрані файли"
 msgid "UnNamed"
 msgstr "Без назви"
 
-#: ui/filebrowser/FileBrowser.cpp:2081
+#: ui/filebrowser/FileBrowser.cpp:2088
 msgid "Are you sure to delete the selected files ?"
 msgstr "Ви впевнені, що бажаєте видалити вибрані файли?"
 
-#: ui/filebrowser/FileBrowser.cpp:2098
+#: ui/filebrowser/FileBrowser.cpp:2105
 msgid "There was an error deleting"
 msgstr "Під час видалення сталася помилка"
 
-#: ui/filebrowser/FileBrowser.cpp:2099
+#: ui/filebrowser/FileBrowser.cpp:2106
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1758,7 +1758,7 @@ msgstr ""
 "\n"
 "Продовжити видалення?"
 
-#: ui/filebrowser/FileBrowser.cpp:2100
+#: ui/filebrowser/FileBrowser.cpp:2107
 msgid "Continue"
 msgstr "Продовжити"
 
