@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 19:50-0300\n"
+"POT-Creation-Date: 2025-05-11 15:23-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/"
@@ -52,12 +52,12 @@ msgid "Edit Labels"
 msgstr "Izmeni etiketu"
 
 #: misc/Accelerators.cpp:115 ui/filebrowser/FileBrowser.cpp:379
-#: ui/filebrowser/FileBrowser.cpp:1041 ui/mediaviewer/library/DiBrowser.cpp:304
+#: ui/filebrowser/FileBrowser.cpp:1064 ui/mediaviewer/library/DiBrowser.cpp:304
 msgid "Edit Tracks"
 msgstr "Izmeni numeru"
 
 #: misc/Accelerators.cpp:116 ui/filebrowser/FileBrowser.cpp:350
-#: ui/filebrowser/FileBrowser.cpp:1005 ui/mediaviewer/library/DiBrowser.cpp:270
+#: ui/filebrowser/FileBrowser.cpp:1028 ui/mediaviewer/library/DiBrowser.cpp:270
 #: ui/mediaviewer/library/YeListBox.cpp:111
 #: ui/mediaviewer/library/CoListBox.cpp:111
 #: ui/mediaviewer/library/ArListBox.cpp:159
@@ -107,7 +107,7 @@ msgid "Help"
 msgstr "Pomoć"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:344
-#: ui/filebrowser/FileBrowser.cpp:999 ui/taskbar/TaskBar.cpp:114
+#: ui/filebrowser/FileBrowser.cpp:1022 ui/taskbar/TaskBar.cpp:114
 #: ui/MainFrame.cpp:1441 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
@@ -145,7 +145,7 @@ msgid "Play Stream"
 msgstr "Pusti tok"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:329
-#: ui/filebrowser/FileBrowser.cpp:984 ui/MainFrame.cpp:1399
+#: ui/filebrowser/FileBrowser.cpp:1007 ui/MainFrame.cpp:1399
 #: ui/MainFrame.cpp:4215 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -190,7 +190,7 @@ msgid "Save Layout"
 msgstr "Sačuvaj raspored"
 
 #: misc/Accelerators.cpp:142 ui/filebrowser/FileBrowser.cpp:386
-#: ui/filebrowser/FileBrowser.cpp:1049 ui/mediaviewer/library/DiBrowser.cpp:312
+#: ui/filebrowser/FileBrowser.cpp:1072 ui/mediaviewer/library/DiBrowser.cpp:312
 #: ui/mediaviewer/library/YeListBox.cpp:158
 #: ui/mediaviewer/library/CoListBox.cpp:158
 #: ui/mediaviewer/library/ArListBox.cpp:212
@@ -305,7 +305,7 @@ msgstr "Ažuriraj omote"
 
 #: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
 #: ui/locationpanel/LocationPanel.cpp:363
-#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:426
+#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:416
 #: ui/MainFrame.cpp:979 ui/MainFrame.cpp:1017 ui/MainFrame.cpp:1250
 #: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
@@ -459,7 +459,7 @@ msgid "Do you want to continue with the program?"
 msgstr ""
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:584 ui/filebrowser/FileBrowser.cpp:2089
+#: ui/filebrowser/FileBrowser.cpp:574 ui/filebrowser/FileBrowser.cpp:2113
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -611,8 +611,8 @@ msgstr "Kopiraj u klipbord"
 msgid "Copy the content of the lyric to clipboard"
 msgstr "Kopiraj tekst pesme u klipbord"
 
-#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:412
-#: ui/filebrowser/FileBrowser.cpp:1061
+#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:402
+#: ui/filebrowser/FileBrowser.cpp:1084
 msgid "Paste"
 msgstr "Nalepi"
 
@@ -646,7 +646,7 @@ msgid "Lyrics Source Editor"
 msgstr "Uređivač izvora teksta"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:785 ui/mediaviewer/library/AlListBox.cpp:319
+#: ui/filebrowser/FileBrowser.cpp:808 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -867,8 +867,8 @@ msgstr "Otvori muzičku kolekciju"
 msgid "View the collection library"
 msgstr "Prikaži kolekciju biblioteke"
 
-#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1402
-#: ui/filebrowser/FileBrowser.cpp:1418 ui/MainFrame.cpp:1157
+#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1426
+#: ui/filebrowser/FileBrowser.cpp:1442 ui/MainFrame.cpp:1157
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
@@ -1379,7 +1379,7 @@ msgstr "Izabrane kolone"
 msgid "Columns"
 msgstr "Kolone"
 
-#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1078
+#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1102
 msgid "Rename Files"
 msgstr "Preimenuj fajlove"
 
@@ -1413,15 +1413,15 @@ msgstr "Umetnik albuma"
 msgid "or"
 msgstr "ili"
 
-#: ui/filebrowser/FileBrowser.cpp:231 ui/filebrowser/FileBrowser.cpp:617
+#: ui/filebrowser/FileBrowser.cpp:231 ui/filebrowser/FileBrowser.cpp:607
 msgid "See used locations"
 msgstr "Vidi korišćene lokacije"
 
-#: ui/filebrowser/FileBrowser.cpp:232 ui/filebrowser/FileBrowser.cpp:618
+#: ui/filebrowser/FileBrowser.cpp:232 ui/filebrowser/FileBrowser.cpp:608
 msgid "See system files"
 msgstr "Vidi sistemske fajlove"
 
-#: ui/filebrowser/FileBrowser.cpp:329 ui/filebrowser/FileBrowser.cpp:984
+#: ui/filebrowser/FileBrowser.cpp:329 ui/filebrowser/FileBrowser.cpp:1007
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -1431,7 +1431,7 @@ msgstr "Vidi sistemske fajlove"
 msgid "Add commands in preferences"
 msgstr "Dodaj komande u podešavanjima"
 
-#: ui/filebrowser/FileBrowser.cpp:332 ui/filebrowser/FileBrowser.cpp:987
+#: ui/filebrowser/FileBrowser.cpp:332 ui/filebrowser/FileBrowser.cpp:1010
 #: ui/mediaviewer/library/DiBrowser.cpp:252
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
@@ -1450,7 +1450,7 @@ msgstr "Pusti izabranu fasciklu"
 msgid "Add the selected folder to playlist"
 msgstr "Dodaj izabranu fasciklu u listu"
 
-#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1013
+#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1036
 #: ui/mediaviewer/library/DiBrowser.cpp:279
 #: ui/mediaviewer/library/YeListBox.cpp:120
 #: ui/mediaviewer/library/CoListBox.cpp:120
@@ -1475,7 +1475,7 @@ msgstr "Dodaj izabranu fasciklu u listu"
 msgid "Current Track"
 msgstr "Trenutne numere"
 
-#: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:1014
+#: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:1037
 #: ui/mediaviewer/library/DiBrowser.cpp:281
 #: ui/mediaviewer/library/YeListBox.cpp:121
 #: ui/mediaviewer/library/ArListBox.cpp:169
@@ -1498,7 +1498,7 @@ msgstr "Trenutne numere"
 msgid "Add current selected tracks to playlist after the current track"
 msgstr "Dodaj izabrane numere u listu nakon trenutne numere"
 
-#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1020
+#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1043
 #: ui/mediaviewer/library/DiBrowser.cpp:286
 #: ui/mediaviewer/library/YeListBox.cpp:127
 #: ui/mediaviewer/library/CoListBox.cpp:127
@@ -1523,7 +1523,7 @@ msgstr "Dodaj izabrane numere u listu nakon trenutne numere"
 msgid "Current Album"
 msgstr "Trenutnog albuma"
 
-#: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:1021
+#: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:1044
 #: ui/mediaviewer/library/DiBrowser.cpp:288
 #: ui/mediaviewer/library/YeListBox.cpp:128
 #: ui/mediaviewer/library/ArListBox.cpp:176
@@ -1546,7 +1546,7 @@ msgstr "Trenutnog albuma"
 msgid "Add current selected tracks to playlist after the current album"
 msgstr "Dodaj izabrane numere u listu posle trenutnog albuma"
 
-#: ui/filebrowser/FileBrowser.cpp:370 ui/filebrowser/FileBrowser.cpp:1027
+#: ui/filebrowser/FileBrowser.cpp:370 ui/filebrowser/FileBrowser.cpp:1050
 #: ui/mediaviewer/library/DiBrowser.cpp:293
 #: ui/mediaviewer/library/YeListBox.cpp:134
 #: ui/mediaviewer/library/CoListBox.cpp:134
@@ -1571,7 +1571,7 @@ msgstr "Dodaj izabrane numere u listu posle trenutnog albuma"
 msgid "Current Artist"
 msgstr "Trenutnog izvođača"
 
-#: ui/filebrowser/FileBrowser.cpp:371 ui/filebrowser/FileBrowser.cpp:1028
+#: ui/filebrowser/FileBrowser.cpp:371 ui/filebrowser/FileBrowser.cpp:1051
 #: ui/mediaviewer/library/DiBrowser.cpp:295
 #: ui/mediaviewer/library/YeListBox.cpp:135
 #: ui/mediaviewer/library/ArListBox.cpp:183
@@ -1594,7 +1594,7 @@ msgstr "Trenutnog izvođača"
 msgid "Add current selected tracks to playlist after the current artist"
 msgstr "Dodaj izabrane numere u listu nakon trenutnog izvođača"
 
-#: ui/filebrowser/FileBrowser.cpp:375 ui/filebrowser/FileBrowser.cpp:1033
+#: ui/filebrowser/FileBrowser.cpp:375 ui/filebrowser/FileBrowser.cpp:1056
 #: ui/mediaviewer/library/DiBrowser.cpp:299
 #: ui/mediaviewer/library/YeListBox.cpp:140
 #: ui/mediaviewer/library/CoListBox.cpp:140
@@ -1627,111 +1627,111 @@ msgstr "Izmeni numere u izabranoj fascikli"
 msgid "Add the tracks in the selected folder to a playlist"
 msgstr "Dodaj numere iz izabrane fascikle u listu"
 
-#: ui/filebrowser/FileBrowser.cpp:393 ui/filebrowser/FileBrowser.cpp:1057
+#: ui/filebrowser/FileBrowser.cpp:393 ui/filebrowser/FileBrowser.cpp:1080
 #: ui/mediaviewer/library/DiBrowser.cpp:320
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: ui/filebrowser/FileBrowser.cpp:394 ui/filebrowser/FileBrowser.cpp:1057
+#: ui/filebrowser/FileBrowser.cpp:394 ui/filebrowser/FileBrowser.cpp:1080
 #: ui/mediaviewer/library/DiBrowser.cpp:321
 msgid "Copy the selected folder to clipboard"
 msgstr "Kopiraj izabranu fasciklu u klipbord"
 
-#: ui/filebrowser/FileBrowser.cpp:413
+#: ui/filebrowser/FileBrowser.cpp:403
 msgid "Paste to the selected folder"
 msgstr "Nalepi u izabranu fasciklu"
 
-#: ui/filebrowser/FileBrowser.cpp:418
+#: ui/filebrowser/FileBrowser.cpp:408
 msgid "Move here"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:419
+#: ui/filebrowser/FileBrowser.cpp:409
 #, fuzzy
 msgid "Move to the selected folder"
 msgstr "Nalepi u izabranu fasciklu"
 
-#: ui/filebrowser/FileBrowser.cpp:427 ui/mediaviewer/library/DiBrowser.cpp:328
+#: ui/filebrowser/FileBrowser.cpp:417 ui/mediaviewer/library/DiBrowser.cpp:328
 #, fuzzy
 msgid "Update the selected folder"
 msgstr "Nalepi u izabranu fasciklu"
 
-#: ui/filebrowser/FileBrowser.cpp:433 ui/filebrowser/FileBrowser.cpp:508
-#: ui/filebrowser/FileBrowser.cpp:512
+#: ui/filebrowser/FileBrowser.cpp:423 ui/filebrowser/FileBrowser.cpp:498
+#: ui/filebrowser/FileBrowser.cpp:502
 msgid "New Folder"
 msgstr "Nova fascikla"
 
-#: ui/filebrowser/FileBrowser.cpp:433
+#: ui/filebrowser/FileBrowser.cpp:423
 msgid "Create a new folder"
 msgstr "Kreiraj novu fasciklu"
 
-#: ui/filebrowser/FileBrowser.cpp:436 ui/mediaviewer/library/TaListBox.cpp:112
+#: ui/filebrowser/FileBrowser.cpp:426 ui/mediaviewer/library/TaListBox.cpp:112
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:292
 msgid "Rename"
 msgstr "Preimenuj"
 
-#: ui/filebrowser/FileBrowser.cpp:436
+#: ui/filebrowser/FileBrowser.cpp:426
 msgid "Rename the selected folder"
 msgstr "Preimenuj izabranu fasciklu"
 
-#: ui/filebrowser/FileBrowser.cpp:440 ui/filebrowser/FileBrowser.cpp:1082
+#: ui/filebrowser/FileBrowser.cpp:430 ui/filebrowser/FileBrowser.cpp:1106
 msgid "Remove"
 msgstr "Ukloni"
 
-#: ui/filebrowser/FileBrowser.cpp:440
+#: ui/filebrowser/FileBrowser.cpp:430
 msgid "Remove the selected folder"
 msgstr "Ukloni izabranu fasciklu"
 
-#: ui/filebrowser/FileBrowser.cpp:583
+#: ui/filebrowser/FileBrowser.cpp:573
 msgid "Are you sure to delete the selected path ?"
 msgstr "Da li si siguran da želiš da ukloniš izabranu putanju?"
 
-#: ui/filebrowser/FileBrowser.cpp:594
+#: ui/filebrowser/FileBrowser.cpp:584
 msgid "Error deleting the folder"
 msgstr "Greška pri brisanju fascikle"
 
-#: ui/filebrowser/FileBrowser.cpp:595 ui/mediaviewer/MediaViewer.cpp:1415
+#: ui/filebrowser/FileBrowser.cpp:585 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
 msgid "Error"
 msgstr "Greška"
 
-#: ui/filebrowser/FileBrowser.cpp:786
+#: ui/filebrowser/FileBrowser.cpp:809
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
 msgstr "Veličina"
 
-#: ui/filebrowser/FileBrowser.cpp:787
+#: ui/filebrowser/FileBrowser.cpp:810
 msgid "Modified"
 msgstr "Menjano"
 
-#: ui/filebrowser/FileBrowser.cpp:1000
+#: ui/filebrowser/FileBrowser.cpp:1023
 msgid "Play current selected files"
 msgstr "Pusti izabrane fajlove"
 
-#: ui/filebrowser/FileBrowser.cpp:1006
+#: ui/filebrowser/FileBrowser.cpp:1029
 msgid "Add current selected files to playlist"
 msgstr "Dodaj izabrane fajlove u listu"
 
-#: ui/filebrowser/FileBrowser.cpp:1042
+#: ui/filebrowser/FileBrowser.cpp:1065
 msgid "Edit the current selected files"
 msgstr "Izmeni izabrane fajlove"
 
-#: ui/filebrowser/FileBrowser.cpp:1050
+#: ui/filebrowser/FileBrowser.cpp:1073
 msgid "Add the current selected tracks to a playlist"
 msgstr "Dodaj izabrane numere u listu"
 
-#: ui/filebrowser/FileBrowser.cpp:1061
+#: ui/filebrowser/FileBrowser.cpp:1084
 msgid "Paste to the selected dir"
 msgstr "Nalepi u izabranu fasciklu"
 
-#: ui/filebrowser/FileBrowser.cpp:1078
+#: ui/filebrowser/FileBrowser.cpp:1102
 msgid "Rename the current selected file"
 msgstr "Preimenuj izabrani fajl"
 
-#: ui/filebrowser/FileBrowser.cpp:1082
+#: ui/filebrowser/FileBrowser.cpp:1106
 msgid "Delete the selected files"
 msgstr "Obriši izabrani fajl"
 
-#: ui/filebrowser/FileBrowser.cpp:1858 ui/filebrowser/FileBrowser.cpp:1990
+#: ui/filebrowser/FileBrowser.cpp:1882 ui/filebrowser/FileBrowser.cpp:2014
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1741,15 +1741,15 @@ msgstr "Obriši izabrani fajl"
 msgid "UnNamed"
 msgstr "Neimenovano"
 
-#: ui/filebrowser/FileBrowser.cpp:2088
+#: ui/filebrowser/FileBrowser.cpp:2112
 msgid "Are you sure to delete the selected files ?"
 msgstr "Da li si siguran da želiš da izbrišeš izabrane fajlove?"
 
-#: ui/filebrowser/FileBrowser.cpp:2105
+#: ui/filebrowser/FileBrowser.cpp:2129
 msgid "There was an error deleting"
 msgstr "Došlo je do greške pri brisanju"
 
-#: ui/filebrowser/FileBrowser.cpp:2106
+#: ui/filebrowser/FileBrowser.cpp:2130
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1757,7 +1757,7 @@ msgstr ""
 "\n"
 "Nastavi sa brisanjem?"
 
-#: ui/filebrowser/FileBrowser.cpp:2107
+#: ui/filebrowser/FileBrowser.cpp:2131
 msgid "Continue"
 msgstr "Nastavi"
 
