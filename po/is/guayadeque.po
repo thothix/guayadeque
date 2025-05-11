@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 15:23-0300\n"
+"POT-Creation-Date: 2025-05-11 16:46-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Hreinn Jónsson <hreinnjons@gmail.com>, 2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/anonbeat/"
@@ -54,12 +54,12 @@ msgid "Edit Labels"
 msgstr "Breyta Merkjum"
 
 #: misc/Accelerators.cpp:115 ui/filebrowser/FileBrowser.cpp:379
-#: ui/filebrowser/FileBrowser.cpp:1064 ui/mediaviewer/library/DiBrowser.cpp:304
+#: ui/filebrowser/FileBrowser.cpp:1049 ui/mediaviewer/library/DiBrowser.cpp:304
 msgid "Edit Tracks"
 msgstr "Breyta Lögum"
 
 #: misc/Accelerators.cpp:116 ui/filebrowser/FileBrowser.cpp:350
-#: ui/filebrowser/FileBrowser.cpp:1028 ui/mediaviewer/library/DiBrowser.cpp:270
+#: ui/filebrowser/FileBrowser.cpp:1013 ui/mediaviewer/library/DiBrowser.cpp:270
 #: ui/mediaviewer/library/YeListBox.cpp:111
 #: ui/mediaviewer/library/CoListBox.cpp:111
 #: ui/mediaviewer/library/ArListBox.cpp:159
@@ -109,7 +109,7 @@ msgid "Help"
 msgstr "Hjálp"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:344
-#: ui/filebrowser/FileBrowser.cpp:1022 ui/taskbar/TaskBar.cpp:114
+#: ui/filebrowser/FileBrowser.cpp:1007 ui/taskbar/TaskBar.cpp:114
 #: ui/MainFrame.cpp:1441 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
@@ -147,7 +147,7 @@ msgid "Play Stream"
 msgstr "Spila Straum"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:329
-#: ui/filebrowser/FileBrowser.cpp:1007 ui/MainFrame.cpp:1399
+#: ui/filebrowser/FileBrowser.cpp:992 ui/MainFrame.cpp:1399
 #: ui/MainFrame.cpp:4215 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -192,7 +192,7 @@ msgid "Save Layout"
 msgstr "Vista útlit"
 
 #: misc/Accelerators.cpp:142 ui/filebrowser/FileBrowser.cpp:386
-#: ui/filebrowser/FileBrowser.cpp:1072 ui/mediaviewer/library/DiBrowser.cpp:312
+#: ui/filebrowser/FileBrowser.cpp:1057 ui/mediaviewer/library/DiBrowser.cpp:312
 #: ui/mediaviewer/library/YeListBox.cpp:158
 #: ui/mediaviewer/library/CoListBox.cpp:158
 #: ui/mediaviewer/library/ArListBox.cpp:212
@@ -307,7 +307,7 @@ msgstr "Uppfæra Plötualbúm"
 
 #: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
 #: ui/locationpanel/LocationPanel.cpp:363
-#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:416
+#: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:415
 #: ui/MainFrame.cpp:979 ui/MainFrame.cpp:1017 ui/MainFrame.cpp:1250
 #: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
@@ -461,7 +461,7 @@ msgid "Do you want to continue with the program?"
 msgstr "Villtu halda áfram í forriti?"
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:574 ui/filebrowser/FileBrowser.cpp:2113
+#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2089
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -613,8 +613,8 @@ msgstr "Afrita við Klippispjald"
 msgid "Copy the content of the lyric to clipboard"
 msgstr "Afrita innihald texta á klippispjald"
 
-#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:402
-#: ui/filebrowser/FileBrowser.cpp:1084
+#: ui/lyrics/LyricsPanel.cpp:292 ui/filebrowser/FileBrowser.cpp:401
+#: ui/filebrowser/FileBrowser.cpp:1069
 msgid "Paste"
 msgstr "Líma"
 
@@ -648,7 +648,7 @@ msgid "Lyrics Source Editor"
 msgstr "Breyta Textum"
 
 #: ui/lyrics/LyricsPanel.cpp:1993 ui/filebrowser/FileRenamer.cpp:68
-#: ui/filebrowser/FileBrowser.cpp:808 ui/mediaviewer/library/AlListBox.cpp:319
+#: ui/filebrowser/FileBrowser.cpp:793 ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:684
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
@@ -868,8 +868,8 @@ msgstr "Opna músik safn"
 msgid "View the collection library"
 msgstr "Skoða safn"
 
-#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1426
-#: ui/filebrowser/FileBrowser.cpp:1442 ui/MainFrame.cpp:1157
+#: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1411
+#: ui/filebrowser/FileBrowser.cpp:1427 ui/MainFrame.cpp:1157
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
@@ -1376,7 +1376,7 @@ msgstr "Velja Röð"
 msgid "Columns"
 msgstr "Raðir"
 
-#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1102
+#: ui/filebrowser/FileRenamer.cpp:48 ui/filebrowser/FileBrowser.cpp:1087
 msgid "Rename Files"
 msgstr "Endurnefna Skrár"
 
@@ -1410,15 +1410,15 @@ msgstr "Flytjandi Plata"
 msgid "or"
 msgstr "eða"
 
-#: ui/filebrowser/FileBrowser.cpp:231 ui/filebrowser/FileBrowser.cpp:607
+#: ui/filebrowser/FileBrowser.cpp:231 ui/filebrowser/FileBrowser.cpp:593
 msgid "See used locations"
 msgstr "Sjá notaða staði"
 
-#: ui/filebrowser/FileBrowser.cpp:232 ui/filebrowser/FileBrowser.cpp:608
+#: ui/filebrowser/FileBrowser.cpp:232 ui/filebrowser/FileBrowser.cpp:594
 msgid "See system files"
 msgstr "Sjá kerfisskrár"
 
-#: ui/filebrowser/FileBrowser.cpp:329 ui/filebrowser/FileBrowser.cpp:1007
+#: ui/filebrowser/FileBrowser.cpp:329 ui/filebrowser/FileBrowser.cpp:992
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
@@ -1428,7 +1428,7 @@ msgstr "Sjá kerfisskrár"
 msgid "Add commands in preferences"
 msgstr "Bæta skipunum við stillingar"
 
-#: ui/filebrowser/FileBrowser.cpp:332 ui/filebrowser/FileBrowser.cpp:1010
+#: ui/filebrowser/FileBrowser.cpp:332 ui/filebrowser/FileBrowser.cpp:995
 #: ui/mediaviewer/library/DiBrowser.cpp:252
 #: ui/mediaviewer/library/ArListBox.cpp:139
 #: ui/mediaviewer/library/AAListBox.cpp:136
@@ -1447,7 +1447,7 @@ msgstr "Spila valda möppu"
 msgid "Add the selected folder to playlist"
 msgstr "Bæta valdri möppu við lagalista"
 
-#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1036
+#: ui/filebrowser/FileBrowser.cpp:358 ui/filebrowser/FileBrowser.cpp:1021
 #: ui/mediaviewer/library/DiBrowser.cpp:279
 #: ui/mediaviewer/library/YeListBox.cpp:120
 #: ui/mediaviewer/library/CoListBox.cpp:120
@@ -1472,7 +1472,7 @@ msgstr "Bæta valdri möppu við lagalista"
 msgid "Current Track"
 msgstr "Núverandi Lag"
 
-#: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:1037
+#: ui/filebrowser/FileBrowser.cpp:359 ui/filebrowser/FileBrowser.cpp:1022
 #: ui/mediaviewer/library/DiBrowser.cpp:281
 #: ui/mediaviewer/library/YeListBox.cpp:121
 #: ui/mediaviewer/library/ArListBox.cpp:169
@@ -1495,7 +1495,7 @@ msgstr "Núverandi Lag"
 msgid "Add current selected tracks to playlist after the current track"
 msgstr "Bæta völdum lögum við lagalista eftir núverandi lag"
 
-#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1043
+#: ui/filebrowser/FileBrowser.cpp:364 ui/filebrowser/FileBrowser.cpp:1028
 #: ui/mediaviewer/library/DiBrowser.cpp:286
 #: ui/mediaviewer/library/YeListBox.cpp:127
 #: ui/mediaviewer/library/CoListBox.cpp:127
@@ -1520,7 +1520,7 @@ msgstr "Bæta völdum lögum við lagalista eftir núverandi lag"
 msgid "Current Album"
 msgstr "Núverandi Plata"
 
-#: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:1044
+#: ui/filebrowser/FileBrowser.cpp:365 ui/filebrowser/FileBrowser.cpp:1029
 #: ui/mediaviewer/library/DiBrowser.cpp:288
 #: ui/mediaviewer/library/YeListBox.cpp:128
 #: ui/mediaviewer/library/ArListBox.cpp:176
@@ -1543,7 +1543,7 @@ msgstr "Núverandi Plata"
 msgid "Add current selected tracks to playlist after the current album"
 msgstr "Bæta völdum lögum við lagalista eftir núverandi plötu"
 
-#: ui/filebrowser/FileBrowser.cpp:370 ui/filebrowser/FileBrowser.cpp:1050
+#: ui/filebrowser/FileBrowser.cpp:370 ui/filebrowser/FileBrowser.cpp:1035
 #: ui/mediaviewer/library/DiBrowser.cpp:293
 #: ui/mediaviewer/library/YeListBox.cpp:134
 #: ui/mediaviewer/library/CoListBox.cpp:134
@@ -1568,7 +1568,7 @@ msgstr "Bæta völdum lögum við lagalista eftir núverandi plötu"
 msgid "Current Artist"
 msgstr "Núverandi Flytjandi"
 
-#: ui/filebrowser/FileBrowser.cpp:371 ui/filebrowser/FileBrowser.cpp:1051
+#: ui/filebrowser/FileBrowser.cpp:371 ui/filebrowser/FileBrowser.cpp:1036
 #: ui/mediaviewer/library/DiBrowser.cpp:295
 #: ui/mediaviewer/library/YeListBox.cpp:135
 #: ui/mediaviewer/library/ArListBox.cpp:183
@@ -1591,7 +1591,7 @@ msgstr "Núverandi Flytjandi"
 msgid "Add current selected tracks to playlist after the current artist"
 msgstr "Bæta völdum lögum við lagalista eftir núverandi Flytjanda"
 
-#: ui/filebrowser/FileBrowser.cpp:375 ui/filebrowser/FileBrowser.cpp:1056
+#: ui/filebrowser/FileBrowser.cpp:375 ui/filebrowser/FileBrowser.cpp:1041
 #: ui/mediaviewer/library/DiBrowser.cpp:299
 #: ui/mediaviewer/library/YeListBox.cpp:140
 #: ui/mediaviewer/library/CoListBox.cpp:140
@@ -1624,110 +1624,110 @@ msgstr "Breyta lögum í valdri möppu"
 msgid "Add the tracks in the selected folder to a playlist"
 msgstr "Bæta lögum úr valdri möppu á lagalista"
 
-#: ui/filebrowser/FileBrowser.cpp:393 ui/filebrowser/FileBrowser.cpp:1080
+#: ui/filebrowser/FileBrowser.cpp:393 ui/filebrowser/FileBrowser.cpp:1065
 #: ui/mediaviewer/library/DiBrowser.cpp:320
 msgid "Copy"
 msgstr "Afrita"
 
-#: ui/filebrowser/FileBrowser.cpp:394 ui/filebrowser/FileBrowser.cpp:1080
+#: ui/filebrowser/FileBrowser.cpp:394 ui/filebrowser/FileBrowser.cpp:1065
 #: ui/mediaviewer/library/DiBrowser.cpp:321
 msgid "Copy the selected folder to clipboard"
 msgstr "Afrita valda möppu á klippispjald"
 
-#: ui/filebrowser/FileBrowser.cpp:403
+#: ui/filebrowser/FileBrowser.cpp:402
 msgid "Paste to the selected folder"
 msgstr "Lima við valda möppu"
 
-#: ui/filebrowser/FileBrowser.cpp:408
+#: ui/filebrowser/FileBrowser.cpp:407
 msgid "Move here"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:409
+#: ui/filebrowser/FileBrowser.cpp:408
 #, fuzzy
 msgid "Move to the selected folder"
 msgstr "Lima við valda möppu"
 
-#: ui/filebrowser/FileBrowser.cpp:417 ui/mediaviewer/library/DiBrowser.cpp:328
+#: ui/filebrowser/FileBrowser.cpp:416 ui/mediaviewer/library/DiBrowser.cpp:328
 msgid "Update the selected folder"
 msgstr "Uppfæra valda möppu"
 
-#: ui/filebrowser/FileBrowser.cpp:423 ui/filebrowser/FileBrowser.cpp:498
-#: ui/filebrowser/FileBrowser.cpp:502
+#: ui/filebrowser/FileBrowser.cpp:422 ui/filebrowser/FileBrowser.cpp:490
+#: ui/filebrowser/FileBrowser.cpp:494
 msgid "New Folder"
 msgstr "Ný Mappa"
 
-#: ui/filebrowser/FileBrowser.cpp:423
+#: ui/filebrowser/FileBrowser.cpp:422
 msgid "Create a new folder"
 msgstr "Búa til nýja möppu"
 
-#: ui/filebrowser/FileBrowser.cpp:426 ui/mediaviewer/library/TaListBox.cpp:112
+#: ui/filebrowser/FileBrowser.cpp:425 ui/mediaviewer/library/TaListBox.cpp:112
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:292
 msgid "Rename"
 msgstr "Endurnefna:"
 
-#: ui/filebrowser/FileBrowser.cpp:426
+#: ui/filebrowser/FileBrowser.cpp:425
 msgid "Rename the selected folder"
 msgstr "Endurnefna valda möppu"
 
-#: ui/filebrowser/FileBrowser.cpp:430 ui/filebrowser/FileBrowser.cpp:1106
+#: ui/filebrowser/FileBrowser.cpp:429 ui/filebrowser/FileBrowser.cpp:1091
 msgid "Remove"
 msgstr "Fjarlægja"
 
-#: ui/filebrowser/FileBrowser.cpp:430
+#: ui/filebrowser/FileBrowser.cpp:429
 msgid "Remove the selected folder"
 msgstr "Fjarlægja valda möppu"
 
-#: ui/filebrowser/FileBrowser.cpp:573
+#: ui/filebrowser/FileBrowser.cpp:565
 msgid "Are you sure to delete the selected path ?"
 msgstr "Ertu viss um að þú viljir eyða valdri slóð ?"
 
-#: ui/filebrowser/FileBrowser.cpp:584
+#: ui/filebrowser/FileBrowser.cpp:573
 msgid "Error deleting the folder"
 msgstr "Villa getur ekki eytt Möppu"
 
-#: ui/filebrowser/FileBrowser.cpp:585 ui/mediaviewer/MediaViewer.cpp:1415
+#: ui/filebrowser/FileBrowser.cpp:574 ui/mediaviewer/MediaViewer.cpp:1415
 #: ui/cover/SelCoverFile.cpp:43
 msgid "Error"
 msgstr "Villa"
 
-#: ui/filebrowser/FileBrowser.cpp:809
+#: ui/filebrowser/FileBrowser.cpp:794
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:64
 msgid "Size"
 msgstr "Stærð"
 
-#: ui/filebrowser/FileBrowser.cpp:810
+#: ui/filebrowser/FileBrowser.cpp:795
 msgid "Modified"
 msgstr "Breytt"
 
-#: ui/filebrowser/FileBrowser.cpp:1023
+#: ui/filebrowser/FileBrowser.cpp:1008
 msgid "Play current selected files"
 msgstr "Spila valda skrá"
 
-#: ui/filebrowser/FileBrowser.cpp:1029
+#: ui/filebrowser/FileBrowser.cpp:1014
 msgid "Add current selected files to playlist"
 msgstr "Bæta valdri skrá við lagalista"
 
-#: ui/filebrowser/FileBrowser.cpp:1065
+#: ui/filebrowser/FileBrowser.cpp:1050
 msgid "Edit the current selected files"
 msgstr "Breyta völdum skrám"
 
-#: ui/filebrowser/FileBrowser.cpp:1073
+#: ui/filebrowser/FileBrowser.cpp:1058
 msgid "Add the current selected tracks to a playlist"
 msgstr "Bæta völdum skrám við lagalista"
 
-#: ui/filebrowser/FileBrowser.cpp:1084
+#: ui/filebrowser/FileBrowser.cpp:1069
 msgid "Paste to the selected dir"
 msgstr "Lima við valda staðsetningu"
 
-#: ui/filebrowser/FileBrowser.cpp:1102
+#: ui/filebrowser/FileBrowser.cpp:1087
 msgid "Rename the current selected file"
 msgstr "Endurnefna valda skrá"
 
-#: ui/filebrowser/FileBrowser.cpp:1106
+#: ui/filebrowser/FileBrowser.cpp:1091
 msgid "Delete the selected files"
 msgstr "Eyða völdum skrám"
 
-#: ui/filebrowser/FileBrowser.cpp:1882 ui/filebrowser/FileBrowser.cpp:2014
+#: ui/filebrowser/FileBrowser.cpp:1864 ui/filebrowser/FileBrowser.cpp:1993
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1737,15 +1737,15 @@ msgstr "Eyða völdum skrám"
 msgid "UnNamed"
 msgstr "ÓNefnt"
 
-#: ui/filebrowser/FileBrowser.cpp:2112
+#: ui/filebrowser/FileBrowser.cpp:2088
 msgid "Are you sure to delete the selected files ?"
 msgstr "Ertu viss um að þú viljir eyða völdum skrám ?"
 
-#: ui/filebrowser/FileBrowser.cpp:2129
+#: ui/filebrowser/FileBrowser.cpp:2105
 msgid "There was an error deleting"
 msgstr "Villa við eyðingu skrár"
 
-#: ui/filebrowser/FileBrowser.cpp:2130
+#: ui/filebrowser/FileBrowser.cpp:2106
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1753,7 +1753,7 @@ msgstr ""
 "\n"
 "Eyða áfram?"
 
-#: ui/filebrowser/FileBrowser.cpp:2131
+#: ui/filebrowser/FileBrowser.cpp:2107
 msgid "Continue"
 msgstr "Halda áfram"
 

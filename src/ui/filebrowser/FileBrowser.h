@@ -113,7 +113,7 @@ class guFileBrowserDirCtrl : public wxPanel
 
     void                OnShowLibPathsClick( wxCommandEvent& event );
 
-    wxImageList *       GetImageList( void ) { return m_DirCtrl->GetTreeCtrl()->GetImageList(); }
+    wxImageList *       GetImageList() { return m_DirCtrl->GetTreeCtrl()->GetImageList(); }
 
     void                OnContextMenu( wxTreeEvent &event );
 
@@ -171,7 +171,7 @@ class guFilesListBox : public guListView
 
     size_t                      GetDragFiles( guDataObjectComposite * files ) override;
 
-    wxArrayString               GetColumnNames( void );
+    wxArrayString               GetColumnNames();
 
     size_t                      GetPathSortedItems(const wxString &path, guFileItemArray * items,
                                                    const int order, const bool orderdesc,
