@@ -9,19 +9,20 @@ Changelog
 
 ### Features
   * Added a "Move here" feature in the File Browser directory tree:
-    * The new "Move here" context menu option (for directory tree only) moves a previous
-      copied directory to the selected target directory and updates the library as well.
+    * Now it's possible to move a directory location without lose the library data
+      and statistics. The new "Move here" context menu option moves a previous copied
+      directory to the selected target location and updates the library as well.
 
 ### Enhancements
   * Adjusted the Podcast Editor dialog size.
-  * Added a Find Cover button in the Cover Editor to repeat the cover searching (same as
-    hit enter in the text controls).
+  * Added a Find Cover button in the Cover Editor to repeat the cover searching
+    (same as hit enter in the text controls).
 
 ### Bugfixes
-  * Fixed the "Paste" context menu option, in the File Browser directory tree, to paste
-    the directory instead only the directory content.
-  * Fixed the "Rename" context menu option, in the File Browser directory tree, that wasn't
-    refreshing the modified item tree.
+  * Fixed the "Paste" context menu option, in the File Browser directory tree,
+    to paste the directory instead only the directory content.
+  * Fixed the "Rename" context menu option, in the File Browser directory tree, 
+    that wasn't refreshing the modified item tree.
 
 0.7.0 (2025-02-22)
 ------------------
@@ -30,7 +31,8 @@ Changelog
   * Updated the wiki manual and the Guayadeque Help menu link.
 
 ### Bugfixes
-  * Fixed long time bug that playback was skipping after 20/30 minutes running a long track.
+  * Fixed a long time bug that causes playback skipping after around 20/30 minutes
+    running a long track or podcast.
 
 ### Removed
   * Removed the no more functional Jamendo feature.
