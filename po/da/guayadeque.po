@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 17:07-0300\n"
+"POT-Creation-Date: 2025-05-14 13:58-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2015,2017,2020-2021\n"
 "Language-Team: Danish (http://www.transifex.com/anonbeat/guayadeque/language/"
@@ -458,7 +458,7 @@ msgid "Do you want to continue with the program?"
 msgstr "Ønsker du at fortsætte med programmet?"
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2089
+#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2094
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -1724,7 +1724,7 @@ msgstr "Omdøb de valgte filer"
 msgid "Delete the selected files"
 msgstr "Slet de valgte filer"
 
-#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1870 ui/filebrowser/FileBrowser.cpp:1998
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1734,15 +1734,15 @@ msgstr "Slet de valgte filer"
 msgid "UnNamed"
 msgstr "Unavngivet"
 
-#: ui/filebrowser/FileBrowser.cpp:2088
+#: ui/filebrowser/FileBrowser.cpp:2093
 msgid "Are you sure to delete the selected files ?"
 msgstr "Er du sikker på, at du ønsker at slette de valgte filer?"
 
-#: ui/filebrowser/FileBrowser.cpp:2105
+#: ui/filebrowser/FileBrowser.cpp:2110
 msgid "There was an error deleting"
 msgstr "Der opstod en fejl under sletning"
 
-#: ui/filebrowser/FileBrowser.cpp:2106
+#: ui/filebrowser/FileBrowser.cpp:2111
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1750,7 +1750,7 @@ msgstr ""
 "\n"
 "Fortsæt sletning?"
 
-#: ui/filebrowser/FileBrowser.cpp:2107
+#: ui/filebrowser/FileBrowser.cpp:2112
 msgid "Continue"
 msgstr "Fortsæt"
 
