@@ -1678,48 +1678,53 @@ void guFileBrowser::OnFolderMove( wxCommandEvent &event )
         guLogError(wxT("Cannot open the clipboard object"));
         return;
     }
-
-    if (wxTheClipboard->IsSupported(wxDF_FILENAME))
+    if (!wxTheClipboard->IsSupported(wxDF_FILENAME))
     {
-        wxFileDataObject FileObject;
-        if (wxTheClipboard->GetData(FileObject))
-        {
-            const wxArrayString sourceFiles = FileObject.GetFilenames();
-            const wxString curPath = GetPathRemoveTrailSep(m_DirCtrl->GetPath());
-            wxFileName dirname;
-            wxString sourceDir;
-
-            int count = sourceFiles.Count();
-            for (int index = 0; index < count; index++)
-            {
-                sourceDir = GetPathRemoveTrailSep(sourceFiles[index]);
-
-                if (wxDirExists(sourceDir))
-                {
-                    if (curPath != sourceDir)
-                    {
-                        dirname = wxFileName::DirName(sourceDir);
-                        wxString lastDir = dirname.GetDirs()[dirname.GetDirCount() - 1];
-                        wxString targetDir = curPath + wxT("/") + lastDir;
-
-                        guLogMessage(wxT("Moving: %s -> %s"), sourceDir.c_str(), targetDir.c_str());
-                        m_DirCtrl->MoveDir(sourceDir, targetDir);
-                    }
-                } else
-                    guLogError(wxT("Cannot move '%s' into '%s'"),  sourceDir.c_str(), curPath.c_str());
-            }
-            m_DirCtrl->CollapsePath(curPath);
-            if (!sourceDir.IsEmpty())
-            {
-                sourceDir = wxPathOnly(sourceDir);
-                m_DirCtrl->CollapsePath(sourceDir);
-                m_DirCtrl->ExpandPath(sourceDir);
-            }
-            m_DirCtrl->ExpandPath(curPath);
-        }
-        else
-            guLogError(wxT("Cannot move the data from the clipboard"));
+        wxTheClipboard->Close();
+        return;
     }
+
+    wxFileDataObject FileObject;
+    if (!wxTheClipboard->GetData(FileObject))
+    {
+        guLogError(wxT("Cannot move the data from the clipboard"));
+        wxTheClipboard->Close();
+        return;
+    }
+
+    const wxString curPath = GetPathRemoveTrailSep(m_DirCtrl->GetPath());
+    const wxArrayString sourceFiles = FileObject.GetFilenames();
+    wxFileName dirname;
+    wxString sourceDir;
+
+    int count = sourceFiles.Count();
+    for (int index = 0; index < count; index++)
+    {
+        sourceDir = GetPathRemoveTrailSep(sourceFiles[index]);
+        if (curPath == sourceDir)
+            continue;
+        if (!wxDirExists(sourceDir))
+        {
+            guLogError(wxT("Cannot move '%s' into '%s'"),  sourceDir.c_str(), curPath.c_str());
+            continue;
+        }
+
+        dirname = wxFileName::DirName(sourceDir);
+        wxString lastDir = dirname.GetDirs()[dirname.GetDirCount() - 1];
+        wxString targetDir = curPath + wxT("/") + lastDir;
+
+        guLogMessage(wxT("Moving: %s -> %s"), sourceDir.c_str(), targetDir.c_str());
+        m_DirCtrl->MoveDir(sourceDir, targetDir);
+    }
+    m_DirCtrl->CollapsePath(curPath);       // Target parent
+    if (!sourceDir.IsEmpty())
+    {
+        sourceDir = wxPathOnly(sourceDir);  // Source parent
+        m_DirCtrl->CollapsePath(sourceDir);
+        m_DirCtrl->ExpandPath(sourceDir);
+    }
+    m_DirCtrl->ExpandPath(curPath);
+
     wxTheClipboard->Close();
 }
 
