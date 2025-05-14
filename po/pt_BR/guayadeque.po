@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 17:07-0300\n"
+"POT-Creation-Date: 2025-05-14 13:58-0300\n"
 "PO-Revision-Date: 2024-12-08 21:19-0300\n"
 "Last-Translator: Tiago T Barrionuevo <thothix@protonmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
@@ -466,7 +466,7 @@ msgid "Do you want to continue with the program?"
 msgstr "Você quer continuar com o programa?"
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2089
+#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2094
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -1735,7 +1735,7 @@ msgstr "Renomear o arquivo selecionado"
 msgid "Delete the selected files"
 msgstr "Apagar o arquivo selecionado"
 
-#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1870 ui/filebrowser/FileBrowser.cpp:1998
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1745,15 +1745,15 @@ msgstr "Apagar o arquivo selecionado"
 msgid "UnNamed"
 msgstr "Sem Nome"
 
-#: ui/filebrowser/FileBrowser.cpp:2088
+#: ui/filebrowser/FileBrowser.cpp:2093
 msgid "Are you sure to delete the selected files ?"
 msgstr "Você realmente quer excluir os arquivos selecionados?"
 
-#: ui/filebrowser/FileBrowser.cpp:2105
+#: ui/filebrowser/FileBrowser.cpp:2110
 msgid "There was an error deleting"
 msgstr "Houve um erro ao excluir"
 
-#: ui/filebrowser/FileBrowser.cpp:2106
+#: ui/filebrowser/FileBrowser.cpp:2111
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1761,7 +1761,7 @@ msgstr ""
 "\n"
 "Continuar excluindo?"
 
-#: ui/filebrowser/FileBrowser.cpp:2107
+#: ui/filebrowser/FileBrowser.cpp:2112
 msgid "Continue"
 msgstr "Continuar"
 

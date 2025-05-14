@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 17:07-0300\n"
+"POT-Creation-Date: 2025-05-14 13:58-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Moo, 2017-2018,2020,2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/anonbeat/guayadeque/"
@@ -460,7 +460,7 @@ msgid "Do you want to continue with the program?"
 msgstr ""
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2089
+#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2094
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -1728,7 +1728,7 @@ msgstr "Pervadinti šiuo metu pažymėtą failą"
 msgid "Delete the selected files"
 msgstr "Ištrinti pažymėtus failus"
 
-#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1870 ui/filebrowser/FileBrowser.cpp:1998
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1738,15 +1738,15 @@ msgstr "Ištrinti pažymėtus failus"
 msgid "UnNamed"
 msgstr ""
 
-#: ui/filebrowser/FileBrowser.cpp:2088
+#: ui/filebrowser/FileBrowser.cpp:2093
 msgid "Are you sure to delete the selected files ?"
 msgstr "Ar tikrai norite ištrinti pažymėtus failus ?"
 
-#: ui/filebrowser/FileBrowser.cpp:2105
+#: ui/filebrowser/FileBrowser.cpp:2110
 msgid "There was an error deleting"
 msgstr "Ištrinant, įvyko klaida"
 
-#: ui/filebrowser/FileBrowser.cpp:2106
+#: ui/filebrowser/FileBrowser.cpp:2111
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1754,7 +1754,7 @@ msgstr ""
 "\n"
 "Tęsti ištrynimą?"
 
-#: ui/filebrowser/FileBrowser.cpp:2107
+#: ui/filebrowser/FileBrowser.cpp:2112
 msgid "Continue"
 msgstr "Tęsti"
 

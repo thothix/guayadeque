@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-11 17:07-0300\n"
+"POT-Creation-Date: 2025-05-14 13:58-0300\n"
 "PO-Revision-Date: 2024-12-05 14:31+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
@@ -462,7 +462,7 @@ msgid "Do you want to continue with the program?"
 msgstr "Möchten Sie mit dem Programm fortfahren?"
 
 #: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
-#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2089
+#: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2094
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
@@ -1733,7 +1733,7 @@ msgstr "Aktuell ausgewählte Datei umbenennen"
 msgid "Delete the selected files"
 msgstr "Ausgewählte Dateien löschen"
 
-#: ui/filebrowser/FileBrowser.cpp:1865 ui/filebrowser/FileBrowser.cpp:1993
+#: ui/filebrowser/FileBrowser.cpp:1870 ui/filebrowser/FileBrowser.cpp:1998
 #: ui/mediaviewer/library/DiBrowser.cpp:548
 #: ui/mediaviewer/library/LibPanel.cpp:1476
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
@@ -1743,15 +1743,15 @@ msgstr "Ausgewählte Dateien löschen"
 msgid "UnNamed"
 msgstr "Unbenannt"
 
-#: ui/filebrowser/FileBrowser.cpp:2088
+#: ui/filebrowser/FileBrowser.cpp:2093
 msgid "Are you sure to delete the selected files ?"
 msgstr "Möchten Sie die ausgewählten Dateien wirklich löschen ?"
 
-#: ui/filebrowser/FileBrowser.cpp:2105
+#: ui/filebrowser/FileBrowser.cpp:2110
 msgid "There was an error deleting"
 msgstr "Fehler beim Löschen"
 
-#: ui/filebrowser/FileBrowser.cpp:2106
+#: ui/filebrowser/FileBrowser.cpp:2111
 msgid ""
 "\n"
 "Continue deleting?"
@@ -1759,7 +1759,7 @@ msgstr ""
 "\n"
 "Möchten Sie mit dem Löschen fortfahren?"
 
-#: ui/filebrowser/FileBrowser.cpp:2107
+#: ui/filebrowser/FileBrowser.cpp:2112
 msgid "Continue"
 msgstr "Fortfahren"
 
