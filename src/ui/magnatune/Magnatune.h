@@ -61,7 +61,7 @@ class guMagnatuneLibrary : public guDbLibrary
     virtual void        UpdateSongsLabels( const guArrayListItems &labelsets );
 
     void                CreateNewSong( guTrack * track, const wxString &albumsku, const wxString &coverlink );
-    int                 GetTrackId( const wxString &url, guTrack * track = NULL );
+    int                 GetTrackId( const wxString &url, guTrack * track = nullptr );
 
     wxString            GetAlbumSku( const int trackid );
 };
@@ -81,7 +81,7 @@ class guMagnatuneUpdateThread : public wxThread
     wxString                m_AlbumSku;
     wxString                m_CoverLink;
 
-    bool                UpgradeDatabase( void );
+    bool                UpgradeDatabase();
     void                ReadMagnatuneXmlTrack( wxXmlNode * xmlnode );
     void                ReadMagnatuneXmlAlbum( wxXmlNode * xmlnode );
     void                AddGenres( const wxString &genre );
@@ -111,7 +111,7 @@ class guMagnatunePanel : public guLibPanel
     guMagnatunePanel( wxWindow * parent, guMediaViewerMagnatune * mediaviewer );
     ~guMagnatunePanel();
 
-    guMagnatuneLibrary *        GetMagnatuneDb( void ) { return ( guMagnatuneLibrary * ) m_Db; }
+    guMagnatuneLibrary *        GetMagnatuneDb() { return ( guMagnatuneLibrary * ) m_Db; }
 };
 
 // -------------------------------------------------------------------------------- //
@@ -176,13 +176,13 @@ class guMediaViewerMagnatune : public guMediaViewer
     wxString                    m_UserName;
     wxString                    m_Password;
 
-    virtual void            LoadMediaDb( void );
+    virtual void            LoadMediaDb();
     virtual void            OnConfigUpdated( wxCommandEvent &event );
 
     void                    OnCoverDownloaded( wxCommandEvent &event );
     void                    OnUpdateFinished( wxCommandEvent &event );
 
-    void                    EndUpdateThread( void );
+    void                    EndUpdateThread();
 
   public :
     guMediaViewerMagnatune( wxWindow * parent, guMediaCollection &mediacollection,
@@ -193,8 +193,8 @@ class guMediaViewerMagnatune : public guMediaViewer
     virtual wxImage *       GetAlbumCover( const int albumid, int &coverid, wxString &coverpath,
                                 const wxString &artistname = wxEmptyString, const wxString &albumname = wxEmptyString );
 
-    virtual void            UpdateLibrary( void );
-    virtual void            UpgradeLibrary( void );
+    void                    UpdateLibrary();
+    virtual void            UpgradeLibrary();
     virtual void            NormalizeTracks( guTrackArray * tracks, const bool isdrag = false );
 
     virtual void            AddDownload( const int albumid, const wxString &artist, const wxString &album );
@@ -205,10 +205,10 @@ class guMediaViewerMagnatune : public guMediaViewer
 
     virtual void            CreateContextMenu( wxMenu * menu, const int windowid = wxNOT_FOUND );
 
-    virtual bool            CreateLibraryView( void );
-    virtual bool            CreateAlbumBrowserView( void );
-    virtual bool            CreateTreeView( void );
-    virtual bool            CreatePlayListView( void );
+    virtual bool            CreateLibraryView();
+    virtual bool            CreateAlbumBrowserView();
+    virtual bool            CreateTreeView();
+    virtual bool            CreatePlayListView();
 
     virtual wxString        GetCoverName( const int albumid );
     virtual void            SelectAlbumCover( const int albumid );
@@ -216,7 +216,7 @@ class guMediaViewerMagnatune : public guMediaViewer
     virtual bool            FindMissingCover( const int albumid, const wxString &artistname,
                                               const wxString &albumname, const wxString &albumpath );
 
-    virtual void            EditProperties( void );
+    virtual void            EditProperties();
 
     friend class guMagnatuneDownloadThread;
     friend class guMagnatuneUpdateThread;
@@ -225,4 +225,3 @@ class guMediaViewerMagnatune : public guMediaViewer
 }
 
 #endif
-// -------------------------------------------------------------------------------- //

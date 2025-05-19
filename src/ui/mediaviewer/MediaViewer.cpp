@@ -57,12 +57,12 @@ guMediaViewer::guMediaViewer( wxWindow * parent,
     m_BaseCommand = basecommand;
     m_ViewMode = wxNOT_FOUND;
     m_ConfigPath = wxT( "mediaviewers/mediaviewer_" ) + collection.m_UniqueId;
-    m_UpdateThread = NULL;
-    m_CleanThread = NULL;
+    m_UpdateThread = nullptr;
+    m_CleanThread = nullptr;
     m_ContextMenuFlags = guCONTEXTMENU_DEFAULT;
     m_IsDefault = false;
-    m_CopyToPattern = NULL;
-    m_UpdateCoversThread = NULL;
+    m_CopyToPattern = nullptr;
+    m_UpdateCoversThread = nullptr;
     guLogTrace( wxT( "MediaViewer '%s' => '%s'" ), collection.m_Name.c_str(), collection.m_UniqueId.c_str() );
 
     if( !wxDirExists( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId ) )
@@ -76,10 +76,10 @@ guMediaViewer::guMediaViewer( wxWindow * parent,
     guConfig * Config = ( guConfig * ) guConfig::Get();
     Config->RegisterObject( this );
 
-    m_LibPanel = NULL;
-    m_AlbumBrowser = NULL;
-    m_TreeViewPanel = NULL;
-    m_PlayListPanel = NULL;
+    m_LibPanel = nullptr;
+    m_AlbumBrowser = nullptr;
+    m_TreeViewPanel = nullptr;
+    m_PlayListPanel = nullptr;
     m_DoneClearSearchText = false;
 
     m_InstantSearchEnabled = Config->ReadBool( CONFIG_KEY_GENERAL_INSTANT_TEXT_SEARCH, true, CONFIG_PATH_GENERAL );
@@ -164,7 +164,7 @@ guMediaViewer::~guMediaViewer()
     {
         m_UpdateCoversThread->Pause();
         m_UpdateCoversThread->Delete();
-        m_UpdateCoversThread = NULL;
+        m_UpdateCoversThread = nullptr;
     }
 
     if( m_MediaCollection )
@@ -214,7 +214,7 @@ void guMediaViewer::InitMediaViewer( const int mode )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::CreateControls( void )
+void guMediaViewer::CreateControls()
 {
     wxBoxSizer *  MainSizer = new wxBoxSizer( wxVERTICAL );
     wxBoxSizer * TopSizer = new wxBoxSizer( wxHORIZONTAL );
@@ -303,7 +303,7 @@ void guMediaViewer::CreateControls( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::CreateAcceleratorTable( void )
+void guMediaViewer::CreateAcceleratorTable()
 {
     wxAcceleratorTable AccelTable;
     wxArrayInt AliasAccelCmds;
@@ -322,7 +322,7 @@ void guMediaViewer::CreateAcceleratorTable( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::LoadMediaDb( void )
+void guMediaViewer::LoadMediaDb()
 {
     m_Db = new guDbLibrary( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId + wxT( "/guayadeque.db" ) );
     m_Db->SetMediaViewer( this );
@@ -384,7 +384,7 @@ void guMediaViewer::SetPlayerPanel( guPlayerPanel * playerpanel )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewer::CreateLibraryView( void )
+bool guMediaViewer::CreateLibraryView()
 {
     m_LibPanel = new guLibPanel( this, this );
     m_LibPanel->SetBaseCommand( m_BaseCommand + 1 );
@@ -392,21 +392,21 @@ bool guMediaViewer::CreateLibraryView( void )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewer::CreateAlbumBrowserView( void )
+bool guMediaViewer::CreateAlbumBrowserView()
 {
     m_AlbumBrowser = new guAlbumBrowser( this, this );
     return true;
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewer::CreateTreeView( void )
+bool guMediaViewer::CreateTreeView()
 {
     m_TreeViewPanel = new guTreeViewPanel( this, this );
     return true;
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewer::CreatePlayListView( void )
+bool guMediaViewer::CreatePlayListView()
 {
     m_PlayListPanel = new guPlayListPanel( this, this );
     return true;
@@ -715,7 +715,7 @@ void guMediaViewer::OnSearchSelected( wxCommandEvent& event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::ClearSearchText( void )
+void guMediaViewer::ClearSearchText()
 {
     guLogMessage( wxT( "ClearSearchText..." ) );
     m_DoneClearSearchText = true;
@@ -725,7 +725,7 @@ void guMediaViewer::ClearSearchText( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::GoToSearch( void )
+void guMediaViewer::GoToSearch()
 {
     if( FindFocus() != m_SearchTextCtrl )
         m_SearchTextCtrl->SetFocus();
@@ -740,7 +740,7 @@ void guMediaViewer::OnTextChangedTimer( wxTimerEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewer::DoTextSearch( void )
+bool guMediaViewer::DoTextSearch()
 {
     Freeze();
     bool RetVal = false;
@@ -998,7 +998,7 @@ void guMediaViewer::HandleCommand( const int command )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::EditProperties( void )
+void guMediaViewer::EditProperties()
 {
     wxCommandEvent CmdEvent( wxEVT_MENU, ID_MENU_PREFERENCES );
     CmdEvent.SetInt( guPREFERENCE_PAGE_LIBRARY );
@@ -1006,7 +1006,7 @@ void guMediaViewer::EditProperties( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::UpgradeLibrary( void )
+void guMediaViewer::UpgradeLibrary()
 {
     m_MediaCollection->m_LastUpdate = 0;
     UpdateLibrary();
@@ -1028,17 +1028,17 @@ void guMediaViewer::UpdateLibrary( const wxString &path )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::UpdateFinished( void )
+void guMediaViewer::UpdateFinished()
 {
     if( m_UpdateThread )
-        m_UpdateThread = NULL;
+        m_UpdateThread = nullptr;
 
     SetLastUpdate();
     CleanLibrary();
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::CleanLibrary( void )
+void guMediaViewer::CleanLibrary()
 {
     if( m_CleanThread )
     {
@@ -1050,14 +1050,14 @@ void guMediaViewer::CleanLibrary( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::CleanFinished( void )
+void guMediaViewer::CleanFinished()
 {
-    m_CleanThread = NULL;
+    m_CleanThread = nullptr;
     LibraryUpdated();
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::SetLastUpdate( void )
+void guMediaViewer::SetLastUpdate()
 {
     m_MediaCollection->m_LastUpdate = wxDateTime::Now().GetTicks();
 
@@ -1070,7 +1070,7 @@ void guMediaViewer::SetLastUpdate( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::LibraryUpdated( void )
+void guMediaViewer::LibraryUpdated()
 {
     if( m_LibPanel )
         m_LibPanel->ReloadControls();
@@ -1083,7 +1083,7 @@ void guMediaViewer::LibraryUpdated( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::UpdateCovers( void )
+void guMediaViewer::UpdateCovers()
 {
     int GaugeId = m_MainFrame->AddGauge( m_MediaCollection->m_Name, false );
 
@@ -1097,14 +1097,14 @@ void guMediaViewer::UpdateCovers( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::UpdateCoversFinished( void )
+void guMediaViewer::UpdateCoversFinished()
 {
     if( m_UpdateCoversThread )
-        m_UpdateCoversThread = NULL;
+        m_UpdateCoversThread = nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::OnAddPath( void )
+void guMediaViewer::OnAddPath()
 {
     wxDirDialog * DirDialog = new wxDirDialog( this, _( "Select library path" ), wxGetHomeDir() );
     if( DirDialog )
@@ -1228,7 +1228,7 @@ void guMediaViewer::SaveLayout( wxXmlNode * xmlnode )
     wxXmlAttribute * Property = new wxXmlAttribute( wxT( "name" ), m_MediaCollection->m_Name,
                                new wxXmlAttribute( wxT( "id" ), m_MediaCollection->m_UniqueId,
                                new wxXmlAttribute( wxT( "mode" ), wxString::Format( wxT( "%i" ), m_ViewMode ),
-                               NULL ) ) );
+                               nullptr ) ) );
 
     XmlNode->SetAttributes( Property );
 
@@ -1301,7 +1301,7 @@ void guMediaViewer::LoadLayout( wxXmlNode * xmlnode )
 }
 
 // -------------------------------------------------------------------------------- //
-wxString guMediaViewer::GetSelInfo( void )
+wxString guMediaViewer::GetSelInfo()
 {
     wxLongLong SelCount = 0;
     wxLongLong SelLength = 0;
@@ -1466,7 +1466,7 @@ void guMediaViewer::SelectAlbumCover( const int albumid )
 // -------------------------------------------------------------------------------- //
 void guMediaViewer::EmbedAlbumCover( const int albumid )
 {
-    wxImage * CoverImage = NULL;
+    wxImage * CoverImage = nullptr;
     int CoverId = m_Db->GetAlbumCoverId( albumid );
     if( CoverId > 0 )
     {
@@ -1642,7 +1642,7 @@ wxImage * guMediaViewer::GetAlbumCover( const int albumid, int &coverid, wxStrin
             }
         }
     }
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1707,7 +1707,7 @@ void guMediaViewer::SetSelection( const int type, const int id )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::PlayListUpdated( void )
+void guMediaViewer::PlayListUpdated()
 {
     if( IsDefault() )
     {
@@ -1918,7 +1918,7 @@ void guMediaViewer::OnUpdateLabels( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::UpdatePlaylists( void )
+void guMediaViewer::UpdatePlaylists()
 {
     wxCommandEvent evt( wxEVT_MENU, ID_PLAYLIST_UPDATED );
     wxPostEvent( m_MainFrame, evt );
@@ -1954,7 +1954,7 @@ void guMediaViewer::SetTracksRating( guTrackArray &tracks, const int rating )
 }
 
 // -------------------------------------------------------------------------------- //
-wxString guMediaViewer::AudioPath( void )
+wxString guMediaViewer::AudioPath()
 {
     if( m_CopyToPattern && !m_CopyToPattern->m_Path.IsEmpty() )
         return m_CopyToPattern->m_Path;
@@ -1966,7 +1966,7 @@ wxString guMediaViewer::AudioPath( void )
 }
 
 // -------------------------------------------------------------------------------- //
-wxString guMediaViewer::Pattern( void )
+wxString guMediaViewer::Pattern()
 {
     if( m_CopyToPattern )
         return m_CopyToPattern->m_Pattern;
@@ -1975,13 +1975,13 @@ wxString guMediaViewer::Pattern( void )
 }
 
 // -------------------------------------------------------------------------------- //
-int guMediaViewer::AudioFormats( void )
+int guMediaViewer::AudioFormats()
 {
     return guPORTABLEMEDIA_AUDIO_FORMAT_ALL;
 }
 
 // -------------------------------------------------------------------------------- //
-int guMediaViewer::TranscodeFormat( void )
+int guMediaViewer::TranscodeFormat()
 {
     if( m_CopyToPattern )
         return m_CopyToPattern->m_Format;
@@ -1990,13 +1990,13 @@ int guMediaViewer::TranscodeFormat( void )
 }
 
 // -------------------------------------------------------------------------------- //
-int guMediaViewer::TranscodeScope( void )
+int guMediaViewer::TranscodeScope()
 {
     return guPORTABLEMEDIA_TRANSCODE_SCOPE_NOT_SUPPORTED;
 }
 
 // -------------------------------------------------------------------------------- //
-int guMediaViewer::TranscodeQuality( void )
+int guMediaViewer::TranscodeQuality()
 {
     if( m_CopyToPattern )
         return m_CopyToPattern->m_Quality;
@@ -2005,19 +2005,19 @@ int guMediaViewer::TranscodeQuality( void )
 }
 
 // -------------------------------------------------------------------------------- //
-int guMediaViewer::PlaylistFormats( void )
+int guMediaViewer::PlaylistFormats()
 {
     return 0;
 }
 
 // -------------------------------------------------------------------------------- //
-wxString guMediaViewer::PlaylistPath( void )
+wxString guMediaViewer::PlaylistPath()
 {
     return wxEmptyString;
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewer::MoveFiles( void )
+bool guMediaViewer::MoveFiles()
 {
     if( m_CopyToPattern )
         return m_CopyToPattern->m_MoveFiles;

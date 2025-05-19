@@ -144,10 +144,10 @@ class guMediaViewer : public wxPanel
     void                    OnSearchCancelled( wxCommandEvent &event );
     void                    OnSearchSelected( wxCommandEvent &event );
     void                    OnTextChangedTimer( wxTimerEvent &event );
-    virtual bool            DoTextSearch( void );
+    virtual bool            DoTextSearch();
 
 
-    virtual void            CreateControls( void );
+    virtual void            CreateControls();
 
     virtual void            PlayAllTracks( const bool enqueue );
 
@@ -162,11 +162,11 @@ class guMediaViewer : public wxPanel
     void                    OnCleanFinished( wxCommandEvent &event ) { CleanFinished(); }
     void                    OnLibraryUpdated( wxCommandEvent &event ) { LibraryUpdated(); }
 
-    void                    OnAddPath( void );
+    void                    OnAddPath();
 
-    virtual void            LoadMediaDb( void );
+    virtual void            LoadMediaDb();
 
-    virtual void            CreateAcceleratorTable( void );
+    virtual void            CreateAcceleratorTable();
 
     virtual void            OnGenreSetSelection( wxCommandEvent &event );
     virtual void            OnAlbumArtistSetSelection( wxCommandEvent &event );
@@ -184,37 +184,37 @@ class guMediaViewer : public wxPanel
 
     virtual void            InitMediaViewer( const int mode );
 
-    virtual wxString        ConfigPath( void ) { return m_ConfigPath; }
+    virtual wxString        ConfigPath() { return m_ConfigPath; }
 
-    int                     GetBaseCommand( void ) { return m_BaseCommand; }
+    int                     GetBaseCommand() { return m_BaseCommand; }
 
-    bool                    IsDefault( void ) { return m_IsDefault; }
+    bool                    IsDefault() { return m_IsDefault; }
     void                    SetDefault( const bool isdefault ) { m_IsDefault = isdefault; }
 
-    void                    ClearSearchText( void );
+    void                    ClearSearchText();
 
-    void                    GoToSearch( void );
+    void                    GoToSearch();
 
-    virtual int             GetContextMenuFlags( void ) { return m_ContextMenuFlags; }
+    virtual int             GetContextMenuFlags() { return m_ContextMenuFlags; }
     virtual void            CreateContextMenu( wxMenu * menu, const int windowid = wxNOT_FOUND );
     virtual void            CreateCopyToMenu( wxMenu * menu );
 
-    int                     GetViewMode( void ) { return m_ViewMode; }
+    int                     GetViewMode() { return m_ViewMode; }
     virtual void            SetViewMode( const int mode );
 
-    guDbLibrary *           GetDb( void ) { return m_Db; }
-    guPlayerPanel *         GetPlayerPanel( void ) { return m_PlayerPanel; }
+    guDbLibrary *           GetDb() { return m_Db; }
+    guPlayerPanel *         GetPlayerPanel() { return m_PlayerPanel; }
     void                    SetPlayerPanel( guPlayerPanel * playerpanel );
-    guMainFrame *           GetMainFrame( void ) { return m_MainFrame; }
-    guLibPanel *            GetLibPanel( void ) { return m_LibPanel; }
-    guAlbumBrowser *        GetAlbumBrowser( void ) { return m_AlbumBrowser; }
-    guTreeViewPanel *       GetTreeViewPanel( void ) { return m_TreeViewPanel; }
-    guPlayListPanel *       GetPlayListPanel( void ) { return m_PlayListPanel; }
+    guMainFrame *           GetMainFrame() { return m_MainFrame; }
+    guLibPanel *            GetLibPanel() { return m_LibPanel; }
+    guAlbumBrowser *        GetAlbumBrowser() { return m_AlbumBrowser; }
+    guTreeViewPanel *       GetTreeViewPanel() { return m_TreeViewPanel; }
+    guPlayListPanel *       GetPlayListPanel() { return m_PlayListPanel; }
 
-    virtual bool            CreateLibraryView( void );
-    virtual bool            CreateAlbumBrowserView( void );
-    virtual bool            CreateTreeView( void );
-    virtual bool            CreatePlayListView( void );
+    virtual bool            CreateLibraryView();
+    virtual bool            CreateAlbumBrowserView();
+    virtual bool            CreateTreeView();
+    virtual bool            CreatePlayListView();
 
     virtual void            SetMenuState( const bool enabled = true );
     virtual void            ShowPanel( const int id, const bool enabled );
@@ -222,43 +222,43 @@ class guMediaViewer : public wxPanel
     virtual void            HandleCommand( const int command );
 
     // Collections related
-    guMediaCollection *     GetMediaCollection( void ) { return m_MediaCollection; }
+    guMediaCollection *     GetMediaCollection() { return m_MediaCollection; }
     virtual void            SetCollection( guMediaCollection &collection, const int basecommand );
-    virtual wxString        GetUniqueId( void ) { return m_MediaCollection->m_UniqueId; }
-    virtual int             GetType( void ) { return m_MediaCollection->m_Type; }
-    virtual wxString        GetName( void ) { return m_MediaCollection->m_Name; }
-    virtual wxArrayString   GetPaths( void ) { return m_MediaCollection->m_Paths; }
-    virtual wxArrayString   GetCoverWords( void ) { return m_MediaCollection->m_CoverWords; }
-    virtual bool            GetUpdateOnStart( void ) { return m_MediaCollection->m_UpdateOnStart; }
-    virtual bool            GetScanPlaylists( void ) { return m_MediaCollection->m_ScanPlaylists; }
-    virtual bool            GetScanFollowSymLinks( void ) { return m_MediaCollection->m_ScanFollowSymLinks; }
-    virtual bool            GetScanEmbeddedCovers( void ) { return m_MediaCollection->m_ScanEmbeddedCovers; }
-    virtual bool            GetEmbeddMetadata( void ) { return m_MediaCollection->m_EmbeddMetadata; }
-    virtual wxString        GetDefaultCopyAction( void ) { return m_MediaCollection->m_DefaultCopyAction; }
-    virtual int             GetLastUpdate( void ) { return m_MediaCollection->m_LastUpdate; }
-    virtual void            SetLastUpdate( void );
+    virtual wxString        GetUniqueId() { return m_MediaCollection->m_UniqueId; }
+    virtual int             GetType() { return m_MediaCollection->m_Type; }
+    virtual wxString        GetName() { return m_MediaCollection->m_Name; }
+    virtual wxArrayString   GetPaths() { return m_MediaCollection->m_Paths; }
+    virtual wxArrayString   GetCoverWords() { return m_MediaCollection->m_CoverWords; }
+    virtual bool            GetUpdateOnStart() { return m_MediaCollection->m_UpdateOnStart; }
+    virtual bool            GetScanPlaylists() { return m_MediaCollection->m_ScanPlaylists; }
+    virtual bool            GetScanFollowSymLinks() { return m_MediaCollection->m_ScanFollowSymLinks; }
+    virtual bool            GetScanEmbeddedCovers() { return m_MediaCollection->m_ScanEmbeddedCovers; }
+    virtual bool            GetEmbeddMetadata() { return m_MediaCollection->m_EmbeddMetadata; }
+    virtual wxString        GetDefaultCopyAction() { return m_MediaCollection->m_DefaultCopyAction; }
+    virtual int             GetLastUpdate() { return m_MediaCollection->m_LastUpdate; }
+    virtual void            SetLastUpdate();
 
-    virtual void            UpgradeLibrary( void );
-    virtual void            UpdateLibrary( const wxString &path = wxEmptyString );
-    virtual void            UpdateFinished( void );
-    virtual void            CleanLibrary( void );
-    virtual void            CleanFinished( void );
+    void                    UpdateLibrary( const wxString &path = wxEmptyString );
+    virtual void            UpdateFinished();
+    virtual void            UpgradeLibrary();
+    virtual void            CleanLibrary();
+    virtual void            CleanFinished();
 
-    virtual void            UpdatePlaylists( void );
+    virtual void            UpdatePlaylists();
 
-    virtual void            LibraryUpdated( void );
+    virtual void            LibraryUpdated();
 
-    virtual void            UpdateCovers( void );
-    virtual void            UpdateCoversFinished( void );
+    virtual void            UpdateCovers();
+    virtual void            UpdateCoversFinished();
 
-    virtual void            ImportFiles( void ) { ImportFiles( new guTrackArray() ); }
+    virtual void            ImportFiles() { ImportFiles( new guTrackArray() ); }
     virtual void            ImportFiles( guTrackArray * tracks );
     virtual void            ImportFiles( const wxArrayString &files );
 
     virtual void            SaveLayout( wxXmlNode * xmlnode );
     virtual void            LoadLayout( wxXmlNode * xmlnode );
 
-    virtual wxString        GetSelInfo( void );
+    virtual wxString        GetSelInfo();
 
     virtual void            UpdatedTrack( const int updatedby, const guTrack * track );
     virtual void            UpdatedTracks( const int updatedby, const guTrackArray * tracks );
@@ -278,8 +278,8 @@ class guMediaViewer : public wxPanel
     virtual void            AlbumCoverChanged( const int album, const bool deleted = false );
 
     virtual wxString        GetCoverName( const int albumid );
-    virtual wxBitmapType    GetCoverType( void ) { return wxBITMAP_TYPE_JPEG; }
-    virtual int             GetCoverMaxSize( void ) { return 0; }
+    virtual wxBitmapType    GetCoverType() { return wxBITMAP_TYPE_JPEG; }
+    virtual int             GetCoverMaxSize() { return 0; }
 
     virtual wxImage *       GetAlbumCover( const int albumid, int &coverid, wxString &coverpath,
                                            const wxString &artistname = wxEmptyString, const wxString &albumname = wxEmptyString );
@@ -290,9 +290,9 @@ class guMediaViewer : public wxPanel
 
     virtual void            SetSelection( const int type, const int id );
 
-    virtual void            PlayListUpdated( void );
+    virtual void            PlayListUpdated();
 
-    virtual void            EditProperties( void );
+    virtual void            EditProperties();
 
     virtual void            DeleteTracks( const guTrackArray * tracks );
 
@@ -302,18 +302,18 @@ class guMediaViewer : public wxPanel
     virtual void            SetTracksRating( guTrackArray &tracks, const int rating );
 
     // Copy to support functions
-    virtual wxString        AudioPath( void );
-    virtual wxString        Pattern( void );
-    virtual int             AudioFormats( void );
-    virtual int             TranscodeFormat( void );
-    virtual int             TranscodeScope( void );
-    virtual int             TranscodeQuality( void );
-    virtual bool            MoveFiles( void );
-    virtual int             PlaylistFormats( void );
-    virtual wxString        PlaylistPath( void );
-    virtual int             CoverFormats( void ) { return 2; } //guPORTABLEMEDIA_COVER_FORMAT_JPEG
-    virtual wxString        CoverName( void ) { return GetCoverName( wxNOT_FOUND ); }
-    virtual int             CoverSize( void ) { return 0; }
+    virtual wxString        AudioPath();
+    virtual wxString        Pattern();
+    virtual int             AudioFormats();
+    virtual int             TranscodeFormat();
+    virtual int             TranscodeScope();
+    virtual int             TranscodeQuality();
+    virtual bool            MoveFiles();
+    virtual int             PlaylistFormats();
+    virtual wxString        PlaylistPath();
+    virtual int             CoverFormats() { return 2; } //guPORTABLEMEDIA_COVER_FORMAT_JPEG
+    virtual wxString        CoverName() { return GetCoverName( wxNOT_FOUND ); }
+    virtual int             CoverSize() { return 0; }
 
     virtual void            CreateSmartPlaylist( const wxString &artistname, const wxString &trackname );
     virtual void            CreateBestOfPlaylist( const guTrack &track );
@@ -352,4 +352,3 @@ class guMediaViewerDropTarget : public wxDropTarget
 }
 
 #endif
-// -------------------------------------------------------------------------------- //
