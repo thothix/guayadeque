@@ -4,6 +4,13 @@ Guayadeque Music Player
 Changelog
 =========
 
+Unreleased (2025-06-XX)
+------------------
+
+### Bugfixes
+  * Fixed the "Set as Next Track" button in the playlist toolbar to handle properly
+    the tracks before the current track (enable them to be set as next track).
+
 0.7.1 (2025-05-XX)
 ------------------
 
