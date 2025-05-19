@@ -52,7 +52,7 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
     MainSizer = new wxBoxSizer(wxVERTICAL);
 
     // Playlist
-    m_PlayListCtrl = new guPlayList(this, db, NULL, (guMainFrame *) parent);
+    m_PlayListCtrl = new guPlayList(this, db, nullptr, (guMainFrame *) parent);
     m_PlayListCtrl->SetPlayerPlayList(this);
 
     // Toolbar
@@ -177,7 +177,7 @@ void guPlayerPlayList::OnShuffleBtnClick( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPlayerPlayList::UpdatePlayListToolbarState(int item, int curItem, int lastItem)
 {
-    bool topPlayEnabled = item > (curItem + 1);
+    bool topPlayEnabled = item > (curItem + 1) || item < curItem;
     bool topPrevEnabled = item != 0;
     bool nextBottomEnabled = item != lastItem;
 
@@ -209,7 +209,7 @@ guPlayList::guPlayList(wxWindow * parent,
     m_TotalLen = 0;
     m_CurItem = wxNOT_FOUND;
     m_StartPlaying = false;
-    m_SavePlaylistTimer = NULL;
+    m_SavePlaylistTimer = nullptr;
     m_SysFontPointSize = wxSystemSettings::GetFont( wxSYS_SYSTEM_FONT ).GetPointSize();
 
     InsertColumn( new guListViewColumn( _( "Now Playing" ), 0 ) );
@@ -325,7 +325,7 @@ guPlayList::~guPlayList()
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::CreateAcceleratorTable( void )
+void guPlayList::CreateAcceleratorTable()
 {
     wxAcceleratorTable AccelTable;
     wxArrayInt AccelCmds;
@@ -370,7 +370,7 @@ bool inline guIsMagnatuneFile( const wxString &filename )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::OnDropBegin( void )
+void guPlayList::OnDropBegin()
 {
     if( GetItemCount() )
     {
@@ -408,7 +408,7 @@ void guPlayList::OnDropTracks( const guTrackArray * tracks )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::OnDropEnd( void )
+void guPlayList::OnDropEnd()
 {
     m_DragOverItem = wxNOT_FOUND;
     // Once finished send the update guPlayList event to the guPlayList object
@@ -509,32 +509,8 @@ void guPlayList::RemoveSelected()
 //}
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::MoveSelection( void )
+void guPlayList::SetDragOverItem(guLISTVIEW_NAVIGATION target, wxArrayInt Selection)
 {
-    MoveSelection(guLISTVIEW_NAVIGATION_ITEM);
-}
-
-// -------------------------------------------------------------------------------- //
-void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
-{
-    //guLogMessage( wxT( "guPlayList::MoveSelection %i" ), m_DragOverItem );
-
-    // Move the Selected Items to the DragOverItem and DragOverFirst
-    int     InsertPos;
-    int     cur_selected;
-    bool    CurItemSet = false;
-    guTrackArray MoveItems;
-    wxArrayInt   target_items;
-
-    // How Many elements to move
-    wxArrayInt Selection = GetSelectedItems(false);
-    int selectionCount = Selection.Count();
-    if (!selectionCount)
-        return;
-
-    wxMutexLocker Lock(m_ItemsMutex);
-
-    int lastItem = m_Items.Count() - 1;
     if (target == guLISTVIEW_NAVIGATION_TOP_PLAYING)
         m_DragOverItem = (m_CurItem == wxNOT_FOUND) ? 0 : m_CurItem + 1;
     else if (target == guLISTVIEW_NAVIGATION_TOP)
@@ -543,7 +519,8 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
         m_DragOverItem = Selection[0] - 1;
     else if (target == guLISTVIEW_NAVIGATION_NEXT)
     {
-        cur_selected = Selection[0];
+        int selectionCount = Selection.Count();
+        int cur_selected = Selection[0];
         if (selectionCount > 1)
         {
             for (int Index = 1; Index < selectionCount; Index++)
@@ -556,12 +533,43 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
         m_DragOverItem = cur_selected + 1;
     }
     else if (target == guLISTVIEW_NAVIGATION_BOTTOM)
+    {
+        int lastItem = m_Items.Count() - 1;
         m_DragOverItem = lastItem;
-    else if (target == guLISTVIEW_NAVIGATION_ITEM)
-    {  // Use incoming m_DragOverItem
     }
+    else if (target == guLISTVIEW_NAVIGATION_ITEM)
+    {  // Use current/incoming m_DragOverItem
+    }
+}
 
-    // Where is the Items to be moved
+// -------------------------------------------------------------------------------- //
+void guPlayList::MoveSelection()
+{
+    MoveSelection(guLISTVIEW_NAVIGATION_ITEM);
+}
+
+// -------------------------------------------------------------------------------- //
+void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
+{
+    //guLogMessage( wxT( "guPlayList::MoveSelection %i" ), m_DragOverItem );
+
+    // Move the Selected Items to the DragOverItem and DragOverFirst
+    int InsertPos;
+    bool CurItemSet = false;
+    guTrackArray MoveItems;
+    wxArrayInt   target_items;
+
+    // How Many elements to move
+    wxArrayInt Selection = GetSelectedItems(false);
+    int selectionCount = Selection.Count();
+    if (!selectionCount)
+        return;
+
+    wxMutexLocker Lock(m_ItemsMutex);
+
+    SetDragOverItem(target, Selection);
+
+    // Where are the items to be moved
     InsertPos = m_DragOverAfter ? m_DragOverItem + 1 : m_DragOverItem;
     // PrintItems(m_Items, InsertPos, Selection[0], m_CurItem);
 
@@ -601,13 +609,15 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
     // PrintItems( m_Items, InsertPos, Selection[ 0 ], m_CurItem );
     ClearSelectedItems();
     SetSelectedItems(target_items);
+
+    SetDragOverItem(target, Selection);
     UpdatePlaylistToolbar();
 
     m_DragOverItem = wxNOT_FOUND;
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::UpdatePlaylistToolbar(void)
+void guPlayList::UpdatePlaylistToolbar()
 {
     int lastItem = m_Items.Count() - 1;
     m_PlayerPlayList->UpdatePlayListToolbarState(m_DragOverItem, m_CurItem, lastItem);
@@ -854,13 +864,13 @@ wxCoord guPlayList::OnMeasureItem( size_t n ) const
     dc.SetFont( Font );
 
     wxCoord y;
-    dc.GetTextExtent( wxT( "Hg" ), NULL, &y );
+    dc.GetTextExtent( wxT( "Hg" ), nullptr, &y );
     Height += y;
     self->m_SecondLineOffset = Height;
 
 //    Font.SetPointSize( m_SysFontPointSize - 3 );
 //    dc.SetFont( Font );
-//    dc.GetTextExtent( wxT( "Hg" ), NULL, &y );
+//    dc.GetTextExtent( wxT( "Hg" ), nullptr, &y );
     Height += y + 6;
 
     self->SetItemHeight( Height );
@@ -908,7 +918,7 @@ wxString guPlayList::OnGetItemText( const int row, const int col ) const
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::GetItemsList( void )
+void guPlayList::GetItemsList()
 {
 }
 
@@ -979,13 +989,13 @@ void guPlayList::SetCurrent( int curitem, bool delold )
 }
 
 // -------------------------------------------------------------------------------- //
-int guPlayList::GetCurItem( void )
+int guPlayList::GetCurItem()
 {
     return m_CurItem;
 }
 
 // -------------------------------------------------------------------------------- //
-guTrack * guPlayList::GetCurrent( void )
+guTrack * guPlayList::GetCurrent()
 {
 //    if( ( CurItem == wxNOT_FOUND ) && Items.Count() )
 //        CurItem = 0;
@@ -1023,7 +1033,7 @@ guTrack * guPlayList::GetNext( const int playmode, const bool forceskip )
             return &m_Items[ m_CurItem ];
         }
     }
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1055,7 +1065,7 @@ guTrack * guPlayList::GetPrev( const int playmode, const bool forceskip )
             return &m_Items[ m_CurItem ];
         }
     }
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1102,7 +1112,7 @@ guTrack * guPlayList::GetNextAlbum( const int playmode, const bool forceskip )
 //        }
     }
     m_CurItem = SaveCurItem;
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1161,7 +1171,7 @@ guTrack * guPlayList::GetPrevAlbum( const int playmode, const bool forceskip )
 //        }
     }
     m_CurItem = SaveCurItem;
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1170,11 +1180,11 @@ guTrack * guPlayList::GetItem( size_t item )
     size_t ItemsCount = m_Items.Count();
     if( ItemsCount && item < ItemsCount )
       return &m_Items[ item ];
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
-long guPlayList::GetLength( void ) const
+long guPlayList::GetLength() const
 {
     return m_TotalLen;
 }
@@ -1593,7 +1603,7 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
         guLogMessage( wxT( "Searching for track '%s'" ), SearchStr.c_str() );
 
         guMediaViewer * MagnatuneMediaViewer = m_MainFrame->FindCollectionMediaViewer( wxT( "Magnatune" ) );
-        guMagnatuneLibrary * MagnatuneDb = NULL;
+        guMagnatuneLibrary * MagnatuneDb = nullptr;
         if( MagnatuneMediaViewer )
             MagnatuneDb = ( guMagnatuneLibrary * ) MagnatuneMediaViewer->GetDb();
         else if( m_PendingLoadIds.Index( wxT( "Magnatune" ) ) == wxNOT_FOUND )
@@ -2582,7 +2592,7 @@ wxString guPlayList::GetSearchText( int item ) const
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::StopAtEnd( void )
+void guPlayList::StopAtEnd()
 {
     int ItemToFlag = wxNOT_FOUND;
     wxArrayInt Selection = GetSelectedItems( false );
@@ -2613,7 +2623,7 @@ void guPlayList::StopAtEnd( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::ClearStopAtEnd( void )
+void guPlayList::ClearStopAtEnd()
 {
     if( ( m_CurItem >= 0 ) && ( m_CurItem < ( int ) m_Items.Count() ) )
     {
@@ -2705,7 +2715,7 @@ void guPlayList::MediaViewerClosed( guMediaViewer * mediaviewer )
     {
         guTrack & Track = m_Items[ Index ];
         if( Track.m_MediaViewer == mediaviewer )
-            Track.m_MediaViewer = NULL;
+            Track.m_MediaViewer = nullptr;
     }
 }
 
@@ -2775,7 +2785,7 @@ void guPlayList::OnCreateSmartPlaylist( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::SavePlaylistTracks( void )
+void guPlayList::SavePlaylistTracks()
 {
     guTrackArray Tracks;
     guConfig * Config = ( guConfig * ) guConfig::Get();
@@ -2797,7 +2807,7 @@ void guPlayList::SavePlaylistTracks( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::LoadPlaylistTracks( void )
+void guPlayList::LoadPlaylistTracks()
 {
     wxBusyInfo BusyInfo( _( "Loading tracks. Please wait" ) );
     wxTheApp->Yield();

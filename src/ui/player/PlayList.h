@@ -76,13 +76,13 @@ class guPlayList : public guListView
     virtual int                 GetSelectedSongs( guTrackArray * Songs, const bool isdrag = false ) const;
     virtual void                OnDropFile( const wxString &filename );
     virtual void                OnDropTracks( const guTrackArray * tracks );
-    virtual void                OnDropBegin( void );
-    virtual void                OnDropEnd( void );
+    virtual void                OnDropBegin();
+    virtual void                OnDropEnd();
 
     virtual wxString            GetItemSearchText( const int row );
 
     void                        RemoveSelected();
-    virtual void                MoveSelection( void );
+    virtual void                MoveSelection();
     virtual void                MoveSelection(guLISTVIEW_NAVIGATION target);
 
     void                        OnClearClicked( wxCommandEvent &event );
@@ -113,10 +113,12 @@ class guPlayList : public guListView
     void                        OnSelectYear( wxCommandEvent &event );
     void                        OnSelectGenre( wxCommandEvent &event );
 
-    void                        CreateAcceleratorTable( void );
+    void                        CreateAcceleratorTable();
 
-    void                        SavePlaylistTracks( void );
-    void                        LoadPlaylistTracks( void );
+    void                        SavePlaylistTracks();
+    void                        LoadPlaylistTracks();
+
+    void                        SetDragOverItem(guLISTVIEW_NAVIGATION target, wxArrayInt Selection);
 
   protected:
     virtual void                OnKeyDown( wxKeyEvent &event );
@@ -124,7 +126,7 @@ class guPlayList : public guListView
     virtual void                DrawBackground( wxDC &dc, const wxRect &rect, const int row, const int col ) const;
     virtual void                CreateContextMenu( wxMenu * Menu ) const;
     virtual wxString            OnGetItemText( const int row, const int column ) const;
-    virtual void                GetItemsList( void );
+    virtual void                GetItemsList();
     virtual void                OnMouse( wxMouseEvent &event );
 
     void                        OnColumnSelected( wxCommandEvent &event );
@@ -171,8 +173,8 @@ class guPlayList : public guListView
     guTrack *                   GetNextAlbum( const int playloop, const bool forceskip = false );
     guTrack *                   GetPrevAlbum( const int playloop, const bool forceskip = false );
     void                        ClearItems();
-    long                        GetLength( void ) const;
-    wxString                    GetLengthStr( void ) const;
+    long                        GetLength() const;
+    wxString                    GetLengthStr() const;
     void                        AddToPlayList( const guTrackArray &newitems, const bool deleteold = false, const int aftercurrent = 0 ); //guINSERT_AFTER_CURRENT_NONE
     void                        SetPlayList( const guTrackArray &NewItems );
     wxString                    FindCoverFile( const wxString &DirName );
@@ -183,15 +185,15 @@ class guPlayList : public guListView
     void                        UpdatedTracks( const guTrackArray * tracks );
     void                        UpdatedTrack( const guTrack * track );
 
-    bool                        StartPlaying( void ) { return m_StartPlaying; }
+    bool                        StartPlaying() { return m_StartPlaying; }
 
-    void                        StopAtEnd( void );
-    void                        ClearStopAtEnd( void );
+    void                        StopAtEnd();
+    void                        ClearStopAtEnd();
 
     void                        MediaViewerCreated( const wxString &uniqueid, guMediaViewer * mediaviewer );
     void                        MediaViewerClosed( guMediaViewer * mediaviewer );
 
-    void                        UpdatePlaylistToolbar( void );
+    void                        UpdatePlaylistToolbar();
 
   friend class guAddDropFilesThread;
   friend class guPlayListDropTarget;
@@ -230,7 +232,7 @@ public :
     guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiManager * manager );
     ~guPlayerPlayList();
 
-    guPlayList *    GetPlayListCtrl( void ) { return m_PlayListCtrl; }
+    guPlayList *    GetPlayListCtrl() { return m_PlayListCtrl; }
     void            SetPlayerPanel( guPlayerPanel * player );
 
     void inline     UpdatedTracks( const guTrackArray * tracks ) { m_PlayListCtrl->UpdatedTracks( tracks ); }
@@ -239,7 +241,7 @@ public :
     void inline     MediaViewerCreated( const wxString &uniqueid, guMediaViewer * mediaviewer ) { m_PlayListCtrl->MediaViewerCreated( uniqueid, mediaviewer ); }
     void inline     MediaViewerClosed( guMediaViewer * mediaviewer ) { m_PlayListCtrl->MediaViewerClosed( mediaviewer ); }
 
-    void            LoadPlaylistTracks( void ) { m_PlayListCtrl->LoadPlaylistTracks(); }
+    void            LoadPlaylistTracks() { m_PlayListCtrl->LoadPlaylistTracks(); }
 
     void            UpdatePlayListToolbarState(int item, int curItem, int lastItem);
 };
