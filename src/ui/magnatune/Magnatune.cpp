@@ -68,21 +68,21 @@ void guMagnatuneLibrary::UpdateArtistsLabels( const guArrayListItems &labelsets 
     wxArrayInt Artists;
     Artists.Add( labelsets[ ArIndex ].GetId() );
     SetArtistsLabels( Artists, ArLabels );
-
   }
 }
 
 // -------------------------------------------------------------------------------- //
 void guMagnatuneLibrary::UpdateSongsLabels( const guArrayListItems &labelsets )
 {
-  guListItems   LaItems;
+  guListItems LaItems;
 
   // The ArtistLabels string is the same for all songs so done out of the loop
   GetLabels( &LaItems, true );
 
-  int           ItemIndex;
-  int           ItemCount = labelsets.Count();
-  for( ItemIndex = 0; ItemIndex < ItemCount; ItemIndex++ )
+  int ItemIndex;
+  int ItemCount = labelsets.Count();
+
+    for( ItemIndex = 0; ItemIndex < ItemCount; ItemIndex++ )
   {
     wxArrayInt ItemLabels = labelsets[ ItemIndex ].GetData();
 
@@ -91,7 +91,6 @@ void guMagnatuneLibrary::UpdateSongsLabels( const guArrayListItems &labelsets )
     wxArrayInt ItemIds;
     ItemIds.Add( labelsets[ ItemIndex ].GetId() );
     SetSongsLabels( ItemIds, ItemLabels );
-
   }
 }
 
@@ -103,9 +102,10 @@ void guMagnatuneLibrary::UpdateAlbumsLabels( const guArrayListItems &labelsets )
   // The ArtistLabels string is the same for all songs so done out of the loop
   GetLabels( &LaItems, true );
 
-  int           ItemIndex;
-  int           ItemCount = labelsets.Count();
-  for( ItemIndex = 0; ItemIndex < ItemCount; ItemIndex++ )
+  int ItemIndex;
+  int ItemCount = labelsets.Count();
+
+    for( ItemIndex = 0; ItemIndex < ItemCount; ItemIndex++ )
   {
     wxArrayInt ItemLabels = labelsets[ ItemIndex ].GetData();
 
@@ -186,7 +186,6 @@ void guMagnatuneLibrary::CreateNewSong( guTrack * track, const wxString &albumsk
 
         //guLogMessage( wxT( "%s" ), query.c_str() );
         ExecuteUpdate( query );
-
     }
 
 //    guLogMessage( wxT( "%s/%s/%s/%i - %s" ),
@@ -195,7 +194,6 @@ void guMagnatuneLibrary::CreateNewSong( guTrack * track, const wxString &albumsk
 //                track->m_AlbumName.c_str(),
 //                track->m_Number,
 //                track->m_SongName.c_str() );
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -213,10 +211,8 @@ int guMagnatuneLibrary::GetTrackId( const wxString &url, guTrack * track )
     if( dbRes.NextRow() )
     {
       RetVal = dbRes.GetInt( 0 );
-      if( track )
-      {
+      if (track)
           FillTrackFromDb( track, &dbRes );
-      }
     }
     dbRes.Finalize();
 
@@ -234,15 +230,11 @@ wxString guMagnatuneLibrary::GetAlbumSku( const int albumid )
     //guLogMessage( wxT( "Searching:\n%s" ), query.c_str() );
     dbRes = ExecuteQuery( query );
     if( dbRes.NextRow() )
-    {
       RetVal = dbRes.GetString( 0 );
-    }
-    dbRes.Finalize();
 
+    dbRes.Finalize();
     return RetVal;
 }
-
-
 
 
 // -------------------------------------------------------------------------------- //
@@ -266,8 +258,7 @@ guMagnatunePanel::~guMagnatunePanel()
 void guMagnatunePanel::OnDownloadAlbum( wxCommandEvent &event )
 {
     wxArrayInt Albums = m_AlbumListCtrl->GetSelectedItems();
-
-    ( ( guMediaViewerMagnatune * ) m_MediaViewer )->DownloadAlbums( Albums );
+    ((guMediaViewerMagnatune *) m_MediaViewer)->DownloadAlbums(Albums);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -441,9 +432,7 @@ guMagnatuneDownloadThread::ExitCode guMagnatuneDownloadThread::Entry()
                 guURLEncode( m_AlbumName, false ).c_str() );
 
         if( !wxDirExists( wxPathOnly( CoverFile.GetFullPath() ) + wxT( "/" ) ) )
-        {
             wxMkdir( wxPathOnly( CoverFile.GetFullPath() ) + wxT( "/" ), 0770 );
-        }
 
         if( !CoverFile.FileExists() )
         {
@@ -466,9 +455,7 @@ guMagnatuneDownloadThread::ExitCode guMagnatuneDownloadThread::Entry()
             wxPostEvent( m_MediaViewer, event );
         }
         else
-        {
             guLogMessage( wxT( "Could not get the magnatune cover art %s" ), CoverFile.GetFullPath().c_str() );
-        }
 
     }
     return 0;
@@ -583,9 +570,7 @@ void guMagnatuneUpdateThread::AddGenres( const wxString &genres )
     for( int Index = 0; Index < Count; Index++ )
     {
         if( m_GenreList.Index( Genres[ Index ] ) == wxNOT_FOUND )
-        {
             m_GenreList.Add( Genres[ Index ]  );
-        }
     }
 }
 
@@ -597,9 +582,7 @@ void guMagnatuneUpdateThread::ReadMagnatuneXmlTrack( wxXmlNode * xmlnode )
     {
         wxString ItemName = xmlnode->GetName();
         if( ItemName == wxT( "trackname" ) )
-        {
             m_CurrentTrack.m_SongName = xmlnode->GetNodeContent().Trim( true ).Trim( false );
-        }
         else if( ItemName == wxT( "tracknum" ) )
         {
             xmlnode->GetNodeContent().ToLong( &Id );
@@ -633,9 +616,8 @@ void guMagnatuneUpdateThread::ReadMagnatuneXmlTrack( wxXmlNode * xmlnode )
             m_CoverLink.Replace( wxT( "cover_200" ), wxT( "cover_600" ) );
         }
         else if( ItemName == wxT( "albumsku" ) )
-        {
             m_AlbumSku = xmlnode->GetNodeContent();
-        }
+
         xmlnode = xmlnode->GetNext();
     }
 }
@@ -684,16 +666,14 @@ void guMagnatuneUpdateThread::ReadMagnatuneXmlAlbum( wxXmlNode * xmlnode )
             ReadMagnatuneXmlTrack( xmlnode->GetChildren() );
 
             if( IsGenreEnabled( m_AllowedGenres, m_CurrentTrack.m_GenreName ) )
-            {
                 m_Db->CreateNewSong( &m_CurrentTrack, m_AlbumSku, m_CoverLink );
-            }
         }
         xmlnode = xmlnode->GetNext();
     }
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMagnatuneUpdateThread::UpgradeDatabase( void )
+bool guMagnatuneUpdateThread::UpgradeDatabase()
 {
     if( DownloadFile( guMAGNATUNE_DATABASE_DUMP_URL, guPATH_MAGNATUNE wxT( "album_info_xml.gz" ) ) )
     {
@@ -712,9 +692,7 @@ bool guMagnatuneUpdateThread::UpgradeDatabase( void )
             }
         }
         else
-        {
             guLogError( wxT( "Could not open the Magnatune local database copy" ) );
-        }
     }
     return false;
 }
@@ -730,11 +708,8 @@ guMagnatuneUpdateThread::ExitCode guMagnatuneUpdateThread::Entry()
     wxCommandEvent evtmax( wxEVT_MENU, ID_STATUSBAR_GAUGE_SETMAX );
     evtmax.SetInt( m_GaugeId );
 
-    if( m_Action == guMAGNATUNE_ACTION_UPDATE &&
-        !wxFileExists( guPATH_MAGNATUNE wxT( "album_info.xml" ) ) )
-    {
+    if (m_Action == guMAGNATUNE_ACTION_UPDATE && !wxFileExists(guPATH_MAGNATUNE wxT("album_info.xml")))
         m_Action = guMAGNATUNE_ACTION_UPGRADE;
-    }
 
     guLogMessage( wxT( "Starting the Magnatune Update process..." ) );
     if( !TestDestroy() && ( m_Action == guMAGNATUNE_ACTION_UPDATE || UpgradeDatabase() ) )
@@ -750,9 +725,7 @@ guMagnatuneUpdateThread::ExitCode guMagnatuneUpdateThread::Entry()
             for( int Index = 0; Index < Count; Index++ )
             {
                 if( !IsGenreEnabled( m_AllowedGenres, CurrentGenres[ Index ].m_Name ) )
-                {
                     GenresToDel.Add( CurrentGenres[ Index ].m_Id );
-                }
             }
 
             query = wxT( "BEGIN TRANSACTION" );
@@ -764,7 +737,6 @@ guMagnatuneUpdateThread::ExitCode guMagnatuneUpdateThread::Entry()
                 //guLogMessage( wxT( "%s" ), query.c_str() );
                 m_Db->ExecuteUpdate( query );
             }
-
 
             evtmax.SetExtraLong( XmlFile.Length() );
             wxPostEvent( guMainFrame::GetMainFrame(), evtmax );
@@ -785,16 +757,11 @@ guMagnatuneUpdateThread::ExitCode guMagnatuneUpdateThread::Entry()
                     if( XmlDoc.IsOk() )
                     {
                         wxXmlNode * XmlNode = XmlDoc.GetRoot();
-
                         if( XmlNode && XmlNode->GetName() == wxT( "Album" ) )
-                        {
                             ReadMagnatuneXmlAlbum( XmlNode->GetChildren() );
-                        }
                     }
                     else
-                    {
                         guLogMessage( wxT( "Error in album chunk:\n%s" ), AlbumChunk.c_str() );
-                    }
 
                     AlbumChunk = guGetNextXMLChunk( XmlFile, CurPos, "<Album>", "</Album>", wxConvISO8859_1 );
 
@@ -830,7 +797,7 @@ guMediaViewerMagnatune::guMediaViewerMagnatune( wxWindow * parent, guMediaCollec
         const int basecmd, guMainFrame * mainframe, const int mode, guPlayerPanel * playerpanel ) :
     guMediaViewer( parent, mediacollection, basecmd, mainframe, mode, playerpanel )
 {
-//    m_DownloadThread = NULL;
+//    m_DownloadThread = nullptr;
     m_ContextMenuFlags = ( guCONTEXTMENU_DOWNLOAD_COVERS | guCONTEXTMENU_LINKS );
 
     guConfig * Config = ( guConfig * ) guConfig::Get();
@@ -852,7 +819,7 @@ guMediaViewerMagnatune::~guMediaViewerMagnatune()
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerMagnatune::LoadMediaDb( void )
+void guMediaViewerMagnatune::LoadMediaDb()
 {
     guLogMessage( wxT( "LoadMediaDb... MAGNATUNE..." ) );
     m_Db = new guMagnatuneLibrary( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId + wxT( "/guayadeque.db" ) );
@@ -871,19 +838,15 @@ void guMediaViewerMagnatune::OnConfigUpdated( wxCommandEvent &event )
         m_UserName = Config->ReadStr( CONFIG_KEY_MAGNATUNE_USERNAME, wxEmptyString, CONFIG_PATH_MAGNATUNE );
         m_Password = Config->ReadStr( CONFIG_KEY_MAGNATUNE_PASSWORD, wxEmptyString, CONFIG_PATH_MAGNATUNE );
         if( m_UserName.IsEmpty() || m_Password.IsEmpty() )
-        {
             m_Membership = guMAGNATUNE_MEMBERSHIP_FREE;
-        }
 
         if( Config->ReadBool( CONFIG_KEY_MAGNATUNE_NEED_UPGRADE, false, CONFIG_PATH_MAGNATUNE ) )
-        {
             UpdateLibrary();
-        }
     }
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerMagnatune::UpdateLibrary( void )
+void guMediaViewerMagnatune::UpdateLibrary()
 {
     int GaugeId;
     GaugeId = m_MainFrame->AddGauge( m_MediaCollection->m_Name );
@@ -898,7 +861,7 @@ void guMediaViewerMagnatune::UpdateLibrary( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerMagnatune::UpgradeLibrary( void )
+void guMediaViewerMagnatune::UpgradeLibrary()
 {
     int GaugeId;
     GaugeId = m_MainFrame->AddGauge( m_MediaCollection->m_Name );
@@ -961,9 +924,9 @@ void guMediaViewerMagnatune::OnCoverDownloaded( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerMagnatune::EndUpdateThread( void )
+void guMediaViewerMagnatune::EndUpdateThread()
 {
-    m_UpdateThread = NULL;
+    m_UpdateThread = nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -978,7 +941,7 @@ void guMediaViewerMagnatune::DownloadAlbumCover( const int albumid )
 {
     wxString Artist;
     wxString Album;
-    if( m_Db->GetAlbumInfo( albumid, &Album, &Artist, NULL ) )
+    if( m_Db->GetAlbumInfo( albumid, &Album, &Artist, nullptr ) )
     {
         guLogMessage( wxT( "Starting download for %i '%s' '%s'" ), albumid, Artist.c_str(), Album.c_str() );
         AddDownload( albumid, Artist, Album );
@@ -999,14 +962,12 @@ void guMediaViewerMagnatune::CreateContextMenu( wxMenu * menu, const int windowi
         {
             MenuItem = new wxMenuItem( menu, ID_MAGNATUNE_DOWNLOAD_DIRECT_ALBUM, _( "Download Albums" ), _( "Download the current selected album" ) );
             Menu->Append( MenuItem );
-
             Menu->AppendSeparator();
         }
         else if( ( windowid == guLIBRARY_ELEMENT_TRACKS ) )
         {
             MenuItem = new wxMenuItem( menu, ID_MAGNATUNE_DOWNLOAD_DIRECT_TRACK_ALBUM, _( "Download Albums" ), _( "Download the current selected album" ) );
             Menu->Append( MenuItem );
-
             Menu->AppendSeparator();
         }
     }
@@ -1030,7 +991,7 @@ void guMediaViewerMagnatune::CreateContextMenu( wxMenu * menu, const int windowi
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewerMagnatune::CreateLibraryView( void )
+bool guMediaViewerMagnatune::CreateLibraryView()
 {
     guLogMessage( wxT( "CreateLibraryView... Magnatune...") );
     m_LibPanel = new guMagnatunePanel( this, this );
@@ -1039,21 +1000,21 @@ bool guMediaViewerMagnatune::CreateLibraryView( void )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewerMagnatune::CreateAlbumBrowserView( void )
+bool guMediaViewerMagnatune::CreateAlbumBrowserView()
 {
     m_AlbumBrowser = new guMagnatuneAlbumBrowser( this, this );
     return true;
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewerMagnatune::CreateTreeView( void )
+bool guMediaViewerMagnatune::CreateTreeView()
 {
     m_TreeViewPanel = new guMagnatuneTreePanel( this, this );
     return true;
 }
 
 // -------------------------------------------------------------------------------- //
-bool guMediaViewerMagnatune::CreatePlayListView( void )
+bool guMediaViewerMagnatune::CreatePlayListView()
 {
     m_PlayListPanel = new guMagnatunePlayListPanel( this, this );
     return true;
@@ -1080,9 +1041,7 @@ wxImage * guMediaViewerMagnatune::GetAlbumCover( const int albumid, int &coverid
                 if( CoverImage->IsOk() )
                 {
                     coverpath = CoverFile.GetFullPath();
-
                     SetAlbumCover( albumid, guPATH_MAGNATUNE_COVERS, coverpath );
-
                     coverid = m_Db->GetAlbumCoverId( albumid );
 
                     return CoverImage;
@@ -1094,7 +1053,7 @@ wxImage * guMediaViewerMagnatune::GetAlbumCover( const int albumid, int &coverid
 
     AddDownload( albumid, artistname, albumname );
 
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1102,7 +1061,7 @@ wxString guMediaViewerMagnatune::GetCoverName( const int albumid )
 {
     wxString Artist;
     wxString Album;
-    if( m_Db->GetAlbumInfo( albumid, &Album, &Artist, NULL ) )
+    if( m_Db->GetAlbumInfo( albumid, &Album, &Artist, nullptr ) )
         return wxString::Format( wxT( "%s-%s" ), Artist.c_str(), Album.c_str() );
     return wxEmptyString;
 }
@@ -1121,9 +1080,7 @@ void guMediaViewerMagnatune::SelectAlbumCover( const int albumid )
                 if( SetAlbumCover( albumid, guPATH_MAGNATUNE_COVERS, CoverFile ) )
                 {
                     if( SelCoverFile->EmbedToFiles() )
-                    {
                         EmbedAlbumCover( albumid );
-                    }
                 }
             }
         }
@@ -1176,9 +1133,7 @@ void guMediaViewerMagnatune::DownloadAlbums( const wxArrayInt &albumids )
         int DownloadFormat = Config->ReadNum( CONFIG_KEY_MAGNATUNE_DOWNLOAD_FORMAT, 0, CONFIG_PATH_MAGNATUNE );
         //guLogMessage( wxT( "DownloadFormat: %i %s" ), DownloadFormat, StartLabel[ DownloadFormat ].c_str() );
         if( ( DownloadFormat < 0 ) || ( DownloadFormat > 5 ) )
-        {
             DownloadFormat = 0;
-        }
 
         for( int Index = 0; Index < Count; Index++ )
         {
@@ -1203,9 +1158,7 @@ void guMediaViewerMagnatune::DownloadAlbums( const wxArrayInt &albumids )
                 }
             }
             else
-            {
                 guLogError( wxT( "Could not get the album download info" ) );
-            }
         }
     }
 }
@@ -1218,7 +1171,7 @@ bool guMediaViewerMagnatune::FindMissingCover( const int albumid, const wxString
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewerMagnatune::EditProperties( void )
+void guMediaViewerMagnatune::EditProperties()
 {
     wxCommandEvent CmdEvent( wxEVT_MENU, ID_MENU_PREFERENCES );
     CmdEvent.SetInt( guPREFERENCE_PAGE_MAGNATUNE );
