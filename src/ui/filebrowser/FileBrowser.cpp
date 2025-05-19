@@ -1619,52 +1619,53 @@ void guFileBrowser::OnFolderDelete( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guFileBrowser::OnFolderCopy( wxCommandEvent &event )
 {
-    //guLogMessage( wxT( "OnFolderCopy" ) );
-    wxTheClipboard->UsePrimarySelection( false );
-    if( wxTheClipboard->Open() )
+    //guLogMessage(wxT("OnFolderCopy"));
+    wxTheClipboard->UsePrimarySelection(false);
+    if (!wxTheClipboard->Open())
     {
-        wxTheClipboard->Clear();
-        wxFileDataObject * FileObject = new wxFileDataObject();
-        //wxCustomDataObject * GnomeCopiedObject = new wxCustomDataObject( wxDataFormat( wxT( "x-special/gnome-copied-files" ) ) );
-        //wxCustomDataObject * UriListObject = new wxCustomDataObject( wxDataFormat( wxT( "text/uri-list" ) ) );
-        wxTextDataObject * TextObject = new wxTextDataObject();
-        wxDataObjectComposite * CompositeObject = new wxDataObjectComposite();
-
-        wxString Path = m_DirCtrl->GetPath();
-        Path.Replace( wxT( "#" ), wxT( "%23" ) );
-
-        TextObject->SetText( Path );
-        FileObject->AddFile( Path );
-
-        //Path = wxT( "file://" ) + Path;
-        //UriListObject->SetData( Path.Length(), Path.char_str() );
-
-        //Path = wxT( "copy\n" ) + Path;
-        //GnomeCopiedObject->SetData( Path.Length(), Path.char_str() );
-
-        //guLogMessage( wxT( "Copy: '%s'" ), Path.c_str() );
-
-        CompositeObject->Add( FileObject );
-        //CompositeObject->Add( GnomeCopiedObject );
-        //CompositeObject->Add( UriListObject );
-        CompositeObject->Add( TextObject );
-
-        //if( !wxTheClipboard->AddData( CustomObject ) )
-        if( !wxTheClipboard->AddData( CompositeObject ) )
-        //if( !wxTheClipboard->AddData( TextObject ) )
-        {
-            delete FileObject;
-            delete TextObject;
-            //delete GnomeCopiedObject;
-            //delete UriListObject;
-            delete CompositeObject;
-            guLogError( wxT( "Can't copy the folder to the clipboard" ) );
-        }
-        guLogMessage( wxT( "Copied the data to the clipboard..." ) );
-        wxTheClipboard->Close();
+        guLogError(wxT("Could not open the clipboard object"));
+        return;
     }
-    else
-        guLogError( wxT( "Could not open the clipboard object" ) );
+
+    wxTheClipboard->Clear();
+    wxFileDataObject * FileObject = new wxFileDataObject();
+    //wxCustomDataObject * GnomeCopiedObject = new wxCustomDataObject( wxDataFormat( wxT( "x-special/gnome-copied-files" ) ) );
+    //wxCustomDataObject * UriListObject = new wxCustomDataObject( wxDataFormat( wxT( "text/uri-list" ) ) );
+    wxTextDataObject * TextObject = new wxTextDataObject();
+    wxDataObjectComposite * CompositeObject = new wxDataObjectComposite();
+
+    wxString Path = m_DirCtrl->GetPath();
+    Path.Replace(wxT("#"), wxT("%23"));
+
+    TextObject->SetText(Path);
+    FileObject->AddFile(Path);
+
+    //Path = wxT("file://") + Path;
+    //UriListObject->SetData(Path.Length(), Path.char_str());
+
+    //Path = wxT("copy\n") + Path;
+    //GnomeCopiedObject->SetData(Path.Length(), Path.char_str());
+
+    //guLogMessage(wxT("Copy: '%s'"), Path.c_str());
+
+    CompositeObject->Add(FileObject);
+    //CompositeObject->Add(GnomeCopiedObject);
+    //CompositeObject->Add(UriListObject);
+    CompositeObject->Add(TextObject);
+
+    //if (!wxTheClipboard->AddData(CustomObject))
+    //if (!wxTheClipboard->AddData(TextObject))
+    if (!wxTheClipboard->AddData(CompositeObject))
+    {
+        delete FileObject;
+        delete TextObject;
+        //delete GnomeCopiedObject;
+        //delete UriListObject;
+        delete CompositeObject;
+        guLogError(wxT("Can't copy the folder to the clipboard"));
+    }
+    guLogMessage(wxT("Copied the data to the clipboard..."));
+    wxTheClipboard->Close();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1716,14 +1717,15 @@ void guFileBrowser::OnFolderMove( wxCommandEvent &event )
         guLogMessage(wxT("Moving: %s -> %s"), sourceDir.c_str(), targetDir.c_str());
         m_DirCtrl->MoveDir(sourceDir, targetDir);
     }
-    m_DirCtrl->CollapsePath(curPath);       // Target parent
+    //m_DirCtrl->CollapsePath(curPath);       // Target parent
     if (!sourceDir.IsEmpty())
     {
         sourceDir = wxPathOnly(sourceDir);  // Source parent
-        m_DirCtrl->CollapsePath(sourceDir);
-        m_DirCtrl->ExpandPath(sourceDir);
+        //m_DirCtrl->CollapsePath(sourceDir);
+        //m_DirCtrl->ExpandPath(sourceDir);
     }
-    m_DirCtrl->ExpandPath(curPath);
+    //m_DirCtrl->ExpandPath(curPath);
+    m_DirCtrl->Refresh();
 
     wxTheClipboard->Close();
 }
