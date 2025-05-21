@@ -47,3 +47,12 @@ install_manifest.txt
 !.idea/codeStyles
 !.idea/runConfigurations
 
+# Debian packaging
+debian/*.log
+debian/*.debhelper
+debian/guayadeque.debhelper.log
+debian/debhelper-build-stamp
+debian/*.substvars
+debian/guayadeque/
+debian/files
+obj-*-linux-gnu/

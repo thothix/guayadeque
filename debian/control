@@ -1,0 +1,58 @@
+Source: guayadeque
+Section: sound
+Priority: optional
+Maintainer: Norbert X <nrbrtx@gmail.com>
+Build-Depends: cmake, debhelper, libwxgtk3.2-dev, libtagc0-dev, libsqlite3-dev, libcurl4-openssl-dev, libdbus-1-dev, libgstreamer1.0-dev, libgstreamer-plugins-base1.0-dev, libflac-dev, libgpod-dev, libwxsqlite3-3.0-dev, libicu-dev, libjsoncpp-dev
+Standards-Version: 3.9.5
+Homepage: http://guayadeque.org
+
+Package: guayadeque
+Architecture: any
+Depends: gstreamer1.0-plugins-base, gstreamer1.0-plugins-good, ${misc:Depends}, ${shlibs:Depends}
+Description: lightweight music player
+ Guayadeque is a music management program designed for all music enthusiasts.
+ It is Full Featured Linux media player that can easily manage large
+ collections and uses the Gstreamer media framework.
+ .
+ Main features include:
+  - Play MP3, Ogg, Opus, FLAC, WAV, WMA, MP4, AAC, AIFF, ASF, WV (WavPack), 
+    MPC (Musepack Audio), APE (Monkey's Audio), TrueAudio, DSF.
+  - Read and write tags in almost all supported formats.
+  - Smart play mode that add tracks that fit your music taste using the tracks
+    currently in the playlist.
+  - Allow to catalogue your music using labels. Any track, artist or album can
+    have as many labels you want.
+  - Allow fast access to any music file by genre, artist, album.
+  - Audio equalizer.
+  - Configurable cross fader engine.
+  - Configurable Silence detector to avoid listening to silence between tracks.
+  - Dynamic and static playlists management.
+  - Play and Rip Audio CDs.
+  - CUE sheet support.
+  - Tracks tag editor with automatically fetching of tags information for
+    easily completion.
+  - Ability to download covers manually or automatically.
+  - Lyrics downloads from different lyrics providers.
+  - Rate tracks from 0 to 5 stars.
+  - Record from internet radios.
+  - Desktop notifications.
+  - MPRIS D-Bus interface support so it can be easily controlled from music
+    applets for example.
+  - Allow to resume play status and position when closed and reopened.
+  - Allow to subscribe to podcasts and download all new episodes automatically
+    or manually.
+  - Play and Record shoutcast radios.
+  - Allow searching for an artist or a track in shoutcast radios.
+  - Suggest music using last.fm service.
+  - Last.fm audioscrobbling support.
+  - Easily expandable contextual links support. Find information about a track,
+    an artist or an album on your favourite site.
+  - Easily expandable contextual commands support. Set of preconfigured commands
+    like an option to record the album in a burning application. Create custom
+    commands easily.
+  - Option to copy the selection you want to a directory or device like USB
+    players and IPod using a configurable pattern you added.
+  - Partial GNOME session support to detect when GNOME session is about to close
+    and save the play list so it can continue next time with the same tracks.
+  - ... and many more.
+
