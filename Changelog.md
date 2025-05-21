@@ -4,10 +4,15 @@ Guayadeque Music Player
 Changelog
 =========
 
-Unreleased (2025-06-XX)
+Unreleased (2025-0X-XX)
 ------------------
 
+### Enhancements
+  * Removed warnings for GCC 15.1.
+
 ### Bugfixes
+  * Fixed bug in the library scan where sometimes the length of the last track of 
+    CUE files wasn't updating properly.
   * Fixed the "Set as Next Track" button in the playlist toolbar to handle properly
     the tracks before the current track (enable them to be set as next track).
 
@@ -22,7 +27,7 @@ Unreleased (2025-06-XX)
 
 ### Enhancements
   * Adjusted the Podcast Editor dialog size.
-  * Added a Find Cover button in the Cover Editor to repeat the cover searching
+  * Added a Find Cover button in the Cover Editor to repeat the cover search
     (same as hit enter in the text controls).
 
 ### Bugfixes
@@ -453,6 +458,8 @@ Unreleased (2025-06-XX)
   * Added in Radio tab the now playing and stream format info.
   * Added in Radio tab the option to reorder columns.
   * Added option in Preferences -> Library tab to add playlists when doing a library scanning.
+  * Now playlist are created for found playlist doing a library scan.
+  * Added French translation thanks to Frombenny <frombenny@gmail.com>.
   * Added Thailand translation. Thanks to mr_hangman.
   * Added Norwegian translation. Thanks to jente_14.
   * Added icelandic translation. Thanks to Hreinsi.
@@ -462,8 +469,6 @@ Unreleased (2025-06-XX)
   * Implemented crossfading between tracks.
   * Read composer, comments from ape and m4a files added.
   * Added Lyric support to Ape files.
-  * Added French translation thanks to Frombenny <frombenny@gmail.com>.
-  * Now playlist are created for found playlist doing a library scan.
   * Added option to show full screen and to hide status bar.
   * Implemented live search. Now Enter sends current filtered results to playlist.
   * Added a composer listbox to the library tab.
@@ -492,7 +497,7 @@ Unreleased (2025-06-XX)
     instead of tracks.
   * Added two buttons in preferences to order the cover words.
   * The covers are now saved with the first word to detect covers.
-  * Added in last.fm panel the posibility to search for tracks in library.
+  * Added in last.fm panel the possibility to search for tracks in library.
   * The splash shows the revision number.
   * Double click over the track title selects the track.
   * Updated the no cover image. Thanks mrmotinjo.

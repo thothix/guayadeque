@@ -641,13 +641,8 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
                 if (!m_PlaylistItems[CurrentTrack].m_Start)  // the first track starts at 1ms to make m_Offset = 1
                     m_PlaylistItems[CurrentTrack].m_Start++;
                 if (CurrentTrack > 0)
-                {
                     m_PlaylistItems[CurrentTrack - 1].m_Length = m_PlaylistItems[CurrentTrack].m_Start -
                         m_PlaylistItems[CurrentTrack - 1].m_Start;
-                    // Set the length of the last track
-                    if (Index == (Count - 1))
-                        m_PlaylistItems[CurrentTrack].m_Length = m_TrackLength - m_PlaylistItems[CurrentTrack].m_Start;
-                }
             }
         }
         else if (Keys[0] == wxT("PERFORMER"))
@@ -718,6 +713,10 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
             PlaylistItem.m_TrackPath = m_TrackPath;
         }
     }
+
+    // Set the length of the last track
+    if (CurrentTrack != wxNOT_FOUND)
+        m_PlaylistItems[CurrentTrack].m_Length = m_TrackLength - m_PlaylistItems[CurrentTrack].m_Start;
 
     return false;
 }
