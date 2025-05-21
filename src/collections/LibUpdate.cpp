@@ -252,7 +252,10 @@ void guLibUpdateThread::ProcessCovers( void )
 // -------------------------------------------------------------------------------- //
 guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
 {
+    int Count;
+    int Index;
     int LastIndex;
+
     wxCommandEvent evtup( wxEVT_MENU, ID_STATUSBAR_GAUGE_UPDATE );
     evtup.SetInt( m_GaugeId );
 
@@ -261,7 +264,7 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
 
     if( m_ScanPath.IsEmpty() )
     {
-        int Count = m_LibPaths.Count();
+        Count = m_LibPaths.Count();
         if( !Count )
         {
             guLogError( wxT( "No library directories to scan" ) );
@@ -269,7 +272,7 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
         }
 
         // For every directory in the library scan for new files and add them to m_TrackFiles
-        int Index = 0;
+        Index = 0;
         while( !TestDestroy() && ( Index < Count ) )
         {
             guLogMessage( wxT( "Doing Library Update in %s" ), m_LibPaths[ Index ].c_str() );
@@ -283,7 +286,7 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
     bool EmbeddMetadata = m_MediaViewer->GetMediaCollection()->m_EmbeddMetadata;
 
     // For every new track file update it in the database
-    int Count = m_TrackFiles.Count();
+    Count = m_TrackFiles.Count();
     if( Count )
     {
         m_Db->ExecuteUpdate( wxT( "BEGIN TRANSACTION;" ) );
@@ -291,7 +294,7 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
         evtmax.SetExtraLong( Count );
         wxPostEvent( m_MainFrame, evtmax );
         LastIndex = -1;
-        int Index = 0;
+        Index = 0;
         while( !TestDestroy() )
         {
             //guLogMessage( wxT( "%i - %i" ), Index, Count );
@@ -326,7 +329,7 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
         evtmax.SetExtraLong( Count );
         wxPostEvent( m_MainFrame, evtmax );
 
-        for( int Index = 0; Index < Count; Index++ )
+        for (Index = 0; Index < Count; Index++)
         {
             //
             // Delete all files from the same cue files
@@ -339,11 +342,11 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
         }
 
         LastIndex = -1;
-        int Index = 0;
-        while( !TestDestroy() )
+        Index = 0;
+        while (!TestDestroy())
         {
             //guLogMessage( wxT( "%i - %i" ), Index, Count );
-            if( ( Index >= Count ) )
+            if (Index >= Count)
                 break;
 
             //guLogMessage( wxT( "Scanning: '%s'" ), m_TrackFiles[ Index ].c_str() );
@@ -371,7 +374,7 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
         evtmax.SetExtraLong( Count );
         wxPostEvent( m_MainFrame, evtmax );
         LastIndex = -1;
-        int Index = 0;
+        Index = 0;
         while( !TestDestroy() )
         {
             //guLogMessage( wxT( "%i - %i" ), Index, Count );
@@ -391,9 +394,7 @@ guLibUpdateThread::ExitCode guLibUpdateThread::Entry()
                     {
                         ItemTrackId = m_Db->FindTrackFile( PlayList.GetItem( ItemIndex ).m_Location, NULL );
                         if( ItemTrackId )
-                        {
                             PlayListIds.Add( ItemTrackId );
-                        }
                     }
                 }
                 if( PlayListIds.Count() )

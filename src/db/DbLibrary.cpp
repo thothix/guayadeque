@@ -1681,7 +1681,7 @@ namespace Guayadeque {
             for (int Index = 0; Index < Count; Index++)
             {
                 guCuePlaylistItem &CueItem = CuePlaylistFile.GetItem(Index);
-                //guLogMessage( wxT( "Loading track %i '%s'" ), Index, CueItem.m_TrackPath.c_str() );
+                //guLogMessage(wxT("Loading track %i '%s' - %i"), Index, CueItem.m_TrackPath.c_str(), CueItem.m_Length);
 
                 if (wxFileExists(CueItem.m_TrackPath))
                 {
@@ -1699,8 +1699,9 @@ namespace Guayadeque {
                         if (TagInfo->Read())
                         {
                             guTrack CurTrack;
-                            CurTrack.m_Path = wxPathOnly(CueItem.m_TrackPath) + wxT("/");
+                            //guLogMessage(wxT("TagInfo %i '%s' - Len: %i"), Index, TagInfo->m_TrackName .c_str(), TagInfo->m_Length);
 
+                            CurTrack.m_Path = wxPathOnly(CueItem.m_TrackPath) + wxT("/");
                             CurTrack.m_GenreName = CueItem.m_Genre;
                             CurTrack.m_SongName = CueItem.m_Name;
                             CurTrack.m_ArtistName = CueItem.m_ArtistName;
@@ -1717,7 +1718,6 @@ namespace Guayadeque {
                                 CurTrack.m_Year = Year;
                             CurTrack.m_Bitrate = TagInfo->m_Bitrate;
 
-                            //
                             CurTrack.m_PathId = GetPathId(CurTrack.m_Path);
                             CurTrack.m_ComposerId = GetComposerId(CurTrack.m_Composer);
 

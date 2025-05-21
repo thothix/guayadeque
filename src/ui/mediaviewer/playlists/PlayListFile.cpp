@@ -45,9 +45,7 @@ wxString guPlaylistItem::GetLocation( const bool relative, const wxString &pathb
     {
         wxFileName FileName( m_Location );
         if( FileName.MakeRelativeTo( pathbase ) )
-        {
             return FileName.GetFullPath();
-        }
     }
     return m_Location;
 }
@@ -90,30 +88,18 @@ bool guPlaylistFile::Load( const wxString &uri )
     {
         wxString FileName;
         if( uri.StartsWith( wxT( "file://" ) ) )
-        {
             FileName = wxURI::Unescape( Uri.GetPath() );
-        }
         else
-        {
             FileName = uri;
-        }
 
         if( LowerPath.EndsWith( wxT( ".pls" ) ) )
-        {
             return ReadPlsFile( FileName );
-        }
         else if( LowerPath.EndsWith( wxT( ".m3u" ) ) || LowerPath.EndsWith( wxT( ".m3u8" ) ) )
-        {
             return ReadM3uFile( FileName );
-        }
         else if( LowerPath.EndsWith( wxT( ".xspf" ) ) )
-        {
             return ReadXspfFile( FileName );
-        }
         else if( LowerPath.EndsWith( wxT( ".asx" ) ) )
-        {
             return ReadAsxFile( FileName );
-        }
     }
     else
     {
@@ -142,26 +128,16 @@ bool guPlaylistFile::Load( const wxString &uri )
                 wxStringInputStream Ins( Content );
 
                 if( LowerPath.EndsWith( wxT( ".pls" ) ) )
-                {
                     return ReadPlsStream( Ins );
-                }
                 else if( LowerPath.EndsWith( wxT( ".m3u" ) ) || LowerPath.EndsWith( wxT( ".m3u8" ) ) )
-                {
                     return ReadM3uStream( Ins );
-                }
                 else if( LowerPath.EndsWith( wxT( ".xspf" ) ) )
-                {
                     return ReadXspfStream( Ins );
-                }
                 else if( LowerPath.EndsWith( wxT( ".asx" ) ) )
-                {
                     return ReadAsxStream( Ins );
-                }
             }
             else
-            {
                 guLogError( wxT( "Could not get the playlist '%s'" ), uri.c_str() );
-            }
         }
     }
     return false;
@@ -171,17 +147,11 @@ bool guPlaylistFile::Load( const wxString &uri )
 bool guPlaylistFile::Save( const wxString &filename, const bool relative )
 {
     if( filename.Lower().EndsWith( wxT( ".pls" ) ) )
-    {
         return WritePlsFile( filename, relative );
-    }
     else if( filename.Lower().EndsWith( wxT( ".xspf" ) ) )
-    {
         return WriteXspfFile( filename, relative );
-    }
     else if( filename.Lower().EndsWith( wxT( ".asx" ) ) )
-    {
         return WriteAsxFile( filename, relative );
-    }
     else
     {
         wxString FileName = filename;
@@ -206,9 +176,7 @@ bool guPlaylistFile::ReadPlsStream( wxInputStream &playlist, const wxString &pat
             {
                 guLogMessage( wxT( "Found a playlist with %i items" ), Count );
                 if( !Count )
-                {
                     guLogMessage( wxT( "This station playlist is empty" ) );
-                }
                 else
                 {
                     for( int Index = 1; Index <= Count; Index++ )
@@ -223,9 +191,7 @@ bool guPlaylistFile::ReadPlsStream( wxInputStream &playlist, const wxString &pat
 
                             wxURI Uri( Location );
                             if( Location.StartsWith( wxT( "/" ) ) || Uri.HasScheme() || path.IsEmpty() )
-                            {
                                 m_Playlist.Add( new guPlaylistItem( Location, Title ) );
-                            }
                             else
                             {
                                 wxFileName FileName( Location );
@@ -240,15 +206,13 @@ bool guPlaylistFile::ReadPlsStream( wxInputStream &playlist, const wxString &pat
             }
         }
         else
-        {
             guLogError( wxT( "ee: Station Playlist without 'playlist' group" ) );
-        }
+
         delete PlayList;
     }
     else
-    {
         guLogError( wxT( "Could not read the playlist stream" ) );
-    }
+
     return false;
 }
 
@@ -258,13 +222,10 @@ bool guPlaylistFile::ReadPlsFile( const wxString &filename )
     guLogMessage( wxT( "ReadPlsFile( '%s' )" ), filename.c_str() );
     wxFileInputStream Ins( filename );
     if( Ins.IsOk() )
-    {
         return ReadPlsStream( Ins, wxPathOnly( filename ) );
-    }
     else
-    {
         guLogError( wxT( "Could not open the playlist file '%s'" ), filename.c_str() );
-    }
+
     return false;
 }
 
@@ -286,9 +247,7 @@ bool guPlaylistFile::ReadM3uStream( wxInputStream &playlist, const wxString &pat
         {
             Lines[ Index ].Trim( false ).Trim( true );
             if( Lines[ Index ].IsEmpty() || ( Lines[ Index ].Find( wxT( "#EXTM3U" ) ) != wxNOT_FOUND ) )
-            {
                 continue;
-            }
             else if( Lines[ Index ].Find( wxT( "#EXTINF" ) ) != wxNOT_FOUND )
             {
                 if( Lines[ Index ].Find( wxT( "," ) ) != wxNOT_FOUND )
@@ -296,12 +255,9 @@ bool guPlaylistFile::ReadM3uStream( wxInputStream &playlist, const wxString &pat
             }
             else
             {
-
                 wxURI Uri( Lines[ Index ] );
                 if( Lines[ Index ].StartsWith( wxT( "/" ) ) || Uri.HasScheme() || path.IsEmpty() )
-                {
                     m_Playlist.Add( new guPlaylistItem( Lines[ Index ], ItemName ) );
-                }
                 else
                 {
                     wxFileName FileName( Lines[ Index ] );
@@ -316,9 +272,8 @@ bool guPlaylistFile::ReadM3uStream( wxInputStream &playlist, const wxString &pat
         return true;
     }
     else
-    {
         guLogError( wxT( "Empty playlist file stream" ) );
-    }
+
     return false;
 }
 
@@ -327,13 +282,10 @@ bool guPlaylistFile::ReadM3uFile( const wxString &filename )
 {
     wxFileInputStream Ins( filename );
     if( Ins.IsOk() )
-    {
         return ReadM3uStream( Ins, wxPathOnly( filename ) );
-    }
     else
-    {
         guLogError( wxT( "Could not open the playlist file '%s'" ), filename.c_str() );
-    }
+
     return false;
 }
 
@@ -345,13 +297,9 @@ void guPlaylistFile::ReadXspfTrack( wxXmlNode * XmlNode )
     while( XmlNode )
     {
         if( XmlNode->GetName().Lower() == wxT( "title" ) )
-        {
             Title = XmlNode->GetNodeContent();
-        }
         else if( XmlNode->GetName().Lower() == wxT( "location" ) )
-        {
             Location = XmlNode->GetNodeContent();
-        }
         XmlNode = XmlNode->GetNext();
     }
 
@@ -365,9 +313,8 @@ void guPlaylistFile::ReadXspfTrackList( wxXmlNode * XmlNode )
     while( XmlNode )
     {
         if( XmlNode->GetName().Lower() == wxT( "track" ) )
-        {
             ReadXspfTrack( XmlNode->GetChildren() );
-        }
+
         XmlNode = XmlNode->GetNext();
     }
 
@@ -379,13 +326,10 @@ void guPlaylistFile::ReadXspfPlayList( wxXmlNode * XmlNode )
     while( XmlNode )
     {
         if( XmlNode->GetName().Lower() == wxT( "title" ) )
-        {
             m_Name = XmlNode->GetNodeContent();
-        }
         else if( XmlNode->GetName().Lower() == wxT( "tracklist" ) )
-        {
             ReadXspfTrackList( XmlNode->GetChildren() );
-        }
+
         XmlNode = XmlNode->GetNext();
     }
 }
@@ -408,13 +352,10 @@ bool guPlaylistFile::ReadXspfFile( const wxString &filename )
 {
     wxFileInputStream Ins( filename );
     if( Ins.IsOk() )
-    {
         return ReadXspfStream( Ins );
-    }
     else
-    {
         guLogError( wxT( "Could not open the playlist file '%s'" ), filename.c_str() );
-    }
+
     return false;
 }
 
@@ -426,13 +367,9 @@ void guPlaylistFile::ReadAsxEntry( wxXmlNode * XmlNode )
     while( XmlNode )
     {
         if( XmlNode->GetName().Lower() == wxT( "title" ) )
-        {
             Title = XmlNode->GetNodeContent();
-        }
         else if( XmlNode->GetName().Lower() == wxT( "ref" ) )
-        {
             XmlNode->GetAttribute( wxT( "href" ), &Location );
-        }
         XmlNode = XmlNode->GetNext();
     }
     if( !Location.IsEmpty() )
@@ -445,13 +382,10 @@ void guPlaylistFile::ReadAsxPlayList( wxXmlNode * XmlNode )
     while( XmlNode )
     {
         if( XmlNode->GetName().Lower() == wxT( "title" ) )
-        {
             m_Name = XmlNode->GetNodeContent();
-        }
         else if( XmlNode->GetName().Lower() == wxT( "entry" ) )
-        {
             ReadAsxEntry( XmlNode->GetChildren() );
-        }
+
         XmlNode = XmlNode->GetNext();
     }
 }
@@ -474,13 +408,10 @@ bool guPlaylistFile::ReadAsxFile( const wxString &filename )
 {
     wxFileInputStream Ins( filename );
     if( Ins.IsOk() )
-    {
         return ReadAsxStream( Ins );
-    }
     else
-    {
         guLogError( wxT( "Could not open the playlist file '%s'" ), filename.c_str() );
-    }
+
     return false;
 }
 
@@ -503,9 +434,8 @@ bool guPlaylistFile::WritePlsFile( const wxString &filename, const bool relative
         PlsFile.Close();
     }
     else
-    {
         guLogError( wxT( "Could not open the plsfile '%s'" ), filename.c_str() );
-    }
+
     return false;
 }
 
@@ -526,9 +456,8 @@ bool guPlaylistFile::WriteM3uFile( const wxString &filename, const bool relative
         M3uFile.Close();
     }
     else
-    {
         guLogError( wxT( "Could not open the m3ufile '%s'" ), filename.c_str() );
-    }
+
     return false;
 }
 
@@ -604,7 +533,6 @@ bool guPlaylistFile::WriteAsxFile( const wxString &filename, const bool relative
 }
 
 
-
 // -------------------------------------------------------------------------------- //
 // guCuePlaylistFile
 // -------------------------------------------------------------------------------- //
@@ -632,7 +560,6 @@ unsigned int RedBookToMTime( const wxString &rbtime )
     Sections[ 1 ].ToULong( &Secs );
     Sections[ 2 ].ToULong( &Frames );
 
-
     return ( Mins * 60 * 1000 ) +
            ( Secs * 1000 ) +
            ( Frames * 1000 / 75 );
@@ -643,9 +570,8 @@ inline wxString RemoveQuotationMark( const wxString &text )
 {
     //guLogMessage( wxT( "RemoveQuotationMark: '%s'" ), text.c_str() );
     if( text.StartsWith( wxT( "\"" ) ) )
-    {
         return text.Mid( 1, text.Length() - 2 );
-    }
+
     return text;
 }
 
@@ -655,168 +581,144 @@ inline wxString GetKeyValue( const wxString &line, const wxString &key )
     //guLogMessage( wxT( "GetKeyValue: '%s' ==> '%s'" ), line.c_str(), key.c_str() );
     int Pos = line.Find( key );
     if( Pos != wxNOT_FOUND )
-    {
         return line.Mid( Pos + key.Length() ).Strip( wxString::both );
-    }
+
     return wxEmptyString;
 }
 
 // -------------------------------------------------------------------------------- //
 bool guCuePlaylistFile::LoadFromText( const wxString &content )
 {
-    if( !content.IsEmpty() )
+    if (content.IsEmpty())
     {
-        wxArrayString Lines = wxStringTokenize( content, wxT( "\n" ) );
-        int CurrentTrack = wxNOT_FOUND;
+        guLogError( wxT( "Empty Cuesheet '%s'" ), m_Location.c_str() );
+        return false;
+    }
 
-        int Count = Lines.Count();
-        for( int Index = 0; Index < Count; Index++ )
+    wxArrayString Lines = wxStringTokenize( content, wxT( "\n" ) );
+    int CurrentTrack = wxNOT_FOUND;
+    int Count = Lines.Count();
+    int Index;
+
+    for (Index = 0; Index < Count; Index++)
+    {
+        Lines[Index].Trim(false).Trim(true);
+        wxString Line = Lines[Index];
+        //guLogMessage( wxT( "'%s'" ), Line.c_str() );
+        wxArrayString Keys = wxStringTokenize(Line, wxT(" "));
+
+        if (!Keys.Count())
+            continue;
+
+        if (Keys[0] == wxT("FILE"))
         {
-            Lines[ Index ].Trim( false ).Trim( true );
-            wxString Line = Lines[ Index ];
-            //guLogMessage( wxT( "'%s'" ), Line.c_str() );
-            wxArrayString Keys = wxStringTokenize( Line, wxT( " " ) );
-
-            if( !Keys.Count() )
-                continue;
-
-            if( Keys[ 0 ] == wxT( "FILE" ) )
+            if (CurrentTrack == wxNOT_FOUND)
             {
-                if( CurrentTrack == wxNOT_FOUND )
+                m_TrackPath = RemoveQuotationMark(GetKeyValue(Line, wxT("FILE")).BeforeLast(wxT(' ')));
+                if (!m_TrackPath.StartsWith(wxT("/")))
+                    m_TrackPath = wxPathOnly(m_Location) + wxT("/") + m_TrackPath;
+                guTagInfo *TagInfo = guGetTagInfoHandler(m_TrackPath);
+                if (TagInfo)
                 {
-                    m_TrackPath = RemoveQuotationMark( GetKeyValue( Line, wxT( "FILE" ) ).BeforeLast( wxT( ' ' ) ) );
-                    if( !m_TrackPath.StartsWith( wxT( "/" ) ) )
-                        m_TrackPath = wxPathOnly( m_Location ) + wxT( "/" ) + m_TrackPath;
-                    guTagInfo * TagInfo = guGetTagInfoHandler( m_TrackPath );
-                    if( TagInfo )
-                    {
-                        if( TagInfo->Read() )
-                        {
-                            m_TrackLength = TagInfo->m_Length;
-                        }
-                        delete TagInfo;
-                    }
-                }
-                else
-                {
-                    m_PlaylistItems[ CurrentTrack ].m_TrackPath =
-                        RemoveQuotationMark( GetKeyValue( Line, wxT( "FILE" ) ).BeforeLast( wxT( ' ' ) ) );
-                    if( !m_PlaylistItems[ CurrentTrack ].m_TrackPath.StartsWith( wxT( "/" ) ) )
-                        m_TrackPath = wxPathOnly( m_Location ) + wxT( "/" ) + m_PlaylistItems[ CurrentTrack ].m_TrackPath;
+                    if (TagInfo->Read())
+                        m_TrackLength = TagInfo->m_Length;
+                    delete TagInfo;
                 }
             }
-            else if( Keys[ 0 ] == wxT( "INDEX" ) )
+            else
             {
-                if( Keys[ 1 ] == wxT( "01" ) )
-                {
-                    m_PlaylistItems[ CurrentTrack ].m_Start = RedBookToMTime( GetKeyValue( Line, wxT( "01" ) ) );
-                    if( !m_PlaylistItems[ CurrentTrack ].m_Start )  // the first track starts at 1ms to make m_Offset = 1
-                        m_PlaylistItems[ CurrentTrack ].m_Start++;
-                    if( CurrentTrack > 0 )
-                    {
-                        m_PlaylistItems[ CurrentTrack - 1 ].m_Length = m_PlaylistItems[ CurrentTrack ].m_Start -
-                            m_PlaylistItems[ CurrentTrack - 1 ].m_Start;
-                        // Set the length of the last track
-                        if( Index == ( Count - 1 ) )
-                        {
-                            m_PlaylistItems[ CurrentTrack ].m_Length = m_TrackLength - m_PlaylistItems[ CurrentTrack ].m_Start;
-                        }
-                    }
-                }
-            }
-            else if( Keys[ 0 ] == wxT( "PERFORMER" ) )
-            {
-                if( CurrentTrack == wxNOT_FOUND )
-                {
-                    m_ArtistName = RemoveQuotationMark( GetKeyValue( Line, wxT( "PERFORMER" ) ) );
-                }
-                else
-                {
-                    m_PlaylistItems[ CurrentTrack ].m_ArtistName = RemoveQuotationMark( GetKeyValue( Line, wxT( "PERFORMER" ) ) );
-                    if( !m_ArtistName.IsEmpty() )
-                    {
-                        m_PlaylistItems[ CurrentTrack ].m_AlbumArtist = m_ArtistName;
-                    }
-                }
-            }
-            else if( Keys[ 0 ] == wxT( "REM" ) )
-            {
-                if( Keys[ 1 ] == wxT( "GENRE" ) )
-                {
-                    if( CurrentTrack == wxNOT_FOUND )
-                    {
-                        m_Genre = RemoveQuotationMark( GetKeyValue( Line, wxT( "GENRE" ) ) );
-                        guLogMessage( wxT( "Genre  : '%s'" ), m_Genre.c_str() );
-                    }
-                    else
-                    {
-                        m_PlaylistItems[ CurrentTrack ].m_Genre = RemoveQuotationMark( GetKeyValue( Line, wxT( "GENRE" ) ) );
-                        guLogMessage( wxT( "Genre %i: '%s'" ), CurrentTrack, m_Genre.c_str() );
-                    }
-                }
-                else if( Keys[ 1 ] == wxT( "DATE" ) )
-                {
-                    if( CurrentTrack == wxNOT_FOUND )
-                    {
-                        m_Year = RemoveQuotationMark( GetKeyValue( Line, wxT( "DATE" ) ) );
-                    }
-                    else
-                    {
-                        m_PlaylistItems[ CurrentTrack ].m_Year = RemoveQuotationMark( GetKeyValue( Line, wxT( "DATE" ) ) );
-                    }
-                }
-                else if( Keys[ 1 ] == wxT( "COMMENT" ) )
-                {
-                    if( CurrentTrack == wxNOT_FOUND )
-                    {
-                        m_Comment = RemoveQuotationMark( GetKeyValue( Line, wxT( "COMMENT" ) ) );
-                    }
-                    else
-                    {
-                        m_PlaylistItems[ CurrentTrack ].m_Comment = RemoveQuotationMark( GetKeyValue( Line, wxT( "COMMENT" ) ) );
-                    }
-                }
-            }
-            else if( Keys[ 0 ] == wxT( "SONGWRITER" ) )
-            {
-                if( CurrentTrack == wxNOT_FOUND )
-                {
-                    m_Composer = RemoveQuotationMark( GetKeyValue( Line, wxT( "SONGWRITER" ) ) );
-                }
-                else
-                {
-                    m_PlaylistItems[ CurrentTrack ].m_Composer = RemoveQuotationMark( GetKeyValue( Line, wxT( "SONGWRITER" ) ) );
-                }
-            }
-            else if( Keys[ 0 ] == wxT( "TITLE" ) )
-            {
-                if( CurrentTrack == wxNOT_FOUND )
-                {
-                    m_AlbumName = RemoveQuotationMark( GetKeyValue( Line, wxT( "TITLE" ) ) );
-                }
-                else
-                {
-                    m_PlaylistItems[ CurrentTrack ].m_Name = RemoveQuotationMark( GetKeyValue( Line, wxT( "TITLE" ) ) );
-                }
-            }
-            else if( Keys[ 0 ] == wxT( "TRACK" ) )
-            {
-                m_PlaylistItems.Add( new guCuePlaylistItem() );
-                CurrentTrack++;
-                guCuePlaylistItem &PlaylistItem  = m_PlaylistItems[ CurrentTrack ];
-                PlaylistItem.m_Genre = m_Genre;
-                PlaylistItem.m_AlbumName = m_AlbumName;
-                PlaylistItem.m_Comment = m_Comment;
-                PlaylistItem.m_ArtistName = m_ArtistName;
-                PlaylistItem.m_Year = m_Year;
-                PlaylistItem.m_TrackPath = m_TrackPath;
+                m_PlaylistItems[CurrentTrack].m_TrackPath =
+                    RemoveQuotationMark(GetKeyValue(Line, wxT("FILE")).BeforeLast(wxT(' ')));
+                if (!m_PlaylistItems[CurrentTrack].m_TrackPath.StartsWith(wxT("/")))
+                    m_TrackPath = wxPathOnly(m_Location) + wxT("/") + m_PlaylistItems[CurrentTrack].m_TrackPath;
             }
         }
+        else if (Keys[0] == wxT("INDEX"))
+        {
+            if (Keys[1] == wxT("01"))
+            {
+                m_PlaylistItems[CurrentTrack].m_Start = RedBookToMTime(GetKeyValue(Line, wxT("01")));
+                if (!m_PlaylistItems[CurrentTrack].m_Start)  // the first track starts at 1ms to make m_Offset = 1
+                    m_PlaylistItems[CurrentTrack].m_Start++;
+                if (CurrentTrack > 0)
+                {
+                    m_PlaylistItems[CurrentTrack - 1].m_Length = m_PlaylistItems[CurrentTrack].m_Start -
+                        m_PlaylistItems[CurrentTrack - 1].m_Start;
+                    // Set the length of the last track
+                    if (Index == (Count - 1))
+                        m_PlaylistItems[CurrentTrack].m_Length = m_TrackLength - m_PlaylistItems[CurrentTrack].m_Start;
+                }
+            }
+        }
+        else if (Keys[0] == wxT("PERFORMER"))
+        {
+            if (CurrentTrack == wxNOT_FOUND)
+                m_ArtistName = RemoveQuotationMark(GetKeyValue(Line, wxT("PERFORMER")));
+            else
+            {
+                m_PlaylistItems[CurrentTrack].m_ArtistName = RemoveQuotationMark(GetKeyValue(Line, wxT("PERFORMER")));
+                if (!m_ArtistName.IsEmpty())
+                    m_PlaylistItems[CurrentTrack].m_AlbumArtist = m_ArtistName;
+            }
+        }
+        else if (Keys[0] == wxT("REM"))
+        {
+            if (Keys[1] == wxT("GENRE"))
+            {
+                if (CurrentTrack == wxNOT_FOUND)
+                {
+                    m_Genre = RemoveQuotationMark(GetKeyValue(Line, wxT("GENRE")));
+                    guLogMessage(wxT("Genre  : '%s'"), m_Genre.c_str());
+                }
+                else
+                {
+                    m_PlaylistItems[CurrentTrack].m_Genre = RemoveQuotationMark(GetKeyValue(Line, wxT("GENRE")));
+                    guLogMessage(wxT("Genre %i: '%s'"), CurrentTrack, m_Genre.c_str());
+                }
+            }
+            else if (Keys[1] == wxT("DATE"))
+            {
+                if (CurrentTrack == wxNOT_FOUND)
+                    m_Year = RemoveQuotationMark(GetKeyValue(Line, wxT("DATE")));
+                else
+                    m_PlaylistItems[CurrentTrack].m_Year = RemoveQuotationMark(GetKeyValue(Line, wxT("DATE")));
+            }
+            else if (Keys[1] == wxT("COMMENT"))
+            {
+                if (CurrentTrack == wxNOT_FOUND)
+                    m_Comment = RemoveQuotationMark(GetKeyValue(Line, wxT("COMMENT")));
+                else
+                    m_PlaylistItems[CurrentTrack].m_Comment = RemoveQuotationMark(GetKeyValue(Line, wxT("COMMENT")));
+            }
+        }
+        else if (Keys[0] == wxT("SONGWRITER"))
+        {
+            if (CurrentTrack == wxNOT_FOUND)
+                m_Composer = RemoveQuotationMark(GetKeyValue(Line, wxT("SONGWRITER")));
+            else
+                m_PlaylistItems[CurrentTrack].m_Composer = RemoveQuotationMark(GetKeyValue(Line, wxT("SONGWRITER")));
+        }
+        else if (Keys[0] == wxT("TITLE"))
+        {
+            if (CurrentTrack == wxNOT_FOUND)
+                m_AlbumName = RemoveQuotationMark(GetKeyValue(Line, wxT("TITLE")));
+            else
+                m_PlaylistItems[CurrentTrack].m_Name = RemoveQuotationMark(GetKeyValue(Line, wxT("TITLE")));
+        }
+        else if (Keys[0] == wxT("TRACK"))
+        {
+            m_PlaylistItems.Add(new guCuePlaylistItem());
+            CurrentTrack++;
+            guCuePlaylistItem &PlaylistItem  = m_PlaylistItems[CurrentTrack];
+            PlaylistItem.m_Genre = m_Genre;
+            PlaylistItem.m_AlbumName = m_AlbumName;
+            PlaylistItem.m_Comment = m_Comment;
+            PlaylistItem.m_ArtistName = m_ArtistName;
+            PlaylistItem.m_Year = m_Year;
+            PlaylistItem.m_TrackPath = m_TrackPath;
+        }
     }
-    else
-    {
-        guLogError( wxT( "Empty playlist '%s'" ), m_Location.c_str() );
-    }
+
     return false;
 }
 
@@ -827,80 +729,67 @@ bool guCuePlaylistFile::Load( const wxString &location )
 
     m_Location = location;
 
-    if( !location.IsEmpty() )
+    if (location.IsEmpty())
+        return false;
+
+    wxURI Uri( location );
+    if( location.StartsWith( wxT( "file://" ) ) )
+        m_Location = wxURI::Unescape( Uri.GetPath() );
+
+    if( Uri.IsReference() )
     {
-        wxURI Uri( location );
-        if( location.StartsWith( wxT( "file://" ) ) )
+        //guLogMessage( wxT( "Cuesheet from file : '%s'" ), m_Location.c_str() );
+
+        wxFile PlaylistFile( m_Location, wxFile::read );
+
+        if( !PlaylistFile.IsOpened() )
         {
-            m_Location = wxURI::Unescape( Uri.GetPath() );
+            guLogMessage( wxT( "Could not open '%s'" ), m_Location.c_str() );
+            return false;
         }
-        else
+
+        int DataSize = PlaylistFile.Length();
+        if( !DataSize )
         {
-            m_Location = location;
+            guLogMessage( wxT( "Cuesheet '%s' with 0 length" ), m_Location.c_str() );
+            return false;
         }
 
-        if( Uri.IsReference() )
+        char * Buffer = ( char * ) malloc( DataSize + 1 );
+        if( Buffer )
         {
-            //guLogMessage( wxT( "CuePlaylist from file : '%s'" ), m_Location.c_str() );
-
-            wxFile PlaylistFile( m_Location, wxFile::read );
-
-            if( !PlaylistFile.IsOpened() )
+            if( PlaylistFile.Read( Buffer, DataSize ) == DataSize )
             {
-                guLogMessage( wxT( "Could not open '%s'" ), m_Location.c_str() );
-                return false;
-            }
-
-            int DataSize = PlaylistFile.Length();
-            if( !DataSize )
-            {
-                guLogMessage( wxT( "Playlist '%s' with 0 length" ), m_Location.c_str() );
-                return false;
-            }
-
-            char * Buffer = ( char * ) malloc( DataSize + 1 );
-            if( Buffer )
-            {
-                if( PlaylistFile.Read( Buffer, DataSize ) == DataSize )
+                Content = wxString( Buffer, wxConvAuto() );
+                if( Content.IsEmpty() )
                 {
-                    Content = wxString( Buffer, wxConvAuto() );
+                    Content = wxString( Buffer, wxConvUTF8 );
                     if( Content.IsEmpty() )
                     {
-                        Content = wxString( Buffer, wxConvUTF8 );
+                        Content = wxString( Buffer, wxConvISO8859_1 );
                         if( Content.IsEmpty() )
                         {
-                            Content = wxString( Buffer, wxConvISO8859_1 );
-                            if( Content.IsEmpty() )
+                            for( int Index = 0; Index < DataSize; Index++ )
                             {
-                                for( int Index = 0; Index < DataSize; Index++ )
-                                {
-                                    Content += Buffer[ Index ];
-                                }
+                                Content += Buffer[Index];
                             }
                         }
                     }
-
-                }
-                else
-                {
-                    guLogMessage( wxT( "Could not read '%s' %u bytes" ), location.c_str(), DataSize );
                 }
 
-                free( Buffer );
             }
+            else
+                guLogMessage( wxT( "Could not read '%s' %u bytes" ), location.c_str(), DataSize );
 
-            guLogMessage( wxT( "Content:\n%s" ), Content.c_str() );
-        }
-        else
-        {
-            Content = GetUrlContent( location );
+            free( Buffer );
         }
 
-        return LoadFromText( Content );
+        guLogMessage( wxT( "Content:\n%s" ), Content.c_str() );
     }
-    return false;
+    else
+        Content = GetUrlContent( location );
+
+    return LoadFromText( Content );
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
