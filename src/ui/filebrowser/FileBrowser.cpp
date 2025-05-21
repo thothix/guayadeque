@@ -1717,15 +1717,14 @@ void guFileBrowser::OnFolderMove( wxCommandEvent &event )
         guLogMessage(wxT("Moving: %s -> %s"), sourceDir.c_str(), targetDir.c_str());
         m_DirCtrl->MoveDir(sourceDir, targetDir);
     }
-    //m_DirCtrl->CollapsePath(curPath);       // Target parent
+    m_DirCtrl->CollapsePath(curPath);       // Target parent
     if (!sourceDir.IsEmpty())
     {
         sourceDir = wxPathOnly(sourceDir);  // Source parent
-        //m_DirCtrl->CollapsePath(sourceDir);
-        //m_DirCtrl->ExpandPath(sourceDir);
+        m_DirCtrl->CollapsePath(sourceDir);
+        m_DirCtrl->ExpandPath(sourceDir);
     }
-    //m_DirCtrl->ExpandPath(curPath);
-    m_DirCtrl->Refresh();
+    m_DirCtrl->ExpandPath(curPath);
 
     wxTheClipboard->Close();
 }
