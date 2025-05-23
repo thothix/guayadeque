@@ -1478,7 +1478,8 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
         int InsertPos = wxMax( pos, 0 );
         guCuePlaylistFile CuePlaylistFile( filename );
 
-        m_CuePaths.Add(CuePlaylistFile.m_TrackPath);
+        m_CuePaths = CuePlaylistFile.m_CueFiles;
+
         int Count = CuePlaylistFile.Count();
         if( Count )
         {
@@ -1651,13 +1652,13 @@ void guPlayList::RemoveCueFilesDuplicates()
     if (!count)
         return;
 
-    for (int i = 0; i < count; i++)
+    for (int iCue = 0; iCue < count; iCue++)
     {
-        for (size_t j = 0; j < m_Items.Count(); j++)
+        for (size_t iTrack = 0; iTrack < m_Items.Count(); iTrack++)
         {
-            if (m_Items[j].m_SongId != wxNOT_FOUND && m_Items[j].m_FileName == m_CuePaths[i])
+            if (m_Items[iTrack].m_SongId != wxNOT_FOUND && m_Items[iTrack].m_FileName == m_CuePaths[iCue])
             {
-                RemoveItem(j);
+                RemoveItem(iTrack);
                 break;
             }
         }

@@ -50,6 +50,9 @@ wxString guPlaylistItem::GetLocation( const bool relative, const wxString &pathb
     return m_Location;
 }
 
+
+// -------------------------------------------------------------------------------- //
+// guPlaylistFile
 // -------------------------------------------------------------------------------- //
 guPlaylistFile::guPlaylistFile( const wxString &uri )
 {
@@ -599,6 +602,7 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
     int CurrentTrack = wxNOT_FOUND;
     int Count = Lines.Count();
     int Index;
+    m_CueFiles.Empty();
 
     for (Index = 0; Index < Count; Index++)
     {
@@ -612,26 +616,42 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
 
         if (Keys[0] == wxT("FILE"))
         {
+            // Set the length of the last track of the previous file
+            if (CurrentTrack != wxNOT_FOUND)
+                m_PlaylistItems[CurrentTrack].m_Length = m_TrackLength - m_PlaylistItems[CurrentTrack].m_Start;
+
+            m_TrackPath = RemoveQuotationMark(GetKeyValue(Line, wxT("FILE")).BeforeLast(wxT(' ')));
+            if (!m_TrackPath.StartsWith(wxT("/")))
+                m_TrackPath = wxPathOnly(m_Location) + wxT("/") + m_TrackPath;
+
+            m_CueFiles.Add(m_TrackPath);
+
+            guTagInfo *TagInfo = guGetTagInfoHandler(m_TrackPath);
+            if (TagInfo)
+            {
+                if (TagInfo->Read())
+                    m_TrackLength = TagInfo->m_Length;
+                delete TagInfo;
+            }
+        }
+        else if (Keys[0] == wxT("TRACK"))
+        {
+            m_PlaylistItems.Add(new guCuePlaylistItem());
+            CurrentTrack++;
+            guCuePlaylistItem &PlaylistItem  = m_PlaylistItems[CurrentTrack];
+            PlaylistItem.m_Genre = m_Genre;
+            PlaylistItem.m_AlbumName = m_AlbumName;
+            PlaylistItem.m_Comment = m_Comment;
+            PlaylistItem.m_ArtistName = m_ArtistName;
+            PlaylistItem.m_Year = m_Year;
+            PlaylistItem.m_TrackPath = m_TrackPath;
+        }
+        else if (Keys[0] == wxT("TITLE"))
+        {
             if (CurrentTrack == wxNOT_FOUND)
-            {
-                m_TrackPath = RemoveQuotationMark(GetKeyValue(Line, wxT("FILE")).BeforeLast(wxT(' ')));
-                if (!m_TrackPath.StartsWith(wxT("/")))
-                    m_TrackPath = wxPathOnly(m_Location) + wxT("/") + m_TrackPath;
-                guTagInfo *TagInfo = guGetTagInfoHandler(m_TrackPath);
-                if (TagInfo)
-                {
-                    if (TagInfo->Read())
-                        m_TrackLength = TagInfo->m_Length;
-                    delete TagInfo;
-                }
-            }
+                m_AlbumName = RemoveQuotationMark(GetKeyValue(Line, wxT("TITLE")));
             else
-            {
-                m_PlaylistItems[CurrentTrack].m_TrackPath =
-                    RemoveQuotationMark(GetKeyValue(Line, wxT("FILE")).BeforeLast(wxT(' ')));
-                if (!m_PlaylistItems[CurrentTrack].m_TrackPath.StartsWith(wxT("/")))
-                    m_TrackPath = wxPathOnly(m_Location) + wxT("/") + m_PlaylistItems[CurrentTrack].m_TrackPath;
-            }
+                m_PlaylistItems[CurrentTrack].m_Name = RemoveQuotationMark(GetKeyValue(Line, wxT("TITLE")));
         }
         else if (Keys[0] == wxT("INDEX"))
         {
@@ -655,6 +675,13 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
                 if (!m_ArtistName.IsEmpty())
                     m_PlaylistItems[CurrentTrack].m_AlbumArtist = m_ArtistName;
             }
+        }
+        else if (Keys[0] == wxT("SONGWRITER"))
+        {
+            if (CurrentTrack == wxNOT_FOUND)
+                m_Composer = RemoveQuotationMark(GetKeyValue(Line, wxT("SONGWRITER")));
+            else
+                m_PlaylistItems[CurrentTrack].m_Composer = RemoveQuotationMark(GetKeyValue(Line, wxT("SONGWRITER")));
         }
         else if (Keys[0] == wxT("REM"))
         {
@@ -686,35 +713,9 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
                     m_PlaylistItems[CurrentTrack].m_Comment = RemoveQuotationMark(GetKeyValue(Line, wxT("COMMENT")));
             }
         }
-        else if (Keys[0] == wxT("SONGWRITER"))
-        {
-            if (CurrentTrack == wxNOT_FOUND)
-                m_Composer = RemoveQuotationMark(GetKeyValue(Line, wxT("SONGWRITER")));
-            else
-                m_PlaylistItems[CurrentTrack].m_Composer = RemoveQuotationMark(GetKeyValue(Line, wxT("SONGWRITER")));
-        }
-        else if (Keys[0] == wxT("TITLE"))
-        {
-            if (CurrentTrack == wxNOT_FOUND)
-                m_AlbumName = RemoveQuotationMark(GetKeyValue(Line, wxT("TITLE")));
-            else
-                m_PlaylistItems[CurrentTrack].m_Name = RemoveQuotationMark(GetKeyValue(Line, wxT("TITLE")));
-        }
-        else if (Keys[0] == wxT("TRACK"))
-        {
-            m_PlaylistItems.Add(new guCuePlaylistItem());
-            CurrentTrack++;
-            guCuePlaylistItem &PlaylistItem  = m_PlaylistItems[CurrentTrack];
-            PlaylistItem.m_Genre = m_Genre;
-            PlaylistItem.m_AlbumName = m_AlbumName;
-            PlaylistItem.m_Comment = m_Comment;
-            PlaylistItem.m_ArtistName = m_ArtistName;
-            PlaylistItem.m_Year = m_Year;
-            PlaylistItem.m_TrackPath = m_TrackPath;
-        }
     }
 
-    // Set the length of the last track
+    // Set the length of the last track of the last file
     if (CurrentTrack != wxNOT_FOUND)
         m_PlaylistItems[CurrentTrack].m_Length = m_TrackLength - m_PlaylistItems[CurrentTrack].m_Start;
 
