@@ -1204,6 +1204,7 @@ void guPlayList::ClearItems()
     m_CurItem = wxNOT_FOUND;
     m_TotalLen = 0;
     m_PendingLoadIds.Empty();
+    ClearItemsStat();
     ClearSelectedItems();
     ReloadItems();
     //PlayerPanel->UpdateTotalLength();
@@ -1476,6 +1477,8 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
     {
         int InsertPos = wxMax( pos, 0 );
         guCuePlaylistFile CuePlaylistFile( filename );
+
+        m_CuePaths.Add(CuePlaylistFile.m_TrackPath);
         int Count = CuePlaylistFile.Count();
         if( Count )
         {
@@ -1492,7 +1495,7 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
                 Track.m_Offset = CueItem.m_Start;
                 Track.m_Length = CueItem.m_Length;
                 Track.m_FileName = CueItem.m_TrackPath;
-                Track.m_Number = Index;
+                Track.m_Number = Index + 1;
                 long Year;
                 if( CueItem.m_Year.ToLong( &Year ) )
                     Track.m_Year = Year;
@@ -1558,7 +1561,7 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
                 AddItem( Track, InsertPosition + wxMax( 0, pos ) );
             }
             else
-                guLogError( wxT( "Could not open the file '%s'" ), filename.c_str() );
+                guLogError( wxT( "It is not an audio file '%s'" ), filename.c_str() );
         }
         else if( wxDirExists( FileName ) )
         {
@@ -1639,6 +1642,26 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
 
     wxCommandEvent event( wxEVT_MENU, ID_PLAYER_PLAYLIST_START_SAVETIMER );
     wxPostEvent( this, event );
+}
+
+// -------------------------------------------------------------------------------- //
+void guPlayList::RemoveCueFilesDuplicates()
+{
+    int count = m_CuePaths.Count();
+    if (!count)
+        return;
+
+    for (int i = 0; i < count; i++)
+    {
+        for (size_t j = 0; j < m_Items.Count(); j++)
+        {
+            if (m_Items[j].m_SongId != wxNOT_FOUND && m_Items[j].m_FileName == m_CuePaths[i])
+            {
+                RemoveItem(j);
+                break;
+            }
+        }
+    }
 }
 
 // -------------------------------------------------------------------------------- //

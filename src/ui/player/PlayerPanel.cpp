@@ -962,6 +962,7 @@ void guPlayerPanel::AddToPlayList( const wxString &FileName, const int aftercurr
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::AddToPlayList( const wxArrayString &files, const int aftercurrent  )
 {
+    m_PlayListCtrl->ClearItemsStat();
     int PrevTrackCount = m_PlayListCtrl->GetItemCount();
 
     int Count = files.Count();
@@ -1006,12 +1007,14 @@ void guPlayerPanel::AddToPlayList( const wxArrayString &files, const int aftercu
 void guPlayerPanel::AddToPlayList( const wxArrayString &files, const bool allowplay, const int aftercurrent  )
 {
     guLogDebug( wxT( "AddToPlayList( ..., %i, %i )" ), allowplay, aftercurrent );
+    m_PlayListCtrl->ClearItemsStat();
     int PrevTrackCount = m_PlayListCtrl->GetItemCount();
 
     int Count = files.Count();
     for (int Index = 0; Index < Count; Index++)
         m_PlayListCtrl->AddPlayListItem( files[ Index ], aftercurrent, Index );
 
+    m_PlayListCtrl->RemoveCueFilesDuplicates();
     m_PlayListCtrl->ReloadItems();
     TrackListChanged();
 
