@@ -68,6 +68,7 @@ class guPlayList : public guListView
     wxTimer *               m_SavePlaylistTimer;
 
     wxArrayString           m_PendingLoadIds;
+    wxArrayString           m_CuePaths;
 
     int                     m_SysFontPointSize;
 
@@ -173,6 +174,7 @@ class guPlayList : public guListView
     guTrack *                   GetNextAlbum( const int playloop, const bool forceskip = false );
     guTrack *                   GetPrevAlbum( const int playloop, const bool forceskip = false );
     void                        ClearItems();
+    void                        ClearItemsStat() { m_CuePaths.Empty(); }
     long                        GetLength() const;
     wxString                    GetLengthStr() const;
     void                        AddToPlayList( const guTrackArray &newitems, const bool deleteold = false, const int aftercurrent = 0 ); //guINSERT_AFTER_CURRENT_NONE
@@ -194,11 +196,11 @@ class guPlayList : public guListView
     void                        MediaViewerClosed( guMediaViewer * mediaviewer );
 
     void                        UpdatePlaylistToolbar();
+    void                        RemoveCueFilesDuplicates();
 
-  friend class guAddDropFilesThread;
-  friend class guPlayListDropTarget;
-  friend class guPlayerPlayList;
-
+    friend class guAddDropFilesThread;
+    friend class guPlayListDropTarget;
+    friend class guPlayerPlayList;
 };
 
 // -------------------------------------------------------------------------------- //
@@ -248,4 +250,3 @@ public :
 
 }
 #endif
-// -------------------------------------------------------------------------------- //

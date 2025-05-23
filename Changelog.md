@@ -13,10 +13,13 @@ Unreleased (2025-0X-XX)
 ### Bugfixes
   * Fixed bug in the library scan where sometimes the length of the last track of 
     CUE files wasn't updating properly.
+    * If you have CUE files, it's recommended that you rescan your collections.
+      You can also rescan only the directories containing CUE files.
+  * Fixed the enqueue of CUE files getting duplicates and wrong number tracks.
   * Fixed the "Set as Next Track" button in the playlist toolbar to handle properly
     the tracks before the current track (enable them to be set as next track).
 
-0.7.1 (2025-05-XX)
+0.7.1 (2025-05-14)
 ------------------
 
 ### Features
@@ -152,8 +155,8 @@ Unreleased (2025-0X-XX)
     player information.
 
 ### Enhancements
-  * Added collate accents on media search.
-    The search function make use of Unicode Collation to match accented characters.
+  * Added collate accents on media search. The search function now make use of
+    Unicode Collation to match accented characters.
   * Preload the current track in the player at startup and some other situations.
   * Added C++11 random number generator support and set it as default.
     There's a new build option CXX11_RNG for srand() compatibility but it'll be
@@ -163,7 +166,7 @@ Unreleased (2025-0X-XX)
     - The randomize action shuffles the playlist songs (it doesn't play songs in
       a random way) so it belongs to the playlist. As a result we have a cleaner
       player with fewer buttons.
-  * File Browser menu entry moved from "Sources" to "View".
+  * File Browser menu entry moved from Sources to View.
   * Some small context menus refactoring.
   * Updated French, Portuguese and Brazilian Portuguese translations.
   * General code cleanup and small refactorings.
@@ -181,7 +184,7 @@ Unreleased (2025-0X-XX)
   * The playlist isn't cleared anymore if the stop button is clicked twice.
     If we want to clear the playlist, we have the Clear Playlist option
     (menu and playlist toolbar).
-  * Splitted README installation instructions to INSTALL.
+  * Splitted README.md installation instructions to INSTALL.md.
   * General code cleanup and small refactorings.
 
 ### Bugfixes
@@ -360,7 +363,7 @@ Unreleased (2025-0X-XX)
   * Fixed audio output autoconfiguring option.
   * Fixed load tracks from command line or file manager.
   * Added mpris 2.2 support.
-  * Made Guayadeque Interface more clean.
+  * Made Guayadeque interface cleaner.
   * Removed bug that crashed Guayadeque when used del in a dynamic playlist.
   * Added TuneIn radio support.
   * Added option to rename podcast channel name.
