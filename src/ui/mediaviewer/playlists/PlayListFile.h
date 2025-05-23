@@ -147,8 +147,6 @@ class guCuePlaylistFile
 {
   public :
     wxString                m_Location;
-    guCuePlaylistItemArray  m_PlaylistItems;
-
     wxString                m_TrackPath;
     int                     m_TrackLength;
     wxString                m_ArtistName;
@@ -158,6 +156,9 @@ class guCuePlaylistFile
     wxString                m_Genre;
     wxString                m_Year;
     wxString                m_Comment;
+
+    wxArrayString           m_CueFiles;
+    guCuePlaylistItemArray  m_PlaylistItems;
 
     guCuePlaylistFile() {}
 
@@ -185,4 +186,3 @@ class guCuePlaylistFile
 }
 
 #endif
-// -------------------------------------------------------------------------------- //
