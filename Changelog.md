@@ -4,18 +4,21 @@ Guayadeque Music Player
 Changelog
 =========
 
-Unreleased (2025-0X-XX)
+0.7.2 (2025-06-XX)
 ------------------
 
 ### Enhancements
+  * Enhancements in reading missing Cue sheets/Tracks metadata.
   * Removed warnings for GCC 15.1.
 
 ### Bugfixes
-  * Fixed bug in the library scan where sometimes the length of the last track of 
-    CUE files wasn't updating properly.
-    * If you have CUE files, it's recommended that you rescan your collections.
-      You can also rescan only the directories containing CUE files.
-  * Fixed the enqueue of CUE files getting duplicates and wrong number tracks.
+  * Lots of Cue sheets related fixes:
+    * Fixed bug in the library scan where sometimes the length of the last track of 
+      Cue sheets wasn't updating properly.
+      * If you have Cue sheets, it's recommended that you rescan your collections.
+        You can also rescan only the directories containing Cue sheets.
+    * Fixed the enqueue of Cue sheets getting duplicates and wrong number and length
+      for some tracks.
   * Fixed the "Set as Next Track" button in the playlist toolbar to handle properly
     the tracks before the current track (enable them to be set as next track).
 
