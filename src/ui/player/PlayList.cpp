@@ -1478,7 +1478,8 @@ void guPlayList::AddPlayListItem( const wxString &filename, const int aftercurre
         int InsertPos = wxMax( pos, 0 );
         guCuePlaylistFile CuePlaylistFile( filename );
 
-        m_CuePaths = CuePlaylistFile.m_CueFiles;
+        for (size_t i = 0; i < CuePlaylistFile.m_CueFiles.Count(); i++)
+            m_CuePaths.Add(CuePlaylistFile.m_CueFiles[i]);
 
         int Count = CuePlaylistFile.Count();
         if( Count )
