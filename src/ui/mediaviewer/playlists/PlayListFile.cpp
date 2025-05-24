@@ -598,18 +598,19 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
         return false;
     }
 
-    wxArrayString Lines = wxStringTokenize( content, wxT( "\n" ) );
-    int CurrentTrack = wxNOT_FOUND;
-    int Count = Lines.Count();
-    int Index;
+    wxArrayString lines = wxStringTokenize( content, wxT( "\n" ) );
+    int currentTrack = wxNOT_FOUND;
+    int fileTrack = wxNOT_FOUND;
+    int count = lines.Count();
+    int index;
     m_CueFiles.Empty();
 
-    for (Index = 0; Index < Count; Index++)
+    for (index = 0; index < count; index++)
     {
-        Lines[Index].Trim(false).Trim(true);
-        wxString Line = Lines[Index];
+        lines[index].Trim(false).Trim(true);
+        wxString line = lines[index];
         //guLogMessage( wxT( "'%s'" ), Line.c_str() );
-        wxArrayString Keys = wxStringTokenize(Line, wxT(" "));
+        wxArrayString Keys = wxStringTokenize(line, wxT(" "));
 
         if (!Keys.Count())
             continue;
@@ -617,14 +618,15 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
         if (Keys[0] == wxT("FILE"))
         {
             // Set the length of the last track of the previous file
-            if (CurrentTrack != wxNOT_FOUND)
-                m_PlaylistItems[CurrentTrack].m_Length = m_TrackLength - m_PlaylistItems[CurrentTrack].m_Start;
+            if (currentTrack != wxNOT_FOUND)
+                m_PlaylistItems[currentTrack].m_Length = m_TrackLength - m_PlaylistItems[currentTrack].m_Start;
 
-            m_TrackPath = RemoveQuotationMark(GetKeyValue(Line, wxT("FILE")).BeforeLast(wxT(' ')));
+            m_TrackPath = RemoveQuotationMark(GetKeyValue(line, wxT("FILE")).BeforeLast(wxT(' ')));
             if (!m_TrackPath.StartsWith(wxT("/")))
                 m_TrackPath = wxPathOnly(m_Location) + wxT("/") + m_TrackPath;
 
             m_CueFiles.Add(m_TrackPath);
+            fileTrack = wxNOT_FOUND;
 
             guTagInfo *TagInfo = guGetTagInfoHandler(m_TrackPath);
             if (TagInfo)
@@ -637,8 +639,9 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
         else if (Keys[0] == wxT("TRACK"))
         {
             m_PlaylistItems.Add(new guCuePlaylistItem());
-            CurrentTrack++;
-            guCuePlaylistItem &PlaylistItem  = m_PlaylistItems[CurrentTrack];
+            fileTrack++;
+            currentTrack++;
+            guCuePlaylistItem &PlaylistItem  = m_PlaylistItems[currentTrack];
             PlaylistItem.m_Genre = m_Genre;
             PlaylistItem.m_AlbumName = m_AlbumName;
             PlaylistItem.m_Comment = m_Comment;
@@ -648,76 +651,76 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
         }
         else if (Keys[0] == wxT("TITLE"))
         {
-            if (CurrentTrack == wxNOT_FOUND)
-                m_AlbumName = RemoveQuotationMark(GetKeyValue(Line, wxT("TITLE")));
+            if (fileTrack == wxNOT_FOUND)
+                m_AlbumName = RemoveQuotationMark(GetKeyValue(line, wxT("TITLE")));
             else
-                m_PlaylistItems[CurrentTrack].m_Name = RemoveQuotationMark(GetKeyValue(Line, wxT("TITLE")));
+                m_PlaylistItems[currentTrack].m_Name = RemoveQuotationMark(GetKeyValue(line, wxT("TITLE")));
         }
         else if (Keys[0] == wxT("INDEX"))
         {
             if (Keys[1] == wxT("01"))
             {
-                m_PlaylistItems[CurrentTrack].m_Start = RedBookToMTime(GetKeyValue(Line, wxT("01")));
-                if (!m_PlaylistItems[CurrentTrack].m_Start)  // the first track starts at 1ms to make m_Offset = 1
-                    m_PlaylistItems[CurrentTrack].m_Start++;
-                if (CurrentTrack > 0)
-                    m_PlaylistItems[CurrentTrack - 1].m_Length = m_PlaylistItems[CurrentTrack].m_Start -
-                        m_PlaylistItems[CurrentTrack - 1].m_Start;
+                m_PlaylistItems[currentTrack].m_Start = RedBookToMTime(GetKeyValue(line, wxT("01")));
+                if (!m_PlaylistItems[currentTrack].m_Start)  // the first track starts at 1ms to make m_Offset = 1
+                    m_PlaylistItems[currentTrack].m_Start++;
+                if (fileTrack > 0)
+                    m_PlaylistItems[currentTrack - 1].m_Length = m_PlaylistItems[currentTrack].m_Start -
+                        m_PlaylistItems[currentTrack - 1].m_Start;
             }
         }
         else if (Keys[0] == wxT("PERFORMER"))
         {
-            if (CurrentTrack == wxNOT_FOUND)
-                m_ArtistName = RemoveQuotationMark(GetKeyValue(Line, wxT("PERFORMER")));
+            if (fileTrack == wxNOT_FOUND)
+                m_ArtistName = RemoveQuotationMark(GetKeyValue(line, wxT("PERFORMER")));
             else
             {
-                m_PlaylistItems[CurrentTrack].m_ArtistName = RemoveQuotationMark(GetKeyValue(Line, wxT("PERFORMER")));
+                m_PlaylistItems[currentTrack].m_ArtistName = RemoveQuotationMark(GetKeyValue(line, wxT("PERFORMER")));
                 if (!m_ArtistName.IsEmpty())
-                    m_PlaylistItems[CurrentTrack].m_AlbumArtist = m_ArtistName;
+                    m_PlaylistItems[currentTrack].m_AlbumArtist = m_ArtistName;
             }
         }
         else if (Keys[0] == wxT("SONGWRITER"))
         {
-            if (CurrentTrack == wxNOT_FOUND)
-                m_Composer = RemoveQuotationMark(GetKeyValue(Line, wxT("SONGWRITER")));
+            if (fileTrack == wxNOT_FOUND)
+                m_Composer = RemoveQuotationMark(GetKeyValue(line, wxT("SONGWRITER")));
             else
-                m_PlaylistItems[CurrentTrack].m_Composer = RemoveQuotationMark(GetKeyValue(Line, wxT("SONGWRITER")));
+                m_PlaylistItems[currentTrack].m_Composer = RemoveQuotationMark(GetKeyValue(line, wxT("SONGWRITER")));
         }
         else if (Keys[0] == wxT("REM"))
         {
             if (Keys[1] == wxT("GENRE"))
             {
-                if (CurrentTrack == wxNOT_FOUND)
+                if (fileTrack == wxNOT_FOUND)
                 {
-                    m_Genre = RemoveQuotationMark(GetKeyValue(Line, wxT("GENRE")));
+                    m_Genre = RemoveQuotationMark(GetKeyValue(line, wxT("GENRE")));
                     guLogMessage(wxT("Genre  : '%s'"), m_Genre.c_str());
                 }
                 else
                 {
-                    m_PlaylistItems[CurrentTrack].m_Genre = RemoveQuotationMark(GetKeyValue(Line, wxT("GENRE")));
-                    guLogMessage(wxT("Genre %i: '%s'"), CurrentTrack, m_Genre.c_str());
+                    m_PlaylistItems[currentTrack].m_Genre = RemoveQuotationMark(GetKeyValue(line, wxT("GENRE")));
+                    guLogMessage(wxT("Genre %i: '%s'"), currentTrack, m_Genre.c_str());
                 }
             }
             else if (Keys[1] == wxT("DATE"))
             {
-                if (CurrentTrack == wxNOT_FOUND)
-                    m_Year = RemoveQuotationMark(GetKeyValue(Line, wxT("DATE")));
+                if (fileTrack == wxNOT_FOUND)
+                    m_Year = RemoveQuotationMark(GetKeyValue(line, wxT("DATE")));
                 else
-                    m_PlaylistItems[CurrentTrack].m_Year = RemoveQuotationMark(GetKeyValue(Line, wxT("DATE")));
+                    m_PlaylistItems[currentTrack].m_Year = RemoveQuotationMark(GetKeyValue(line, wxT("DATE")));
             }
             else if (Keys[1] == wxT("COMMENT"))
             {
-                if (CurrentTrack == wxNOT_FOUND)
-                    m_Comment = RemoveQuotationMark(GetKeyValue(Line, wxT("COMMENT")));
+                if (fileTrack == wxNOT_FOUND)
+                    m_Comment = RemoveQuotationMark(GetKeyValue(line, wxT("COMMENT")));
                 else
-                    m_PlaylistItems[CurrentTrack].m_Comment = RemoveQuotationMark(GetKeyValue(Line, wxT("COMMENT")));
+                    m_PlaylistItems[currentTrack].m_Comment = RemoveQuotationMark(GetKeyValue(line, wxT("COMMENT")));
             }
         }
     }
 
     // Set the length of the last track of the last file
-    if (CurrentTrack != wxNOT_FOUND)
-        m_PlaylistItems[CurrentTrack].m_Length = m_TrackLength - m_PlaylistItems[CurrentTrack].m_Start;
+    if (currentTrack != wxNOT_FOUND)
+        m_PlaylistItems[currentTrack].m_Length = m_TrackLength - m_PlaylistItems[currentTrack].m_Start;
 
     return false;
 }
