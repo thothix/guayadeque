@@ -594,7 +594,7 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
 {
     if (content.IsEmpty())
     {
-        guLogError( wxT( "Empty Cuesheet '%s'" ), m_Location.c_str() );
+        guLogError( wxT( "Empty Cue sheet '%s'" ), m_Location.c_str() );
         return false;
     }
 
@@ -632,7 +632,15 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
             if (TagInfo)
             {
                 if (TagInfo->Read())
+                {
                     m_TrackLength = TagInfo->m_Length;
+                    if (!TagInfo->m_GenreName.IsEmpty())
+                        m_Genre = TagInfo->m_GenreName;
+                    if (!TagInfo->m_AlbumName.IsEmpty())
+                        m_AlbumName = TagInfo->m_AlbumName;
+                    if (TagInfo->m_Year)   //m_Year << TagInfo->m_Year;
+                        m_Year = wxString::Format(wxT("%i"), TagInfo->m_Year);
+                }
                 delete TagInfo;
             }
         }
@@ -741,7 +749,7 @@ bool guCuePlaylistFile::Load( const wxString &location )
 
     if( Uri.IsReference() )
     {
-        //guLogMessage( wxT( "Cuesheet from file : '%s'" ), m_Location.c_str() );
+        //guLogMessage( wxT( "Cue sheet from file : '%s'" ), m_Location.c_str() );
 
         wxFile PlaylistFile( m_Location, wxFile::read );
 
@@ -754,7 +762,7 @@ bool guCuePlaylistFile::Load( const wxString &location )
         int DataSize = PlaylistFile.Length();
         if( !DataSize )
         {
-            guLogMessage( wxT( "Cuesheet '%s' with 0 length" ), m_Location.c_str() );
+            guLogMessage( wxT( "Cue sheet '%s' with 0 length" ), m_Location.c_str() );
             return false;
         }
 
