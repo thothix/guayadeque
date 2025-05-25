@@ -4832,6 +4832,33 @@ namespace Guayadeque {
         return RetVal;
     }
 
+    // -------------------------------------------------------------------------------- // m_Path, Track.m_FileName, Track.m_SongName
+    int guDbLibrary::FindTrackPath(wxString path, wxString fileName, wxString songName, guTrack *track)
+    {
+        wxString query;
+        wxSQLite3ResultSet dbRes;
+        int RetVal = 0;
+
+        AddPathTrailSep(path);
+        escape_query_str((&path));
+        escape_query_str(&fileName);
+        escape_query_str(&songName);
+
+        query = GU_TRACKS_QUERYSTR +
+                wxString::Format(wxT(" WHERE song_path = '%s' AND song_filename = '%s' AND song_name = '%s' LIMIT 1;"),
+                                 path.c_str(), fileName.c_str(), songName.c_str());
+        dbRes = ExecuteQuery(query);
+        if (dbRes.NextRow())
+        {
+            RetVal = dbRes.GetInt(0);
+            if (track)
+                FillTrackFromDb(track, &dbRes);
+        }
+        dbRes.Finalize();
+
+        return RetVal;
+    }
+
     // -------------------------------------------------------------------------------- //
     int guDbLibrary::FindTrackId(const int trackid, guTrack *track)
     {
