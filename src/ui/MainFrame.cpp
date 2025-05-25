@@ -2973,8 +2973,12 @@ void guMainFrame::OnPageChanged( wxAuiNotebookEvent& event )
 
     // Updates the DB of PlayerPanel (and PlayList) on collection page change
     guMediaViewer *mediaViewer = (guMediaViewer *) FindCollectionMediaViewer(m_CurrentPage);
-    guLibPanel *libPanel = mediaViewer->GetLibPanel();
-    libPanel->GetPlayerPanel()->SetDb(libPanel->GetDb());
+    if (mediaViewer)
+    {
+        guLibPanel *libPanel = mediaViewer->GetLibPanel();
+        if (libPanel)
+            libPanel->GetPlayerPanel()->SetDb(libPanel->GetDb());
+    }
 
     OnUpdateSelInfo(event);
 }
