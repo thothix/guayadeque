@@ -841,6 +841,25 @@ guMediaViewer * guMainFrame::FindCollectionMediaViewer(void * windowptr)
 }
 
 // -------------------------------------------------------------------------------- //
+guMediaViewer * guMainFrame::FindMediaViewerByPath(const wxString pathToFind)
+{
+    size_t Count = m_MediaViewers.Count();
+    //guLogMessage( wxT( "FindMediaViewerByPath( '%s' ) - m_MediaViewers count %llu" ), path.c_str(), Count );
+
+    for (size_t Index = 0; Index < Count; Index++)
+    {
+        wxArrayString paths = m_MediaViewers[Index]->GetMediaCollection()->m_Paths;
+
+        for (size_t indexPath = 0; indexPath < paths.Count(); indexPath++)
+        {
+            if (pathToFind.starts_with(paths[indexPath]))
+                return m_MediaViewers[Index];
+        }
+    }
+    return nullptr;
+}
+
+// -------------------------------------------------------------------------------- //
 int guMainFrame::GetMediaViewerIndex( guMediaViewer * mediaviewer )
 {
     //guLogMessage( wxT( "FindCollectionMediaViewer( '%s' )" ), uniqueid.c_str() );
@@ -2950,8 +2969,14 @@ void guMainFrame::OnGaugeCreate( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guMainFrame::OnPageChanged( wxAuiNotebookEvent& event )
 {
-    m_CurrentPage = m_MainNotebook->GetPage( m_MainNotebook->GetSelection() );
-    OnUpdateSelInfo( event );
+    m_CurrentPage = m_MainNotebook->GetPage(m_MainNotebook->GetSelection());
+
+    // Updates the DB of PlayerPanel (and PlayList) on collection page change
+    guMediaViewer *mediaViewer = (guMediaViewer *) FindCollectionMediaViewer(m_CurrentPage);
+    guLibPanel *libPanel = mediaViewer->GetLibPanel();
+    libPanel->GetPlayerPanel()->SetDb(libPanel->GetDb());
+
+    OnUpdateSelInfo(event);
 }
 
 // -------------------------------------------------------------------------------- //
