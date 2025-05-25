@@ -456,6 +456,7 @@ class guMainFrame : public wxFrame
 
     guMediaViewer *                 FindCollectionMediaViewer( void * windowptr );
     guMediaViewer *                 FindCollectionMediaViewer( const wxString &uniqueid );
+    guMediaViewer *                 FindMediaViewerByPath(const wxString pathToFind);
 
     int                             GetMediaViewerIndex( guMediaViewer * mediaviewer );
     guMediaCollection *             FindCollection( const wxString &uniqueid );
