@@ -638,8 +638,8 @@ bool guCuePlaylistFile::LoadFromText( const wxString &content )
                         m_Genre = TagInfo->m_GenreName;
                     if (!TagInfo->m_AlbumName.IsEmpty())
                         m_AlbumName = TagInfo->m_AlbumName;
-                    if (TagInfo->m_Year)   //m_Year << TagInfo->m_Year;
-                        m_Year = wxString::Format(wxT("%i"), TagInfo->m_Year);
+                    if (TagInfo->m_Year)
+                        m_Year = wxString::Format("%i", TagInfo->m_Year);
                 }
                 delete TagInfo;
             }

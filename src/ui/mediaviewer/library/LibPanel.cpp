@@ -194,7 +194,7 @@ guLibPanel::~guLibPanel()
 }
 
 // -------------------------------------------------------------------------------- //
-void guLibPanel::CreateControls( void )
+void guLibPanel::CreateControls()
 {
     wxPanel *           FilePanel;
     wxPanel *           GenrePanel;
@@ -547,7 +547,7 @@ void guLibPanel::CreateControls( void )
 }
 
 // -------------------------------------------------------------------------------- //
-void guLibPanel::LoadLastLayout( void )
+void guLibPanel::LoadLastLayout()
 {
     guConfig * Config = ( guConfig * ) guConfig::Get();
 
@@ -661,7 +661,7 @@ void guLibPanel::ReloadControls()
 }
 
 // -------------------------------------------------------------------------------- //
-void guLibPanel::ClearSearchText( void )
+void guLibPanel::ClearSearchText()
 {
     if( m_MediaViewer )
         m_MediaViewer->ClearSearchText();
@@ -934,7 +934,7 @@ void guLibPanel::OnLabelCopyToClicked( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guLibPanel::UpdateLabels( void )
+void guLibPanel::UpdateLabels()
 {
     m_UpdateLock = true;
     ReloadLabels( false );
@@ -1527,7 +1527,7 @@ void guLibPanel::OnSongSavePlayListClicked( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guLibPanel::UpdatePlaylists( void )
+void guLibPanel::UpdatePlaylists()
 {
     m_MediaViewer->UpdatePlaylists();
 }
@@ -2585,7 +2585,7 @@ void guLibPanel::OnSelChangedTimer( wxTimerEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guLibPanel::DoSelectionChanged( void )
+void guLibPanel::DoSelectionChanged()
 {
     switch ( m_SelChangedObject )
     {
@@ -2801,7 +2801,7 @@ void guLibPanel::OnSongDeleteDrive( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-int guLibPanel::GetContextMenuFlags( void )
+int guLibPanel::GetContextMenuFlags()
 {
     return m_MediaViewer->GetContextMenuFlags();
 }
@@ -2833,7 +2833,7 @@ void guLibPanel::NormalizeTracks( guTrackArray * tracks, const bool isdrag )
 }
 
 // -------------------------------------------------------------------------------- //
-void guLibPanel::AlbumCoverChanged( void )
+void guLibPanel::AlbumCoverChanged()
 {
     ReloadAlbums( false );
 }

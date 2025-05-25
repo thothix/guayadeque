@@ -84,6 +84,7 @@ class guMainFrame;
 class guLibPanel : public guAuiManagerPanel
 {
   protected :
+    guDbLibrary *           m_Db;
     guMediaViewer *         m_MediaViewer;
     guMainFrame *           m_MainFrame;
 
@@ -99,19 +100,17 @@ class guLibPanel : public guAuiManagerPanel
     guCoListBox *           m_ComposerListCtrl;
     guAAListBox *           m_AlbumArtistListCtrl;
 
-    guDbLibrary *           m_Db;
     bool                    m_UpdateLock;
     guPlayerPanel *         m_PlayerPanel;
     wxTimer                 m_SelChangedTimer;
     int                     m_SelChangedObject;
 
     int                     m_BaseCommand;
-//    wxString                m_ConfigPrefixVarName;
     wxString                m_ConfigPath;
 
     wxString                m_LastTextFilter;
 
-    void                    ClearSearchText( void );
+    void                    ClearSearchText();
     bool                    DoTextSearch( const wxString &searchtext );
 
     // LabelsListBox Events
@@ -235,7 +234,7 @@ class guLibPanel : public guAuiManagerPanel
     virtual void            OnSongCopyToClicked( wxCommandEvent &event );
 
     void                    OnSelChangedTimer( wxTimerEvent &event );
-    void                    DoSelectionChanged( void );
+    void                    DoSelectionChanged();
 
     void                    ReloadDirectory( bool reset = true ) { if(m_VisiblePanels & guPANEL_LIBRARY_DIRECTORIES ) m_DirectoryListCtrl->ReloadItems(); }
     void                    ReloadLabels( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_LABELS ) m_LabelsListCtrl->ReloadItems( reset ); }
@@ -249,7 +248,7 @@ class guLibPanel : public guAuiManagerPanel
     void                    ReloadPlayCounts( bool reset = true ) { if( m_VisiblePanels & guPANEL_LIBRARY_PLAYCOUNT ) m_PlayCountListCtrl->ReloadItems( reset ); }
     void                    ReloadSongs( bool reset = true ) { m_SongListCtrl->ReloadItems( reset ); }
 
-    virtual void            UpdatePlaylists( void );
+    virtual void            UpdatePlaylists();
     virtual void            DoEditTracks( guTrackArray &tracks );
 
     //virtual void            UpdateTracks( const guTrackArray &tracks, const wxArrayInt &changedflags );
@@ -268,8 +267,8 @@ class guLibPanel : public guAuiManagerPanel
     void                    PlayAllTracks( const bool enqueue );
 
   private :
-    void                    CreateControls( void );
-    void                    LoadLastLayout( void );
+    void                    CreateControls();
+    void                    LoadLastLayout();
 
   public :
     //guLibPanel( wxWindow * parent, guDbLibrary * db, guPlayerPanel * playerpanel );
@@ -281,20 +280,20 @@ class guLibPanel : public guAuiManagerPanel
 
     virtual void            NormalizeTracks( guTrackArray * tracks, const bool isdrag = false );
 
-//    virtual wxString        GetName( void );
-    virtual guDbLibrary *   GetDb( void ) { return m_Db; }
-    virtual guPlayerPanel * GetPlayerPanel(void) { return m_PlayerPanel; };
+//    virtual wxString        GetName();
+    virtual guDbLibrary *   GetDb() { return m_Db; }
+    virtual guPlayerPanel * GetPlayerPanel() { return m_PlayerPanel; };
     void                    SetPlayerPanel( guPlayerPanel * playerpanel );
-//    virtual wxArrayString   GetLibraryPaths( void );
-    virtual wxString        GetPlaylistPath( void ) { return wxEmptyString; }
+//    virtual wxArrayString   GetLibraryPaths();
+    virtual wxString        GetPlaylistPath() { return wxEmptyString; }
     void                    SetBaseCommand( int basecmd ) { m_BaseCommand = basecmd; InitPanelData(); }
 
-    void                    ReloadControls( void );
-    void                    UpdateLabels( void );
+    void                    ReloadControls();
+    void                    UpdateLabels();
 
-    wxString                ConfigPath( void ) { return m_ConfigPath; }
-    guMediaViewer *         GetMediaViewer( void ) { return m_MediaViewer; }
-    guMainFrame *           GetMainFrame( void ) { return m_MainFrame; }
+    wxString                ConfigPath() { return m_ConfigPath; }
+    guMediaViewer *         GetMediaViewer() { return m_MediaViewer; }
+    guMainFrame *           GetMainFrame() { return m_MainFrame; }
 
     void                    SetSelection( const int type, const int id );
     void                    SelectTrack( const int trackid );
@@ -315,28 +314,28 @@ class guLibPanel : public guAuiManagerPanel
     void                    UpdatedTracks( const guTrackArray * tracks );
     void                    UpdatedTrack( const guTrack * track );
 
-    int                     GetContextMenuFlags( void );
+    int                     GetContextMenuFlags();
     virtual void            CreateContextMenu( wxMenu * menu, const int windowid = wxNOT_FOUND );
     virtual void            CreateCopyToMenu( wxMenu * menu );
 
-//    virtual int             LastUpdate( void );
+//    virtual int             LastUpdate();
 //    virtual void            SetLastUpdate( int lastupdate = wxNOT_FOUND );
 
 //    virtual void            DeleteTracks( guTrackArray * tracks );
 
-//    virtual wxArrayString   GetCoverSearchWords( void );
+//    virtual wxArrayString   GetCoverSearchWords();
 
-//    virtual wxString        GetCoverName( void );
-//    virtual int             GetCoverType( void ) { return wxBITMAP_TYPE_JPEG; }
-//    virtual int             GetCoverMaxSize( void ) { return wxNOT_FOUND; }
+//    virtual wxString        GetCoverName();
+//    virtual int             GetCoverType() { return wxBITMAP_TYPE_JPEG; }
+//    virtual int             GetCoverMaxSize() { return wxNOT_FOUND; }
 
 //    virtual bool            SetAlbumCover( const int albumid, const wxString &albumpath, wxImage * coverimg );
 //    virtual bool            SetAlbumCover( const int albumid, const wxString &albumpath, wxString &coverpath );
 
-    virtual int             GetListViewColumnCount( void ) { return guSONGS_COLUMN_COUNT; }
+    virtual int             GetListViewColumnCount() { return guSONGS_COLUMN_COUNT; }
     virtual bool            GetListViewColumnData( const int id, int * index, int * width, bool * enabled ) { return m_SongListCtrl->GetColumnData( id, index, width, enabled ); }
     virtual bool            SetListViewColumnData( const int id, const int index, const int width, const bool enabled, const bool refresh = false ) { return m_SongListCtrl->SetColumnData( id, index, width, enabled, refresh ); }
-    virtual void            AlbumCoverChanged( void );
+    virtual void            AlbumCoverChanged();
 
     friend class guLibPanelDropTarget;
     friend class guMediaViewer;
