@@ -1714,6 +1714,7 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
                                 _( "Set as Next Track" ),
                                 _( "Move the selected tracks to be played next" ) );
         Menu->Append( MenuItem );
+        MenuItem->Enable(SelectedItems[0] > 1);
 
         wxMenu * RatingMenu = new wxMenu();
 
