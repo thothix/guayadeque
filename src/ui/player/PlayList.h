@@ -148,16 +148,20 @@ class guPlayList : public guListView
     void                        StartSavePlaylistTimer( wxCommandEvent &event );
     void                        OnSavePlaylistTimer( wxTimerEvent & );
 
+    int                         GetPlayListInsertPosition(const int afterCurrent);
+
   public :
     guPlayList( wxWindow * parent, guDbLibrary * db, guPlayerPanel * playerpanel = nullptr, guMainFrame * mainframe = nullptr );
     ~guPlayList();
+
+    void                        SetDb(guDbLibrary *db) { m_Db = db; };
 
     void                        SetPlayerPanel( guPlayerPanel * playerpanel ) { m_PlayerPanel = playerpanel; }
     void                        SetPlayerPlayList( guPlayerPlayList * playerplaylist ) { m_PlayerPlayList = playerplaylist; }
 
     void                        AddItem( const guTrack &NewItem, const int pos = wxNOT_FOUND );
     //void                        AddItem( const guTrack * NewItem );
-    void                        AddPlayListItem( const wxString &FileName, const int aftercurrent, const int pos );
+    void                        AddPlayListItem(const wxString &FileName, guTrack track, const int afterCurrent, const int pos);
 
     virtual void                ReloadItems( bool reset = true );
 
@@ -174,10 +178,10 @@ class guPlayList : public guListView
     guTrack *                   GetNextAlbum( const int playloop, const bool forceskip = false );
     guTrack *                   GetPrevAlbum( const int playloop, const bool forceskip = false );
     void                        ClearItems();
-    void                        ClearItemsStat() { m_CuePaths.Empty(); }
+    void                        ClearItemsExtras() { m_CuePaths.Empty(); }
     long                        GetLength() const;
     wxString                    GetLengthStr() const;
-    void                        AddToPlayList( const guTrackArray &newitems, const bool deleteold = false, const int aftercurrent = 0 ); //guINSERT_AFTER_CURRENT_NONE
+    void                        AddToPlayList(const guTrackArray &items, const bool deleteOld = false, const int afterCurrent = 0);
     void                        SetPlayList( const guTrackArray &NewItems );
     wxString                    FindCoverFile( const wxString &DirName );
     void                        Randomize( const bool isplaying );

@@ -8,17 +8,21 @@ Changelog
 ------------------
 
 ### Enhancements
-  * Enhancements in reading missing Cue sheets/Tracks metadata.
+  * Enhancements in reading some missing cue sheets metadata from the audio file.
   * Removed warnings for GCC 15.1.
 
 ### Bugfixes
-  * Lots of Cue sheets related fixes:
+  * Playlist/queue updates to handle properly playlists with cue sheets and/or tracks
+    of different collections:
+    * Fixed missing updates to playcount and last play date.
+    * Fixed playlist reload after Guayadeque restart.
+  * Some important cue sheets related fixes:
     * Fixed bug in the library scan where sometimes the length of the last track of 
-      Cue sheets wasn't updating properly.
-      * If you have Cue sheets, it's recommended that you rescan your collections.
-        You can also rescan only the directories containing Cue sheets.
-    * Fixed the enqueue of Cue sheets getting duplicates and wrong number and length
-      for some tracks.
+      cue sheets wasn't updating properly.
+      * If you have cue sheets, it's recommended that you rescan your collections.
+        You can also rescan only the directories containing the cue sheets.
+    * Fixed the enqueue of cue sheets getting duplicates and wrong track number and
+      length.
   * Fixed the "Set as Next Track" button in the playlist toolbar to handle properly
     the tracks before the current track (enable them to be set as next track).
 
@@ -50,7 +54,7 @@ Changelog
 
 ### Bugfixes
   * Fixed a long time bug that causes playback skipping after around 20/30 minutes
-    running a long track or podcast.
+    playing a long track or podcast.
 
 ### Removed
   * Removed the no more functional Jamendo feature.

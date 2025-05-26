@@ -218,6 +218,10 @@ class guUpdatePlayerCoverThread;
 class guPlayerPanel : public wxPanel
 {
   private :
+    guDbLibrary *               m_Db;
+    guMainFrame *               m_MainFrame;
+    guPlayList *                m_PlayListCtrl;
+
     guRoundButton *             m_PrevTrackButton;
     guRoundButton *             m_NextTrackButton;
     guRoundButton *             m_PlayButton;
@@ -248,9 +252,6 @@ class guPlayerPanel : public wxPanel
     wxBoxSizer *                m_PlayerDetailsSizer;
     wxSlider *                  m_PlayerPositionSlider;
 
-    guDbLibrary *               m_Db;
-    guMainFrame *               m_MainFrame;
-    guPlayList *                m_PlayListCtrl;
     guDBusNotify *              m_NotifySrv;
     guPlayerFilters *           m_PlayerFilters;
     guPlayerVumeters *          m_PlayerVumeters;
@@ -312,13 +313,8 @@ class guPlayerPanel : public wxPanel
     long                        m_NextTrackId;
     long                        m_CurTrackId;
     bool                        m_TrackChanged;
-
     bool                        m_ShowRevTime;
-
-    //bool                        m_PendingNewRecordName;
-
     bool                        m_ErrorFound;
-
     int                         m_SavedPlayedTrack;
 
     wxString                    m_LastTmpCoverFile;
@@ -334,7 +330,7 @@ class guPlayerPanel : public wxPanel
     void                        OnPlayerPositionSliderEndSeek( wxScrollEvent &event );
     void                        OnPlayerPositionSliderChanged( wxScrollEvent &event );
     void                        OnPlayerPositionSliderMouseWheel( wxMouseEvent &event );
-    //
+
     void                        OnPlayListUpdated( wxCommandEvent &event );
     void                        OnPlayListDClick( wxCommandEvent &event );
 
@@ -394,13 +390,15 @@ class guPlayerPanel : public wxPanel
                    guPlayList * playlist, guPlayerFilters * filters );
     virtual ~guPlayerPanel();
 
+    void                        SetDb(guDbLibrary *db) { m_Db = db; m_PlayListCtrl->SetDb(db); };
+
     guMainFrame *               MainFrame() { return m_MainFrame; }
 
-    void                        SetPlayList( const guTrackArray &SongList );
-    void                        AddToPlayList( const guTrackArray &SongList, const bool allowplay = true, const int aftercurrent = guINSERT_AFTER_CURRENT_NONE );
-    void                        AddToPlayList( const wxString &FileName, const int aftercurrent = guINSERT_AFTER_CURRENT_NONE );
-    void                        AddToPlayList( const wxArrayString &files, const int aftercurrent = guINSERT_AFTER_CURRENT_NONE );
-    void                        AddToPlayList( const wxArrayString &files, const bool play, const int aftercurrent );
+    void                        SetPlayList( const guTrackArray &songList );
+    void                        AddToPlayList( const guTrackArray &SongList, const bool allowPlay = true, const int afterCurrent = guINSERT_AFTER_CURRENT_NONE );
+    void                        AddToPlayList( const wxString &fileName, const int afterCurrent = guINSERT_AFTER_CURRENT_NONE );
+    void                        AddToPlayList( const wxArrayString &files, const int afterCurrent = guINSERT_AFTER_CURRENT_NONE );
+    void                        AddToPlayList( const wxArrayString &files, const bool play, const int afterCurrent );
     void                        ClearPlayList() { m_PlayListCtrl->ClearItems(); }
     void                        SetPlayList( const wxArrayString &files );
     guPlayList *                PlayListCtrl() { return m_PlayListCtrl; }

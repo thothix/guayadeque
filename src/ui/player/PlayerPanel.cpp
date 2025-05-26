@@ -775,11 +775,12 @@ void guPlayerPanel::SetCodec( const wxString &codec )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::SetPlayList( const guTrackArray &SongList )
+void guPlayerPanel::SetPlayList(const guTrackArray &songList)
 {
     wxCommandEvent event;
-    m_PlayListCtrl->SetPlayList( SongList );
+    m_PlayListCtrl->SetPlayList( songList );
 
+    // TODO: Test  --> m_PlayListCtrl->RemoveCueFilesDuplicates();
     SetNextTrack( m_PlayListCtrl->GetCurrent() );
 
     LoadMedia( ( !m_ForceGapless && m_FadeOutTime ) ? guFADERPLAYBIN_PLAYTYPE_CROSSFADE : guFADERPLAYBIN_PLAYTYPE_REPLACE );
@@ -800,154 +801,168 @@ void guPlayerPanel::SetPlayList( const guTrackArray &SongList )
         m_SmartAddedArtists.Empty();
 
         //guLogDebug( wxT( "SetPlayList adding track to smart cache..." ) );
-        int Index = 0;
-        int Count = SongList.Count();
+        int index = 0;
+        int count = songList.Count();
 
         // We only insert the last CACHEITEMS as the rest should be forgiven
-        if (Count > m_SmartMaxTracksList)
-            Index = Count - m_SmartMaxTracksList;
+        if (count > m_SmartMaxTracksList)
+            index = count - m_SmartMaxTracksList;
 
-        for (; Index < Count; Index++)
-            m_SmartAddedTracks.Add( SongList[ Index ].m_SongId );
+        for (; index < count; index++)
+            m_SmartAddedTracks.Add( songList[ index ].m_SongId );
 
-        Index = 0;
-        if (Count > m_SmartMaxArtistsList)
-            Index = Count - m_SmartMaxArtistsList;
+        index = 0;
+        if (count > m_SmartMaxArtistsList)
+            index = count - m_SmartMaxArtistsList;
 
-        for (; Index < Count; Index++)
-            m_SmartAddedArtists.Add( SongList[ Index ].m_ArtistName.Upper() );
+        for (; index < count; index++)
+            m_SmartAddedArtists.Add( songList[ index ].m_ArtistName.Upper() );
     }
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::SetPlayList( const wxArrayString &files )
+void guPlayerPanel::SetPlayList(const wxArrayString &files)
 {
+    guTrack track;
     m_PlayListCtrl->ClearItems();
+    m_PlayListCtrl->ClearItemsExtras();
 
-    int Count = files.Count();
-    for (int Index = 0; Index < Count; Index++)
-        m_PlayListCtrl->AddPlayListItem( files[ Index ], guINSERT_AFTER_CURRENT_NONE, wxNOT_FOUND );
+    int count = files.Count();
+    for (int index = 0; index < count; index++)
+        m_PlayListCtrl->AddPlayListItem(files[index], track, guINSERT_AFTER_CURRENT_NONE, wxNOT_FOUND);
 
+    m_PlayListCtrl->RemoveCueFilesDuplicates();
     m_PlayListCtrl->ReloadItems();
-    if( m_PlayListCtrl->GetItemCount() )
+
+    if (!m_PlayListCtrl->GetItemCount())
+        return;
+
+    m_PlayListCtrl->SetCurrent(0);
+    SetNextTrack(m_PlayListCtrl->GetCurrent());
+
+    LoadMedia((!m_ForceGapless && m_FadeOutTime) ? guFADERPLAYBIN_PLAYTYPE_CROSSFADE : guFADERPLAYBIN_PLAYTYPE_REPLACE);
+
+    TrackListChanged();
+
+    // Add the added track to the smart cache
+    if (m_PlayMode == guPLAYER_PLAYMODE_SMART)
     {
-        m_PlayListCtrl->SetCurrent( 0 );
-        SetNextTrack( m_PlayListCtrl->GetCurrent() );
-
-        LoadMedia( ( !m_ForceGapless && m_FadeOutTime ) ? guFADERPLAYBIN_PLAYTYPE_CROSSFADE : guFADERPLAYBIN_PLAYTYPE_REPLACE );
-
-        TrackListChanged();
-
-        // Add the added track to the smart cache
-        if( m_PlayMode == guPLAYER_PLAYMODE_SMART )
+        if (m_SmartAddTracksThread)
         {
-            if( m_SmartAddTracksThread )
-            {
-                m_SmartAddTracksThread->Pause();
-                m_SmartAddTracksThread->Delete();
-                m_SmartAddTracksThread = nullptr;
-                m_SmartSearchEnabled = false;
-            }
+            m_SmartAddTracksThread->Pause();
+            m_SmartAddTracksThread->Delete();
+            m_SmartAddTracksThread = nullptr;
+            m_SmartSearchEnabled = false;
+        }
 
-            // Reset the Smart played items
-            m_SmartAddedTracks.Empty();
-            m_SmartAddedArtists.Empty();
+        // Reset the Smart played items
+        m_SmartAddedTracks.Empty();
+        m_SmartAddedArtists.Empty();
 
-            //guLogDebug( wxT( "SetPlayList adding track to smart cache..." ) );
-            int Count;
-            int Index = 0;
-            Count = m_PlayListCtrl->GetItemCount();
-            // We only insert the last CACHEITEMS as the rest should be forgiven
-            if( Count > m_SmartMaxTracksList )
-                Index = Count - m_SmartMaxTracksList;
-            for( ; Index < Count; Index++ )
-            {
-                guTrack * Track = m_PlayListCtrl->GetItem( Index );
-                m_SmartAddedTracks.Add( Track->m_SongId );
-            }
+        //guLogDebug( wxT( "SetPlayList adding track to smart cache..." ) );
+        int index = 0;
+        guTrack *track_item;
+        count = m_PlayListCtrl->GetItemCount();
 
-            Index = 0;
-            if( Count > m_SmartMaxArtistsList )
-                Index = Count - m_SmartMaxArtistsList;
-            for( ; Index < Count; Index++ )
-            {
-                guTrack * Track = m_PlayListCtrl->GetItem( Index );
-                m_SmartAddedArtists.Add( Track->m_ArtistName.Upper() );
-            }
+        // We only insert the last CACHEITEMS as the rest should be forgiven
+        if (count > m_SmartMaxTracksList)
+            index = count - m_SmartMaxTracksList;
+        for (; index < count; index++)
+        {
+            track_item = m_PlayListCtrl->GetItem(index);
+            m_SmartAddedTracks.Add(track_item->m_SongId);
+        }
+
+        index = 0;
+        if (count > m_SmartMaxArtistsList)
+            index = count - m_SmartMaxArtistsList;
+        for (; index < count; index++)
+        {
+            track_item = m_PlayListCtrl->GetItem(index);
+            m_SmartAddedArtists.Add(track_item->m_ArtistName.Upper());
         }
     }
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::AddToPlayList( const guTrackArray &tracks, const bool allowplay, const int aftercurrent )
+void guPlayerPanel::AddToPlayList(const guTrackArray &tracks, const bool allowPlay, const int afterCurrent)
 {
     int PrevTrackCount = m_PlayListCtrl->GetCount();
-    if( tracks.Count() )
+    if (!tracks.Count())
+        return;
+
+    m_PlayListCtrl->ClearItemsExtras();
+    guTrack *track = &tracks[0];
+    bool ClearPlayList = (track->m_TrackMode == guTRACK_MODE_RANDOM ||
+                          track->m_TrackMode == guTRACK_MODE_SMART) && !m_DelTracksPlayed;
+
+    m_PlayListCtrl->AddToPlayList(tracks, ClearPlayList, afterCurrent);
+
+    m_PlayListCtrl->RemoveCueFilesDuplicates();
+    // TODO: Test it --> m_PlayListCtrl->ReloadItems();
+    TrackListChanged();
+
+    if (m_PlayMode == guPLAYER_PLAYMODE_SMART)
     {
-        guTrack * Track = &tracks[ 0 ];
-        bool ClearPlayList = ( Track->m_TrackMode == guTRACK_MODE_RANDOM ||
-                               Track->m_TrackMode == guTRACK_MODE_SMART ) && !m_DelTracksPlayed;
+        int count = tracks.Count();
 
-        m_PlayListCtrl->AddToPlayList( tracks, ClearPlayList, aftercurrent );
-
-        TrackListChanged();
-
-        if( m_PlayMode == guPLAYER_PLAYMODE_SMART )
+        // We only insert the last CACHEITEMS as the rest should be forgiven
+        for (int index = 0; index < count; index++)
         {
-            int Count = tracks.Count();
-            // We only insert the last CACHEITEMS as the rest should be forgiven
-            for( int Index = 0; Index < Count; Index++ )
+            if (tracks[index].m_TrackMode != guTRACK_MODE_SMART)
             {
-                if( tracks[ Index ].m_TrackMode != guTRACK_MODE_SMART )
-                {
-                    m_SmartAddedTracks.Add( tracks[ Index ].m_SongId );
-                    m_SmartAddedArtists.Add( tracks[ Index ].m_ArtistName.Upper() );
-                }
+                m_SmartAddedTracks.Add(tracks[ index].m_SongId);
+                m_SmartAddedArtists.Add(tracks[index].m_ArtistName.Upper());
             }
-
-            if( ( Count = m_SmartAddedTracks.Count() ) > m_SmartMaxTracksList )
-                m_SmartAddedTracks.RemoveAt( 0, Count - m_SmartMaxTracksList );
-
-            if( ( Count = m_SmartAddedArtists.Count() ) > m_SmartMaxArtistsList )
-                m_SmartAddedArtists.RemoveAt( 0, Count - m_SmartMaxArtistsList );
         }
 
-        // Change vehaivour to start playing when its not playing
-        if( allowplay && !PrevTrackCount && ( GetState() != guMEDIASTATE_PLAYING ) )
-        {
-            wxCommandEvent CmdEvent;
-            OnNextTrackButtonClick( CmdEvent );
-            OnPlayButtonClick( CmdEvent );
-        }
+        if ((count = m_SmartAddedTracks.Count()) > m_SmartMaxTracksList)
+            m_SmartAddedTracks.RemoveAt(0, count - m_SmartMaxTracksList);
+
+        if ((count = m_SmartAddedArtists.Count()) > m_SmartMaxArtistsList)
+            m_SmartAddedArtists.RemoveAt(0, count - m_SmartMaxArtistsList);
+    }
+
+    // Change behaviour to start playing when its not playing
+    if (allowPlay && !PrevTrackCount && (GetState() != guMEDIASTATE_PLAYING))
+    {
+        wxCommandEvent CmdEvent;
+        OnNextTrackButtonClick(CmdEvent);
+        OnPlayButtonClick(CmdEvent);
     }
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::AddToPlayList( const wxString &FileName, const int aftercurrent  )
+void guPlayerPanel::AddToPlayList(const wxString &fileName, const int afterCurrent)
 {
+    guTrack track;
     int PrevTrackCount = m_PlayListCtrl->GetCount();
+    m_PlayListCtrl->ClearItemsExtras();
 
-    m_PlayListCtrl->AddPlayListItem( FileName, aftercurrent, wxNOT_FOUND );
+    m_PlayListCtrl->AddPlayListItem(fileName, track, afterCurrent, wxNOT_FOUND);
+
+    m_PlayListCtrl->RemoveCueFilesDuplicates();
     m_PlayListCtrl->ReloadItems();
     TrackListChanged();
+
     // Add the added track to the smart cache
-    if( m_PlayMode == guPLAYER_PLAYMODE_SMART )
+    if (m_PlayMode == guPLAYER_PLAYMODE_SMART)
     {
-        int Count = m_PlayListCtrl->GetCount();
+        int count = m_PlayListCtrl->GetCount();
 
         // TODO : Check if the track was really added or not
-        if( Count > PrevTrackCount )
+        if (count > PrevTrackCount)
         {
-            guTrack * Track = m_PlayListCtrl->GetItem( Count - 1 );
+            guTrack *track_item = m_PlayListCtrl->GetItem(count - 1);
 
-            m_SmartAddedTracks.Add( Track->m_SongId );
-            m_SmartAddedArtists.Add( Track->m_ArtistName.Upper() );
+            m_SmartAddedTracks.Add(track_item->m_SongId);
+            m_SmartAddedArtists.Add(track_item->m_ArtistName.Upper());
 
-            if( ( int ) m_SmartAddedTracks.Count() > m_SmartMaxTracksList )
-                m_SmartAddedTracks.RemoveAt( 0 );
+            if ((int) m_SmartAddedTracks.Count() > m_SmartMaxTracksList)
+                m_SmartAddedTracks.RemoveAt(0);
 
-            if( ( int ) m_SmartAddedArtists.Count() > m_SmartMaxArtistsList )
-                m_SmartAddedArtists.RemoveAt( 0 );
+            if ((int) m_SmartAddedArtists.Count() > m_SmartMaxArtistsList)
+                m_SmartAddedArtists.RemoveAt(0);
         }
     }
 
@@ -960,39 +975,42 @@ void guPlayerPanel::AddToPlayList( const wxString &FileName, const int aftercurr
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::AddToPlayList( const wxArrayString &files, const int aftercurrent  )
+void guPlayerPanel::AddToPlayList(const wxArrayString &files, const int afterCurrent)
 {
-    m_PlayListCtrl->ClearItemsStat();
+    guTrack track;
     int PrevTrackCount = m_PlayListCtrl->GetItemCount();
+    m_PlayListCtrl->ClearItemsExtras();
 
-    int Count = files.Count();
-    for (int Index = 0; Index < Count; Index++)
-        m_PlayListCtrl->AddPlayListItem( files[ Index ], aftercurrent, aftercurrent ? Index : wxNOT_FOUND );
+    int count = files.Count();
+    for (int index = 0; index < count; index++)
+        m_PlayListCtrl->AddPlayListItem(files[index], track, afterCurrent, afterCurrent ? index : wxNOT_FOUND);
 
+    m_PlayListCtrl->RemoveCueFilesDuplicates();
     m_PlayListCtrl->ReloadItems();
     TrackListChanged();
 
     // Add the added track to the smart cache
     if( m_PlayMode == guPLAYER_PLAYMODE_SMART )
     {
-        Count = m_PlayListCtrl->GetItemCount();
+        count = m_PlayListCtrl->GetItemCount();
+
         // We only insert the last CACHEITEMS as the rest should be forgiven
-        for( int Index = 0; Index < Count; Index++ )
+        for (int index = 0; index < count; index++)
         {
-            guTrack * Track = m_PlayListCtrl->GetItem( Index );
+            guTrack *track_item = m_PlayListCtrl->GetItem(index);
 
-            if( m_SmartAddedTracks.Index( Track->m_SongId ) == wxNOT_FOUND )
-                m_SmartAddedTracks.Add( Track->m_SongId );
+            if (m_SmartAddedTracks.Index( track_item->m_SongId) == wxNOT_FOUND)
+                m_SmartAddedTracks.Add(track_item->m_SongId);
 
-            if( m_SmartAddedArtists.Index( Track->m_ArtistName.Upper() ) == wxNOT_FOUND )
-                m_SmartAddedArtists.Add( Track->m_ArtistName.Upper() );
+            if (m_SmartAddedArtists.Index(track_item->m_ArtistName.Upper()) == wxNOT_FOUND)
+                m_SmartAddedArtists.Add(track_item->m_ArtistName.Upper());
         }
 
-        if( ( Count = m_SmartAddedTracks.Count() ) > m_SmartMaxTracksList )
-            m_SmartAddedTracks.RemoveAt( 0, Count - m_SmartMaxTracksList );
+        if ((count = m_SmartAddedTracks.Count()) > m_SmartMaxTracksList)
+            m_SmartAddedTracks.RemoveAt(0, count - m_SmartMaxTracksList);
 
-        if( ( Count = m_SmartAddedArtists.Count() ) > m_SmartMaxArtistsList )
-            m_SmartAddedArtists.RemoveAt( 0, Count - m_SmartMaxArtistsList );
+        if ((count = m_SmartAddedArtists.Count()) > m_SmartMaxArtistsList)
+            m_SmartAddedArtists.RemoveAt(0, count - m_SmartMaxArtistsList);
     }
 
     if( !PrevTrackCount && m_PlayListCtrl->GetItemCount() && ( GetState() != guMEDIASTATE_PLAYING ) )
@@ -1004,44 +1022,46 @@ void guPlayerPanel::AddToPlayList( const wxArrayString &files, const int aftercu
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPanel::AddToPlayList( const wxArrayString &files, const bool allowplay, const int aftercurrent  )
+void guPlayerPanel::AddToPlayList(const wxArrayString &files, const bool allowPlay, const int afterCurrent)
 {
-    guLogDebug( wxT( "AddToPlayList( ..., %i, %i )" ), allowplay, aftercurrent );
-    m_PlayListCtrl->ClearItemsStat();
+    guLogDebug(wxT("AddToPlayList( ..., %i, %i )"), allowPlay, afterCurrent);
+    guTrack track;
     int PrevTrackCount = m_PlayListCtrl->GetItemCount();
+    m_PlayListCtrl->ClearItemsExtras();
 
-    int Count = files.Count();
-    for (int Index = 0; Index < Count; Index++)
-        m_PlayListCtrl->AddPlayListItem( files[ Index ], aftercurrent, Index );
+    int count = files.Count();
+    for (int index = 0; index < count; index++)
+        m_PlayListCtrl->AddPlayListItem(files[index], track, afterCurrent, index);
 
     m_PlayListCtrl->RemoveCueFilesDuplicates();
     m_PlayListCtrl->ReloadItems();
     TrackListChanged();
 
     // Add the added track to the smart cache
-    if( m_PlayMode == guPLAYER_PLAYMODE_SMART )
+    if (m_PlayMode == guPLAYER_PLAYMODE_SMART)
     {
-        Count = m_PlayListCtrl->GetItemCount();
+        count = m_PlayListCtrl->GetItemCount();
+
         // We only insert the last CACHEITEMS as the rest should be forgiven
-        for( int Index = 0; Index < Count; Index++ )
+        for (int index = 0; index < count; index++)
         {
-            guTrack * Track = m_PlayListCtrl->GetItem( Index );
+            guTrack *track_item = m_PlayListCtrl->GetItem(index);
 
-            if( m_SmartAddedTracks.Index( Track->m_SongId ) == wxNOT_FOUND )
-                m_SmartAddedTracks.Add( Track->m_SongId );
+            if (m_SmartAddedTracks.Index(track_item->m_SongId) == wxNOT_FOUND)
+                m_SmartAddedTracks.Add(track_item->m_SongId);
 
-            if( m_SmartAddedArtists.Index( Track->m_ArtistName.Upper() ) == wxNOT_FOUND )
-                m_SmartAddedArtists.Add( Track->m_ArtistName.Upper() );
+            if (m_SmartAddedArtists.Index(track_item->m_ArtistName.Upper()) == wxNOT_FOUND)
+                m_SmartAddedArtists.Add(track_item->m_ArtistName.Upper());
         }
 
-        if( ( Count = m_SmartAddedTracks.Count() ) > m_SmartMaxTracksList )
-            m_SmartAddedTracks.RemoveAt( 0, Count - m_SmartMaxTracksList );
+        if ((count = m_SmartAddedTracks.Count()) > m_SmartMaxTracksList)
+            m_SmartAddedTracks.RemoveAt(0, count - m_SmartMaxTracksList);
 
-        if( ( Count = m_SmartAddedArtists.Count() ) > m_SmartMaxArtistsList )
-            m_SmartAddedArtists.RemoveAt( 0, Count - m_SmartMaxArtistsList );
+        if ((count = m_SmartAddedArtists.Count()) > m_SmartMaxArtistsList)
+            m_SmartAddedArtists.RemoveAt(0, count - m_SmartMaxArtistsList);
     }
 
-    if( allowplay && ( m_PlayListCtrl->GetCount() > PrevTrackCount ) && ( GetState() != guMEDIASTATE_PLAYING ) )
+    if (allowPlay && (m_PlayListCtrl->GetCount() > PrevTrackCount) && (GetState() != guMEDIASTATE_PLAYING))
     {
         wxCommandEvent CmdEvent;
         CmdEvent.SetInt( PrevTrackCount );
@@ -1936,21 +1956,19 @@ void guPlayerPanel::SavePlayedTrack( const bool forcesave )
                 if( !m_MediaSong.m_Offset && m_MediaSong.m_MediaViewer && m_MediaSong.m_MediaViewer->GetEmbeddMetadata() )
                 {
                     guTrackArray Tracks;
-                    Tracks.Add( m_MediaSong );
                     guImagePtrArray Images;
                     wxArrayString Lyrics;
                     wxArrayInt ChangedFlags;
+
+                    Tracks.Add( m_MediaSong );
                     ChangedFlags.Add( guTRACK_CHANGED_DATA_RATING );
                     guUpdateTracks( Tracks, Images, Lyrics, ChangedFlags );
                 }
 
                 if( m_MediaSong.m_Type != guTRACK_TYPE_PODCAST )
                 {
-                    if( m_MediaSong.m_MediaViewer )
-                    {
-                        guDbLibrary * Db = m_MediaSong.m_MediaViewer->GetDb();
-                        Db->SetTrackPlayCount( m_MediaSong.m_SongId, m_MediaSong.m_PlayCount );
-                    }
+                    guDbLibrary *Db = m_MediaSong.m_MediaViewer ? m_MediaSong.m_MediaViewer->GetDb() : m_Db;
+                    Db->SetTrackPlayCount( m_MediaSong.m_SongId, m_MediaSong.m_PlayCount );
                 }
                 else
                 {
