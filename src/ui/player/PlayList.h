@@ -96,7 +96,7 @@ class guPlayList : public guListView
     void                        OnSearchClicked( wxCommandEvent &event );
     void                        OnStopAtEnd( wxCommandEvent &event ) { StopAtEnd(); }
 
-    void                        SetTopPlayTracks( wxCommandEvent &event );
+    void                        SetTopPlayingTracks( wxCommandEvent &event );
     void                        SetTopTracks( wxCommandEvent &event );
     void                        SetPrevTracks( wxCommandEvent &event );
     void                        SetNextTracks( wxCommandEvent &event );
@@ -216,7 +216,7 @@ class guPlayerPlayList : public guAuiManagedPanel
     wxBoxSizer *MainSizer;
     wxBoxSizer *BigSizer;
 
-    wxBitmapButton *m_TopPlayButton;
+    wxBitmapButton *m_TopPlayingButton;
     wxBitmapButton *m_TopButton;
     wxBitmapButton *m_PrevButton;
     wxBitmapButton *m_NextButton;
@@ -225,7 +225,7 @@ class guPlayerPlayList : public guAuiManagedPanel
     wxBitmapButton *m_RemoveButton;
     wxBitmapButton *m_ClearPlaylistButton;
 
-    void OnTopPlayBtnClick(wxCommandEvent &event);
+    void OnTopPlayingBtnClick(wxCommandEvent &event);
     void OnTopBtnClick(wxCommandEvent &event);
     void OnPrevBtnClick(wxCommandEvent &event);
     void OnNextBtnClick(wxCommandEvent &event);
@@ -249,7 +249,7 @@ public :
 
     void            LoadPlaylistTracks() { m_PlayListCtrl->LoadPlaylistTracks(); }
 
-    void            UpdatePlayListToolbarState(int item, int curItem, int lastItem);
+    void            UpdatePlayListToolbarState(int item, int curItem, int lastItem, wxArrayInt selectedItems);
 };
 
 }

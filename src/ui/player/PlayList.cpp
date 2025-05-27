@@ -44,6 +44,21 @@
 namespace Guayadeque {
 
 // -------------------------------------------------------------------------------- //
+bool isTopPlayingEnabled(int curItem, wxArrayInt selectedItems)
+{
+    bool topPlayingEnabled = false;
+    int selCount = selectedItems.Count();
+    for (int index = 0; index < selCount; index++)
+        if (selectedItems[index] > (curItem + 1) || selectedItems[index] < curItem)
+        {
+            topPlayingEnabled = true;
+            break;
+        }
+    return topPlayingEnabled;
+}
+
+
+// -------------------------------------------------------------------------------- //
 // guPlayerPlayList - Playlist Panel
 // -------------------------------------------------------------------------------- //
 guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiManager * manager ) :
@@ -59,9 +74,9 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
     wxBoxSizer *BarSizer;
     BarSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    m_TopPlayButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_start), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
-    m_TopPlayButton->SetToolTip(_("Set as Next Track"));
-    BarSizer->Add(m_TopPlayButton, 0, wxALIGN_LEFT | wxLEFT, 2);
+    m_TopPlayingButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_tiny_start), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
+    m_TopPlayingButton->SetToolTip(_("Set as Next Track"));
+    BarSizer->Add(m_TopPlayingButton, 0, wxALIGN_LEFT | wxLEFT, 2);
 
     m_TopButton = new wxBitmapButton(this, wxID_ANY, guImage(guIMAGE_INDEX_go_top), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW);
     m_TopButton->SetToolTip(_("Move the selected tracks to the top"));
@@ -101,7 +116,7 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
     Layout();
     MainSizer->Fit(this);
 
-    m_TopPlayButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnTopPlayBtnClick, this);
+    m_TopPlayingButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnTopPlayingBtnClick, this);
     m_TopButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnTopBtnClick, this);
     m_PrevButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnPrevBtnClick, this);
     m_NextButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnNextBtnClick, this);
@@ -114,7 +129,7 @@ guPlayerPlayList::guPlayerPlayList( wxWindow * parent, guDbLibrary * db, wxAuiMa
 // -------------------------------------------------------------------------------- //
 guPlayerPlayList::~guPlayerPlayList()
 {
-    m_TopPlayButton->Unbind(wxEVT_BUTTON, &guPlayerPlayList::OnTopPlayBtnClick, this);
+    m_TopPlayingButton->Unbind(wxEVT_BUTTON, &guPlayerPlayList::OnTopPlayingBtnClick, this);
     m_TopButton->Unbind(wxEVT_BUTTON, &guPlayerPlayList::OnTopBtnClick, this);
     m_PrevButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnPrevBtnClick, this);
     m_NextButton->Bind(wxEVT_BUTTON, &guPlayerPlayList::OnNextBtnClick, this);
@@ -130,9 +145,9 @@ void guPlayerPlayList::SetPlayerPanel( guPlayerPanel * player )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPlayList::OnTopPlayBtnClick(wxCommandEvent& event)
+void guPlayerPlayList::OnTopPlayingBtnClick(wxCommandEvent& event)
 {
-    m_PlayListCtrl->SetTopPlayTracks(event);
+    m_PlayListCtrl->SetTopPlayingTracks(event);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -175,13 +190,13 @@ void guPlayerPlayList::OnShuffleBtnClick( wxCommandEvent &event )
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayerPlayList::UpdatePlayListToolbarState(int item, int curItem, int lastItem)
+void guPlayerPlayList::UpdatePlayListToolbarState(int item, int curItem, int lastItem, wxArrayInt selectedItems)
 {
-    bool topPlayEnabled = item > (curItem + 1) || item < curItem;
+    bool topPlayingEnabled = isTopPlayingEnabled(curItem, selectedItems);
     bool topPrevEnabled = item != 0;
     bool nextBottomEnabled = item != lastItem;
 
-    m_TopPlayButton->Enable(topPlayEnabled);
+    m_TopPlayingButton->Enable(topPlayingEnabled);
 
     m_TopButton->Enable(topPrevEnabled);
     m_PrevButton->Enable(topPrevEnabled);
@@ -235,7 +250,7 @@ guPlayList::guPlayList(wxWindow * parent,
     Bind( wxEVT_MENU, &guPlayList::OnSearchClicked, this, ID_PLAYER_PLAYLIST_SEARCH );
     Bind( wxEVT_MENU, &guPlayList::OnCopyToClicked, this, ID_COPYTO_BASE, ID_COPYTO_BASE + guCOPYTO_MAXCOUNT );
     Bind( wxEVT_MENU, &guPlayList::OnStopAtEnd, this, ID_PLAYER_PLAYLIST_STOP_ATEND );
-    Bind( wxEVT_MENU, &guPlayList::SetTopPlayTracks, this, ID_PLAYER_PLAYLIST_SET_NEXT_TRACK );
+    Bind( wxEVT_MENU, &guPlayList::SetTopPlayingTracks, this, ID_PLAYER_PLAYLIST_SET_NEXT_TRACK );
     Bind( wxEVT_MENU, &guPlayList::OnSelectTrack, this, ID_PLAYER_PLAYLIST_SELECT_TITLE );
     Bind( wxEVT_MENU, &guPlayList::OnSelectArtist, this, ID_PLAYER_PLAYLIST_SELECT_ARTIST );
     Bind( wxEVT_MENU, &guPlayList::OnSelectAlbum, this, ID_PLAYER_PLAYLIST_SELECT_ALBUM );
@@ -298,7 +313,7 @@ guPlayList::~guPlayList()
     Unbind( wxEVT_MENU, &guPlayList::OnSearchClicked, this, ID_PLAYER_PLAYLIST_SEARCH );
     Unbind( wxEVT_MENU, &guPlayList::OnCopyToClicked, this, ID_COPYTO_BASE, ID_COPYTO_BASE + guCOPYTO_MAXCOUNT );
     Unbind( wxEVT_MENU, &guPlayList::OnStopAtEnd, this, ID_PLAYER_PLAYLIST_STOP_ATEND );
-    Unbind( wxEVT_MENU, &guPlayList::SetTopPlayTracks, this, ID_PLAYER_PLAYLIST_SET_NEXT_TRACK );
+    Unbind( wxEVT_MENU, &guPlayList::SetTopPlayingTracks, this, ID_PLAYER_PLAYLIST_SET_NEXT_TRACK );
     Unbind( wxEVT_MENU, &guPlayList::OnSelectTrack, this, ID_PLAYER_PLAYLIST_SELECT_TITLE );
     Unbind( wxEVT_MENU, &guPlayList::OnSelectArtist, this, ID_PLAYER_PLAYLIST_SELECT_ARTIST );
     Unbind( wxEVT_MENU, &guPlayList::OnSelectAlbum, this, ID_PLAYER_PLAYLIST_SELECT_ALBUM );
@@ -540,7 +555,7 @@ void guPlayList::SetDragOverItem(guLISTVIEW_NAVIGATION target, wxArrayInt Select
         m_DragOverItem = lastItem;
     }
     else if (target == guLISTVIEW_NAVIGATION_ITEM)
-    {  // Use current/incoming m_DragOverItem
+    {  // Use current m_DragOverItem
     }
 }
 
@@ -581,7 +596,7 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
 
     // Remove the Items and move CurItem and InsertPos
     // We move from last (bigger) to first
-    for ( int Index = selectionCount - 1; Index >= 0; Index-- )
+    for (int Index = selectionCount - 1; Index >= 0; Index--)
     {
         // guLogMessage( wxT( "Index %i: CurItem: %i InsPos: %i" ), Index, m_CurItem, InsertPos );
         m_Items.RemoveAt( Selection[ Index ] );
@@ -622,11 +637,13 @@ void guPlayList::MoveSelection(guLISTVIEW_NAVIGATION target)
 void guPlayList::UpdatePlaylistToolbar()
 {
     int lastItem = m_Items.Count() - 1;
-    m_PlayerPlayList->UpdatePlayListToolbarState(m_DragOverItem, m_CurItem, lastItem);
+    wxArrayInt selectedItems = GetSelectedItems( false );
+
+    m_PlayerPlayList->UpdatePlayListToolbarState(m_DragOverItem, m_CurItem, lastItem, selectedItems);
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::SetTopPlayTracks(wxCommandEvent &event)
+void guPlayList::SetTopPlayingTracks(wxCommandEvent &event)
 {
     m_DragOverAfter = false;
     MoveSelection(guLISTVIEW_NAVIGATION_TOP_PLAYING);
@@ -1689,8 +1706,8 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
         return;
     }
 
-    wxArrayInt SelectedItems = GetSelectedItems( false );
-    int SelCount = SelectedItems.Count();
+    wxArrayInt selectedItems = GetSelectedItems( false );
+    int selCount = selectedItems.Count();
 
     MenuItem = new wxMenuItem(
             Menu, ID_PLAYER_PLAYLIST_EDITLABELS,
@@ -1708,13 +1725,13 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
 
     Menu->AppendSeparator();
 
-    if( SelCount )
+    if (selCount)
     {
         MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_SET_NEXT_TRACK,
                                 _( "Set as Next Track" ),
                                 _( "Move the selected tracks to be played next" ) );
         Menu->Append( MenuItem );
-        MenuItem->Enable(SelectedItems[0] > 1);
+        MenuItem->Enable(isTopPlayingEnabled(m_CurItem, selectedItems));
 
         wxMenu * RatingMenu = new wxMenu();
 
@@ -1741,7 +1758,7 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
     MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_search ) );
     Menu->Append( MenuItem );
 
-    if( SelCount == 1 )
+    if (selCount == 1)
     {
         wxMenu *     SubMenu;
         SubMenu = new wxMenu();
@@ -1787,7 +1804,7 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
     MenuItem->SetBitmap( guImage( guIMAGE_INDEX_doc_save ) );
     Menu->Append( MenuItem );
 
-    if( SelCount == 1 )
+    if (selCount == 1)
     {
         MenuItem = new wxMenuItem( Menu, ID_PLAYLIST_SMART_PLAYLIST, _( "Create Smart Playlist" ), _( "Create a smart playlist from this track" ) );
         Menu->Append( MenuItem );
@@ -1808,7 +1825,7 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
     MenuItem->SetBitmap( guImage( guIMAGE_INDEX_tiny_edit_clear ) );
     Menu->Append( MenuItem );
 
-    if( SelCount )
+    if (selCount)
     {
         MenuItem = new wxMenuItem( Menu, ID_PLAYER_PLAYLIST_REMOVE,
                             _( "Remove from Playlist" ),
@@ -1835,10 +1852,10 @@ void guPlayList::CreateContextMenu( wxMenu * Menu ) const
 
     m_MainFrame->CreateCopyToMenu( Menu );
 
-    if( SelCount == 1 && ( m_Items[ SelectedItems[ 0 ] ].m_Type < guTRACK_TYPE_RADIOSTATION ) )
-        AddOnlineLinksMenu( Menu );
+    if (selCount == 1 && (m_Items[selectedItems[0]].m_Type < guTRACK_TYPE_RADIOSTATION))
+        AddOnlineLinksMenu(Menu);
 
-    AddPlayListCommands( Menu, SelCount );
+    AddPlayListCommands(Menu, selCount);
 }
 
 // -------------------------------------------------------------------------------- //
