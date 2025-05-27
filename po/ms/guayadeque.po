@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-26 19:03-0300\n"
+"POT-Creation-Date: 2025-05-27 13:27-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2017-2018,2020,2022\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/anonbeat/"
@@ -28,8 +28,8 @@ msgstr "Tambah Folder"
 msgid "Audio Scrobbling"
 msgstr "Scrobble Audio"
 
-#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1476 ui/player/PlayList.cpp:93
-#: ui/player/PlayList.cpp:1806
+#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1476 ui/player/PlayList.cpp:108
+#: ui/player/PlayList.cpp:1823
 msgid "Clear the Playlist"
 msgstr "Kosongkan Senarai Main"
 
@@ -47,7 +47,7 @@ msgstr "Forum Komuniti"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
-#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1697
+#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1714
 msgid "Edit Labels"
 msgstr "Sunting Label"
 
@@ -152,7 +152,7 @@ msgstr "Main Strim"
 #: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
-#: ui/player/PlayList.cpp:1673 onlinelinks/OnlineLinks.cpp:68
+#: ui/player/PlayList.cpp:1690 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
 msgstr "Keutamaan"
 
@@ -161,7 +161,7 @@ msgid "Quit"
 msgstr "Keluar"
 
 #: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1523
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1800
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1817
 msgid "Shuffle the Playlist"
 msgstr "Rawakkan senarai main"
 
@@ -205,13 +205,13 @@ msgstr "Simpan Bentangan"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1785
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1802
 msgid "Save to Playlist"
 msgstr "Simpan ke Senarai Main"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
-#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1739
-#: ui/player/PlayList.cpp:2282
+#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1756
+#: ui/player/PlayList.cpp:2299
 msgid "Search"
 msgstr "Gelintar"
 
@@ -422,7 +422,7 @@ msgid "Separator"
 msgstr "Pemisah"
 
 #: misc/Accelerators.cpp:395 ui/mediaviewer/library/SoListBox.cpp:572
-#: ui/player/PlayList.cpp:1770
+#: ui/player/PlayList.cpp:1787
 msgid "Select"
 msgstr "Pilih"
 
@@ -587,14 +587,14 @@ msgstr "Gelintar lirik dalam sesawang"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1752
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1769
 #, fuzzy
 msgid "Artist"
 msgstr "Artis"
 
 #: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:388
 #: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:840
-#: ui/player/PlayList.cpp:1749
+#: ui/player/PlayList.cpp:1766
 msgid "Track"
 msgstr "Trek"
 
@@ -1167,7 +1167,7 @@ msgstr "Salin nama album ke semua trek yang masih disunting"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361 ui/cover/CoverEdit.cpp:80
-#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1761
+#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1778
 msgid "Album"
 msgstr "Album"
 
@@ -1181,7 +1181,7 @@ msgstr "Salin penggubah ke semua trek yang masih disunting"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1758
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1775
 msgid "Composer"
 msgstr "Penggubah"
 
@@ -1233,7 +1233,7 @@ msgstr "Salin nama genre ke semua lagu yang masih disunting"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
 #: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3237
-#: ui/player/PlayList.cpp:1767
+#: ui/player/PlayList.cpp:1784
 msgid "Genre"
 msgstr "Genre"
 
@@ -1250,7 +1250,7 @@ msgstr "Salin tahun ke semua lagu yang masih disunting"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:69
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1764
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1781
 msgid "Year"
 msgstr "Tahun"
 
@@ -1399,7 +1399,7 @@ msgstr "Bendera pola"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:129
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:67
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1755
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1772
 msgid "Album Artist"
 msgstr "Artis Album"
 
@@ -1422,7 +1422,7 @@ msgstr "Lihat fail sistem"
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
-#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1673
+#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1690
 msgid "Add commands in preferences"
 msgstr "Tambah perintah dalam keutamaan"
 
@@ -1433,7 +1433,7 @@ msgstr "Tambah perintah dalam keutamaan"
 #: ui/mediaviewer/library/SoListBox.cpp:450
 #: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:275
-#: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1676
+#: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1693
 msgid "Commands"
 msgstr "Perintah"
 
@@ -1734,7 +1734,7 @@ msgstr "Padam fail terpilih"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2107
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2124
 msgid "UnNamed"
 msgstr "TanpaNama"
 
@@ -1807,32 +1807,32 @@ msgid "Skip to previous album track in current playlist"
 msgstr "Langkau ke trek album terdahulu dalam senarai main semasa"
 
 #: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1484
-#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1721
+#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1738
 msgid "Set the rating to 0"
 msgstr "Tetapkan penarafan pada 0"
 
 #: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1489
-#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1723
+#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1740
 msgid "Set the rating to 1"
 msgstr "Tetapkan penarafan pada 1"
 
 #: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1494
-#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1725
+#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1742
 msgid "Set the rating to 2"
 msgstr "Tetapkan penarafan pada 2"
 
 #: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1499
-#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1727
+#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1744
 msgid "Set the rating to 3"
 msgstr "Tetapkan penarafan pada 3"
 
 #: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1504
-#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1729
+#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1746
 msgid "Set the rating to 4"
 msgstr "Tetapkan penarafan pada 4"
 
 #: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1509
-#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1731
+#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1748
 msgid "Set the rating to 5"
 msgstr "Tetapkan penarafan pada 5"
 
@@ -1869,8 +1869,8 @@ msgid "Shu&ffle"
 msgstr "R&awak"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1524
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
-#: ui/player/PlayList.cpp:1801
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:100
+#: ui/player/PlayList.cpp:1818
 msgid "Shuffle the tracks in the playlist"
 msgstr "Rawakkan trek di dalam senarai main"
 
@@ -1910,7 +1910,7 @@ msgstr "Penapis"
 
 #: ui/MainFrame.cpp:211 ui/MainFrame.cpp:394 ui/MainFrame.cpp:2024
 #: ui/MainFrame.cpp:2732 ui/MainFrame.cpp:2749 ui/radios/RadioPanel.cpp:315
-#: ui/player/PlayList.cpp:215
+#: ui/player/PlayList.cpp:230
 msgid "Now Playing"
 msgstr "Kini Dimainkan"
 
@@ -2126,7 +2126,7 @@ msgid "Clear the now playing playlist"
 msgstr "Kosongkan senarai main yang sedang dimainkan"
 
 #: ui/MainFrame.cpp:1512 ui/mediaviewer/library/SoListBox.cpp:626
-#: ui/player/PlayList.cpp:1734
+#: ui/player/PlayList.cpp:1751
 msgid "Set Rating"
 msgstr "Tetapkan Penarafan"
 
@@ -2291,7 +2291,7 @@ msgstr "Tambah trek semasa yang terpilih ke dalam senarai main"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
-#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1704
+#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1721
 msgid "Edit Songs"
 msgstr "Sunting Lagu"
 
@@ -2328,7 +2328,7 @@ msgstr "Anda pasti mahu memadam kulit album terpilih?"
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2255
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2272
 msgid "Tracks Labels Editor"
 msgstr "Penyunting Label Trek"
 
@@ -2341,7 +2341,7 @@ msgstr "Penyunting Medan"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1979
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1996
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2351,7 +2351,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1980
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1997
 msgid "Remove tracks from drive"
 msgstr "Buang trek dari pemacu"
 
@@ -2383,7 +2383,7 @@ msgstr "Tambah album terpilih selepas"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1786
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1803
 msgid "Save the selected tracks to playlist"
 msgstr "Simpan trek terpilih ke dalam senarai main"
 
@@ -2402,7 +2402,7 @@ msgstr "Sunting lagu daripada artis terpilih"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:641
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1794
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1811
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Cipta Senarai Main Pintar"
@@ -2410,7 +2410,7 @@ msgstr "Cipta Senarai Main Pintar"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:641
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1794
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1811
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Cipta senarai main pintar dari trek ini"
@@ -2538,7 +2538,7 @@ msgstr "Tambah lagu semasa yang dipilih ke dalam senarai main"
 msgid "Selects the genre of the current song"
 msgstr "Pilih genre lagu semasa"
 
-#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1752
+#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1769
 msgid "Selects the artist of the current song"
 msgstr "Pilih artis lagu semasa"
 
@@ -2550,11 +2550,11 @@ msgstr "Pilih artis album bagi lagu semasa"
 msgid "Selects the composer of the current song"
 msgstr "Pilih penggubah lagu semasa"
 
-#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1761
+#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1778
 msgid "Select the album of the current song"
 msgstr "Pilih album lagu semasa"
 
-#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1770
+#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1787
 msgid "Search in the library"
 msgstr "Gelintar di dalam pustaka"
 
@@ -2566,7 +2566,7 @@ msgstr "Sunting label yang diumpuk pada lagu terpilih"
 msgid "Edit the songs selected"
 msgstr "Sunting lagu terpilih"
 
-#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1734
+#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1751
 msgid "Set the current selected tracks rating"
 msgstr "Tetapkan penarafan trek semasa yang dipilih"
 
@@ -2576,17 +2576,17 @@ msgstr "Simpan semua trek terpilih sebagai satu senarai main"
 
 #: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1792
+#: ui/player/PlayList.cpp:1809
 msgid "Create Smart Playlist"
 msgstr "Cipta Senarai Main Pintar"
 
 #: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1792
+#: ui/player/PlayList.cpp:1809
 msgid "Create a smart playlist from this track"
 msgstr "Cipta senarai main pintar dari trek ini"
 
-#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1822
+#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1839
 msgid "Remove from Library"
 msgstr "Buang dari Pustaka"
 
@@ -2594,7 +2594,7 @@ msgstr "Buang dari Pustaka"
 msgid "Remove the current selected tracks from library"
 msgstr "Buang trek semasa yang dipilih dari pustaka"
 
-#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1828
+#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1845
 msgid "Delete from Drive"
 msgstr "Padam dari Pemacu"
 
@@ -3023,7 +3023,7 @@ msgstr "Lokasi:"
 msgid "Beginning"
 msgstr "Permulaan"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1814
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1831
 msgid "Remove from Playlist"
 msgstr "Buang dari senarai main"
 
@@ -4693,99 +4693,99 @@ msgstr "Ulang sekali"
 msgid "Smart mode disabled"
 msgstr "Mod pintar dilumpuhkan"
 
-#: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1714
+#: ui/player/PlayList.cpp:78 ui/player/PlayList.cpp:1731
 msgid "Set as Next Track"
 msgstr "Tetapkan sebagai Trek Berikutnya"
 
-#: ui/player/PlayList.cpp:67
+#: ui/player/PlayList.cpp:82
 #, fuzzy
 msgid "Move the selected tracks to the top"
 msgstr "Alih trek terpilih untuk dimainkan berikutnya"
 
-#: ui/player/PlayList.cpp:71
+#: ui/player/PlayList.cpp:86
 #, fuzzy
 msgid "Move the selected tracks up"
 msgstr "Sunting trek terpilih"
 
-#: ui/player/PlayList.cpp:75
+#: ui/player/PlayList.cpp:90
 #, fuzzy
 msgid "Move the selected tracks down"
 msgstr "Alih trek terpilih untuk dimainkan berikutnya"
 
-#: ui/player/PlayList.cpp:79
+#: ui/player/PlayList.cpp:94
 #, fuzzy
 msgid "Move the selected tracks to the bottom"
 msgstr "Alih trek terpilih untuk dimainkan berikutnya"
 
-#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1815
+#: ui/player/PlayList.cpp:104 ui/player/PlayList.cpp:1832
 msgid "Remove the selected tracks from playlist"
 msgstr "Buang trek terpilih dari senarai main"
 
-#: ui/player/PlayList.cpp:1687
+#: ui/player/PlayList.cpp:1704
 msgid "Empty Playlist"
 msgstr "Senarai Main Kosong"
 
-#: ui/player/PlayList.cpp:1687
+#: ui/player/PlayList.cpp:1704
 msgid "The playlist is empty"
 msgstr "Senarai main kosong"
 
-#: ui/player/PlayList.cpp:1698
+#: ui/player/PlayList.cpp:1715
 msgid "Edit the current selected tracks labels"
 msgstr "Sunting label trek semasa yang dipilih"
 
-#: ui/player/PlayList.cpp:1705
+#: ui/player/PlayList.cpp:1722
 msgid "Edit the current selected songs"
 msgstr "Sunting lagu semasa yang dipilih"
 
-#: ui/player/PlayList.cpp:1715
+#: ui/player/PlayList.cpp:1732
 msgid "Move the selected tracks to be played next"
 msgstr "Alih trek terpilih untuk dimainkan berikutnya"
 
-#: ui/player/PlayList.cpp:1740
+#: ui/player/PlayList.cpp:1757
 msgid "Search a track in the playlist by name"
 msgstr "Gelintar trek dalam senarai main mengikut nama"
 
-#: ui/player/PlayList.cpp:1749
+#: ui/player/PlayList.cpp:1766
 msgid "Selects the current selected track in the library"
 msgstr "Pilih trek semasa yang dipilih di dalam pustaka"
 
-#: ui/player/PlayList.cpp:1755
+#: ui/player/PlayList.cpp:1772
 msgid "Select the album artist of the current song"
 msgstr "Pilih artis album bagi lagu semasa"
 
-#: ui/player/PlayList.cpp:1758
+#: ui/player/PlayList.cpp:1775
 msgid "Select the composer of the current song"
 msgstr "Pilih penggubah lagu semasa"
 
-#: ui/player/PlayList.cpp:1764
+#: ui/player/PlayList.cpp:1781
 msgid "Select the year of the current song"
 msgstr "Pilih tahun lagu semasa"
 
-#: ui/player/PlayList.cpp:1767
+#: ui/player/PlayList.cpp:1784
 msgid "Select the genre of the current song"
 msgstr "Pilih genre lagu semasa"
 
-#: ui/player/PlayList.cpp:1807
+#: ui/player/PlayList.cpp:1824
 msgid "Remove all tracks from playlist"
 msgstr "Buang semua trek dari senarai main"
 
-#: ui/player/PlayList.cpp:1823
+#: ui/player/PlayList.cpp:1840
 msgid "Remove the selected tracks from library"
 msgstr "Buang trek terpilih dari pustaka"
 
-#: ui/player/PlayList.cpp:1829
+#: ui/player/PlayList.cpp:1846
 msgid "Remove the selected tracks from drive"
 msgstr "Buang trek terpilih dari pemacu"
 
-#: ui/player/PlayList.cpp:2141
+#: ui/player/PlayList.cpp:2158
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2282
+#: ui/player/PlayList.cpp:2299
 msgid "Please enter the search term"
 msgstr "Sila masukkan terma gelintar"
 
-#: ui/player/PlayList.cpp:2807
+#: ui/player/PlayList.cpp:2824
 msgid "Loading tracks. Please wait"
 msgstr "Memuatkan trek. Tunggu sebentar"
 
