@@ -10,6 +10,7 @@ Changelog
 ### Enhancements
   * Enhancements in reading some missing cue sheets metadata from the audio file.
   * Removed warnings for GCC 15.1.
+  * Updated Greek, Italian, Spanish and Catalan translations.
 
 ### Bugfixes
   * Playlist/queue updates to handle properly playlists with cue sheets and/or tracks
@@ -39,6 +40,7 @@ Changelog
   * Adjusted the Podcast Editor dialog size.
   * Added a Find Cover button in the Cover Editor to repeat the cover search
     (same as hit enter in the text controls).
+  * Updated French, Portuguese and Brazilian Portuguese translations.
 
 ### Bugfixes
   * Fixed the "Paste" context menu option, in the File Browser directory tree,

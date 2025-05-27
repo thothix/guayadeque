@@ -1647,7 +1647,7 @@ msgstr "Pegueu en la carpeta seleccionada"
 
 #: ui/filebrowser/FileBrowser.cpp:407
 msgid "Move here"
-msgstr ""
+msgstr "Moure aquí"
 
 #: ui/filebrowser/FileBrowser.cpp:408
 #, fuzzy

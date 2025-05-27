@@ -1645,7 +1645,7 @@ msgstr "Επικόλληση στον επιλεγμένο φάκελο"
 
 #: ui/filebrowser/FileBrowser.cpp:407
 msgid "Move here"
-msgstr ""
+msgstr "Κίνηση εδώ"
 
 #: ui/filebrowser/FileBrowser.cpp:408
 #, fuzzy
