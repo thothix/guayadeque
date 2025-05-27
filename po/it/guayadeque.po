@@ -1642,7 +1642,7 @@ msgstr "Incolla nella cartella selezionata"
 
 #: ui/filebrowser/FileBrowser.cpp:407
 msgid "Move here"
-msgstr ""
+msgstr "Trasferirsi qui"
 
 #: ui/filebrowser/FileBrowser.cpp:408
 #, fuzzy
