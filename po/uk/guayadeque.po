@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-26 19:03-0300\n"
+"POT-Creation-Date: 2025-05-27 13:27-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Ukrainian (Ukraine) (http://www.transifex.com/projects/p/"
@@ -29,8 +29,8 @@ msgstr "Додати папку"
 msgid "Audio Scrobbling"
 msgstr "Аудіо скроблинг"
 
-#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1476 ui/player/PlayList.cpp:93
-#: ui/player/PlayList.cpp:1806
+#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1476 ui/player/PlayList.cpp:108
+#: ui/player/PlayList.cpp:1823
 msgid "Clear the Playlist"
 msgstr "Очистити список програвання"
 
@@ -48,7 +48,7 @@ msgstr "Форум спільноти"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
-#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1697
+#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1714
 msgid "Edit Labels"
 msgstr "Редагувати мітки"
 
@@ -153,7 +153,7 @@ msgstr "Грати потік"
 #: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
-#: ui/player/PlayList.cpp:1673 onlinelinks/OnlineLinks.cpp:68
+#: ui/player/PlayList.cpp:1690 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
 msgstr "Налаштування"
 
@@ -162,7 +162,7 @@ msgid "Quit"
 msgstr "Вихід"
 
 #: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1523
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1800
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1817
 msgid "Shuffle the Playlist"
 msgstr "Перемішати список програвання"
 
@@ -206,13 +206,13 @@ msgstr "Зберегти схему"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1785
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1802
 msgid "Save to Playlist"
 msgstr "Зберегти до списку програвання"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
-#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1739
-#: ui/player/PlayList.cpp:2282
+#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1756
+#: ui/player/PlayList.cpp:2299
 msgid "Search"
 msgstr "Пошук"
 
@@ -423,7 +423,7 @@ msgid "Separator"
 msgstr "Роздільник"
 
 #: misc/Accelerators.cpp:395 ui/mediaviewer/library/SoListBox.cpp:572
-#: ui/player/PlayList.cpp:1770
+#: ui/player/PlayList.cpp:1787
 msgid "Select"
 msgstr "Вибрати"
 
@@ -588,14 +588,14 @@ msgstr "Шукати текст пісні в Інтернеті"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1752
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1769
 #, fuzzy
 msgid "Artist"
 msgstr "Виконавець"
 
 #: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:388
 #: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:840
-#: ui/player/PlayList.cpp:1749
+#: ui/player/PlayList.cpp:1766
 msgid "Track"
 msgstr "Трек"
 
@@ -1169,7 +1169,7 @@ msgstr "Скопіювати назву альбому у всі треки, щ�
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361 ui/cover/CoverEdit.cpp:80
-#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1761
+#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1778
 msgid "Album"
 msgstr "Альбом"
 
@@ -1183,7 +1183,7 @@ msgstr "Скопіювати композитора у всі треки, що �
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1758
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1775
 msgid "Composer"
 msgstr "Композитор"
 
@@ -1235,7 +1235,7 @@ msgstr "Скопіювати жанр у всі треки, що редагую�
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
 #: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3237
-#: ui/player/PlayList.cpp:1767
+#: ui/player/PlayList.cpp:1784
 msgid "Genre"
 msgstr "Жанр"
 
@@ -1252,7 +1252,7 @@ msgstr "Скопіювати рік у всі треки, що редагуют�
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:69
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1764
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1781
 msgid "Year"
 msgstr "Рік"
 
@@ -1405,7 +1405,7 @@ msgstr "Прапори шаблону"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:129
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:67
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1755
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1772
 msgid "Album Artist"
 msgstr "Виконавець альбому"
 
@@ -1428,7 +1428,7 @@ msgstr "Подивитись системні файли"
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
-#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1673
+#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1690
 msgid "Add commands in preferences"
 msgstr "Додати команди до налаштувань"
 
@@ -1439,7 +1439,7 @@ msgstr "Додати команди до налаштувань"
 #: ui/mediaviewer/library/SoListBox.cpp:450
 #: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:275
-#: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1676
+#: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1693
 msgid "Commands"
 msgstr "Команди"
 
@@ -1738,7 +1738,7 @@ msgstr "Видалити вибрані файли"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2107
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2124
 msgid "UnNamed"
 msgstr "Без назви"
 
@@ -1811,32 +1811,32 @@ msgid "Skip to previous album track in current playlist"
 msgstr "Переключитися до попереднього албьому списку програвання"
 
 #: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1484
-#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1721
+#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1738
 msgid "Set the rating to 0"
 msgstr "Встановити рейтинг 0"
 
 #: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1489
-#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1723
+#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1740
 msgid "Set the rating to 1"
 msgstr "Встановити рейтинг 1"
 
 #: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1494
-#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1725
+#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1742
 msgid "Set the rating to 2"
 msgstr "Встановити рейтинг 2"
 
 #: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1499
-#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1727
+#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1744
 msgid "Set the rating to 3"
 msgstr "Встановити рейтинг 3"
 
 #: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1504
-#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1729
+#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1746
 msgid "Set the rating to 4"
 msgstr "Встановити рейтинг 4"
 
 #: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1509
-#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1731
+#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1748
 msgid "Set the rating to 5"
 msgstr "Встановити рейтинг 5"
 
@@ -1873,8 +1873,8 @@ msgid "Shu&ffle"
 msgstr "В&ипадково"
 
 #: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1524
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:85
-#: ui/player/PlayList.cpp:1801
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:100
+#: ui/player/PlayList.cpp:1818
 msgid "Shuffle the tracks in the playlist"
 msgstr "Перемішати треки в списку програвання"
 
@@ -1914,7 +1914,7 @@ msgstr "Фільтри"
 
 #: ui/MainFrame.cpp:211 ui/MainFrame.cpp:394 ui/MainFrame.cpp:2024
 #: ui/MainFrame.cpp:2732 ui/MainFrame.cpp:2749 ui/radios/RadioPanel.cpp:315
-#: ui/player/PlayList.cpp:215
+#: ui/player/PlayList.cpp:230
 msgid "Now Playing"
 msgstr "Зараз грає"
 
@@ -2131,7 +2131,7 @@ msgid "Clear the now playing playlist"
 msgstr "Очистити список програвання що грає"
 
 #: ui/MainFrame.cpp:1512 ui/mediaviewer/library/SoListBox.cpp:626
-#: ui/player/PlayList.cpp:1734
+#: ui/player/PlayList.cpp:1751
 msgid "Set Rating"
 msgstr "Встановити рейтинг"
 
@@ -2296,7 +2296,7 @@ msgstr "Додати вибрані треки до списку програв�
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
-#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1704
+#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1721
 msgid "Edit Songs"
 msgstr "Редагувати метадані"
 
@@ -2333,7 +2333,7 @@ msgstr "Ви дійсно бажаєте видалити вибрану обк�
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2255
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2272
 msgid "Tracks Labels Editor"
 msgstr "Редактор міток треків"
 
@@ -2346,7 +2346,7 @@ msgstr "Редактор полів"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1979
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1996
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2356,7 +2356,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1980
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1997
 msgid "Remove tracks from drive"
 msgstr "Видалити треки з диску"
 
@@ -2386,7 +2386,7 @@ msgstr "Додати вибрані альбоми після"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1786
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1803
 msgid "Save the selected tracks to playlist"
 msgstr "Зберегти вибрані треки до списку програвання"
 
@@ -2405,7 +2405,7 @@ msgstr "Редагувати метадані вибраних артистів"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:641
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1794
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1811
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Створити розумний список програвання"
@@ -2413,7 +2413,7 @@ msgstr "Створити розумний список програвання"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:641
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1794
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1811
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Створити розумний список програвання з цього треку"
@@ -2541,7 +2541,7 @@ msgstr "Додати вибрані пісні до списку програв�
 msgid "Selects the genre of the current song"
 msgstr "Вибрати жанр поточної пісні"
 
-#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1752
+#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1769
 msgid "Selects the artist of the current song"
 msgstr "Вибір виконавця поточної пісні"
 
@@ -2553,11 +2553,11 @@ msgstr "Вибрати виконавця альбому поточної піс
 msgid "Selects the composer of the current song"
 msgstr "Виберіть композитора поточної пісні"
 
-#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1761
+#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1778
 msgid "Select the album of the current song"
 msgstr "Вибір альбому поточної пісні"
 
-#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1770
+#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1787
 msgid "Search in the library"
 msgstr "Шукати у фонотеці"
 
@@ -2569,7 +2569,7 @@ msgstr "Редагувати мітки прив’язані до вибран�
 msgid "Edit the songs selected"
 msgstr "Редагувати метадані вибраних пісень"
 
-#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1734
+#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1751
 msgid "Set the current selected tracks rating"
 msgstr "Встановити рейтинг вибраним трекам"
 
@@ -2579,17 +2579,17 @@ msgstr "Зберегти усі вибрані треки до списку пр
 
 #: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1792
+#: ui/player/PlayList.cpp:1809
 msgid "Create Smart Playlist"
 msgstr "Створити розумний список програвання"
 
 #: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1792
+#: ui/player/PlayList.cpp:1809
 msgid "Create a smart playlist from this track"
 msgstr "Створити розумний список програвання з цього треку"
 
-#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1822
+#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1839
 msgid "Remove from Library"
 msgstr "Видалити з фонотеки"
 
@@ -2597,7 +2597,7 @@ msgstr "Видалити з фонотеки"
 msgid "Remove the current selected tracks from library"
 msgstr "Видалити вибрані треки з фонотеки"
 
-#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1828
+#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1845
 msgid "Delete from Drive"
 msgstr "Видалити з диску"
 
@@ -3026,7 +3026,7 @@ msgstr "Де:"
 msgid "Beginning"
 msgstr "Початок"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1814
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1831
 msgid "Remove from Playlist"
 msgstr "Видалити зі списку програвання"
 
@@ -4717,99 +4717,99 @@ msgstr "Повторювати Трек"
 msgid "Smart mode disabled"
 msgstr ""
 
-#: ui/player/PlayList.cpp:63 ui/player/PlayList.cpp:1714
+#: ui/player/PlayList.cpp:78 ui/player/PlayList.cpp:1731
 msgid "Set as Next Track"
 msgstr "Зробити наступним треком"
 
-#: ui/player/PlayList.cpp:67
+#: ui/player/PlayList.cpp:82
 #, fuzzy
 msgid "Move the selected tracks to the top"
 msgstr "Грати вибрані треки наступними"
 
-#: ui/player/PlayList.cpp:71
+#: ui/player/PlayList.cpp:86
 #, fuzzy
 msgid "Move the selected tracks up"
 msgstr "Редагувати вибрані треки"
 
-#: ui/player/PlayList.cpp:75
+#: ui/player/PlayList.cpp:90
 #, fuzzy
 msgid "Move the selected tracks down"
 msgstr "Грати вибрані треки наступними"
 
-#: ui/player/PlayList.cpp:79
+#: ui/player/PlayList.cpp:94
 #, fuzzy
 msgid "Move the selected tracks to the bottom"
 msgstr "Грати вибрані треки наступними"
 
-#: ui/player/PlayList.cpp:89 ui/player/PlayList.cpp:1815
+#: ui/player/PlayList.cpp:104 ui/player/PlayList.cpp:1832
 msgid "Remove the selected tracks from playlist"
 msgstr "Видалити вибрані треки зі списку програвання"
 
-#: ui/player/PlayList.cpp:1687
+#: ui/player/PlayList.cpp:1704
 msgid "Empty Playlist"
 msgstr "Пустий список програвання"
 
-#: ui/player/PlayList.cpp:1687
+#: ui/player/PlayList.cpp:1704
 msgid "The playlist is empty"
 msgstr "Список програвання порожній"
 
-#: ui/player/PlayList.cpp:1698
+#: ui/player/PlayList.cpp:1715
 msgid "Edit the current selected tracks labels"
 msgstr "Редагувати мітки вибраних треків"
 
-#: ui/player/PlayList.cpp:1705
+#: ui/player/PlayList.cpp:1722
 msgid "Edit the current selected songs"
 msgstr "Редагувати метадані вибраних пісень"
 
-#: ui/player/PlayList.cpp:1715
+#: ui/player/PlayList.cpp:1732
 msgid "Move the selected tracks to be played next"
 msgstr "Грати вибрані треки наступними"
 
-#: ui/player/PlayList.cpp:1740
+#: ui/player/PlayList.cpp:1757
 msgid "Search a track in the playlist by name"
 msgstr "Шукати трек у списку програвання зі назвою"
 
-#: ui/player/PlayList.cpp:1749
+#: ui/player/PlayList.cpp:1766
 msgid "Selects the current selected track in the library"
 msgstr "Вибір поточного треку з фонотеки"
 
-#: ui/player/PlayList.cpp:1755
+#: ui/player/PlayList.cpp:1772
 msgid "Select the album artist of the current song"
 msgstr "Вибрати виконавця альбому для поточної пісні"
 
-#: ui/player/PlayList.cpp:1758
+#: ui/player/PlayList.cpp:1775
 msgid "Select the composer of the current song"
 msgstr "Вибрати композитора для поточної пісні"
 
-#: ui/player/PlayList.cpp:1764
+#: ui/player/PlayList.cpp:1781
 msgid "Select the year of the current song"
 msgstr "Вибір року поточної пісні"
 
-#: ui/player/PlayList.cpp:1767
+#: ui/player/PlayList.cpp:1784
 msgid "Select the genre of the current song"
 msgstr "Вибір жанру поточної пісні"
 
-#: ui/player/PlayList.cpp:1807
+#: ui/player/PlayList.cpp:1824
 msgid "Remove all tracks from playlist"
 msgstr "Видалити всі треки зі списку програвання"
 
-#: ui/player/PlayList.cpp:1823
+#: ui/player/PlayList.cpp:1840
 msgid "Remove the selected tracks from library"
 msgstr "Видалити вибрані треки з бібліотеки"
 
-#: ui/player/PlayList.cpp:1829
+#: ui/player/PlayList.cpp:1846
 msgid "Remove the selected tracks from drive"
 msgstr "Видалити вибрані треки з диску"
 
-#: ui/player/PlayList.cpp:2141
+#: ui/player/PlayList.cpp:2158
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2282
+#: ui/player/PlayList.cpp:2299
 msgid "Please enter the search term"
 msgstr "Будь ласка, введіть критерій пошуку"
 
-#: ui/player/PlayList.cpp:2807
+#: ui/player/PlayList.cpp:2824
 msgid "Loading tracks. Please wait"
 msgstr "Завантаження треків. Зачекайте, будь ласка"
 
