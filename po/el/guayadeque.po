@@ -1645,12 +1645,12 @@ msgstr "Επικόλληση στον επιλεγμένο φάκελο"
 
 #: ui/filebrowser/FileBrowser.cpp:407
 msgid "Move here"
-msgstr "Κίνηση εδώ"
+msgstr "Μετακίνηση εδώ"
 
 #: ui/filebrowser/FileBrowser.cpp:408
 #, fuzzy
 msgid "Move to the selected folder"
-msgstr "Επικόλληση στον επιλεγμένο φάκελο"
+msgstr "Μετακίνηση στον επιλεγμένο φάκελο"
 
 #: ui/filebrowser/FileBrowser.cpp:416 ui/mediaviewer/library/DiBrowser.cpp:328
 msgid "Update the selected folder"
