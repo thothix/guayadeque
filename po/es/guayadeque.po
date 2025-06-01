@@ -1652,7 +1652,7 @@ msgstr "Mover aquí"
 #: ui/filebrowser/FileBrowser.cpp:408
 #, fuzzy
 msgid "Move to the selected folder"
-msgstr "Pegar en la carpeta seleccionada"
+msgstr "Mover en la carpeta seleccionada"
 
 #: ui/filebrowser/FileBrowser.cpp:416 ui/mediaviewer/library/DiBrowser.cpp:328
 msgid "Update the selected folder"
