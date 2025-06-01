@@ -1642,12 +1642,12 @@ msgstr "Incolla nella cartella selezionata"
 
 #: ui/filebrowser/FileBrowser.cpp:407
 msgid "Move here"
-msgstr "Trasferire qui"
+msgstr "Spostare qui"
 
 #: ui/filebrowser/FileBrowser.cpp:408
 #, fuzzy
 msgid "Move to the selected folder"
-msgstr "Incolla nella cartella selezionata"
+msgstr "Spostare nella cartella selezionata"
 
 #: ui/filebrowser/FileBrowser.cpp:416 ui/mediaviewer/library/DiBrowser.cpp:328
 msgid "Update the selected folder"
