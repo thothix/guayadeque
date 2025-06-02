@@ -571,6 +571,7 @@ bool guFaderPlaybin::BuildOutputBin( void )
         "alsasink",
         "pulsesink",
         "osssink",
+        "osxaudiosink",
         NULL
     };
 
