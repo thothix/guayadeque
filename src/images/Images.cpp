@@ -45,7 +45,7 @@ namespace Guayadeque {
 #include "./images/lastfm_as_on.h"
 #include "./images/lastfm_on.h"
 #include "./images/left.h"
-#include "./images/musicbrainz.h"
+#include "./images/musicbrainz_im.h"
 #include "./images/net_radio.h"
 #include "./images/no_cover.h"
 #include "./images/no_photo.h"
