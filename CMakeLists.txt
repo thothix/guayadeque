@@ -27,9 +27,17 @@ set(SEARCH_LIBS /usr/lib /usr/local/lib)
 # [sl 2020-05-23] according to https://cmake.org/cmake/help/v3.0/module/FindwxWidgets.html
 set(wxWidgets_CONFIG_OPTIONS --toolkit=gtk3)
 
-find_package(wxWidgets COMPONENTS base core adv net html xml aui qa)
+find_package(wxWidgets COMPONENTS base core adv net html xml aui OPTIONAL_COMPONENTS qa)
 
-if (NOT wxWidgets_FOUND)
+if (wxWidgets_FOUND)
+    if (wxWidgets_LIBRARIES)
+        if (wxWidgets_LIBRARIES MATCHES "wx_.*_qa-")   # wxWidgets_qa_FOUND does not work!
+            add_definitions(-DUSE_WXQA=1)
+        else()
+            message(STATUS "wxWidgets QA component not found!")
+        endif()
+    endif()
+else()
     message(FATAL_ERROR "wxWidgets not found!")
 endif()
 
@@ -37,6 +45,7 @@ find_package(ICU 60.0 COMPONENTS uc i18n REQUIRED)
 
 pkg_check_modules(GSTREAMER gstreamer-1.0>=1.20)
 if (NOT GSTREAMER_FOUND)
+    check_required_components()
     pkg_check_modules(GSTREAMER gstreamer-1.0>=1.0)
     if (NOT GSTREAMER_FOUND)
         message(FATAL_ERROR "gstreamer 1.0 not found!")
@@ -100,7 +109,7 @@ if (ENABLE_IPOD)
         add_definitions(-DWITH_LIBGPOD_SUPPORT=1)
     endif()
 else()
-    message(" *** Disabled iPod support!")
+    message(" *** iPod support disabled!")
 endif()
 
 # Include wxWidgets macros

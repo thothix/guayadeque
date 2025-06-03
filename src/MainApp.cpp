@@ -34,7 +34,9 @@
 #include <wx/stdpaths.h>
 #include <wx/utils.h>
 
-#include <wx/debugrpt.h>
+#if USE_WXQA
+    #include <wx/debugrpt.h>
+#endif
 
 IMPLEMENT_APP( Guayadeque::guMainApp );
 
@@ -489,6 +491,8 @@ int guMainApp::OnExit()
 // -------------------------------------------------------------------------------- //
 void guMainApp::OnFatalException()
 {
+#if USE_WXQA
+    guLogMessage(wxT("wxQA is enabled. Generating exception report..."));
     wxDebugReport Report;
     wxDebugReportPreviewStd Preview;
 
@@ -496,6 +500,9 @@ void guMainApp::OnFatalException()
 
     if( Preview.Show( Report ) )
         Report.Process();
+#else
+    guLogMessage(wxT("wxQA is disabled"));
+#endif
 }
 
 }
