@@ -1438,7 +1438,6 @@ void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const 
     wxURI Uri(fileName);
 
     int insertPosition = GetPlayListInsertPosition(afterCurrent);
-
     //guLogMessage( wxT( "Loading %i %i => %i '%s'" ), aftercurrent, pos, InsertPosition, filename.c_str() );
 
     if (guCuePlaylistFile::IsValidFile(Uri.GetPath()))   // If its a cue playlist
@@ -1458,9 +1457,9 @@ void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const 
                 wxString filePath = wxPathOnly(CueItem.m_TrackPath);
                 wxString fileNameOnly = CueItem.m_TrackPath.AfterLast(wxT('/'));
 
+                guDbLibrary *Db = m_MainFrame->GetTrackDb(filePath, track.m_MediaViewer);
+
                 // To find the m_SongId
-                track.m_MediaViewer = m_MainFrame->FindMediaViewerByPath(filePath);
-                guDbLibrary *Db = track.m_MediaViewer ? track.m_MediaViewer->GetDb() : m_Db;
                 Db->FindTrackPath(filePath, fileNameOnly, CueItem.m_Name, &track);
 
                 track.m_FileName = CueItem.m_TrackPath;
@@ -1511,8 +1510,8 @@ void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const 
                 wxString fileNameOnly = newFileName.AfterLast(wxT('/'));
 
                 track.m_FileName = newFileName;
-                track.m_MediaViewer = m_MainFrame->FindMediaViewerByPath(filePath);
-                guDbLibrary *Db = track.m_MediaViewer ? track.m_MediaViewer->GetDb() : m_Db;
+
+                guDbLibrary *Db = m_MainFrame->GetTrackDb(filePath, track.m_MediaViewer);
 
                 if (track.m_Offset)     // Cue sheet track
                     findResult = Db->FindTrackPath(track.m_Path, fileNameOnly, track.m_SongName, &track);

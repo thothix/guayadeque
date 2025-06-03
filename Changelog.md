@@ -15,7 +15,8 @@ Changelog
 ### Bugfixes
   * Playlist/queue updates to handle properly playlists with cue sheets and/or tracks
     of different collections:
-    * Fixed missing updates to playcount and last play date.
+    * Fixed missing updates to playcount and last play date (even if collection is
+      closed).
     * Fixed playlist reload after Guayadeque restart.
   * Some important cue sheets related fixes:
     * Fixed bug in the library scan where sometimes the length of the last track of 
