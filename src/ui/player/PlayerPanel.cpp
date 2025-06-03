@@ -1967,7 +1967,8 @@ void guPlayerPanel::SavePlayedTrack( const bool forcesave )
 
                 if( m_MediaSong.m_Type != guTRACK_TYPE_PODCAST )
                 {
-                    guDbLibrary *Db = m_MediaSong.m_MediaViewer ? m_MediaSong.m_MediaViewer->GetDb() : m_Db;
+                    wxString filePath = wxPathOnly(m_MediaSong.m_FileName);
+                    guDbLibrary *Db = m_MainFrame->GetTrackDb(filePath, m_MediaSong.m_MediaViewer);
                     Db->SetTrackPlayCount( m_MediaSong.m_SongId, m_MediaSong.m_PlayCount );
                 }
                 else
