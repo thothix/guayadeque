@@ -231,6 +231,9 @@ class guMainFrame : public wxFrame
     wxArrayInt                      m_PendingUpdateFlags;
     wxMutex                         m_PendingUpdateMutex;
 
+    guArrayDbLibrary                m_ExtraDb;
+    wxArrayString                   m_ExtraDbId;
+
     void                            InitAttributes(guDbCache * dbcache);
     bool                            LoadMediaCollections(guConfig * Config);
     void                            CreateControls(guConfig * Config);
@@ -457,9 +460,10 @@ class guMainFrame : public wxFrame
     guMediaViewer *                 FindCollectionMediaViewer( void * windowptr );
     guMediaViewer *                 FindCollectionMediaViewer( const wxString &uniqueid );
     guMediaViewer *                 FindMediaViewerByPath(const wxString pathToFind);
-
     int                             GetMediaViewerIndex( guMediaViewer * mediaviewer );
-    guMediaCollection *             FindCollection( const wxString &uniqueid );
+
+    guMediaCollection *             FindCollection(const wxString &uniqueid);
+    wxString                        FindCollectionByPath(const wxString pathToFind);
 
     void                            MediaViewerCreated( const wxString &uniqueid, guMediaViewer * mediaviewer );
     void                            MediaViewerClosed( guMediaViewer * mediaviewer );
@@ -471,6 +475,9 @@ class guMainFrame : public wxFrame
     void                            AddPendingUpdateTrack( const guTrack &track, const wxImage * image, const wxString &lyric, const int changedflags );
     void                            AddPendingUpdateTrack( const wxString &filename, const wxImage * image, const wxString &lyric, const int changedflags );
     void                            CheckPendingUpdates( const guTrack * track, const bool forcesave = false );
+
+    guDbLibrary *                   GetExtraDb(const wxString &unique_id);
+    guDbLibrary *                   GetTrackDb(const wxString &filepath, guMediaViewer *mediaViewer);
 };
 
 // -------------------------------------------------------------------------------- //
