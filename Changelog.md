@@ -11,6 +11,8 @@ Changelog
   * Enhancements in reading some missing cue sheets metadata from the audio file.
   * Make the wx qa component optional (some systems don't support it). Builds without
     it will disable the fatal exception report generation. Closes #63.
+  * Add CoreAudio output device support (for MacOS). Thanks @barracuda156.
+  * Add gstreamer-plugins-good as a dependency in the INSTALL.md.
   * Removed warnings for GCC 15.1.
   * Updated Greek, Italian, Spanish and Catalan translations.
 
