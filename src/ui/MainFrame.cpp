@@ -886,7 +886,7 @@ guMediaViewer * guMainFrame::GetDefaultMediaViewer( void )
 }
 
 // -------------------------------------------------------------------------------- //
-guMediaCollection * guMainFrame::FindCollection( const wxString &uniqueid )
+guMediaCollection *guMainFrame::FindCollection(const wxString &uniqueid)
 {
     int Count = m_Collections.Count();
     for ( int Index = 0; Index < Count; Index++ )
@@ -896,11 +896,11 @@ guMediaCollection * guMainFrame::FindCollection( const wxString &uniqueid )
         if ( Collection.m_UniqueId == uniqueid )
             return &Collection;
     }
-    return NULL;
+    return nullptr;
 }
 
 // -------------------------------------------------------------------------------- //
-int FindCollectionUniqueId( guMediaCollectionArray * collections, const wxString &uniqueid )
+int FindCollectionUniqueId(guMediaCollectionArray *collections, const wxString &uniqueid)
 {
     int Count = collections->Count();
     for ( int Index = 0; Index < Count; Index++ )
@@ -909,6 +909,57 @@ int FindCollectionUniqueId( guMediaCollectionArray * collections, const wxString
             return Index;
     }
     return wxNOT_FOUND;
+}
+
+// -------------------------------------------------------------------------------- //
+wxString guMainFrame::FindCollectionByPath(const wxString pathToFind)
+{
+    size_t count = m_Collections.Count();
+    for (size_t index = 0; index < count; index++)
+    {
+        wxArrayString paths = m_Collections[index].m_Paths;
+
+        for (size_t indexPath = 0; indexPath < paths.Count(); indexPath++)
+        {
+            if (pathToFind.starts_with(paths[indexPath]))
+                return m_Collections[index].m_UniqueId;
+        }
+    }
+    return wxT("");
+}
+
+// -------------------------------------------------------------------------------- //
+guDbLibrary *guMainFrame::GetExtraDb(const wxString &unique_id)
+{
+    guDbLibrary *Db;
+    int index = m_ExtraDbId.Index(unique_id);
+    if (index != wxNOT_FOUND)
+        Db = &(m_ExtraDb)[index];
+    else
+    {
+        Db = new guDbLibrary(guPATH_COLLECTIONS + unique_id + wxT("/guayadeque.db"));
+        m_ExtraDbId.Add(unique_id);
+        m_ExtraDb.Add(Db);
+    }
+    return Db;
+}
+
+// -------------------------------------------------------------------------------- //
+guDbLibrary *guMainFrame::GetTrackDb(const wxString &filepath, guMediaViewer *mediaViewer)
+{
+    guDbLibrary *Db;
+
+    mediaViewer = m_MainFrame->FindMediaViewerByPath(filepath);
+    if (!mediaViewer)
+    {
+        wxString uniqueid = m_MainFrame->FindCollectionByPath(filepath);
+        guLogMessage( wxT( "No Mediaviewer - uniqueid %s" ), uniqueid);
+        Db = m_MainFrame->GetExtraDb(uniqueid);
+    }
+    else
+        Db = mediaViewer ? mediaViewer->GetDb() : m_Db;
+
+    return Db;
 }
 
 // -------------------------------------------------------------------------------- //
