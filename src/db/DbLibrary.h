@@ -714,6 +714,8 @@ extern unsigned long DynPLDateOption2[];
         void UpdatePaths(const wxString &oldpath, const wxString &newpath);
     };
 
+    WX_DECLARE_OBJARRAY(guDbLibrary, guArrayDbLibrary);
+
     // -------------------------------------------------------------------------------- //
     // Array Functions
     // -------------------------------------------------------------------------------- //
