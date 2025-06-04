@@ -23,7 +23,7 @@
 #include "AcousticId.h"
 #include "DbLibrary.h"
 #include "LyricsPanel.h"
-#include "MusicBrainz.h"
+#include "../info/musicbrainz/MusicBrainz.h"  // fix build for duplicate case-insensitive headers filename #64
 #include "RatingCtrl.h"
 #include "TagInfo.h"
 
