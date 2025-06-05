@@ -11,8 +11,8 @@ Changelog
   * Enhancements in reading some missing cue sheets metadata from the audio file.
   * Make the wx qa component optional (some systems don't support it). Builds without
     it will disable the fatal exception report generation. Closes #63.
-  * Add CoreAudio output device support (for MacOS). Thanks @barracuda156.
-  * Add gstreamer-plugins-good as a dependency in the INSTALL.md.
+  * Added CoreAudio output device support (for MacOS). Closes #65. Thanks @barracuda156.
+  * Added gstreamer-plugins-good as a dependency in the INSTALL.md.
   * Removed warnings for GCC 15.1.
   * Updated Greek, Italian, Spanish and Catalan translations.
 
@@ -31,6 +31,8 @@ Changelog
       length.
   * Fixed the "Set as Next Track" button in the playlist toolbar to handle properly
     the tracks before the current track (enable them to be set as next track).
+  * Fixed build on case-insensitive filesystems causing duplicated headers filenames.
+    Closes PR #64 (not merged, see the comments).
 
 0.7.1 (2025-05-14)
 ------------------

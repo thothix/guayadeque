@@ -22,7 +22,7 @@ message(STATUS "Using install prefix ${CMAKE_INSTALL_PREFIX} ...")
 
 find_package(PkgConfig REQUIRED)
 
-set(SEARCH_LIBS /usr/lib /usr/local/lib)
+set(SEARCH_LIBS /usr/lib)
 
 # [sl 2020-05-23] according to https://cmake.org/cmake/help/v3.0/module/FindwxWidgets.html
 set(wxWidgets_CONFIG_OPTIONS --toolkit=gtk3)
@@ -36,6 +36,8 @@ if (wxWidgets_FOUND)
         else()
             message(STATUS "wxWidgets QA component not found!")
         endif()
+    else()
+        message(FATAL_ERROR "wxWidgets libraries not found!")
     endif()
 else()
     message(FATAL_ERROR "wxWidgets not found!")
