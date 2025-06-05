@@ -27,12 +27,17 @@ for his invaluable contributions to Guayadeque development.
 
 # General
 
-For installation instructions please see [INSTALL.md](INSTALL.md)
+For installation instructions please read [INSTALL.md](INSTALL.md).
 
-For Radios information and advices please see [RADIOS.md](RADIOS.md)
+For documentation (work in progress) please read the [wiki](https://github.com/thothix/guayadeque/wiki).
 
-For bugs, suggestions or requests please check [Github issues](https://github.com/thothix/guayadeque/issues) and open one if needed.  
-For translations please send an email to [<thothix@protonmail.com>](mailto:thothix@protonmail.com?subject=Guayadeque%20Translations)
+For Radios information and advices please read [RADIOS.md](RADIOS.md).
+
+For bugs, feature requests or suggestions please check [Github Issues](https://github.com/thothix/guayadeque/issues) and open one if needed.  
+
+For translations please send an email to [<thothix@protonmail.com>](mailto:thothix@protonmail.com?subject=Guayadeque%20Translations).
+
+[Discussions](https://github.com/thothix/guayadeque/discussions) - Guayadeque GitHub discussions that are not feature requests or bugs.
 
 Special Thanks to Mrmotinjo (Stefan Bogdanovic http://evilsun.carbonmade.com)  
 for the icon and splash designed for guayadeque.
@@ -48,12 +53,12 @@ Main features include:
 - Allow fast access to any music file by genre, artist, album.
 - Audio equalizer.
 - Configurable cross fader engine.
-- Configurable Silence detector to avoid listening to silence between tracks.
+- Configurable silence detector to avoid listening to silence between tracks.
 - Dynamic and static playlists management.
-- Play and Rip Audio CDs.
+- Play and rip audio CDs.
 - CUE sheet support.
 - Tracks tag editor with automatically fetching of tags information for easily completion.
-- Ability to download covers manually or automatically.
+- Ability to download covers automatically or manually.
 - Lyrics downloads from different lyrics providers.
 - Rate tracks from 0 to 5 stars.
 - Record from internet radios.
@@ -61,7 +66,7 @@ Main features include:
 - MPRIS D-Bus interface support so it can be easily controlled from music applets for example.
 - Allow to resume play status and position when closed and reopened.
 - Allow to subscribe to podcasts and download all new episodes automatically or manually.
-- Play and Record shoutcast radios.
+- Play and record shoutcast radios.
 - Allow searching for an artist or a track in shoutcast radios.
 - Suggest music using last.fm service.
 - Last.fm audioscrobbling support.
