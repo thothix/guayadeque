@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-27 13:27-0300\n"
+"POT-Creation-Date: 2025-06-03 18:51-0300\n"
 "PO-Revision-Date: 2013-11-29 15:53+0000\n"
 "Last-Translator: László Andrássy <andrassy.laszlo@gmail.com>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/"
@@ -27,8 +27,8 @@ msgstr "Könyvtár hozzáadása"
 msgid "Audio Scrobbling"
 msgstr "Audiótovábbítás (Audio Scrobbling)"
 
-#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1476 ui/player/PlayList.cpp:108
-#: ui/player/PlayList.cpp:1823
+#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1527 ui/player/PlayList.cpp:108
+#: ui/player/PlayList.cpp:1822
 msgid "Clear the Playlist"
 msgstr "Várólista törlése"
 
@@ -46,7 +46,7 @@ msgstr "Közösségi fórumok"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
-#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1714
+#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1713
 msgid "Edit Labels"
 msgstr "Címkék szerkesztése"
 
@@ -92,7 +92,7 @@ msgstr "Sorbaállítás az album után"
 msgid "Enqueue After Artist"
 msgstr "Sorbaállítás az előadó után"
 
-#: misc/Accelerators.cpp:121 ui/MainFrame.cpp:1391
+#: misc/Accelerators.cpp:121 ui/MainFrame.cpp:1442
 msgid "Full Screen"
 msgstr "Teljesképernyős nézet"
 
@@ -100,14 +100,14 @@ msgstr "Teljesképernyős nézet"
 msgid "Gapless/Crossfading"
 msgstr "Egybefüggő (dalszünet nélküli) lejátszás/Kereszthalkító"
 
-#: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1576
-#: ui/MainFrame.cpp:1619
+#: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1627
+#: ui/MainFrame.cpp:1670
 msgid "Help"
 msgstr "Súgó"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:344
 #: ui/filebrowser/FileBrowser.cpp:1007 ui/taskbar/TaskBar.cpp:114
-#: ui/MainFrame.cpp:1460 ui/mediaviewer/library/DiBrowser.cpp:264
+#: ui/MainFrame.cpp:1511 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
 #: ui/mediaviewer/library/ArListBox.cpp:152
@@ -139,28 +139,28 @@ msgstr "Összes lejátszása"
 msgid "Play/Pause"
 msgstr "Lejátszás/Szünet"
 
-#: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1057 ui/MainFrame.cpp:1888
+#: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1108 ui/MainFrame.cpp:1939
 msgid "Play Stream"
 msgstr "Stream lejátszása"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:329
-#: ui/filebrowser/FileBrowser.cpp:992 ui/MainFrame.cpp:1418
-#: ui/MainFrame.cpp:4244 ui/mediaviewer/library/DiBrowser.cpp:249
+#: ui/filebrowser/FileBrowser.cpp:992 ui/MainFrame.cpp:1469
+#: ui/MainFrame.cpp:4295 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
-#: ui/player/PlayList.cpp:1690 onlinelinks/OnlineLinks.cpp:68
+#: ui/player/PlayList.cpp:1689 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
 msgstr "Beállítások"
 
-#: misc/Accelerators.cpp:129 ui/MainFrame.cpp:1110
+#: misc/Accelerators.cpp:129 ui/MainFrame.cpp:1161
 msgid "Quit"
 msgstr "Kilépés"
 
-#: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1523
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1817
+#: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1574
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1816
 msgid "Shuffle the Playlist"
 msgstr "Véletlenszerű sorrend a várólistában"
 
@@ -184,7 +184,7 @@ msgstr "Összes dal ismétlése"
 msgid "Repeat Current Track"
 msgstr "Aktuális dal ismétlése"
 
-#: misc/Accelerators.cpp:140 ui/MainFrame.cpp:1311 ui/MainFrame.cpp:3594
+#: misc/Accelerators.cpp:140 ui/MainFrame.cpp:1362 ui/MainFrame.cpp:3645
 msgid "Save Layout"
 msgstr "Elrendezés mentése"
 
@@ -204,13 +204,13 @@ msgstr "Elrendezés mentése"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1802
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1801
 msgid "Save to Playlist"
 msgstr "Mentés lejátszási listába"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
-#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1756
-#: ui/player/PlayList.cpp:2299
+#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1755
+#: ui/player/PlayList.cpp:2298
 msgid "Search"
 msgstr "Keresés"
 
@@ -286,15 +286,15 @@ msgstr "Előző"
 msgid "Skip Previous Album"
 msgstr "Előző album"
 
-#: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1517
+#: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1568
 msgid "Smart Play"
 msgstr "Intelligens lejátszás"
 
-#: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1464
+#: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1515
 msgid "Stop"
 msgstr "Stop"
 
-#: misc/Accelerators.cpp:166 ui/MainFrame.cpp:1469
+#: misc/Accelerators.cpp:166 ui/MainFrame.cpp:1520
 msgid "Stop at End"
 msgstr "Megállítás a végén"
 
@@ -305,7 +305,7 @@ msgstr "Albumborítók frissítése"
 #: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
 #: ui/locationpanel/LocationPanel.cpp:363
 #: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:415
-#: ui/MainFrame.cpp:998 ui/MainFrame.cpp:1036 ui/MainFrame.cpp:1269
+#: ui/MainFrame.cpp:1049 ui/MainFrame.cpp:1087 ui/MainFrame.cpp:1320
 #: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:975
@@ -321,11 +321,11 @@ msgstr "Frissítés (kényszerített)"
 msgid "Update Podcasts"
 msgstr "Podcastok frissítése"
 
-#: misc/Accelerators.cpp:171 ui/MainFrame.cpp:1546
+#: misc/Accelerators.cpp:171 ui/MainFrame.cpp:1597
 msgid "Volume Down"
 msgstr "Hangerő le"
 
-#: misc/Accelerators.cpp:172 ui/MainFrame.cpp:1541
+#: misc/Accelerators.cpp:172 ui/MainFrame.cpp:1592
 msgid "Volume Up"
 msgstr "Hangerő fel"
 
@@ -369,7 +369,7 @@ msgstr "Enter"
 msgid "Enter"
 msgstr "Enter"
 
-#: misc/Accelerators.cpp:339 ui/preferences/Preferences.cpp:1432
+#: misc/Accelerators.cpp:339 ui/preferences/Preferences.cpp:1433
 msgid "Left"
 msgstr "Balra"
 
@@ -377,7 +377,7 @@ msgstr "Balra"
 msgid "Up"
 msgstr "Fel"
 
-#: misc/Accelerators.cpp:345 ui/preferences/Preferences.cpp:1434
+#: misc/Accelerators.cpp:345 ui/preferences/Preferences.cpp:1435
 msgid "Right"
 msgstr "Jobbra"
 
@@ -421,7 +421,7 @@ msgid "Separator"
 msgstr "Elválasztó"
 
 #: misc/Accelerators.cpp:395 ui/mediaviewer/library/SoListBox.cpp:572
-#: ui/player/PlayList.cpp:1787
+#: ui/player/PlayList.cpp:1786
 msgid "Select"
 msgstr "Kiválasztás"
 
@@ -449,15 +449,15 @@ msgstr "Menü"
 msgid "Capital"
 msgstr "Nagybetű"
 
-#: MainApp.cpp:389
+#: MainApp.cpp:391
 msgid "Another program instance is already running."
 msgstr ""
 
-#: MainApp.cpp:389
+#: MainApp.cpp:391
 msgid "Do you want to continue with the program?"
 msgstr ""
 
-#: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:392 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2096
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
@@ -468,21 +468,21 @@ msgstr ""
 msgid "Confirm"
 msgstr "Elfogad"
 
-#: db/DbLibrary.cpp:269 db/DbLibrary.cpp:281 db/DbLibrary.cpp:1725
-#: db/DbLibrary.cpp:1738 db/DbLibrary.cpp:1799 db/DbLibrary.cpp:1812
+#: db/DbLibrary.cpp:270 db/DbLibrary.cpp:282 db/DbLibrary.cpp:1726
+#: db/DbLibrary.cpp:1739 db/DbLibrary.cpp:1800 db/DbLibrary.cpp:1813
 #: ui/player/PlayerPanel.cpp:1400
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: db/DbLibrary.cpp:625
+#: db/DbLibrary.cpp:626
 msgid "Recently added tracks"
 msgstr "Utoljára hozzáadott dalok"
 
-#: db/DbLibrary.cpp:633
+#: db/DbLibrary.cpp:634
 msgid "Last played tracks"
 msgstr "Utoljára lejátszott dalok"
 
-#: db/DbLibrary.cpp:640
+#: db/DbLibrary.cpp:641
 msgid "Best rated tracks"
 msgstr "Legjobbra értékelt dalok"
 
@@ -493,7 +493,7 @@ msgstr "Intellingens lejátszási lista generálása"
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
 #: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
-#: ui/preferences/Preferences.cpp:1725 ui/player/PlayerFilters.cpp:107
+#: ui/preferences/Preferences.cpp:1726 ui/player/PlayerFilters.cpp:107
 msgid "All"
 msgstr "Összes"
 
@@ -510,7 +510,7 @@ msgid "Deny"
 msgstr "Tilt:"
 
 #: info/smartmode/SmartMode.cpp:448 ui/preferences/Preferences.cpp:722
-#: ui/preferences/Preferences.cpp:1728 ui/preferences/Preferences.cpp:1751
+#: ui/preferences/Preferences.cpp:1729 ui/preferences/Preferences.cpp:1752
 #: ui/player/PlayerFilters.cpp:122
 msgid "None"
 msgstr "Egyik sem"
@@ -586,14 +586,14 @@ msgstr "Dalszöveg keresése a Web-en"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1769
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1768
 #, fuzzy
 msgid "Artist"
 msgstr "Előadó"
 
 #: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:388
 #: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:840
-#: ui/player/PlayList.cpp:1766
+#: ui/player/PlayList.cpp:1765
 msgid "Track"
 msgstr "Dal"
 
@@ -651,8 +651,8 @@ msgstr "Dalszöveg forrás szerkesztő"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
 #: ui/radios/RadioEditor.cpp:45 ui/radios/RadioPanel.cpp:311
-#: ui/preferences/Preferences.cpp:1911 ui/preferences/Preferences.cpp:2030
-#: ui/preferences/Preferences.cpp:2150
+#: ui/preferences/Preferences.cpp:1912 ui/preferences/Preferences.cpp:2031
+#: ui/preferences/Preferences.cpp:2151
 msgid "Name"
 msgstr "Név"
 
@@ -668,7 +668,7 @@ msgstr "Beágyazott"
 msgid "File"
 msgstr "Fájl"
 
-#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2023
+#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2024
 msgid "Command"
 msgstr "Parancs"
 
@@ -744,26 +744,26 @@ msgstr "Környezet"
 msgid "Radios"
 msgstr "Rádiók"
 
-#: ui/locationpanel/LocationPanel.cpp:208 ui/MainFrame.cpp:1046
-#: ui/MainFrame.cpp:2637 ui/MainFrame.cpp:3341
-#: ui/preferences/Preferences.cpp:260 ui/preferences/Preferences.cpp:1617
+#: ui/locationpanel/LocationPanel.cpp:208 ui/MainFrame.cpp:1097
+#: ui/MainFrame.cpp:2688 ui/MainFrame.cpp:3392
+#: ui/preferences/Preferences.cpp:260 ui/preferences/Preferences.cpp:1618
 #: ui/podcasts/PodcastsPanel.cpp:916
 msgid "Podcasts"
 msgstr "Podcastok"
 
-#: ui/locationpanel/LocationPanel.cpp:213 ui/MainFrame.cpp:1063
-#: ui/MainFrame.cpp:2583
+#: ui/locationpanel/LocationPanel.cpp:213 ui/MainFrame.cpp:1114
+#: ui/MainFrame.cpp:2634
 #, fuzzy
 msgid "Audio CD"
 msgstr "Audió"
 
-#: ui/locationpanel/LocationPanel.cpp:268 ui/MainFrame.cpp:1365
-#: ui/MainFrame.cpp:2670
+#: ui/locationpanel/LocationPanel.cpp:268 ui/MainFrame.cpp:1416
+#: ui/MainFrame.cpp:2721
 msgid "File Browser"
 msgstr "Fájl böngésző"
 
 #: ui/locationpanel/LocationPanel.cpp:280 ui/trackedit/TrackEdit.cpp:407
-#: ui/MainFrame.cpp:1381 ui/MainFrame.cpp:2610
+#: ui/MainFrame.cpp:1432 ui/MainFrame.cpp:2661
 #: ui/preferences/Preferences.cpp:250
 msgid "Lyrics"
 msgstr "Dalszöveg"
@@ -771,36 +771,36 @@ msgstr "Dalszöveg"
 #: ui/locationpanel/LocationPanel.cpp:301
 #: ui/locationpanel/LocationPanel.cpp:343
 #: ui/locationpanel/LocationPanel.cpp:390
-#: ui/locationpanel/LocationPanel.cpp:403 ui/MainFrame.cpp:974
-#: ui/MainFrame.cpp:1016 ui/MainFrame.cpp:1157 ui/MainFrame.cpp:1169
+#: ui/locationpanel/LocationPanel.cpp:403 ui/MainFrame.cpp:1025
+#: ui/MainFrame.cpp:1067 ui/MainFrame.cpp:1208 ui/MainFrame.cpp:1220
 msgid "Show"
 msgstr "Mutat"
 
-#: ui/locationpanel/LocationPanel.cpp:302 ui/MainFrame.cpp:975
+#: ui/locationpanel/LocationPanel.cpp:302 ui/MainFrame.cpp:1026
 msgid "Show/Hide the radio panel"
 msgstr "Rádió panel be/ki"
 
-#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:981
+#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:1032
 #: ui/radios/RadioPanel.cpp:552 ui/radios/RadioPanel.cpp:592
 msgid "Text Search"
 msgstr "Keresés"
 
-#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:981
+#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:1032
 msgid "Show/Hide the radio text search"
 msgstr "Rádió keresés be/ki"
 
 #: ui/locationpanel/LocationPanel.cpp:318
-#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:991
-#: ui/MainFrame.cpp:1186 ui/mediaviewer/library/LibPanel.cpp:221
+#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:1042
+#: ui/MainFrame.cpp:1237 ui/mediaviewer/library/LibPanel.cpp:221
 #: ui/mediaviewer/library/LibPanel.cpp:229
 #: ui/mediaviewer/library/LibPanel.cpp:561
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/radios/RadioPanel.cpp:594 ui/radios/RadioGenreEditor.cpp:38
-#: ui/preferences/Preferences.cpp:1694
+#: ui/preferences/Preferences.cpp:1695
 msgid "Genres"
 msgstr "Műfaj"
 
-#: ui/locationpanel/LocationPanel.cpp:318 ui/MainFrame.cpp:991
+#: ui/locationpanel/LocationPanel.cpp:318 ui/MainFrame.cpp:1042
 msgid "Show/Hide the radio genres"
 msgstr "Rádió műfajok be/ki"
 
@@ -810,121 +810,121 @@ msgstr "Rádióállomások listájának frissítése"
 
 #: ui/locationpanel/LocationPanel.cpp:332
 #: ui/locationpanel/LocationPanel.cpp:371
-#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1005
-#: ui/MainFrame.cpp:1043 ui/MainFrame.cpp:1297
+#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1056
+#: ui/MainFrame.cpp:1094 ui/MainFrame.cpp:1348
 #: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:677
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:986
-#: ui/preferences/Preferences.cpp:1130 ui/podcasts/PodcastsPanel.cpp:1758
+#: ui/preferences/Preferences.cpp:1131 ui/podcasts/PodcastsPanel.cpp:1758
 msgid "Properties"
 msgstr "Beállítások"
 
-#: ui/locationpanel/LocationPanel.cpp:333 ui/MainFrame.cpp:1006
+#: ui/locationpanel/LocationPanel.cpp:333 ui/MainFrame.cpp:1057
 msgid "Set the radio preferences"
 msgstr "Rádió beállításai"
 
-#: ui/locationpanel/LocationPanel.cpp:344 ui/MainFrame.cpp:1017
+#: ui/locationpanel/LocationPanel.cpp:344 ui/MainFrame.cpp:1068
 msgid "Show/Hide the podcasts panel"
 msgstr "Podcastok panel be/ki"
 
-#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1023
+#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1074
 #: ui/podcasts/PodcastsPanel.cpp:890 ui/podcasts/PodcastsPanel.cpp:898
 #: ui/podcasts/PodcastsPanel.cpp:1057
 msgid "Channels"
 msgstr "Csatornák"
 
-#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1023
+#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1074
 msgid "Show/Hide the podcasts channels"
 msgstr "Podcast csatornák be/ki"
 
 #: ui/locationpanel/LocationPanel.cpp:355 ui/trackedit/TrackEdit.cpp:319
-#: ui/trackedit/TrackEdit.cpp:474 ui/MainFrame.cpp:1028
+#: ui/trackedit/TrackEdit.cpp:474 ui/MainFrame.cpp:1079
 #: ui/podcasts/PodcastsPanel.cpp:928 ui/podcasts/PodcastsPanel.cpp:1060
 msgid "Details"
 msgstr "Részletek"
 
-#: ui/locationpanel/LocationPanel.cpp:355 ui/MainFrame.cpp:1028
+#: ui/locationpanel/LocationPanel.cpp:355 ui/MainFrame.cpp:1079
 msgid "Show/Hide the podcasts details"
 msgstr "Podcast részletek be/ki"
 
-#: ui/locationpanel/LocationPanel.cpp:364 ui/MainFrame.cpp:1037
+#: ui/locationpanel/LocationPanel.cpp:364 ui/MainFrame.cpp:1088
 msgid "Update the podcasts added"
 msgstr "A hozzáadott Podcastok frissítése"
 
-#: ui/locationpanel/LocationPanel.cpp:372 ui/MainFrame.cpp:1043
+#: ui/locationpanel/LocationPanel.cpp:372 ui/MainFrame.cpp:1094
 msgid "Set the podcasts preferences"
 msgstr "Podcastok beállításai"
 
-#: ui/locationpanel/LocationPanel.cpp:390 ui/MainFrame.cpp:1157
+#: ui/locationpanel/LocationPanel.cpp:390 ui/MainFrame.cpp:1208
 msgid "Open the music collection"
 msgstr "Zenegyűjtemény megnyitása"
 
 #: ui/locationpanel/LocationPanel.cpp:403
-#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1169
-#: ui/MainFrame.cpp:1230
+#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1220
+#: ui/MainFrame.cpp:1281
 msgid "View the collection library"
 msgstr "Zenekatalógus megjelenítése"
 
 #: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1411
-#: ui/filebrowser/FileBrowser.cpp:1427 ui/MainFrame.cpp:1176
+#: ui/filebrowser/FileBrowser.cpp:1427 ui/MainFrame.cpp:1227
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
 msgstr "Könyvtárak"
 
-#: ui/locationpanel/LocationPanel.cpp:410 ui/MainFrame.cpp:1176
+#: ui/locationpanel/LocationPanel.cpp:410 ui/MainFrame.cpp:1227
 msgid "View the library directories"
 msgstr "Zenekatalógus műfajainak megjelenítése"
 
 #: ui/locationpanel/LocationPanel.cpp:415 ui/labeleditor/LabelEditor.cpp:91
-#: ui/MainFrame.cpp:1181 ui/mediaviewer/library/LibPanel.cpp:241
+#: ui/MainFrame.cpp:1232 ui/mediaviewer/library/LibPanel.cpp:241
 #: ui/mediaviewer/library/LibPanel.cpp:248
 #: ui/mediaviewer/library/LibPanel.cpp:563
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:63
 msgid "Labels"
 msgstr "Címke"
 
-#: ui/locationpanel/LocationPanel.cpp:415 ui/MainFrame.cpp:1181
+#: ui/locationpanel/LocationPanel.cpp:415 ui/MainFrame.cpp:1232
 msgid "View the library labels"
 msgstr "Zenekatalógus címkéinek megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:1186
+#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:1237
 msgid "View the library genres"
 msgstr "Zenekatalógus műfajainak megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1191
+#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1242
 #: ui/mediaviewer/library/LibPanel.cpp:260
 #: ui/mediaviewer/library/LibPanel.cpp:267
 #: ui/mediaviewer/library/LibPanel.cpp:565
 msgid "Artists"
 msgstr "Előadó"
 
-#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1191
+#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1242
 msgid "View the library artists"
 msgstr "Zenekatalógus előadóinak megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1206
+#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1257
 #: ui/mediaviewer/library/LibPanel.cpp:355
 #: ui/mediaviewer/library/LibPanel.cpp:362
 #: ui/mediaviewer/library/LibPanel.cpp:575
 msgid "Composers"
 msgstr "Szerző"
 
-#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1206
+#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1257
 msgid "View the library composers"
 msgstr "Zenekatalógus szerzőinek megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1196
+#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1247
 #: ui/mediaviewer/library/LibPanel.cpp:577
 msgid "Album Artists"
 msgstr "Album előadó"
 
-#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1196
+#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1247
 msgid "View the library album artists"
 msgstr "Zenekatalógus album előadóinak megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1201
+#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1252
 #: ui/mediaviewer/library/LibPanel.cpp:279
 #: ui/mediaviewer/library/LibPanel.cpp:286
 #: ui/mediaviewer/library/LibPanel.cpp:567
@@ -932,29 +932,29 @@ msgstr "Zenekatalógus album előadóinak megjelenítése"
 msgid "Albums"
 msgstr "Album"
 
-#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1201
+#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1252
 msgid "View the library albums"
 msgstr "Zenekatalógus albumainak megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1211
+#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1262
 #: ui/mediaviewer/library/LibPanel.cpp:298
 #: ui/mediaviewer/library/LibPanel.cpp:305
 #: ui/mediaviewer/library/LibPanel.cpp:569
 msgid "Years"
 msgstr "Év"
 
-#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1211
+#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1262
 msgid "View the library years"
 msgstr "Zenekatalógus éveinek megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1216
+#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1267
 #: ui/mediaviewer/library/LibPanel.cpp:317
 #: ui/mediaviewer/library/LibPanel.cpp:324
 #: ui/mediaviewer/library/LibPanel.cpp:571
 msgid "Ratings"
 msgstr "Értékelés"
 
-#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1216
+#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1267
 msgid "View the library ratings"
 msgstr "Zenekatalógus értékeléseinek megjelenítése"
 
@@ -962,35 +962,35 @@ msgstr "Zenekatalógus értékeléseinek megjelenítése"
 msgid "Play Counts"
 msgstr "Lejátszások száma"
 
-#: ui/locationpanel/LocationPanel.cpp:455 ui/MainFrame.cpp:1221
+#: ui/locationpanel/LocationPanel.cpp:455 ui/MainFrame.cpp:1272
 msgid "View the library play counts"
 msgstr "Zenekatalógus lejátszási számának megjelenítése"
 
 #: ui/locationpanel/LocationPanel.cpp:460
-#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1226
-#: ui/MainFrame.cpp:1230 ui/mediaviewer/treeview/TreePanel.cpp:82
+#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1277
+#: ui/MainFrame.cpp:1281 ui/mediaviewer/treeview/TreePanel.cpp:82
 msgid "Library"
 msgstr "Zenekatalógus"
 
-#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1236
+#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1287
 msgid "Album Browser"
 msgstr "Album böngésző"
 
-#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1236
+#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1287
 msgid "View the collection album browser"
 msgstr "Gyűjtemény album böngészőjének megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1241
+#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1292
 #: ui/mediaviewer/treeview/TreePanel.cpp:814
 #: ui/mediaviewer/treeview/TreePanel.cpp:839
 msgid "Tree"
 msgstr "Fa"
 
-#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1241
+#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1292
 msgid "View the collection tree view"
 msgstr "Gyűjtemény megjelenítése fa struktúra nézetben"
 
-#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1246
+#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1297
 #: ui/mediaviewer/MediaViewer.cpp:253
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:852
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:763
@@ -998,79 +998,79 @@ msgstr "Gyűjtemény megjelenítése fa struktúra nézetben"
 msgid "Playlists"
 msgstr "Lejátszási listák"
 
-#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1246
+#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1297
 msgid "View the collection playlists"
 msgstr "Gyűjtemény lejátszási listáinak megjelenítése"
 
-#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1257
+#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1308
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add Path"
 msgstr "Útvonal hozzáadása"
 
-#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1257
+#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1308
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add path to the collection"
 msgstr "Útvonal hozzáadása a gyűjteményhez"
 
-#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1261
+#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1312
 #: ui/mediaviewer/MediaViewer.cpp:926
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:49
 msgid "Import Files"
 msgstr "Fájlok importálása"
 
-#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1261
+#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1312
 #: ui/mediaviewer/MediaViewer.cpp:926
 msgid "Import files into the collection"
 msgstr "Fájlok importálása a gyűjteménybe"
 
-#: ui/locationpanel/LocationPanel.cpp:504 ui/MainFrame.cpp:1270
+#: ui/locationpanel/LocationPanel.cpp:504 ui/MainFrame.cpp:1321
 #: ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:975
 msgid "Update the collection library"
 msgstr "Zenekatalógus frissítése"
 
-#: ui/locationpanel/LocationPanel.cpp:509 ui/MainFrame.cpp:1275
+#: ui/locationpanel/LocationPanel.cpp:509 ui/MainFrame.cpp:1326
 #: ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:978
 msgid "Rescan"
 msgstr "Újrakeresés"
 
-#: ui/locationpanel/LocationPanel.cpp:510 ui/MainFrame.cpp:1276
+#: ui/locationpanel/LocationPanel.cpp:510 ui/MainFrame.cpp:1327
 #: ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:978
 msgid "Rescan the collection library"
 msgstr "Zenekatalógus újrakeresése"
 
-#: ui/locationpanel/LocationPanel.cpp:515 ui/MainFrame.cpp:1281
+#: ui/locationpanel/LocationPanel.cpp:515 ui/MainFrame.cpp:1332
 #: ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:981
 msgid "Search Covers"
 msgstr "Albumborító keresése"
 
-#: ui/locationpanel/LocationPanel.cpp:516 ui/MainFrame.cpp:1282
+#: ui/locationpanel/LocationPanel.cpp:516 ui/MainFrame.cpp:1333
 #: ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:981
 msgid "Search the collection missing covers"
 msgstr "A gyűjtemény hiányzó albumborítóinak keresése"
 
-#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1290
+#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1341
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1457
 msgid "Unmount"
 msgstr "Leválasztás"
 
-#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1290
+#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1341
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1457
 msgid "Unmount the device"
 msgstr "Eszköz leválasztása"
 
-#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1297
+#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1348
 #: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:986
@@ -1167,7 +1167,7 @@ msgstr "Az album nevének másolása a szerkesztett dalokba"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361 ui/cover/CoverEdit.cpp:80
-#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1778
+#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1777
 msgid "Album"
 msgstr "Album"
 
@@ -1181,7 +1181,7 @@ msgstr "A szerző nevének másolása a szerkesztett dalokba"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1775
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1774
 msgid "Composer"
 msgstr "Szerző"
 
@@ -1234,8 +1234,8 @@ msgstr "A műfaj nevének másolása a szerkesztett dalokba"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3237
-#: ui/player/PlayList.cpp:1784
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3238
+#: ui/player/PlayList.cpp:1783
 msgid "Genre"
 msgstr "Műfaj"
 
@@ -1252,7 +1252,7 @@ msgstr "Az év másolása a szerkesztett dalokba"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:69
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1781
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1780
 msgid "Year"
 msgstr "Év"
 
@@ -1389,7 +1389,7 @@ msgstr "Fájlok átnevezése"
 msgid "Names Preview"
 msgstr "Nevek előnézete"
 
-#: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2157
+#: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2158
 msgid "Pattern"
 msgstr "Sablon"
 
@@ -1406,12 +1406,12 @@ msgstr "Sablon kapcsolók"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:129
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:67
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1772
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1771
 msgid "Album Artist"
 msgstr "Album előadó"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:910
-#: ui/preferences/Preferences.cpp:3311
+#: ui/preferences/Preferences.cpp:3312
 msgid "or"
 msgstr "vagy"
 
@@ -1429,7 +1429,7 @@ msgstr "Rendszerfájlok megtekintése"
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
-#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1690
+#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1689
 msgid "Add commands in preferences"
 msgstr "Parancsok megadása a beállításokban"
 
@@ -1440,7 +1440,7 @@ msgstr "Parancsok megadása a beállításokban"
 #: ui/mediaviewer/library/SoListBox.cpp:450
 #: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:275
-#: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1693
+#: ui/preferences/Preferences.cpp:1969 ui/player/PlayList.cpp:1692
 msgid "Commands"
 msgstr "Parancsok"
 
@@ -1739,7 +1739,7 @@ msgstr "A kiválasztott fájl törlése"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2124
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2123
 msgid "UnNamed"
 msgstr "Névtelen"
 
@@ -1779,7 +1779,7 @@ msgstr "Szünet"
 msgid "Play current playlist"
 msgstr "Az altuális lejátszási lista elindítása"
 
-#: ui/taskbar/TaskBar.cpp:124 ui/MainFrame.cpp:1439
+#: ui/taskbar/TaskBar.cpp:124 ui/MainFrame.cpp:1490
 msgid "Next Track"
 msgstr "Következő dal"
 
@@ -1787,7 +1787,7 @@ msgstr "Következő dal"
 msgid "Skip to next track in current playlist"
 msgstr "A várólista következő dalának lejátszása"
 
-#: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1448
+#: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1499
 msgid "Next Album"
 msgstr "Következő album"
 
@@ -1811,33 +1811,33 @@ msgstr "Előző album"
 msgid "Skip to previous album track in current playlist"
 msgstr "A várólistában, az előző album dalának lejátszása"
 
-#: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1484
-#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1738
+#: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1535
+#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1737
 msgid "Set the rating to 0"
 msgstr "Értékelés 0"
 
-#: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1489
-#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1740
+#: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1540
+#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1739
 msgid "Set the rating to 1"
 msgstr "Értékelés 1"
 
-#: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1494
-#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1742
+#: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1545
+#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1741
 msgid "Set the rating to 2"
 msgstr "Értékelés 2"
 
-#: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1499
-#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1744
+#: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1550
+#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1743
 msgid "Set the rating to 3"
 msgstr "Értékelés 3"
 
-#: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1504
-#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1746
+#: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1555
+#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1745
 msgid "Set the rating to 4"
 msgstr "Értékelés 4"
 
-#: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1509
-#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1748
+#: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1560
+#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1747
 msgid "Set the rating to 5"
 msgstr "Értékelés 5"
 
@@ -1849,7 +1849,7 @@ msgstr "Az aktuális dal értékelése"
 msgid "&Smart Play"
 msgstr "&Intellingens lejátszás"
 
-#: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1518
+#: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1569
 msgid "Update playlist based on Last.fm statics"
 msgstr "Várólista frissítése a Last.fm statisztikái alapján"
 
@@ -1857,7 +1857,7 @@ msgstr "Várólista frissítése a Last.fm statisztikái alapján"
 msgid "Repeat the &Playlist"
 msgstr "&Lejátszási lista ismétlése"
 
-#: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1528
+#: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1579
 msgid "Repeat the tracks in the playlist"
 msgstr "A várólista dalainak ismétlése"
 
@@ -1865,7 +1865,7 @@ msgstr "A várólista dalainak ismétlése"
 msgid "Repeat &Track"
 msgstr "&Dalm ismétlése"
 
-#: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1534
+#: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1585
 msgid "Repeat the current track in the playlist"
 msgstr "A várólista aktuális dalának ismétlése"
 
@@ -1873,17 +1873,17 @@ msgstr "A várólista aktuális dalának ismétlése"
 msgid "Shu&ffle"
 msgstr "Vé&letleszerű"
 
-#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1524
+#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1575
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:100
-#: ui/player/PlayList.cpp:1818
+#: ui/player/PlayList.cpp:1817
 msgid "Shuffle the tracks in the playlist"
 msgstr "Véletlenszerű sorrend a várólistában"
 
-#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1553
+#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1604
 msgid "Force &Gapless Mode"
 msgstr "Egybefüggő (dalszünet nélküli) lejátszás"
 
-#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1554
+#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1605
 msgid "Set playback in gapless mode"
 msgstr "Lejátszás egybefüggő (dalszünet nélküli) módban"
 
@@ -1891,7 +1891,7 @@ msgstr "Lejátszás egybefüggő (dalszünet nélküli) módban"
 msgid "Audioscrobbling"
 msgstr "Audiótovábbítás (Audioscrobbling)"
 
-#: ui/taskbar/TaskBar.cpp:189 ui/MainFrame.cpp:1560
+#: ui/taskbar/TaskBar.cpp:189 ui/MainFrame.cpp:1611
 msgid "Send played tracks information"
 msgstr "Lejátszott dalok információinak küldése"
 
@@ -1909,12 +1909,12 @@ msgstr "Üdvözli a Guayadeque"
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:392
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
-#: ui/preferences/Preferences.cpp:1533
+#: ui/preferences/Preferences.cpp:1534
 msgid "Filters"
 msgstr "Szűrők"
 
-#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:394 ui/MainFrame.cpp:2024
-#: ui/MainFrame.cpp:2732 ui/MainFrame.cpp:2749 ui/radios/RadioPanel.cpp:315
+#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:394 ui/MainFrame.cpp:2075
+#: ui/MainFrame.cpp:2783 ui/MainFrame.cpp:2800 ui/radios/RadioPanel.cpp:315
 #: ui/player/PlayList.cpp:230
 msgid "Now Playing"
 msgstr "Várólista"
@@ -1923,60 +1923,60 @@ msgstr "Várólista"
 msgid "My Music"
 msgstr "Zenéim"
 
-#: ui/MainFrame.cpp:390 ui/MainFrame.cpp:1346 ui/MainFrame.cpp:4060
+#: ui/MainFrame.cpp:390 ui/MainFrame.cpp:1397 ui/MainFrame.cpp:4111
 msgid "VU Meters"
 msgstr "Kivezérlésjelző"
 
-#: ui/MainFrame.cpp:949
+#: ui/MainFrame.cpp:1000
 msgid "New Collection"
 msgstr "Új gyűjtemény"
 
-#: ui/MainFrame.cpp:949
+#: ui/MainFrame.cpp:1000
 msgid "Create a new collection"
 msgstr "Új gyűjtemény létrehozása"
 
-#: ui/MainFrame.cpp:998
+#: ui/MainFrame.cpp:1049
 msgid "Update the radio stations"
 msgstr "Rádióállomások frissítése"
 
-#: ui/MainFrame.cpp:1009 ui/MainFrame.cpp:2456
+#: ui/MainFrame.cpp:1060 ui/MainFrame.cpp:2507
 msgid "Radio"
 msgstr "Rádió"
 
-#: ui/MainFrame.cpp:1009
+#: ui/MainFrame.cpp:1060
 msgid "Set the radio visible panels"
 msgstr "Rádió panel láthatóságának beállítása"
 
-#: ui/MainFrame.cpp:1046
+#: ui/MainFrame.cpp:1097
 msgid "Set the podcasts visible panels"
 msgstr "Podcastok panel láthatóságának beállítása"
 
-#: ui/MainFrame.cpp:1058
+#: ui/MainFrame.cpp:1109
 msgid "Play a online music stream"
 msgstr "Online zenei stream lejátszása"
 
-#: ui/MainFrame.cpp:1063
+#: ui/MainFrame.cpp:1114
 #, fuzzy
 msgid "View the audio cd panel"
 msgstr "Rádió panel be/ki"
 
-#: ui/MainFrame.cpp:1094
+#: ui/MainFrame.cpp:1145
 msgid "Show the selected portable devices"
 msgstr "A kiválasztott hordozható eszköz megjelenítése"
 
-#: ui/MainFrame.cpp:1101
+#: ui/MainFrame.cpp:1152
 msgid "No Device Found"
 msgstr "Eszköz nem található"
 
-#: ui/MainFrame.cpp:1101
+#: ui/MainFrame.cpp:1152
 msgid "No portable device was detected"
 msgstr "Hordozható eszköz nem található"
 
-#: ui/MainFrame.cpp:1111
+#: ui/MainFrame.cpp:1162
 msgid "Exits the application"
 msgstr "Kilépés az alkalmazásból"
 
-#: ui/MainFrame.cpp:1221 ui/mediaviewer/library/LibPanel.cpp:336
+#: ui/MainFrame.cpp:1272 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
 #: ui/mediaviewer/library/LibPanel.cpp:573
 #: ui/mediaviewer/library/SoListBox.cpp:70
@@ -1986,290 +1986,290 @@ msgstr "Kilépés az alkalmazásból"
 msgid "Plays"
 msgstr "Lejátszás"
 
-#: ui/MainFrame.cpp:1312
+#: ui/MainFrame.cpp:1363
 msgid "Saves the current layout"
 msgstr "Az aktuális elrendezés mentése"
 
-#: ui/MainFrame.cpp:1322
+#: ui/MainFrame.cpp:1373
 msgid "Player Playlist"
 msgstr "Várólista"
 
-#: ui/MainFrame.cpp:1323
+#: ui/MainFrame.cpp:1374
 msgid "Show/Hide the player playlist panel"
 msgstr "Lejátszási listák panel be/ki"
 
-#: ui/MainFrame.cpp:1330 ui/MainFrame.cpp:1604 ui/MainFrame.cpp:4078
-#: ui/preferences/Preferences.cpp:1308
+#: ui/MainFrame.cpp:1381 ui/MainFrame.cpp:1655 ui/MainFrame.cpp:4129
+#: ui/preferences/Preferences.cpp:1309
 msgid "Sources"
 msgstr "Források"
 
-#: ui/MainFrame.cpp:1331
+#: ui/MainFrame.cpp:1382
 msgid "Show/Hide the locations"
 msgstr "Helyek be/ki"
 
-#: ui/MainFrame.cpp:1338
+#: ui/MainFrame.cpp:1389
 msgid "Player Filters"
 msgstr "Várólista szűrői"
 
-#: ui/MainFrame.cpp:1339
+#: ui/MainFrame.cpp:1390
 msgid "Show/Hide the player filters panel"
 msgstr "Szűrők panel be/ki"
 
-#: ui/MainFrame.cpp:1347
+#: ui/MainFrame.cpp:1398
 msgid "Show/Hide the player vumeter"
 msgstr "Kivezérlésjelző panel be/ki"
 
-#: ui/MainFrame.cpp:1354 ui/MainFrame.cpp:4094
+#: ui/MainFrame.cpp:1405 ui/MainFrame.cpp:4145
 msgid "Cover"
 msgstr "Borító"
 
-#: ui/MainFrame.cpp:1355
+#: ui/MainFrame.cpp:1406
 msgid "Show/Hide the cover"
 msgstr "Borító be/ki"
 
-#: ui/MainFrame.cpp:1366
+#: ui/MainFrame.cpp:1417
 msgid "Show/Hide the file browser panel"
 msgstr "Fájl böngésző panel be/ki"
 
-#: ui/MainFrame.cpp:1373 ui/MainFrame.cpp:2556
+#: ui/MainFrame.cpp:1424 ui/MainFrame.cpp:2607
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ui/MainFrame.cpp:1374
+#: ui/MainFrame.cpp:1425
 msgid "Show/Hide the Last.fm panel"
 msgstr "Last.fm panel be/ki"
 
-#: ui/MainFrame.cpp:1382
+#: ui/MainFrame.cpp:1433
 msgid "Show/Hide the lyrics panel"
 msgstr "Dalszöveg panel be/ki"
 
-#: ui/MainFrame.cpp:1392
+#: ui/MainFrame.cpp:1443
 msgid "Show/Restore the main window in full screen"
 msgstr "Teljesképernyős nézet be/ki"
 
-#: ui/MainFrame.cpp:1397
+#: ui/MainFrame.cpp:1448
 msgid "Statusbar"
 msgstr "Állapotsor"
 
-#: ui/MainFrame.cpp:1398
+#: ui/MainFrame.cpp:1449
 msgid "Show/Hide the statusbar"
 msgstr "Állapotsor be/ki"
 
-#: ui/MainFrame.cpp:1403
+#: ui/MainFrame.cpp:1454
 msgid "Show Captions"
 msgstr "Fejléc feliratok megjelenítése"
 
-#: ui/MainFrame.cpp:1404
+#: ui/MainFrame.cpp:1455
 msgid "Show/Hide the windows caption"
 msgstr "Ablakok felirata be/ki"
 
-#: ui/MainFrame.cpp:1411
+#: ui/MainFrame.cpp:1462
 msgid "Close Current Tab"
 msgstr "Aktuális fül bezárása"
 
-#: ui/MainFrame.cpp:1412
+#: ui/MainFrame.cpp:1463
 msgid "Close the current selected tab"
 msgstr "A kiválasztott fül bezárása"
 
-#: ui/MainFrame.cpp:1419
+#: ui/MainFrame.cpp:1470
 msgid "View the preferences"
 msgstr "Beállítások megtekintése"
 
-#: ui/MainFrame.cpp:1429
+#: ui/MainFrame.cpp:1480
 msgid "Load Layout"
 msgstr "Elrendezés betöltése"
 
-#: ui/MainFrame.cpp:1429
+#: ui/MainFrame.cpp:1480
 msgid "Set current view from a user defined layout"
 msgstr "A felhasználó által megadott elrendezés használata"
 
-#: ui/MainFrame.cpp:1430
+#: ui/MainFrame.cpp:1481
 msgid "Delete Layout"
 msgstr "Elrendezés törlése"
 
-#: ui/MainFrame.cpp:1430
+#: ui/MainFrame.cpp:1481
 msgid "Delete a user defined layout"
 msgstr "A felhasználó által megadott elrendezés törlése"
 
-#: ui/MainFrame.cpp:1440
+#: ui/MainFrame.cpp:1491
 msgid "Play the next track in the playlist"
 msgstr "A várólista következő dalának lejátszása"
 
-#: ui/MainFrame.cpp:1443
+#: ui/MainFrame.cpp:1494
 msgid "Prev. Track"
 msgstr "Előző dal"
 
-#: ui/MainFrame.cpp:1444
+#: ui/MainFrame.cpp:1495
 msgid "Play the previous track in the playlist"
 msgstr "A várólista előző dalának lejátszása"
 
-#: ui/MainFrame.cpp:1449
+#: ui/MainFrame.cpp:1500
 msgid "Play the next album in the playlist"
 msgstr "A várólista következő albumának lejátszása"
 
-#: ui/MainFrame.cpp:1453
+#: ui/MainFrame.cpp:1504
 msgid "Prev. Album"
 msgstr "Előző album"
 
-#: ui/MainFrame.cpp:1454
+#: ui/MainFrame.cpp:1505
 msgid "Play the previous album in the playlist"
 msgstr "A várólista előző albumának lejátszása"
 
-#: ui/MainFrame.cpp:1461
+#: ui/MainFrame.cpp:1512
 msgid "Play or Pause the current track in the playlist"
 msgstr "A várólista aktuális dalának lejátszása vagy szüneteltetése"
 
-#: ui/MainFrame.cpp:1465
+#: ui/MainFrame.cpp:1516
 msgid "Stop the current played track"
 msgstr "Az aktuális dal megállítása"
 
-#: ui/MainFrame.cpp:1470
+#: ui/MainFrame.cpp:1521
 msgid "Stop after current playing or selected track"
 msgstr "Megállítás az aktuális vagy a kiválasztott dal után"
 
-#: ui/MainFrame.cpp:1477
+#: ui/MainFrame.cpp:1528
 msgid "Clear the now playing playlist"
 msgstr "Az aktuális lejátszási lista törlése"
 
-#: ui/MainFrame.cpp:1512 ui/mediaviewer/library/SoListBox.cpp:626
-#: ui/player/PlayList.cpp:1751
+#: ui/MainFrame.cpp:1563 ui/mediaviewer/library/SoListBox.cpp:626
+#: ui/player/PlayList.cpp:1750
 msgid "Set Rating"
 msgstr "Értékelés"
 
-#: ui/MainFrame.cpp:1512
+#: ui/MainFrame.cpp:1563
 msgid "Set the rating of the current track"
 msgstr "Az aktuális dal értékelése"
 
-#: ui/MainFrame.cpp:1527
+#: ui/MainFrame.cpp:1578
 msgid "Repeat the Playlist"
 msgstr "Lejátszási lista ismétlése"
 
-#: ui/MainFrame.cpp:1533
+#: ui/MainFrame.cpp:1584
 msgid "Repeat Track"
 msgstr "Dal ismétlése"
 
-#: ui/MainFrame.cpp:1542
+#: ui/MainFrame.cpp:1593
 msgid "Increment the volume level"
 msgstr "Hangerő növelése"
 
-#: ui/MainFrame.cpp:1547
+#: ui/MainFrame.cpp:1598
 msgid "Decrement the volume level"
 msgstr "Hangerő csökkentése"
 
-#: ui/MainFrame.cpp:1559 ui/preferences/Preferences.cpp:245
+#: ui/MainFrame.cpp:1610 ui/preferences/Preferences.cpp:245
 msgid "Audioscrobble"
 msgstr "Audiótovábbítás"
 
-#: ui/MainFrame.cpp:1577
+#: ui/MainFrame.cpp:1628
 msgid "Get help using guayadeque"
 msgstr "Segítség kérése a Guayadeque használatához"
 
-#: ui/MainFrame.cpp:1587
+#: ui/MainFrame.cpp:1638
 msgid "About"
 msgstr "Névjegy"
 
-#: ui/MainFrame.cpp:1588
+#: ui/MainFrame.cpp:1639
 msgid "Show information about guayadeque music player"
 msgstr "Információk a Guayadeque zenelejátszóról"
 
-#: ui/MainFrame.cpp:1609
+#: ui/MainFrame.cpp:1660
 msgid "View"
 msgstr "Nézet"
 
-#: ui/MainFrame.cpp:1614
+#: ui/MainFrame.cpp:1665
 msgid "Controls"
 msgstr "Vezérlés"
 
-#: ui/MainFrame.cpp:1887
+#: ui/MainFrame.cpp:1938
 msgid "Stream:"
 msgstr "Stream:"
 
-#: ui/MainFrame.cpp:2059
+#: ui/MainFrame.cpp:2110
 msgid "Select destination directory"
 msgstr "Célkönyvtár kiválasztása"
 
-#: ui/MainFrame.cpp:2074 ui/MainFrame.cpp:2110 ui/MainFrame.cpp:2153
-#: ui/MainFrame.cpp:2186 ui/MainFrame.cpp:4247
+#: ui/MainFrame.cpp:2125 ui/MainFrame.cpp:2161 ui/MainFrame.cpp:2204
+#: ui/MainFrame.cpp:2237 ui/MainFrame.cpp:4298
 #: ui/preferences/Preferences.cpp:280
 msgid "Copy to"
 msgstr "Másolás"
 
-#: ui/MainFrame.cpp:3086
+#: ui/MainFrame.cpp:3137
 msgid "station"
 msgstr "állomás"
 
-#: ui/MainFrame.cpp:3086
+#: ui/MainFrame.cpp:3137
 msgid "stations"
 msgstr "állomások"
 
-#: ui/MainFrame.cpp:3095
+#: ui/MainFrame.cpp:3146
 msgid "podcast"
 msgstr "podcast"
 
-#: ui/MainFrame.cpp:3095
+#: ui/MainFrame.cpp:3146
 msgid "podcasts"
 msgstr "podcastok"
 
-#: ui/MainFrame.cpp:3110
+#: ui/MainFrame.cpp:3161
 msgid "dir"
 msgstr "könyvtár"
 
-#: ui/MainFrame.cpp:3110
+#: ui/MainFrame.cpp:3161
 msgid "dirs"
 msgstr "könyvtár"
 
-#: ui/MainFrame.cpp:3112
+#: ui/MainFrame.cpp:3163
 msgid "file"
 msgstr "fájl"
 
-#: ui/MainFrame.cpp:3112
+#: ui/MainFrame.cpp:3163
 msgid "files"
 msgstr "fájl"
 
-#: ui/MainFrame.cpp:3127 ui/mediaviewer/MediaViewer.cpp:1317
+#: ui/MainFrame.cpp:3178 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326
 #: ui/preferences/Preferences.cpp:804
 msgid "track"
 msgstr "dal"
 
-#: ui/MainFrame.cpp:3127 ui/mediaviewer/MediaViewer.cpp:1317
+#: ui/MainFrame.cpp:3178 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326
 #: ui/preferences/Preferences.cpp:918
 msgid "tracks"
 msgstr "dal"
 
-#: ui/MainFrame.cpp:3494 ui/MainFrame.cpp:3500 ui/MainFrame.cpp:3503
+#: ui/MainFrame.cpp:3545 ui/MainFrame.cpp:3551 ui/MainFrame.cpp:3554
 msgid "Load this user defined layout"
 msgstr "A felhasználó által megadott elrendezés betöltése"
 
-#: ui/MainFrame.cpp:3495
+#: ui/MainFrame.cpp:3546
 msgid "Delete this user defined layout"
 msgstr "A felhasználó által megadott elrendezés törlése"
 
-#: ui/MainFrame.cpp:3500 ui/MainFrame.cpp:3503
+#: ui/MainFrame.cpp:3551 ui/MainFrame.cpp:3554
 msgid "No Layouts Defined"
 msgstr "Nincs elrendezés megadva"
 
-#: ui/MainFrame.cpp:3595
+#: ui/MainFrame.cpp:3646
 msgid "Layout:"
 msgstr "Elrendezés:"
 
-#: ui/MainFrame.cpp:3595
+#: ui/MainFrame.cpp:3646
 #, fuzzy, c-format
 msgid "Layout %lu"
 msgstr "Elrendezés %u"
 
-#: ui/MainFrame.cpp:4214 ui/MainFrame.cpp:4235
+#: ui/MainFrame.cpp:4265 ui/MainFrame.cpp:4286
 msgid "Copy the current selected songs to a directory or device"
 msgstr "A kiválasztott dalok másolása könyvtárba vagy eszközre"
 
-#: ui/MainFrame.cpp:4244
+#: ui/MainFrame.cpp:4295
 msgid "Add 'Copy to' patterns in preferences"
 msgstr "Másolás hozzáadása a sablonokhoz a beállításokban"
 
-#: ui/MainFrame.cpp:4247
+#: ui/MainFrame.cpp:4298
 msgid "Copy the selected tracks to a folder or device"
 msgstr "A kiválasztott dalok másolása könyvtárba vagy eszközre"
 
@@ -2297,7 +2297,7 @@ msgstr "A kiválasztott dalok hozzáadása a várólistához"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
-#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1721
+#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1720
 msgid "Edit Songs"
 msgstr "Dalok szerkesztése"
 
@@ -2334,7 +2334,7 @@ msgstr "Biztos, hogy törli a kiválasztott albumborítót?"
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2272
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2271
 msgid "Tracks Labels Editor"
 msgstr "Dalcímke szerkesztő"
 
@@ -2347,7 +2347,7 @@ msgstr "Mező szerkesztő"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1996
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1995
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2357,7 +2357,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1997
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1996
 msgid "Remove tracks from drive"
 msgstr "Dalok eltávolítása a meghajtóról"
 
@@ -2387,7 +2387,7 @@ msgstr "A kiválasztott album hozzáadása utána"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1803
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1802
 msgid "Save the selected tracks to playlist"
 msgstr "A kiválasztott dalok mentése a lejátszási listába"
 
@@ -2406,7 +2406,7 @@ msgstr "A kiválasztott előadó dalainak szerkesztése"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:641
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1811
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1810
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Intellingens lejátszási lista létrehozása"
@@ -2414,7 +2414,7 @@ msgstr "Intellingens lejátszási lista létrehozása"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:641
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1811
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1810
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Intellingens lejátszási lista létrehozása ebből a dalból"
@@ -2542,7 +2542,7 @@ msgstr "A kiválasztott dalok hozzáadása a várólistához"
 msgid "Selects the genre of the current song"
 msgstr "Az aktuális dal műfajának megadása"
 
-#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1769
+#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1768
 msgid "Selects the artist of the current song"
 msgstr "Az aktuális dal előadójának kiválasztása"
 
@@ -2554,11 +2554,11 @@ msgstr "Az aktuális dal album előadójának kiválasztása"
 msgid "Selects the composer of the current song"
 msgstr "Az aktuális dal szerzőjének kiválasztása"
 
-#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1778
+#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1777
 msgid "Select the album of the current song"
 msgstr "Az aktuális dal albumának kiválasztása"
 
-#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1787
+#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1786
 msgid "Search in the library"
 msgstr "Keresés a zenekatalógusban"
 
@@ -2570,7 +2570,7 @@ msgstr "Az kiválasztott dalok címke hozzárendeléseinek szerkesztése"
 msgid "Edit the songs selected"
 msgstr "A kiválasztott dal szerkesztése"
 
-#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1751
+#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1750
 msgid "Set the current selected tracks rating"
 msgstr "A kiválasztott dalok értékelése"
 
@@ -2580,17 +2580,17 @@ msgstr "Az összes kiválasztott dal mentése lejátszási listaként"
 
 #: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1809
+#: ui/player/PlayList.cpp:1808
 msgid "Create Smart Playlist"
 msgstr "Intellingens lejátszási lista létrehozása"
 
 #: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1809
+#: ui/player/PlayList.cpp:1808
 msgid "Create a smart playlist from this track"
 msgstr "Intellingens lejátszási lista létrehozása ebből a dalból"
 
-#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1839
+#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1838
 msgid "Remove from Library"
 msgstr "Eltávolítás a zenekatalógusból"
 
@@ -2598,7 +2598,7 @@ msgstr "Eltávolítás a zenekatalógusból"
 msgid "Remove the current selected tracks from library"
 msgstr "A kiválasztott dalok eltávolítása a zenekatalógusból"
 
-#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1845
+#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1844
 msgid "Delete from Drive"
 msgstr "Törlés a meghajtóról"
 
@@ -2771,12 +2771,12 @@ msgstr "A kiválasztott szűrő szerkesztése"
 msgid "New Filter"
 msgstr "Új szűrő"
 
-#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2690
-#: ui/preferences/Preferences.cpp:2710
+#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2691
+#: ui/preferences/Preferences.cpp:2711
 msgid "Collection"
 msgstr "Gyűjtemény"
 
-#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2841
+#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2842
 msgid "Select library path"
 msgstr "Zenekatalógus útvonalának kiválasztása"
 
@@ -2920,7 +2920,7 @@ msgid "Portable Media Properties"
 msgstr "Hordozható média tulajdonágai"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:693
-#: ui/preferences/Preferences.cpp:2182
+#: ui/preferences/Preferences.cpp:2183
 msgid "Path:"
 msgstr "Útvonal:"
 
@@ -2962,7 +2962,7 @@ msgid "always"
 msgstr "mindig"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:801
-#: ui/preferences/Preferences.cpp:1149
+#: ui/preferences/Preferences.cpp:1150
 msgid "Quality:"
 msgstr "Minőség:"
 
@@ -3027,7 +3027,7 @@ msgstr "Hová:"
 msgid "Beginning"
 msgstr "Elejére"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1831
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1830
 msgid "Remove from Playlist"
 msgstr "Eltávolítás a várólistából"
 
@@ -3268,7 +3268,7 @@ msgid "Destination Folder:"
 msgstr "Célkönyvtár:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:121
-#: ui/preferences/Preferences.cpp:1123
+#: ui/preferences/Preferences.cpp:1124
 msgid "Select a folder"
 msgstr "Könyvtár kiválasztása"
 
@@ -3725,7 +3725,7 @@ msgid "Other:"
 msgstr "Egyéb:"
 
 #: ui/preferences/Preferences.cpp:128 ui/preferences/Preferences.cpp:188
-#: ui/preferences/Preferences.cpp:2327
+#: ui/preferences/Preferences.cpp:2328
 msgid "Default"
 msgstr "Alapértelmezett"
 
@@ -3854,11 +3854,11 @@ msgstr "Gyűjtemények"
 msgid "Playback"
 msgstr "Visszajátszás"
 
-#: ui/preferences/Preferences.cpp:235 ui/preferences/Preferences.cpp:1019
+#: ui/preferences/Preferences.cpp:235 ui/preferences/Preferences.cpp:1020
 msgid "Crossfader"
 msgstr "Kereszthalkító"
 
-#: ui/preferences/Preferences.cpp:240 ui/preferences/Preferences.cpp:1111
+#: ui/preferences/Preferences.cpp:240 ui/preferences/Preferences.cpp:1112
 msgid "Record"
 msgstr "Felvétel"
 
@@ -3866,7 +3866,7 @@ msgstr "Felvétel"
 msgid "Online"
 msgstr "Online"
 
-#: ui/preferences/Preferences.cpp:270 ui/preferences/Preferences.cpp:1850
+#: ui/preferences/Preferences.cpp:270 ui/preferences/Preferences.cpp:1851
 #: onlinelinks/OnlineLinks.cpp:71
 msgid "Links"
 msgstr "Hivatkozások"
@@ -3883,8 +3883,8 @@ msgstr "OK"
 msgid "On Start"
 msgstr "Indításkor"
 
-#: ui/preferences/Preferences.cpp:442 ui/preferences/Preferences.cpp:1551
-#: ui/preferences/Preferences.cpp:1553
+#: ui/preferences/Preferences.cpp:442 ui/preferences/Preferences.cpp:1552
+#: ui/preferences/Preferences.cpp:1554
 msgid "Language"
 msgstr "Nyelv"
 
@@ -3974,7 +3974,7 @@ msgstr "Útvonalak"
 msgid "Words to detect covers"
 msgstr "Szóminták a borítók kereséséhez"
 
-#: ui/preferences/Preferences.cpp:691 ui/preferences/Preferences.cpp:2143
+#: ui/preferences/Preferences.cpp:691 ui/preferences/Preferences.cpp:2144
 msgid "Options"
 msgstr "Opciók"
 
@@ -4059,14 +4059,14 @@ msgstr "Dal hozzáadása minden alkalommal"
 msgid "Max played tracks kept in playlist"
 msgstr "Lejátszott dalok megtartása a várólistában (maximum db)"
 
-#: ui/preferences/Preferences.cpp:901 ui/preferences/Preferences.cpp:3310
+#: ui/preferences/Preferences.cpp:901 ui/preferences/Preferences.cpp:3311
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
 msgstr[0] "Ne ismételje az utolsókat: "
 msgstr[1] "Ne ismételje az utolsókat: "
 
-#: ui/preferences/Preferences.cpp:910 ui/preferences/Preferences.cpp:3311
+#: ui/preferences/Preferences.cpp:910 ui/preferences/Preferences.cpp:3312
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
@@ -4085,7 +4085,7 @@ msgstr "Kihagyni"
 msgid "In the last"
 msgstr "Az utolsó"
 
-#: ui/preferences/Preferences.cpp:960 ui/preferences/Preferences.cpp:1187
+#: ui/preferences/Preferences.cpp:960 ui/preferences/Preferences.cpp:1188
 msgid "seconds"
 msgstr "másodperc"
 
@@ -4101,245 +4101,245 @@ msgstr "Automatikus"
 msgid "GConf Defined"
 msgstr "GConf alapján"
 
-#: ui/preferences/Preferences.cpp:1026
+#: ui/preferences/Preferences.cpp:1027
 msgid "Fade-out length:"
 msgstr "Lehalkítás hossza:"
 
-#: ui/preferences/Preferences.cpp:1035
+#: ui/preferences/Preferences.cpp:1036
 msgid "Select the length of the fade out. 0 for gapless playback"
 msgstr ""
 "Lehalkítás hosszának megadása. 0 = egybefüggő (dalszünet nélküli) lejátszás"
 
-#: ui/preferences/Preferences.cpp:1038
+#: ui/preferences/Preferences.cpp:1039
 msgid "Fade-in length:"
 msgstr "Felhangosítás hossza:"
 
-#: ui/preferences/Preferences.cpp:1047
+#: ui/preferences/Preferences.cpp:1048
 msgid "Select the length of the fade in"
 msgstr "Felhangosítás hosszának megadása"
 
-#: ui/preferences/Preferences.cpp:1050
+#: ui/preferences/Preferences.cpp:1051
 msgid "Fade-in volume:"
 msgstr "Felhangosítás hangereje:"
 
-#: ui/preferences/Preferences.cpp:1059
+#: ui/preferences/Preferences.cpp:1060
 msgid "Select the initial volume of the fade in"
 msgstr "Kezdő hangerő megadása a felhangosításnál"
 
-#: ui/preferences/Preferences.cpp:1062
+#: ui/preferences/Preferences.cpp:1063
 msgid "Fade-in start:"
 msgstr "Felhangosítás indítása:"
 
-#: ui/preferences/Preferences.cpp:1071
+#: ui/preferences/Preferences.cpp:1072
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "A lehalkítás és a felhangosítás milyen hangerőnél induljon"
 
-#: ui/preferences/Preferences.cpp:1113
+#: ui/preferences/Preferences.cpp:1114
 msgid "Enable recording"
 msgstr "Felvétel engedélyezése"
 
-#: ui/preferences/Preferences.cpp:1119
+#: ui/preferences/Preferences.cpp:1120
 msgid "Save to:"
 msgstr "Mentés:"
 
-#: ui/preferences/Preferences.cpp:1137 ui/preferences/Preferences.cpp:2164
+#: ui/preferences/Preferences.cpp:1138 ui/preferences/Preferences.cpp:2165
 msgid "Format:"
 msgstr "Formátum:"
 
-#: ui/preferences/Preferences.cpp:1154 copyto/Transcode.cpp:322
+#: ui/preferences/Preferences.cpp:1155 copyto/Transcode.cpp:322
 msgid "Very High"
 msgstr "Nagyon magas"
 
-#: ui/preferences/Preferences.cpp:1155 copyto/Transcode.cpp:323
+#: ui/preferences/Preferences.cpp:1156 copyto/Transcode.cpp:323
 msgid "High"
 msgstr "Magas"
 
-#: ui/preferences/Preferences.cpp:1156 copyto/Transcode.cpp:326
+#: ui/preferences/Preferences.cpp:1157 copyto/Transcode.cpp:326
 msgid "Normal"
 msgstr "Normal"
 
-#: ui/preferences/Preferences.cpp:1157 copyto/Transcode.cpp:327
+#: ui/preferences/Preferences.cpp:1158 copyto/Transcode.cpp:327
 msgid "Low"
 msgstr "Alacsony"
 
-#: ui/preferences/Preferences.cpp:1158 copyto/Transcode.cpp:328
+#: ui/preferences/Preferences.cpp:1159 copyto/Transcode.cpp:328
 msgid "Very Low"
 msgstr "Nagyon alacsony"
 
-#: ui/preferences/Preferences.cpp:1170
+#: ui/preferences/Preferences.cpp:1171
 msgid "Split tracks"
 msgstr "Dalok felosztása"
 
-#: ui/preferences/Preferences.cpp:1177
+#: ui/preferences/Preferences.cpp:1178
 msgid "Delete tracks shorter than"
 msgstr "Dalok törlése, ha rövidebbek mint"
 
-#: ui/preferences/Preferences.cpp:1216
+#: ui/preferences/Preferences.cpp:1217
 msgid "Last.fm audioscrobble"
 msgstr "Last.fm audiótovábbítás (Audioscrobble)"
 
-#: ui/preferences/Preferences.cpp:1218 ui/preferences/Preferences.cpp:1252
+#: ui/preferences/Preferences.cpp:1219 ui/preferences/Preferences.cpp:1253
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: ui/preferences/Preferences.cpp:1226 ui/preferences/Preferences.cpp:1260
-#: ui/preferences/Preferences.cpp:1511
+#: ui/preferences/Preferences.cpp:1227 ui/preferences/Preferences.cpp:1261
+#: ui/preferences/Preferences.cpp:1512
 msgid "Username:"
 msgstr "Felhasználónév:"
 
-#: ui/preferences/Preferences.cpp:1234 ui/preferences/Preferences.cpp:1268
-#: ui/preferences/Preferences.cpp:1520
+#: ui/preferences/Preferences.cpp:1235 ui/preferences/Preferences.cpp:1269
+#: ui/preferences/Preferences.cpp:1521
 msgid "Password:"
 msgstr "Jelszó:"
 
-#: ui/preferences/Preferences.cpp:1250
+#: ui/preferences/Preferences.cpp:1251
 msgid "Libre.fm audioscrobble"
 msgstr "Libre.fm audiótovábbítás (Audioscrobble)"
 
-#: ui/preferences/Preferences.cpp:1351
+#: ui/preferences/Preferences.cpp:1352
 msgid "Targets"
 msgstr "Célok"
 
-#: ui/preferences/Preferences.cpp:1392
+#: ui/preferences/Preferences.cpp:1393
 #, fuzzy
 msgid "Disabled Genres"
 msgstr "Tiltva"
 
-#: ui/preferences/Preferences.cpp:1413 ui/preferences/Preferences.cpp:1415
+#: ui/preferences/Preferences.cpp:1414 ui/preferences/Preferences.cpp:1416
 msgid "Font"
 msgstr "Betűkészletek"
 
-#: ui/preferences/Preferences.cpp:1427
+#: ui/preferences/Preferences.cpp:1428
 msgid "Align:"
 msgstr "Igazítás:"
 
-#: ui/preferences/Preferences.cpp:1433
+#: ui/preferences/Preferences.cpp:1434
 msgid "Center"
 msgstr "Középre"
 
-#: ui/preferences/Preferences.cpp:1478
+#: ui/preferences/Preferences.cpp:1479
 msgid "Proxy"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1480
+#: ui/preferences/Preferences.cpp:1481
 #, fuzzy
 msgid "Proxy Enabled"
 msgstr "Engedélyezve"
 
-#: ui/preferences/Preferences.cpp:1489
+#: ui/preferences/Preferences.cpp:1490
 #, fuzzy
 msgid "Hostname:"
 msgstr "Felhasználónév:"
 
-#: ui/preferences/Preferences.cpp:1500
+#: ui/preferences/Preferences.cpp:1501
 msgid "Port:"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1568
+#: ui/preferences/Preferences.cpp:1569
 msgid "Browser command"
 msgstr "Böngésző parancs"
 
-#: ui/preferences/Preferences.cpp:1576
+#: ui/preferences/Preferences.cpp:1577
 msgid "Minimum radio allowed bit rate"
 msgstr "Rádiónál a megengedett minimális bitsebesség"
 
-#: ui/preferences/Preferences.cpp:1583
+#: ui/preferences/Preferences.cpp:1584
 msgid "Player online buffer size"
 msgstr "A lejátszó online puffermérete"
 
-#: ui/preferences/Preferences.cpp:1621
+#: ui/preferences/Preferences.cpp:1622
 msgid "Destination directory:"
 msgstr "Célkönyvtár:"
 
-#: ui/preferences/Preferences.cpp:1625
+#: ui/preferences/Preferences.cpp:1626
 msgid "Select podcasts folder"
 msgstr "Podcast könyvtár kiválasztása"
 
-#: ui/preferences/Preferences.cpp:1633
+#: ui/preferences/Preferences.cpp:1634
 msgid "Check every"
 msgstr "Ellenőrzés minden"
 
-#: ui/preferences/Preferences.cpp:1638
+#: ui/preferences/Preferences.cpp:1639
 msgid "Hour"
 msgstr "Óra"
 
-#: ui/preferences/Preferences.cpp:1638
+#: ui/preferences/Preferences.cpp:1639
 msgid "Day"
 msgstr "Nap"
 
-#: ui/preferences/Preferences.cpp:1638
+#: ui/preferences/Preferences.cpp:1639
 msgid "Week"
 msgstr "Hét"
 
-#: ui/preferences/Preferences.cpp:1638
+#: ui/preferences/Preferences.cpp:1639
 msgid "Month"
 msgstr "Hónap"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1650
 msgid "Delete after"
 msgstr "Törlés ezután"
 
-#: ui/preferences/Preferences.cpp:1658
+#: ui/preferences/Preferences.cpp:1659
 msgid "Days"
 msgstr "Nap"
 
-#: ui/preferences/Preferences.cpp:1658
+#: ui/preferences/Preferences.cpp:1659
 msgid "Weeks"
 msgstr "Hét"
 
-#: ui/preferences/Preferences.cpp:1658
+#: ui/preferences/Preferences.cpp:1659
 msgid "Months"
 msgstr "Hónap"
 
-#: ui/preferences/Preferences.cpp:1667
+#: ui/preferences/Preferences.cpp:1668
 msgid "Only if played"
 msgstr "Csak ha lejátszott"
 
-#: ui/preferences/Preferences.cpp:1731
+#: ui/preferences/Preferences.cpp:1732
 msgid "Invert"
 msgstr "Invertálás"
 
-#: ui/preferences/Preferences.cpp:1745
+#: ui/preferences/Preferences.cpp:1746
 msgid "Membership :"
 msgstr "Tagság:"
 
-#: ui/preferences/Preferences.cpp:1752
+#: ui/preferences/Preferences.cpp:1753
 msgid "Streaming"
 msgstr "Streaming"
 
-#: ui/preferences/Preferences.cpp:1753
+#: ui/preferences/Preferences.cpp:1754
 msgid "Downloading"
 msgstr "Letöltés"
 
-#: ui/preferences/Preferences.cpp:1766
+#: ui/preferences/Preferences.cpp:1767
 msgid "Username :"
 msgstr "Felhasználónév :"
 
-#: ui/preferences/Preferences.cpp:1774
+#: ui/preferences/Preferences.cpp:1775
 msgid "Password :"
 msgstr "Jelszó :"
 
-#: ui/preferences/Preferences.cpp:1792
+#: ui/preferences/Preferences.cpp:1793
 msgid "Stream as :"
 msgstr "Stream mint:"
 
-#: ui/preferences/Preferences.cpp:1806
+#: ui/preferences/Preferences.cpp:1807
 msgid "Download as :"
 msgstr "Letöltés mint:"
 
-#: ui/preferences/Preferences.cpp:1810
+#: ui/preferences/Preferences.cpp:1811
 msgid "Download Page"
 msgstr "Letöltési oldal"
 
-#: ui/preferences/Preferences.cpp:1904
+#: ui/preferences/Preferences.cpp:1905
 msgid "URL:"
 msgstr "URL:"
 
-#: ui/preferences/Preferences.cpp:1929
+#: ui/preferences/Preferences.cpp:1930
 msgid "Define URLs using"
 msgstr "URL megadása"
 
-#: ui/preferences/Preferences.cpp:1935
+#: ui/preferences/Preferences.cpp:1936
 msgid ""
 "2 letters language code\n"
 "Text to search"
@@ -4347,11 +4347,11 @@ msgstr ""
 "2 betűs nyelvi kód\n"
 "Szöveg a kereséshez"
 
-#: ui/preferences/Preferences.cpp:2048
+#: ui/preferences/Preferences.cpp:2049
 msgid "Define commands using"
 msgstr "Parancsok megadása"
 
-#: ui/preferences/Preferences.cpp:2054
+#: ui/preferences/Preferences.cpp:2055
 msgid ""
 "Album path\n"
 "Album cover file path\n"
@@ -4361,19 +4361,19 @@ msgstr ""
 "Albumborító útvonal\n"
 "Dal útvonal"
 
-#: ui/preferences/Preferences.cpp:2087
+#: ui/preferences/Preferences.cpp:2088
 msgid "Patterns"
 msgstr "Sablonok"
 
-#: ui/preferences/Preferences.cpp:2198
+#: ui/preferences/Preferences.cpp:2199
 msgid "Remove source files"
 msgstr "Forrás fájl eltávolítása"
 
-#: ui/preferences/Preferences.cpp:2215
+#: ui/preferences/Preferences.cpp:2216
 msgid "Define patterns using"
 msgstr "Sablon használatának megadása"
 
-#: ui/preferences/Preferences.cpp:2221
+#: ui/preferences/Preferences.cpp:2222
 msgid ""
 "Artist\n"
 "Album Artist\n"
@@ -4385,7 +4385,7 @@ msgstr ""
 "{aa} or {a}\n"
 "Album"
 
-#: ui/preferences/Preferences.cpp:2229
+#: ui/preferences/Preferences.cpp:2230
 msgid ""
 "Composer\n"
 "Disk\n"
@@ -4397,7 +4397,7 @@ msgstr ""
 "Fájlnév\n"
 "Műfaj"
 
-#: ui/preferences/Preferences.cpp:2237
+#: ui/preferences/Preferences.cpp:2238
 msgid ""
 "Index\n"
 "Number\n"
@@ -4409,56 +4409,56 @@ msgstr ""
 "Címke\n"
 "Év"
 
-#: ui/preferences/Preferences.cpp:2288
+#: ui/preferences/Preferences.cpp:2289
 msgid "Accelerators"
 msgstr "Gyorsbillentyűk"
 
-#: ui/preferences/Preferences.cpp:2293
+#: ui/preferences/Preferences.cpp:2294
 msgid "Action"
 msgstr "Művelet"
 
-#: ui/preferences/Preferences.cpp:2297
+#: ui/preferences/Preferences.cpp:2298
 msgid "Key"
 msgstr "Gyorsbillentyűk"
 
-#: ui/preferences/Preferences.cpp:2690 ui/preferences/Preferences.cpp:2710
+#: ui/preferences/Preferences.cpp:2691 ui/preferences/Preferences.cpp:2711
 msgid "Enter the collection name"
 msgstr "Adja meg a gyűjtemény nevét:"
 
-#: ui/preferences/Preferences.cpp:2819
+#: ui/preferences/Preferences.cpp:2820
 msgid "Change library path"
 msgstr "Zenekatalógus útvonal cseréje"
 
-#: ui/preferences/Preferences.cpp:2897 ui/preferences/Preferences.cpp:2917
+#: ui/preferences/Preferences.cpp:2898 ui/preferences/Preferences.cpp:2918
 msgid "Word"
 msgstr "Szó"
 
-#: ui/preferences/Preferences.cpp:2897 ui/preferences/Preferences.cpp:2917
+#: ui/preferences/Preferences.cpp:2898 ui/preferences/Preferences.cpp:2918
 msgid "Enter the text to find covers"
 msgstr "Szöveg megadása a borító kereséséhez"
 
-#: ui/preferences/Preferences.cpp:3237
+#: ui/preferences/Preferences.cpp:3238
 #, fuzzy
 msgid "Enter the genre to disable"
 msgstr "Szöveg megadása a szűréshez"
 
-#: ui/preferences/Preferences.cpp:3438 ui/preferences/Preferences.cpp:3469
+#: ui/preferences/Preferences.cpp:3439 ui/preferences/Preferences.cpp:3470
 msgid "Filter"
 msgstr "Szűrő"
 
-#: ui/preferences/Preferences.cpp:3439
+#: ui/preferences/Preferences.cpp:3440
 msgid "Enter the text to filter"
 msgstr "Szöveg megadása a szűréshez"
 
-#: ui/preferences/Preferences.cpp:3469
+#: ui/preferences/Preferences.cpp:3470
 msgid "Edit the text to filter"
 msgstr "Szöveg módosítása a szüréshez"
 
-#: ui/preferences/Preferences.cpp:3971
+#: ui/preferences/Preferences.cpp:3972
 msgid "Select path"
 msgstr "Útvonal kiválasztása"
 
-#: ui/preferences/Preferences.cpp:4149
+#: ui/preferences/Preferences.cpp:4150
 msgid "Key used by '"
 msgstr "Használja a(z) '"
 
@@ -4645,11 +4645,11 @@ msgstr "Az aktuális dal megállítása"
 msgid "Record to file"
 msgstr "Felvétel fájlba"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3102
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3103
 msgid "Enable crossfading"
 msgstr "Kereszthalkító engedélyezése"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3102
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3103
 msgid "Disable crossfading"
 msgstr "Kereszthalkító tiltása"
 
@@ -4657,7 +4657,7 @@ msgstr "Kereszthalkító tiltása"
 msgid "Show the equalizer (right click for on/off)"
 msgstr "Equalizer megjelenítése"
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2776
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2777
 msgid "Volume"
 msgstr "Hangerő"
 
@@ -4699,25 +4699,25 @@ msgstr "Az aktuális dal bitsebességének megjelenítése"
 msgid "Buffering..."
 msgstr "Pufferelés..."
 
-#: ui/player/PlayerPanel.cpp:2498
+#: ui/player/PlayerPanel.cpp:2499
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2504
+#: ui/player/PlayerPanel.cpp:2505
 #, fuzzy
 msgid "Repeat all"
 msgstr "Dal ismétlése"
 
-#: ui/player/PlayerPanel.cpp:2509
+#: ui/player/PlayerPanel.cpp:2510
 #, fuzzy
 msgid "Repeat one"
 msgstr "Dal ismétlése"
 
-#: ui/player/PlayerPanel.cpp:2516
+#: ui/player/PlayerPanel.cpp:2517
 msgid "Smart mode disabled"
 msgstr ""
 
-#: ui/player/PlayList.cpp:78 ui/player/PlayList.cpp:1731
+#: ui/player/PlayList.cpp:78 ui/player/PlayList.cpp:1730
 msgid "Set as Next Track"
 msgstr "Beállítás következőnek"
 
@@ -4741,75 +4741,75 @@ msgstr "A kiválasztott dalok beállítása következőnek"
 msgid "Move the selected tracks to the bottom"
 msgstr "A kiválasztott dalok beállítása következőnek"
 
-#: ui/player/PlayList.cpp:104 ui/player/PlayList.cpp:1832
+#: ui/player/PlayList.cpp:104 ui/player/PlayList.cpp:1831
 msgid "Remove the selected tracks from playlist"
 msgstr "A kiválasztott dalok eltávolítása a várólistából"
 
-#: ui/player/PlayList.cpp:1704
+#: ui/player/PlayList.cpp:1703
 msgid "Empty Playlist"
 msgstr "Üres várólista"
 
-#: ui/player/PlayList.cpp:1704
+#: ui/player/PlayList.cpp:1703
 msgid "The playlist is empty"
 msgstr "A várólista üres"
 
-#: ui/player/PlayList.cpp:1715
+#: ui/player/PlayList.cpp:1714
 msgid "Edit the current selected tracks labels"
 msgstr "A kiválasztott dalok címkéinek szerkesztése"
 
-#: ui/player/PlayList.cpp:1722
+#: ui/player/PlayList.cpp:1721
 msgid "Edit the current selected songs"
 msgstr "A kiválasztott dalok szerkesztése"
 
-#: ui/player/PlayList.cpp:1732
+#: ui/player/PlayList.cpp:1731
 msgid "Move the selected tracks to be played next"
 msgstr "A kiválasztott dalok beállítása következőnek"
 
-#: ui/player/PlayList.cpp:1757
+#: ui/player/PlayList.cpp:1756
 msgid "Search a track in the playlist by name"
 msgstr "Dal keresése név szerint a várólistában"
 
-#: ui/player/PlayList.cpp:1766
+#: ui/player/PlayList.cpp:1765
 msgid "Selects the current selected track in the library"
 msgstr "A kiválasztott dalok kijelölése a zenekatalógusban"
 
-#: ui/player/PlayList.cpp:1772
+#: ui/player/PlayList.cpp:1771
 msgid "Select the album artist of the current song"
 msgstr "Az aktuális dal album előadójának kiválasztása"
 
-#: ui/player/PlayList.cpp:1775
+#: ui/player/PlayList.cpp:1774
 msgid "Select the composer of the current song"
 msgstr "Az aktuális dal szerzőjének kiválasztása"
 
-#: ui/player/PlayList.cpp:1781
+#: ui/player/PlayList.cpp:1780
 msgid "Select the year of the current song"
 msgstr "Az aktuális dal évszámának kiválasztása"
 
-#: ui/player/PlayList.cpp:1784
+#: ui/player/PlayList.cpp:1783
 msgid "Select the genre of the current song"
 msgstr "Az aktuális dal műfajának kiválasztása"
 
-#: ui/player/PlayList.cpp:1824
+#: ui/player/PlayList.cpp:1823
 msgid "Remove all tracks from playlist"
 msgstr "Az összes dal eltávolítása a várólistából"
 
-#: ui/player/PlayList.cpp:1840
+#: ui/player/PlayList.cpp:1839
 msgid "Remove the selected tracks from library"
 msgstr "A kiválasztott dalok eltávolítása a zenekatalógusból"
 
-#: ui/player/PlayList.cpp:1846
+#: ui/player/PlayList.cpp:1845
 msgid "Remove the selected tracks from drive"
 msgstr "A kiválasztott dalok eltávolítása a meghajtóról"
 
-#: ui/player/PlayList.cpp:2158
+#: ui/player/PlayList.cpp:2157
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2299
+#: ui/player/PlayList.cpp:2298
 msgid "Please enter the search term"
 msgstr "Adja meg a keresési feltételt"
 
-#: ui/player/PlayList.cpp:2824
+#: ui/player/PlayList.cpp:2823
 msgid "Loading tracks. Please wait"
 msgstr "Számok olvasása. Kérem várjon"
 

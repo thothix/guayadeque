@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-27 13:27-0300\n"
+"POT-Creation-Date: 2025-06-03 18:51-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/"
@@ -28,8 +28,8 @@ msgstr "Dodaj fasciklu"
 msgid "Audio Scrobbling"
 msgstr "Audio skroblovanje"
 
-#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1476 ui/player/PlayList.cpp:108
-#: ui/player/PlayList.cpp:1823
+#: misc/Accelerators.cpp:111 ui/MainFrame.cpp:1527 ui/player/PlayList.cpp:108
+#: ui/player/PlayList.cpp:1822
 msgid "Clear the Playlist"
 msgstr "Očisti listu"
 
@@ -47,7 +47,7 @@ msgstr "Forum zajednice"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:368
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1961
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2096
-#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1714
+#: ui/mediaviewer/treeview/TreePanel.cpp:423 ui/player/PlayList.cpp:1713
 msgid "Edit Labels"
 msgstr "Izmeni etiketu"
 
@@ -93,7 +93,7 @@ msgstr "Uvrsti nakon albuma"
 msgid "Enqueue After Artist"
 msgstr "Uvrsti nakon izvođača"
 
-#: misc/Accelerators.cpp:121 ui/MainFrame.cpp:1391
+#: misc/Accelerators.cpp:121 ui/MainFrame.cpp:1442
 msgid "Full Screen"
 msgstr "Pun ekran"
 
@@ -101,14 +101,14 @@ msgstr "Pun ekran"
 msgid "Gapless/Crossfading"
 msgstr "Bez pauze/Pretapanje"
 
-#: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1576
-#: ui/MainFrame.cpp:1619
+#: misc/Accelerators.cpp:123 misc/Accelerators.cpp:400 ui/MainFrame.cpp:1627
+#: ui/MainFrame.cpp:1670
 msgid "Help"
 msgstr "Pomoć"
 
 #: misc/Accelerators.cpp:124 ui/filebrowser/FileBrowser.cpp:344
 #: ui/filebrowser/FileBrowser.cpp:1007 ui/taskbar/TaskBar.cpp:114
-#: ui/MainFrame.cpp:1460 ui/mediaviewer/library/DiBrowser.cpp:264
+#: ui/MainFrame.cpp:1511 ui/mediaviewer/library/DiBrowser.cpp:264
 #: ui/mediaviewer/library/YeListBox.cpp:104
 #: ui/mediaviewer/library/CoListBox.cpp:104
 #: ui/mediaviewer/library/ArListBox.cpp:152
@@ -140,28 +140,28 @@ msgstr "Pusti sve"
 msgid "Play/Pause"
 msgstr "Pusti/Pauza"
 
-#: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1057 ui/MainFrame.cpp:1888
+#: misc/Accelerators.cpp:127 ui/MainFrame.cpp:1108 ui/MainFrame.cpp:1939
 msgid "Play Stream"
 msgstr "Pusti tok"
 
 #: misc/Accelerators.cpp:128 ui/filebrowser/FileBrowser.cpp:329
-#: ui/filebrowser/FileBrowser.cpp:992 ui/MainFrame.cpp:1418
-#: ui/MainFrame.cpp:4244 ui/mediaviewer/library/DiBrowser.cpp:249
+#: ui/filebrowser/FileBrowser.cpp:992 ui/MainFrame.cpp:1469
+#: ui/MainFrame.cpp:4295 ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/ArListBox.cpp:136
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/preferences/Preferences.cpp:126
-#: ui/player/PlayList.cpp:1690 onlinelinks/OnlineLinks.cpp:68
+#: ui/player/PlayList.cpp:1689 onlinelinks/OnlineLinks.cpp:68
 msgid "Preferences"
 msgstr "Postavke"
 
-#: misc/Accelerators.cpp:129 ui/MainFrame.cpp:1110
+#: misc/Accelerators.cpp:129 ui/MainFrame.cpp:1161
 msgid "Quit"
 msgstr "Izađi"
 
-#: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1523
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1817
+#: misc/Accelerators.cpp:131 ui/MainFrame.cpp:1574
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:162 ui/player/PlayList.cpp:1816
 msgid "Shuffle the Playlist"
 msgstr "Meša listu"
 
@@ -185,7 +185,7 @@ msgstr "Ponovi sve numere"
 msgid "Repeat Current Track"
 msgstr "Ponovi trenutnu numeru"
 
-#: misc/Accelerators.cpp:140 ui/MainFrame.cpp:1311 ui/MainFrame.cpp:3594
+#: misc/Accelerators.cpp:140 ui/MainFrame.cpp:1362 ui/MainFrame.cpp:3645
 msgid "Save Layout"
 msgstr "Sačuvaj raspored"
 
@@ -205,13 +205,13 @@ msgstr "Sačuvaj raspored"
 #: ui/mediaviewer/playlists/PlayListAppend.cpp:26
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:287
 #: ui/mediaviewer/treeview/TreePanel.cpp:442
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1802
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1801
 msgid "Save to Playlist"
 msgstr "Sačuvaj u listu"
 
 #: misc/Accelerators.cpp:143 ui/lyrics/LyricsPanel.cpp:2450
-#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1756
-#: ui/player/PlayList.cpp:2299
+#: ui/radios/RadioPanel.cpp:1170 ui/player/PlayList.cpp:1755
+#: ui/player/PlayList.cpp:2298
 msgid "Search"
 msgstr "Traži"
 
@@ -287,15 +287,15 @@ msgstr "Preskoči prethodno"
 msgid "Skip Previous Album"
 msgstr "Preskoči prethodni album"
 
-#: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1517
+#: misc/Accelerators.cpp:164 ui/MainFrame.cpp:1568
 msgid "Smart Play"
 msgstr "Pametno puštanje"
 
-#: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1464
+#: misc/Accelerators.cpp:165 ui/taskbar/TaskBar.cpp:118 ui/MainFrame.cpp:1515
 msgid "Stop"
 msgstr "Zaustavi"
 
-#: misc/Accelerators.cpp:166 ui/MainFrame.cpp:1469
+#: misc/Accelerators.cpp:166 ui/MainFrame.cpp:1520
 msgid "Stop at End"
 msgstr "Zaustavi na kraju"
 
@@ -306,7 +306,7 @@ msgstr "Ažuriraj omote"
 #: misc/Accelerators.cpp:168 ui/locationpanel/LocationPanel.cpp:325
 #: ui/locationpanel/LocationPanel.cpp:363
 #: ui/locationpanel/LocationPanel.cpp:503 ui/filebrowser/FileBrowser.cpp:415
-#: ui/MainFrame.cpp:998 ui/MainFrame.cpp:1036 ui/MainFrame.cpp:1269
+#: ui/MainFrame.cpp:1049 ui/MainFrame.cpp:1087 ui/MainFrame.cpp:1320
 #: ui/mediaviewer/library/DiBrowser.cpp:327 ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:975
@@ -322,11 +322,11 @@ msgstr "Ažuriraj (na silu)"
 msgid "Update Podcasts"
 msgstr "Ažuriraj podemisije"
 
-#: misc/Accelerators.cpp:171 ui/MainFrame.cpp:1546
+#: misc/Accelerators.cpp:171 ui/MainFrame.cpp:1597
 msgid "Volume Down"
 msgstr "Pojačaj"
 
-#: misc/Accelerators.cpp:172 ui/MainFrame.cpp:1541
+#: misc/Accelerators.cpp:172 ui/MainFrame.cpp:1592
 msgid "Volume Up"
 msgstr "Utišaj"
 
@@ -370,7 +370,7 @@ msgstr "Return"
 msgid "Enter"
 msgstr "Enter"
 
-#: misc/Accelerators.cpp:339 ui/preferences/Preferences.cpp:1432
+#: misc/Accelerators.cpp:339 ui/preferences/Preferences.cpp:1433
 msgid "Left"
 msgstr "Levo"
 
@@ -378,7 +378,7 @@ msgstr "Levo"
 msgid "Up"
 msgstr "Gore"
 
-#: misc/Accelerators.cpp:345 ui/preferences/Preferences.cpp:1434
+#: misc/Accelerators.cpp:345 ui/preferences/Preferences.cpp:1435
 msgid "Right"
 msgstr "Desno"
 
@@ -422,7 +422,7 @@ msgid "Separator"
 msgstr "Razdvajač"
 
 #: misc/Accelerators.cpp:395 ui/mediaviewer/library/SoListBox.cpp:572
-#: ui/player/PlayList.cpp:1787
+#: ui/player/PlayList.cpp:1786
 msgid "Select"
 msgstr "Izaberi"
 
@@ -450,15 +450,15 @@ msgstr "Izbor"
 msgid "Capital"
 msgstr "Veliko"
 
-#: MainApp.cpp:389
+#: MainApp.cpp:391
 msgid "Another program instance is already running."
 msgstr ""
 
-#: MainApp.cpp:389
+#: MainApp.cpp:391
 msgid "Do you want to continue with the program?"
 msgstr ""
 
-#: MainApp.cpp:390 ui/labeleditor/LabelEditor.cpp:309
+#: MainApp.cpp:392 ui/labeleditor/LabelEditor.cpp:309
 #: ui/filebrowser/FileBrowser.cpp:566 ui/filebrowser/FileBrowser.cpp:2096
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204
@@ -469,21 +469,21 @@ msgstr ""
 msgid "Confirm"
 msgstr "Potvrdi"
 
-#: db/DbLibrary.cpp:269 db/DbLibrary.cpp:281 db/DbLibrary.cpp:1725
-#: db/DbLibrary.cpp:1738 db/DbLibrary.cpp:1799 db/DbLibrary.cpp:1812
+#: db/DbLibrary.cpp:270 db/DbLibrary.cpp:282 db/DbLibrary.cpp:1726
+#: db/DbLibrary.cpp:1739 db/DbLibrary.cpp:1800 db/DbLibrary.cpp:1813
 #: ui/player/PlayerPanel.cpp:1400
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: db/DbLibrary.cpp:625
+#: db/DbLibrary.cpp:626
 msgid "Recently added tracks"
 msgstr "Skoro dodate numere"
 
-#: db/DbLibrary.cpp:633
+#: db/DbLibrary.cpp:634
 msgid "Last played tracks"
 msgstr "Poslednje puštane numere"
 
-#: db/DbLibrary.cpp:640
+#: db/DbLibrary.cpp:641
 msgid "Best rated tracks"
 msgstr "Najbolje ocenjene numere"
 
@@ -494,7 +494,7 @@ msgstr "Generiši pametnu listu"
 #: info/smartmode/SmartMode.cpp:395 ui/itemlistbox/ItemListBox.cpp:65
 #: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
-#: ui/preferences/Preferences.cpp:1725 ui/player/PlayerFilters.cpp:107
+#: ui/preferences/Preferences.cpp:1726 ui/player/PlayerFilters.cpp:107
 msgid "All"
 msgstr "Sve"
 
@@ -511,7 +511,7 @@ msgid "Deny"
 msgstr "Odbij"
 
 #: info/smartmode/SmartMode.cpp:448 ui/preferences/Preferences.cpp:722
-#: ui/preferences/Preferences.cpp:1728 ui/preferences/Preferences.cpp:1751
+#: ui/preferences/Preferences.cpp:1729 ui/preferences/Preferences.cpp:1752
 #: ui/player/PlayerFilters.cpp:122
 msgid "None"
 msgstr "Ništa"
@@ -587,14 +587,14 @@ msgstr "Traži tekstove na vebu"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:65
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:359 ui/cover/CoverEdit.cpp:73
-#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1769
+#: ui/lastfmpanel/LastFMPanel.cpp:1642 ui/player/PlayList.cpp:1768
 #, fuzzy
 msgid "Artist"
 msgstr "Izvođač"
 
 #: ui/lyrics/LyricsPanel.cpp:122 ui/trackedit/TrackEdit.cpp:388
 #: ui/lastfmpanel/LastFMPanel.cpp:1654 ui/preferences/Preferences.cpp:840
-#: ui/player/PlayList.cpp:1766
+#: ui/player/PlayList.cpp:1765
 msgid "Track"
 msgstr "Numera"
 
@@ -652,8 +652,8 @@ msgstr "Uređivač izvora teksta"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:46
 #: ui/radios/RadioEditor.cpp:45 ui/radios/RadioPanel.cpp:311
-#: ui/preferences/Preferences.cpp:1911 ui/preferences/Preferences.cpp:2030
-#: ui/preferences/Preferences.cpp:2150
+#: ui/preferences/Preferences.cpp:1912 ui/preferences/Preferences.cpp:2031
+#: ui/preferences/Preferences.cpp:2151
 msgid "Name"
 msgstr "Ime"
 
@@ -669,7 +669,7 @@ msgstr "Ugneždeno"
 msgid "File"
 msgstr "Fajl"
 
-#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2023
+#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2024
 msgid "Command"
 msgstr "Komanda"
 
@@ -745,26 +745,26 @@ msgstr "Kontekst"
 msgid "Radios"
 msgstr "Radio stanice"
 
-#: ui/locationpanel/LocationPanel.cpp:208 ui/MainFrame.cpp:1046
-#: ui/MainFrame.cpp:2637 ui/MainFrame.cpp:3341
-#: ui/preferences/Preferences.cpp:260 ui/preferences/Preferences.cpp:1617
+#: ui/locationpanel/LocationPanel.cpp:208 ui/MainFrame.cpp:1097
+#: ui/MainFrame.cpp:2688 ui/MainFrame.cpp:3392
+#: ui/preferences/Preferences.cpp:260 ui/preferences/Preferences.cpp:1618
 #: ui/podcasts/PodcastsPanel.cpp:916
 msgid "Podcasts"
 msgstr "Podemisije"
 
-#: ui/locationpanel/LocationPanel.cpp:213 ui/MainFrame.cpp:1063
-#: ui/MainFrame.cpp:2583
+#: ui/locationpanel/LocationPanel.cpp:213 ui/MainFrame.cpp:1114
+#: ui/MainFrame.cpp:2634
 #, fuzzy
 msgid "Audio CD"
 msgstr "Audio"
 
-#: ui/locationpanel/LocationPanel.cpp:268 ui/MainFrame.cpp:1365
-#: ui/MainFrame.cpp:2670
+#: ui/locationpanel/LocationPanel.cpp:268 ui/MainFrame.cpp:1416
+#: ui/MainFrame.cpp:2721
 msgid "File Browser"
 msgstr "Pregledač fajlova"
 
 #: ui/locationpanel/LocationPanel.cpp:280 ui/trackedit/TrackEdit.cpp:407
-#: ui/MainFrame.cpp:1381 ui/MainFrame.cpp:2610
+#: ui/MainFrame.cpp:1432 ui/MainFrame.cpp:2661
 #: ui/preferences/Preferences.cpp:250
 msgid "Lyrics"
 msgstr "Tekstovi"
@@ -772,36 +772,36 @@ msgstr "Tekstovi"
 #: ui/locationpanel/LocationPanel.cpp:301
 #: ui/locationpanel/LocationPanel.cpp:343
 #: ui/locationpanel/LocationPanel.cpp:390
-#: ui/locationpanel/LocationPanel.cpp:403 ui/MainFrame.cpp:974
-#: ui/MainFrame.cpp:1016 ui/MainFrame.cpp:1157 ui/MainFrame.cpp:1169
+#: ui/locationpanel/LocationPanel.cpp:403 ui/MainFrame.cpp:1025
+#: ui/MainFrame.cpp:1067 ui/MainFrame.cpp:1208 ui/MainFrame.cpp:1220
 msgid "Show"
 msgstr "Prikaži"
 
-#: ui/locationpanel/LocationPanel.cpp:302 ui/MainFrame.cpp:975
+#: ui/locationpanel/LocationPanel.cpp:302 ui/MainFrame.cpp:1026
 msgid "Show/Hide the radio panel"
 msgstr "Prikaži/sakrij radio panel"
 
-#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:981
+#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:1032
 #: ui/radios/RadioPanel.cpp:552 ui/radios/RadioPanel.cpp:592
 msgid "Text Search"
 msgstr "Pretraga teksta"
 
-#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:981
+#: ui/locationpanel/LocationPanel.cpp:308 ui/MainFrame.cpp:1032
 msgid "Show/Hide the radio text search"
 msgstr "Prikaži/sakrij tekstualne pretrage radija"
 
 #: ui/locationpanel/LocationPanel.cpp:318
-#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:991
-#: ui/MainFrame.cpp:1186 ui/mediaviewer/library/LibPanel.cpp:221
+#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:1042
+#: ui/MainFrame.cpp:1237 ui/mediaviewer/library/LibPanel.cpp:221
 #: ui/mediaviewer/library/LibPanel.cpp:229
 #: ui/mediaviewer/library/LibPanel.cpp:561
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/radios/RadioPanel.cpp:594 ui/radios/RadioGenreEditor.cpp:38
-#: ui/preferences/Preferences.cpp:1694
+#: ui/preferences/Preferences.cpp:1695
 msgid "Genres"
 msgstr "Žanrovi"
 
-#: ui/locationpanel/LocationPanel.cpp:318 ui/MainFrame.cpp:991
+#: ui/locationpanel/LocationPanel.cpp:318 ui/MainFrame.cpp:1042
 msgid "Show/Hide the radio genres"
 msgstr "Prikaži/sakrij žanrove radija"
 
@@ -811,121 +811,121 @@ msgstr "Ažuriraj listu radio stanica"
 
 #: ui/locationpanel/LocationPanel.cpp:332
 #: ui/locationpanel/LocationPanel.cpp:371
-#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1005
-#: ui/MainFrame.cpp:1043 ui/MainFrame.cpp:1297
+#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1056
+#: ui/MainFrame.cpp:1094 ui/MainFrame.cpp:1348
 #: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:677
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:986
-#: ui/preferences/Preferences.cpp:1130 ui/podcasts/PodcastsPanel.cpp:1758
+#: ui/preferences/Preferences.cpp:1131 ui/podcasts/PodcastsPanel.cpp:1758
 msgid "Properties"
 msgstr "Svojstva"
 
-#: ui/locationpanel/LocationPanel.cpp:333 ui/MainFrame.cpp:1006
+#: ui/locationpanel/LocationPanel.cpp:333 ui/MainFrame.cpp:1057
 msgid "Set the radio preferences"
 msgstr "Podešavanja radija"
 
-#: ui/locationpanel/LocationPanel.cpp:344 ui/MainFrame.cpp:1017
+#: ui/locationpanel/LocationPanel.cpp:344 ui/MainFrame.cpp:1068
 msgid "Show/Hide the podcasts panel"
 msgstr "Prikaži/sakrij panel podemisija"
 
-#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1023
+#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1074
 #: ui/podcasts/PodcastsPanel.cpp:890 ui/podcasts/PodcastsPanel.cpp:898
 #: ui/podcasts/PodcastsPanel.cpp:1057
 msgid "Channels"
 msgstr "Kopiraj u opcije:"
 
-#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1023
+#: ui/locationpanel/LocationPanel.cpp:350 ui/MainFrame.cpp:1074
 msgid "Show/Hide the podcasts channels"
 msgstr "Prikaži/sakrij kanale podemisija"
 
 #: ui/locationpanel/LocationPanel.cpp:355 ui/trackedit/TrackEdit.cpp:319
-#: ui/trackedit/TrackEdit.cpp:474 ui/MainFrame.cpp:1028
+#: ui/trackedit/TrackEdit.cpp:474 ui/MainFrame.cpp:1079
 #: ui/podcasts/PodcastsPanel.cpp:928 ui/podcasts/PodcastsPanel.cpp:1060
 msgid "Details"
 msgstr "Detalji"
 
-#: ui/locationpanel/LocationPanel.cpp:355 ui/MainFrame.cpp:1028
+#: ui/locationpanel/LocationPanel.cpp:355 ui/MainFrame.cpp:1079
 msgid "Show/Hide the podcasts details"
 msgstr "Prikaži/sakrij detalje podemisija"
 
-#: ui/locationpanel/LocationPanel.cpp:364 ui/MainFrame.cpp:1037
+#: ui/locationpanel/LocationPanel.cpp:364 ui/MainFrame.cpp:1088
 msgid "Update the podcasts added"
 msgstr "Ažuriraj dodate podemisije"
 
-#: ui/locationpanel/LocationPanel.cpp:372 ui/MainFrame.cpp:1043
+#: ui/locationpanel/LocationPanel.cpp:372 ui/MainFrame.cpp:1094
 msgid "Set the podcasts preferences"
 msgstr "Postavke podešavanja podemisija"
 
-#: ui/locationpanel/LocationPanel.cpp:390 ui/MainFrame.cpp:1157
+#: ui/locationpanel/LocationPanel.cpp:390 ui/MainFrame.cpp:1208
 msgid "Open the music collection"
 msgstr "Otvori muzičku kolekciju"
 
 #: ui/locationpanel/LocationPanel.cpp:403
-#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1169
-#: ui/MainFrame.cpp:1230
+#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1220
+#: ui/MainFrame.cpp:1281
 msgid "View the collection library"
 msgstr "Prikaži kolekciju biblioteke"
 
 #: ui/locationpanel/LocationPanel.cpp:410 ui/filebrowser/FileBrowser.cpp:1411
-#: ui/filebrowser/FileBrowser.cpp:1427 ui/MainFrame.cpp:1176
+#: ui/filebrowser/FileBrowser.cpp:1427 ui/MainFrame.cpp:1227
 #: ui/mediaviewer/library/LibPanel.cpp:425
 #: ui/mediaviewer/library/LibPanel.cpp:559
 msgid "Directories"
 msgstr "Fascikle"
 
-#: ui/locationpanel/LocationPanel.cpp:410 ui/MainFrame.cpp:1176
+#: ui/locationpanel/LocationPanel.cpp:410 ui/MainFrame.cpp:1227
 msgid "View the library directories"
 msgstr "Prikaži žanrove u biblioteci"
 
 #: ui/locationpanel/LocationPanel.cpp:415 ui/labeleditor/LabelEditor.cpp:91
-#: ui/MainFrame.cpp:1181 ui/mediaviewer/library/LibPanel.cpp:241
+#: ui/MainFrame.cpp:1232 ui/mediaviewer/library/LibPanel.cpp:241
 #: ui/mediaviewer/library/LibPanel.cpp:248
 #: ui/mediaviewer/library/LibPanel.cpp:563
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:63
 msgid "Labels"
 msgstr "Etikete"
 
-#: ui/locationpanel/LocationPanel.cpp:415 ui/MainFrame.cpp:1181
+#: ui/locationpanel/LocationPanel.cpp:415 ui/MainFrame.cpp:1232
 msgid "View the library labels"
 msgstr "Prikaži etikete u biblioteci"
 
-#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:1186
+#: ui/locationpanel/LocationPanel.cpp:420 ui/MainFrame.cpp:1237
 msgid "View the library genres"
 msgstr "Prikaži žanrove u biblioteci"
 
-#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1191
+#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1242
 #: ui/mediaviewer/library/LibPanel.cpp:260
 #: ui/mediaviewer/library/LibPanel.cpp:267
 #: ui/mediaviewer/library/LibPanel.cpp:565
 msgid "Artists"
 msgstr "Izvođači"
 
-#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1191
+#: ui/locationpanel/LocationPanel.cpp:425 ui/MainFrame.cpp:1242
 msgid "View the library artists"
 msgstr "Prikaži izvočače u biblioteke"
 
-#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1206
+#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1257
 #: ui/mediaviewer/library/LibPanel.cpp:355
 #: ui/mediaviewer/library/LibPanel.cpp:362
 #: ui/mediaviewer/library/LibPanel.cpp:575
 msgid "Composers"
 msgstr "Kompozitori"
 
-#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1206
+#: ui/locationpanel/LocationPanel.cpp:430 ui/MainFrame.cpp:1257
 msgid "View the library composers"
 msgstr "Prikaži kompozitore u biblioteci"
 
-#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1196
+#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1247
 #: ui/mediaviewer/library/LibPanel.cpp:577
 msgid "Album Artists"
 msgstr "Umetnici albuma"
 
-#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1196
+#: ui/locationpanel/LocationPanel.cpp:435 ui/MainFrame.cpp:1247
 msgid "View the library album artists"
 msgstr "Prikaži umetnike albuma iz biblioteke"
 
-#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1201
+#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1252
 #: ui/mediaviewer/library/LibPanel.cpp:279
 #: ui/mediaviewer/library/LibPanel.cpp:286
 #: ui/mediaviewer/library/LibPanel.cpp:567
@@ -933,29 +933,29 @@ msgstr "Prikaži umetnike albuma iz biblioteke"
 msgid "Albums"
 msgstr "Albumi"
 
-#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1201
+#: ui/locationpanel/LocationPanel.cpp:440 ui/MainFrame.cpp:1252
 msgid "View the library albums"
 msgstr "Prikaži albume u biblioteci"
 
-#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1211
+#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1262
 #: ui/mediaviewer/library/LibPanel.cpp:298
 #: ui/mediaviewer/library/LibPanel.cpp:305
 #: ui/mediaviewer/library/LibPanel.cpp:569
 msgid "Years"
 msgstr "Godine"
 
-#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1211
+#: ui/locationpanel/LocationPanel.cpp:445 ui/MainFrame.cpp:1262
 msgid "View the library years"
 msgstr "Prikaži godine u biblioteci"
 
-#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1216
+#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1267
 #: ui/mediaviewer/library/LibPanel.cpp:317
 #: ui/mediaviewer/library/LibPanel.cpp:324
 #: ui/mediaviewer/library/LibPanel.cpp:571
 msgid "Ratings"
 msgstr "Ocene"
 
-#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1216
+#: ui/locationpanel/LocationPanel.cpp:450 ui/MainFrame.cpp:1267
 msgid "View the library ratings"
 msgstr "Prikaži ocene u biblioteci"
 
@@ -963,35 +963,35 @@ msgstr "Prikaži ocene u biblioteci"
 msgid "Play Counts"
 msgstr "Broj puštanja"
 
-#: ui/locationpanel/LocationPanel.cpp:455 ui/MainFrame.cpp:1221
+#: ui/locationpanel/LocationPanel.cpp:455 ui/MainFrame.cpp:1272
 msgid "View the library play counts"
 msgstr "Prikaži broj puštanja u biblioteci"
 
 #: ui/locationpanel/LocationPanel.cpp:460
-#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1226
-#: ui/MainFrame.cpp:1230 ui/mediaviewer/treeview/TreePanel.cpp:82
+#: ui/locationpanel/LocationPanel.cpp:464 ui/MainFrame.cpp:1277
+#: ui/MainFrame.cpp:1281 ui/mediaviewer/treeview/TreePanel.cpp:82
 msgid "Library"
 msgstr "Biblioteka"
 
-#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1236
+#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1287
 msgid "Album Browser"
 msgstr "Pregledač albuma"
 
-#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1236
+#: ui/locationpanel/LocationPanel.cpp:470 ui/MainFrame.cpp:1287
 msgid "View the collection album browser"
 msgstr "Prikaži pregledač kolekcije albuma"
 
-#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1241
+#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1292
 #: ui/mediaviewer/treeview/TreePanel.cpp:814
 #: ui/mediaviewer/treeview/TreePanel.cpp:839
 msgid "Tree"
 msgstr "Stablo"
 
-#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1241
+#: ui/locationpanel/LocationPanel.cpp:475 ui/MainFrame.cpp:1292
 msgid "View the collection tree view"
 msgstr "Prikaži stablo kolekcije"
 
-#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1246
+#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1297
 #: ui/mediaviewer/MediaViewer.cpp:253
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:852
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:763
@@ -999,79 +999,79 @@ msgstr "Prikaži stablo kolekcije"
 msgid "Playlists"
 msgstr "Liste"
 
-#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1246
+#: ui/locationpanel/LocationPanel.cpp:480 ui/MainFrame.cpp:1297
 msgid "View the collection playlists"
 msgstr "Prikaži liste u koleciji"
 
-#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1257
+#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1308
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add Path"
 msgstr "Dodaj putanju"
 
-#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1257
+#: ui/locationpanel/LocationPanel.cpp:491 ui/MainFrame.cpp:1308
 #: ui/mediaviewer/MediaViewer.cpp:923
 msgid "Add path to the collection"
 msgstr "Dodaj putanju do kolekcije"
 
-#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1261
+#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1312
 #: ui/mediaviewer/MediaViewer.cpp:926
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:49
 msgid "Import Files"
 msgstr "Uvezi fajlove"
 
-#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1261
+#: ui/locationpanel/LocationPanel.cpp:495 ui/MainFrame.cpp:1312
 #: ui/mediaviewer/MediaViewer.cpp:926
 msgid "Import files into the collection"
 msgstr "Uvezi fajlove u kolekciju"
 
-#: ui/locationpanel/LocationPanel.cpp:504 ui/MainFrame.cpp:1270
+#: ui/locationpanel/LocationPanel.cpp:504 ui/MainFrame.cpp:1321
 #: ui/mediaviewer/MediaViewer.cpp:932
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446 ui/magnatune/Magnatune.cpp:975
 msgid "Update the collection library"
 msgstr "Ažuriraj kolekciju biblioteke"
 
-#: ui/locationpanel/LocationPanel.cpp:509 ui/MainFrame.cpp:1275
+#: ui/locationpanel/LocationPanel.cpp:509 ui/MainFrame.cpp:1326
 #: ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:978
 msgid "Rescan"
 msgstr "Skeniraj opet"
 
-#: ui/locationpanel/LocationPanel.cpp:510 ui/MainFrame.cpp:1276
+#: ui/locationpanel/LocationPanel.cpp:510 ui/MainFrame.cpp:1327
 #: ui/mediaviewer/MediaViewer.cpp:935
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449 ui/magnatune/Magnatune.cpp:978
 msgid "Rescan the collection library"
 msgstr "Preskeniraj kolekciju biblioteke"
 
-#: ui/locationpanel/LocationPanel.cpp:515 ui/MainFrame.cpp:1281
+#: ui/locationpanel/LocationPanel.cpp:515 ui/MainFrame.cpp:1332
 #: ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:981
 msgid "Search Covers"
 msgstr "Traži omote"
 
-#: ui/locationpanel/LocationPanel.cpp:516 ui/MainFrame.cpp:1282
+#: ui/locationpanel/LocationPanel.cpp:516 ui/MainFrame.cpp:1333
 #: ui/mediaviewer/MediaViewer.cpp:938
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452 ui/magnatune/Magnatune.cpp:981
 msgid "Search the collection missing covers"
 msgstr "Traži omote koji nedostaju u kolekciji"
 
-#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1290
+#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1341
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1457
 msgid "Unmount"
 msgstr "Demontiraj"
 
-#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1290
+#: ui/locationpanel/LocationPanel.cpp:524 ui/MainFrame.cpp:1341
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1607
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1457
 msgid "Unmount the device"
 msgstr "Demontiraj uređaj"
 
-#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1297
+#: ui/locationpanel/LocationPanel.cpp:531 ui/MainFrame.cpp:1348
 #: ui/mediaviewer/MediaViewer.cpp:943
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462 ui/magnatune/Magnatune.cpp:986
@@ -1168,7 +1168,7 @@ msgstr "Kopiraj ime albuma u sve numere koje uređuješ"
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:68
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:361 ui/cover/CoverEdit.cpp:80
-#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1778
+#: ui/preferences/Preferences.cpp:840 ui/player/PlayList.cpp:1777
 msgid "Album"
 msgstr "Album"
 
@@ -1182,7 +1182,7 @@ msgstr "Kopiraj kompozitora u sve numere koje uređuješ"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:133
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:66
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1775
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:363 ui/player/PlayList.cpp:1774
 msgid "Composer"
 msgstr "Kompozitor"
 
@@ -1233,8 +1233,8 @@ msgstr "Kopiraj ime žanra u sve numere koje uređuješ"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:131
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:64
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362 ui/radios/ShoutcastRadio.cpp:140
-#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3237
-#: ui/player/PlayList.cpp:1784
+#: ui/radios/RadioPanel.cpp:568 ui/preferences/Preferences.cpp:3238
+#: ui/player/PlayList.cpp:1783
 msgid "Genre"
 msgstr "Žanr"
 
@@ -1251,7 +1251,7 @@ msgstr "Kopiraj godinu u sve numere koje uređuješ"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:134
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:69
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1781
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:366 ui/player/PlayList.cpp:1780
 msgid "Year"
 msgstr "Godina"
 
@@ -1387,7 +1387,7 @@ msgstr "Preimenuj fajlove"
 msgid "Names Preview"
 msgstr "Pregled imena"
 
-#: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2157
+#: ui/filebrowser/FileRenamer.cpp:75 ui/preferences/Preferences.cpp:2158
 msgid "Pattern"
 msgstr "Obrazac"
 
@@ -1404,12 +1404,12 @@ msgstr "Zastavice obrasca"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:129
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:67
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:123
-#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1772
+#: ui/mediaviewer/audiocd/AudioCdPanel.cpp:360 ui/player/PlayList.cpp:1771
 msgid "Album Artist"
 msgstr "Umetnik albuma"
 
 #: ui/filebrowser/FileRenamer.cpp:86 ui/preferences/Preferences.cpp:910
-#: ui/preferences/Preferences.cpp:3311
+#: ui/preferences/Preferences.cpp:3312
 msgid "or"
 msgstr "ili"
 
@@ -1427,7 +1427,7 @@ msgstr "Vidi sistemske fajlove"
 #: ui/mediaviewer/library/AAListBox.cpp:133
 #: ui/mediaviewer/library/SoListBox.cpp:447
 #: ui/mediaviewer/library/AlListBox.cpp:247
-#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1690
+#: ui/mediaviewer/treeview/TreePanel.cpp:335 ui/player/PlayList.cpp:1689
 msgid "Add commands in preferences"
 msgstr "Dodaj komande u podešavanjima"
 
@@ -1438,7 +1438,7 @@ msgstr "Dodaj komande u podešavanjima"
 #: ui/mediaviewer/library/SoListBox.cpp:450
 #: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/treeview/TreePanel.cpp:339 ui/preferences/Preferences.cpp:275
-#: ui/preferences/Preferences.cpp:1968 ui/player/PlayList.cpp:1693
+#: ui/preferences/Preferences.cpp:1969 ui/player/PlayList.cpp:1692
 msgid "Commands"
 msgstr "Komande"
 
@@ -1737,7 +1737,7 @@ msgstr "Obriši izabrani fajl"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2507
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1437
 #: ui/mediaviewer/treeview/TreePanel.cpp:1137
-#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2124
+#: ui/mediaviewer/treeview/TreePanel.cpp:1407 ui/player/PlayList.cpp:2123
 msgid "UnNamed"
 msgstr "Neimenovano"
 
@@ -1777,7 +1777,7 @@ msgstr "Pauza"
 msgid "Play current playlist"
 msgstr "Pusti trenutnu listu"
 
-#: ui/taskbar/TaskBar.cpp:124 ui/MainFrame.cpp:1439
+#: ui/taskbar/TaskBar.cpp:124 ui/MainFrame.cpp:1490
 msgid "Next Track"
 msgstr "Sledeća numera"
 
@@ -1785,7 +1785,7 @@ msgstr "Sledeća numera"
 msgid "Skip to next track in current playlist"
 msgstr "Preskoči na sledeću numeru u trenutnoj listi"
 
-#: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1448
+#: ui/taskbar/TaskBar.cpp:128 ui/MainFrame.cpp:1499
 msgid "Next Album"
 msgstr "Sledeći album"
 
@@ -1809,33 +1809,33 @@ msgstr "Prethodni album"
 msgid "Skip to previous album track in current playlist"
 msgstr "Preskoči na prethodnu numeru iz albuma u trenutnoj listi"
 
-#: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1484
-#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1738
+#: ui/taskbar/TaskBar.cpp:145 ui/MainFrame.cpp:1535
+#: ui/mediaviewer/library/SoListBox.cpp:598 ui/player/PlayList.cpp:1737
 msgid "Set the rating to 0"
 msgstr "Postavi ocenu na 0"
 
-#: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1489
-#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1740
+#: ui/taskbar/TaskBar.cpp:148 ui/MainFrame.cpp:1540
+#: ui/mediaviewer/library/SoListBox.cpp:603 ui/player/PlayList.cpp:1739
 msgid "Set the rating to 1"
 msgstr "Postavi ocenu na 1"
 
-#: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1494
-#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1742
+#: ui/taskbar/TaskBar.cpp:151 ui/MainFrame.cpp:1545
+#: ui/mediaviewer/library/SoListBox.cpp:608 ui/player/PlayList.cpp:1741
 msgid "Set the rating to 2"
 msgstr "Postavi ocenu na 2"
 
-#: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1499
-#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1744
+#: ui/taskbar/TaskBar.cpp:154 ui/MainFrame.cpp:1550
+#: ui/mediaviewer/library/SoListBox.cpp:613 ui/player/PlayList.cpp:1743
 msgid "Set the rating to 3"
 msgstr "Postavi ocenu na 3"
 
-#: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1504
-#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1746
+#: ui/taskbar/TaskBar.cpp:157 ui/MainFrame.cpp:1555
+#: ui/mediaviewer/library/SoListBox.cpp:618 ui/player/PlayList.cpp:1745
 msgid "Set the rating to 4"
 msgstr "Postavi ocenu na 4"
 
-#: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1509
-#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1748
+#: ui/taskbar/TaskBar.cpp:160 ui/MainFrame.cpp:1560
+#: ui/mediaviewer/library/SoListBox.cpp:623 ui/player/PlayList.cpp:1747
 msgid "Set the rating to 5"
 msgstr "Postavi ocenu na 5"
 
@@ -1847,7 +1847,7 @@ msgstr "Oceni trenutnu numeru"
 msgid "&Smart Play"
 msgstr "&Pametno puštanje"
 
-#: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1518
+#: ui/taskbar/TaskBar.cpp:167 ui/MainFrame.cpp:1569
 msgid "Update playlist based on Last.fm statics"
 msgstr "Ažuriraj listu po statistici na Last.fm"
 
@@ -1855,7 +1855,7 @@ msgstr "Ažuriraj listu po statistici na Last.fm"
 msgid "Repeat the &Playlist"
 msgstr "&Ponavljaj listu"
 
-#: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1528
+#: ui/taskbar/TaskBar.cpp:171 ui/MainFrame.cpp:1579
 msgid "Repeat the tracks in the playlist"
 msgstr "Ponavljaj numere u listi"
 
@@ -1863,7 +1863,7 @@ msgstr "Ponavljaj numere u listi"
 msgid "Repeat &Track"
 msgstr "&Ponavljaj numeru"
 
-#: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1534
+#: ui/taskbar/TaskBar.cpp:175 ui/MainFrame.cpp:1585
 msgid "Repeat the current track in the playlist"
 msgstr "Ponavljaj trenutnu numeru u listi"
 
@@ -1871,17 +1871,17 @@ msgstr "Ponavljaj trenutnu numeru u listi"
 msgid "Shu&ffle"
 msgstr "&Pomešaj"
 
-#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1524
+#: ui/taskbar/TaskBar.cpp:179 ui/MainFrame.cpp:1575
 #: ui/mediaviewer/playlists/PLSoListBox.cpp:163 ui/player/PlayList.cpp:100
-#: ui/player/PlayList.cpp:1818
+#: ui/player/PlayList.cpp:1817
 msgid "Shuffle the tracks in the playlist"
 msgstr "Meša numere u listi"
 
-#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1553
+#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1604
 msgid "Force &Gapless Mode"
 msgstr "Prisili mod bez pauze"
 
-#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1554
+#: ui/taskbar/TaskBar.cpp:185 ui/MainFrame.cpp:1605
 msgid "Set playback in gapless mode"
 msgstr "Postavi reprodukciju bez pauze između pesama"
 
@@ -1889,7 +1889,7 @@ msgstr "Postavi reprodukciju bez pauze između pesama"
 msgid "Audioscrobbling"
 msgstr "Skroblujem"
 
-#: ui/taskbar/TaskBar.cpp:189 ui/MainFrame.cpp:1560
+#: ui/taskbar/TaskBar.cpp:189 ui/MainFrame.cpp:1611
 msgid "Send played tracks information"
 msgstr "Pošalji informacije o puštanim numerama"
 
@@ -1907,12 +1907,12 @@ msgstr "Dobrodošli u Guayadeque"
 
 #: ui/MainFrame.cpp:164 ui/MainFrame.cpp:392
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55
-#: ui/preferences/Preferences.cpp:1533
+#: ui/preferences/Preferences.cpp:1534
 msgid "Filters"
 msgstr "Filtri"
 
-#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:394 ui/MainFrame.cpp:2024
-#: ui/MainFrame.cpp:2732 ui/MainFrame.cpp:2749 ui/radios/RadioPanel.cpp:315
+#: ui/MainFrame.cpp:211 ui/MainFrame.cpp:394 ui/MainFrame.cpp:2075
+#: ui/MainFrame.cpp:2783 ui/MainFrame.cpp:2800 ui/radios/RadioPanel.cpp:315
 #: ui/player/PlayList.cpp:230
 msgid "Now Playing"
 msgstr "Sada pušteno"
@@ -1921,60 +1921,60 @@ msgstr "Sada pušteno"
 msgid "My Music"
 msgstr "Moja muzika"
 
-#: ui/MainFrame.cpp:390 ui/MainFrame.cpp:1346 ui/MainFrame.cpp:4060
+#: ui/MainFrame.cpp:390 ui/MainFrame.cpp:1397 ui/MainFrame.cpp:4111
 msgid "VU Meters"
 msgstr "VU metri"
 
-#: ui/MainFrame.cpp:949
+#: ui/MainFrame.cpp:1000
 msgid "New Collection"
 msgstr "Nova kolekcija"
 
-#: ui/MainFrame.cpp:949
+#: ui/MainFrame.cpp:1000
 msgid "Create a new collection"
 msgstr "Kreiraj novu kolekciju"
 
-#: ui/MainFrame.cpp:998
+#: ui/MainFrame.cpp:1049
 msgid "Update the radio stations"
 msgstr "Ažuriraj radio stanice"
 
-#: ui/MainFrame.cpp:1009 ui/MainFrame.cpp:2456
+#: ui/MainFrame.cpp:1060 ui/MainFrame.cpp:2507
 msgid "Radio"
 msgstr "Radio"
 
-#: ui/MainFrame.cpp:1009
+#: ui/MainFrame.cpp:1060
 msgid "Set the radio visible panels"
 msgstr "Postavi vidljive panele radija"
 
-#: ui/MainFrame.cpp:1046
+#: ui/MainFrame.cpp:1097
 msgid "Set the podcasts visible panels"
 msgstr "Postavke vidljivih panela podemisija"
 
-#: ui/MainFrame.cpp:1058
+#: ui/MainFrame.cpp:1109
 msgid "Play a online music stream"
 msgstr "Pusti on-lajn muzički tok"
 
-#: ui/MainFrame.cpp:1063
+#: ui/MainFrame.cpp:1114
 #, fuzzy
 msgid "View the audio cd panel"
 msgstr "Prikaži/sakrij radio panel"
 
-#: ui/MainFrame.cpp:1094
+#: ui/MainFrame.cpp:1145
 msgid "Show the selected portable devices"
 msgstr "Prikaži izabrane prenosne uređaje"
 
-#: ui/MainFrame.cpp:1101
+#: ui/MainFrame.cpp:1152
 msgid "No Device Found"
 msgstr "Uređaj nije pronađen"
 
-#: ui/MainFrame.cpp:1101
+#: ui/MainFrame.cpp:1152
 msgid "No portable device was detected"
 msgstr "Nije detektovan prenosni uređaj"
 
-#: ui/MainFrame.cpp:1111
+#: ui/MainFrame.cpp:1162
 msgid "Exits the application"
 msgstr "Izlazi iz aplikacije"
 
-#: ui/MainFrame.cpp:1221 ui/mediaviewer/library/LibPanel.cpp:336
+#: ui/MainFrame.cpp:1272 ui/mediaviewer/library/LibPanel.cpp:336
 #: ui/mediaviewer/library/LibPanel.cpp:343
 #: ui/mediaviewer/library/LibPanel.cpp:573
 #: ui/mediaviewer/library/SoListBox.cpp:70
@@ -1984,290 +1984,290 @@ msgstr "Izlazi iz aplikacije"
 msgid "Plays"
 msgstr "Puštanja"
 
-#: ui/MainFrame.cpp:1312
+#: ui/MainFrame.cpp:1363
 msgid "Saves the current layout"
 msgstr "Čuva trenutni raspored"
 
-#: ui/MainFrame.cpp:1322
+#: ui/MainFrame.cpp:1373
 msgid "Player Playlist"
 msgstr "Lista plejera"
 
-#: ui/MainFrame.cpp:1323
+#: ui/MainFrame.cpp:1374
 msgid "Show/Hide the player playlist panel"
 msgstr "Prikaži/Sakrij panel liste u plejeru"
 
-#: ui/MainFrame.cpp:1330 ui/MainFrame.cpp:1604 ui/MainFrame.cpp:4078
-#: ui/preferences/Preferences.cpp:1308
+#: ui/MainFrame.cpp:1381 ui/MainFrame.cpp:1655 ui/MainFrame.cpp:4129
+#: ui/preferences/Preferences.cpp:1309
 msgid "Sources"
 msgstr "Izvori"
 
-#: ui/MainFrame.cpp:1331
+#: ui/MainFrame.cpp:1382
 msgid "Show/Hide the locations"
 msgstr "Prikaži/Sakrij lokacije"
 
-#: ui/MainFrame.cpp:1338
+#: ui/MainFrame.cpp:1389
 msgid "Player Filters"
 msgstr "Filtri plejera"
 
-#: ui/MainFrame.cpp:1339
+#: ui/MainFrame.cpp:1390
 msgid "Show/Hide the player filters panel"
 msgstr "Prikaži/Sakrij panel filtara plejera"
 
-#: ui/MainFrame.cpp:1347
+#: ui/MainFrame.cpp:1398
 msgid "Show/Hide the player vumeter"
 msgstr "Prikaži/Sakrij plejerove VU metre"
 
-#: ui/MainFrame.cpp:1354 ui/MainFrame.cpp:4094
+#: ui/MainFrame.cpp:1405 ui/MainFrame.cpp:4145
 msgid "Cover"
 msgstr "Omot"
 
-#: ui/MainFrame.cpp:1355
+#: ui/MainFrame.cpp:1406
 msgid "Show/Hide the cover"
 msgstr "Prikaži/sakrij omot"
 
-#: ui/MainFrame.cpp:1366
+#: ui/MainFrame.cpp:1417
 msgid "Show/Hide the file browser panel"
 msgstr "Prikaži/sakrij panel pregledača fajlova"
 
-#: ui/MainFrame.cpp:1373 ui/MainFrame.cpp:2556
+#: ui/MainFrame.cpp:1424 ui/MainFrame.cpp:2607
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ui/MainFrame.cpp:1374
+#: ui/MainFrame.cpp:1425
 msgid "Show/Hide the Last.fm panel"
 msgstr "Prikaži/Sakrij Last.fm panel"
 
-#: ui/MainFrame.cpp:1382
+#: ui/MainFrame.cpp:1433
 msgid "Show/Hide the lyrics panel"
 msgstr "Prikaži/Sakrij panel tekstova"
 
-#: ui/MainFrame.cpp:1392
+#: ui/MainFrame.cpp:1443
 msgid "Show/Restore the main window in full screen"
 msgstr "Prikaži/Povrati glavni prozor u punom ekranu"
 
-#: ui/MainFrame.cpp:1397
+#: ui/MainFrame.cpp:1448
 msgid "Statusbar"
 msgstr "Statusna traka"
 
-#: ui/MainFrame.cpp:1398
+#: ui/MainFrame.cpp:1449
 msgid "Show/Hide the statusbar"
 msgstr "Prikaži/sakrij statusnu traku"
 
-#: ui/MainFrame.cpp:1403
+#: ui/MainFrame.cpp:1454
 msgid "Show Captions"
 msgstr "Prikaži natpise"
 
-#: ui/MainFrame.cpp:1404
+#: ui/MainFrame.cpp:1455
 msgid "Show/Hide the windows caption"
 msgstr "Prikaži/Sakrij natpise nad prozorima"
 
-#: ui/MainFrame.cpp:1411
+#: ui/MainFrame.cpp:1462
 msgid "Close Current Tab"
 msgstr "Zatvori trenutni jezičak"
 
-#: ui/MainFrame.cpp:1412
+#: ui/MainFrame.cpp:1463
 msgid "Close the current selected tab"
 msgstr "Zatvori izabrani jezičak"
 
-#: ui/MainFrame.cpp:1419
+#: ui/MainFrame.cpp:1470
 msgid "View the preferences"
 msgstr "Prikaži podešavanja"
 
-#: ui/MainFrame.cpp:1429
+#: ui/MainFrame.cpp:1480
 msgid "Load Layout"
 msgstr "Učitaj raspored"
 
-#: ui/MainFrame.cpp:1429
+#: ui/MainFrame.cpp:1480
 msgid "Set current view from a user defined layout"
 msgstr "Postavi trenutni izgled na osnovu korisnikovog def. rasporeda"
 
-#: ui/MainFrame.cpp:1430
+#: ui/MainFrame.cpp:1481
 msgid "Delete Layout"
 msgstr "Obriši raspored"
 
-#: ui/MainFrame.cpp:1430
+#: ui/MainFrame.cpp:1481
 msgid "Delete a user defined layout"
 msgstr "Obriši raspored definisan od korisnika"
 
-#: ui/MainFrame.cpp:1440
+#: ui/MainFrame.cpp:1491
 msgid "Play the next track in the playlist"
 msgstr "Pusti sledeću numeru iz liste"
 
-#: ui/MainFrame.cpp:1443
+#: ui/MainFrame.cpp:1494
 msgid "Prev. Track"
 msgstr "Prethodna numera"
 
-#: ui/MainFrame.cpp:1444
+#: ui/MainFrame.cpp:1495
 msgid "Play the previous track in the playlist"
 msgstr "Pusti prethodnu numeru u listi"
 
-#: ui/MainFrame.cpp:1449
+#: ui/MainFrame.cpp:1500
 msgid "Play the next album in the playlist"
 msgstr "Pusti sledeći album iz liste"
 
-#: ui/MainFrame.cpp:1453
+#: ui/MainFrame.cpp:1504
 msgid "Prev. Album"
 msgstr "Prethodni album"
 
-#: ui/MainFrame.cpp:1454
+#: ui/MainFrame.cpp:1505
 msgid "Play the previous album in the playlist"
 msgstr "Pusti prethodni album u listi"
 
-#: ui/MainFrame.cpp:1461
+#: ui/MainFrame.cpp:1512
 msgid "Play or Pause the current track in the playlist"
 msgstr "Pusti ili pauziraj trenutnu numeru u listi"
 
-#: ui/MainFrame.cpp:1465
+#: ui/MainFrame.cpp:1516
 msgid "Stop the current played track"
 msgstr "Zaustavi trenutno puštenu numeru"
 
-#: ui/MainFrame.cpp:1470
+#: ui/MainFrame.cpp:1521
 msgid "Stop after current playing or selected track"
 msgstr "Zaustavi nakon trenutne ili izabrane numere"
 
-#: ui/MainFrame.cpp:1477
+#: ui/MainFrame.cpp:1528
 msgid "Clear the now playing playlist"
 msgstr "Očisti trenutno puštenu listu"
 
-#: ui/MainFrame.cpp:1512 ui/mediaviewer/library/SoListBox.cpp:626
-#: ui/player/PlayList.cpp:1751
+#: ui/MainFrame.cpp:1563 ui/mediaviewer/library/SoListBox.cpp:626
+#: ui/player/PlayList.cpp:1750
 msgid "Set Rating"
 msgstr "Oceni"
 
-#: ui/MainFrame.cpp:1512
+#: ui/MainFrame.cpp:1563
 msgid "Set the rating of the current track"
 msgstr "Oceni trenutnu numeru"
 
-#: ui/MainFrame.cpp:1527
+#: ui/MainFrame.cpp:1578
 msgid "Repeat the Playlist"
 msgstr "Ponavljaj listu"
 
-#: ui/MainFrame.cpp:1533
+#: ui/MainFrame.cpp:1584
 msgid "Repeat Track"
 msgstr "Ponavljaj numeru"
 
-#: ui/MainFrame.cpp:1542
+#: ui/MainFrame.cpp:1593
 msgid "Increment the volume level"
 msgstr "Podigni nivo zvuka"
 
-#: ui/MainFrame.cpp:1547
+#: ui/MainFrame.cpp:1598
 msgid "Decrement the volume level"
 msgstr "Snizi nivo zvuka"
 
-#: ui/MainFrame.cpp:1559 ui/preferences/Preferences.cpp:245
+#: ui/MainFrame.cpp:1610 ui/preferences/Preferences.cpp:245
 msgid "Audioscrobble"
 msgstr "Skroblovanje"
 
-#: ui/MainFrame.cpp:1577
+#: ui/MainFrame.cpp:1628
 msgid "Get help using guayadeque"
 msgstr "Pomoć pri korišćenju Guayadeque"
 
-#: ui/MainFrame.cpp:1587
+#: ui/MainFrame.cpp:1638
 msgid "About"
 msgstr "O programu"
 
-#: ui/MainFrame.cpp:1588
+#: ui/MainFrame.cpp:1639
 msgid "Show information about guayadeque music player"
 msgstr "Prikaži informacije o guayadeque muzičkom plejeru"
 
-#: ui/MainFrame.cpp:1609
+#: ui/MainFrame.cpp:1660
 msgid "View"
 msgstr "Pregled"
 
-#: ui/MainFrame.cpp:1614
+#: ui/MainFrame.cpp:1665
 msgid "Controls"
 msgstr "Kontrole"
 
-#: ui/MainFrame.cpp:1887
+#: ui/MainFrame.cpp:1938
 msgid "Stream:"
 msgstr "Tok:"
 
-#: ui/MainFrame.cpp:2059
+#: ui/MainFrame.cpp:2110
 msgid "Select destination directory"
 msgstr "Izaberi ciljnu fasciklu"
 
-#: ui/MainFrame.cpp:2074 ui/MainFrame.cpp:2110 ui/MainFrame.cpp:2153
-#: ui/MainFrame.cpp:2186 ui/MainFrame.cpp:4247
+#: ui/MainFrame.cpp:2125 ui/MainFrame.cpp:2161 ui/MainFrame.cpp:2204
+#: ui/MainFrame.cpp:2237 ui/MainFrame.cpp:4298
 #: ui/preferences/Preferences.cpp:280
 msgid "Copy to"
 msgstr "Kopiraj u"
 
-#: ui/MainFrame.cpp:3086
+#: ui/MainFrame.cpp:3137
 msgid "station"
 msgstr "radio stanica"
 
-#: ui/MainFrame.cpp:3086
+#: ui/MainFrame.cpp:3137
 msgid "stations"
 msgstr "radio stanice"
 
-#: ui/MainFrame.cpp:3095
+#: ui/MainFrame.cpp:3146
 msgid "podcast"
 msgstr "podemisija"
 
-#: ui/MainFrame.cpp:3095
+#: ui/MainFrame.cpp:3146
 msgid "podcasts"
 msgstr "podemisije"
 
-#: ui/MainFrame.cpp:3110
+#: ui/MainFrame.cpp:3161
 msgid "dir"
 msgstr "fascikle"
 
-#: ui/MainFrame.cpp:3110
+#: ui/MainFrame.cpp:3161
 msgid "dirs"
 msgstr "fascikle"
 
-#: ui/MainFrame.cpp:3112
+#: ui/MainFrame.cpp:3163
 msgid "file"
 msgstr "fajl"
 
-#: ui/MainFrame.cpp:3112
+#: ui/MainFrame.cpp:3163
 msgid "files"
 msgstr "fajlovi"
 
-#: ui/MainFrame.cpp:3127 ui/mediaviewer/MediaViewer.cpp:1317
+#: ui/MainFrame.cpp:3178 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326
 #: ui/preferences/Preferences.cpp:804
 msgid "track"
 msgstr "numera"
 
-#: ui/MainFrame.cpp:3127 ui/mediaviewer/MediaViewer.cpp:1317
+#: ui/MainFrame.cpp:3178 ui/mediaviewer/MediaViewer.cpp:1317
 #: ui/mediaviewer/MediaViewer.cpp:1336 ui/mediaviewer/MediaViewer.cpp:1351
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326
 #: ui/preferences/Preferences.cpp:918
 msgid "tracks"
 msgstr "numera"
 
-#: ui/MainFrame.cpp:3494 ui/MainFrame.cpp:3500 ui/MainFrame.cpp:3503
+#: ui/MainFrame.cpp:3545 ui/MainFrame.cpp:3551 ui/MainFrame.cpp:3554
 msgid "Load this user defined layout"
 msgstr "Učitaj ovaj raspored definisan od korisnika"
 
-#: ui/MainFrame.cpp:3495
+#: ui/MainFrame.cpp:3546
 msgid "Delete this user defined layout"
 msgstr "Obriši ovaj raspored definisan od korisnika"
 
-#: ui/MainFrame.cpp:3500 ui/MainFrame.cpp:3503
+#: ui/MainFrame.cpp:3551 ui/MainFrame.cpp:3554
 msgid "No Layouts Defined"
 msgstr "Nema definisanih rasporeda"
 
-#: ui/MainFrame.cpp:3595
+#: ui/MainFrame.cpp:3646
 msgid "Layout:"
 msgstr "Raspored"
 
-#: ui/MainFrame.cpp:3595
+#: ui/MainFrame.cpp:3646
 #, fuzzy, c-format
 msgid "Layout %lu"
 msgstr "Raspored %u"
 
-#: ui/MainFrame.cpp:4214 ui/MainFrame.cpp:4235
+#: ui/MainFrame.cpp:4265 ui/MainFrame.cpp:4286
 msgid "Copy the current selected songs to a directory or device"
 msgstr "Kopiraj izabranu pesmu u fasciklu ili na uređaj"
 
-#: ui/MainFrame.cpp:4244
+#: ui/MainFrame.cpp:4295
 msgid "Add 'Copy to' patterns in preferences"
 msgstr "Dodaj 'Kopiraj u' šablon u podešavanjima"
 
-#: ui/MainFrame.cpp:4247
+#: ui/MainFrame.cpp:4298
 msgid "Copy the selected tracks to a folder or device"
 msgstr "Kopiraj izabrane numere u fasciklu ili na uređaj"
 
@@ -2295,7 +2295,7 @@ msgstr "Dodaj selektovane numere u listu"
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:374
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1967
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2102
-#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1721
+#: ui/mediaviewer/treeview/TreePanel.cpp:433 ui/player/PlayList.cpp:1720
 msgid "Edit Songs"
 msgstr "Izmeni pesmu"
 
@@ -2332,7 +2332,7 @@ msgstr "Da li si siguran da želiš da obrišeš izabrani omot albuma?"
 #: ui/mediaviewer/library/LibPanel.cpp:1406
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2180
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1330
-#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2272
+#: ui/mediaviewer/treeview/TreePanel.cpp:1302 ui/player/PlayList.cpp:2271
 msgid "Tracks Labels Editor"
 msgstr "Uređivač etiketa numera"
 
@@ -2345,7 +2345,7 @@ msgstr "Uređivač polja"
 
 #: ui/mediaviewer/library/LibPanel.cpp:2790
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1819
-#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1996
+#: ui/mediaviewer/treeview/TreePanel.cpp:1759 ui/player/PlayList.cpp:1995
 msgid ""
 "Are you sure to delete the selected tracks from your drive?\n"
 "This will permanently erase the selected tracks."
@@ -2355,7 +2355,7 @@ msgstr ""
 
 #: ui/mediaviewer/library/LibPanel.cpp:2791
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1820
-#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1997
+#: ui/mediaviewer/treeview/TreePanel.cpp:1760 ui/player/PlayList.cpp:1996
 msgid "Remove tracks from drive"
 msgstr "Obriši numere sa diska"
 
@@ -2385,7 +2385,7 @@ msgstr "Dodaj izabrani album iza"
 #: ui/mediaviewer/library/RaListBox.cpp:198
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2111
 #: ui/mediaviewer/treeview/TreePanel.cpp:443
-#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1803
+#: ui/lastfmpanel/LastFMPanel.cpp:2962 ui/player/PlayList.cpp:1802
 msgid "Save the selected tracks to playlist"
 msgstr "Sačuvaj izabrane numere u listu"
 
@@ -2404,7 +2404,7 @@ msgstr "Izmeni pesmu izabranog izvođača"
 #: ui/mediaviewer/library/ArListBox.cpp:218
 #: ui/mediaviewer/library/AAListBox.cpp:209
 #: ui/mediaviewer/library/SoListBox.cpp:641
-#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1811
+#: ui/mediaviewer/library/AlListBox.cpp:342 ui/player/PlayList.cpp:1810
 #, fuzzy
 msgid "Create Best of Playlist"
 msgstr "Kreiraj pametnu listu"
@@ -2412,7 +2412,7 @@ msgstr "Kreiraj pametnu listu"
 #: ui/mediaviewer/library/ArListBox.cpp:219
 #: ui/mediaviewer/library/AAListBox.cpp:210
 #: ui/mediaviewer/library/SoListBox.cpp:641
-#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1811
+#: ui/mediaviewer/library/AlListBox.cpp:343 ui/player/PlayList.cpp:1810
 #, fuzzy
 msgid "Create a playlist with the best of this artist"
 msgstr "Kreiraj pametnu listu od ovih numera"
@@ -2540,7 +2540,7 @@ msgstr "Dodaj izabrane pesme u listu"
 msgid "Selects the genre of the current song"
 msgstr "Bira žanr trenutne pesme"
 
-#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1769
+#: ui/mediaviewer/library/SoListBox.cpp:557 ui/player/PlayList.cpp:1768
 msgid "Selects the artist of the current song"
 msgstr "Bira izvođača trenutne pesme"
 
@@ -2552,11 +2552,11 @@ msgstr "Bira umetnika albuma trenutne numere"
 msgid "Selects the composer of the current song"
 msgstr "Bira kompozitora trenutne pesme"
 
-#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1778
+#: ui/mediaviewer/library/SoListBox.cpp:569 ui/player/PlayList.cpp:1777
 msgid "Select the album of the current song"
 msgstr "Izaberi album trenutne pesme"
 
-#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1787
+#: ui/mediaviewer/library/SoListBox.cpp:572 ui/player/PlayList.cpp:1786
 msgid "Search in the library"
 msgstr "Traži u biblioteci"
 
@@ -2568,7 +2568,7 @@ msgstr "Izmeni etikete dodeljene izabranim pesmama"
 msgid "Edit the songs selected"
 msgstr "Izmeni izabrane pesme"
 
-#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1751
+#: ui/mediaviewer/library/SoListBox.cpp:626 ui/player/PlayList.cpp:1750
 msgid "Set the current selected tracks rating"
 msgstr "Oceni trenutno izabranu numeru"
 
@@ -2578,17 +2578,17 @@ msgstr "Sačuvaj sve izabrane numere kao listu"
 
 #: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1809
+#: ui/player/PlayList.cpp:1808
 msgid "Create Smart Playlist"
 msgstr "Kreiraj pametnu listu"
 
 #: ui/mediaviewer/library/SoListBox.cpp:639
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:2115
-#: ui/player/PlayList.cpp:1809
+#: ui/player/PlayList.cpp:1808
 msgid "Create a smart playlist from this track"
 msgstr "Kreiraj pametnu listu od ovih numera"
 
-#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1839
+#: ui/mediaviewer/library/SoListBox.cpp:649 ui/player/PlayList.cpp:1838
 msgid "Remove from Library"
 msgstr "Ukloni iz biblioteke"
 
@@ -2596,7 +2596,7 @@ msgstr "Ukloni iz biblioteke"
 msgid "Remove the current selected tracks from library"
 msgstr "Ukloni izabrane numere iz biblioteke"
 
-#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1845
+#: ui/mediaviewer/library/SoListBox.cpp:654 ui/player/PlayList.cpp:1844
 msgid "Delete from Drive"
 msgstr "Obriši sa diska"
 
@@ -2769,12 +2769,12 @@ msgstr "Izmeni trenutno izabrani filtar"
 msgid "New Filter"
 msgstr "Novi filtar"
 
-#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2690
-#: ui/preferences/Preferences.cpp:2710
+#: ui/mediaviewer/MediaViewer.cpp:947 ui/preferences/Preferences.cpp:2691
+#: ui/preferences/Preferences.cpp:2711
 msgid "Collection"
 msgstr "Kolekcija"
 
-#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2841
+#: ui/mediaviewer/MediaViewer.cpp:1109 ui/preferences/Preferences.cpp:2842
 msgid "Select library path"
 msgstr "Izaberi putanju biblioteke"
 
@@ -2918,7 +2918,7 @@ msgid "Portable Media Properties"
 msgstr "Svojstva prenosnih medija"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:693
-#: ui/preferences/Preferences.cpp:2182
+#: ui/preferences/Preferences.cpp:2183
 msgid "Path:"
 msgstr "Putanja:"
 
@@ -2960,7 +2960,7 @@ msgid "always"
 msgstr "uvek"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:801
-#: ui/preferences/Preferences.cpp:1149
+#: ui/preferences/Preferences.cpp:1150
 msgid "Quality:"
 msgstr "Kvalitet"
 
@@ -3025,7 +3025,7 @@ msgstr "Gde:"
 msgid "Beginning"
 msgstr "Počinje"
 
-#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1831
+#: ui/mediaviewer/playlists/PLSoListBox.cpp:170 ui/player/PlayList.cpp:1830
 msgid "Remove from Playlist"
 msgstr "Ukloni sa liste"
 
@@ -3266,7 +3266,7 @@ msgid "Destination Folder:"
 msgstr "Odredišna fascikla:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:121
-#: ui/preferences/Preferences.cpp:1123
+#: ui/preferences/Preferences.cpp:1124
 msgid "Select a folder"
 msgstr "Izaberi fasciklu"
 
@@ -3723,7 +3723,7 @@ msgid "Other:"
 msgstr "Drugo:"
 
 #: ui/preferences/Preferences.cpp:128 ui/preferences/Preferences.cpp:188
-#: ui/preferences/Preferences.cpp:2327
+#: ui/preferences/Preferences.cpp:2328
 msgid "Default"
 msgstr "Podrazumevano"
 
@@ -3852,11 +3852,11 @@ msgstr "Kolekcije"
 msgid "Playback"
 msgstr "Reprodukcija"
 
-#: ui/preferences/Preferences.cpp:235 ui/preferences/Preferences.cpp:1019
+#: ui/preferences/Preferences.cpp:235 ui/preferences/Preferences.cpp:1020
 msgid "Crossfader"
 msgstr "Pretapanje"
 
-#: ui/preferences/Preferences.cpp:240 ui/preferences/Preferences.cpp:1111
+#: ui/preferences/Preferences.cpp:240 ui/preferences/Preferences.cpp:1112
 msgid "Record"
 msgstr "Snimi"
 
@@ -3864,7 +3864,7 @@ msgstr "Snimi"
 msgid "Online"
 msgstr "Onlajn"
 
-#: ui/preferences/Preferences.cpp:270 ui/preferences/Preferences.cpp:1850
+#: ui/preferences/Preferences.cpp:270 ui/preferences/Preferences.cpp:1851
 #: onlinelinks/OnlineLinks.cpp:71
 msgid "Links"
 msgstr "Veze"
@@ -3881,8 +3881,8 @@ msgstr "Prihvati"
 msgid "On Start"
 msgstr "Pri startu"
 
-#: ui/preferences/Preferences.cpp:442 ui/preferences/Preferences.cpp:1551
-#: ui/preferences/Preferences.cpp:1553
+#: ui/preferences/Preferences.cpp:442 ui/preferences/Preferences.cpp:1552
+#: ui/preferences/Preferences.cpp:1554
 msgid "Language"
 msgstr "Jezik"
 
@@ -3972,7 +3972,7 @@ msgstr "Putanje"
 msgid "Words to detect covers"
 msgstr "Reči za detekciju omota"
 
-#: ui/preferences/Preferences.cpp:691 ui/preferences/Preferences.cpp:2143
+#: ui/preferences/Preferences.cpp:691 ui/preferences/Preferences.cpp:2144
 msgid "Options"
 msgstr "Opcije"
 
@@ -4057,7 +4057,7 @@ msgstr "Numere koje se dodaju svaki put"
 msgid "Max played tracks kept in playlist"
 msgstr "Maksimalni broj puštanih numera u listi"
 
-#: ui/preferences/Preferences.cpp:901 ui/preferences/Preferences.cpp:3310
+#: ui/preferences/Preferences.cpp:901 ui/preferences/Preferences.cpp:3311
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
@@ -4065,7 +4065,7 @@ msgstr[0] "Ne ponavljaj poslednje"
 msgstr[1] "Ne ponavljaj poslednje"
 msgstr[2] "Ne ponavljaj poslednje"
 
-#: ui/preferences/Preferences.cpp:910 ui/preferences/Preferences.cpp:3311
+#: ui/preferences/Preferences.cpp:910 ui/preferences/Preferences.cpp:3312
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
@@ -4085,7 +4085,7 @@ msgstr "Preskoči na"
 msgid "In the last"
 msgstr "U poslednjih"
 
-#: ui/preferences/Preferences.cpp:960 ui/preferences/Preferences.cpp:1187
+#: ui/preferences/Preferences.cpp:960 ui/preferences/Preferences.cpp:1188
 msgid "seconds"
 msgstr "sekundi"
 
@@ -4101,244 +4101,244 @@ msgstr "Automatski"
 msgid "GConf Defined"
 msgstr "GConf definisan"
 
-#: ui/preferences/Preferences.cpp:1026
+#: ui/preferences/Preferences.cpp:1027
 msgid "Fade-out length:"
 msgstr "Dužina utapanja:"
 
-#: ui/preferences/Preferences.cpp:1035
+#: ui/preferences/Preferences.cpp:1036
 msgid "Select the length of the fade out. 0 for gapless playback"
 msgstr "Izaberi dužinu utapanja. 0 je za reprodukciju bez pauze"
 
-#: ui/preferences/Preferences.cpp:1038
+#: ui/preferences/Preferences.cpp:1039
 msgid "Fade-in length:"
 msgstr "Dužina izranjanja:"
 
-#: ui/preferences/Preferences.cpp:1047
+#: ui/preferences/Preferences.cpp:1048
 msgid "Select the length of the fade in"
 msgstr "Izaberi dužinu izranjanja"
 
-#: ui/preferences/Preferences.cpp:1050
+#: ui/preferences/Preferences.cpp:1051
 msgid "Fade-in volume:"
 msgstr "Jačina zvuka izranjanja:"
 
-#: ui/preferences/Preferences.cpp:1059
+#: ui/preferences/Preferences.cpp:1060
 msgid "Select the initial volume of the fade in"
 msgstr "Izaberi inicijalnu jačinu zvuka izranjanja"
 
-#: ui/preferences/Preferences.cpp:1062
+#: ui/preferences/Preferences.cpp:1063
 msgid "Fade-in start:"
 msgstr "Početak izranjanja:"
 
-#: ui/preferences/Preferences.cpp:1071
+#: ui/preferences/Preferences.cpp:1072
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Izaberi pri kojoj jačini zvuka uranjanja će početi izranjanje"
 
-#: ui/preferences/Preferences.cpp:1113
+#: ui/preferences/Preferences.cpp:1114
 msgid "Enable recording"
 msgstr "Omogući snimanje"
 
-#: ui/preferences/Preferences.cpp:1119
+#: ui/preferences/Preferences.cpp:1120
 msgid "Save to:"
 msgstr "Sačuvaj u:"
 
-#: ui/preferences/Preferences.cpp:1137 ui/preferences/Preferences.cpp:2164
+#: ui/preferences/Preferences.cpp:1138 ui/preferences/Preferences.cpp:2165
 msgid "Format:"
 msgstr "Format:"
 
-#: ui/preferences/Preferences.cpp:1154 copyto/Transcode.cpp:322
+#: ui/preferences/Preferences.cpp:1155 copyto/Transcode.cpp:322
 msgid "Very High"
 msgstr "Vrlo visoko"
 
-#: ui/preferences/Preferences.cpp:1155 copyto/Transcode.cpp:323
+#: ui/preferences/Preferences.cpp:1156 copyto/Transcode.cpp:323
 msgid "High"
 msgstr "Visoko"
 
-#: ui/preferences/Preferences.cpp:1156 copyto/Transcode.cpp:326
+#: ui/preferences/Preferences.cpp:1157 copyto/Transcode.cpp:326
 msgid "Normal"
 msgstr "Normalno"
 
-#: ui/preferences/Preferences.cpp:1157 copyto/Transcode.cpp:327
+#: ui/preferences/Preferences.cpp:1158 copyto/Transcode.cpp:327
 msgid "Low"
 msgstr "Nisko"
 
-#: ui/preferences/Preferences.cpp:1158 copyto/Transcode.cpp:328
+#: ui/preferences/Preferences.cpp:1159 copyto/Transcode.cpp:328
 msgid "Very Low"
 msgstr "Vrlo nisko"
 
-#: ui/preferences/Preferences.cpp:1170
+#: ui/preferences/Preferences.cpp:1171
 msgid "Split tracks"
 msgstr "Podeli numere"
 
-#: ui/preferences/Preferences.cpp:1177
+#: ui/preferences/Preferences.cpp:1178
 msgid "Delete tracks shorter than"
 msgstr "Obriši numere kraće od"
 
-#: ui/preferences/Preferences.cpp:1216
+#: ui/preferences/Preferences.cpp:1217
 msgid "Last.fm audioscrobble"
 msgstr "Last.fm skroblovanje"
 
-#: ui/preferences/Preferences.cpp:1218 ui/preferences/Preferences.cpp:1252
+#: ui/preferences/Preferences.cpp:1219 ui/preferences/Preferences.cpp:1253
 msgid "Enabled"
 msgstr "Omogućeno"
 
-#: ui/preferences/Preferences.cpp:1226 ui/preferences/Preferences.cpp:1260
-#: ui/preferences/Preferences.cpp:1511
+#: ui/preferences/Preferences.cpp:1227 ui/preferences/Preferences.cpp:1261
+#: ui/preferences/Preferences.cpp:1512
 msgid "Username:"
 msgstr "Korisničko ime:"
 
-#: ui/preferences/Preferences.cpp:1234 ui/preferences/Preferences.cpp:1268
-#: ui/preferences/Preferences.cpp:1520
+#: ui/preferences/Preferences.cpp:1235 ui/preferences/Preferences.cpp:1269
+#: ui/preferences/Preferences.cpp:1521
 msgid "Password:"
 msgstr "Lozinka:"
 
-#: ui/preferences/Preferences.cpp:1250
+#: ui/preferences/Preferences.cpp:1251
 msgid "Libre.fm audioscrobble"
 msgstr "Libre.fm skroblovanje"
 
-#: ui/preferences/Preferences.cpp:1351
+#: ui/preferences/Preferences.cpp:1352
 msgid "Targets"
 msgstr "Odredište"
 
-#: ui/preferences/Preferences.cpp:1392
+#: ui/preferences/Preferences.cpp:1393
 #, fuzzy
 msgid "Disabled Genres"
 msgstr "Onemogućeno"
 
-#: ui/preferences/Preferences.cpp:1413 ui/preferences/Preferences.cpp:1415
+#: ui/preferences/Preferences.cpp:1414 ui/preferences/Preferences.cpp:1416
 msgid "Font"
 msgstr "Font"
 
-#: ui/preferences/Preferences.cpp:1427
+#: ui/preferences/Preferences.cpp:1428
 msgid "Align:"
 msgstr "Centriraj:"
 
-#: ui/preferences/Preferences.cpp:1433
+#: ui/preferences/Preferences.cpp:1434
 msgid "Center"
 msgstr "Centar"
 
-#: ui/preferences/Preferences.cpp:1478
+#: ui/preferences/Preferences.cpp:1479
 msgid "Proxy"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1480
+#: ui/preferences/Preferences.cpp:1481
 #, fuzzy
 msgid "Proxy Enabled"
 msgstr "Omogućeno"
 
-#: ui/preferences/Preferences.cpp:1489
+#: ui/preferences/Preferences.cpp:1490
 #, fuzzy
 msgid "Hostname:"
 msgstr "Korisničko ime:"
 
-#: ui/preferences/Preferences.cpp:1500
+#: ui/preferences/Preferences.cpp:1501
 msgid "Port:"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1568
+#: ui/preferences/Preferences.cpp:1569
 msgid "Browser command"
 msgstr "Komande pregledača"
 
-#: ui/preferences/Preferences.cpp:1576
+#: ui/preferences/Preferences.cpp:1577
 msgid "Minimum radio allowed bit rate"
 msgstr "Minimalna dozvoljena brzina u bitovima radija"
 
-#: ui/preferences/Preferences.cpp:1583
+#: ui/preferences/Preferences.cpp:1584
 msgid "Player online buffer size"
 msgstr "Veličina onlajn bafera plejera"
 
-#: ui/preferences/Preferences.cpp:1621
+#: ui/preferences/Preferences.cpp:1622
 msgid "Destination directory:"
 msgstr "Odredišna fascikla:"
 
-#: ui/preferences/Preferences.cpp:1625
+#: ui/preferences/Preferences.cpp:1626
 msgid "Select podcasts folder"
 msgstr "Izaberi fasciklu podemisija"
 
-#: ui/preferences/Preferences.cpp:1633
+#: ui/preferences/Preferences.cpp:1634
 msgid "Check every"
 msgstr "Proveri svakih"
 
-#: ui/preferences/Preferences.cpp:1638
+#: ui/preferences/Preferences.cpp:1639
 msgid "Hour"
 msgstr "Sat"
 
-#: ui/preferences/Preferences.cpp:1638
+#: ui/preferences/Preferences.cpp:1639
 msgid "Day"
 msgstr "Dan"
 
-#: ui/preferences/Preferences.cpp:1638
+#: ui/preferences/Preferences.cpp:1639
 msgid "Week"
 msgstr "Nedelja"
 
-#: ui/preferences/Preferences.cpp:1638
+#: ui/preferences/Preferences.cpp:1639
 msgid "Month"
 msgstr "Mesec"
 
-#: ui/preferences/Preferences.cpp:1649
+#: ui/preferences/Preferences.cpp:1650
 msgid "Delete after"
 msgstr "Obriši nakon"
 
-#: ui/preferences/Preferences.cpp:1658
+#: ui/preferences/Preferences.cpp:1659
 msgid "Days"
 msgstr "Dana"
 
-#: ui/preferences/Preferences.cpp:1658
+#: ui/preferences/Preferences.cpp:1659
 msgid "Weeks"
 msgstr "Nedelja"
 
-#: ui/preferences/Preferences.cpp:1658
+#: ui/preferences/Preferences.cpp:1659
 msgid "Months"
 msgstr "Meseci"
 
-#: ui/preferences/Preferences.cpp:1667
+#: ui/preferences/Preferences.cpp:1668
 msgid "Only if played"
 msgstr "Samo ako je puštano"
 
-#: ui/preferences/Preferences.cpp:1731
+#: ui/preferences/Preferences.cpp:1732
 msgid "Invert"
 msgstr "preokreni"
 
-#: ui/preferences/Preferences.cpp:1745
+#: ui/preferences/Preferences.cpp:1746
 msgid "Membership :"
 msgstr "Članstvo:"
 
-#: ui/preferences/Preferences.cpp:1752
+#: ui/preferences/Preferences.cpp:1753
 msgid "Streaming"
 msgstr "Striming"
 
-#: ui/preferences/Preferences.cpp:1753
+#: ui/preferences/Preferences.cpp:1754
 msgid "Downloading"
 msgstr "Preuzimanje"
 
-#: ui/preferences/Preferences.cpp:1766
+#: ui/preferences/Preferences.cpp:1767
 msgid "Username :"
 msgstr "Korisničko ime"
 
-#: ui/preferences/Preferences.cpp:1774
+#: ui/preferences/Preferences.cpp:1775
 msgid "Password :"
 msgstr "Lozinka:"
 
-#: ui/preferences/Preferences.cpp:1792
+#: ui/preferences/Preferences.cpp:1793
 msgid "Stream as :"
 msgstr "Strimuj kao:"
 
-#: ui/preferences/Preferences.cpp:1806
+#: ui/preferences/Preferences.cpp:1807
 msgid "Download as :"
 msgstr "Preuzmi kao:"
 
-#: ui/preferences/Preferences.cpp:1810
+#: ui/preferences/Preferences.cpp:1811
 msgid "Download Page"
 msgstr "Stranica za preuzimanje"
 
-#: ui/preferences/Preferences.cpp:1904
+#: ui/preferences/Preferences.cpp:1905
 msgid "URL:"
 msgstr "URL:"
 
-#: ui/preferences/Preferences.cpp:1929
+#: ui/preferences/Preferences.cpp:1930
 msgid "Define URLs using"
 msgstr "Definiši URL koristeći"
 
-#: ui/preferences/Preferences.cpp:1935
+#: ui/preferences/Preferences.cpp:1936
 msgid ""
 "2 letters language code\n"
 "Text to search"
@@ -4346,11 +4346,11 @@ msgstr ""
 "dvoslovni kod jezika \n"
 " tekst u pretrazi"
 
-#: ui/preferences/Preferences.cpp:2048
+#: ui/preferences/Preferences.cpp:2049
 msgid "Define commands using"
 msgstr "Definiši komande koristeći"
 
-#: ui/preferences/Preferences.cpp:2054
+#: ui/preferences/Preferences.cpp:2055
 msgid ""
 "Album path\n"
 "Album cover file path\n"
@@ -4360,19 +4360,19 @@ msgstr ""
 "Putanja omota albuma\n"
 "Putanja fajla"
 
-#: ui/preferences/Preferences.cpp:2087
+#: ui/preferences/Preferences.cpp:2088
 msgid "Patterns"
 msgstr "Šabloni"
 
-#: ui/preferences/Preferences.cpp:2198
+#: ui/preferences/Preferences.cpp:2199
 msgid "Remove source files"
 msgstr "Ukloni izvorne fajlove"
 
-#: ui/preferences/Preferences.cpp:2215
+#: ui/preferences/Preferences.cpp:2216
 msgid "Define patterns using"
 msgstr "Definiši šablon koristeći"
 
-#: ui/preferences/Preferences.cpp:2221
+#: ui/preferences/Preferences.cpp:2222
 msgid ""
 "Artist\n"
 "Album Artist\n"
@@ -4384,7 +4384,7 @@ msgstr ""
 "{aa} ili {i}\n"
 "Album"
 
-#: ui/preferences/Preferences.cpp:2229
+#: ui/preferences/Preferences.cpp:2230
 msgid ""
 "Composer\n"
 "Disk\n"
@@ -4396,7 +4396,7 @@ msgstr ""
 "Ime fajla\n"
 "Žanr"
 
-#: ui/preferences/Preferences.cpp:2237
+#: ui/preferences/Preferences.cpp:2238
 msgid ""
 "Index\n"
 "Number\n"
@@ -4408,56 +4408,56 @@ msgstr ""
 "Naslov\n"
 "Godina"
 
-#: ui/preferences/Preferences.cpp:2288
+#: ui/preferences/Preferences.cpp:2289
 msgid "Accelerators"
 msgstr "Ubrzivači"
 
-#: ui/preferences/Preferences.cpp:2293
+#: ui/preferences/Preferences.cpp:2294
 msgid "Action"
 msgstr "Akcija"
 
-#: ui/preferences/Preferences.cpp:2297
+#: ui/preferences/Preferences.cpp:2298
 msgid "Key"
 msgstr "Ključ"
 
-#: ui/preferences/Preferences.cpp:2690 ui/preferences/Preferences.cpp:2710
+#: ui/preferences/Preferences.cpp:2691 ui/preferences/Preferences.cpp:2711
 msgid "Enter the collection name"
 msgstr "Unesi ime kolekcije"
 
-#: ui/preferences/Preferences.cpp:2819
+#: ui/preferences/Preferences.cpp:2820
 msgid "Change library path"
 msgstr "Izmeni putanju biblioteke"
 
-#: ui/preferences/Preferences.cpp:2897 ui/preferences/Preferences.cpp:2917
+#: ui/preferences/Preferences.cpp:2898 ui/preferences/Preferences.cpp:2918
 msgid "Word"
 msgstr "Reč"
 
-#: ui/preferences/Preferences.cpp:2897 ui/preferences/Preferences.cpp:2917
+#: ui/preferences/Preferences.cpp:2898 ui/preferences/Preferences.cpp:2918
 msgid "Enter the text to find covers"
 msgstr "Unesi tekst za pronalazak omota"
 
-#: ui/preferences/Preferences.cpp:3237
+#: ui/preferences/Preferences.cpp:3238
 #, fuzzy
 msgid "Enter the genre to disable"
 msgstr "Unesi tekst za filtriranje"
 
-#: ui/preferences/Preferences.cpp:3438 ui/preferences/Preferences.cpp:3469
+#: ui/preferences/Preferences.cpp:3439 ui/preferences/Preferences.cpp:3470
 msgid "Filter"
 msgstr "Filtar"
 
-#: ui/preferences/Preferences.cpp:3439
+#: ui/preferences/Preferences.cpp:3440
 msgid "Enter the text to filter"
 msgstr "Unesi tekst za filtriranje"
 
-#: ui/preferences/Preferences.cpp:3469
+#: ui/preferences/Preferences.cpp:3470
 msgid "Edit the text to filter"
 msgstr "Izmeni tekst u etiketu"
 
-#: ui/preferences/Preferences.cpp:3971
+#: ui/preferences/Preferences.cpp:3972
 msgid "Select path"
 msgstr "Izaberi putanju"
 
-#: ui/preferences/Preferences.cpp:4149
+#: ui/preferences/Preferences.cpp:4150
 msgid "Key used by '"
 msgstr "Ključ korišćen od '"
 
@@ -4644,11 +4644,11 @@ msgstr "Zaustavi trenutno puštenu numeru"
 msgid "Record to file"
 msgstr "Snimi u fajl"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3102
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3103
 msgid "Enable crossfading"
 msgstr "Omogući pretapanje"
 
-#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3102
+#: ui/player/PlayerPanel.cpp:180 ui/player/PlayerPanel.cpp:3103
 msgid "Disable crossfading"
 msgstr "Onemogući pretapanje"
 
@@ -4656,7 +4656,7 @@ msgstr "Onemogući pretapanje"
 msgid "Show the equalizer (right click for on/off)"
 msgstr "Prikaži ekvilajzer"
 
-#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2776
+#: ui/player/PlayerPanel.cpp:192 ui/player/PlayerPanel.cpp:2777
 msgid "Volume"
 msgstr "Jačina zvuka"
 
@@ -4697,25 +4697,25 @@ msgstr "Prikaži bitrejt trenutne numere"
 msgid "Buffering..."
 msgstr "Učitava se..."
 
-#: ui/player/PlayerPanel.cpp:2498
+#: ui/player/PlayerPanel.cpp:2499
 msgid "Smart mode enabled"
 msgstr ""
 
-#: ui/player/PlayerPanel.cpp:2504
+#: ui/player/PlayerPanel.cpp:2505
 #, fuzzy
 msgid "Repeat all"
 msgstr "Ponavljaj numeru"
 
-#: ui/player/PlayerPanel.cpp:2509
+#: ui/player/PlayerPanel.cpp:2510
 #, fuzzy
 msgid "Repeat one"
 msgstr "Ponavljaj numeru"
 
-#: ui/player/PlayerPanel.cpp:2516
+#: ui/player/PlayerPanel.cpp:2517
 msgid "Smart mode disabled"
 msgstr ""
 
-#: ui/player/PlayList.cpp:78 ui/player/PlayList.cpp:1731
+#: ui/player/PlayList.cpp:78 ui/player/PlayList.cpp:1730
 msgid "Set as Next Track"
 msgstr "Postavi kao sledeću numeru"
 
@@ -4739,75 +4739,75 @@ msgstr "Pomeri izabrane numere da budu puštene sledeće"
 msgid "Move the selected tracks to the bottom"
 msgstr "Pomeri izabrane numere da budu puštene sledeće"
 
-#: ui/player/PlayList.cpp:104 ui/player/PlayList.cpp:1832
+#: ui/player/PlayList.cpp:104 ui/player/PlayList.cpp:1831
 msgid "Remove the selected tracks from playlist"
 msgstr "Ukloni izabrane numere sa liste"
 
-#: ui/player/PlayList.cpp:1704
+#: ui/player/PlayList.cpp:1703
 msgid "Empty Playlist"
 msgstr "Prazna lista"
 
-#: ui/player/PlayList.cpp:1704
+#: ui/player/PlayList.cpp:1703
 msgid "The playlist is empty"
 msgstr "Lista je prazna"
 
-#: ui/player/PlayList.cpp:1715
+#: ui/player/PlayList.cpp:1714
 msgid "Edit the current selected tracks labels"
 msgstr "Izmeni etikete izabranih numera"
 
-#: ui/player/PlayList.cpp:1722
+#: ui/player/PlayList.cpp:1721
 msgid "Edit the current selected songs"
 msgstr "Izmeni izabrane pesme"
 
-#: ui/player/PlayList.cpp:1732
+#: ui/player/PlayList.cpp:1731
 msgid "Move the selected tracks to be played next"
 msgstr "Pomeri izabrane numere da budu puštene sledeće"
 
-#: ui/player/PlayList.cpp:1757
+#: ui/player/PlayList.cpp:1756
 msgid "Search a track in the playlist by name"
 msgstr "Traži numeru u listi po imenu"
 
-#: ui/player/PlayList.cpp:1766
+#: ui/player/PlayList.cpp:1765
 msgid "Selects the current selected track in the library"
 msgstr "Bira trenutno izabranu numeru u biblioteci"
 
-#: ui/player/PlayList.cpp:1772
+#: ui/player/PlayList.cpp:1771
 msgid "Select the album artist of the current song"
 msgstr "Izaberi umetnika albuma trenutne pesme"
 
-#: ui/player/PlayList.cpp:1775
+#: ui/player/PlayList.cpp:1774
 msgid "Select the composer of the current song"
 msgstr "Izaberi kompozitora trenutne pesme"
 
-#: ui/player/PlayList.cpp:1781
+#: ui/player/PlayList.cpp:1780
 msgid "Select the year of the current song"
 msgstr "Izaberi godinu trenutne pesme"
 
-#: ui/player/PlayList.cpp:1784
+#: ui/player/PlayList.cpp:1783
 msgid "Select the genre of the current song"
 msgstr "Izaberi žanr trenutne pesme"
 
-#: ui/player/PlayList.cpp:1824
+#: ui/player/PlayList.cpp:1823
 msgid "Remove all tracks from playlist"
 msgstr "Ukloni sve numere sa liste"
 
-#: ui/player/PlayList.cpp:1840
+#: ui/player/PlayList.cpp:1839
 msgid "Remove the selected tracks from library"
 msgstr "Ukloni izabrane numere iz biblioteke"
 
-#: ui/player/PlayList.cpp:1846
+#: ui/player/PlayList.cpp:1845
 msgid "Remove the selected tracks from drive"
 msgstr "Ukloni izabrane numere sa diska"
 
-#: ui/player/PlayList.cpp:2158
+#: ui/player/PlayList.cpp:2157
 msgid "Can't create a playlist without mediaviewer."
 msgstr ""
 
-#: ui/player/PlayList.cpp:2299
+#: ui/player/PlayList.cpp:2298
 msgid "Please enter the search term"
 msgstr "Unesi stavku za pretragu"
 
-#: ui/player/PlayList.cpp:2824
+#: ui/player/PlayList.cpp:2823
 msgid "Loading tracks. Please wait"
 msgstr "Učitavanje numere. Malo strpljenja"
 
