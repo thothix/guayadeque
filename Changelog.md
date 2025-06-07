@@ -4,35 +4,38 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.7.2 (2025-06-XX)
+0.7.2 (2025-06-07)
 ------------------
+
+### Features
+  * Added CoreAudio output device support in preferences (for MacOS).
+    Closes #65. Thanks to @barracuda156.
 
 ### Enhancements
   * Enhancements in reading some missing cue sheets metadata from the audio file.
-  * Make the wx qa component optional (some systems don't support it). Builds without
+  * Make the wx qa component optional (some systems don't support it). Building without
     it will disable the fatal exception report generation. Closes #63.
-  * Added CoreAudio output device support (for MacOS). Closes #65. Thanks @barracuda156.
-  * Added gstreamer-plugins-good as a dependency in the INSTALL.md.
   * Removed warnings for GCC 15.1.
+  * Added gstreamer-plugins-good as a dependency in the INSTALL.md.
+  * Added Wiki and Discussions links to the README.md.
   * Updated Greek, Italian, Spanish and Catalan translations.
 
 ### Bugfixes
   * Playlist/queue updates to handle properly playlists with cue sheets and/or tracks
-    of different collections:
-    * Fixed missing updates to playcount and last play date (even if collection is
-      closed).
+    of multiple collections:
+    * Fixed missing updates to playcount and last play date (even if collection is closed).
     * Fixed playlist reload after Guayadeque restart.
   * Some important cue sheets related fixes:
     * Fixed bug in the library scan where sometimes the length of the last track of 
       cue sheets wasn't updating properly.
       * If you have cue sheets, it's recommended that you rescan your collections.
         You can also rescan only the directories containing the cue sheets.
-    * Fixed the enqueue of cue sheets getting duplicates and wrong track number and
-      length.
+    * Fixed the enqueue of cue sheets getting duplicates and wrong track number and length.
   * Fixed the "Set as Next Track" button in the playlist toolbar to handle properly
     the tracks before the current track (enable them to be set as next track).
-  * Fixed build on case-insensitive filesystems causing duplicated headers filenames.
-    Closes PR #64 (not merged, see the comments).
+  * Fixed build on case-insensitive filesystems causing compilation errors due wrongly
+    included headers caused by duplicated headers filenames.
+    Closes PR #64. Thanks to @barracuda156.
 
 0.7.1 (2025-05-14)
 ------------------
