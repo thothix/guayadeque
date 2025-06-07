@@ -6,6 +6,7 @@ Changelog
 
 0.7.2 (2025-06-07)
 ------------------
+###### Marduk, the cat
 
 ### Features
   * Added CoreAudio output device support in preferences (for MacOS).
@@ -18,11 +19,11 @@ Changelog
   * Removed warnings for GCC 15.1.
   * Added gstreamer-plugins-good as a dependency in the INSTALL.md.
   * Added Wiki and Discussions links to the README.md.
-  * Updated Greek, Italian, Spanish and Catalan translations.
+  * Updated Greek, Italian, Spanish and Catalan translations. Thanks to @filochard.
 
 ### Bugfixes
   * Playlist/queue updates to handle properly playlists with cue sheets and/or tracks
-    of multiple collections:
+    from multiple collections:
     * Fixed missing updates to playcount and last play date (even if collection is closed).
     * Fixed playlist reload after Guayadeque restart.
   * Some important cue sheets related fixes:

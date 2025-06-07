@@ -852,7 +852,7 @@ guMediaViewer * guMainFrame::FindMediaViewerByPath(const wxString pathToFind)
 
         for (size_t indexPath = 0; indexPath < paths.Count(); indexPath++)
         {
-            if (pathToFind.starts_with(paths[indexPath]))
+            if (pathToFind.StartsWith(paths[indexPath]))
                 return m_MediaViewers[Index];
         }
     }
@@ -921,7 +921,7 @@ wxString guMainFrame::FindCollectionByPath(const wxString pathToFind)
 
         for (size_t indexPath = 0; indexPath < paths.Count(); indexPath++)
         {
-            if (pathToFind.starts_with(paths[indexPath]))
+            if (pathToFind.StartsWith(paths[indexPath]))
                 return m_Collections[index].m_UniqueId;
         }
     }
