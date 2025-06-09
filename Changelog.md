@@ -4,6 +4,16 @@ Guayadeque Music Player
 Changelog
 =========
 
+0.7.3 (2025-0x-xx)
+------------------
+
+### Features
+### Enhancements
+### Bugfixes
+
+### Removed
+  * Removed useless SEARCH_LIBS variable from the build script.
+
 0.7.2 (2025-06-07)
 ------------------
 ###### Marduk, the cat

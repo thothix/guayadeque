@@ -22,8 +22,6 @@ message(STATUS "Using install prefix ${CMAKE_INSTALL_PREFIX} ...")
 
 find_package(PkgConfig REQUIRED)
 
-set(SEARCH_LIBS /usr/lib)
-
 # [sl 2020-05-23] according to https://cmake.org/cmake/help/v3.0/module/FindwxWidgets.html
 set(wxWidgets_CONFIG_OPTIONS --toolkit=gtk3)
 
