@@ -252,6 +252,12 @@ guMainFrame::~guMainFrame()
         delete m_LyricSearchEngine;
 
     UnbindControls();
+
+    // for (int index = m_ExtraDb.size() - 1; index >= 0; index--)
+    // {
+    //     m_ExtraDb.RemoveAt(index);
+    //     m_ExtraDbId.RemoveAt(index);
+    // }
 }
 
 //extern void wxClearGtkSystemObjects();
@@ -929,17 +935,24 @@ wxString guMainFrame::FindCollectionByPath(const wxString pathToFind)
 }
 
 // -------------------------------------------------------------------------------- //
-guDbLibrary *guMainFrame::GetExtraDb(const wxString &unique_id)
+guDbLibrary *guMainFrame::GetMediaDb(const wxString &unique_id)
 {
+    guLogMessage( wxT( "GetMediaDb for ID '%s'" ), unique_id.c_str() );
+    if (unique_id.IsEmpty())
+        return nullptr;
+
     guDbLibrary *Db;
     int index = m_ExtraDbId.Index(unique_id);
     if (index != wxNOT_FOUND)
-        Db = &(m_ExtraDb)[index];
+    {
+        Db = &(m_ExtraDb[index]);
+        // guLogMessage( wxT( "GetMediaDb Found for ID '%s'" ), Db->GetDbName().c_str());
+    }
     else
     {
-        Db = new guDbLibrary(guPATH_COLLECTIONS + unique_id + wxT("/guayadeque.db"));
+        Db = new guDbLibrary(guPATH_COLLECTIONS + unique_id + wxT("/guayadeque.db"), unique_id);
         m_ExtraDbId.Add(unique_id);
-        m_ExtraDb.Add(Db);
+        m_ExtraDb.Add(*Db);
     }
     return Db;
 }
@@ -947,19 +960,13 @@ guDbLibrary *guMainFrame::GetExtraDb(const wxString &unique_id)
 // -------------------------------------------------------------------------------- //
 guDbLibrary *guMainFrame::GetTrackDb(const wxString &filepath, guMediaViewer *mediaViewer)
 {
-    guDbLibrary *Db;
-
     mediaViewer = m_MainFrame->FindMediaViewerByPath(filepath);
-    if (!mediaViewer)
-    {
-        wxString uniqueid = m_MainFrame->FindCollectionByPath(filepath);
-        guLogMessage( wxT( "No Mediaviewer - uniqueid %s" ), uniqueid);
-        Db = m_MainFrame->GetExtraDb(uniqueid);
-    }
-    else
-        Db = mediaViewer ? mediaViewer->GetDb() : m_Db;
+    if (mediaViewer)
+        return mediaViewer->GetDb();
 
-    return Db;
+    wxString uniqueid = m_MainFrame->FindCollectionByPath(filepath);
+    guLogMessage( wxT( "GetTrackDb without Mediaviewer - uniqueid %s" ), uniqueid);
+    return m_MainFrame->GetMediaDb(uniqueid);
 }
 
 // -------------------------------------------------------------------------------- //
