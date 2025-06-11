@@ -110,26 +110,29 @@ class guDb
 {
     protected :
         wxString                       m_DbName;
+        wxString                       m_DbUniqueId;
         wxSQLite3Database            * m_Db;
         guDbFoldAllCollation           m_DbFoldAllCollation;
         guDbFoldAllContainsFunction    m_DbFoldAllContainsFunction;
 
     public :
-        guDb( void );
+        guDb();
         guDb( const wxString &dbname );
         virtual ~guDb();
 
         int                 Open( const wxString &dbname );
-        int                 Close( void );
-        wxSQLite3Database * GetDb( void ) { return m_Db; }
+        int                 Close();
+        wxSQLite3Database * GetDb() { return m_Db; }
+        wxString            GetDbName() { return m_DbName; }
+        wxString            GetDbUniqueId() { return m_DbUniqueId; }
 
         wxSQLite3ResultSet  ExecuteQuery( const wxString &query );
         int                 ExecuteUpdate( const wxString &query );
         wxSQLite3ResultSet  ExecuteQuery( const wxSQLite3StatementBuffer &query );
         int                 ExecuteUpdate( const wxSQLite3StatementBuffer &query );
-        int                 GetLastRowId( void ) { return m_Db->GetLastRowId().GetLo(); }
+        int                 GetLastRowId() { return m_Db->GetLastRowId().GetLo(); }
 
-        virtual void        SetInitParams( void );
+        virtual void        SetInitParams();
 };
 
 }
