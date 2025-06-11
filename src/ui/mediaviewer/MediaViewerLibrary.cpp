@@ -24,12 +24,12 @@
 namespace Guayadeque {
 
 // -------------------------------------------------------------------------------- //
-guMediaViewerLibrary::guMediaViewerLibrary( wxWindow * parent, guMediaCollection &collection, const int basecommand,
-        guMainFrame * mainframe, const int mode, guPlayerPanel * playerpanel ) :
-    guMediaViewer( parent, collection, basecommand, mainframe, mode, playerpanel )
+guMediaViewerLibrary::guMediaViewerLibrary(
+        wxWindow *parent, guMediaCollection &collection, const int basecommand,
+        guMainFrame *mainframe, const int mode, guPlayerPanel *playerpanel) :
+    guMediaViewer(parent, collection, basecommand, mainframe, mode, playerpanel)
 {
-
-    InitMediaViewer( mode );
+    InitMediaViewer(mode);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -38,5 +38,3 @@ guMediaViewerLibrary::~guMediaViewerLibrary()
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
