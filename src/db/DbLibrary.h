@@ -366,7 +366,7 @@ extern unsigned long DynPLDateOption2[];
     public :
         guDbLibrary();
 
-        explicit guDbLibrary(const wxString &DbName);
+        explicit guDbLibrary(const wxString &DbName, const wxString &unique_id = wxEmptyString);
 
         explicit guDbLibrary(guDb *db);
 

@@ -320,8 +320,9 @@ namespace Guayadeque {
     }
 
     // -------------------------------------------------------------------------------- //
-    guDbLibrary::guDbLibrary(const wxString &dbname) : guDb(dbname)
+    guDbLibrary::guDbLibrary(const wxString &dbname, const wxString &unique_id) : guDb(dbname)
     {
+        m_DbUniqueId = unique_id;
         m_MediaViewer = nullptr;
         m_NeedUpdate = false;
         m_LastAlbum = wxT("__Gu4y4d3qu3__");
