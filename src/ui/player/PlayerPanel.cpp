@@ -825,7 +825,6 @@ void guPlayerPanel::SetPlayList(const wxArrayString &files)
 {
     guTrack track;
     m_PlayListCtrl->ClearItems();
-    m_PlayListCtrl->ClearItemsExtras();
 
     int count = files.Count();
     for (int index = 0; index < count; index++)
