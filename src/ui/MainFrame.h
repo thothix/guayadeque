@@ -476,7 +476,7 @@ class guMainFrame : public wxFrame
     void                            AddPendingUpdateTrack( const wxString &filename, const wxImage * image, const wxString &lyric, const int changedflags );
     void                            CheckPendingUpdates( const guTrack * track, const bool forcesave = false );
 
-    guDbLibrary *                   GetExtraDb(const wxString &unique_id);
+    guDbLibrary *                   GetMediaDb(const wxString &unique_id);
     guDbLibrary *                   GetTrackDb(const wxString &filepath, guMediaViewer *mediaViewer);
 };
 
@@ -512,4 +512,3 @@ class guUpdatePodcastsThread : public wxThread
 }
 
 #endif
-// -------------------------------------------------------------------------------- //
