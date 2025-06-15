@@ -2,8 +2,8 @@
 
 Guayadeque is a lightweight and easy-to-use music player and music collection organizer
 that can easily manage large music collections and supports smart playlists.
-In the technical side, it's written in C++, uses the wxWidget toolkit and the
-Gstreamer media framework.
+In the technical side, it's written in C++, uses the wxWidgets toolkit and the
+GStreamer media framework.
 
 Tiago T Barrionuevo [<thothix@protonmail.com>](mailto:thothix@protonmail.com)  
 see [LICENSE](LICENSE)
@@ -47,7 +47,9 @@ for the icon and splash designed for guayadeque.
 Main features include:
 
 - Play MP3, Ogg, Opus, FLAC, WAV, WMA, MP4, AAC, AIFF, ASF, WV (WavPack), MPC (Musepack Audio), APE (Monkey's Audio), TrueAudio, DSF.
-- Read and write tags in almost all supported formats.
+- Multiple collections support. You can get separated sets of tracks (Library) with its configuration, layouts, playlists and so on.
+- Read and write tags in all supported formats (except DSF by now).
+- Tracks tag editor with automatically fetching of tags information for easily completion.
 - Smart play mode that add tracks that fit your music taste using the tracks currently in the playlist.
 - Allow to catalogue your music using labels. Any track, artist or album can have as many labels you want.
 - Allow fast access to any music file by genre, artist, album.
@@ -57,7 +59,6 @@ Main features include:
 - Dynamic and static playlists management.
 - Play and rip audio CDs.
 - CUE sheet support.
-- Tracks tag editor with automatically fetching of tags information for easily completion.
 - Ability to download covers automatically or manually.
 - Lyrics downloads from different lyrics providers.
 - Rate tracks from 0 to 5 stars.
