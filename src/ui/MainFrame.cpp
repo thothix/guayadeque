@@ -128,25 +128,24 @@ guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
 
 	//m_MainNotebook = new wxNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0 );
 	m_DestroyLastWindow = false;
-	m_MainNotebook = new guAuiNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize,
-                                        wxAUI_NB_DEFAULT_STYLE );
+	m_MainNotebook = new guAuiNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxAUI_NB_DEFAULT_STYLE );
+    m_Db = GetMediaDb(m_Collections[0].m_UniqueId);
+
+    m_PlayerFilters = new guPlayerFilters( this, m_Db );
+    m_PlayerPlayList = new guPlayerPlayList( this, m_Db, &m_AuiManager );
+    m_PlayerPanel = new guPlayerPanel( this, m_Db, m_PlayerPlayList->GetPlayListCtrl(), m_PlayerFilters );
 
     guMediaViewerLibrary * MediaViewer = new guMediaViewerLibrary(
             m_MainNotebook,
-            m_Collections[ 0 ],
+            m_Collections[0],
             ID_COLLECTIONS_BASE,
             this,
             guMEDIAVIEWER_MODE_NONE,
-            nullptr);
+            m_PlayerPanel);
+
     MediaViewer->SetDefault( true );
+    MediaViewerCreated(m_Collections[0].m_UniqueId, MediaViewer);
     m_MediaViewers.Add( MediaViewer );
-
-    m_Db = MediaViewer->GetDb();
-
-    m_VisiblePanels = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_VISIBLE_PANELS, guPANEL_MAIN_VISIBLE_DEFAULT, CONFIG_PATH_MAIN_WINDOW );
-    if ( Config->GetIgnoreLayouts() )
-        m_VisiblePanels = guPANEL_MAIN_VISIBLE_DEFAULT;
-    //guLogMessage( wxT( "%08X" ), m_VisiblePanels );
 
 	m_MainStatusBar = new guStatusBar( this );
 	SetStatusBar(  m_MainStatusBar );
@@ -154,29 +153,27 @@ guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
 	SetStatusText(wxString::Format("%s ", _("Welcome to Guayadeque")));
 	SetStatusBarPane( 0 );
 
+    m_VisiblePanels = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_VISIBLE_PANELS, guPANEL_MAIN_VISIBLE_DEFAULT, CONFIG_PATH_MAIN_WINDOW );
+    if ( Config->GetIgnoreLayouts() )
+        m_VisiblePanels = guPANEL_MAIN_VISIBLE_DEFAULT;
+    //guLogMessage( wxT( "%08X" ), m_VisiblePanels );
+
     if ( m_VisiblePanels & guPANEL_MAIN_PLAYERVUMETERS )
         ShowMainPanel( guPANEL_MAIN_PLAYERVUMETERS, true );
-
     if ( m_VisiblePanels & guPANEL_MAIN_LOCATIONS )
         ShowMainPanel( guPANEL_MAIN_LOCATIONS, true );
+    if ( m_VisiblePanels & guPANEL_MAIN_SHOWCOVER )
+        ShowMainPanel( guPANEL_MAIN_SHOWCOVER, true );
 
-    m_PlayerFilters = new guPlayerFilters( this, m_Db );
     m_AuiManager.AddPane( m_PlayerFilters, wxAuiPaneInfo().Name( wxT( "PlayerFilters" ) ).Caption( _( "Filters" ) ).
         DestroyOnClose( false ).Resizable( true ).Floatable( true ).MinSize( 150, 63 ).
         CloseButton( Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_CLOSE_BUTTON, true, CONFIG_PATH_GENERAL ) ).
         Bottom().Layer( 0 ).Row( 1 ).Position( 0 ) );
 
-    m_PlayerPlayList = new guPlayerPlayList( this, m_Db, &m_AuiManager );
 	m_AuiManager.AddPane( m_PlayerPlayList, wxAuiPaneInfo().Name( wxT( "PlayerPlayList" ) ).
         DestroyOnClose( false ).Resizable( true ).Floatable( true ).MinSize( 150, 100 ).
         CloseButton( Config->ReadBool( CONFIG_KEY_GENERAL_SHOW_CLOSE_BUTTON, true, CONFIG_PATH_GENERAL ) ).
         Bottom().Layer( 0 ).Row( 2 ).Position( 0 ) );
-
-	m_PlayerPanel = new guPlayerPanel( this, m_Db, m_PlayerPlayList->GetPlayListCtrl(), m_PlayerFilters );
-
-	m_PlayerPlayList->SetPlayerPanel( m_PlayerPanel );
-	m_PlayerPanel->SetPlayerVumeters( m_PlayerVumeters );
-	MediaViewer->SetPlayerPanel( m_PlayerPanel );
 
 	m_AuiManager.AddPane( m_PlayerPanel, wxAuiPaneInfo().Name( wxT( "PlayerPanel" ) ).
         CloseButton( false ).DestroyOnClose( false ).
@@ -184,8 +181,9 @@ guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
         CaptionVisible( true ).
         Bottom().Layer( 0 ).Row( 0 ).Position( 0 ) );
 
-    if ( m_VisiblePanels & guPANEL_MAIN_SHOWCOVER )
-        ShowMainPanel( guPANEL_MAIN_SHOWCOVER, true );
+	m_PlayerPlayList->SetPlayerPanel( m_PlayerPanel );
+	m_PlayerPanel->SetPlayerVumeters( m_PlayerVumeters );
+	MediaViewer->SetPlayerPanel( m_PlayerPanel );
 
     CreateMenu();
 
@@ -2382,17 +2380,18 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                     switch ( Collection.m_Type )
                     {
                         case guMEDIA_COLLECTION_TYPE_NORMAL :
-                            MediaViewer = ( guMediaViewer * ) new guMediaViewerLibrary( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel );
+                            MediaViewer = (guMediaViewer *) new guMediaViewerLibrary(m_MainNotebook, Collection, eventId, this, guMEDIAVIEWER_MODE_NONE, m_PlayerPanel);
+                            MediaViewer->SetDefault(CollectionIndex == 0);
                             break;
 
                         case guMEDIA_COLLECTION_TYPE_MAGNATUNE :
-                            MediaViewer = ( guMediaViewer * ) new guMediaViewerMagnatune( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel );
+                            MediaViewer = (guMediaViewer *) new guMediaViewerMagnatune(m_MainNotebook, Collection, eventId, this, guMEDIAVIEWER_MODE_NONE, m_PlayerPanel);
                             break;
 
                         case guMEDIA_COLLECTION_TYPE_PORTABLE_DEVICE :
                         {
                             guGIO_Mount * Mount = m_VolumeMonitor->GetMountById( Collection.m_UniqueId );
-                            MediaViewer = ( guMediaViewer * ) new guMediaViewerPortableDevice( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel, Mount );
+                            MediaViewer = (guMediaViewer *) new guMediaViewerPortableDevice(m_MainNotebook, Collection, eventId, this, guMEDIAVIEWER_MODE_NONE, m_PlayerPanel, Mount);
                             break;
                         }
 
@@ -2400,7 +2399,7 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
                         case guMEDIA_COLLECTION_TYPE_IPOD :
                         {
                             guGIO_Mount * Mount = m_VolumeMonitor->GetMountById( Collection.m_UniqueId );
-                            MediaViewer = ( guMediaViewer * ) new guMediaVieweriPodDevice( m_MainNotebook, Collection, eventId, this, -1, m_PlayerPanel, Mount );
+                            MediaViewer = (guMediaViewer *) new guMediaVieweriPodDevice(m_MainNotebook, Collection, eventId, this, guMEDIAVIEWER_MODE_NONE, m_PlayerPanel, Mount);
                             break;
                         }
 #endif
@@ -2498,6 +2497,8 @@ void guMainFrame::OnCollectionCommand( wxCommandEvent &event )
             }
             break;
         }
+
+        default: guLogMessage( wxT( "Invalid Command requested: %i" ), CollectionCmdId );
     }
 }
 
@@ -3092,6 +3093,7 @@ void guMainFrame::DoPageClose( wxPanel * curpage )
         guMediaViewer * MediaViewer = ( guMediaViewer * ) curpage;
         MediaViewer->SetMenuState( false );
 
+        MediaViewerClosed(MediaViewer);
         m_MediaViewers.Remove( MediaViewer );
 
         if ( MediaViewer->IsDefault() )
@@ -4232,7 +4234,6 @@ void guMainFrame::UpdatedTrack( int updatedby, const guTrack * track )
 //        m_PlayListPanel->UpdatedTrack( track );
 }
 
-
 // -------------------------------------------------------------------------------- //
 void guMainFrame::OnLibraryCoverChanged( wxCommandEvent &event )
 {
@@ -4568,8 +4569,8 @@ void guMainFrame::MediaViewerClosed( guMediaViewer * mediaviewer )
         m_PlayerPanel->MediaViewerClosed( mediaviewer );
     if ( m_PlayerPlayList )
         m_PlayerPlayList->MediaViewerClosed( mediaviewer );
-    if ( m_LastFMPanel )
-        m_LastFMPanel->MediaViewerClosed( mediaviewer );
+    // if ( m_LastFMPanel )
+    //     m_LastFMPanel->MediaViewerClosed( mediaviewer );
 }
 
 // -------------------------------------------------------------------------------- //

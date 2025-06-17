@@ -65,13 +65,11 @@ guMediaViewer::guMediaViewer( wxWindow * parent,
     m_UpdateCoversThread = nullptr;
     guLogTrace( wxT( "MediaViewer '%s' => '%s'" ), collection.m_Name.c_str(), collection.m_UniqueId.c_str() );
 
-    if( !wxDirExists( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId ) )
+    if (!wxDirExists(guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId))
     {
-        wxMkdir( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId, 0770 );
-        guLogMessage( wxT( "Created collection folder '%s'" ), wxString( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId ).c_str() );
+        wxMkdir(guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId, 0770);
+        guLogMessage(wxT("Created collection directory '%s'"), wxString(guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId).c_str());
     }
-
-    //LoadMediaDb();
 
     guConfig * Config = ( guConfig * ) guConfig::Get();
     Config->RegisterObject( this );
@@ -85,7 +83,7 @@ guMediaViewer::guMediaViewer( wxWindow * parent,
     m_InstantSearchEnabled = Config->ReadBool( CONFIG_KEY_GENERAL_INSTANT_TEXT_SEARCH, true, CONFIG_PATH_GENERAL );
     m_EnterSelectSearchEnabled = !Config->ReadBool( CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER, false, CONFIG_PATH_GENERAL );
 
-    if ( !m_MediaCollection->m_DefaultCopyAction.IsEmpty() )
+    if (!m_MediaCollection->m_DefaultCopyAction.IsEmpty())
     {
         wxArrayString Options = Config->ReadAStr( CONFIG_KEY_COPYTO_OPTION, wxEmptyString, CONFIG_PATH_COPYTO );
         int Count = Options.Count();
@@ -155,10 +153,10 @@ guMediaViewer::~guMediaViewer()
     m_SearchTextCtrl->Unbind( wxEVT_TEXT, &guMediaViewer::OnSearchActivated, this );
     m_SearchTextCtrl->Unbind( wxEVT_SEARCHCTRL_CANCEL_BTN, &guMediaViewer::OnSearchCancelled, this );
 
-    //m_MainFrame->MediaViewerClosed( m_MediaCollection->m_UniqueId, this );
-    wxCommandEvent CmdEvent( wxEVT_MENU, ID_MAINFRAME_MEDIAVIEWER_CLOSED );
-    CmdEvent.SetClientData( this );
-    wxPostEvent( m_MainFrame, CmdEvent );
+    m_MainFrame->MediaViewerClosed(this);
+    // wxCommandEvent CmdEvent( wxEVT_MENU, ID_MAINFRAME_MEDIAVIEWER_CLOSED );
+    // CmdEvent.SetClientData( this );
+    // wxPostEvent( m_MainFrame, CmdEvent );
 
     if( m_UpdateCoversThread )
     {
@@ -173,8 +171,8 @@ guMediaViewer::~guMediaViewer()
     if( m_CopyToPattern )
         delete m_CopyToPattern;
 
-    if( m_Db )
-        delete m_Db;
+    // if (m_Db)
+    //     m_MainFrame->RemoveExtraDb(m_Db);    // delete m_Db;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -211,6 +209,13 @@ void guMediaViewer::InitMediaViewer( const int mode )
     m_SearchTextCtrl->SetFocus();
     SetDropTarget( new guMediaViewerDropTarget( this ) );
     Layout();
+}
+
+// -------------------------------------------------------------------------------- //
+void guMediaViewer::LoadMediaDb()
+{
+    m_Db = m_MainFrame->GetMediaDb(m_MediaCollection->m_UniqueId);
+    m_Db->SetMediaViewer(this);
 }
 
 // -------------------------------------------------------------------------------- //
@@ -322,13 +327,6 @@ void guMediaViewer::CreateAcceleratorTable()
 }
 
 // -------------------------------------------------------------------------------- //
-void guMediaViewer::LoadMediaDb()
-{
-    m_Db = new guDbLibrary( guPATH_COLLECTIONS + m_MediaCollection->m_UniqueId + wxT( "/guayadeque.db" ) );
-    m_Db->SetMediaViewer( this );
-}
-
-// -------------------------------------------------------------------------------- //
 void guMediaViewer::OnConfigUpdated( wxCommandEvent &event )
 {
     int Flags = event.GetInt();
@@ -340,9 +338,7 @@ void guMediaViewer::OnConfigUpdated( wxCommandEvent &event )
     }
 
     if( Flags & guPREFERENCE_PAGE_FLAG_ACCELERATORS )
-    {
         CreateAcceleratorTable();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
@@ -437,6 +433,8 @@ void guMediaViewer::SetViewMode( const int mode )
             case guMEDIAVIEWER_MODE_PLAYLISTS :
                 m_PlayListPanel->Hide();
                 break;
+
+            default: break;
         }
 
         m_ViewMode = mode;
@@ -497,6 +495,8 @@ void guMediaViewer::SetViewMode( const int mode )
 
                 break;
             }
+
+            default: break;
         }
 
         m_FiltersSizer->Show( m_ViewMode == guMEDIAVIEWER_MODE_ALBUMBROWSER );
