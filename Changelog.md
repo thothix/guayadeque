@@ -7,9 +7,11 @@ Changelog
 0.7.3 (2025-0x-xx)
 ------------------
 
-### Features
-### Enhancements
 ### Bugfixes
+  * More bugfixes to the multiple collections support:
+    * Fixed playlist to work with tracks from multiple collections. 
+    * Fixed the not working "select" feature for playlist tracks in a non default collection.
+    * Fixed the "select" feature stop working for any collection after close and reopen it.  
 
 ### Removed
   * Removed useless SEARCH_LIBS variable from the build script.
@@ -35,7 +37,7 @@ Changelog
   * Playlist/queue updates to handle properly playlists with cue sheets and/or tracks
     from multiple collections:
     * Fixed missing updates to playcount and last play date (even if collection is closed).
-    * Fixed playlist reload after Guayadeque restart.
+    * Fixed playlist loading after Guayadeque restart.
   * Some important cue sheets related fixes:
     * Fixed bug in the library scan where sometimes the length of the last track of 
       cue sheets wasn't updating properly.
