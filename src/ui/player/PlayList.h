@@ -35,6 +35,8 @@
 
 namespace Guayadeque {
 
+WX_DECLARE_STRING_HASH_MAP(wxArrayInt, guPendingLoadMediaViewerHashMap);
+
 class guPlayerPanel;
 class guPlayList;
 class guMainFrame;
@@ -67,10 +69,11 @@ class guPlayList : public guListView
 
     wxTimer *               m_SavePlaylistTimer;
 
-    wxArrayString           m_PendingLoadIds;
-    wxArrayString           m_CuePaths;
+    wxArrayString               m_PendingLoadIds;
+    guPendingLoadMediaViewerHashMap m_PendingLoadMediaViewer;
+    wxArrayString               m_CuePaths;
 
-    int                     m_SysFontPointSize;
+    int                         m_SysFontPointSize;
 
     virtual wxCoord             OnMeasureItem( size_t row ) const;
 
@@ -142,6 +145,8 @@ class guPlayList : public guListView
     void                        SetTracksRating( const guTrackArray &tracks, const int rating );
 
     void                        CheckPendingLoadItems( const wxString &uniqueid, guMediaViewer * mediaviewer );
+    void                        LoadPendingMediaViewerTracks(const wxString &uniqueid, guMediaViewer *mediaviewer);
+    void                        AddPendingMediaViewerTrack(const wxString &uniqueid, guTrack &track);
 
     void                        OnCreateSmartPlaylist( wxCommandEvent &event );
 

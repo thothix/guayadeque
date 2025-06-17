@@ -929,7 +929,6 @@ void guPlayList::DrawBackground( wxDC &dc, const wxRect &rect, const int row, co
     }
 }
 
-
 // -------------------------------------------------------------------------------- //
 wxString guPlayList::OnGetItemText( const int row, const int col ) const
 {
@@ -984,7 +983,7 @@ void guPlayList::AddItem( const guTrack &NewItem, const int pos )
 //{
 //    AddItem( * NewItem );
 //}
-//
+
 // -------------------------------------------------------------------------------- //
 void guPlayList::SetCurrent( int curitem, bool delold )
 {
@@ -1223,6 +1222,7 @@ void guPlayList::ClearItems()
     m_CurItem = wxNOT_FOUND;
     m_TotalLen = 0;
     m_PendingLoadIds.Empty();
+    m_PendingLoadMediaViewer.clear();
     ClearItemsExtras();
     ClearSelectedItems();
     ReloadItems();
@@ -1453,7 +1453,7 @@ void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const 
         {
             for (int index = 0; index < count; index++)
             {
-                guCuePlaylistItem &CueItem = CuePlaylistFile.GetItem( index );
+                guCuePlaylistItem &CueItem = CuePlaylistFile.GetItem(index);
                 wxString filePath = wxPathOnly(CueItem.m_TrackPath);
                 wxString fileNameOnly = CueItem.m_TrackPath.AfterLast(wxT('/'));
 
@@ -1461,6 +1461,9 @@ void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const 
 
                 // To find the m_SongId
                 Db->FindTrackPath(filePath, fileNameOnly, CueItem.m_Name, &track);
+
+                if (!track.m_MediaViewer)
+                    AddPendingMediaViewerTrack(Db->GetDbUniqueId(), track);
 
                 track.m_FileName = CueItem.m_TrackPath;
                 track.m_SongName = CueItem.m_Name;
@@ -1517,6 +1520,9 @@ void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const 
                     findResult = Db->FindTrackPath(track.m_Path, fileNameOnly, track.m_SongName, &track);
                 else
                     findResult = Db->FindTrackFile(newFileName, &track);
+
+                if (!track.m_MediaViewer)
+                    AddPendingMediaViewerTrack(Db->GetDbUniqueId(), track);
 
                 if (!findResult)
                 {
@@ -1629,6 +1635,19 @@ void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const 
 
     wxCommandEvent event( wxEVT_MENU, ID_PLAYER_PLAYLIST_START_SAVETIMER );
     wxPostEvent( this, event );
+}
+
+// -------------------------------------------------------------------------------- //
+void guPlayList::AddPendingMediaViewerTrack(const wxString &uniqueid, guTrack &track)
+{
+    wxArrayInt aItems;
+
+    guPendingLoadMediaViewerHashMap::iterator it = m_PendingLoadMediaViewer.find(uniqueid);
+    if (it != m_PendingLoadMediaViewer.end())
+        aItems = it->second;
+
+    aItems.Add(track.m_SongId);
+    m_PendingLoadMediaViewer[uniqueid] = aItems;
 }
 
 // -------------------------------------------------------------------------------- //
@@ -2707,78 +2726,103 @@ void guPlayList::SetTracksRating( const guTrackArray &tracks, const int rating )
         m_PlayerPanel->UpdatedTracks( &CurrentTracks );
     }
 }
-    int Index;
-    int Count;
-
 
 // -------------------------------------------------------------------------------- //
 void guPlayList::MediaViewerCreated( const wxString &uniqueid, guMediaViewer * mediaviewer )
 {
-    if( m_PendingLoadIds.Index( uniqueid ) != wxNOT_FOUND )
-        CheckPendingLoadItems( uniqueid, mediaviewer );
+    if (m_PendingLoadIds.Index(uniqueid) != wxNOT_FOUND)
+        CheckPendingLoadItems(uniqueid, mediaviewer);
+    LoadPendingMediaViewerTracks(uniqueid, mediaviewer);
 }
 
 // -------------------------------------------------------------------------------- //
 void guPlayList::MediaViewerClosed( guMediaViewer * mediaviewer )
 {
-    int Count = m_Items.Count();
-    for( int Index = 0; Index < Count; Index++ )
+    int count = m_Items.Count();
+    for (int index = 0; index < count; index++)
     {
-        guTrack & Track = m_Items[ Index ];
-        if( Track.m_MediaViewer == mediaviewer )
-            Track.m_MediaViewer = nullptr;
+        guTrack &track = m_Items[index];
+        if (track.m_MediaViewer == mediaviewer)
+        {
+            track.m_MediaViewer = nullptr;
+            AddPendingMediaViewerTrack(mediaviewer->GetDb()->GetDbUniqueId(), track);
+        }
+    }
+}
+
+// -------------------------------------------------------------------------------- //
+void guPlayList::LoadPendingMediaViewerTracks(const wxString &uniqueid, guMediaViewer *mediaviewer)
+{
+    guPendingLoadMediaViewerHashMap::iterator it = m_PendingLoadMediaViewer.find(uniqueid);
+    if (it == m_PendingLoadMediaViewer.end())
+        return;
+
+    wxArrayInt &pendingTracks = it->second;
+
+    int count = m_Items.Count();
+    for (int index = 0; index < count; index++)
+    {
+        guTrack &track = m_Items[index];
+        if (!track.m_MediaViewer)
+        {
+            int ix = pendingTracks.Index(track.m_SongId);
+            if (ix != wxNOT_FOUND)
+            {
+                track.m_MediaViewer = mediaviewer;
+                pendingTracks.RemoveAt(ix);
+                // it->second = pendingTracks;
+            }
+        }
     }
 }
 
 // -------------------------------------------------------------------------------- //
 void guPlayList::CheckPendingLoadItems( const wxString &uniqueid, guMediaViewer * mediaviewer )
 {
-    int Type;
-    guDbLibrary * Db = nullptr;
-
     if( !mediaviewer )
         return;
 
+    int Type;
     if( uniqueid == wxT( "Magnatune" ) )
         Type = guTRACK_TYPE_MAGNATUNE;
     else
         return;
 
-    Db = mediaviewer->GetDb();
-    if( !Db )
+    guDbLibrary * Db = mediaviewer->GetDb();
+    if (!Db)
         return;
 
-    wxString FileName;
-    int Count = m_Items.Count();
-    for( int Index = 0; Index < Count; Index++ )
+    wxString filename;
+    int count = m_Items.Count();
+    for (int index = 0; index < count; index++)
     {
-        guTrack & Track = m_Items[ Index ];
-        if( Track.m_Type == Type )
+        guTrack &track = m_Items[index];
+        if (track.m_Type == Type)
         {
             //guLogMessage( wxT( "Trying: '%s'" ), Track.m_FileName.c_str() );
-            FileName = Track.m_FileName;
-            FileName.Replace( wxT( " " ), wxT( "%20" ) );
-            wxString SearchStr = FileName;
-            int FoundPos;
-            if( ( FoundPos = SearchStr.Find( wxT( "@stream.magnatune" ) ) ) != wxNOT_FOUND )
+            filename = track.m_FileName;
+            filename.Replace( wxT( " " ), wxT( "%20" ) );
+            wxString search_str = filename;
+            int found_pos;
+            if ((found_pos = search_str.Find(wxT("@stream.magnatune"))) != wxNOT_FOUND)
             {
-                SearchStr = SearchStr.Mid( FoundPos );
-                SearchStr.Replace( wxT( "@stream." ), wxT( "http://he3." ) );
-                SearchStr.Replace( wxT( "_nospeech" ), wxEmptyString );
+                search_str = search_str.Mid( found_pos );
+                search_str.Replace( wxT( "@stream." ), wxT( "http://he3." ) );
+                search_str.Replace( wxT( "_nospeech" ), wxEmptyString );
             }
-            else if( ( FoundPos = SearchStr.Find( wxT( "@download.magnatune" ) ) ) != wxNOT_FOUND )
+            else if ((found_pos = search_str.Find(wxT("@download.magnatune"))) != wxNOT_FOUND)
             {
-                SearchStr = SearchStr.Mid( FoundPos );
-                SearchStr.Replace( wxT( "@download." ), wxT( "http://he3." ) );
-                SearchStr.Replace( wxT( "_nospeech" ), wxEmptyString );
+                search_str = search_str.Mid( found_pos );
+                search_str.Replace( wxT( "@download." ), wxT( "http://he3." ) );
+                search_str.Replace( wxT( "_nospeech" ), wxEmptyString );
             }
 
-            guLogMessage( wxT( "Searching for track '%s'" ), SearchStr.c_str() );
+            guLogMessage( wxT( "Searching for track '%s'" ), search_str.c_str() );
 
-            ( ( guMagnatuneLibrary * ) Db )->GetTrackId( SearchStr, &Track );
-            Track.m_Type     = guTRACK_TYPE_MAGNATUNE;
-            Track.m_FileName = FileName;
-            Track.m_MediaViewer = mediaviewer;
+            ((guMagnatuneLibrary *) Db)->GetTrackId(search_str, &track);
+            track.m_Type     = guTRACK_TYPE_MAGNATUNE;
+            track.m_FileName = filename;
+            track.m_MediaViewer = mediaviewer;
         }
     }
 }
@@ -2798,23 +2842,22 @@ void guPlayList::OnCreateSmartPlaylist( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPlayList::SavePlaylistTracks()
 {
-    guTrackArray Tracks;
-    guConfig * Config = ( guConfig * ) guConfig::Get();
+    long item = wxNOT_FOUND;
+    guTrackArray tracks;
+    guConfig *Config = (guConfig *) guConfig::Get();
 
-    if( Config->ReadBool( CONFIG_KEY_PLAYLIST_SAVE_ON_CLOSE, true, CONFIG_PATH_PLAYLIST ) )
+    if (Config->ReadBool(CONFIG_KEY_PLAYLIST_SAVE_ON_CLOSE, true, CONFIG_PATH_PLAYLIST))
     {
-        int Count = m_Items.Count();
-        for( int Index = 0; Index < Count; Index++ )
+        int count = m_Items.Count();
+        for (int index = 0; index < count; index++)
         {
-            if( m_Items[ Index ].m_Type < guTRACK_TYPE_IPOD )
-                Tracks.Add( new guTrack( m_Items[ Index ] ) );
+            if (m_Items[index].m_Type < guTRACK_TYPE_IPOD)
+                tracks.Add(new guTrack(m_Items[index]));
         }
-        Config->SavePlaylistTracks( Tracks, m_CurItem );
+        item = m_CurItem;
     }
-    else
-    {
-        Config->SavePlaylistTracks( Tracks, wxNOT_FOUND );
-    }
+
+    Config->SavePlaylistTracks(tracks, item);
 }
 
 // -------------------------------------------------------------------------------- //
