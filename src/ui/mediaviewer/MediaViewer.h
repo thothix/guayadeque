@@ -137,6 +137,9 @@ class guMediaViewer : public wxPanel
     wxArrayInt              m_SmartTracksList;
     wxArrayString           m_SmartArtistsList;
 
+    int                     m_PreviousTracksOrder;
+    bool                    m_PreviousTracksOrderDesc;
+
     void                    OnViewChanged( wxCommandEvent &event );
 
     // Search Str events

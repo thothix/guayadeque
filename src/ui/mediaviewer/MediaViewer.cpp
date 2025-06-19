@@ -419,6 +419,8 @@ void guMediaViewer::SetViewMode( const int mode )
         switch( m_ViewMode )
         {
             case guMEDIAVIEWER_MODE_LIBRARY :
+                m_PreviousTracksOrder = m_Db->GetTracksOrder();
+                m_PreviousTracksOrderDesc = m_Db->GetTracksOrderDesc();
                 m_LibPanel->Hide();
                 break;
 
@@ -450,6 +452,9 @@ void guMediaViewer::SetViewMode( const int mode )
                 }
                 else
                     m_LibPanel->Show( true );
+
+                m_Db->SetTracksOrder( m_PreviousTracksOrder );
+                m_Db->SetTracksOrderDesc( m_PreviousTracksOrderDesc );
 
                 break;
             }
