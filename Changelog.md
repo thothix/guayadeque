@@ -9,9 +9,9 @@ Changelog
 
 ### Bugfixes
   * More bugfixes to the multiple collections support:
-    * Fixed playlist to work with tracks from multiple collections. 
-    * Fixed the not working "select" feature for playlist tracks in a non default collection.
-    * Fixed the "select" feature stop working for any collection after close and reopen it.  
+    * Fixed the "select" feature not working for playlist tracks from a non default collection.
+    * Fixed the "select" feature stop working for any collection after close and reopen it.
+    * Fixed the "select" feature stop working after come back from library playlist view.
 
 ### Removed
   * Removed useless SEARCH_LIBS variable from the build script.
