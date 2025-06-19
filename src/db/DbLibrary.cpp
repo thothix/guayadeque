@@ -49,9 +49,169 @@ namespace Guayadeque {
     // -------------------------------------------------------------------------------- //
     // Various functions
     // -------------------------------------------------------------------------------- //
-    wxString GetSongsDBNamesSQL(const int order);
 
-    wxString GetSongsSortSQL(const int order, const bool orderdesc);
+    // -------------------------------------------------------------------------------- //
+    wxString GetSongsDBNamesSQL(const int order)
+    {
+        wxString query = wxEmptyString;
+
+        switch (order)
+        {
+            case guTRACKS_ORDER_YEAR:
+            case guTRACKS_ORDER_DISK:
+                //query += wxT( ",albums WHERE song_albumid = album_id " );
+                break;
+
+            case guTRACKS_ORDER_ARTIST:
+                //query += wxT( ",artists,albums WHERE song_artistid = artist_id AND song_albumid = album_id " );
+                break;
+
+            case guTRACKS_ORDER_ALBUM:
+                //query += wxT( ",albums WHERE song_albumid = album_id " );
+                break;
+
+            case guTRACKS_ORDER_GENRE:
+                //query += wxT( ",genres WHERE song_genreid = genre_id " );
+                break;
+
+            case guTRACKS_ORDER_COMPOSER:
+                //query += wxT( ",composers WHERE song_composerid = composer_id " );
+                break;
+
+                //    case guTRACKS_ORDER_TITLE :
+                //    case guTRACKS_ORDER_NUMBER :
+                //    case guTRACKS_ORDER_LENGTH :
+                //    case guTRACKS_ORDER_RATING :
+                //    case guTRACKS_ORDER_BITRATE :
+                //    case guTRACKS_ORDER_PLAYCOUNT :
+                //    case guTRACKS_ORDER_LASTPLAY :
+                //    case guTRACKS_ORDER_ADDEDDATE :
+                //      break;
+            default:
+                break;
+        }
+        return query;
+    }
+
+    // -------------------------------------------------------------------------------- //
+    wxString GetSongsSortSQL(const int order, const bool orderdesc, const bool force_fallback = false)
+    {
+        wxString query = wxT(" ORDER BY ");
+
+        switch (order)
+        {
+            case guTRACKS_ORDER_TITLE:
+                query += wxT("song_name");
+                break;
+
+            case guTRACKS_ORDER_ARTIST:
+                query += wxT("song_artist");
+                break;
+
+            case guTRACKS_ORDER_ALBUMARTIST:
+                query += wxT("song_albumartist");
+                break;
+
+            case guTRACKS_ORDER_ALBUM:
+                query += wxT("song_album");
+                break;
+
+            case guTRACKS_ORDER_GENRE:
+                query += wxT("song_genre");
+                break;
+
+            case guTRACKS_ORDER_COMPOSER:
+                //query += wxT( "composer_name " );
+                query += wxT("song_composer");
+                break;
+
+            case guTRACKS_ORDER_DISK:
+                query += wxT("song_disk");
+                break;
+
+            case guTRACKS_ORDER_NUMBER:
+                query += wxT("song_number");
+                break;
+
+            case guTRACKS_ORDER_LENGTH:
+                query += wxT("song_length");
+                break;
+
+            case guTRACKS_ORDER_YEAR:
+                query += wxT("song_year");
+                break;
+
+            case guTRACKS_ORDER_RATING:
+                query += wxT("song_rating");
+                break;
+
+            case guTRACKS_ORDER_BITRATE:
+                query += wxT("song_bitrate");
+                break;
+
+            case guTRACKS_ORDER_PLAYCOUNT:
+                query += wxT("song_playcount");
+                break;
+
+            case guTRACKS_ORDER_LASTPLAY:
+                query += wxT("song_lastplay");
+                break;
+
+            case guTRACKS_ORDER_ADDEDDATE:
+                query += wxT("song_addedtime");
+                break;
+
+            case guTRACKS_ORDER_FORMAT:
+                query += wxT("song_format");
+                break;
+
+            case guTRACKS_ORDER_FILEPATH:
+                query += wxT("song_path");
+                break;
+
+            default:
+                if (!force_fallback)
+                    return wxEmptyString;
+                query += wxT("song_artist");
+                return query;
+        }
+
+        if (orderdesc)
+            query += wxT(" DESC");
+
+        switch (order)
+        {
+            case guTRACKS_ORDER_DISK:
+                query += wxT(",song_albumid,song_number ");
+                break;
+
+            case guTRACKS_ORDER_COMPOSER:
+                query += wxT(",song_artist,song_album,song_disk,song_albumid,song_number ");
+                break;
+
+            case guTRACKS_ORDER_ARTIST:
+            case guTRACKS_ORDER_ALBUMARTIST:
+                query += wxT(",song_album,song_disk,song_albumid,song_number ");
+                break;
+
+            case guTRACKS_ORDER_ALBUM:
+                query += wxT(",song_disk,song_albumid,song_number ");
+                break;
+
+            case guTRACKS_ORDER_YEAR:
+                query += wxT(",song_album,song_disk,song_albumid,song_number ");
+                break;
+
+            case guTRACKS_ORDER_ADDEDDATE:
+                query += wxT(",song_album,song_disk,song_albumid,song_number ");
+                break;
+
+            default:
+                break;
+        }
+
+        return query;
+    }
 
     // -------------------------------------------------------------------------------- //
     int guAlbumItemSearch(const guAlbumItems &items, int start, int end, int id)
@@ -4746,7 +4906,7 @@ namespace Guayadeque {
         int Index = 0;
 
         query = wxT("SELECT song_id FROM songs ");
-        query += GetSongsSortSQL(m_TracksOrder, m_TracksOrderDesc);
+        query += GetSongsSortSQL(m_TracksOrder, m_TracksOrderDesc, true);
 
         dbRes = ExecuteQuery(query);
 
@@ -4880,166 +5040,6 @@ namespace Guayadeque {
 
         dbRes.Finalize();
         return RetVal;
-    }
-
-    // -------------------------------------------------------------------------------- //
-    wxString GetSongsDBNamesSQL(const int order)
-    {
-        wxString query = wxEmptyString;
-        //
-        switch (order)
-        {
-            case guTRACKS_ORDER_YEAR:
-            case guTRACKS_ORDER_DISK:
-                //query += wxT( ",albums WHERE song_albumid = album_id " );
-                break;
-
-            case guTRACKS_ORDER_ARTIST:
-                //query += wxT( ",artists,albums WHERE song_artistid = artist_id AND song_albumid = album_id " );
-                break;
-
-            case guTRACKS_ORDER_ALBUM:
-                //query += wxT( ",albums WHERE song_albumid = album_id " );
-                break;
-
-            case guTRACKS_ORDER_GENRE:
-                //query += wxT( ",genres WHERE song_genreid = genre_id " );
-                break;
-
-            case guTRACKS_ORDER_COMPOSER:
-                //query += wxT( ",composers WHERE song_composerid = composer_id " );
-                break;
-
-            //    case guTRACKS_ORDER_TITLE :
-            //    case guTRACKS_ORDER_NUMBER :
-            //    case guTRACKS_ORDER_LENGTH :
-            //    case guTRACKS_ORDER_RATING :
-            //    case guTRACKS_ORDER_BITRATE :
-            //    case guTRACKS_ORDER_PLAYCOUNT :
-            //    case guTRACKS_ORDER_LASTPLAY :
-            //    case guTRACKS_ORDER_ADDEDDATE :
-            //      break;
-            default:
-                break;
-        }
-        return query;
-    }
-
-    // -------------------------------------------------------------------------------- //
-    wxString GetSongsSortSQL(const int order, const bool orderdesc)
-    {
-        wxString query = wxT(" ORDER BY ");
-
-        switch (order)
-        {
-            case guTRACKS_ORDER_TITLE:
-                query += wxT("song_name");
-                break;
-
-            case guTRACKS_ORDER_ARTIST:
-                query += wxT("song_artist");
-                break;
-
-            case guTRACKS_ORDER_ALBUMARTIST:
-                query += wxT("song_albumartist");
-                break;
-
-            case guTRACKS_ORDER_ALBUM:
-                query += wxT("song_album");
-                break;
-
-            case guTRACKS_ORDER_GENRE:
-                query += wxT("song_genre");
-                break;
-
-            case guTRACKS_ORDER_COMPOSER:
-                //query += wxT( "composer_name " );
-                query += wxT("song_composer");
-                break;
-
-            case guTRACKS_ORDER_DISK:
-                query += wxT("song_disk");
-                break;
-
-            case guTRACKS_ORDER_NUMBER:
-                query += wxT("song_number");
-                break;
-
-            case guTRACKS_ORDER_LENGTH:
-                query += wxT("song_length");
-                break;
-
-            case guTRACKS_ORDER_YEAR:
-                query += wxT("song_year");
-                break;
-
-            case guTRACKS_ORDER_RATING:
-                query += wxT("song_rating");
-                break;
-
-            case guTRACKS_ORDER_BITRATE:
-                query += wxT("song_bitrate");
-                break;
-
-            case guTRACKS_ORDER_PLAYCOUNT:
-                query += wxT("song_playcount");
-                break;
-
-            case guTRACKS_ORDER_LASTPLAY:
-                query += wxT("song_lastplay");
-                break;
-
-            case guTRACKS_ORDER_ADDEDDATE:
-                query += wxT("song_addedtime");
-                break;
-
-            case guTRACKS_ORDER_FORMAT:
-                query += wxT("song_format");
-                break;
-
-            case guTRACKS_ORDER_FILEPATH:
-                query += wxT("song_path");
-                break;
-
-            default:
-                return wxEmptyString;
-        }
-
-        if (orderdesc)
-            query += wxT(" DESC");
-
-        switch (order)
-        {
-            case guTRACKS_ORDER_DISK:
-                query += wxT(",song_albumid,song_number ");
-                break;
-
-            case guTRACKS_ORDER_COMPOSER:
-                query += wxT(",song_artist,song_album,song_disk,song_albumid,song_number ");
-                break;
-
-            case guTRACKS_ORDER_ARTIST:
-            case guTRACKS_ORDER_ALBUMARTIST:
-                query += wxT(",song_album,song_disk,song_albumid,song_number ");
-                break;
-
-            case guTRACKS_ORDER_ALBUM:
-                query += wxT(",song_disk,song_albumid,song_number ");
-                break;
-
-            case guTRACKS_ORDER_YEAR:
-                query += wxT(",song_album,song_disk,song_albumid,song_number ");
-                break;
-
-            case guTRACKS_ORDER_ADDEDDATE:
-                query += wxT(",song_album,song_disk,song_albumid,song_number ");
-                break;
-
-            default:
-                break;
-        }
-
-        return query;
     }
 
     // -------------------------------------------------------------------------------- //
