@@ -459,6 +459,7 @@ namespace Guayadeque {
         m_LastAlbumArtistId = wxNOT_FOUND;
         m_LastComposer = wxT("__Gu4y4d3qu3__");
         m_LastComposerId = wxNOT_FOUND;
+        m_TracksOrder = wxNOT_FOUND;
 
         CheckDbVersion();
     }
@@ -478,6 +479,7 @@ namespace Guayadeque {
         m_LastAlbumArtistId = wxNOT_FOUND;
         m_LastComposer = wxT("__Gu4y4d3qu3__");
         m_LastComposerId = wxNOT_FOUND;
+        m_TracksOrder = wxNOT_FOUND;
 
         CheckDbVersion();
     }
@@ -496,6 +498,7 @@ namespace Guayadeque {
         m_LastAlbumArtistId = wxNOT_FOUND;
         m_LastComposer = wxT("__Gu4y4d3qu3__");
         m_LastComposerId = wxNOT_FOUND;
+        m_TracksOrder = wxNOT_FOUND;
 
         m_Db = db->GetDb();
     }
@@ -5216,7 +5219,7 @@ namespace Guayadeque {
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += FiltersSQL(guLIBRARY_FILTER_SONGS);
         }
-        query += GetSongsSortSQL(m_TracksOrder, m_TracksOrderDesc);
+        query += GetSongsSortSQL(m_TracksOrder, m_TracksOrderDesc, true);
         query += wxString::Format(wxT(" LIMIT %i, %i "), start, end - start + 1);
 
         //guLogMessage( wxT( "%s" ), query.c_str() );
@@ -5900,11 +5903,11 @@ namespace Guayadeque {
 
     wxString guDbLibrary::TextFilterToSQL(const wxArrayString &TeFilters)
     {
-        int count;
-        wxString RetVal;
+        int count = TeFilters.Count();
         bool collation_enabled = GetDbCollationEnabled();
+        wxString RetVal;
 
-        if ((count = TeFilters.Count()))
+        if (count)
         {
             for (int index = 0; index < count; index++)
             {
@@ -5913,14 +5916,8 @@ namespace Guayadeque {
                 RetVal += Contains_Or_Like("song_albumartist", Filter, collation_enabled) + "OR ";
                 RetVal += Contains_Or_Like("song_artist", Filter, collation_enabled) + "OR ";
                 RetVal += Contains_Or_Like("song_composer", Filter, collation_enabled) + "OR ";
-                RetVal += Contains_Or_Like("song_album", Filter, collation_enabled) + ")";
-                RetVal += wxT(" AND ");
-                // RetVal += wxT("( CONTAINS_FA(song_name, '") + Filter + wxT("')>-1 OR ");
-                // RetVal += wxT(" CONTAINS_FA(song_albumartist, '") + Filter + wxT("')>-1 OR ");
-                // RetVal += wxT(" CONTAINS_FA(song_artist, '") + Filter + wxT("')>-1 OR ");
-                // RetVal += wxT(" CONTAINS_FA(song_composer, '") + Filter + wxT("')>-1 OR ");
-                // RetVal += wxT(" CONTAINS_FA(song_album, '") + Filter + wxT("')>-1 ) ");
-                // RetVal += wxT("AND ");
+                RetVal += Contains_Or_Like("song_album", Filter, collation_enabled);
+                RetVal += wxT(") AND ");
             }
             RetVal = RetVal.RemoveLast(4);
         }
@@ -5929,9 +5926,9 @@ namespace Guayadeque {
 
     wxString guDbLibrary::AlbumBrowserTextFilterToSQL(const wxArrayString &textfilters)
     {
-        wxString RetVal;
         int count = textfilters.Count();
         bool collation_enabled = GetDbCollationEnabled();
+        wxString RetVal;
 
         if (count)
         {
@@ -5940,12 +5937,8 @@ namespace Guayadeque {
                 wxString Filter = escape_query_str(textfilters[index]);
                 RetVal += "(" + Contains_Or_Like("song_album", Filter, collation_enabled) + "OR ";
                 RetVal += Contains_Or_Like("song_albumartist", Filter, collation_enabled) + "OR ";
-                RetVal += Contains_Or_Like("song_artist", Filter, collation_enabled) + ") ";
-                RetVal += wxT("AND ");
-                // RetVal += wxT("( CONTAINS_FA(song_album LIKE, '") + Filter + wxT("')>-1 OR ");
-                // RetVal += wxT(" CONTAINS_FA(song_albumartist, '") + Filter + wxT("')>-1 OR ");
-                // RetVal += wxT(" CONTAINS_FA(song_artist LIKE, '") + Filter + wxT("')>-1 ) ");
-                // RetVal += wxT("AND ");
+                RetVal += Contains_Or_Like("song_artist", Filter, collation_enabled);
+                RetVal += wxT(") AND ");
             }
             RetVal = RetVal.RemoveLast(4);
         }
