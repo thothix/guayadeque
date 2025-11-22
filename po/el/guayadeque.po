@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 18:11-0300\n"
+"POT-Creation-Date: 2025-11-22 18:50-0300\n"
 "PO-Revision-Date: 2024-12-05 13:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -3753,7 +3753,9 @@ msgstr "Ενσωμάτωση βαθμολογίας, αριθμού ακροάσ
 
 #: ui/preferences/Preferences.cpp:715
 #, fuzzy
-msgid "Enable search compatible with accented characters in the library (Slow)"
+msgid ""
+"Enable search compatible with accented characters in the library (slower "
+"results)"
 msgstr "Αναζήτηση στη βιβλιοθήκη"
 
 #: ui/preferences/Preferences.cpp:722

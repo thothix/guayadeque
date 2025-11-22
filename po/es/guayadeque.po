@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 18:11-0300\n"
+"POT-Creation-Date: 2025-11-22 18:50-0300\n"
 "PO-Revision-Date: 2024-12-09 18:46+0100\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>, 2020\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -3756,7 +3756,9 @@ msgstr "Incrustar valoración, numero de reproducciones y etiquetas"
 
 #: ui/preferences/Preferences.cpp:715
 #, fuzzy
-msgid "Enable search compatible with accented characters in the library (Slow)"
+msgid ""
+"Enable search compatible with accented characters in the library (slower "
+"results)"
 msgstr "Localizar en la biblioteca"
 
 #: ui/preferences/Preferences.cpp:722

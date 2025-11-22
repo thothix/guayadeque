@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 18:11-0300\n"
+"POT-Creation-Date: 2025-11-22 18:50-0300\n"
 "PO-Revision-Date: 2024-12-08 21:19-0300\n"
 "Last-Translator: Tiago T Barrionuevo <thothix@protonmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
@@ -3748,8 +3748,12 @@ msgid "Embed rating, play count and labels"
 msgstr "Embutir avaliação, contagem de reproduções e rótulos"
 
 #: ui/preferences/Preferences.cpp:715
-msgid "Enable search compatible with accented characters in the library (Slow)"
-msgstr "Habilitar pesquisa compatível com acentuação na biblioteca (Lento)"
+#, fuzzy
+msgid ""
+"Enable search compatible with accented characters in the library (slower "
+"results)"
+msgstr ""
+"Habilitar pesquisa compatível com acentuação na biblioteca (mais lento)"
 
 #: ui/preferences/Preferences.cpp:722
 msgid "Default copy action"
