@@ -53,6 +53,13 @@ sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-b
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake git
 ```
 
+### Debian 13
+
+```bash
+sudo apt install libgdk-pixbuf-2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-good libwxsqlite3-3.2-dev libtag2 libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake git
+```
+
+
 ### Mageia 9
 
 ```bash
