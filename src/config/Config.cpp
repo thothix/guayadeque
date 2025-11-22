@@ -425,6 +425,8 @@ void LoadCollection( wxXmlNode * xmlnode, guMediaCollection * collection )
             collection->m_ScanEmbeddedCovers = LoadCollectionInt( xmlnode );
         else if( Name == wxT( "EmbeddMetadata" ) )
             collection->m_EmbeddMetadata = LoadCollectionInt( xmlnode );
+        else if( Name == wxT( "CollationSearch" ) )
+            collection->m_CollationSearch = LoadCollectionInt( xmlnode );
         else if( Name == wxT( "DefaultCopyAction" ) )
             xmlnode->GetAttribute( wxT( "value" ), &collection->m_DefaultCopyAction );
         else if (Name == wxT(guCOLLECTION_DIRECTORY_PATH))
@@ -482,6 +484,7 @@ void SaveCollection( wxXmlNode * xmlnode, guMediaCollection * collection )
     WriteStr( XmlNode, wxT( "ScanFollowSymLinks" ), wxString::Format( wxT( "%i" ), collection->m_ScanFollowSymLinks ) );
     WriteStr( XmlNode, wxT( "ScanEmbeddedCovers" ), wxString::Format( wxT( "%i" ), collection->m_ScanEmbeddedCovers ) );
     WriteStr( XmlNode, wxT( "EmbeddMetadata" ), wxString::Format( wxT( "%i" ), collection->m_EmbeddMetadata ) );
+    WriteStr( XmlNode, wxT( "CollationSearch" ), wxString::Format( wxT( "%i" ), collection->m_CollationSearch ) );
     WriteStr( XmlNode, wxT( "DefaultCopyAction" ), collection->m_DefaultCopyAction );
     WriteStr( XmlNode, wxT( "LastUpdate" ), wxString::Format( wxT( "%i" ), collection->m_LastUpdate ) );
     WriteStr( XmlNode, wxT(guCOLLECTION_DIRECTORY_PATH), collection->m_DirectoryPath );

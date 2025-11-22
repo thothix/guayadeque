@@ -712,6 +712,11 @@ void guPrefDialog::BuildLibraryPage()
 	m_LibOptEmbedTagsChkBox->Enable( false );
 	m_LibOptionsSizer->Add( m_LibOptEmbedTagsChkBox, 0, wxRIGHT|wxLEFT, 5 );
 
+	m_LibOptCollationSearchChkBox = new wxCheckBox(m_LibOptPanel, wxID_ANY, _("Enable collation search in the library"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_LibOptCollationSearchChkBox->Enable( false );
+	m_LibOptCollationSearchChkBox->SetValue(false);
+	m_LibOptionsSizer->Add( m_LibOptCollationSearchChkBox, 0, wxRIGHT|wxLEFT, 5 );
+
 	wxBoxSizer * LibOptCopyToSizer = new wxBoxSizer( wxHORIZONTAL );
 
 	wxStaticText * LibOptCopyToLabel = new wxStaticText( m_LibOptPanel, wxID_ANY, _( "Default copy action" ), wxDefaultPosition, wxDefaultSize, 0 );
@@ -773,6 +778,7 @@ void guPrefDialog::BuildLibraryPage()
     m_LibOptFollowLinksChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnLibFollowSymLinksChanged, this );
     m_LibOptCheckEmbeddedChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnLibCheckEmbeddedChanged, this );
     m_LibOptEmbedTagsChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnLibEmbeddMetadataChanged, this );
+    m_LibOptCollationSearchChkBox->Bind( wxEVT_CHECKBOX, &guPrefDialog::OnLibCollationSearchChanged, this );
     m_LibOptCopyToChoice->Bind( wxEVT_CHOICE, &guPrefDialog::OnLibDefaultCopyToChanged, this );
 
 	m_LibCollectListBox->SetSelection(m_CollectSelected);
@@ -2647,6 +2653,7 @@ void guPrefDialog::OnLibOptionsLoadControls()
         m_LibOptFollowLinksChkBox->SetValue( CurCollection.m_ScanFollowSymLinks );
         m_LibOptCheckEmbeddedChkBox->SetValue( CurCollection.m_ScanEmbeddedCovers );
         m_LibOptEmbedTagsChkBox->SetValue( CurCollection.m_EmbeddMetadata );
+        m_LibOptCollationSearchChkBox->SetValue( CurCollection.m_CollationSearch );
         if( !m_LibOptCopyToChoice->SetStringSelection( CurCollection.m_DefaultCopyAction ) )
             m_LibOptCopyToChoice->SetSelection( 0 );
     }
@@ -2669,6 +2676,7 @@ void guPrefDialog::OnLibOptionsLoadControls()
     m_LibOptFollowLinksChkBox->Enable( CollectSelected );
     m_LibOptCheckEmbeddedChkBox->Enable( CollectSelected );
     m_LibOptEmbedTagsChkBox->Enable( CollectSelected );
+    m_LibOptCollationSearchChkBox->Enable( CollectSelected );
     m_LibOptCopyToChoice->Enable( CollectSelected );
 }
 
@@ -2732,6 +2740,7 @@ void guPrefDialog::OnLibAddCollectClick( wxCommandEvent& event )
                 Collection->m_ScanFollowSymLinks = false;
                 Collection->m_ScanEmbeddedCovers = true;
                 Collection->m_EmbeddMetadata = false;
+                Collection->m_CollationSearch = false;
                 Collection->m_LastUpdate = wxNOT_FOUND;
                 m_Collections.Add( Collection );
 
@@ -3004,6 +3013,11 @@ void guPrefDialog::OnLibCheckEmbeddedChanged( wxCommandEvent& event )
 void guPrefDialog::OnLibEmbeddMetadataChanged( wxCommandEvent& event )
 {
     m_Collections[ m_CollectSelected ].m_EmbeddMetadata = event.IsChecked();
+}
+
+void guPrefDialog::OnLibCollationSearchChanged( wxCommandEvent& event )
+{
+    m_Collections[ m_CollectSelected ].m_CollationSearch = event.IsChecked();
 }
 
 // -------------------------------------------------------------------------------- //
