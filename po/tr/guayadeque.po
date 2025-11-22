@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 17:51-0300\n"
+"POT-Creation-Date: 2025-11-22 18:11-0300\n"
 "PO-Revision-Date: 2020-03-29 15:40+0000\n"
 "Last-Translator: abc Def <hdogan1974@gmail.com>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/anonbeat/"
@@ -3763,7 +3763,7 @@ msgstr "Derecelendirmeyi,çalma sayısını ve etiketleri eşleştir"
 
 #: ui/preferences/Preferences.cpp:715
 #, fuzzy
-msgid "Enable collation search in the library (Slow)"
+msgid "Enable search compatible with accented characters in the library (Slow)"
 msgstr "Kütüphanede ara"
 
 #: ui/preferences/Preferences.cpp:722
