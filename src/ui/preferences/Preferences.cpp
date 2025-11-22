@@ -712,7 +712,7 @@ void guPrefDialog::BuildLibraryPage()
 	m_LibOptEmbedTagsChkBox->Enable( false );
 	m_LibOptionsSizer->Add( m_LibOptEmbedTagsChkBox, 0, wxRIGHT|wxLEFT, 5 );
 
-	m_LibOptCollationSearchChkBox = new wxCheckBox(m_LibOptPanel, wxID_ANY, _("Enable collation search in the library"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_LibOptCollationSearchChkBox = new wxCheckBox(m_LibOptPanel, wxID_ANY, _("Enable collation search in the library (Slow)"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_LibOptCollationSearchChkBox->Enable( false );
 	m_LibOptCollationSearchChkBox->SetValue(false);
 	m_LibOptionsSizer->Add( m_LibOptCollationSearchChkBox, 0, wxRIGHT|wxLEFT, 5 );
