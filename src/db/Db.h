@@ -71,38 +71,49 @@ class guFoldAllTransliterator
 
 class guDbFoldAllCollation : public wxSQLite3Collation
 {
+    private:
+        guFoldAllTransliterator transliterator;
+        wxString arg2 = "";
+        icu::UnicodeString t2;
+
     public:
-        guFoldAllTransliterator  transliterator;
-
-        guDbFoldAllCollation() : wxSQLite3Collation()
+        int Compare(const wxString &text1, const wxString &text2)
         {
-            transliterator = guFoldAllTransliterator();
-        }
-
-        int Compare(const wxString& text1, const wxString& text2)
-        {
-            guLogDebug("guDbFoldAllCollation::Compare %s %s", text1, text2);
-            icu::UnicodeString t1 = transliterator.WxStrToICU(text1), t2 = transliterator.WxStrToICU(text2);
+            if (arg2 != text2)
+            {
+                arg2 = text2;
+                t2 = transliterator.WxStrToICU(arg2);
+                transliterator.Fold(t2);
+                guLogDebug("guDbFoldAllCollation::Set ARG2 %s", arg2);
+            }
+            guLogDebug("guDbFoldAllCollation::Compare %s - %s", text1, arg2);
+            icu::UnicodeString t1 = transliterator.WxStrToICU(text1);
             transliterator.Fold(t1);
-            transliterator.Fold(t2);
             return t1.compare(t2);
         }
 };
 
 class guDbFoldAllContainsFunction : public wxSQLite3ScalarFunction
 {
-    public:
-        guFoldAllTransliterator  transliterator;
+    private:
+        guFoldAllTransliterator transliterator;
+        wxString arg2 = "";
+        icu::UnicodeString t2;
 
-        void Execute( wxSQLite3FunctionContext &    ctx )
+    public:
+        void Execute(wxSQLite3FunctionContext &ctx) override
         {
-            guLogDebug("guDbFoldAllContainsFunction::Execute %s %s", ctx.GetString(0), ctx.GetString(1));
-            icu::UnicodeString t1 = transliterator.WxStrToICU(ctx.GetString(0)),
-                               t2 = transliterator.WxStrToICU(ctx.GetString(1));
+            if (arg2 != ctx.GetString(1))
+            {
+                arg2 = ctx.GetString(1);
+                t2 = transliterator.WxStrToICU(arg2);
+                transliterator.Fold(t2);
+                guLogDebug("guDbFoldAllContainsFunction::Set ARG2 %s", arg2);
+            }
+            guLogDebug("guDbFoldAllContainsFunction::Execute %s - %s", ctx.GetString(0), arg2);
+            icu::UnicodeString t1 = transliterator.WxStrToICU(ctx.GetString(0));
             transliterator.Fold(t1);
-            transliterator.Fold(t2);
-            ctx.SetResult( t1.indexOf(t2) );
-            return;
+            ctx.SetResult(t1.indexOf(t2));
         }
 };
 
