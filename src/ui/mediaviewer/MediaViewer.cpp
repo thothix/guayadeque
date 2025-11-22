@@ -56,6 +56,7 @@ guMediaViewer::guMediaViewer( wxWindow * parent,
     m_PlayerPanel = playerpanel;
     m_BaseCommand = basecommand;
     m_ViewMode = wxNOT_FOUND;
+    m_PreviousTracksOrder = wxNOT_FOUND;
     m_ConfigPath = wxT( "mediaviewers/mediaviewer_" ) + collection.m_UniqueId;
     m_UpdateThread = nullptr;
     m_CleanThread = nullptr;

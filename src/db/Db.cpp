@@ -33,11 +33,12 @@ namespace Guayadeque {
 guDb::guDb()
 {
     m_Db = nullptr;
-    m_DbCollationEnabled = true;
+    m_DbCollationEnabled = false;
 }
 
 guDb::guDb( const wxString &dbname )
 {
+    m_DbCollationEnabled = false;
     if (m_DbCollationEnabled)
     {
         m_DbFoldAllCollation = guDbFoldAllCollation();
