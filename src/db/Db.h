@@ -112,7 +112,6 @@ class guDb
         wxString                       m_DbName;
         wxString                       m_DbUniqueId;
         wxSQLite3Database            * m_Db;
-        bool                           m_DbCollationEnabled;
         guDbFoldAllCollation           m_DbFoldAllCollation;
         guDbFoldAllContainsFunction    m_DbFoldAllContainsFunction;
 
@@ -126,7 +125,6 @@ class guDb
         wxSQLite3Database * GetDb() { return m_Db; }
         wxString            GetDbName() { return m_DbName; }
         wxString            GetDbUniqueId() { return m_DbUniqueId; }
-        bool                GetDbCollationEnabled() { return m_DbCollationEnabled; }
 
         wxSQLite3ResultSet  ExecuteQuery( const wxString &query );
         int                 ExecuteUpdate( const wxString &query );

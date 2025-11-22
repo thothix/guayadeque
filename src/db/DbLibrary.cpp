@@ -5904,7 +5904,7 @@ namespace Guayadeque {
     wxString guDbLibrary::TextFilterToSQL(const wxArrayString &TeFilters)
     {
         int count = TeFilters.Count();
-        bool collation_enabled = GetDbCollationEnabled();
+        bool collation_enabled = m_MediaViewer->GetCollationSearch();
         wxString RetVal;
 
         if (count)
@@ -5927,7 +5927,7 @@ namespace Guayadeque {
     wxString guDbLibrary::AlbumBrowserTextFilterToSQL(const wxArrayString &textfilters)
     {
         int count = textfilters.Count();
-        bool collation_enabled = GetDbCollationEnabled();
+        bool collation_enabled = m_MediaViewer->GetCollationSearch();
         wxString RetVal;
 
         if (count)

@@ -39,6 +39,7 @@ guMediaCollection::guMediaCollection( const int type )
     m_ScanFollowSymLinks = false;
     m_ScanEmbeddedCovers = true;
     m_EmbeddMetadata = false;
+    m_CollationSearch = false;
     m_LastUpdate = wxNOT_FOUND;
 }
 
