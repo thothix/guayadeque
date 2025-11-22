@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 17:51-0300\n"
+"POT-Creation-Date: 2025-11-22 18:11-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/"
@@ -3763,7 +3763,7 @@ msgstr "Включить в файлы рейтинг, метки и счёт"
 
 #: ui/preferences/Preferences.cpp:715
 #, fuzzy
-msgid "Enable collation search in the library (Slow)"
+msgid "Enable search compatible with accented characters in the library (Slow)"
 msgstr "Поиск в фонотеке"
 
 #: ui/preferences/Preferences.cpp:722

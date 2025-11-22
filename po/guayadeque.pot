@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 17:52-0300\n"
+"POT-Creation-Date: 2025-11-22 18:11-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3726,7 +3726,7 @@ msgid "Embed rating, play count and labels"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:715
-msgid "Enable collation search in the library (Slow)"
+msgid "Enable search compatible with accented characters in the library (Slow)"
 msgstr ""
 
 #: ui/preferences/Preferences.cpp:722
