@@ -54,6 +54,7 @@ class guMediaCollection
     bool            m_ScanFollowSymLinks;
     bool            m_ScanEmbeddedCovers;
     bool            m_EmbeddMetadata;
+    bool            m_CollationSearch;
     wxString        m_DefaultCopyAction;
     int             m_LastUpdate;
     wxString        m_DirectoryPath;

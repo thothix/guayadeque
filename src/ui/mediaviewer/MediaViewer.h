@@ -237,6 +237,7 @@ class guMediaViewer : public wxPanel
     virtual bool            GetScanFollowSymLinks() { return m_MediaCollection->m_ScanFollowSymLinks; }
     virtual bool            GetScanEmbeddedCovers() { return m_MediaCollection->m_ScanEmbeddedCovers; }
     virtual bool            GetEmbeddMetadata() { return m_MediaCollection->m_EmbeddMetadata; }
+    virtual bool            GetCollationSearch() { return m_MediaCollection->m_CollationSearch; }
     virtual wxString        GetDefaultCopyAction() { return m_MediaCollection->m_DefaultCopyAction; }
     virtual int             GetLastUpdate() { return m_MediaCollection->m_LastUpdate; }
     virtual void            SetLastUpdate();
