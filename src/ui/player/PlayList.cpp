@@ -234,7 +234,7 @@ guPlayList::guPlayList(wxWindow * parent,
 
     m_MaxPlayedTracks = Config->ReadNum( CONFIG_KEY_PLAYBACK_MAX_TRACKS_PLAYED, 15, CONFIG_PATH_PLAYBACK );
     m_MinPlayListTracks = Config->ReadNum( CONFIG_KEY_PLAYBACK_MIN_TRACKS_PLAY, 4, CONFIG_PATH_PLAYBACK );
-    m_DelTracksPLayed = Config->ReadNum( CONFIG_KEY_PLAYBACK_DEL_TRACKS_PLAYED, false, CONFIG_PATH_PLAYBACK );
+    m_DelTracksPlayed = Config->ReadNum( CONFIG_KEY_PLAYBACK_DEL_TRACKS_PLAYED, false, CONFIG_PATH_PLAYBACK );
 
     m_PlayBitmap = new wxBitmap( guImage( guIMAGE_INDEX_player_tiny_light_play ) );
     m_StopBitmap = new wxBitmap( guImage( guIMAGE_INDEX_player_tiny_red_stop ) );
@@ -370,7 +370,7 @@ void guPlayList::OnConfigUpdated( wxCommandEvent &event )
         {
             m_MaxPlayedTracks = Config->ReadNum( CONFIG_KEY_PLAYBACK_MAX_TRACKS_PLAYED, 15, CONFIG_PATH_PLAYBACK );
             m_MinPlayListTracks = Config->ReadNum( CONFIG_KEY_PLAYBACK_MIN_TRACKS_PLAY, 4, CONFIG_PATH_PLAYBACK );
-            m_DelTracksPLayed = Config->ReadNum( CONFIG_KEY_PLAYBACK_DEL_TRACKS_PLAYED, false, CONFIG_PATH_PLAYBACK );
+            m_DelTracksPlayed = Config->ReadNum( CONFIG_KEY_PLAYBACK_DEL_TRACKS_PLAYED, false, CONFIG_PATH_PLAYBACK );
         }
     }
 
@@ -1034,7 +1034,7 @@ guTrack * guPlayList::GetNext( const int playmode, const bool forceskip )
             return &m_Items[ m_CurItem ];
         else if( ( m_CurItem < ( ( int ) m_Items.Count() - 1 ) ) )
         {
-            if( m_DelTracksPLayed && ( playmode <= guPLAYER_PLAYMODE_SMART ) )
+            if( m_DelTracksPlayed && ( playmode <= guPLAYER_PLAYMODE_SMART ) )
             {
                 m_TotalLen -= m_Items[ m_CurItem ].m_Length;
                 m_Items.RemoveAt( m_CurItem );
@@ -1068,7 +1068,7 @@ guTrack * guPlayList::GetPrev( const int playmode, const bool forceskip )
             return &m_Items[ m_CurItem ];
         else if( m_CurItem > 0 )
         {
-            if( m_DelTracksPLayed && !playmode )
+            if( m_DelTracksPlayed && !playmode )
             {
                 m_TotalLen -= m_Items[ m_CurItem ].m_Length;
                 m_Items.RemoveAt( m_CurItem );
@@ -1107,7 +1107,7 @@ guTrack * guPlayList::GetNextAlbum( const int playmode, const bool forceskip )
 
             while( ( size_t ) m_CurItem < ( m_Items.Count() - 1 ) )
             {
-                if( m_DelTracksPLayed && !playmode )
+                if( m_DelTracksPlayed && !playmode )
                 {
                     m_TotalLen -= m_Items[ m_CurItem ].m_Length;
                     m_Items.RemoveAt( m_CurItem );
@@ -1156,7 +1156,7 @@ guTrack * guPlayList::GetPrevAlbum( const int playmode, const bool forceskip )
             //guLogMessage( wxT( "CurrentAlbum: %i" ), CurAlbumId );
             while( m_CurItem > 0 )
             {
-                if( m_DelTracksPLayed && !playmode )
+                if( m_DelTracksPlayed && !playmode )
                 {
                     m_TotalLen -= m_Items[ m_CurItem ].m_Length;
                     m_Items.RemoveAt( m_CurItem );

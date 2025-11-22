@@ -57,7 +57,7 @@ class guPlayList : public guListView
     unsigned int            m_TotalLen;
     long                    m_MaxPlayedTracks;
     int                     m_MinPlayListTracks;
-    bool                    m_DelTracksPLayed;
+    bool                    m_DelTracksPlayed;
     int                     m_ItemHeight;
     wxString                m_LastSearch;
 
