@@ -169,6 +169,7 @@ class guPrefDialog : public wxDialog
     wxCheckBox *                m_LibOptCreatePlayListChkBox;
     wxCheckBox *                m_LibOptFollowLinksChkBox;
     wxCheckBox *                m_LibOptCheckEmbeddedChkBox;
+    wxCheckBox *                m_LibOptCollationSearchChkBox;
     wxCheckBox *                m_LibOptEmbedTagsChkBox;
     wxChoice *                  m_LibOptCopyToChoice;
 
@@ -402,6 +403,7 @@ class guPrefDialog : public wxDialog
     void OnLibFollowSymLinksChanged( wxCommandEvent& event );
     void OnLibCheckEmbeddedChanged( wxCommandEvent& event );
     void OnLibEmbeddMetadataChanged( wxCommandEvent& event );
+    void OnLibCollationSearchChanged( wxCommandEvent& event );
     void OnLibDefaultCopyToChanged( wxCommandEvent& event );
     void OnLibCopyToSetupBtnClicked( wxCommandEvent& event );
 
