@@ -96,7 +96,7 @@ guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
     wxSize MainWindowSize;
     MainWindowSize.x = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_WIDTH, 800, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
     MainWindowSize.y = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_HEIGHT, 600, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
-    Create( parent, wxID_ANY, wxT( "Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION ),
+    Create( parent, wxID_ANY, wxT( "Guayadeque Music Player " GUAYADEQUE_VERSION_REVISION ),
             MainWindowPos, MainWindowSize, wxDEFAULT_FRAME_STYLE );
     m_AuiManager.SetManagedWindow( this );
     m_AuiManager.SetArtProvider( new guAuiDockArt() );
@@ -1779,9 +1779,9 @@ void guMainFrame::OnUpdateTrack( wxCommandEvent &event )
     wxString title, tooltip;
     guTrack * Track = (guTrack *) event.GetClientData();
 
-    title = wxT("Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION);
+    title = wxT("Guayadeque Music Player " GUAYADEQUE_VERSION_REVISION);
     if (m_TaskBarIcon)
-        tooltip = wxT("Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION);
+        tooltip = wxT("Guayadeque Music Player " GUAYADEQUE_VERSION_REVISION);
 
     if (Track)
     {
@@ -3323,7 +3323,7 @@ void guMainFrame::CreateTaskBarIcon( void )
             {
                 m_TaskBarIcon = new guTaskBarIcon( this, m_PlayerPanel );
                 if ( m_TaskBarIcon )
-                    m_TaskBarIcon->SetIcon( m_AppIcon, wxT( "Guayadeque Music Player " ID_GUAYADEQUE_VERSION "-" ID_GUAYADEQUE_REVISION ) );
+                    m_TaskBarIcon->SetIcon( m_AppIcon, wxT( "Guayadeque Music Player " GUAYADEQUE_VERSION_REVISION ) );
             }
         }
     }

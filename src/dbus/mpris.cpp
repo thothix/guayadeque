@@ -379,7 +379,7 @@ DBusHandlerResult guMPRIS::HandleMessages( guDBusMessage * msg, guDBusMessage * 
                 {
                     DBusMessageIter args;
                     dbus_message_iter_init_append( reply->GetMessage(), &args );
-                    const char * VersionStr = "Guayadeque " ID_GUAYADEQUE_VERSION;
+                    const char * VersionStr = "Guayadeque " GUAYADEQUE_VERSION;
                     if( !dbus_message_iter_append_basic( &args, DBUS_TYPE_STRING, &VersionStr ) )
                     {
                         guLogError( wxT( "Failed to attach the root identity" ) );
