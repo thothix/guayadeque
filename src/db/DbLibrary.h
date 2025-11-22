@@ -667,7 +667,6 @@ extern unsigned long DynPLDateOption2[];
 
         void SetTrackPlayCount(const int songid, const int playcount, const bool writetags = false);
 
-
         int GetYearsSongs(const wxArrayInt &Years, guTrackArray *Songs);
 
         int GetRatingsSongs(const wxArrayInt &Ratings, guTrackArray *Songs);
@@ -681,6 +680,10 @@ extern unsigned long DynPLDateOption2[];
         wxBitmap *GetCoverBitmap(const int coverid, const bool thumb = true);
 
         int GetEmptyCovers(guCoverInfos &coverinfos);
+
+        wxString TextFilterToSQL(const wxArrayString &TeFilters);
+
+        wxString AlbumBrowserTextFilterToSQL(const wxArrayString &textfilters);
 
         // Smart Playlist and LastFM Panel support functions
         int FindArtist(const wxString &Artist);
@@ -712,7 +715,7 @@ extern unsigned long DynPLDateOption2[];
         void UpdateTrackFileName(const wxString &oldname, const wxString &newname);
 
         void UpdatePaths(const wxString &oldpath, const wxString &newpath);
-    };
+    };  // guDbLibrary
 
     WX_DECLARE_OBJARRAY(guDbLibrary, guArrayDbLibrary);
 
@@ -732,8 +735,6 @@ extern unsigned long DynPLDateOption2[];
     wxArrayInt GetArraySameItems(const wxArrayInt &Source, const wxArrayInt &Oper);
 
     wxArrayInt GetArrayDiffItems(const wxArrayInt &Source, const wxArrayInt &Oper);
-
-    wxString TextFilterToSQL(const wxArrayString &TeFilters);
 
     wxString DirectoryFilterToSQL(const wxString &DiFilter);
 

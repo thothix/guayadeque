@@ -32,13 +32,17 @@ namespace Guayadeque {
 
 guDb::guDb()
 {
-    m_Db = NULL;
+    m_Db = nullptr;
+    m_DbCollationEnabled = true;
 }
 
 guDb::guDb( const wxString &dbname )
 {
-    m_DbFoldAllCollation = guDbFoldAllCollation();
-    m_DbFoldAllContainsFunction = guDbFoldAllContainsFunction();
+    if (m_DbCollationEnabled)
+    {
+        m_DbFoldAllCollation = guDbFoldAllCollation();
+        m_DbFoldAllContainsFunction = guDbFoldAllContainsFunction();
+    }
     Open( dbname );
 }
 
@@ -153,8 +157,11 @@ void guDb::SetInitParams( void )
     //query = wxT("PRAGMA page_size=10240; PRAGMA cache_size=65536; PRAGMA count_changes=1; PRAGMA synchronous='OFF'; PRAGMA short_column_names=0; PRAGMA full_column_names=0;");
     ExecuteUpdate(query);
 
-    m_Db->SetCollation(wxT("NOCASENOACCENTS"), &m_DbFoldAllCollation);
-    m_Db->CreateFunction(wxString("CONTAINS_FA"), 2, m_DbFoldAllContainsFunction, true);
+    if (m_DbCollationEnabled)
+    {
+        m_Db->SetCollation(wxT("NOCASENOACCENTS"), &m_DbFoldAllCollation);
+        m_Db->CreateFunction(wxString("CONTAINS_FA"), 2, m_DbFoldAllContainsFunction, true);
+    }
 }
 
 }

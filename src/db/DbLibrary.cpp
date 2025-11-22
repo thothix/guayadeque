@@ -334,27 +334,11 @@ namespace Guayadeque {
         return RetVal;
     };
 
-    // -------------------------------------------------------------------------------- //
-    wxString TextFilterToSQL(const wxArrayString &TeFilters)
+    wxString Contains_Or_Like(const wxString &field, const wxString &filter, const bool collation_enabled)
     {
-        int count;
-        wxString RetVal;
-
-        if ((count = TeFilters.Count()))
-        {
-            for (int index = 0; index < count; index++)
-            {
-                wxString Filter = escape_query_str(TeFilters[index]);
-                RetVal += wxT("( CONTAINS_FA(song_name, '") + Filter + wxT("')>-1 OR ");
-                RetVal += wxT(" CONTAINS_FA(song_albumartist, '") + Filter + wxT("')>-1 OR ");
-                RetVal += wxT(" CONTAINS_FA(song_artist, '") + Filter + wxT("')>-1 OR ");
-                RetVal += wxT(" CONTAINS_FA(song_composer, '") + Filter + wxT("')>-1 OR ");
-                RetVal += wxT(" CONTAINS_FA(song_album, '") + Filter + wxT("')>-1 ) ");
-                RetVal += wxT("AND ");
-            }
-            RetVal = RetVal.RemoveLast(4);
-        }
-        return RetVal;
+        if (collation_enabled)
+            return wxT("CONTAINS_FA(" + field + ", '") + filter + wxT("')>-1 ");
+        return field + wxT(" LIKE '%") + filter + wxT("%' ");
     }
 
     // -------------------------------------------------------------------------------- //
@@ -3051,26 +3035,6 @@ namespace Guayadeque {
 
         dbRes.Finalize();
 
-        return RetVal;
-    }
-
-    // -------------------------------------------------------------------------------- //
-    wxString inline AlbumBrowserTextFilterToSQL(const wxArrayString &textfilters)
-    {
-        wxString RetVal;
-        int count = textfilters.Count();
-        if (count)
-        {
-            for (int index = 0; index < count; index++)
-            {
-                wxString Filter = escape_query_str(textfilters[index]);
-                RetVal += wxT("( CONTAINS_FA(song_album LIKE, '") + Filter + wxT("')>-1 OR ");
-                RetVal += wxT(" CONTAINS_FA(song_albumartist, '") + Filter + wxT("')>-1 OR ");
-                RetVal += wxT(" CONTAINS_FA(song_artist LIKE, '") + Filter + wxT("')>-1 ) ");
-                RetVal += wxT("AND ");
-            }
-            RetVal = RetVal.RemoveLast(4);
-        }
         return RetVal;
     }
 
@@ -5932,6 +5896,60 @@ namespace Guayadeque {
         dbRes.Finalize();
 
         return coverinfos.Count();
+    }
+
+    wxString guDbLibrary::TextFilterToSQL(const wxArrayString &TeFilters)
+    {
+        int count;
+        wxString RetVal;
+        bool collation_enabled = GetDbCollationEnabled();
+
+        if ((count = TeFilters.Count()))
+        {
+            for (int index = 0; index < count; index++)
+            {
+                wxString Filter = escape_query_str(TeFilters[index]);
+                RetVal += "(" + Contains_Or_Like("song_name", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_albumartist", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_artist", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_composer", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_album", Filter, collation_enabled) + ")";
+                RetVal += wxT(" AND ");
+                // RetVal += wxT("( CONTAINS_FA(song_name, '") + Filter + wxT("')>-1 OR ");
+                // RetVal += wxT(" CONTAINS_FA(song_albumartist, '") + Filter + wxT("')>-1 OR ");
+                // RetVal += wxT(" CONTAINS_FA(song_artist, '") + Filter + wxT("')>-1 OR ");
+                // RetVal += wxT(" CONTAINS_FA(song_composer, '") + Filter + wxT("')>-1 OR ");
+                // RetVal += wxT(" CONTAINS_FA(song_album, '") + Filter + wxT("')>-1 ) ");
+                // RetVal += wxT("AND ");
+            }
+            RetVal = RetVal.RemoveLast(4);
+        }
+        return RetVal;
+    }
+
+    wxString guDbLibrary::AlbumBrowserTextFilterToSQL(const wxArrayString &textfilters)
+    {
+        wxString RetVal;
+        int count = textfilters.Count();
+        bool collation_enabled = GetDbCollationEnabled();
+
+        if (count)
+        {
+            for (int index = 0; index < count; index++)
+            {
+                wxString Filter = escape_query_str(textfilters[index]);
+                RetVal += "(" + Contains_Or_Like("song_album", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_albumartist", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_artist", Filter, collation_enabled) + ") ";
+                RetVal += wxT("AND ");
+                // RetVal += wxT("( CONTAINS_FA(song_album LIKE, '") + Filter + wxT("')>-1 OR ");
+                // RetVal += wxT(" CONTAINS_FA(song_albumartist, '") + Filter + wxT("')>-1 OR ");
+                // RetVal += wxT(" CONTAINS_FA(song_artist LIKE, '") + Filter + wxT("')>-1 ) ");
+                // RetVal += wxT("AND ");
+            }
+            RetVal = RetVal.RemoveLast(4);
+        }
+        return RetVal;
     }
 
     // -------------------------------------------------------------------------------- //
