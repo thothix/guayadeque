@@ -4,11 +4,22 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.7.3 (2025-0x-xx)
+0.7.3 (2025-11-xx)
 ------------------
+###### After Forever
+
+### Enhancements
+  * Implemented the collection search with or without collation search (search compatible with
+    accented characters in the library) (Closes #74):
+    * Added a collection configuration to enable/disable the collation search in the library:
+      "Preferences->Collections->Your-Collection->Enable search compatible with accented...".
+    * The new default is NOT to use the collation search. It was enabled since its 
+      implementation in 0.6.0 version and it's very slow in large collections.
+  * Changed the internal Guayadeque version representation with new constants.
+  * Added installation instructions for Debian 13 Trixie.
 
 ### Bugfixes
-  * More bugfixes to the multiple collections support:
+  * Several bugfixes to the multiple collections support:
     * Fixed the "select" feature not working for playlist tracks from a non default collection.
     * Fixed the "select" feature stop working for any collection after close and reopen it.
     * Fixed the "select" feature stop working after come back from library playlist view.
@@ -78,7 +89,7 @@ Changelog
   * Updated the wiki manual and the Guayadeque Help menu link.
 
 ### Bugfixes
-  * Fixed a long time bug that causes playback skipping after around 20/30 minutes
+  * Fixed a long standing bug that causes playback skipping after around 20/30 minutes
     playing a long track or podcast.
 
 ### Removed
@@ -182,13 +193,13 @@ Changelog
       the search if the directory is changed.
     - The panel can be shown/hidden in Sources -> "Collection Name" -> Library ->
       Directories menu item.
+  * Added collate accents on media search. The search function now make use of
+    Unicode Collation to match accented characters.
   * Added option in Preferences -> General to hide the player album cover. It's
     useful if you already have the cover panel visible and make more room to the
     player information.
 
 ### Enhancements
-  * Added collate accents on media search. The search function now make use of
-    Unicode Collation to match accented characters.
   * Preload the current track in the player at startup and some other situations.
   * Added C++11 random number generator support and set it as default.
     There's a new build option CXX11_RNG for srand() compatibility but it'll be
