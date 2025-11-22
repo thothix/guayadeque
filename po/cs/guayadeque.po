@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 18:11-0300\n"
+"POT-Creation-Date: 2025-11-22 18:50-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: -, 2016,2020\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/anonbeat/"
@@ -3750,7 +3750,9 @@ msgstr "Vkládat do Souboru hodnocení,počet hraní a popisky"
 
 #: ui/preferences/Preferences.cpp:715
 #, fuzzy
-msgid "Enable search compatible with accented characters in the library (Slow)"
+msgid ""
+"Enable search compatible with accented characters in the library (slower "
+"results)"
 msgstr "Hledat v knihovně"
 
 #: ui/preferences/Preferences.cpp:722
