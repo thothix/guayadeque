@@ -278,10 +278,8 @@ void guTreeViewTreeCtrl::ReloadItems( void )
     Query.RemoveLast( 2 );
     Sorting.RemoveLast( 2 );
     Query += wxT( " FROM songs " );
-    if( m_TextFilters.Count() )
-    {
-        Query += wxT( "WHERE " ) + TextFilterToSQL( m_TextFilters );
-    }
+    if (m_TextFilters.Count())
+        Query += wxT("WHERE ") + m_Db->TextFilterToSQL(m_TextFilters);
 
     wxSQLite3ResultSet dbRes;
 
