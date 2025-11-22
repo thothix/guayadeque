@@ -3740,7 +3740,6 @@ msgid "Embed rating, play count and labels"
 msgstr "Incorporar avaliação, número de reproduções e etiquetas"
 
 #: ui/preferences/Preferences.cpp:715
-#, fuzzy
 msgid ""
 "Enable search compatible with accented characters in the library (slower "
 "results)"
