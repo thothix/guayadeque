@@ -17,14 +17,12 @@
    You should have received a copy of the GNU General Public License
    along with Guayadeque. If not, see <https://www.gnu.org/licenses/>.
 */
-#ifndef __AUDIOSCROBBLE_H__
-#define __AUDIOSCROBBLE_H__
+#pragma once
 
 #include <wx/wx.h>
 #include "EventCommandIds.h"
 #include "DbLibrary.h"
 #include "Version.h"
-
 
 #define guAS_PROTOCOL_VERSION       wxT( "1.2.1" )
 
@@ -34,7 +32,7 @@
 
 #ifndef guAS_DEVELOPMENT
     #define guAS_CLIENT_ID          wxT( "gua" ) // Assigned by Adrian Woodhead <adrian@last.fm>
-    #define guAS_CLIENT_VERSION     ID_GUAYADEQUE_VERSION
+    #define guAS_CLIENT_VERSION     GUAYADEQUE_VERSION
 #else
     #define guAS_CLIENT_ID          wxT( "tst" )
     #define guAS_CLIENT_VERSION     wxT( "1.0" )
@@ -198,6 +196,3 @@ class guASPlayedThread : public wxThread
 };
 
 }
-
-#endif
-// -------------------------------------------------------------------------------- //

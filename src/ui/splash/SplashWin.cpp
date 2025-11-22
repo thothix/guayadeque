@@ -41,10 +41,7 @@ guSplashFrame::guSplashFrame( wxWindow * parent, int timeout ) :
 	MainSizer = new wxBoxSizer( wxVERTICAL );
 
     wxColour FontColor = wxColour( 100, 100, 100 );
-    wxString Version = wxT( ID_GUAYADEQUE_VERSION );
-#ifdef ID_GUAYADEQUE_REVISION
-    Version += wxT( "-" ID_GUAYADEQUE_REVISION );
-#endif
+    wxString Version = wxT( GUAYADEQUE_VERSION_REVISION );
 	m_Version = new wxStaticText( this, wxID_ANY, Version, wxDefaultPosition, wxDefaultSize, 0 );
     wxFont CurFont = m_Version->GetFont();
     CurFont.SetPointSize( CurFont.GetPointSize() + 2 );
