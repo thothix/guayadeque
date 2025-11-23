@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 11:37-0300\n"
+"POT-Creation-Date: 2025-11-23 14:08-0300\n"
 "PO-Revision-Date: 2024-12-05 14:31+0100\n"
 "Last-Translator: Bo <skippylooks-transifex@yahoo.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/"
@@ -3749,10 +3749,11 @@ msgstr "Bewertung, Wiedergabenummer and Labels einbetten"
 
 #: ui/preferences/Preferences.cpp:716
 msgid ""
-"Enable accented characters support in the library search (slower results)"
+"Enable search with accented characters support in the library (slower "
+"results)"
 msgstr ""
-"Aktivieren der Suche mit Akzentzeichen in der Bibliothek (langsamere "
-"Ergebnisse)"
+"Aktivieren eine Suche, die mit Akzentzeichen in der Bibliothek kompatibel "
+"ist (langsamere Ergebnisse)"
 
 #: ui/preferences/Preferences.cpp:723
 msgid "Default copy action"

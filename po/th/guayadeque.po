@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 11:37-0300\n"
+"POT-Creation-Date: 2025-11-23 14:08-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Thai (Thailand) (http://www.transifex.com/projects/p/"
@@ -3751,7 +3751,8 @@ msgstr ""
 #: ui/preferences/Preferences.cpp:716
 #, fuzzy
 msgid ""
-"Enable accented characters support in the library search (slower results)"
+"Enable search with accented characters support in the library (slower "
+"results)"
 msgstr "ค้นหาในคลังเพลง"
 
 #: ui/preferences/Preferences.cpp:723

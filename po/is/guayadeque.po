@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 11:37-0300\n"
+"POT-Creation-Date: 2025-11-23 14:08-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Hreinn Jónsson <hreinnjons@gmail.com>, 2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/anonbeat/"
@@ -3747,7 +3747,8 @@ msgstr "setja inn einkunn, spilunar talning og merki"
 #: ui/preferences/Preferences.cpp:716
 #, fuzzy
 msgid ""
-"Enable accented characters support in the library search (slower results)"
+"Enable search with accented characters support in the library (slower "
+"results)"
 msgstr "Leita í safni"
 
 #: ui/preferences/Preferences.cpp:723
