@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 14:08-0300\n"
+"POT-Creation-Date: 2025-11-23 20:10-0300\n"
 "PO-Revision-Date: 2024-12-08 21:57-0300\n"
 "Last-Translator: Tiago T Barrionuevo <thothix@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/"
@@ -259,7 +259,7 @@ msgstr "Não perguntar novamente"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/MediaViewer.cpp:939 ui/mediaviewer/library/DiBrowser.cpp:327
+#: ui/mediaviewer/MediaViewer.cpp:964 ui/mediaviewer/library/DiBrowser.cpp:327
 #: ui/MainFrame.cpp:1054 ui/MainFrame.cpp:1092 ui/MainFrame.cpp:1325
 #: ui/podcasts/PodcastsPanel.cpp:1752 ui/filebrowser/FileBrowser.cpp:415
 #: ui/magnatune/Magnatune.cpp:975 ui/locationpanel/LocationPanel.cpp:325
@@ -270,35 +270,35 @@ msgstr "Atualizar"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/MediaViewer.cpp:939 ui/MainFrame.cpp:1326
+#: ui/mediaviewer/MediaViewer.cpp:964 ui/MainFrame.cpp:1326
 #: ui/magnatune/Magnatune.cpp:975 ui/locationpanel/LocationPanel.cpp:504
 msgid "Update the collection library"
 msgstr "Atualizar coleção de músicas"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/MediaViewer.cpp:942 ui/MainFrame.cpp:1331
+#: ui/mediaviewer/MediaViewer.cpp:967 ui/MainFrame.cpp:1331
 #: ui/magnatune/Magnatune.cpp:978 ui/locationpanel/LocationPanel.cpp:509
 msgid "Rescan"
 msgstr "Reanalisar"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/MediaViewer.cpp:942 ui/MainFrame.cpp:1332
+#: ui/mediaviewer/MediaViewer.cpp:967 ui/MainFrame.cpp:1332
 #: ui/magnatune/Magnatune.cpp:978 ui/locationpanel/LocationPanel.cpp:510
 msgid "Rescan the collection library"
 msgstr "Reanalisar coleção de músicas"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/MediaViewer.cpp:945 ui/MainFrame.cpp:1337
+#: ui/mediaviewer/MediaViewer.cpp:970 ui/MainFrame.cpp:1337
 #: ui/magnatune/Magnatune.cpp:981 ui/locationpanel/LocationPanel.cpp:515
 msgid "Search Covers"
 msgstr "Procurar capas de álbum"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/MediaViewer.cpp:945 ui/MainFrame.cpp:1338
+#: ui/mediaviewer/MediaViewer.cpp:970 ui/MainFrame.cpp:1338
 #: ui/magnatune/Magnatune.cpp:981 ui/locationpanel/LocationPanel.cpp:516
 msgid "Search the collection missing covers"
 msgstr "Procurar capas de álbum inexistentes"
@@ -318,7 +318,7 @@ msgstr "Desmontar dispositivo"
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:677
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/MediaViewer.cpp:950 ui/MainFrame.cpp:1061
+#: ui/mediaviewer/MediaViewer.cpp:975 ui/MainFrame.cpp:1061
 #: ui/MainFrame.cpp:1099 ui/MainFrame.cpp:1353
 #: ui/podcasts/PodcastsPanel.cpp:1758 ui/preferences/Preferences.cpp:1138
 #: ui/magnatune/Magnatune.cpp:986 ui/locationpanel/LocationPanel.cpp:332
@@ -329,7 +329,7 @@ msgstr "Propriedades"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/MediaViewer.cpp:950 ui/MainFrame.cpp:1353
+#: ui/mediaviewer/MediaViewer.cpp:975 ui/MainFrame.cpp:1353
 #: ui/magnatune/Magnatune.cpp:986 ui/locationpanel/LocationPanel.cpp:531
 msgid "Show collection properties"
 msgstr "Mostrar propriedades da coleção"
@@ -717,7 +717,7 @@ msgid "UnNamed"
 msgstr "Sem nome"
 
 #: ui/mediaviewer/treeview/TreePanel.cpp:1166
-#: ui/mediaviewer/MediaViewer.cpp:827
+#: ui/mediaviewer/MediaViewer.cpp:846
 msgid "New Filter"
 msgstr "Novo filtro"
 
@@ -985,7 +985,7 @@ msgstr "Formato das listas de reprodução:"
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:852
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:763
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:789
-#: ui/mediaviewer/MediaViewer.cpp:260 ui/MainFrame.cpp:1302
+#: ui/mediaviewer/MediaViewer.cpp:262 ui/MainFrame.cpp:1302
 #: ui/locationpanel/LocationPanel.cpp:480
 msgid "Playlists"
 msgstr "Listas de reprodução"
@@ -1407,91 +1407,95 @@ msgstr "Nenhum item selecionado..."
 msgid "Copy the current selected tracks to a directory or device"
 msgstr "Copiar faixas selecionadas para um diretório ou dispositivo"
 
-#: ui/mediaviewer/MediaViewer.cpp:239
+#: ui/mediaviewer/MediaViewer.cpp:241
 msgid "All Albums"
 msgstr "Todos os álbuns"
 
-#: ui/mediaviewer/MediaViewer.cpp:248
+#: ui/mediaviewer/MediaViewer.cpp:250
 msgid "Library view"
 msgstr "Coleção"
 
-#: ui/mediaviewer/MediaViewer.cpp:252
+#: ui/mediaviewer/MediaViewer.cpp:254
 msgid "Album Browser view"
 msgstr "Explorador de álbuns"
 
-#: ui/mediaviewer/MediaViewer.cpp:256
+#: ui/mediaviewer/MediaViewer.cpp:258
 msgid "Tree view"
 msgstr "Árvore"
 
-#: ui/mediaviewer/MediaViewer.cpp:272
+#: ui/mediaviewer/MediaViewer.cpp:269
+msgid "Ignore the accents"
+msgstr "Ignorar acentos"
+
+#: ui/mediaviewer/MediaViewer.cpp:278
 msgid "View the current defined filters"
 msgstr "Ver filtros definidos"
 
-#: ui/mediaviewer/MediaViewer.cpp:277
+#: ui/mediaviewer/MediaViewer.cpp:283
 msgid "Add a new album browser filter"
 msgstr "Adicionar filtro de explorador de álbuns"
 
-#: ui/mediaviewer/MediaViewer.cpp:281
+#: ui/mediaviewer/MediaViewer.cpp:287
 msgid "Delete the current selected filter"
 msgstr "Eliminar filtro selecionado"
 
-#: ui/mediaviewer/MediaViewer.cpp:286
+#: ui/mediaviewer/MediaViewer.cpp:292
 msgid "Edit the current selected filter"
 msgstr "Editar filtro selecionado"
 
-#: ui/mediaviewer/MediaViewer.cpp:930 ui/MainFrame.cpp:1313
+#: ui/mediaviewer/MediaViewer.cpp:955 ui/MainFrame.cpp:1313
 #: ui/locationpanel/LocationPanel.cpp:491
 msgid "Add Path"
 msgstr "Adicionar caminho"
 
-#: ui/mediaviewer/MediaViewer.cpp:930 ui/MainFrame.cpp:1313
+#: ui/mediaviewer/MediaViewer.cpp:955 ui/MainFrame.cpp:1313
 #: ui/locationpanel/LocationPanel.cpp:491
 msgid "Add path to the collection"
 msgstr "Adicionar caminho à coleção"
 
-#: ui/mediaviewer/MediaViewer.cpp:933
+#: ui/mediaviewer/MediaViewer.cpp:958
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:49 ui/MainFrame.cpp:1317
 #: ui/locationpanel/LocationPanel.cpp:495
 msgid "Import Files"
 msgstr "Importar ficheiros"
 
-#: ui/mediaviewer/MediaViewer.cpp:933 ui/MainFrame.cpp:1317
+#: ui/mediaviewer/MediaViewer.cpp:958 ui/MainFrame.cpp:1317
 #: ui/locationpanel/LocationPanel.cpp:495
 msgid "Import files into the collection"
 msgstr "Importar ficheiros para a coleção"
 
-#: ui/mediaviewer/MediaViewer.cpp:954 ui/preferences/Preferences.cpp:2700
+#: ui/mediaviewer/MediaViewer.cpp:979 ui/preferences/Preferences.cpp:2700
 #: ui/preferences/Preferences.cpp:2720
 msgid "Collection"
 msgstr "Coleção"
 
-#: ui/mediaviewer/MediaViewer.cpp:1116 ui/preferences/Preferences.cpp:2852
+#: ui/mediaviewer/MediaViewer.cpp:1141 ui/preferences/Preferences.cpp:2852
 msgid "Select library path"
 msgstr "Selecione o local da coleção"
 
-#: ui/mediaviewer/MediaViewer.cpp:1146
+#: ui/mediaviewer/MediaViewer.cpp:1171
 msgid "This Path is already in the library"
 msgstr "A coleção já possui este caminho"
 
-#: ui/mediaviewer/MediaViewer.cpp:1147
+#: ui/mediaviewer/MediaViewer.cpp:1172
 msgid "Adding path error"
 msgstr "Erro ao adicionar caminho"
 
-#: ui/mediaviewer/MediaViewer.cpp:1324 ui/mediaviewer/MediaViewer.cpp:1343
-#: ui/mediaviewer/MediaViewer.cpp:1358
+#: ui/mediaviewer/MediaViewer.cpp:1349 ui/mediaviewer/MediaViewer.cpp:1368
+#: ui/mediaviewer/MediaViewer.cpp:1383
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3187
 #: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "faixa"
 
-#: ui/mediaviewer/MediaViewer.cpp:1324 ui/mediaviewer/MediaViewer.cpp:1343
-#: ui/mediaviewer/MediaViewer.cpp:1358
+#: ui/mediaviewer/MediaViewer.cpp:1349 ui/mediaviewer/MediaViewer.cpp:1368
+#: ui/mediaviewer/MediaViewer.cpp:1383
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3187
 #: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "faixas"
 
-#: ui/mediaviewer/MediaViewer.cpp:1421 ui/cover/SelCoverFile.cpp:42
+#: ui/mediaviewer/MediaViewer.cpp:1446 ui/cover/SelCoverFile.cpp:42
 msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
@@ -1499,29 +1503,29 @@ msgstr ""
 "Não foi possível encontrar o álbum na coleção.\n"
 "Experimente atualizar a coleção."
 
-#: ui/mediaviewer/MediaViewer.cpp:1422 ui/cover/SelCoverFile.cpp:43
+#: ui/mediaviewer/MediaViewer.cpp:1447 ui/cover/SelCoverFile.cpp:43
 #: ui/filebrowser/FileBrowser.cpp:574
 msgid "Error"
 msgstr "Erro"
 
-#: ui/mediaviewer/MediaViewer.cpp:2064
+#: ui/mediaviewer/MediaViewer.cpp:2089
 msgid "smart playlist"
 msgstr "lista de reprodução inteligente"
 
-#: ui/mediaviewer/MediaViewer.cpp:2074
+#: ui/mediaviewer/MediaViewer.cpp:2099
 msgid "Playlist"
 msgstr "Lista de reprodução"
 
-#: ui/mediaviewer/MediaViewer.cpp:2108
+#: ui/mediaviewer/MediaViewer.cpp:2133
 msgid "The best of"
 msgstr "O melhor de"
 
-#: ui/mediaviewer/MediaViewer.cpp:2131
+#: ui/mediaviewer/MediaViewer.cpp:2156
 #, c-format
 msgid "No tracks found for %s."
 msgstr "Nenhuma faixa encontrada para %s."
 
-#: ui/mediaviewer/MediaViewer.cpp:2134
+#: ui/mediaviewer/MediaViewer.cpp:2159
 #, c-format
 msgid "Best tracks for '%s' not found."
 msgstr "Melhores faixas para '%s' não encontradas."
