@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 11:37-0300\n"
+"POT-Creation-Date: 2025-11-23 14:08-0300\n"
 "PO-Revision-Date: 2024-12-05 13:11+0100\n"
 "Last-Translator: Rodolfo Gonella Diaza <rudygonella@gmail.com>\n"
 "Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/"
@@ -3743,9 +3743,10 @@ msgstr "Includi punteggio, pumero di riproduzioni ed etichette"
 
 #: ui/preferences/Preferences.cpp:716
 msgid ""
-"Enable accented characters support in the library search (slower results)"
+"Enable search with accented characters support in the library (slower "
+"results)"
 msgstr ""
-"Attiva l'uso dei caratteri accentati per la ricerca nella biblioteca "
+"Attiva una ricerca compatibile con i caratteri accentati nella libreria "
 "(risultato più lento)"
 
 #: ui/preferences/Preferences.cpp:723
