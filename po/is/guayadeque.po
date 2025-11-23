@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 14:08-0300\n"
+"POT-Creation-Date: 2025-11-23 20:10-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Hreinn Jónsson <hreinnjons@gmail.com>, 2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/anonbeat/"
@@ -260,7 +260,7 @@ msgstr "Ekki spyrja aftur"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/MediaViewer.cpp:939 ui/mediaviewer/library/DiBrowser.cpp:327
+#: ui/mediaviewer/MediaViewer.cpp:964 ui/mediaviewer/library/DiBrowser.cpp:327
 #: ui/MainFrame.cpp:1054 ui/MainFrame.cpp:1092 ui/MainFrame.cpp:1325
 #: ui/podcasts/PodcastsPanel.cpp:1752 ui/filebrowser/FileBrowser.cpp:415
 #: ui/magnatune/Magnatune.cpp:975 ui/locationpanel/LocationPanel.cpp:325
@@ -271,35 +271,35 @@ msgstr "Uppfæra"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/MediaViewer.cpp:939 ui/MainFrame.cpp:1326
+#: ui/mediaviewer/MediaViewer.cpp:964 ui/MainFrame.cpp:1326
 #: ui/magnatune/Magnatune.cpp:975 ui/locationpanel/LocationPanel.cpp:504
 msgid "Update the collection library"
 msgstr "Uppfæra staðsetningu safns"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/MediaViewer.cpp:942 ui/MainFrame.cpp:1331
+#: ui/mediaviewer/MediaViewer.cpp:967 ui/MainFrame.cpp:1331
 #: ui/magnatune/Magnatune.cpp:978 ui/locationpanel/LocationPanel.cpp:509
 msgid "Rescan"
 msgstr "Endurskanna"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/MediaViewer.cpp:942 ui/MainFrame.cpp:1332
+#: ui/mediaviewer/MediaViewer.cpp:967 ui/MainFrame.cpp:1332
 #: ui/magnatune/Magnatune.cpp:978 ui/locationpanel/LocationPanel.cpp:510
 msgid "Rescan the collection library"
 msgstr "Endurskanna staðsetningu safns"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/MediaViewer.cpp:945 ui/MainFrame.cpp:1337
+#: ui/mediaviewer/MediaViewer.cpp:970 ui/MainFrame.cpp:1337
 #: ui/magnatune/Magnatune.cpp:981 ui/locationpanel/LocationPanel.cpp:515
 msgid "Search Covers"
 msgstr "Leita í plötualbúm"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/MediaViewer.cpp:945 ui/MainFrame.cpp:1338
+#: ui/mediaviewer/MediaViewer.cpp:970 ui/MainFrame.cpp:1338
 #: ui/magnatune/Magnatune.cpp:981 ui/locationpanel/LocationPanel.cpp:516
 msgid "Search the collection missing covers"
 msgstr "Leita að albúmun sem vantar í safn"
@@ -319,7 +319,7 @@ msgstr "Aftengja tæki"
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:677
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/MediaViewer.cpp:950 ui/MainFrame.cpp:1061
+#: ui/mediaviewer/MediaViewer.cpp:975 ui/MainFrame.cpp:1061
 #: ui/MainFrame.cpp:1099 ui/MainFrame.cpp:1353
 #: ui/podcasts/PodcastsPanel.cpp:1758 ui/preferences/Preferences.cpp:1138
 #: ui/magnatune/Magnatune.cpp:986 ui/locationpanel/LocationPanel.cpp:332
@@ -330,7 +330,7 @@ msgstr "Stillingar"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/MediaViewer.cpp:950 ui/MainFrame.cpp:1353
+#: ui/mediaviewer/MediaViewer.cpp:975 ui/MainFrame.cpp:1353
 #: ui/magnatune/Magnatune.cpp:986 ui/locationpanel/LocationPanel.cpp:531
 msgid "Show collection properties"
 msgstr "Sýna eiginleika safns"
@@ -715,7 +715,7 @@ msgid "UnNamed"
 msgstr "ÓNefnt"
 
 #: ui/mediaviewer/treeview/TreePanel.cpp:1166
-#: ui/mediaviewer/MediaViewer.cpp:827
+#: ui/mediaviewer/MediaViewer.cpp:846
 msgid "New Filter"
 msgstr "Ný Sía"
 
@@ -984,7 +984,7 @@ msgstr "Snið Lagalista:"
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:852
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:763
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:789
-#: ui/mediaviewer/MediaViewer.cpp:260 ui/MainFrame.cpp:1302
+#: ui/mediaviewer/MediaViewer.cpp:262 ui/MainFrame.cpp:1302
 #: ui/locationpanel/LocationPanel.cpp:480
 msgid "Playlists"
 msgstr "Lagalistar"
@@ -1406,91 +1406,96 @@ msgstr "Engin hlutur valinn..."
 msgid "Copy the current selected tracks to a directory or device"
 msgstr "Afrita valin lög í skráarsafni"
 
-#: ui/mediaviewer/MediaViewer.cpp:239
+#: ui/mediaviewer/MediaViewer.cpp:241
 msgid "All Albums"
 msgstr "Allar Plötur"
 
-#: ui/mediaviewer/MediaViewer.cpp:248
+#: ui/mediaviewer/MediaViewer.cpp:250
 msgid "Library view"
 msgstr "Sýn Safn"
 
-#: ui/mediaviewer/MediaViewer.cpp:252
+#: ui/mediaviewer/MediaViewer.cpp:254
 msgid "Album Browser view"
 msgstr "Sýn Vafri Albúm"
 
-#: ui/mediaviewer/MediaViewer.cpp:256
+#: ui/mediaviewer/MediaViewer.cpp:258
 msgid "Tree view"
 msgstr "Sýn Skráartré"
 
-#: ui/mediaviewer/MediaViewer.cpp:272
+#: ui/mediaviewer/MediaViewer.cpp:269
+#, fuzzy
+msgid "Ignore the accents"
+msgstr ""
+
+#: ui/mediaviewer/MediaViewer.cpp:278
 msgid "View the current defined filters"
 msgstr "Skoða núverandi skilgreindar síur "
 
-#: ui/mediaviewer/MediaViewer.cpp:277
+#: ui/mediaviewer/MediaViewer.cpp:283
 msgid "Add a new album browser filter"
 msgstr "Bæta við nýrri síu í vafri plötur"
 
-#: ui/mediaviewer/MediaViewer.cpp:281
+#: ui/mediaviewer/MediaViewer.cpp:287
 msgid "Delete the current selected filter"
 msgstr "Eyða valdri síu"
 
-#: ui/mediaviewer/MediaViewer.cpp:286
+#: ui/mediaviewer/MediaViewer.cpp:292
 msgid "Edit the current selected filter"
 msgstr "Breyta valdri síu"
 
-#: ui/mediaviewer/MediaViewer.cpp:930 ui/MainFrame.cpp:1313
+#: ui/mediaviewer/MediaViewer.cpp:955 ui/MainFrame.cpp:1313
 #: ui/locationpanel/LocationPanel.cpp:491
 msgid "Add Path"
 msgstr "Bæta við slóð"
 
-#: ui/mediaviewer/MediaViewer.cpp:930 ui/MainFrame.cpp:1313
+#: ui/mediaviewer/MediaViewer.cpp:955 ui/MainFrame.cpp:1313
 #: ui/locationpanel/LocationPanel.cpp:491
 msgid "Add path to the collection"
 msgstr "Bæta við slóð safns"
 
-#: ui/mediaviewer/MediaViewer.cpp:933
+#: ui/mediaviewer/MediaViewer.cpp:958
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:49 ui/MainFrame.cpp:1317
 #: ui/locationpanel/LocationPanel.cpp:495
 msgid "Import Files"
 msgstr "Flytja inn skrár"
 
-#: ui/mediaviewer/MediaViewer.cpp:933 ui/MainFrame.cpp:1317
+#: ui/mediaviewer/MediaViewer.cpp:958 ui/MainFrame.cpp:1317
 #: ui/locationpanel/LocationPanel.cpp:495
 msgid "Import files into the collection"
 msgstr "Flytja inn skrár í safn"
 
-#: ui/mediaviewer/MediaViewer.cpp:954 ui/preferences/Preferences.cpp:2700
+#: ui/mediaviewer/MediaViewer.cpp:979 ui/preferences/Preferences.cpp:2700
 #: ui/preferences/Preferences.cpp:2720
 msgid "Collection"
 msgstr "Safn"
 
-#: ui/mediaviewer/MediaViewer.cpp:1116 ui/preferences/Preferences.cpp:2852
+#: ui/mediaviewer/MediaViewer.cpp:1141 ui/preferences/Preferences.cpp:2852
 msgid "Select library path"
 msgstr "Velja staðsetningu safns"
 
-#: ui/mediaviewer/MediaViewer.cpp:1146
+#: ui/mediaviewer/MediaViewer.cpp:1171
 msgid "This Path is already in the library"
 msgstr "Slóð er þegar í safni"
 
-#: ui/mediaviewer/MediaViewer.cpp:1147
+#: ui/mediaviewer/MediaViewer.cpp:1172
 msgid "Adding path error"
 msgstr "Villa við að bæta inn slóð"
 
-#: ui/mediaviewer/MediaViewer.cpp:1324 ui/mediaviewer/MediaViewer.cpp:1343
-#: ui/mediaviewer/MediaViewer.cpp:1358
+#: ui/mediaviewer/MediaViewer.cpp:1349 ui/mediaviewer/MediaViewer.cpp:1368
+#: ui/mediaviewer/MediaViewer.cpp:1383
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3187
 #: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "lag"
 
-#: ui/mediaviewer/MediaViewer.cpp:1324 ui/mediaviewer/MediaViewer.cpp:1343
-#: ui/mediaviewer/MediaViewer.cpp:1358
+#: ui/mediaviewer/MediaViewer.cpp:1349 ui/mediaviewer/MediaViewer.cpp:1368
+#: ui/mediaviewer/MediaViewer.cpp:1383
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3187
 #: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "lög"
 
-#: ui/mediaviewer/MediaViewer.cpp:1421 ui/cover/SelCoverFile.cpp:42
+#: ui/mediaviewer/MediaViewer.cpp:1446 ui/cover/SelCoverFile.cpp:42
 msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
@@ -1498,29 +1503,29 @@ msgstr ""
 "Fann ekki Plötu í safni.\n"
 "þú ættir að uppfæra safn."
 
-#: ui/mediaviewer/MediaViewer.cpp:1422 ui/cover/SelCoverFile.cpp:43
+#: ui/mediaviewer/MediaViewer.cpp:1447 ui/cover/SelCoverFile.cpp:43
 #: ui/filebrowser/FileBrowser.cpp:574
 msgid "Error"
 msgstr "Villa"
 
-#: ui/mediaviewer/MediaViewer.cpp:2064
+#: ui/mediaviewer/MediaViewer.cpp:2089
 msgid "smart playlist"
 msgstr "snjall lagalisti"
 
-#: ui/mediaviewer/MediaViewer.cpp:2074
+#: ui/mediaviewer/MediaViewer.cpp:2099
 msgid "Playlist"
 msgstr "Lagalisti"
 
-#: ui/mediaviewer/MediaViewer.cpp:2108
+#: ui/mediaviewer/MediaViewer.cpp:2133
 msgid "The best of"
 msgstr ""
 
-#: ui/mediaviewer/MediaViewer.cpp:2131
+#: ui/mediaviewer/MediaViewer.cpp:2156
 #, fuzzy, c-format
 msgid "No tracks found for %s."
 msgstr "Eingir textar fundust"
 
-#: ui/mediaviewer/MediaViewer.cpp:2134
+#: ui/mediaviewer/MediaViewer.cpp:2159
 #, c-format
 msgid "Best tracks for '%s' not found."
 msgstr ""
