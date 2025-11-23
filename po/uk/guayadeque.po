@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 18:50-0300\n"
+"POT-Creation-Date: 2025-11-23 11:37-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Ukrainian (Ukraine) (http://www.transifex.com/projects/p/"
@@ -56,7 +56,7 @@ msgid "Add search links in preferences"
 msgstr "Додати посилання для пошуку в налаштуваннях"
 
 #: onlinelinks/OnlineLinks.cpp:71 ui/preferences/Preferences.cpp:270
-#: ui/preferences/Preferences.cpp:1857
+#: ui/preferences/Preferences.cpp:1858
 msgid "Links"
 msgstr "Посилання"
 
@@ -259,7 +259,7 @@ msgstr "Не питати знову"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/MediaViewer.cpp:938 ui/mediaviewer/library/DiBrowser.cpp:327
+#: ui/mediaviewer/MediaViewer.cpp:939 ui/mediaviewer/library/DiBrowser.cpp:327
 #: ui/MainFrame.cpp:1054 ui/MainFrame.cpp:1092 ui/MainFrame.cpp:1325
 #: ui/podcasts/PodcastsPanel.cpp:1752 ui/filebrowser/FileBrowser.cpp:415
 #: ui/magnatune/Magnatune.cpp:975 ui/locationpanel/LocationPanel.cpp:325
@@ -270,35 +270,35 @@ msgstr "Оновити"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1446
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1596
-#: ui/mediaviewer/MediaViewer.cpp:938 ui/MainFrame.cpp:1326
+#: ui/mediaviewer/MediaViewer.cpp:939 ui/MainFrame.cpp:1326
 #: ui/magnatune/Magnatune.cpp:975 ui/locationpanel/LocationPanel.cpp:504
 msgid "Update the collection library"
 msgstr "Оновити бібліотеку колекції"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/MediaViewer.cpp:941 ui/MainFrame.cpp:1331
+#: ui/mediaviewer/MediaViewer.cpp:942 ui/MainFrame.cpp:1331
 #: ui/magnatune/Magnatune.cpp:978 ui/locationpanel/LocationPanel.cpp:509
 msgid "Rescan"
 msgstr "Пересканувати"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1449
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1599
-#: ui/mediaviewer/MediaViewer.cpp:941 ui/MainFrame.cpp:1332
+#: ui/mediaviewer/MediaViewer.cpp:942 ui/MainFrame.cpp:1332
 #: ui/magnatune/Magnatune.cpp:978 ui/locationpanel/LocationPanel.cpp:510
 msgid "Rescan the collection library"
 msgstr "Пересканувати бібліотеку колекції"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/MediaViewer.cpp:944 ui/MainFrame.cpp:1337
+#: ui/mediaviewer/MediaViewer.cpp:945 ui/MainFrame.cpp:1337
 #: ui/magnatune/Magnatune.cpp:981 ui/locationpanel/LocationPanel.cpp:515
 msgid "Search Covers"
 msgstr "Шукати обкладинки"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1452
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1602
-#: ui/mediaviewer/MediaViewer.cpp:944 ui/MainFrame.cpp:1338
+#: ui/mediaviewer/MediaViewer.cpp:945 ui/MainFrame.cpp:1338
 #: ui/magnatune/Magnatune.cpp:981 ui/locationpanel/LocationPanel.cpp:516
 msgid "Search the collection missing covers"
 msgstr "Шукати відсутні в колекції обкладинки"
@@ -318,9 +318,9 @@ msgstr "Розмонтувати пристрій"
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:677
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/MediaViewer.cpp:949 ui/MainFrame.cpp:1061
+#: ui/mediaviewer/MediaViewer.cpp:950 ui/MainFrame.cpp:1061
 #: ui/MainFrame.cpp:1099 ui/MainFrame.cpp:1353
-#: ui/podcasts/PodcastsPanel.cpp:1758 ui/preferences/Preferences.cpp:1137
+#: ui/podcasts/PodcastsPanel.cpp:1758 ui/preferences/Preferences.cpp:1138
 #: ui/magnatune/Magnatune.cpp:986 ui/locationpanel/LocationPanel.cpp:332
 #: ui/locationpanel/LocationPanel.cpp:371
 #: ui/locationpanel/LocationPanel.cpp:531
@@ -329,7 +329,7 @@ msgstr "Властивості"
 
 #: ui/mediaviewer/ipodmedia/iPodMedia.cpp:1462
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:1612
-#: ui/mediaviewer/MediaViewer.cpp:949 ui/MainFrame.cpp:1353
+#: ui/mediaviewer/MediaViewer.cpp:950 ui/MainFrame.cpp:1353
 #: ui/magnatune/Magnatune.cpp:986 ui/locationpanel/LocationPanel.cpp:531
 msgid "Show collection properties"
 msgstr "Показати властивості колекції"
@@ -368,7 +368,7 @@ msgstr "Додати команди до налаштувань"
 #: ui/mediaviewer/library/AlListBox.cpp:250
 #: ui/mediaviewer/library/DiBrowser.cpp:252
 #: ui/mediaviewer/library/AAListBox.cpp:136 ui/player/PlayList.cpp:1711
-#: ui/preferences/Preferences.cpp:275 ui/preferences/Preferences.cpp:1975
+#: ui/preferences/Preferences.cpp:275 ui/preferences/Preferences.cpp:1976
 #: ui/filebrowser/FileBrowser.cpp:332 ui/filebrowser/FileBrowser.cpp:995
 msgid "Commands"
 msgstr "Команди"
@@ -714,7 +714,7 @@ msgid "UnNamed"
 msgstr "Без назви"
 
 #: ui/mediaviewer/treeview/TreePanel.cpp:1166
-#: ui/mediaviewer/MediaViewer.cpp:826
+#: ui/mediaviewer/MediaViewer.cpp:827
 msgid "New Filter"
 msgstr "Новий фільтр"
 
@@ -762,15 +762,15 @@ msgstr "Редактор фільтрів"
 #: ui/mediaviewer/playlists/DynamicPlayList.cpp:457
 #: ui/mediaviewer/library/AlListBox.cpp:319
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:419
-#: ui/lyrics/LyricsPanel.cpp:1993 ui/preferences/Preferences.cpp:1918
-#: ui/preferences/Preferences.cpp:2037 ui/preferences/Preferences.cpp:2157
+#: ui/lyrics/LyricsPanel.cpp:1993 ui/preferences/Preferences.cpp:1919
+#: ui/preferences/Preferences.cpp:2038 ui/preferences/Preferences.cpp:2158
 #: ui/filebrowser/FileRenamer.cpp:68 ui/filebrowser/FileBrowser.cpp:793
 #: ui/radios/RadioPanel.cpp:311 ui/radios/RadioEditor.cpp:45
 msgid "Name"
 msgstr "Назва"
 
 #: ui/mediaviewer/treeview/TreeViewFilterEditor.cpp:55 ui/MainFrame.cpp:168
-#: ui/MainFrame.cpp:396 ui/preferences/Preferences.cpp:1540
+#: ui/MainFrame.cpp:396 ui/preferences/Preferences.cpp:1541
 msgid "Filters"
 msgstr "Фільтри"
 
@@ -789,7 +789,7 @@ msgstr "Мітки"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362
 #: ui/mediaviewer/library/SoListBox.cpp:63
 #: ui/mediaviewer/library/SoListBox.cpp:552 ui/trackedit/TrackEdit.cpp:262
-#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3252
+#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3253
 #: ui/filebrowser/FileRenamer.cpp:86 ui/radios/RadioPanel.cpp:568
 #: ui/radios/ShoutcastRadio.cpp:140
 msgid "Genre"
@@ -846,7 +846,7 @@ msgstr "Виконавець альбому"
 #: ui/mediaviewer/library/SoListBox.cpp:568 ui/cover/CoverEdit.cpp:80
 #: ui/trackedit/TrackEdit.cpp:188 ui/trackedit/TrackEdit.cpp:447
 #: ui/trackedit/TrackEdit.cpp:519 ui/player/PlayList.cpp:1796
-#: ui/preferences/Preferences.cpp:846 ui/filebrowser/FileRenamer.cpp:87
+#: ui/preferences/Preferences.cpp:847 ui/filebrowser/FileRenamer.cpp:87
 msgid "Album"
 msgstr "Альбом"
 
@@ -876,7 +876,7 @@ msgstr "Фільтр:"
 #: ui/mediaviewer/library/LibPanel.cpp:221
 #: ui/mediaviewer/library/LibPanel.cpp:229
 #: ui/mediaviewer/library/LibPanel.cpp:561 ui/MainFrame.cpp:1047
-#: ui/MainFrame.cpp:1242 ui/preferences/Preferences.cpp:1701
+#: ui/MainFrame.cpp:1242 ui/preferences/Preferences.cpp:1702
 #: ui/locationpanel/LocationPanel.cpp:318
 #: ui/locationpanel/LocationPanel.cpp:420 ui/radios/RadioPanel.cpp:594
 #: ui/radios/RadioGenreEditor.cpp:38
@@ -897,7 +897,7 @@ msgid "Portable Media Properties"
 msgstr "Властивості зовнішніх пристроїв"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:693
-#: ui/preferences/Preferences.cpp:2189
+#: ui/preferences/Preferences.cpp:2190
 msgid "Path:"
 msgstr "Шлях:"
 
@@ -964,7 +964,7 @@ msgid "always"
 msgstr "завжди"
 
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:801
-#: ui/preferences/Preferences.cpp:1156
+#: ui/preferences/Preferences.cpp:1157
 msgid "Quality:"
 msgstr "Якість:"
 
@@ -983,7 +983,7 @@ msgstr "Формат списку програвання:"
 #: ui/mediaviewer/portablemedia/PortableMedia.cpp:852
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:763
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:789
-#: ui/mediaviewer/MediaViewer.cpp:259 ui/MainFrame.cpp:1302
+#: ui/mediaviewer/MediaViewer.cpp:260 ui/MainFrame.cpp:1302
 #: ui/locationpanel/LocationPanel.cpp:480
 msgid "Playlists"
 msgstr "Списки програвання"
@@ -1407,91 +1407,91 @@ msgstr "Немає вибраних елементів..."
 msgid "Copy the current selected tracks to a directory or device"
 msgstr "Копіювати вибрані пісні до папки чи пристрою"
 
-#: ui/mediaviewer/MediaViewer.cpp:238
+#: ui/mediaviewer/MediaViewer.cpp:239
 msgid "All Albums"
 msgstr "Всі альбоми"
 
-#: ui/mediaviewer/MediaViewer.cpp:247
+#: ui/mediaviewer/MediaViewer.cpp:248
 msgid "Library view"
 msgstr "Бібліотека"
 
-#: ui/mediaviewer/MediaViewer.cpp:251
+#: ui/mediaviewer/MediaViewer.cpp:252
 msgid "Album Browser view"
 msgstr "Переглядач альбомів"
 
-#: ui/mediaviewer/MediaViewer.cpp:255
+#: ui/mediaviewer/MediaViewer.cpp:256
 msgid "Tree view"
 msgstr "Дерево"
 
-#: ui/mediaviewer/MediaViewer.cpp:271
+#: ui/mediaviewer/MediaViewer.cpp:272
 msgid "View the current defined filters"
 msgstr "Показати визначені фільтри"
 
-#: ui/mediaviewer/MediaViewer.cpp:276
+#: ui/mediaviewer/MediaViewer.cpp:277
 msgid "Add a new album browser filter"
 msgstr "Додати новий фільтр до переглядача альбомів"
 
-#: ui/mediaviewer/MediaViewer.cpp:280
+#: ui/mediaviewer/MediaViewer.cpp:281
 msgid "Delete the current selected filter"
 msgstr "Видалити визначені фільтри"
 
-#: ui/mediaviewer/MediaViewer.cpp:285
+#: ui/mediaviewer/MediaViewer.cpp:286
 msgid "Edit the current selected filter"
 msgstr "Редагувати визначені фільтри"
 
-#: ui/mediaviewer/MediaViewer.cpp:929 ui/MainFrame.cpp:1313
+#: ui/mediaviewer/MediaViewer.cpp:930 ui/MainFrame.cpp:1313
 #: ui/locationpanel/LocationPanel.cpp:491
 msgid "Add Path"
 msgstr "Додати шлях"
 
-#: ui/mediaviewer/MediaViewer.cpp:929 ui/MainFrame.cpp:1313
+#: ui/mediaviewer/MediaViewer.cpp:930 ui/MainFrame.cpp:1313
 #: ui/locationpanel/LocationPanel.cpp:491
 msgid "Add path to the collection"
 msgstr "Додати шлях до колекції"
 
-#: ui/mediaviewer/MediaViewer.cpp:932
+#: ui/mediaviewer/MediaViewer.cpp:933
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:49 ui/MainFrame.cpp:1317
 #: ui/locationpanel/LocationPanel.cpp:495
 msgid "Import Files"
 msgstr "Імпортувати файли"
 
-#: ui/mediaviewer/MediaViewer.cpp:932 ui/MainFrame.cpp:1317
+#: ui/mediaviewer/MediaViewer.cpp:933 ui/MainFrame.cpp:1317
 #: ui/locationpanel/LocationPanel.cpp:495
 msgid "Import files into the collection"
 msgstr "Імпортувати файли до колекції"
 
-#: ui/mediaviewer/MediaViewer.cpp:953 ui/preferences/Preferences.cpp:2699
-#: ui/preferences/Preferences.cpp:2719
+#: ui/mediaviewer/MediaViewer.cpp:954 ui/preferences/Preferences.cpp:2700
+#: ui/preferences/Preferences.cpp:2720
 msgid "Collection"
 msgstr "Колекція"
 
-#: ui/mediaviewer/MediaViewer.cpp:1115 ui/preferences/Preferences.cpp:2851
+#: ui/mediaviewer/MediaViewer.cpp:1116 ui/preferences/Preferences.cpp:2852
 msgid "Select library path"
 msgstr "Вибір шляху фонотеки"
 
-#: ui/mediaviewer/MediaViewer.cpp:1145
+#: ui/mediaviewer/MediaViewer.cpp:1146
 msgid "This Path is already in the library"
 msgstr "Цей шлях вже у фонотеці"
 
-#: ui/mediaviewer/MediaViewer.cpp:1146
+#: ui/mediaviewer/MediaViewer.cpp:1147
 msgid "Adding path error"
 msgstr "Помилка додавання шляху"
 
-#: ui/mediaviewer/MediaViewer.cpp:1323 ui/mediaviewer/MediaViewer.cpp:1342
-#: ui/mediaviewer/MediaViewer.cpp:1357
+#: ui/mediaviewer/MediaViewer.cpp:1324 ui/mediaviewer/MediaViewer.cpp:1343
+#: ui/mediaviewer/MediaViewer.cpp:1358
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3187
-#: ui/preferences/Preferences.cpp:810
+#: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "трек"
 
-#: ui/mediaviewer/MediaViewer.cpp:1323 ui/mediaviewer/MediaViewer.cpp:1342
-#: ui/mediaviewer/MediaViewer.cpp:1357
+#: ui/mediaviewer/MediaViewer.cpp:1324 ui/mediaviewer/MediaViewer.cpp:1343
+#: ui/mediaviewer/MediaViewer.cpp:1358
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3187
-#: ui/preferences/Preferences.cpp:924
+#: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "треки"
 
-#: ui/mediaviewer/MediaViewer.cpp:1420 ui/cover/SelCoverFile.cpp:42
+#: ui/mediaviewer/MediaViewer.cpp:1421 ui/cover/SelCoverFile.cpp:42
 msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
@@ -1499,29 +1499,29 @@ msgstr ""
 "Не знайдено альбому у фонотеці\n"
 "Слід оновити фонотеку"
 
-#: ui/mediaviewer/MediaViewer.cpp:1421 ui/cover/SelCoverFile.cpp:43
+#: ui/mediaviewer/MediaViewer.cpp:1422 ui/cover/SelCoverFile.cpp:43
 #: ui/filebrowser/FileBrowser.cpp:574
 msgid "Error"
 msgstr "Помилка"
 
-#: ui/mediaviewer/MediaViewer.cpp:2063
+#: ui/mediaviewer/MediaViewer.cpp:2064
 msgid "smart playlist"
 msgstr "Розумний список програвання"
 
-#: ui/mediaviewer/MediaViewer.cpp:2073
+#: ui/mediaviewer/MediaViewer.cpp:2074
 msgid "Playlist"
 msgstr "Список програвання"
 
-#: ui/mediaviewer/MediaViewer.cpp:2107
+#: ui/mediaviewer/MediaViewer.cpp:2108
 msgid "The best of"
 msgstr ""
 
-#: ui/mediaviewer/MediaViewer.cpp:2130
+#: ui/mediaviewer/MediaViewer.cpp:2131
 #, fuzzy, c-format
 msgid "No tracks found for %s."
 msgstr "Тексту пісні не знайдено"
 
-#: ui/mediaviewer/MediaViewer.cpp:2133
+#: ui/mediaviewer/MediaViewer.cpp:2134
 #, c-format
 msgid "Best tracks for '%s' not found."
 msgstr ""
@@ -1808,7 +1808,7 @@ msgstr "Вставити поточну обкладинку до файлів �
 #: ui/mediaviewer/library/AlListBox.cpp:490
 #: ui/mediaviewer/albumbrowser/AlbumBrowser.cpp:1694
 #: ui/itemlistbox/ItemListBox.cpp:65 ui/player/PlayerFilters.cpp:107
-#: ui/preferences/Preferences.cpp:1732 info/smartmode/SmartMode.cpp:395
+#: ui/preferences/Preferences.cpp:1733 info/smartmode/SmartMode.cpp:395
 msgid "All"
 msgstr "Всі"
 
@@ -2066,7 +2066,7 @@ msgid "Destination Folder:"
 msgstr "Папка призначення:"
 
 #: ui/mediaviewer/importfiles/ImportFiles.cpp:121
-#: ui/preferences/Preferences.cpp:1130
+#: ui/preferences/Preferences.cpp:1131
 msgid "Select a folder"
 msgstr "Вибрати папку:"
 
@@ -2265,7 +2265,7 @@ msgstr "Налаштувати опції подкастів"
 
 #: ui/MainFrame.cpp:1102 ui/MainFrame.cpp:2696 ui/MainFrame.cpp:3401
 #: ui/podcasts/PodcastsPanel.cpp:916 ui/preferences/Preferences.cpp:260
-#: ui/preferences/Preferences.cpp:1624 ui/locationpanel/LocationPanel.cpp:208
+#: ui/preferences/Preferences.cpp:1625 ui/locationpanel/LocationPanel.cpp:208
 msgid "Podcasts"
 msgstr "Подкасти"
 
@@ -2395,7 +2395,7 @@ msgid "Show/Hide the player playlist panel"
 msgstr "Показати/Сховати панель списку програвання плеєра"
 
 #: ui/MainFrame.cpp:1386 ui/MainFrame.cpp:1660 ui/MainFrame.cpp:4138
-#: ui/preferences/Preferences.cpp:1315
+#: ui/preferences/Preferences.cpp:1316
 msgid "Sources"
 msgstr "Джерела"
 
@@ -2962,7 +2962,7 @@ msgstr "Зображення:"
 
 #: ui/trackedit/TrackEdit.cpp:388 ui/lyrics/LyricsPanel.cpp:122
 #: ui/lastfmpanel/LastFMPanel.cpp:1606 ui/player/PlayList.cpp:1784
-#: ui/preferences/Preferences.cpp:846
+#: ui/preferences/Preferences.cpp:847
 msgid "Track"
 msgstr "Трек"
 
@@ -3113,7 +3113,7 @@ msgstr "Вбудований"
 msgid "File"
 msgstr "Файл"
 
-#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2030
+#: ui/lyrics/LyricsPanel.cpp:2009 ui/preferences/Preferences.cpp:2031
 msgid "Command"
 msgstr "Команда"
 
@@ -3480,14 +3480,14 @@ msgstr "Дозволити:"
 msgid "Deny:"
 msgstr "Заборонити:"
 
-#: ui/player/PlayerFilters.cpp:122 ui/preferences/Preferences.cpp:727
-#: ui/preferences/Preferences.cpp:1735 ui/preferences/Preferences.cpp:1758
+#: ui/player/PlayerFilters.cpp:122 ui/preferences/Preferences.cpp:728
+#: ui/preferences/Preferences.cpp:1736 ui/preferences/Preferences.cpp:1759
 #: info/smartmode/SmartMode.cpp:448
 msgid "None"
 msgstr "Ні"
 
 #: ui/preferences/Preferences.cpp:128 ui/preferences/Preferences.cpp:188
-#: ui/preferences/Preferences.cpp:2334
+#: ui/preferences/Preferences.cpp:2335
 msgid "Default"
 msgstr "За замовчуванням"
 
@@ -3616,11 +3616,11 @@ msgstr "Колекції"
 msgid "Playback"
 msgstr "Програвання"
 
-#: ui/preferences/Preferences.cpp:235 ui/preferences/Preferences.cpp:1026
+#: ui/preferences/Preferences.cpp:235 ui/preferences/Preferences.cpp:1027
 msgid "Crossfader"
 msgstr "Перехресне затухання"
 
-#: ui/preferences/Preferences.cpp:240 ui/preferences/Preferences.cpp:1118
+#: ui/preferences/Preferences.cpp:240 ui/preferences/Preferences.cpp:1119
 msgid "Record"
 msgstr "Запис"
 
@@ -3644,8 +3644,8 @@ msgstr "Відміна"
 msgid "On Start"
 msgstr "При запуску"
 
-#: ui/preferences/Preferences.cpp:442 ui/preferences/Preferences.cpp:1558
-#: ui/preferences/Preferences.cpp:1560
+#: ui/preferences/Preferences.cpp:442 ui/preferences/Preferences.cpp:1559
+#: ui/preferences/Preferences.cpp:1561
 msgid "Language"
 msgstr "Мова"
 
@@ -3735,7 +3735,7 @@ msgstr "Шляхи"
 msgid "Words to detect covers"
 msgstr "Слова для визначення обкладинок"
 
-#: ui/preferences/Preferences.cpp:691 ui/preferences/Preferences.cpp:2150
+#: ui/preferences/Preferences.cpp:691 ui/preferences/Preferences.cpp:2151
 msgid "Options"
 msgstr "Налаштування"
 
@@ -3759,75 +3759,74 @@ msgstr "Сканувати вбудовані обкладинки в аудіо
 msgid "Embed rating, play count and labels"
 msgstr "Вбудований рейтинг, кількість програвань і мітки"
 
-#: ui/preferences/Preferences.cpp:715
+#: ui/preferences/Preferences.cpp:716
 #, fuzzy
 msgid ""
-"Enable search compatible with accented characters in the library (slower "
-"results)"
+"Enable accented characters support in the library search (slower results)"
 msgstr "Шукати у фонотеці"
 
-#: ui/preferences/Preferences.cpp:722
+#: ui/preferences/Preferences.cpp:723
 msgid "Default copy action"
 msgstr "Стандартна дія копіювання"
 
-#: ui/preferences/Preferences.cpp:806
+#: ui/preferences/Preferences.cpp:807
 msgid "Play random"
 msgstr "Грати у випадковому порядку"
 
-#: ui/preferences/Preferences.cpp:810
+#: ui/preferences/Preferences.cpp:811
 msgid "album"
 msgstr "альбом"
 
-#: ui/preferences/Preferences.cpp:818
+#: ui/preferences/Preferences.cpp:819
 msgid "when playlist is empty"
 msgstr "якщо список програвання порожній"
 
-#: ui/preferences/Preferences.cpp:824
+#: ui/preferences/Preferences.cpp:825
 msgid "Delete played tracks from playlist"
 msgstr "Видалити прослухані треки зі списку програвання"
 
-#: ui/preferences/Preferences.cpp:828
+#: ui/preferences/Preferences.cpp:829
 msgid "Show notifications"
 msgstr "Показувати повідомлення"
 
-#: ui/preferences/Preferences.cpp:832
+#: ui/preferences/Preferences.cpp:833
 #, fuzzy
 msgid "Enable equalizer"
 msgstr "Еквалайзер"
 
-#: ui/preferences/Preferences.cpp:836
+#: ui/preferences/Preferences.cpp:837
 msgid "Enable volume and fader"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:842
+#: ui/preferences/Preferences.cpp:843
 msgid "ReplayGain mode:"
 msgstr "Режим вирівнювання гучності"
 
-#: ui/preferences/Preferences.cpp:846
+#: ui/preferences/Preferences.cpp:847
 msgid "Disabled"
 msgstr "Виключено"
 
-#: ui/preferences/Preferences.cpp:853
+#: ui/preferences/Preferences.cpp:854
 msgid "PreAmp:"
 msgstr "Передпідсилювач:"
 
-#: ui/preferences/Preferences.cpp:870
+#: ui/preferences/Preferences.cpp:871
 msgid "Random / Smart play modes"
 msgstr "Випадково/Розумний режим"
 
-#: ui/preferences/Preferences.cpp:880
+#: ui/preferences/Preferences.cpp:881
 msgid "Minimum number of tracks to play required to add new ones"
 msgstr "Кількість треків для початку пошуку"
 
-#: ui/preferences/Preferences.cpp:888
+#: ui/preferences/Preferences.cpp:889
 msgid "Tracks added each time"
 msgstr "Треків додається щоразу"
 
-#: ui/preferences/Preferences.cpp:897
+#: ui/preferences/Preferences.cpp:898
 msgid "Max played tracks kept in playlist"
 msgstr "Максимальна кількість треків в списку програвання"
 
-#: ui/preferences/Preferences.cpp:907 ui/preferences/Preferences.cpp:3325
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3326
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
@@ -3835,7 +3834,7 @@ msgstr[0] "Не повторювати останній"
 msgstr[1] "Не повторювати останній"
 msgstr[2] "Не повторювати останній"
 
-#: ui/preferences/Preferences.cpp:916 ui/preferences/Preferences.cpp:3326
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
@@ -3843,285 +3842,285 @@ msgstr[0] "Виконавець"
 msgstr[1] "Виконавець"
 msgstr[2] "Виконавець"
 
-#: ui/preferences/Preferences.cpp:916 ui/preferences/Preferences.cpp:3326
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
 #: ui/filebrowser/FileRenamer.cpp:86
 msgid "or"
 msgstr "або"
 
-#: ui/preferences/Preferences.cpp:932
+#: ui/preferences/Preferences.cpp:933
 msgid "Silence detector"
 msgstr "Детектор тиші"
 
-#: ui/preferences/Preferences.cpp:937
+#: ui/preferences/Preferences.cpp:938
 msgid "Skip at"
 msgstr "Пропустити"
 
-#: ui/preferences/Preferences.cpp:956
+#: ui/preferences/Preferences.cpp:957
 msgid "In the last"
 msgstr "У наступні"
 
-#: ui/preferences/Preferences.cpp:966 ui/preferences/Preferences.cpp:1194
+#: ui/preferences/Preferences.cpp:967 ui/preferences/Preferences.cpp:1195
 msgid "seconds"
 msgstr "секунд"
 
-#: ui/preferences/Preferences.cpp:974
+#: ui/preferences/Preferences.cpp:975
 msgid "Output device"
 msgstr "Вихідний пристрій"
 
-#: ui/preferences/Preferences.cpp:977
+#: ui/preferences/Preferences.cpp:978
 msgid "Automatic"
 msgstr "Автоматично"
 
-#: ui/preferences/Preferences.cpp:978
+#: ui/preferences/Preferences.cpp:979
 msgid "GConf Defined"
 msgstr "Визначено GConf"
 
-#: ui/preferences/Preferences.cpp:1033
+#: ui/preferences/Preferences.cpp:1034
 msgid "Fade-out length:"
 msgstr "Довжина згасання:"
 
-#: ui/preferences/Preferences.cpp:1042
+#: ui/preferences/Preferences.cpp:1043
 msgid "Select the length of the fade out. 0 for gapless playback"
 msgstr "Виберіть довжину затухання. 0 для програвання без перекриття"
 
-#: ui/preferences/Preferences.cpp:1045
+#: ui/preferences/Preferences.cpp:1046
 msgid "Fade-in length:"
 msgstr "Довжина зростання:"
 
-#: ui/preferences/Preferences.cpp:1054
+#: ui/preferences/Preferences.cpp:1055
 msgid "Select the length of the fade in"
 msgstr "Виберіть довжину зростання"
 
-#: ui/preferences/Preferences.cpp:1057
+#: ui/preferences/Preferences.cpp:1058
 msgid "Fade-in volume:"
 msgstr "Звук зростання:"
 
-#: ui/preferences/Preferences.cpp:1066
+#: ui/preferences/Preferences.cpp:1067
 msgid "Select the initial volume of the fade in"
 msgstr "Початкова гучність зростання:"
 
-#: ui/preferences/Preferences.cpp:1069
+#: ui/preferences/Preferences.cpp:1070
 msgid "Fade-in start:"
 msgstr "Початок зростання:"
 
-#: ui/preferences/Preferences.cpp:1078
+#: ui/preferences/Preferences.cpp:1079
 msgid "Select at which volume of the fade out the fade in starts"
 msgstr "Гучність затухання на якій починається зростання"
 
-#: ui/preferences/Preferences.cpp:1120
+#: ui/preferences/Preferences.cpp:1121
 msgid "Enable recording"
 msgstr "Дозволити запис"
 
-#: ui/preferences/Preferences.cpp:1126
+#: ui/preferences/Preferences.cpp:1127
 msgid "Save to:"
 msgstr "Зберегти до:"
 
-#: ui/preferences/Preferences.cpp:1144 ui/preferences/Preferences.cpp:2171
+#: ui/preferences/Preferences.cpp:1145 ui/preferences/Preferences.cpp:2172
 msgid "Format:"
 msgstr "Формат:"
 
-#: ui/preferences/Preferences.cpp:1161 copyto/Transcode.cpp:322
+#: ui/preferences/Preferences.cpp:1162 copyto/Transcode.cpp:322
 msgid "Very High"
 msgstr "Дуже висока"
 
-#: ui/preferences/Preferences.cpp:1162 copyto/Transcode.cpp:323
+#: ui/preferences/Preferences.cpp:1163 copyto/Transcode.cpp:323
 msgid "High"
 msgstr "Висока"
 
-#: ui/preferences/Preferences.cpp:1163 copyto/Transcode.cpp:326
+#: ui/preferences/Preferences.cpp:1164 copyto/Transcode.cpp:326
 msgid "Normal"
 msgstr "Нормальна"
 
-#: ui/preferences/Preferences.cpp:1164 copyto/Transcode.cpp:327
+#: ui/preferences/Preferences.cpp:1165 copyto/Transcode.cpp:327
 msgid "Low"
 msgstr "Низька"
 
-#: ui/preferences/Preferences.cpp:1165 copyto/Transcode.cpp:328
+#: ui/preferences/Preferences.cpp:1166 copyto/Transcode.cpp:328
 msgid "Very Low"
 msgstr "Дуже низька"
 
-#: ui/preferences/Preferences.cpp:1177
+#: ui/preferences/Preferences.cpp:1178
 msgid "Split tracks"
 msgstr "Розділити треки"
 
-#: ui/preferences/Preferences.cpp:1184
+#: ui/preferences/Preferences.cpp:1185
 msgid "Delete tracks shorter than"
 msgstr "Видаляти треки коротші за"
 
-#: ui/preferences/Preferences.cpp:1223
+#: ui/preferences/Preferences.cpp:1224
 msgid "Last.fm audioscrobble"
 msgstr "Last.fm аудіоскроблинг"
 
-#: ui/preferences/Preferences.cpp:1225 ui/preferences/Preferences.cpp:1259
+#: ui/preferences/Preferences.cpp:1226 ui/preferences/Preferences.cpp:1260
 msgid "Enabled"
 msgstr "Включено"
 
-#: ui/preferences/Preferences.cpp:1233 ui/preferences/Preferences.cpp:1267
-#: ui/preferences/Preferences.cpp:1518
+#: ui/preferences/Preferences.cpp:1234 ui/preferences/Preferences.cpp:1268
+#: ui/preferences/Preferences.cpp:1519
 msgid "Username:"
 msgstr "Логін:"
 
-#: ui/preferences/Preferences.cpp:1241 ui/preferences/Preferences.cpp:1275
-#: ui/preferences/Preferences.cpp:1527
+#: ui/preferences/Preferences.cpp:1242 ui/preferences/Preferences.cpp:1276
+#: ui/preferences/Preferences.cpp:1528
 msgid "Password:"
 msgstr "Пароль:"
 
-#: ui/preferences/Preferences.cpp:1257
+#: ui/preferences/Preferences.cpp:1258
 msgid "Libre.fm audioscrobble"
 msgstr "Libre.fm аудіоскроблинг"
 
-#: ui/preferences/Preferences.cpp:1358
+#: ui/preferences/Preferences.cpp:1359
 msgid "Targets"
 msgstr "Цілі"
 
-#: ui/preferences/Preferences.cpp:1399
+#: ui/preferences/Preferences.cpp:1400
 #, fuzzy
 msgid "Disabled Genres"
 msgstr "Виключено"
 
-#: ui/preferences/Preferences.cpp:1420 ui/preferences/Preferences.cpp:1422
+#: ui/preferences/Preferences.cpp:1421 ui/preferences/Preferences.cpp:1423
 msgid "Font"
 msgstr "Шрифт"
 
-#: ui/preferences/Preferences.cpp:1434
+#: ui/preferences/Preferences.cpp:1435
 msgid "Align:"
 msgstr "Вирівнювання:"
 
-#: ui/preferences/Preferences.cpp:1439 misc/Accelerators.cpp:339
+#: ui/preferences/Preferences.cpp:1440 misc/Accelerators.cpp:339
 msgid "Left"
 msgstr "Вліво"
 
-#: ui/preferences/Preferences.cpp:1440
+#: ui/preferences/Preferences.cpp:1441
 msgid "Center"
 msgstr "По центру"
 
-#: ui/preferences/Preferences.cpp:1441 misc/Accelerators.cpp:345
+#: ui/preferences/Preferences.cpp:1442 misc/Accelerators.cpp:345
 msgid "Right"
 msgstr "Вправо"
 
-#: ui/preferences/Preferences.cpp:1485
+#: ui/preferences/Preferences.cpp:1486
 msgid "Proxy"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1487
+#: ui/preferences/Preferences.cpp:1488
 #, fuzzy
 msgid "Proxy Enabled"
 msgstr "Включено"
 
-#: ui/preferences/Preferences.cpp:1496
+#: ui/preferences/Preferences.cpp:1497
 #, fuzzy
 msgid "Hostname:"
 msgstr "Логін:"
 
-#: ui/preferences/Preferences.cpp:1507
+#: ui/preferences/Preferences.cpp:1508
 msgid "Port:"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:1575
+#: ui/preferences/Preferences.cpp:1576
 msgid "Browser command"
 msgstr "Команда переглядача"
 
-#: ui/preferences/Preferences.cpp:1583
+#: ui/preferences/Preferences.cpp:1584
 msgid "Minimum radio allowed bit rate"
 msgstr "Мінімальний бітрейт для радіо"
 
-#: ui/preferences/Preferences.cpp:1590
+#: ui/preferences/Preferences.cpp:1591
 msgid "Player online buffer size"
 msgstr "Об’єм буферу онлайн плеєру"
 
-#: ui/preferences/Preferences.cpp:1628
+#: ui/preferences/Preferences.cpp:1629
 msgid "Destination directory:"
 msgstr "Папка призначення:"
 
-#: ui/preferences/Preferences.cpp:1632
+#: ui/preferences/Preferences.cpp:1633
 msgid "Select podcasts folder"
 msgstr "Вибрати папку для подкастів"
 
-#: ui/preferences/Preferences.cpp:1640
+#: ui/preferences/Preferences.cpp:1641
 msgid "Check every"
 msgstr "Перевіряти кожні"
 
-#: ui/preferences/Preferences.cpp:1645
+#: ui/preferences/Preferences.cpp:1646
 msgid "Hour"
 msgstr "Годин"
 
-#: ui/preferences/Preferences.cpp:1645
+#: ui/preferences/Preferences.cpp:1646
 msgid "Day"
 msgstr "Днів"
 
-#: ui/preferences/Preferences.cpp:1645
+#: ui/preferences/Preferences.cpp:1646
 msgid "Week"
 msgstr "Тижнів"
 
-#: ui/preferences/Preferences.cpp:1645
+#: ui/preferences/Preferences.cpp:1646
 msgid "Month"
 msgstr "Місяців"
 
-#: ui/preferences/Preferences.cpp:1656
+#: ui/preferences/Preferences.cpp:1657
 msgid "Delete after"
 msgstr "Видалити після"
 
-#: ui/preferences/Preferences.cpp:1665
+#: ui/preferences/Preferences.cpp:1666
 msgid "Days"
 msgstr "Днів"
 
-#: ui/preferences/Preferences.cpp:1665
+#: ui/preferences/Preferences.cpp:1666
 msgid "Weeks"
 msgstr "Тижнів"
 
-#: ui/preferences/Preferences.cpp:1665
+#: ui/preferences/Preferences.cpp:1666
 msgid "Months"
 msgstr "Місяців"
 
-#: ui/preferences/Preferences.cpp:1674
+#: ui/preferences/Preferences.cpp:1675
 msgid "Only if played"
 msgstr "Тільки якщо прослухано"
 
-#: ui/preferences/Preferences.cpp:1738
+#: ui/preferences/Preferences.cpp:1739
 msgid "Invert"
 msgstr "Інвертувати"
 
-#: ui/preferences/Preferences.cpp:1752
+#: ui/preferences/Preferences.cpp:1753
 msgid "Membership :"
 msgstr "Обліковий запис:"
 
-#: ui/preferences/Preferences.cpp:1759
+#: ui/preferences/Preferences.cpp:1760
 msgid "Streaming"
 msgstr "Потокове програвання"
 
-#: ui/preferences/Preferences.cpp:1760
+#: ui/preferences/Preferences.cpp:1761
 msgid "Downloading"
 msgstr "Завантаження"
 
-#: ui/preferences/Preferences.cpp:1773
+#: ui/preferences/Preferences.cpp:1774
 msgid "Username :"
 msgstr "Логін:"
 
-#: ui/preferences/Preferences.cpp:1781
+#: ui/preferences/Preferences.cpp:1782
 msgid "Password :"
 msgstr "Пароль:"
 
-#: ui/preferences/Preferences.cpp:1799
+#: ui/preferences/Preferences.cpp:1800
 msgid "Stream as :"
 msgstr "Формат:"
 
-#: ui/preferences/Preferences.cpp:1813
+#: ui/preferences/Preferences.cpp:1814
 msgid "Download as :"
 msgstr "Зберегти як:"
 
-#: ui/preferences/Preferences.cpp:1817
+#: ui/preferences/Preferences.cpp:1818
 msgid "Download Page"
 msgstr "Сторінка завантаження"
 
-#: ui/preferences/Preferences.cpp:1911
+#: ui/preferences/Preferences.cpp:1912
 msgid "URL:"
 msgstr "Посилання:"
 
-#: ui/preferences/Preferences.cpp:1936
+#: ui/preferences/Preferences.cpp:1937
 msgid "Define URLs using"
 msgstr "Позначення використання посилань"
 
-#: ui/preferences/Preferences.cpp:1942
+#: ui/preferences/Preferences.cpp:1943
 msgid ""
 "2 letters language code\n"
 "Text to search"
@@ -4129,11 +4128,11 @@ msgstr ""
 "2 літери коду мови\n"
 "Текст для пошуку"
 
-#: ui/preferences/Preferences.cpp:2055
+#: ui/preferences/Preferences.cpp:2056
 msgid "Define commands using"
 msgstr "Позначення використання команд"
 
-#: ui/preferences/Preferences.cpp:2061
+#: ui/preferences/Preferences.cpp:2062
 msgid ""
 "Album path\n"
 "Album cover file path\n"
@@ -4143,23 +4142,23 @@ msgstr ""
 "Шлях до обкладинки альбому\n"
 "Шлях до треку"
 
-#: ui/preferences/Preferences.cpp:2094
+#: ui/preferences/Preferences.cpp:2095
 msgid "Patterns"
 msgstr "Шаблони"
 
-#: ui/preferences/Preferences.cpp:2164 ui/filebrowser/FileRenamer.cpp:75
+#: ui/preferences/Preferences.cpp:2165 ui/filebrowser/FileRenamer.cpp:75
 msgid "Pattern"
 msgstr "Шаблон"
 
-#: ui/preferences/Preferences.cpp:2205
+#: ui/preferences/Preferences.cpp:2206
 msgid "Remove source files"
 msgstr "Видалити вихідні файли"
 
-#: ui/preferences/Preferences.cpp:2222
+#: ui/preferences/Preferences.cpp:2223
 msgid "Define patterns using"
 msgstr "Позначення використання шаблонів"
 
-#: ui/preferences/Preferences.cpp:2228
+#: ui/preferences/Preferences.cpp:2229
 msgid ""
 "Artist\n"
 "Album Artist\n"
@@ -4171,7 +4170,7 @@ msgstr ""
 "{aa} or {a}\n"
 "Альбом"
 
-#: ui/preferences/Preferences.cpp:2236
+#: ui/preferences/Preferences.cpp:2237
 msgid ""
 "Composer\n"
 "Disk\n"
@@ -4183,7 +4182,7 @@ msgstr ""
 "Назва файлу\n"
 "Жанр"
 
-#: ui/preferences/Preferences.cpp:2244
+#: ui/preferences/Preferences.cpp:2245
 msgid ""
 "Index\n"
 "Number\n"
@@ -4195,56 +4194,56 @@ msgstr ""
 "Назва\n"
 "Рік"
 
-#: ui/preferences/Preferences.cpp:2295
+#: ui/preferences/Preferences.cpp:2296
 msgid "Accelerators"
 msgstr "Прискорювачі"
 
-#: ui/preferences/Preferences.cpp:2300
+#: ui/preferences/Preferences.cpp:2301
 msgid "Action"
 msgstr "Дія"
 
-#: ui/preferences/Preferences.cpp:2304
+#: ui/preferences/Preferences.cpp:2305
 msgid "Key"
 msgstr "Клавіша"
 
-#: ui/preferences/Preferences.cpp:2699 ui/preferences/Preferences.cpp:2719
+#: ui/preferences/Preferences.cpp:2700 ui/preferences/Preferences.cpp:2720
 msgid "Enter the collection name"
 msgstr "Введіть назву колекції"
 
-#: ui/preferences/Preferences.cpp:2829
+#: ui/preferences/Preferences.cpp:2830
 msgid "Change library path"
 msgstr "Змінити шлях до фонотеки"
 
-#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
+#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
 msgid "Word"
 msgstr "Слово"
 
-#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
+#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
 msgid "Enter the text to find covers"
 msgstr "Введіть текст для пошуку обкладинок"
 
-#: ui/preferences/Preferences.cpp:3252
+#: ui/preferences/Preferences.cpp:3253
 #, fuzzy
 msgid "Enter the genre to disable"
 msgstr "Введіть текст фільтру:"
 
-#: ui/preferences/Preferences.cpp:3453 ui/preferences/Preferences.cpp:3484
+#: ui/preferences/Preferences.cpp:3454 ui/preferences/Preferences.cpp:3485
 msgid "Filter"
 msgstr "Фільтр"
 
-#: ui/preferences/Preferences.cpp:3454
+#: ui/preferences/Preferences.cpp:3455
 msgid "Enter the text to filter"
 msgstr "Введіть текст фільтру:"
 
-#: ui/preferences/Preferences.cpp:3484
+#: ui/preferences/Preferences.cpp:3485
 msgid "Edit the text to filter"
 msgstr "Редагувати текст фільтру:"
 
-#: ui/preferences/Preferences.cpp:3986
+#: ui/preferences/Preferences.cpp:3987
 msgid "Select path"
 msgstr "Виберіть шлях"
 
-#: ui/preferences/Preferences.cpp:4164
+#: ui/preferences/Preferences.cpp:4165
 msgid "Key used by '"
 msgstr "Клавіша використовується '"
 
