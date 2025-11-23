@@ -202,6 +202,7 @@ void guMediaViewer::InitMediaViewer( const int mode )
 
     if ( m_MediaCollection->m_UpdateOnStart )
     {
+        guLogMessage(wxT( "InitMediaViewer : UpdateOnStart %s..." ), m_MediaCollection->m_Name);
         //UpdateLibrary();
         wxCommandEvent Event( wxEVT_MENU, m_BaseCommand + guCOLLECTION_ACTION_UPDATE_LIBRARY );
         wxPostEvent( this, Event );
