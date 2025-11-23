@@ -4,19 +4,21 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.7.3 (2025-11-xx)
+0.7.3 (2025-11-23)
 ------------------
 ###### After Forever
 
 ### Enhancements
-  * Implemented the collection search with or without collation search (search compatible with
-    accented characters in the library) (Closes #74):
+  * Implemented the library search with or without collation search (search compatible with
+    accented characters) (Closes #74):
     * Added a collection configuration to enable/disable the collation search in the library:
       "Preferences->Collections->Your-Collection->Enable search compatible with accented...".
     * The new default is NOT to use the collation search. It was enabled since its 
       implementation in 0.6.0 version and it's very slow in large collections.
   * Changed the internal Guayadeque version representation with new constants.
-  * Added installation instructions for Debian 13 Trixie.
+  * Added installation instructions for Debian 13 (Trixie).
+  * Updated Catalan, French, German, Greek, Italian, Portuguese, Brazilian Portuguese and
+    Spanish translations.
 
 ### Bugfixes
   * Several bugfixes to the multiple collections support:
@@ -25,6 +27,7 @@ Changelog
     * Fixed the "select" feature stop working after come back from library playlist view.
 
 ### Removed
+  * Removed support to DSF files in the library because scan issues due lacking of tag support.
   * Removed useless SEARCH_LIBS variable from the build script.
 
 0.7.2 (2025-06-07)

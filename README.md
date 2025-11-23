@@ -46,9 +46,9 @@ for the icon and splash designed for guayadeque.
 
 Main features include:
 
-- Play MP3, Ogg, Opus, FLAC, WAV, WMA, MP4, AAC, AIFF, ASF, WV (WavPack), MPC (Musepack Audio), APE (Monkey's Audio), TrueAudio, DSF.
+- Play MP3, Ogg, Opus, FLAC, WAV, WMA, MP4, AAC, AIFF, ASF, WV (WavPack), MPC (Musepack Audio), APE (Monkey's Audio), TrueAudio.
 - Multiple collections support. You can get separated sets of tracks (Library) with its configuration, layouts, playlists and so on.
-- Read and write tags in all supported formats (except DSF by now).
+- Read and write tags in all supported formats.
 - Tracks tag editor with automatically fetching of tags information for easily completion.
 - Smart play mode that add tracks that fit your music taste using the tracks currently in the playlist.
 - Allow to catalogue your music using labels. Any track, artist or album can have as many labels you want.
