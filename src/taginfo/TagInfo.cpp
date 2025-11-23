@@ -85,7 +85,7 @@ bool guIsValidAudioFile( const wxString &filename )
 
         guSupportedFormats.Add( wxT( "mpc"  ) );
 
-        guSupportedFormats.Add( wxT( "dsf"  ) );    // >= 2.0
+        //guSupportedFormats.Add( wxT( "dsf"  ) );  // >= 2.0
         //guSupportedFormats.Add( wxT( "rmj"  ) );  // Real Media Jukebox
     }
 
