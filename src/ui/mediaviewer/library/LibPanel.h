@@ -111,7 +111,7 @@ class guLibPanel : public guAuiManagerPanel
     wxString                m_LastTextFilter;
 
     void                    ClearSearchText();
-    bool                    DoTextSearch( const wxString &searchtext );
+    bool                    DoTextSearch(const wxString &search_text, const bool force_search);
 
     // LabelsListBox Events
     virtual void            OnLabelListActivated( wxCommandEvent &event );

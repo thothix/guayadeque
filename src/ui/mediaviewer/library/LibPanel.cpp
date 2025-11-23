@@ -668,14 +668,14 @@ void guLibPanel::ClearSearchText()
 }
 
 // -------------------------------------------------------------------------------- //
-bool guLibPanel::DoTextSearch( const wxString &searchtext )
+bool guLibPanel::DoTextSearch(const wxString &search_text, const bool force_search = false)
 {
-    guLogMessage( wxT( "guLibPanel::DoTextSearch( '%s' )" ), searchtext.c_str() );
+    guLogMessage( wxT( "guLibPanel::DoTextSearch( '%s' )" ), search_text.c_str() );
 
-    if( m_LastTextFilter == searchtext )
+    if (m_LastTextFilter == search_text && !force_search)
         return true;
 
-    m_LastTextFilter = searchtext; //m_InputTextCtrl->GetValue();
+    m_LastTextFilter = search_text; //m_InputTextCtrl->GetValue();
     if( !m_LastTextFilter.IsEmpty() )
     {
         if( m_LastTextFilter.Length() > 0 )
