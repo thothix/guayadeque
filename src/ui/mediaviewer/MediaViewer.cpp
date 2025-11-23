@@ -140,6 +140,8 @@ guMediaViewer::~guMediaViewer()
     Unbind( wxEVT_MENU, &guMediaViewer::OnSmartAddTracks, this, ID_SMARTMODE_ADD_TRACKS );
 
     Unbind( guConfigUpdatedEvent, &guMediaViewer::OnConfigUpdated, this, ID_CONFIG_UPDATED );
+
+    m_CollationSearchChkBox->Unbind( wxEVT_CHECKBOX, &guMediaViewer::OnCollationSearchChanged, this );
     m_FilterChoice->Unbind( wxEVT_CHOICE, &guMediaViewer::OnFilterSelected, this );
     m_AddFilterButton->Unbind( wxEVT_BUTTON, &guMediaViewer::OnAddFilterClicked, this );
     m_DelFilterButton->Unbind( wxEVT_BUTTON, &guMediaViewer::OnDelFilterClicked, this );
@@ -264,6 +266,10 @@ void guMediaViewer::CreateControls()
     //m_SearchTextCtrl = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize,  wxTE_PROCESS_ENTER );
     TopSizer->Add( m_SearchTextCtrl, 1, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
 
+    m_CollationSearchChkBox = new wxCheckBox(this, wxID_ANY, _("Ignore the accents"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_CollationSearchChkBox->SetValue(m_MediaCollection->m_CollationSearch);
+    TopSizer->Add(m_CollationSearchChkBox, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxRIGHT, 5);
+
     // Filters
     m_FiltersSizer = new wxBoxSizer( wxHORIZONTAL );
 
@@ -307,6 +313,8 @@ void guMediaViewer::CreateControls()
     m_SearchTextCtrl->Bind( wxEVT_TEXT_ENTER, &guMediaViewer::OnSearchSelected, this );
     m_SearchTextCtrl->Bind( wxEVT_TEXT, &guMediaViewer::OnSearchActivated, this );
     m_SearchTextCtrl->Bind( wxEVT_SEARCHCTRL_CANCEL_BTN, &guMediaViewer::OnSearchCancelled, this );
+
+    m_CollationSearchChkBox->Bind( wxEVT_CHECKBOX, &guMediaViewer::OnCollationSearchChanged, this );
 }
 
 // -------------------------------------------------------------------------------- //
@@ -338,6 +346,9 @@ void guMediaViewer::OnConfigUpdated( wxCommandEvent &event )
         m_InstantSearchEnabled = Config->ReadBool( CONFIG_KEY_GENERAL_INSTANT_TEXT_SEARCH, true, CONFIG_PATH_GENERAL );
         m_EnterSelectSearchEnabled = !Config->ReadBool( CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER, false, CONFIG_PATH_GENERAL );
     }
+
+    if (Flags & guPREFERENCE_PAGE_FLAG_LIBRARY)
+        m_CollationSearchChkBox->SetValue(m_MediaCollection->m_CollationSearch);
 
     if( Flags & guPREFERENCE_PAGE_FLAG_ACCELERATORS )
         CreateAcceleratorTable();
@@ -704,6 +715,7 @@ void guMediaViewer::OnSearchCancelled( wxCommandEvent &event ) // CLEAN SEARCH S
 void guMediaViewer::OnSearchSelected( wxCommandEvent& event )
 {
     guLogMessage( wxT( "OnSearchSelected... %i  %i" ), m_EnterSelectSearchEnabled, m_InstantSearchEnabled );
+
     // perform text search immediately
     if( m_TextChangedTimer.IsRunning() )
         m_TextChangedTimer.Stop();
@@ -750,13 +762,20 @@ void guMediaViewer::OnTextChangedTimer( wxTimerEvent &event )
 bool guMediaViewer::DoTextSearch()
 {
     Freeze();
-    bool RetVal = false;
+    bool force_search = false, RetVal = false;
     wxString SearchText = m_SearchText;
+
+    if (m_CollationSearchChkBox->IsChecked() != m_MediaCollection->m_CollationSearch)
+    {
+        force_search = true;
+        m_MediaCollection->m_CollationSearch = m_CollationSearchChkBox->IsChecked();
+    }
+
     switch( m_ViewMode )
     {
         case guMEDIAVIEWER_MODE_LIBRARY :
         {
-            RetVal = m_LibPanel->DoTextSearch( SearchText );
+            RetVal = m_LibPanel->DoTextSearch(SearchText, force_search);
             break;
         }
 
@@ -912,6 +931,12 @@ void guMediaViewer::SetFilter( const wxString &filterstr )
 {
     if( m_AlbumBrowser )
         m_AlbumBrowser->SetFilter( filterstr );
+}
+
+// -------------------------------------------------------------------------------- //
+void guMediaViewer::OnCollationSearchChanged(wxCommandEvent& event)
+{
+    m_SearchTextCtrl->SetFocus();
 }
 
 // -------------------------------------------------------------------------------- //

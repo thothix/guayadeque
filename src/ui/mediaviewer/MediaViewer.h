@@ -111,6 +111,7 @@ class guMediaViewer : public wxPanel
     wxBitmapButton *        m_DelFilterButton;
     wxBitmapButton *        m_EditFilterButton;
     wxSearchCtrl *          m_SearchTextCtrl;
+    wxCheckBox *            m_CollationSearchChkBox;
     wxBitmapButton *        m_LibrarySelButton;
     wxBitmapButton *        m_AlbumBrowserSelButton;
     wxBitmapButton *        m_TreeViewSelButton;
@@ -161,6 +162,8 @@ class guMediaViewer : public wxPanel
     void                    OnEditFilterClicked( wxCommandEvent &event );
     void                    OnFilterSelected( wxCommandEvent &event );
     void                    SetFilter( const wxString &filter );
+
+    void                    OnCollationSearchChanged(wxCommandEvent& event);
 
     void                    OnCleanFinished( wxCommandEvent &event ) { CleanFinished(); }
     void                    OnLibraryUpdated( wxCommandEvent &event ) { LibraryUpdated(); }

@@ -110,7 +110,7 @@ class guDbFoldAllContainsFunction : public wxSQLite3ScalarFunction
                 transliterator.Fold(t2);
                 guLogDebug("guDbFoldAllContainsFunction::Set ARG2 %s", arg2);
             }
-            guLogDebug("guDbFoldAllContainsFunction::Execute %s - %s", ctx.GetString(0), arg2);
+            //guLogDebug("guDbFoldAllContainsFunction::Execute %s - %s", ctx.GetString(0), arg2);
             icu::UnicodeString t1 = transliterator.WxStrToICU(ctx.GetString(0));
             transliterator.Fold(t1);
             ctx.SetResult(t1.indexOf(t2));
