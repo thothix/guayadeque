@@ -893,9 +893,9 @@ int guTreeViewPanel::GetContextMenuFlags( void )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guTreeViewPanel::DoTextSearch( const wxString &textsearch )
+bool guTreeViewPanel::DoTextSearch(const wxString &textsearch, const bool force_search = false)
 {
-    if( m_LastSearchString != textsearch )
+    if (m_LastSearchString != textsearch || force_search)
     {
         m_LastSearchString = textsearch; //m_InputTextCtrl->GetValue();
         if( !m_LastSearchString.IsEmpty() )

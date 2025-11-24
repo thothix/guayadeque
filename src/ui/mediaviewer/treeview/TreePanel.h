@@ -196,7 +196,7 @@ class guTreeViewPanel : public guAuiManagerPanel
     virtual void            SendPlayListUpdatedEvent( void );
 
     void                    OnGoToSearch( wxCommandEvent &event );
-    bool                    DoTextSearch( const wxString &searchtext );
+    bool                    DoTextSearch(const wxString &searchtext, const bool force_search);
 
     void                    OnTrackListColClicked( wxListEvent &event );
 
