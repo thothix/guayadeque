@@ -129,11 +129,6 @@ guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
 	//m_MainNotebook = new wxNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0 );
 	m_DestroyLastWindow = false;
 	m_MainNotebook = new guAuiNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxAUI_NB_DEFAULT_STYLE );
-    m_Db = GetMediaDb(m_Collections[0].m_UniqueId);
-
-    m_PlayerFilters = new guPlayerFilters( this, m_Db );
-    m_PlayerPlayList = new guPlayerPlayList( this, m_Db, &m_AuiManager );
-    m_PlayerPanel = new guPlayerPanel( this, m_Db, m_PlayerPlayList->GetPlayListCtrl(), m_PlayerFilters );
 
     guMediaViewerLibrary * MediaViewer = new guMediaViewerLibrary(
             m_MainNotebook,
@@ -147,9 +142,14 @@ guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
     MediaViewerCreated(m_Collections[0].m_UniqueId, MediaViewer);
     m_MediaViewers.Add( MediaViewer );
 
+    m_Db = GetMediaDb(m_Collections[0].m_UniqueId);
+
+    m_PlayerFilters = new guPlayerFilters( this, m_Db );
+    m_PlayerPlayList = new guPlayerPlayList( this, m_Db, &m_AuiManager );
+    m_PlayerPanel = new guPlayerPanel( this, m_Db, m_PlayerPlayList->GetPlayListCtrl(), m_PlayerFilters );
+
 	m_MainStatusBar = new guStatusBar( this );
 	SetStatusBar(  m_MainStatusBar );
-	//MainFrameSizer = new wxBoxSizer( wxVERTICAL );
 	SetStatusText(wxString::Format("%s ", _("Welcome to Guayadeque")));
 	SetStatusBarPane( 0 );
 
