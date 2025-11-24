@@ -17,7 +17,6 @@ Changelog
       option since its implementation in v0.6.0 and it's very slow in large collections.
     * Added an "Ignore the accents" checkbox next to the search field in the media library to 
       change quickly and temporarily the search mode.
-  * Changed the internal Guayadeque version representation with new constants.
   * Added installation instructions for Debian 13 (Trixie).
   * Updated Catalan, French, German, Greek, Italian, Portuguese, Brazilian Portuguese and
     Spanish translations.
