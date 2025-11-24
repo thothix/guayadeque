@@ -219,7 +219,7 @@ class guAlbumBrowser : public wxPanel
     void                            OnConfigUpdated( wxCommandEvent &event );
     void                            CreateAcceleratorTable( void );
 
-    bool                            DoTextSearch( const wxString &searchtext );
+    bool                            DoTextSearch(const wxString &searchtext, const bool force_search);
 
     void                            OnBigCoverBackClicked( wxCommandEvent &event );
     void                            OnBigCoverBitmapClicked( wxMouseEvent &event );

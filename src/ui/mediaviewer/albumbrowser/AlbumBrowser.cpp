@@ -1131,9 +1131,9 @@ void guAlbumBrowser::SetCurrentPage( int page )
 }
 
 // -------------------------------------------------------------------------------- //
-bool guAlbumBrowser::DoTextSearch( const wxString &searchtext )
+bool guAlbumBrowser::DoTextSearch(const wxString &searchtext, const bool force_search = false)
 {
-    if( m_LastSearchString != searchtext )
+    if (m_LastSearchString != searchtext || force_search)
     {
         m_LastSearchString = searchtext; //m_SearchTextCtrl->GetValue();
         if( !m_LastSearchString.IsEmpty() )

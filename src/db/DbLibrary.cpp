@@ -5913,10 +5913,10 @@ namespace Guayadeque {
             {
                 wxString Filter = escape_query_str(TeFilters[index]);
                 RetVal += "(" + Contains_Or_Like("song_name", Filter, collation_enabled) + "OR ";
-                RetVal += Contains_Or_Like("song_albumartist", Filter, collation_enabled) + "OR ";
                 RetVal += Contains_Or_Like("song_artist", Filter, collation_enabled) + "OR ";
-                RetVal += Contains_Or_Like("song_composer", Filter, collation_enabled) + "OR ";
-                RetVal += Contains_Or_Like("song_album", Filter, collation_enabled);
+                RetVal += Contains_Or_Like("song_album", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_albumartist", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_composer", Filter, collation_enabled);
                 RetVal += wxT(") AND ");
             }
             RetVal = RetVal.RemoveLast(4);
@@ -5935,9 +5935,9 @@ namespace Guayadeque {
             for (int index = 0; index < count; index++)
             {
                 wxString Filter = escape_query_str(textfilters[index]);
-                RetVal += "(" + Contains_Or_Like("song_album", Filter, collation_enabled) + "OR ";
-                RetVal += Contains_Or_Like("song_albumartist", Filter, collation_enabled) + "OR ";
-                RetVal += Contains_Or_Like("song_artist", Filter, collation_enabled);
+                RetVal += "(" + Contains_Or_Like("song_artist", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_album", Filter, collation_enabled) + "OR ";
+                RetVal += Contains_Or_Like("song_albumartist", Filter, collation_enabled);
                 RetVal += wxT(") AND ");
             }
             RetVal = RetVal.RemoveLast(4);

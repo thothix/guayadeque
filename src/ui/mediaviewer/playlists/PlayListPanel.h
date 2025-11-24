@@ -204,7 +204,7 @@ class guPlayListPanel : public guAuiManagerPanel
     virtual void        SendPlayListUpdatedEvent( void );
 
     void                OnGoToSearch( wxCommandEvent &event );
-    bool                DoTextSearch( const wxString &textsearch );
+    bool                DoTextSearch(const wxString &textsearch, const bool force_search);
 
     void                OnSetAllowDenyFilter( wxCommandEvent &event );
 

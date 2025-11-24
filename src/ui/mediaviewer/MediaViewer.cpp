@@ -781,19 +781,19 @@ bool guMediaViewer::DoTextSearch()
 
         case guMEDIAVIEWER_MODE_ALBUMBROWSER :
         {
-            RetVal = m_AlbumBrowser->DoTextSearch( SearchText );
+            RetVal = m_AlbumBrowser->DoTextSearch(SearchText, force_search);
             break;
         }
 
         case guMEDIAVIEWER_MODE_TREEVIEW :
         {
-            RetVal = m_TreeViewPanel->DoTextSearch( SearchText );
+            RetVal = m_TreeViewPanel->DoTextSearch(SearchText, force_search);
             break;
         }
 
         case guMEDIAVIEWER_MODE_PLAYLISTS :
         {
-            RetVal = m_PlayListPanel->DoTextSearch( SearchText );
+            RetVal = m_PlayListPanel->DoTextSearch(SearchText, force_search);
             break;
         }
     }
