@@ -9,21 +9,21 @@ Changelog
 ###### After Forever
 
 ### Enhancements
-  * Implemented the library search with or without collation search (search compatible
-    with accented characters) (Closes #74):
+  * Added support to search the library without collation search (search ignoring the
+    accented characters) for performance reasons. (Closes #74):
     * Added a collection configuration to enable the collation search in the library:
       "Preferences->Collections->Any-Collection->Enable search with accented...".
-    * The new default is NOT to use the collation search. It was enabled since its 
-      implementation in 0.6.0 version and it's very slow in large collections.
+    * The new default is NOT to use the collation search. Collation search was the only
+      option since its implementation in v0.6.0 and it's very slow in large collections.
     * Added an "Ignore the accents" checkbox next to the search field in the media library to 
-      change temporarily the search mode.
+      change quickly and temporarily the search mode.
   * Changed the internal Guayadeque version representation with new constants.
   * Added installation instructions for Debian 13 (Trixie).
   * Updated Catalan, French, German, Greek, Italian, Portuguese, Brazilian Portuguese and
     Spanish translations.
 
 ### Bugfixes
-  * Several bugfixes to the multiple collections support:
+  * Several bugfixes related to the multiple collections support:
     * Fixed the "select" feature not working for playlist tracks from a non default
       collection.
     * Fixed the "select" feature stop working for any collection after close and reopen it.
