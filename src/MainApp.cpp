@@ -48,6 +48,8 @@ guMainApp::guMainApp() : wxApp()
     m_DbCache = nullptr;
     m_SingleInstanceChecker = nullptr;
 
+    guLogMessage(wxT("GUAYADEQUE VERSION " GUAYADEQUE_VERSION_REVISION));
+
 #if wxUSE_ON_FATAL_EXCEPTION    // Thanks TheBigRed
     wxHandleFatalExceptions();
 #endif
