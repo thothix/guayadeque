@@ -4,7 +4,7 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.7.3 (2025-11-23)
+0.7.3 (2025-11-25)
 ------------------
 ###### After Forever
 
