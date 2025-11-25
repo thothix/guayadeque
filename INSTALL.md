@@ -23,7 +23,7 @@ It's been developed in XUbuntu and Linux Mint.
 
 First of all, install the dependencies for your system.
 
-### Ubuntu (pre 20.0):
+### Ubuntu (pre 20.04):
 
 ```bash
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake g++ binutils git
@@ -59,7 +59,6 @@ sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-b
 sudo apt install libgdk-pixbuf-2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-good libwxsqlite3-3.2-dev libtag2 libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake git
 ```
 
-
 ### Mageia 9
 
 ```bash
@@ -70,6 +69,12 @@ sudo urpmi gstreamer1.0-devtools lib64wx_gtk3u_wxsqlite3_3.2-devel lib64taglib-d
 
 ```bash
 sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlite3 taglib curl dbus gdk-pixbuf2 jsoncpp libicu cmake git
+```
+
+### Fedora 43
+
+```bash
+sudo dnf install gstreamer1-devel gstreamer1-plugins-base-devel sqlite-devel wxsqlite3-devel libcurl-devel taglib-devel dbus-devel jsoncpp-devel libicu-devel cmake
 ```
 
 ---
@@ -87,7 +92,7 @@ sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlit
 - `libgpod-dev`: Offers comprehensive support for managing and interacting with iPod devices.
 - `gvfs`: Allows Guayadeque to access and manage files through GVFS (GNOME Virtual File System), which is useful for handling remote or virtual file systems.
 
-##### Ubuntu, Linux Mint, Debian
+##### Debian, Ubuntu, Linux Mint
 
 ```bash
 sudo apt install libgpod-dev gstreamer1.0-libav gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
@@ -97,6 +102,12 @@ sudo apt install libgpod-dev gstreamer1.0-libav gstreamer1.0-plugins-bad gstream
 
 ```bash
 sudo pacman -S libgpod gst-libav gst-plugins-bad gst-plugins-ugly gvfs
+```
+
+##### Fedora 43
+
+```bash
+sudo dnf install libgpod-devel gstreamer1-plugin-libav gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free
 ```
 
 ---
