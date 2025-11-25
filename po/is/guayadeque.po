@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 20:10-0300\n"
+"POT-Creation-Date: 2025-11-25 17:41-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: Hreinn Jónsson <hreinnjons@gmail.com>, 2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/anonbeat/"
@@ -22,15 +22,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
-#: MainApp.cpp:391
+#: MainApp.cpp:393
 msgid "Another program instance is already running."
 msgstr "Forrit þegar opið"
 
-#: MainApp.cpp:391
+#: MainApp.cpp:393
 msgid "Do you want to continue with the program?"
 msgstr "Villtu halda áfram í forriti?"
 
-#: MainApp.cpp:392 ui/mediaviewer/treeview/TreePanel.cpp:1209
+#: MainApp.cpp:394 ui/mediaviewer/treeview/TreePanel.cpp:1209
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204 ui/podcasts/PodcastsPanel.cpp:1241
@@ -1423,7 +1423,6 @@ msgid "Tree view"
 msgstr "Sýn Skráartré"
 
 #: ui/mediaviewer/MediaViewer.cpp:269
-#, fuzzy
 msgid "Ignore the accents"
 msgstr ""
 

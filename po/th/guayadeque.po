@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 20:10-0300\n"
+"POT-Creation-Date: 2025-11-25 17:41-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Thai (Thailand) (http://www.transifex.com/projects/p/"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: MainApp.cpp:391
+#: MainApp.cpp:393
 msgid "Another program instance is already running."
 msgstr ""
 
-#: MainApp.cpp:391
+#: MainApp.cpp:393
 msgid "Do you want to continue with the program?"
 msgstr ""
 
-#: MainApp.cpp:392 ui/mediaviewer/treeview/TreePanel.cpp:1209
+#: MainApp.cpp:394 ui/mediaviewer/treeview/TreePanel.cpp:1209
 #: ui/mediaviewer/playlists/PlayListPanel.cpp:1067
 #: ui/mediaviewer/library/LibPanel.cpp:1281
 #: ui/mediaviewer/library/TaListBox.cpp:204 ui/podcasts/PodcastsPanel.cpp:1241
@@ -1419,7 +1419,6 @@ msgid "Tree view"
 msgstr ""
 
 #: ui/mediaviewer/MediaViewer.cpp:269
-#, fuzzy
 msgid "Ignore the accents"
 msgstr ""
 
