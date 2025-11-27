@@ -4,6 +4,19 @@ Guayadeque Music Player
 Changelog
 =========
 
+0.7.4 (2025-12-__)
+------------------
+###### ___
+
+### Features
+
+### Enhancements
+
+### Bugfixes
+  * Fixed loading of files not in the library from command line. 
+
+### Removed
+
 0.7.3 (2025-11-25)
 ------------------
 ###### After Forever
