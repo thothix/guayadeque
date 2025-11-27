@@ -935,11 +935,15 @@ wxString guMainFrame::FindCollectionByPath(const wxString pathToFind)
 // -------------------------------------------------------------------------------- //
 guDbLibrary *guMainFrame::GetMediaDb(const wxString &unique_id)
 {
-    guLogMessage( wxT( "GetMediaDb for ID '%s'" ), unique_id.c_str() );
     if (unique_id.IsEmpty())
-        return nullptr;
+    {
+        guLogMessage( wxT( "GetMediaDb: No db ID, returning the default db..."));
+        return m_Db;
+    }
 
+    guLogMessage( wxT( "GetMediaDb for ID '%s'" ), unique_id.c_str() );
     guDbLibrary *Db;
+
     int index = m_ExtraDbId.Index(unique_id);
     if (index != wxNOT_FOUND)
     {
