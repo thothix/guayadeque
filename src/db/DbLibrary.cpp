@@ -51,49 +51,6 @@ namespace Guayadeque {
     // Various functions
     // -------------------------------------------------------------------------------- //
 
-    // -------------------------------------------------------------------------------- //
-    wxString GetSongsDBNamesSQL(const int order)
-    {
-        wxString query = wxEmptyString;
-
-        switch (order)
-        {
-            case guTRACKS_ORDER_YEAR:
-            case guTRACKS_ORDER_DISK:
-                //query += wxT( ",albums WHERE song_albumid = album_id " );
-                break;
-
-            case guTRACKS_ORDER_ARTIST:
-                //query += wxT( ",artists,albums WHERE song_artistid = artist_id AND song_albumid = album_id " );
-                break;
-
-            case guTRACKS_ORDER_ALBUM:
-                //query += wxT( ",albums WHERE song_albumid = album_id " );
-                break;
-
-            case guTRACKS_ORDER_GENRE:
-                //query += wxT( ",genres WHERE song_genreid = genre_id " );
-                break;
-
-            case guTRACKS_ORDER_COMPOSER:
-                //query += wxT( ",composers WHERE song_composerid = composer_id " );
-                break;
-
-                //    case guTRACKS_ORDER_TITLE :
-                //    case guTRACKS_ORDER_NUMBER :
-                //    case guTRACKS_ORDER_LENGTH :
-                //    case guTRACKS_ORDER_RATING :
-                //    case guTRACKS_ORDER_BITRATE :
-                //    case guTRACKS_ORDER_PLAYCOUNT :
-                //    case guTRACKS_ORDER_LASTPLAY :
-                //    case guTRACKS_ORDER_ADDEDDATE :
-                //      break;
-            default:
-                break;
-        }
-        return query;
-    }
-
     wxString GetOrderOnce(wxString &order)
     {
         if (!order.IsEmpty())
