@@ -53,6 +53,10 @@ class guLibPanel;
 // -------------------------------------------------------------------------------- //
 class guSoListBox : public guListView
 {
+  private:
+    void                        HandleMultiColumnOrder(const int order);
+    void                        HandleMultiColumnOrderKeepSelections(const int order);
+
   protected :
     guMediaViewer *             m_MediaViewer;
 
@@ -64,8 +68,11 @@ class guSoListBox : public guListView
     wxString                    m_ConfName;
     int                         m_LastColumnRightClicked;
     int                         m_LastRowRightClicked;
+
     int                         m_TracksOrder;
     bool                        m_TracksOrderDesc;
+    wxArrayInt                  m_TracksMultiOrder;
+    wxArrayInt                  m_TracksMultiOrderDesc;
 
     wxBitmap *                  m_NormalStar;
     wxBitmap *                  m_SelectStar;
