@@ -106,16 +106,16 @@ namespace Guayadeque {
     }
 
     // -------------------------------------------------------------------------------- //
-    wxString GetSongsSortSQL(const wxArrayInt aorder, const wxArrayInt aorderdesc, const bool force_fallback = false)
+    wxString GetSongsSortSQL(const wxArrayInt *aorder, const wxArrayInt *aorderdesc, const bool force_fallback = false)
     {
         wxString sComma = "";
         wxString query = wxT(" ORDER BY ");
 
-        for (size_t i = 0; i < aorder.GetCount(); i++)
+        for (size_t i = 0; i < aorder->GetCount(); i++)
         {
             query += sComma;
 
-            switch (aorder[i])
+            switch (aorder->Item(i))
             {
                 case guTRACKS_ORDER_TITLE:
                     query += wxT("song_name");
@@ -193,22 +193,22 @@ namespace Guayadeque {
                     ////return query;
             }
 
-            if (aorderdesc[i])
+            if (aorderdesc->Item(i))
                 query += wxT(" DESC");
             if (sComma.IsEmpty())
                 sComma = ", ";
         }
 
         wxString SAI = wxT("song_albumid");
-        wxString SAR = aorder.Index(guTRACKS_ORDER_ARTIST) == wxNOT_FOUND ? "song_artist" : "";
-        wxString SAL = aorder.Index(guTRACKS_ORDER_ALBUM) == wxNOT_FOUND ? "song_album" : "";
-        wxString SD  = aorder.Index(guTRACKS_ORDER_DISK) == wxNOT_FOUND ? "song_disk" : "";
-        wxString SN  = aorder.Index(guTRACKS_ORDER_NUMBER) == wxNOT_FOUND ? "song_number" : "";
-        wxString SY  = aorder.Index(guTRACKS_ORDER_YEAR) == wxNOT_FOUND ? "song_year" : "";
+        wxString SAR = aorder->Index(guTRACKS_ORDER_ARTIST) == wxNOT_FOUND ? "song_artist" : "";
+        wxString SAL = aorder->Index(guTRACKS_ORDER_ALBUM) == wxNOT_FOUND ? "song_album" : "";
+        wxString SD  = aorder->Index(guTRACKS_ORDER_DISK) == wxNOT_FOUND ? "song_disk" : "";
+        wxString SN  = aorder->Index(guTRACKS_ORDER_NUMBER) == wxNOT_FOUND ? "song_number" : "";
+        wxString SY  = aorder->Index(guTRACKS_ORDER_YEAR) == wxNOT_FOUND ? "song_year" : "";
 
-        for (size_t i = 0; i < aorder.GetCount(); i++)
+        for (size_t i = 0; i < aorder->GetCount(); i++)
         {
-            switch (aorder[i])
+            switch (aorder->Item(i))
             {
                 case guTRACKS_ORDER_DISK:
                     query += GetOrderOnce(SAI) + GetOrderOnce(SN);
@@ -3986,7 +3986,7 @@ namespace Guayadeque {
                     "FROM songs ");
                 query += wxString::Format(wxT(", plsets WHERE plset_songid = song_id AND plset_plid = %u"), plid);
 
-                query += GetSongsSortSQL(*order, *orderdesc);
+                query += GetSongsSortSQL(order, orderdesc);
 
                 dbRes = ExecuteQuery(query);
 
@@ -4039,8 +4039,9 @@ namespace Guayadeque {
                     "FROM songs ");
                 query += DynPlayListToSQLQuery(&PlayList);
 
-                if (!PlayList.m_Sorted && (*order != wxNOT_FOUND))
-                    query += GetSongsSortSQL(*order, *orderdesc);
+                ////if (!PlayList.m_Sorted && (*order != wxNOT_FOUND))
+                if (!PlayList.m_Sorted && !order->IsEmpty())
+                    query += GetSongsSortSQL(order, orderdesc);
 
                 //guLogMessage( wxT( "GetPlayListSongs: <<%s>>" ), query.c_str() );
 
@@ -4108,7 +4109,7 @@ namespace Guayadeque {
             query += wxString::Format(wxT("%u,"), ids[Index]);
         }
         query.RemoveLast(1);
-        query += wxT(")") + GetSongsSortSQL(*order, *orderdesc);
+        query += wxT(")") + GetSongsSortSQL(order, orderdesc);
 
         dbRes = ExecuteQuery(query);
 
@@ -4343,7 +4344,7 @@ namespace Guayadeque {
                 "settag_tagid IN ") + subquery + wxT(" and settag_albumid > 0 ) ) OR");
             query += wxT(" (song_id IN ( SELECT settag_songid FROM settags WHERE "
                 "settag_tagid IN ") + subquery + wxT(" and settag_songid > 0 ) ) ) ");
-            query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+            query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             dbRes = ExecuteQuery(query);
 
@@ -4371,7 +4372,7 @@ namespace Guayadeque {
             bool has_where = query.Find(wxT("WHERE")) != wxNOT_FOUND;
             query += has_where ? wxT("AND ") : wxT("WHERE ");
             query += wxT("song_genreid IN ") + ArrayIntToStrList(Genres);
-            query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+            query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             dbRes = ExecuteQuery(query);
 
@@ -4398,7 +4399,7 @@ namespace Guayadeque {
             query = GU_TRACKS_QUERYSTR;
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += wxT("song_artistid IN ") + ArrayIntToStrList(Artists);
-            query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+            query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             dbRes = ExecuteQuery(query);
 
@@ -4518,7 +4519,7 @@ namespace Guayadeque {
             if (ordertoedit)
                 query += wxT(" ORDER BY song_disk, song_number, song_filename");
             else
-                query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+                query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             //guLogMessage( wxT( "GetAlbumsSongs: %s" ), query.c_str() );
             dbRes = ExecuteQuery(query);
@@ -4545,7 +4546,7 @@ namespace Guayadeque {
             query = GU_TRACKS_QUERYSTR;
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += wxT("song_year IN ") + ArrayIntToStrList(Years);
-            query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+            query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             dbRes = ExecuteQuery(query);
 
@@ -4571,7 +4572,7 @@ namespace Guayadeque {
             query = GU_TRACKS_QUERYSTR;
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += wxT("song_rating IN ") + ArrayIntToStrList(Ratings);
-            query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+            query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             dbRes = ExecuteQuery(query);
 
@@ -4597,7 +4598,7 @@ namespace Guayadeque {
             query = GU_TRACKS_QUERYSTR;
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += wxT("song_playcount IN ") + ArrayIntToStrList(PlayCounts);
-            query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+            query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             dbRes = ExecuteQuery(query);
 
@@ -4623,7 +4624,7 @@ namespace Guayadeque {
             query = GU_TRACKS_QUERYSTR;
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += wxT("song_albumartistid IN ") + ArrayIntToStrList(albumartists);
-            query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+            query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             dbRes = ExecuteQuery(query);
 
@@ -4649,7 +4650,7 @@ namespace Guayadeque {
             query = GU_TRACKS_QUERYSTR;
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += wxT("song_composerid IN ") + ArrayIntToStrList(Composers);
-            query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+            query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
             dbRes = ExecuteQuery(query);
 
@@ -4893,7 +4894,7 @@ namespace Guayadeque {
         int Index = 0;
 
         query = wxT("SELECT song_id FROM songs ");
-        query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc, true);
+        query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc, true);
 
         dbRes = ExecuteQuery(query);
 
@@ -5061,7 +5062,7 @@ namespace Guayadeque {
         query = GU_TRACKS_QUERYSTR;
         //query += ( query.Find( wxT( "WHERE" ) ) == wxNOT_FOUND ) ? wxT( "WHERE " ) : wxT( "AND " );
         query += wxT("WHERE song_id IN ") + ArrayIntToStrList(SongIds);
-        query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+        query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
 
         //guLogMessage( wxT( "%s" ), query.c_str() );
 
@@ -5186,7 +5187,7 @@ namespace Guayadeque {
         {
             query += wxT(" AND ") + TextFilterToSQL(textfilters);
         }
-        query += GetSongsSortSQL(order, orderdesc);
+        query += GetSongsSortSQL(&order, &orderdesc);
 
         //guLogMessage( wxT( "%s" ), query.c_str() );
         dbRes = ExecuteQuery(query);
@@ -5237,7 +5238,7 @@ namespace Guayadeque {
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += FiltersSQL(guLIBRARY_FILTER_SONGS);
         }
-        query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc, true);
+        query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc, true);
         query += wxString::Format(wxT(" LIMIT %i, %i "), start, end - start + 1);
 
         //guLogMessage( wxT( "%s" ), query.c_str() );
@@ -5266,7 +5267,7 @@ namespace Guayadeque {
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += FiltersSQL(guLIBRARY_FILTER_SONGS);
         }
-        query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+        query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
         query += wxString::Format(wxT(" LIMIT %i, 1 "), start);
 
         dbRes = ExecuteQuery(query);
@@ -5289,7 +5290,7 @@ namespace Guayadeque {
             query += (query.Find(wxT("WHERE")) == wxNOT_FOUND) ? wxT("WHERE ") : wxT("AND ");
             query += FiltersSQL(guLIBRARY_FILTER_SONGS);
         }
-        query += GetSongsSortSQL(m_TracksMultiOrder, m_TracksMultiOrderDesc);
+        query += GetSongsSortSQL(&m_TracksMultiOrder, &m_TracksMultiOrderDesc);
         query += wxString::Format(wxT(" LIMIT %i, 1 "), start);
 
         dbRes = ExecuteQuery(query);
