@@ -6,16 +6,27 @@ Changelog
 
 0.7.4 (2025-12-__)
 ------------------
-###### ___
-
-### Features
+###### Autumn
 
 ### Enhancements
+  * Support to sort by multiple columns in Collections Song Views (Library, TreeView and 
+    Playlists). Previously they supported only one sort column that had a predefined set of 
+    additional columns to sort in ascending order. Those predefined sets can't be changed
+    or customized by the user. Changes includes:
+      * Beside the ascending/descending order sign there's the column sort order.
+      * It's possible to disable sort in all columns (natural order).
+      * It's possible to customize the columns to sort, including the ascending or 
+        descending order for each column. They still get a smaller set of additional columns
+        to sort (depending on the chosen columns) but if you add some of these additional 
+        columns they'll have their new configured order. For example:
+
+ Columns set by the user | Columns actually set
+:------------|:------------
+ Artist, Year, Album  | Artist, Year, Album, Disk, Albumid, Song number
+ Artist, Year, Album, Song number | Artist, Year, Album, Song number, Disk, Albumid 
 
 ### Bugfixes
-  * Fixed loading of files not in the library from command line. 
-
-### Removed
+  * Fixed loading of files not in the library from command line. Closes #81. 
 
 0.7.3 (2025-11-25)
 ------------------
@@ -28,7 +39,7 @@ Changelog
       "Preferences->Collections->Any-Collection->Enable search with accented...".
     * The new default is NOT to use the collation search. Collation search was the only
       option since its implementation in v0.6.0 and it's very slow in large collections.
-    * Added an "Ignore the accents" checkbox next to the search field in the media library to 
+    * Added an "Ignore the accents" checkbox next to the search field in the media library to
       change quickly and temporarily the search mode.
   * Added installation instructions for Debian 13 (Trixie).
   * Updated Catalan, French, German, Greek, Italian, Portuguese, Brazilian Portuguese and

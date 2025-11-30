@@ -355,6 +355,9 @@ extern unsigned long DynPLDateOption2[];
 
         int m_TracksOrder;
         bool m_TracksOrderDesc;
+        wxArrayInt m_TracksMultiOrder;
+        wxArrayInt m_TracksMultiOrderDesc;
+
         int m_AlbumsOrder; // 0 ->
 
         wxArrayString m_CoverSearchWords;
@@ -486,13 +489,13 @@ extern unsigned long DynPLDateOption2[];
                               wxLongLong *len, wxLongLong *size);
 
         int GetSongs(const guTreeViewFilterArray &filters, guTrackArray *Songs, const wxArrayString &textfilters,
-                     const int order, const bool orderdesc);
+                     const wxArrayInt order, const wxArrayInt orderdesc);
 
         int GetSongs(const wxArrayInt &SongIds, guTrackArray *Songs);
 
-        int GetSongsCount();
-
         int GetSongs(guTrackArray *Songs, const int start, const int end);
+
+        int GetSongsCount();
 
         int GetSongsId(const int start);
 
@@ -505,9 +508,14 @@ extern unsigned long DynPLDateOption2[];
         bool FindDeletedFile(const wxString &file, const bool create);
 
         int GetTracksOrder() const { return m_TracksOrder; }
-        void SetTracksOrder(const int order) { m_TracksOrder = order; }
+        void SetTracksOrder(const int &order) { m_TracksOrder = order; }
+        wxArrayInt GetTracksMultiOrder() const { return m_TracksMultiOrder; }
+        void SetTracksMultiOrder(const wxArrayInt &order) { m_TracksMultiOrder = order; }
+
         bool GetTracksOrderDesc() const { return m_TracksOrderDesc; }
-        void SetTracksOrderDesc(const bool orderdesc) { m_TracksOrderDesc = orderdesc; }
+        void SetTracksOrderDesc(const bool &orderdesc) { m_TracksOrderDesc = orderdesc; }
+        wxArrayInt GetTracksMultiOrderDesc() const { return m_TracksMultiOrderDesc; }
+        void SetTracksMultiOrderDesc(const wxArrayInt &orderdesc) { m_TracksMultiOrderDesc = orderdesc; }
 
         void UpdateSongs(const guTrackArray *Songs, const wxArrayInt &changedflags);
 
@@ -574,11 +582,11 @@ extern unsigned long DynPLDateOption2[];
 
         int GetPlayListSongs(const int plid, const int pltype, guTrackArray *tracks,
                              wxArrayInt *setids = nullptr, wxLongLong *len = nullptr, wxLongLong *size = nullptr,
-                             const int order = wxNOT_FOUND, const bool orderdesc = false);
+                             const wxArrayInt *order = nullptr, const wxArrayInt *orderdesc = nullptr);
 
         int GetPlayListSongs(const wxArrayInt &ids, const wxArrayInt &types, guTrackArray *tracks,
                              wxArrayInt *setids = nullptr, wxLongLong *len = nullptr, wxLongLong *size = nullptr,
-                             const int order = wxNOT_FOUND, const bool orderdesc = false);
+                             const wxArrayInt *order = nullptr, const wxArrayInt *orderdesc = nullptr);
 
         int GetPlayListSetIds(const int plid, wxArrayInt *setids);
 
