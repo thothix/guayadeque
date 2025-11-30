@@ -1033,4 +1033,43 @@ int wxCMPFUNC_CONV CompareFileTypeD( guFileItem ** item1, guFileItem ** item2 )
         return -1;
 }
 
+wxString JoinFromArrayInt(const wxArrayInt &intArray, const wxChar &delimiter)
+{
+    wxString result;
+    size_t count = intArray.GetCount();
+
+    for (size_t i = 0; i < count; ++i) {
+        result += wxString::Format(wxT("%i"), intArray[i]);
+
+        // Append the delimiter if it's not the last element
+        if (i < count - 1)
+            result += delimiter;
+    }
+
+    return result;
+}
+
+wxArrayInt SplitToArrayInt(const wxString &data, const wxChar &delimiter)
+{
+    wxArrayString tokens = wxSplit(data, delimiter);
+    wxArrayInt arr;
+
+    for (size_t i = 0; i < tokens.size(); ++i)
+        arr.Add(atoi(tokens[i].c_str()));
+
+    return arr;
+}
+
+wxString GetSuperscriptNumber(int number)
+{
+    const wxArrayString ss_digits = {"\u2070", "\u00b9", "\u00b2", "\u00b3", "\u2074", "\u2075", "\u2076", "\u2077", "\u2078", "\u2079"};
+    const wxString str_number = wxString::Format(wxT("%u"), number);
+    wxString result;
+
+    for (wxString x : str_number)
+        result += wxString::Format(wxT("%s"), ss_digits[atoi(x)]);
+
+    return result;
+}
+
 }
