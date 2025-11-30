@@ -209,8 +209,10 @@ guPlayerPanel::guPlayerPanel(wxWindow * parent,
     m_PlayerCoverBitmap = nullptr;
     bool ShowPlayerCover = Config->ReadBool(CONFIG_KEY_GENERAL_SHOW_PLAYER_COVER, true, CONFIG_PATH_GENERAL );
     if (ShowPlayerCover)
+    {
         m_PlayerCoverBitmap = new wxStaticBitmap(this, wxID_ANY, guImage(guIMAGE_INDEX_no_cover), wxDefaultPosition, wxSize(100, 100), 0);
-    m_PlayerDetailsSizer->Add(m_PlayerCoverBitmap, 0, wxALL, 2);
+        m_PlayerDetailsSizer->Add(m_PlayerCoverBitmap, 0, wxALL, 2);
+    }
 
     wxBoxSizer* PlayerLabelsSizer;
     PlayerLabelsSizer = new wxBoxSizer( wxVERTICAL );
