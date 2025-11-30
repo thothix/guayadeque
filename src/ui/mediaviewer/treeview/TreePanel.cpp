@@ -1213,7 +1213,6 @@ void guTreeViewPanel::OnTreeViewDeleteFilter( wxCommandEvent &event )
             }
         }
     }
-
 }
 
 // -------------------------------------------------------------------------------- //
@@ -1797,20 +1796,8 @@ void guTreeViewPanel::OnTrackListColClicked( wxListEvent &event )
     int ColId = m_TVTracksListBox->GetColumnId( event.m_col );
 
     m_TVTracksListBox->SetTracksOrder( ColId );
-
-    // Create the Columns
-    wxArrayString ColumnNames = m_TVTracksListBox->GetColumnNames();
-    int count = ColumnNames.Count();
-    for( int index = 0; index < count; index++ )
-    {
-        int CurColId = m_TVTracksListBox->GetColumnId( index );
-        m_TVTracksListBox->SetColumnLabel( index,
-            ColumnNames[ CurColId ]  + ( ( ColId == CurColId ) ? ( m_TVTracksListBox->GetTracksOrderDesc() ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString ) );
-    }
-
     m_TVTracksListBox->ReloadItems( false );
 }
-
 
 // -------------------------------------------------------------------------------- //
 void guTreeViewPanel::RefreshAll( void )

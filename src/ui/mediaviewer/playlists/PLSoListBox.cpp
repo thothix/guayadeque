@@ -91,7 +91,8 @@ void guPLSoListBox::GetItemsList( void )
     m_PLSetIds.Empty();
     if( m_PLIds.Count() )
     {
-        m_Db->GetPlayListSongs( m_PLIds, m_PLTypes, &m_Items, &m_PLSetIds, &m_TracksLength, &m_TracksSize, m_TracksOrder, m_TracksOrderDesc );
+        m_Db->GetPlayListSongs(m_PLIds, m_PLTypes, &m_Items, &m_PLSetIds, &m_TracksLength, &m_TracksSize,
+            &m_TracksMultiOrder, &m_TracksMultiOrderDesc);
         //m_Db->GetPlayListSetIds( m_PLIds, &m_PLSetIds, m_TracksOrder, m_TracksOrderDesc );
     }
     else
@@ -140,6 +141,8 @@ void guPLSoListBox::SetPlayList( const wxArrayInt &ids, const wxArrayInt &types 
     if( m_DisableSorting )
     {
         m_DisableSorting = false;
+        SetTracksOrder(-2);     // Reactivate Orders without update it
+        return;
     }
 
     ReloadItems();
@@ -370,38 +373,45 @@ wxString guPLSoListBox::GetSearchText( int item ) const
 void guPLSoListBox::SetTracksOrder( const int order )
 {
     if( !m_DisableSorting )
-    {
-        if( m_TracksOrder != order )
-        {
-            m_TracksOrder = order;
-            if( order == wxNOT_FOUND )
-                m_TracksOrderDesc = false;
-        }
-        else if( order != wxNOT_FOUND )
-        {
-            m_TracksOrderDesc = !m_TracksOrderDesc;
-            if( !m_TracksOrderDesc )
-            {
-                m_TracksOrder = wxNOT_FOUND;
-                m_TracksOrderDesc = false;
-            }
-        }
-
-        int ColId = m_TracksOrder;
-
-        // Create the Columns
-        int CurColId;
-        int Count = m_ColumnNames.Count();
-        for( int Index = 0; Index < Count; Index++ )
-        {
-            CurColId = GetColumnId( Index );
-            SetColumnLabel( Index,
-                m_ColumnNames[ CurColId ]  + ( ( ColId == CurColId ) ? ( m_TracksOrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString ) );
-        }
-
-        ReloadItems();
-    }
+        guSoListBox::SetTracksOrder(order);
 }
+
+// -------------------------------------------------------------------------------- //
+// void guPLSoListBox::SetTracksOrder( const int order )
+// {
+//     if( !m_DisableSorting )
+//     {
+//         if( m_TracksOrder != order )
+//         {
+//             m_TracksOrder = order;
+//             if( order == wxNOT_FOUND )
+//                 m_TracksOrderDesc = false;
+//         }
+//         else if( order != wxNOT_FOUND )
+//         {
+//             m_TracksOrderDesc = !m_TracksOrderDesc;
+//             if( !m_TracksOrderDesc )
+//             {
+//                 m_TracksOrder = wxNOT_FOUND;
+//                 m_TracksOrderDesc = false;
+//             }
+//         }
+//
+//         int ColId = m_TracksOrder;
+//
+//         Create the Columns
+//         int CurColId;
+//         int Count = m_ColumnNames.Count();
+//         for( int Index = 0; Index < Count; Index++ )
+//         {
+//             CurColId = GetColumnId( Index );
+//             SetColumnLabel( Index,
+//                 m_ColumnNames[ CurColId ]  + ( ( ColId == CurColId ) ? ( m_TracksOrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString ) );
+//         }
+//
+//         ReloadItems();
+//     }
+// }
 
 // -------------------------------------------------------------------------------- //
 void guPLSoListBox::RandomizeTracks( void )
@@ -431,5 +441,3 @@ void guPLSoListBox::RandomizeTracks( void )
 }
 
 }
-
-// -------------------------------------------------------------------------------- //

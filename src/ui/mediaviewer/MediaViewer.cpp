@@ -432,8 +432,8 @@ void guMediaViewer::SetViewMode( const int mode )
         switch( m_ViewMode )
         {
             case guMEDIAVIEWER_MODE_LIBRARY :
-                m_PreviousTracksOrder = m_Db->GetTracksOrder();
-                m_PreviousTracksOrderDesc = m_Db->GetTracksOrderDesc();
+                m_PreviousTracksMultiOrder = m_Db->GetTracksMultiOrder();
+                m_PreviousTracksMultiOrderDesc = m_Db->GetTracksMultiOrderDesc();
                 m_LibPanel->Hide();
                 break;
 
@@ -466,8 +466,11 @@ void guMediaViewer::SetViewMode( const int mode )
                 else
                     m_LibPanel->Show( true );
 
-                m_Db->SetTracksOrder( m_PreviousTracksOrder );
-                m_Db->SetTracksOrderDesc( m_PreviousTracksOrderDesc );
+                if (!m_PreviousTracksMultiOrder.IsEmpty())
+                {
+                    m_Db->SetTracksMultiOrder( m_PreviousTracksMultiOrder );
+                    m_Db->SetTracksMultiOrderDesc( m_PreviousTracksMultiOrderDesc );
+                }
 
                 break;
             }
