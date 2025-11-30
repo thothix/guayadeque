@@ -122,6 +122,9 @@ int wxCMPFUNC_CONV CompareFileTimeA( guFileItem ** item1, guFileItem ** item2 );
 int wxCMPFUNC_CONV CompareFileTimeD( guFileItem ** item1, guFileItem ** item2 );
 int wxCMPFUNC_CONV CompareFileTypeA( guFileItem ** item1, guFileItem ** item2 );
 int wxCMPFUNC_CONV CompareFileTypeD( guFileItem ** item1, guFileItem ** item2 );
+wxString JoinFromArrayInt(const wxArrayInt &intArray, const wxChar &delimiter = ',');
+wxArrayInt SplitToArrayInt(const wxString &data, const wxChar &delimiter = ',');
+wxString GetSuperscriptNumber(int number);
 
 std::mt19937        guSRandom();
 extern std::mt19937 rng_default_generator;
