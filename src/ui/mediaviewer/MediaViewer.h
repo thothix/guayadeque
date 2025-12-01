@@ -140,8 +140,6 @@ class guMediaViewer : public wxPanel
 
     int                     m_PreviousTracksOrder;
     bool                    m_PreviousTracksOrderDesc;
-    wxArrayInt              m_PreviousTracksMultiOrder;
-    wxArrayInt              m_PreviousTracksMultiOrderDesc;
 
     void                    OnViewChanged( wxCommandEvent &event );
 

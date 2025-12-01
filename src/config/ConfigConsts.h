@@ -121,7 +121,7 @@ namespace Guayadeque {
 #define CONFIG_KEY_GENERAL_SHOW_TASK_BAR_ICON            "ShowTaskBarIcon"
 #define CONFIG_KEY_GENERAL_SOUND_MENU_INTEGRATE          "SoundMenuIntegration"
 #define CONFIG_KEY_GENERAL_START_MINIMIZED               "StartMinimized"
-#define CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER             "TextSearchEnterEnabled"
+#define CONFIG_KEY_GENERAL_TEXT_SEARCH_ENTER             "TextSearchEnterRelax"
 #define CONFIG_KEY_GENERAL_DESKTOP                       "Desktop"
 
 // Import Files

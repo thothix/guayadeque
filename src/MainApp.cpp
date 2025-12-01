@@ -365,45 +365,47 @@ bool guMainApp::OnInit()
 
     const wxString AppName = wxString::Format( wxT( ".guayadeque/.guayadeque-%s" ), wxGetUserId().c_str() );
     //guLogMessage( wxT( "Init: %s" ), AppName.c_str() );
-    while (true)
+    while( true )
     {
-        if (m_SingleInstanceChecker)
+        if( m_SingleInstanceChecker )
             delete m_SingleInstanceChecker;
 
-        m_SingleInstanceChecker = new wxSingleInstanceChecker(AppName);
+        m_SingleInstanceChecker = new wxSingleInstanceChecker( AppName );
 
-        if (!m_SingleInstanceChecker->IsAnotherRunning())
-            break;
-
-        int RetryCnt = 0;
-        if (argc > 1)
+        if( m_SingleInstanceChecker->IsAnotherRunning() )
         {
-            while (RetryCnt++ < 25)
+            int RetryCnt = 0;
+            if( argc > 1 )
             {
-                if (SendFilesByMPRIS(argc, argv))
-                    break;
-                wxMilliSleep(100);
+                while( RetryCnt++ < 25 )
+                {
+                    if( SendFilesByMPRIS( argc, argv ) )
+                        break;
+
+                    wxMilliSleep( 100 );
+                }
+            }
+
+            if( ( RetryCnt < 25 ) && MakeWindowVisible() )
+                return false;
+
+            //guLogMessage( wxT( "Another program instance is already running, aborting." ) );
+            if( wxMessageBox( _( "Another program instance is already running." ) + "\n" + _( "Do you want to continue with the program?" ),
+                             _( "Confirm" ),
+                             wxICON_QUESTION | wxYES_NO ) == wxYES )
+            {
+                if( !wxRemoveFile( wxGetHomeDir() + "/" + AppName ) )
+                    guLogMessage( wxT( "Could not delete the file: %s" ), AppName.c_str() );
+                wxMilliSleep( 1000 );
+            }
+            else
+            {
+                delete m_SingleInstanceChecker;
+                return false;
             }
         }
-
-        guLogMessage(wxT("Another program instance is already running..."));
-        if ((RetryCnt < 25) && MakeWindowVisible())
-            return false;
-
-        if (wxMessageBox(_("Another program instance is already running.") + "\n"
-                                + _("Do you want to continue with the program?"),
-                         _("Confirm"),
-                         wxICON_QUESTION | wxYES_NO) == wxYES)
-        {
-            if (!wxRemoveFile(wxGetHomeDir() + "/" + AppName))
-                guLogMessage(wxT("Could not delete the file: %s"), AppName.c_str());
-            wxMilliSleep(1000);
-        }
         else
-        {
-            delete m_SingleInstanceChecker;
-            return false;
-        }
+            break;
     }
 
     // If enabled Show the Splash Screen on Startup

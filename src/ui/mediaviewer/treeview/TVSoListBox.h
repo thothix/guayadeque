@@ -25,6 +25,7 @@
 
 namespace Guayadeque {
 
+// -------------------------------------------------------------------------------- //
 class guTVSoListBox : public guSoListBox
 {
   protected :
@@ -37,6 +38,7 @@ class guTVSoListBox : public guSoListBox
 
     virtual void        GetItemsList( void );
     virtual wxString    GetSearchText( int item ) const;
+
 
     virtual void        ItemsCheckRange( const int start, const int end ) { m_ItemsFirst = 0; m_ItemsLast = 0; }
 
@@ -56,7 +58,13 @@ class guTVSoListBox : public guSoListBox
 
     void                GetCounters( wxLongLong * count, wxLongLong * len, wxLongLong * size );
 
-    ////virtual void        SetTracksOrder(const int order);
+    virtual void        SetTracksOrder( const int order )
+    {
+        if( m_TracksOrder != order )
+            m_TracksOrder = order;
+        else
+            m_TracksOrderDesc = !m_TracksOrderDesc;
+    }
 
     void                SetTextFilters( const wxArrayString &textfilters ) { m_TextFilters = textfilters; }
     void                ClearTextFilters( void ) { m_TextFilters.Clear(); }
@@ -65,3 +73,4 @@ class guTVSoListBox : public guSoListBox
 }
 
 #endif
+// -------------------------------------------------------------------------------- //

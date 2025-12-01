@@ -491,7 +491,6 @@ class guPrefDialog : public wxDialog
 
     void SaveSettings();
     int  GetVisiblePanels() { return m_VisiblePanels; }
-    bool  GetLibPathsChanged() { return m_LibPathsChanged; }
 };
 
 }

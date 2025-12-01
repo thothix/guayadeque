@@ -1749,6 +1749,17 @@ void guLibPanel::OnSongListColClicked( wxListEvent &event )
         return;
     m_SongListCtrl->SetTracksOrder( ColId );
 
+    // Create the Columns
+    wxArrayString ColumnNames = m_SongListCtrl->GetColumnNames();
+    int CurColId;
+    int count = ColumnNames.Count();
+    for( int index = 0; index < count; index++ )
+    {
+        CurColId = m_SongListCtrl->GetColumnId( index );
+        m_SongListCtrl->SetColumnLabel( index,
+            ColumnNames[ CurColId ]  + ( ( ColId == CurColId ) ? ( m_SongListCtrl->GetTracksOrderDesc() ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString ) );
+    }
+
     ReloadSongs();
 }
 

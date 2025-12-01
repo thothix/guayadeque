@@ -432,8 +432,8 @@ void guMediaViewer::SetViewMode( const int mode )
         switch( m_ViewMode )
         {
             case guMEDIAVIEWER_MODE_LIBRARY :
-                m_PreviousTracksMultiOrder = m_Db->GetTracksMultiOrder();
-                m_PreviousTracksMultiOrderDesc = m_Db->GetTracksMultiOrderDesc();
+                m_PreviousTracksOrder = m_Db->GetTracksOrder();
+                m_PreviousTracksOrderDesc = m_Db->GetTracksOrderDesc();
                 m_LibPanel->Hide();
                 break;
 
@@ -466,11 +466,8 @@ void guMediaViewer::SetViewMode( const int mode )
                 else
                     m_LibPanel->Show( true );
 
-                if (!m_PreviousTracksMultiOrder.IsEmpty())
-                {
-                    m_Db->SetTracksMultiOrder( m_PreviousTracksMultiOrder );
-                    m_Db->SetTracksMultiOrderDesc( m_PreviousTracksMultiOrderDesc );
-                }
+                m_Db->SetTracksOrder( m_PreviousTracksOrder );
+                m_Db->SetTracksOrderDesc( m_PreviousTracksOrderDesc );
 
                 break;
             }
@@ -1142,49 +1139,43 @@ void guMediaViewer::UpdateCoversFinished()
 void guMediaViewer::OnAddPath()
 {
     wxDirDialog * DirDialog = new wxDirDialog( this, _( "Select library path" ), wxGetHomeDir() );
-    if (!DirDialog)
-        return;
-
-    if (DirDialog->ShowModal() == wxID_OK)
+    if( DirDialog )
     {
-        wxString PathValue = DirDialog->GetPath();
-        if (!PathValue.IsEmpty())
+        if( DirDialog->ShowModal() == wxID_OK )
         {
-            if (!PathValue.EndsWith(wxT("/")))
-                PathValue += '/';
-
-            //guLogMessage(wxT("LibPaths: '%s'"), LibPaths[0].c_str());
-            //guLogMessage(wxT("Add Path: '%s'"), PathValue.c_str());
-            //guLogMessage(wxT("Exists  : %i"), m_Db->PathExists(PathValue));
-            //guLogMessage(wxT("Index   : %i"), LibPaths.Index(PathValue));
-
-            if (!CheckFileLibPath(m_MediaCollection->m_Paths, PathValue))
+            wxString PathValue = DirDialog->GetPath();
+            if( !PathValue.IsEmpty() )
             {
-                m_MediaCollection->m_Paths.Add(PathValue);
-                guMediaCollection *Collection = m_MainFrame->FindCollection(m_MediaCollection->m_UniqueId);
-                if (Collection)
+                if( !PathValue.EndsWith( wxT( "/" ) ) )
+                    PathValue += '/';
+
+                //guLogMessage( wxT( "LibPaths: '%s'" ), LibPaths[ 0 ].c_str() );
+                //guLogMessage( wxT( "Add Path: '%s'" ), PathValue.c_str() );
+                //guLogMessage( wxT( "Exists  : %i" ), m_Db->PathExists( PathValue ) );
+                //guLogMessage( wxT( "Index   : %i" ), LibPaths.Index( PathValue ) );
+
+                if( !CheckFileLibPath( m_MediaCollection->m_Paths, PathValue ) )
                 {
-                    Collection->m_Paths.Add(PathValue);
-                    m_MainFrame->SaveCollections();
+                    m_MediaCollection->m_Paths.Add( PathValue );
+                    guMediaCollection * Collection = m_MainFrame->FindCollection( m_MediaCollection->m_UniqueId );
+                    if( Collection )
+                    {
+                        Collection->m_Paths.Add( PathValue );
+                        m_MainFrame->SaveCollections();
+                    }
+
+                    UpdateLibrary();
                 }
-
-                guConfig *Config = (guConfig *) guConfig::Get();
-                Config->SendConfigChangedEvent(m_LibPanel->VisiblePanels());
-
-                UpgradeLibrary();
-
-                wxCommandEvent Event(wxEVT_MENU, ID_COLLECTIONS_BASE + guCOLLECTION_ACTION_RESCAN_LIBRARY);
-                wxPostEvent(this, Event);
-            }
-            else
-            {
-                wxMessageBox(_("This Path is already in the library"),
-                    _("Adding path error"),
-                    wxICON_EXCLAMATION | wxOK);
+                else
+                {
+                    wxMessageBox( _( "This Path is already in the library" ),
+                        _( "Adding path error" ),
+                        wxICON_EXCLAMATION | wxOK  );
+                }
             }
         }
+        DirDialog->Destroy();
     }
-    DirDialog->Destroy();
 }
 
 // -------------------------------------------------------------------------------- //
