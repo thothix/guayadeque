@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-30 19:44-0300\n"
+"POT-Creation-Date: 2025-12-01 16:18-0300\n"
 "PO-Revision-Date: 2024-12-05 13:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -42,7 +42,7 @@ msgstr "Επιβεβαίωση"
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/AAListBox.cpp:133 ui/MainFrame.cpp:1478
-#: ui/MainFrame.cpp:4307 ui/player/PlayList.cpp:1708
+#: ui/MainFrame.cpp:4311 ui/player/PlayList.cpp:1708
 #: ui/preferences/Preferences.cpp:126 ui/filebrowser/FileBrowser.cpp:329
 #: ui/filebrowser/FileBrowser.cpp:992 misc/Accelerators.cpp:128
 msgid "Preferences"
@@ -794,7 +794,7 @@ msgstr "Ετικέτες"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362
 #: ui/mediaviewer/library/SoListBox.cpp:70
 #: ui/mediaviewer/library/SoListBox.cpp:561 ui/trackedit/TrackEdit.cpp:262
-#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3253
+#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3252
 #: ui/filebrowser/FileRenamer.cpp:86 ui/radios/RadioPanel.cpp:568
 #: ui/radios/ShoutcastRadio.cpp:140
 msgid "Genre"
@@ -1473,33 +1473,33 @@ msgstr "Εισαγωγή αρχείων στη συλλογή"
 msgid "Collection"
 msgstr "Συλλογή"
 
-#: ui/mediaviewer/MediaViewer.cpp:1144 ui/preferences/Preferences.cpp:2852
+#: ui/mediaviewer/MediaViewer.cpp:1144 ui/preferences/Preferences.cpp:2851
 msgid "Select library path"
 msgstr "Επιλογή διαδρομής της βιβλιοθήκης"
 
-#: ui/mediaviewer/MediaViewer.cpp:1174
+#: ui/mediaviewer/MediaViewer.cpp:1181
 msgid "This Path is already in the library"
 msgstr "Αυτή η διαδρομή βρίσκεται ήδη στη βιβλιοθήκη"
 
-#: ui/mediaviewer/MediaViewer.cpp:1175
+#: ui/mediaviewer/MediaViewer.cpp:1182
 msgid "Adding path error"
 msgstr "Σφάλμα προσθήκης διαδρομής"
 
-#: ui/mediaviewer/MediaViewer.cpp:1352 ui/mediaviewer/MediaViewer.cpp:1371
-#: ui/mediaviewer/MediaViewer.cpp:1386
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3191
+#: ui/mediaviewer/MediaViewer.cpp:1358 ui/mediaviewer/MediaViewer.cpp:1377
+#: ui/mediaviewer/MediaViewer.cpp:1392
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3195
 #: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "κομμάτι"
 
-#: ui/mediaviewer/MediaViewer.cpp:1352 ui/mediaviewer/MediaViewer.cpp:1371
-#: ui/mediaviewer/MediaViewer.cpp:1386
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3191
+#: ui/mediaviewer/MediaViewer.cpp:1358 ui/mediaviewer/MediaViewer.cpp:1377
+#: ui/mediaviewer/MediaViewer.cpp:1392
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3195
 #: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "κομμάτια"
 
-#: ui/mediaviewer/MediaViewer.cpp:1449 ui/cover/SelCoverFile.cpp:42
+#: ui/mediaviewer/MediaViewer.cpp:1455 ui/cover/SelCoverFile.cpp:42
 msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
@@ -1507,29 +1507,29 @@ msgstr ""
 "Δε βρέθηκε ο Δίσκος στη βιβλιοθήκη.\n"
 "Πρέπει να ενημερώσετε τη βιβλιοθήκη."
 
-#: ui/mediaviewer/MediaViewer.cpp:1450 ui/cover/SelCoverFile.cpp:43
+#: ui/mediaviewer/MediaViewer.cpp:1456 ui/cover/SelCoverFile.cpp:43
 #: ui/filebrowser/FileBrowser.cpp:574
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: ui/mediaviewer/MediaViewer.cpp:2092
+#: ui/mediaviewer/MediaViewer.cpp:2098
 msgid "smart playlist"
 msgstr "έξυπνη λίστα αναπαραγωγής"
 
-#: ui/mediaviewer/MediaViewer.cpp:2102
+#: ui/mediaviewer/MediaViewer.cpp:2108
 msgid "Playlist"
 msgstr "Λίστα Αναπαραγωγής"
 
-#: ui/mediaviewer/MediaViewer.cpp:2136
+#: ui/mediaviewer/MediaViewer.cpp:2142
 msgid "The best of"
 msgstr "Το Best of"
 
-#: ui/mediaviewer/MediaViewer.cpp:2159
+#: ui/mediaviewer/MediaViewer.cpp:2165
 #, c-format
 msgid "No tracks found for %s."
 msgstr "Δεν βρέθηκαν κομμάτια από  %s."
 
-#: ui/mediaviewer/MediaViewer.cpp:2162
+#: ui/mediaviewer/MediaViewer.cpp:2168
 #, c-format
 msgid "Best tracks for '%s' not found."
 msgstr "Καλύτερα κομμάτια από '%s' δεν βρέθηκαν."
@@ -2172,8 +2172,8 @@ msgstr "Εξώφυλλο:"
 msgid "Welcome to Guayadeque"
 msgstr "Καλώς ήρθατε στο Guayadeque"
 
-#: ui/MainFrame.cpp:209 ui/MainFrame.cpp:398 ui/MainFrame.cpp:2084
-#: ui/MainFrame.cpp:2795 ui/MainFrame.cpp:2812 ui/player/PlayList.cpp:230
+#: ui/MainFrame.cpp:209 ui/MainFrame.cpp:398 ui/MainFrame.cpp:2088
+#: ui/MainFrame.cpp:2799 ui/MainFrame.cpp:2816 ui/player/PlayList.cpp:230
 #: ui/radios/RadioPanel.cpp:315
 msgid "Now Playing"
 msgstr "Σε Αναπαραγωγή"
@@ -2182,7 +2182,7 @@ msgstr "Σε Αναπαραγωγή"
 msgid "My Music"
 msgstr "Η Μουσική μου"
 
-#: ui/MainFrame.cpp:394 ui/MainFrame.cpp:1406 ui/MainFrame.cpp:4124
+#: ui/MainFrame.cpp:394 ui/MainFrame.cpp:1406 ui/MainFrame.cpp:4128
 msgid "VU Meters"
 msgstr "Μετρητές VU"
 
@@ -2227,7 +2227,7 @@ msgstr "Ανανέωση των ραδιοφωνικών σταθμών"
 msgid "Set the radio preferences"
 msgstr "Καθορισμός προτιμήσεων ραδιοφώνου"
 
-#: ui/MainFrame.cpp:1069 ui/MainFrame.cpp:2519
+#: ui/MainFrame.cpp:1069 ui/MainFrame.cpp:2523
 msgid "Radio"
 msgstr "Ραδιόφωνο"
 
@@ -2267,7 +2267,7 @@ msgstr "Ενημέρωση των podcasts που έχουν προστεθεί"
 msgid "Set the podcasts preferences"
 msgstr "Καθορισμός προτιμήσεων των podcasts"
 
-#: ui/MainFrame.cpp:1106 ui/MainFrame.cpp:2700 ui/MainFrame.cpp:3405
+#: ui/MainFrame.cpp:1106 ui/MainFrame.cpp:2704 ui/MainFrame.cpp:3409
 #: ui/podcasts/PodcastsPanel.cpp:916 ui/preferences/Preferences.cpp:260
 #: ui/preferences/Preferences.cpp:1625 ui/locationpanel/LocationPanel.cpp:208
 msgid "Podcasts"
@@ -2277,7 +2277,7 @@ msgstr "Podcasts"
 msgid "Set the podcasts visible panels"
 msgstr "Ορισμός των εμφανών πινάκων των podcasts"
 
-#: ui/MainFrame.cpp:1117 ui/MainFrame.cpp:1948 misc/Accelerators.cpp:127
+#: ui/MainFrame.cpp:1117 ui/MainFrame.cpp:1952 misc/Accelerators.cpp:127
 msgid "Play Stream"
 msgstr "Ροή Αναπαραγωγής"
 
@@ -2285,7 +2285,7 @@ msgstr "Ροή Αναπαραγωγής"
 msgid "Play a online music stream"
 msgstr "Αναπαραγωγή μιας μουσικής ροής σε απευθείας σύνδεση"
 
-#: ui/MainFrame.cpp:1123 ui/MainFrame.cpp:2646
+#: ui/MainFrame.cpp:1123 ui/MainFrame.cpp:2650
 #: ui/locationpanel/LocationPanel.cpp:213
 msgid "Audio CD"
 msgstr "CD ήχου (Audio CD)"
@@ -2380,7 +2380,7 @@ msgstr "Προβολή της συλλογής σε μορφή δέντρου"
 msgid "View the collection playlists"
 msgstr "Προβολή των λιστών αναπαραγωγής της συλλογής"
 
-#: ui/MainFrame.cpp:1371 ui/MainFrame.cpp:3658 misc/Accelerators.cpp:140
+#: ui/MainFrame.cpp:1371 ui/MainFrame.cpp:3662 misc/Accelerators.cpp:140
 msgid "Save Layout"
 msgstr "Αποθήκευση Διάταξης"
 
@@ -2396,7 +2396,7 @@ msgstr "Πλαίσιο αναπαραγωγής"
 msgid "Show/Hide the player playlist panel"
 msgstr "Εμφάνιση/Απόκρυψη του πίνακα του πλαισίου της αναπαραγωγής"
 
-#: ui/MainFrame.cpp:1390 ui/MainFrame.cpp:1664 ui/MainFrame.cpp:4142
+#: ui/MainFrame.cpp:1390 ui/MainFrame.cpp:1664 ui/MainFrame.cpp:4146
 #: ui/preferences/Preferences.cpp:1316
 msgid "Sources"
 msgstr "Πηγές"
@@ -2417,7 +2417,7 @@ msgstr "Εμφάνιση/Απόκρυψη του πίνακα φίλτρων τ�
 msgid "Show/Hide the player vumeter"
 msgstr "Εμφάνιση/Απόκρυψη του μετρητή VU της αναπαραγωγής"
 
-#: ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4158
+#: ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4162
 msgid "Cover"
 msgstr "Εξώφυλλο"
 
@@ -2425,7 +2425,7 @@ msgstr "Εξώφυλλο"
 msgid "Show/Hide the cover"
 msgstr "Εμφάνιση/Απόκρυψη του εξωφύλλου"
 
-#: ui/MainFrame.cpp:1425 ui/MainFrame.cpp:2733
+#: ui/MainFrame.cpp:1425 ui/MainFrame.cpp:2737
 #: ui/locationpanel/LocationPanel.cpp:268
 msgid "File Browser"
 msgstr "Περιηγητής Αρχείων"
@@ -2434,7 +2434,7 @@ msgstr "Περιηγητής Αρχείων"
 msgid "Show/Hide the file browser panel"
 msgstr "Εμφάνιση/Απόκρυψη του πίνακα περιήγησης σε αρχεία"
 
-#: ui/MainFrame.cpp:1433 ui/MainFrame.cpp:2619
+#: ui/MainFrame.cpp:1433 ui/MainFrame.cpp:2623
 msgid "Last.fm"
 msgstr "Last.fm"
 
@@ -2442,7 +2442,7 @@ msgstr "Last.fm"
 msgid "Show/Hide the Last.fm panel"
 msgstr "Εμφάνιση/Απόκρυψη του πίνακα του Last.fm"
 
-#: ui/MainFrame.cpp:1441 ui/MainFrame.cpp:2673 ui/trackedit/TrackEdit.cpp:407
+#: ui/MainFrame.cpp:1441 ui/MainFrame.cpp:2677 ui/trackedit/TrackEdit.cpp:407
 #: ui/preferences/Preferences.cpp:250 ui/locationpanel/LocationPanel.cpp:280
 msgid "Lyrics"
 msgstr "Στίχοι"
@@ -2613,82 +2613,82 @@ msgstr "Προβολή"
 msgid "Controls"
 msgstr "Πλήκτρα"
 
-#: ui/MainFrame.cpp:1947
+#: ui/MainFrame.cpp:1951
 msgid "Stream:"
 msgstr "Stream:"
 
-#: ui/MainFrame.cpp:2119
+#: ui/MainFrame.cpp:2123
 msgid "Select destination directory"
 msgstr "Επιλογή διαδρομής προορισμού"
 
-#: ui/MainFrame.cpp:2134 ui/MainFrame.cpp:2170 ui/MainFrame.cpp:2213
-#: ui/MainFrame.cpp:2246 ui/MainFrame.cpp:4310
+#: ui/MainFrame.cpp:2138 ui/MainFrame.cpp:2174 ui/MainFrame.cpp:2217
+#: ui/MainFrame.cpp:2250 ui/MainFrame.cpp:4314
 #: ui/preferences/Preferences.cpp:280
 msgid "Copy to"
 msgstr "Αντιγραφή σε"
 
-#: ui/MainFrame.cpp:3150
+#: ui/MainFrame.cpp:3154
 msgid "station"
 msgstr "σταθμός"
 
-#: ui/MainFrame.cpp:3150
+#: ui/MainFrame.cpp:3154
 msgid "stations"
 msgstr "σταθμοί"
 
-#: ui/MainFrame.cpp:3159
+#: ui/MainFrame.cpp:3163
 msgid "podcast"
 msgstr "podcast"
 
-#: ui/MainFrame.cpp:3159
+#: ui/MainFrame.cpp:3163
 msgid "podcasts"
 msgstr "podcasts"
 
-#: ui/MainFrame.cpp:3174
+#: ui/MainFrame.cpp:3178
 msgid "dir"
 msgstr "κατάλογο"
 
-#: ui/MainFrame.cpp:3174
+#: ui/MainFrame.cpp:3178
 msgid "dirs"
 msgstr "κατάλογοι"
 
-#: ui/MainFrame.cpp:3176
+#: ui/MainFrame.cpp:3180
 msgid "file"
 msgstr "αρχείο"
 
-#: ui/MainFrame.cpp:3176
+#: ui/MainFrame.cpp:3180
 msgid "files"
 msgstr "αρχεία"
 
-#: ui/MainFrame.cpp:3558 ui/MainFrame.cpp:3564 ui/MainFrame.cpp:3567
+#: ui/MainFrame.cpp:3562 ui/MainFrame.cpp:3568 ui/MainFrame.cpp:3571
 msgid "Load this user defined layout"
 msgstr "Φόρτωση αυτής της διάταξης που έχει οριστεί από το χρήστη"
 
-#: ui/MainFrame.cpp:3559
+#: ui/MainFrame.cpp:3563
 msgid "Delete this user defined layout"
 msgstr "Διαγραφή αυτής της διάταξης που έχει οριστεί από το χρήστη"
 
-#: ui/MainFrame.cpp:3564 ui/MainFrame.cpp:3567
+#: ui/MainFrame.cpp:3568 ui/MainFrame.cpp:3571
 msgid "No Layouts Defined"
 msgstr "Δεν έχουν οριστεί διατάξεις"
 
-#: ui/MainFrame.cpp:3659
+#: ui/MainFrame.cpp:3663
 msgid "Layout:"
 msgstr "Διάταξη:"
 
-#: ui/MainFrame.cpp:3659
+#: ui/MainFrame.cpp:3663
 #, c-format
 msgid "Layout %lu"
 msgstr "Διάταξη %lu"
 
-#: ui/MainFrame.cpp:4277 ui/MainFrame.cpp:4298
+#: ui/MainFrame.cpp:4281 ui/MainFrame.cpp:4302
 msgid "Copy the current selected songs to a directory or device"
 msgstr "Αντιγραφή των επιλεγμένων τραγουδιών σε κατάλογο ή συσκευή"
 
-#: ui/MainFrame.cpp:4307
+#: ui/MainFrame.cpp:4311
 msgid "Add 'Copy to' patterns in preferences"
 msgstr "Προσθήκη του 'Αντιγραφή Σε' στα πρότυπα των προτιμήσεων"
 
-#: ui/MainFrame.cpp:4310
+#: ui/MainFrame.cpp:4314
 msgid "Copy the selected tracks to a folder or device"
 msgstr "Αντιγραφή των επιλεγμένων κομματιών σε κατάλογο ή συσκευή"
 
@@ -3447,9 +3447,9 @@ msgstr "Εμφάνιση της συχνότητας Bit του τρέχοντο
 msgid "Buffering..."
 msgstr "Γίνεται σύνδεση..."
 
-#: ui/player/PlayerPanel.cpp:1401 db/DbLibrary.cpp:444 db/DbLibrary.cpp:456
-#: db/DbLibrary.cpp:1904 db/DbLibrary.cpp:1917 db/DbLibrary.cpp:1978
-#: db/DbLibrary.cpp:1991
+#: ui/player/PlayerPanel.cpp:1401 db/DbLibrary.cpp:401 db/DbLibrary.cpp:413
+#: db/DbLibrary.cpp:1861 db/DbLibrary.cpp:1874 db/DbLibrary.cpp:1935
+#: db/DbLibrary.cpp:1948
 msgid "Unknown"
 msgstr "Άγνωστο"
 
@@ -3825,19 +3825,19 @@ msgstr "Κομμάτια που προστίθενται κάθε φορά"
 msgid "Max played tracks kept in playlist"
 msgstr "Μέγιστος αριθμός αναπαραγμένων κομματιών που διατηρούνται στη λίστα"
 
-#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3326
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3325
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
 msgstr[0] "Να μην επαναλαμβάνεται ο τελευταίος"
 msgstr[1] "Να μην επαναλαμβάνονται οι τελευταίοι"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3326
 msgid "artist"
 msgid_plural "artists"
 msgstr[0] "Καλλιτέχνης"
 msgstr[1] "καλλιτέχνες"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3326
 #: ui/filebrowser/FileRenamer.cpp:86
 msgid "or"
 msgstr "ή"
@@ -4207,39 +4207,39 @@ msgstr "Κλειδί"
 msgid "Enter the collection name"
 msgstr "Εισαγωγή ονόματος της συλλογής"
 
-#: ui/preferences/Preferences.cpp:2830
+#: ui/preferences/Preferences.cpp:2829
 msgid "Change library path"
 msgstr "Αλλαγή διαδρομής βιβλιοθήκης"
 
-#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
+#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
 msgid "Word"
 msgstr "Λέξη"
 
-#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
+#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
 msgid "Enter the text to find covers"
 msgstr "Εισαγωγή κειμένου για φιλτράρισμα"
 
-#: ui/preferences/Preferences.cpp:3253
+#: ui/preferences/Preferences.cpp:3252
 msgid "Enter the genre to disable"
 msgstr "Εισάγετε το είδος για να απενεργοποιήσετε"
 
-#: ui/preferences/Preferences.cpp:3454 ui/preferences/Preferences.cpp:3485
+#: ui/preferences/Preferences.cpp:3453 ui/preferences/Preferences.cpp:3484
 msgid "Filter"
 msgstr "Φίλτρα"
 
-#: ui/preferences/Preferences.cpp:3455
+#: ui/preferences/Preferences.cpp:3454
 msgid "Enter the text to filter"
 msgstr "Εισαγωγή κειμένου για φιλτράρισμα"
 
-#: ui/preferences/Preferences.cpp:3485
+#: ui/preferences/Preferences.cpp:3484
 msgid "Edit the text to filter"
 msgstr "Επεξεργασία κειμένου για φιλτράρισμα"
 
-#: ui/preferences/Preferences.cpp:3987
+#: ui/preferences/Preferences.cpp:3986
 msgid "Select path"
 msgstr "Επιλογή διαδρομής"
 
-#: ui/preferences/Preferences.cpp:4165
+#: ui/preferences/Preferences.cpp:4164
 msgid "Key used by '"
 msgstr "Κλειδί χρησιμοποιημένο από '"
 
@@ -4838,15 +4838,15 @@ msgstr "MiBytes"
 msgid "GiBytes"
 msgstr "GiBytes"
 
-#: db/DbLibrary.cpp:804
+#: db/DbLibrary.cpp:761
 msgid "Recently added tracks"
 msgstr "Κομμάτια που προστέθηκαν πρόσφατα"
 
-#: db/DbLibrary.cpp:812
+#: db/DbLibrary.cpp:769
 msgid "Last played tracks"
 msgstr "Κομμάτια που αναπαράχθηκαν τελευταία"
 
-#: db/DbLibrary.cpp:819
+#: db/DbLibrary.cpp:776
 msgid "Best rated tracks"
 msgstr "Κομμάτια με την υψηλότερη βαθμολογία"
 

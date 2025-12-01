@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-30 19:44-0300\n"
+"POT-Creation-Date: 2025-12-01 16:18-0300\n"
 "PO-Revision-Date: 2011-11-23 18:18+0000\n"
 "Last-Translator: -, 2016,2020\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/anonbeat/"
@@ -48,7 +48,7 @@ msgstr "Potvrzení"
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/AAListBox.cpp:133 ui/MainFrame.cpp:1478
-#: ui/MainFrame.cpp:4307 ui/player/PlayList.cpp:1708
+#: ui/MainFrame.cpp:4311 ui/player/PlayList.cpp:1708
 #: ui/preferences/Preferences.cpp:126 ui/filebrowser/FileBrowser.cpp:329
 #: ui/filebrowser/FileBrowser.cpp:992 misc/Accelerators.cpp:128
 msgid "Preferences"
@@ -793,7 +793,7 @@ msgstr "Popisky"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362
 #: ui/mediaviewer/library/SoListBox.cpp:70
 #: ui/mediaviewer/library/SoListBox.cpp:561 ui/trackedit/TrackEdit.cpp:262
-#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3253
+#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3252
 #: ui/filebrowser/FileRenamer.cpp:86 ui/radios/RadioPanel.cpp:568
 #: ui/radios/ShoutcastRadio.cpp:140
 msgid "Genre"
@@ -1471,33 +1471,33 @@ msgstr "Importovat soubory do kolekce"
 msgid "Collection"
 msgstr "Kolekce"
 
-#: ui/mediaviewer/MediaViewer.cpp:1144 ui/preferences/Preferences.cpp:2852
+#: ui/mediaviewer/MediaViewer.cpp:1144 ui/preferences/Preferences.cpp:2851
 msgid "Select library path"
 msgstr "Vybrat cestu knihovny"
 
-#: ui/mediaviewer/MediaViewer.cpp:1174
+#: ui/mediaviewer/MediaViewer.cpp:1181
 msgid "This Path is already in the library"
 msgstr "Tato cesta již v knihovně je"
 
-#: ui/mediaviewer/MediaViewer.cpp:1175
+#: ui/mediaviewer/MediaViewer.cpp:1182
 msgid "Adding path error"
 msgstr "Chyba při přidaní cesty"
 
-#: ui/mediaviewer/MediaViewer.cpp:1352 ui/mediaviewer/MediaViewer.cpp:1371
-#: ui/mediaviewer/MediaViewer.cpp:1386
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3191
+#: ui/mediaviewer/MediaViewer.cpp:1358 ui/mediaviewer/MediaViewer.cpp:1377
+#: ui/mediaviewer/MediaViewer.cpp:1392
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3195
 #: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "skladba"
 
-#: ui/mediaviewer/MediaViewer.cpp:1352 ui/mediaviewer/MediaViewer.cpp:1371
-#: ui/mediaviewer/MediaViewer.cpp:1386
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3191
+#: ui/mediaviewer/MediaViewer.cpp:1358 ui/mediaviewer/MediaViewer.cpp:1377
+#: ui/mediaviewer/MediaViewer.cpp:1392
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3195
 #: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "skladeb"
 
-#: ui/mediaviewer/MediaViewer.cpp:1449 ui/cover/SelCoverFile.cpp:42
+#: ui/mediaviewer/MediaViewer.cpp:1455 ui/cover/SelCoverFile.cpp:42
 msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
@@ -1505,29 +1505,29 @@ msgstr ""
 "Nemohu najít album v knihovně\n"
 "Měli byste obnovit knihovnu."
 
-#: ui/mediaviewer/MediaViewer.cpp:1450 ui/cover/SelCoverFile.cpp:43
+#: ui/mediaviewer/MediaViewer.cpp:1456 ui/cover/SelCoverFile.cpp:43
 #: ui/filebrowser/FileBrowser.cpp:574
 msgid "Error"
 msgstr "Chyba"
 
-#: ui/mediaviewer/MediaViewer.cpp:2092
+#: ui/mediaviewer/MediaViewer.cpp:2098
 msgid "smart playlist"
 msgstr "Chytrý Seznam Skladeb"
 
-#: ui/mediaviewer/MediaViewer.cpp:2102
+#: ui/mediaviewer/MediaViewer.cpp:2108
 msgid "Playlist"
 msgstr "Seznam Skladeb"
 
-#: ui/mediaviewer/MediaViewer.cpp:2136
+#: ui/mediaviewer/MediaViewer.cpp:2142
 msgid "The best of"
 msgstr ""
 
-#: ui/mediaviewer/MediaViewer.cpp:2159
+#: ui/mediaviewer/MediaViewer.cpp:2165
 #, fuzzy, c-format
 msgid "No tracks found for %s."
 msgstr "Text Nenajíty"
 
-#: ui/mediaviewer/MediaViewer.cpp:2162
+#: ui/mediaviewer/MediaViewer.cpp:2168
 #, c-format
 msgid "Best tracks for '%s' not found."
 msgstr ""
@@ -2171,8 +2171,8 @@ msgstr "Obal:"
 msgid "Welcome to Guayadeque"
 msgstr "Vítejte v Guayadeque"
 
-#: ui/MainFrame.cpp:209 ui/MainFrame.cpp:398 ui/MainFrame.cpp:2084
-#: ui/MainFrame.cpp:2795 ui/MainFrame.cpp:2812 ui/player/PlayList.cpp:230
+#: ui/MainFrame.cpp:209 ui/MainFrame.cpp:398 ui/MainFrame.cpp:2088
+#: ui/MainFrame.cpp:2799 ui/MainFrame.cpp:2816 ui/player/PlayList.cpp:230
 #: ui/radios/RadioPanel.cpp:315
 msgid "Now Playing"
 msgstr "Právě hraje"
@@ -2181,7 +2181,7 @@ msgstr "Právě hraje"
 msgid "My Music"
 msgstr "Moje Hudba"
 
-#: ui/MainFrame.cpp:394 ui/MainFrame.cpp:1406 ui/MainFrame.cpp:4124
+#: ui/MainFrame.cpp:394 ui/MainFrame.cpp:1406 ui/MainFrame.cpp:4128
 msgid "VU Meters"
 msgstr "VU Meters"
 
@@ -2226,7 +2226,7 @@ msgstr "Obnovit stanice radií"
 msgid "Set the radio preferences"
 msgstr "Nastavit Možnosti Radia"
 
-#: ui/MainFrame.cpp:1069 ui/MainFrame.cpp:2519
+#: ui/MainFrame.cpp:1069 ui/MainFrame.cpp:2523
 msgid "Radio"
 msgstr "Radio"
 
@@ -2266,7 +2266,7 @@ msgstr "Obnovit přidané podcasty"
 msgid "Set the podcasts preferences"
 msgstr "Nastavit Možnosti Podcastů"
 
-#: ui/MainFrame.cpp:1106 ui/MainFrame.cpp:2700 ui/MainFrame.cpp:3405
+#: ui/MainFrame.cpp:1106 ui/MainFrame.cpp:2704 ui/MainFrame.cpp:3409
 #: ui/podcasts/PodcastsPanel.cpp:916 ui/preferences/Preferences.cpp:260
 #: ui/preferences/Preferences.cpp:1625 ui/locationpanel/LocationPanel.cpp:208
 msgid "Podcasts"
@@ -2276,7 +2276,7 @@ msgstr "Podcasty"
 msgid "Set the podcasts visible panels"
 msgstr "Nastavit viditelnost podcast panelů"
 
-#: ui/MainFrame.cpp:1117 ui/MainFrame.cpp:1948 misc/Accelerators.cpp:127
+#: ui/MainFrame.cpp:1117 ui/MainFrame.cpp:1952 misc/Accelerators.cpp:127
 msgid "Play Stream"
 msgstr "Přehrát Stream"
 
@@ -2284,7 +2284,7 @@ msgstr "Přehrát Stream"
 msgid "Play a online music stream"
 msgstr "Hrát online hudební stream"
 
-#: ui/MainFrame.cpp:1123 ui/MainFrame.cpp:2646
+#: ui/MainFrame.cpp:1123 ui/MainFrame.cpp:2650
 #: ui/locationpanel/LocationPanel.cpp:213
 msgid "Audio CD"
 msgstr ""
@@ -2379,7 +2379,7 @@ msgstr "Zobrazit Stromově Kolekci"
 msgid "View the collection playlists"
 msgstr "Zobrazit Seznamy Skladeb Kolekcí"
 
-#: ui/MainFrame.cpp:1371 ui/MainFrame.cpp:3658 misc/Accelerators.cpp:140
+#: ui/MainFrame.cpp:1371 ui/MainFrame.cpp:3662 misc/Accelerators.cpp:140
 msgid "Save Layout"
 msgstr "Uložit rozložení"
 
@@ -2395,7 +2395,7 @@ msgstr "Seznam Souborů Přehravače"
 msgid "Show/Hide the player playlist panel"
 msgstr "Zobrazit/Skrýt panel seznamu skladeb"
 
-#: ui/MainFrame.cpp:1390 ui/MainFrame.cpp:1664 ui/MainFrame.cpp:4142
+#: ui/MainFrame.cpp:1390 ui/MainFrame.cpp:1664 ui/MainFrame.cpp:4146
 #: ui/preferences/Preferences.cpp:1316
 msgid "Sources"
 msgstr "Zdroje"
@@ -2416,7 +2416,7 @@ msgstr "Zobrazit/Skrýt panel filtrů"
 msgid "Show/Hide the player vumeter"
 msgstr "Zobrazit/Skrýt vumetr"
 
-#: ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4158
+#: ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4162
 msgid "Cover"
 msgstr "Obal"
 
@@ -2424,7 +2424,7 @@ msgstr "Obal"
 msgid "Show/Hide the cover"
 msgstr "Zobrazit/Skrýt obal"
 
-#: ui/MainFrame.cpp:1425 ui/MainFrame.cpp:2733
+#: ui/MainFrame.cpp:1425 ui/MainFrame.cpp:2737
 #: ui/locationpanel/LocationPanel.cpp:268
 msgid "File Browser"
 msgstr "Prohlížeč souboru"
@@ -2433,7 +2433,7 @@ msgstr "Prohlížeč souboru"
 msgid "Show/Hide the file browser panel"
 msgstr "Zobrazit/Skrýt Kartu Hledání"
 
-#: ui/MainFrame.cpp:1433 ui/MainFrame.cpp:2619
+#: ui/MainFrame.cpp:1433 ui/MainFrame.cpp:2623
 msgid "Last.fm"
 msgstr "Last.fm"
 
@@ -2441,7 +2441,7 @@ msgstr "Last.fm"
 msgid "Show/Hide the Last.fm panel"
 msgstr "Zobrazit/Skrýt panel Last.fm "
 
-#: ui/MainFrame.cpp:1441 ui/MainFrame.cpp:2673 ui/trackedit/TrackEdit.cpp:407
+#: ui/MainFrame.cpp:1441 ui/MainFrame.cpp:2677 ui/trackedit/TrackEdit.cpp:407
 #: ui/preferences/Preferences.cpp:250 ui/locationpanel/LocationPanel.cpp:280
 msgid "Lyrics"
 msgstr "Texty"
@@ -2612,82 +2612,82 @@ msgstr "Zobrazit"
 msgid "Controls"
 msgstr "Ovládaní"
 
-#: ui/MainFrame.cpp:1947
+#: ui/MainFrame.cpp:1951
 msgid "Stream:"
 msgstr "Stream:"
 
-#: ui/MainFrame.cpp:2119
+#: ui/MainFrame.cpp:2123
 msgid "Select destination directory"
 msgstr "Označit cílovou složku"
 
-#: ui/MainFrame.cpp:2134 ui/MainFrame.cpp:2170 ui/MainFrame.cpp:2213
-#: ui/MainFrame.cpp:2246 ui/MainFrame.cpp:4310
+#: ui/MainFrame.cpp:2138 ui/MainFrame.cpp:2174 ui/MainFrame.cpp:2217
+#: ui/MainFrame.cpp:2250 ui/MainFrame.cpp:4314
 #: ui/preferences/Preferences.cpp:280
 msgid "Copy to"
 msgstr "Kopírovat do"
 
-#: ui/MainFrame.cpp:3150
+#: ui/MainFrame.cpp:3154
 msgid "station"
 msgstr "stanice"
 
-#: ui/MainFrame.cpp:3150
+#: ui/MainFrame.cpp:3154
 msgid "stations"
 msgstr "stanic"
 
-#: ui/MainFrame.cpp:3159
+#: ui/MainFrame.cpp:3163
 msgid "podcast"
 msgstr "podcast"
 
-#: ui/MainFrame.cpp:3159
+#: ui/MainFrame.cpp:3163
 msgid "podcasts"
 msgstr "podcasty"
 
-#: ui/MainFrame.cpp:3174
+#: ui/MainFrame.cpp:3178
 msgid "dir"
 msgstr "Adresář"
 
-#: ui/MainFrame.cpp:3174
+#: ui/MainFrame.cpp:3178
 msgid "dirs"
 msgstr "Adresáře"
 
-#: ui/MainFrame.cpp:3176
+#: ui/MainFrame.cpp:3180
 msgid "file"
 msgstr "Soubor"
 
-#: ui/MainFrame.cpp:3176
+#: ui/MainFrame.cpp:3180
 msgid "files"
 msgstr "Soubory"
 
-#: ui/MainFrame.cpp:3558 ui/MainFrame.cpp:3564 ui/MainFrame.cpp:3567
+#: ui/MainFrame.cpp:3562 ui/MainFrame.cpp:3568 ui/MainFrame.cpp:3571
 msgid "Load this user defined layout"
 msgstr "Načíst uživatelské rozložení"
 
-#: ui/MainFrame.cpp:3559
+#: ui/MainFrame.cpp:3563
 msgid "Delete this user defined layout"
 msgstr "Smazat uživatelské rozložení"
 
-#: ui/MainFrame.cpp:3564 ui/MainFrame.cpp:3567
+#: ui/MainFrame.cpp:3568 ui/MainFrame.cpp:3571
 msgid "No Layouts Defined"
 msgstr "Žádný Layout není definován"
 
-#: ui/MainFrame.cpp:3659
+#: ui/MainFrame.cpp:3663
 msgid "Layout:"
 msgstr "Layout:"
 
-#: ui/MainFrame.cpp:3659
+#: ui/MainFrame.cpp:3663
 #, c-format
 msgid "Layout %lu"
 msgstr ""
 
-#: ui/MainFrame.cpp:4277 ui/MainFrame.cpp:4298
+#: ui/MainFrame.cpp:4281 ui/MainFrame.cpp:4302
 msgid "Copy the current selected songs to a directory or device"
 msgstr "Kopírovat označené skladby do složky/zařízení"
 
-#: ui/MainFrame.cpp:4307
+#: ui/MainFrame.cpp:4311
 msgid "Add 'Copy to' patterns in preferences"
 msgstr "Přidat 'Kopírovat do' Značek v nastavení"
 
-#: ui/MainFrame.cpp:4310
+#: ui/MainFrame.cpp:4314
 msgid "Copy the selected tracks to a folder or device"
 msgstr "Kopírovat označené soubory do složky/zařízení"
 
@@ -3443,9 +3443,9 @@ msgstr "Zobrazit bitrate aktualní skladby"
 msgid "Buffering..."
 msgstr "Buffering..."
 
-#: ui/player/PlayerPanel.cpp:1401 db/DbLibrary.cpp:444 db/DbLibrary.cpp:456
-#: db/DbLibrary.cpp:1904 db/DbLibrary.cpp:1917 db/DbLibrary.cpp:1978
-#: db/DbLibrary.cpp:1991
+#: ui/player/PlayerPanel.cpp:1401 db/DbLibrary.cpp:401 db/DbLibrary.cpp:413
+#: db/DbLibrary.cpp:1861 db/DbLibrary.cpp:1874 db/DbLibrary.cpp:1935
+#: db/DbLibrary.cpp:1948
 msgid "Unknown"
 msgstr "Neznamý"
 
@@ -3819,7 +3819,7 @@ msgstr "Skladeb přidaných na jedno hledaní"
 msgid "Max played tracks kept in playlist"
 msgstr "Maximální počet skladeb , které zůstanou v seznamu skladeb"
 
-#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3326
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3325
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
@@ -3828,7 +3828,7 @@ msgstr[1] "Neopakovat poslední hrané"
 msgstr[2] "Neopakovat poslední hrané"
 msgstr[3] "Neopakovat poslední hrané"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3326
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
@@ -3837,7 +3837,7 @@ msgstr[1] "Autor"
 msgstr[2] "Autor"
 msgstr[3] "Autor"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3326
 #: ui/filebrowser/FileRenamer.cpp:86
 msgid "or"
 msgstr "nebo"
@@ -4202,39 +4202,39 @@ msgstr "Klíč"
 msgid "Enter the collection name"
 msgstr "Zadat Jméno Kolekce"
 
-#: ui/preferences/Preferences.cpp:2830
+#: ui/preferences/Preferences.cpp:2829
 msgid "Change library path"
 msgstr "Změnit cestu ke knihovně"
 
-#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
+#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
 msgid "Word"
 msgstr "Slovo"
 
-#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
+#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
 msgid "Enter the text to find covers"
 msgstr "Zadejte text pro nalezení obalu"
 
-#: ui/preferences/Preferences.cpp:3253
+#: ui/preferences/Preferences.cpp:3252
 msgid "Enter the genre to disable"
 msgstr ""
 
-#: ui/preferences/Preferences.cpp:3454 ui/preferences/Preferences.cpp:3485
+#: ui/preferences/Preferences.cpp:3453 ui/preferences/Preferences.cpp:3484
 msgid "Filter"
 msgstr "Filtr"
 
-#: ui/preferences/Preferences.cpp:3455
+#: ui/preferences/Preferences.cpp:3454
 msgid "Enter the text to filter"
 msgstr "Zadejte řetězec filtru"
 
-#: ui/preferences/Preferences.cpp:3485
+#: ui/preferences/Preferences.cpp:3484
 msgid "Edit the text to filter"
 msgstr "Zadejte řetězec filtru"
 
-#: ui/preferences/Preferences.cpp:3987
+#: ui/preferences/Preferences.cpp:3986
 msgid "Select path"
 msgstr "Označit Cestu"
 
-#: ui/preferences/Preferences.cpp:4165
+#: ui/preferences/Preferences.cpp:4164
 msgid "Key used by '"
 msgstr "Klič pouziván pro"
 
@@ -4830,15 +4830,15 @@ msgstr "MiByte"
 msgid "GiBytes"
 msgstr "GiByte"
 
-#: db/DbLibrary.cpp:804
+#: db/DbLibrary.cpp:761
 msgid "Recently added tracks"
 msgstr "Nedávno přidané skladby"
 
-#: db/DbLibrary.cpp:812
+#: db/DbLibrary.cpp:769
 msgid "Last played tracks"
 msgstr "Poslední hrané skladby"
 
-#: db/DbLibrary.cpp:819
+#: db/DbLibrary.cpp:776
 msgid "Best rated tracks"
 msgstr "Nejlíp Hodnocené Skladby"
 
