@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-30 19:44-0300\n"
+"POT-Creation-Date: 2025-12-01 16:18-0300\n"
 "PO-Revision-Date: 2024-12-09 18:46+0100\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>, 2020\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/anonbeat/guayadeque/"
@@ -46,7 +46,7 @@ msgstr "Confirmar"
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/AAListBox.cpp:133 ui/MainFrame.cpp:1478
-#: ui/MainFrame.cpp:4307 ui/player/PlayList.cpp:1708
+#: ui/MainFrame.cpp:4311 ui/player/PlayList.cpp:1708
 #: ui/preferences/Preferences.cpp:126 ui/filebrowser/FileBrowser.cpp:329
 #: ui/filebrowser/FileBrowser.cpp:992 misc/Accelerators.cpp:128
 msgid "Preferences"
@@ -798,7 +798,7 @@ msgstr "Etiquetas"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362
 #: ui/mediaviewer/library/SoListBox.cpp:70
 #: ui/mediaviewer/library/SoListBox.cpp:561 ui/trackedit/TrackEdit.cpp:262
-#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3253
+#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3252
 #: ui/filebrowser/FileRenamer.cpp:86 ui/radios/RadioPanel.cpp:568
 #: ui/radios/ShoutcastRadio.cpp:140
 msgid "Genre"
@@ -1477,33 +1477,33 @@ msgstr "Importar archivos a la colección"
 msgid "Collection"
 msgstr "Colección"
 
-#: ui/mediaviewer/MediaViewer.cpp:1144 ui/preferences/Preferences.cpp:2852
+#: ui/mediaviewer/MediaViewer.cpp:1144 ui/preferences/Preferences.cpp:2851
 msgid "Select library path"
 msgstr "Seleccione la ruta de la biblioteca"
 
-#: ui/mediaviewer/MediaViewer.cpp:1174
+#: ui/mediaviewer/MediaViewer.cpp:1181
 msgid "This Path is already in the library"
 msgstr "Esta Ruta ya existe en la biblioteca"
 
-#: ui/mediaviewer/MediaViewer.cpp:1175
+#: ui/mediaviewer/MediaViewer.cpp:1182
 msgid "Adding path error"
 msgstr "Error añadiendo ruta"
 
-#: ui/mediaviewer/MediaViewer.cpp:1352 ui/mediaviewer/MediaViewer.cpp:1371
-#: ui/mediaviewer/MediaViewer.cpp:1386
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3191
+#: ui/mediaviewer/MediaViewer.cpp:1358 ui/mediaviewer/MediaViewer.cpp:1377
+#: ui/mediaviewer/MediaViewer.cpp:1392
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3195
 #: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "pista"
 
-#: ui/mediaviewer/MediaViewer.cpp:1352 ui/mediaviewer/MediaViewer.cpp:1371
-#: ui/mediaviewer/MediaViewer.cpp:1386
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3191
+#: ui/mediaviewer/MediaViewer.cpp:1358 ui/mediaviewer/MediaViewer.cpp:1377
+#: ui/mediaviewer/MediaViewer.cpp:1392
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3195
 #: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "pistas"
 
-#: ui/mediaviewer/MediaViewer.cpp:1449 ui/cover/SelCoverFile.cpp:42
+#: ui/mediaviewer/MediaViewer.cpp:1455 ui/cover/SelCoverFile.cpp:42
 msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
@@ -1511,29 +1511,29 @@ msgstr ""
 "El álbum no se encuentra en la biblioteca de canciones.\n"
 "Tiene que actualizar la biblioteca."
 
-#: ui/mediaviewer/MediaViewer.cpp:1450 ui/cover/SelCoverFile.cpp:43
+#: ui/mediaviewer/MediaViewer.cpp:1456 ui/cover/SelCoverFile.cpp:43
 #: ui/filebrowser/FileBrowser.cpp:574
 msgid "Error"
 msgstr "Error"
 
-#: ui/mediaviewer/MediaViewer.cpp:2092
+#: ui/mediaviewer/MediaViewer.cpp:2098
 msgid "smart playlist"
 msgstr "lista de reproducción inteligente"
 
-#: ui/mediaviewer/MediaViewer.cpp:2102
+#: ui/mediaviewer/MediaViewer.cpp:2108
 msgid "Playlist"
 msgstr "Lista de Reproducción"
 
-#: ui/mediaviewer/MediaViewer.cpp:2136
+#: ui/mediaviewer/MediaViewer.cpp:2142
 msgid "The best of"
 msgstr "Lo mejor de (Best of)"
 
-#: ui/mediaviewer/MediaViewer.cpp:2159
+#: ui/mediaviewer/MediaViewer.cpp:2165
 #, c-format
 msgid "No tracks found for %s."
 msgstr "No se ha encontrado ninguna pista para %s."
 
-#: ui/mediaviewer/MediaViewer.cpp:2162
+#: ui/mediaviewer/MediaViewer.cpp:2168
 #, c-format
 msgid "Best tracks for '%s' not found."
 msgstr "No se ha encontrado las mejores pistas de '%s'."
@@ -2179,8 +2179,8 @@ msgstr "Carátula:"
 msgid "Welcome to Guayadeque"
 msgstr "Bienvenido a Guayadeque"
 
-#: ui/MainFrame.cpp:209 ui/MainFrame.cpp:398 ui/MainFrame.cpp:2084
-#: ui/MainFrame.cpp:2795 ui/MainFrame.cpp:2812 ui/player/PlayList.cpp:230
+#: ui/MainFrame.cpp:209 ui/MainFrame.cpp:398 ui/MainFrame.cpp:2088
+#: ui/MainFrame.cpp:2799 ui/MainFrame.cpp:2816 ui/player/PlayList.cpp:230
 #: ui/radios/RadioPanel.cpp:315
 msgid "Now Playing"
 msgstr "Ahora Reproduciendo"
@@ -2189,7 +2189,7 @@ msgstr "Ahora Reproduciendo"
 msgid "My Music"
 msgstr "Mi música"
 
-#: ui/MainFrame.cpp:394 ui/MainFrame.cpp:1406 ui/MainFrame.cpp:4124
+#: ui/MainFrame.cpp:394 ui/MainFrame.cpp:1406 ui/MainFrame.cpp:4128
 msgid "VU Meters"
 msgstr "Nivel gráfico de volumen (VU Meter)"
 
@@ -2234,7 +2234,7 @@ msgstr "Actualizar las estaciones de radio"
 msgid "Set the radio preferences"
 msgstr "Configura las preferencias de radio"
 
-#: ui/MainFrame.cpp:1069 ui/MainFrame.cpp:2519
+#: ui/MainFrame.cpp:1069 ui/MainFrame.cpp:2523
 msgid "Radio"
 msgstr "Radio"
 
@@ -2274,7 +2274,7 @@ msgstr "Actualiza los podcasts añadidos"
 msgid "Set the podcasts preferences"
 msgstr "Configura las preferencias de podcasts"
 
-#: ui/MainFrame.cpp:1106 ui/MainFrame.cpp:2700 ui/MainFrame.cpp:3405
+#: ui/MainFrame.cpp:1106 ui/MainFrame.cpp:2704 ui/MainFrame.cpp:3409
 #: ui/podcasts/PodcastsPanel.cpp:916 ui/preferences/Preferences.cpp:260
 #: ui/preferences/Preferences.cpp:1625 ui/locationpanel/LocationPanel.cpp:208
 msgid "Podcasts"
@@ -2284,7 +2284,7 @@ msgstr "Podcasts"
 msgid "Set the podcasts visible panels"
 msgstr "Configura los paneles de podcasts visibles"
 
-#: ui/MainFrame.cpp:1117 ui/MainFrame.cpp:1948 misc/Accelerators.cpp:127
+#: ui/MainFrame.cpp:1117 ui/MainFrame.cpp:1952 misc/Accelerators.cpp:127
 msgid "Play Stream"
 msgstr "Reproducir radio"
 
@@ -2292,7 +2292,7 @@ msgstr "Reproducir radio"
 msgid "Play a online music stream"
 msgstr "Reproducir un flujo de música de la Web (online music stream)"
 
-#: ui/MainFrame.cpp:1123 ui/MainFrame.cpp:2646
+#: ui/MainFrame.cpp:1123 ui/MainFrame.cpp:2650
 #: ui/locationpanel/LocationPanel.cpp:213
 msgid "Audio CD"
 msgstr "CD de Audio"
@@ -2387,7 +2387,7 @@ msgstr "Ver árbol de la colección"
 msgid "View the collection playlists"
 msgstr "Ver las listas de reproducción de la colección"
 
-#: ui/MainFrame.cpp:1371 ui/MainFrame.cpp:3658 misc/Accelerators.cpp:140
+#: ui/MainFrame.cpp:1371 ui/MainFrame.cpp:3662 misc/Accelerators.cpp:140
 msgid "Save Layout"
 msgstr "Salvar Disposición"
 
@@ -2403,7 +2403,7 @@ msgstr "Lista de reproducción del reproductor"
 msgid "Show/Hide the player playlist panel"
 msgstr "Mostrar/Ocultar el panel de la lista de reproducción del reproductor"
 
-#: ui/MainFrame.cpp:1390 ui/MainFrame.cpp:1664 ui/MainFrame.cpp:4142
+#: ui/MainFrame.cpp:1390 ui/MainFrame.cpp:1664 ui/MainFrame.cpp:4146
 #: ui/preferences/Preferences.cpp:1316
 msgid "Sources"
 msgstr "Origenes"
@@ -2424,7 +2424,7 @@ msgstr "Mostrar/Ocultar el panel de filtros del reproductor"
 msgid "Show/Hide the player vumeter"
 msgstr "Mostrar/Ocultar panel de niveles del reproductor"
 
-#: ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4158
+#: ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4162
 msgid "Cover"
 msgstr "Carátulas"
 
@@ -2432,7 +2432,7 @@ msgstr "Carátulas"
 msgid "Show/Hide the cover"
 msgstr "Mostrar/Ocultar la carátula"
 
-#: ui/MainFrame.cpp:1425 ui/MainFrame.cpp:2733
+#: ui/MainFrame.cpp:1425 ui/MainFrame.cpp:2737
 #: ui/locationpanel/LocationPanel.cpp:268
 msgid "File Browser"
 msgstr "Eplorador de archivos"
@@ -2441,7 +2441,7 @@ msgstr "Eplorador de archivos"
 msgid "Show/Hide the file browser panel"
 msgstr "Mostrar/Ocultar el panel de explorador de archivos"
 
-#: ui/MainFrame.cpp:1433 ui/MainFrame.cpp:2619
+#: ui/MainFrame.cpp:1433 ui/MainFrame.cpp:2623
 msgid "Last.fm"
 msgstr "Last.fm"
 
@@ -2449,7 +2449,7 @@ msgstr "Last.fm"
 msgid "Show/Hide the Last.fm panel"
 msgstr "Mostrar/Ocultar el panel de Last.fm"
 
-#: ui/MainFrame.cpp:1441 ui/MainFrame.cpp:2673 ui/trackedit/TrackEdit.cpp:407
+#: ui/MainFrame.cpp:1441 ui/MainFrame.cpp:2677 ui/trackedit/TrackEdit.cpp:407
 #: ui/preferences/Preferences.cpp:250 ui/locationpanel/LocationPanel.cpp:280
 msgid "Lyrics"
 msgstr "Letras"
@@ -2621,82 +2621,82 @@ msgstr "Ver"
 msgid "Controls"
 msgstr "Controles"
 
-#: ui/MainFrame.cpp:1947
+#: ui/MainFrame.cpp:1951
 msgid "Stream:"
 msgstr "Flujo (stream):"
 
-#: ui/MainFrame.cpp:2119
+#: ui/MainFrame.cpp:2123
 msgid "Select destination directory"
 msgstr "Seleccionar el directorio de destino"
 
-#: ui/MainFrame.cpp:2134 ui/MainFrame.cpp:2170 ui/MainFrame.cpp:2213
-#: ui/MainFrame.cpp:2246 ui/MainFrame.cpp:4310
+#: ui/MainFrame.cpp:2138 ui/MainFrame.cpp:2174 ui/MainFrame.cpp:2217
+#: ui/MainFrame.cpp:2250 ui/MainFrame.cpp:4314
 #: ui/preferences/Preferences.cpp:280
 msgid "Copy to"
 msgstr "Copiar a"
 
-#: ui/MainFrame.cpp:3150
+#: ui/MainFrame.cpp:3154
 msgid "station"
 msgstr "estación"
 
-#: ui/MainFrame.cpp:3150
+#: ui/MainFrame.cpp:3154
 msgid "stations"
 msgstr "estaciónes"
 
-#: ui/MainFrame.cpp:3159
+#: ui/MainFrame.cpp:3163
 msgid "podcast"
 msgstr "podcast"
 
-#: ui/MainFrame.cpp:3159
+#: ui/MainFrame.cpp:3163
 msgid "podcasts"
 msgstr "podcasts"
 
-#: ui/MainFrame.cpp:3174
+#: ui/MainFrame.cpp:3178
 msgid "dir"
 msgstr "directorio"
 
-#: ui/MainFrame.cpp:3174
+#: ui/MainFrame.cpp:3178
 msgid "dirs"
 msgstr "directorios"
 
-#: ui/MainFrame.cpp:3176
+#: ui/MainFrame.cpp:3180
 msgid "file"
 msgstr "archivo"
 
-#: ui/MainFrame.cpp:3176
+#: ui/MainFrame.cpp:3180
 msgid "files"
 msgstr "archivos"
 
-#: ui/MainFrame.cpp:3558 ui/MainFrame.cpp:3564 ui/MainFrame.cpp:3567
+#: ui/MainFrame.cpp:3562 ui/MainFrame.cpp:3568 ui/MainFrame.cpp:3571
 msgid "Load this user defined layout"
 msgstr "Carga esta disposición definida por usuario"
 
-#: ui/MainFrame.cpp:3559
+#: ui/MainFrame.cpp:3563
 msgid "Delete this user defined layout"
 msgstr "Borra esta disposición definida por usuario"
 
-#: ui/MainFrame.cpp:3564 ui/MainFrame.cpp:3567
+#: ui/MainFrame.cpp:3568 ui/MainFrame.cpp:3571
 msgid "No Layouts Defined"
 msgstr "No hay disposiciónes definidas"
 
-#: ui/MainFrame.cpp:3659
+#: ui/MainFrame.cpp:3663
 msgid "Layout:"
 msgstr "Disposición:"
 
-#: ui/MainFrame.cpp:3659
+#: ui/MainFrame.cpp:3663
 #, c-format
 msgid "Layout %lu"
 msgstr "Disposición %lu"
 
-#: ui/MainFrame.cpp:4277 ui/MainFrame.cpp:4298
+#: ui/MainFrame.cpp:4281 ui/MainFrame.cpp:4302
 msgid "Copy the current selected songs to a directory or device"
 msgstr "Copiar las canciones seleccionadas a un directorio o dispositivo"
 
-#: ui/MainFrame.cpp:4307
+#: ui/MainFrame.cpp:4311
 msgid "Add 'Copy to' patterns in preferences"
 msgstr "Añadir patrones de 'Copia a' en Preferencias"
 
-#: ui/MainFrame.cpp:4310
+#: ui/MainFrame.cpp:4314
 msgid "Copy the selected tracks to a folder or device"
 msgstr "Copiar las pistas seleccionadas a una carpeta o dispositivo"
 
@@ -3451,9 +3451,9 @@ msgstr "Mostra el bitrate de la pista actual"
 msgid "Buffering..."
 msgstr "Almacenando..."
 
-#: ui/player/PlayerPanel.cpp:1401 db/DbLibrary.cpp:444 db/DbLibrary.cpp:456
-#: db/DbLibrary.cpp:1904 db/DbLibrary.cpp:1917 db/DbLibrary.cpp:1978
-#: db/DbLibrary.cpp:1991
+#: ui/player/PlayerPanel.cpp:1401 db/DbLibrary.cpp:401 db/DbLibrary.cpp:413
+#: db/DbLibrary.cpp:1861 db/DbLibrary.cpp:1874 db/DbLibrary.cpp:1935
+#: db/DbLibrary.cpp:1948
 msgid "Unknown"
 msgstr "Desconocido"
 
@@ -3827,19 +3827,19 @@ msgid "Max played tracks kept in playlist"
 msgstr ""
 "Maximo de pistas ya reproducidas conservadas en la lista de reproducción"
 
-#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3326
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3325
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
 msgstr[0] "No repetir el último"
 msgstr[1] "No repetir los últimos"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3326
 msgid "artist"
 msgid_plural "artists"
 msgstr[0] "artista"
 msgstr[1] "artistas"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3326
 #: ui/filebrowser/FileRenamer.cpp:86
 msgid "or"
 msgstr "o"
@@ -4208,39 +4208,39 @@ msgstr "Tecla"
 msgid "Enter the collection name"
 msgstr "Introduzca el nombre de la colección"
 
-#: ui/preferences/Preferences.cpp:2830
+#: ui/preferences/Preferences.cpp:2829
 msgid "Change library path"
 msgstr "Cambiar la ruta de la biblioteca"
 
-#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
+#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
 msgid "Word"
 msgstr "Palabra"
 
-#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
+#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
 msgid "Enter the text to find covers"
 msgstr "Introduzca el texto para buscar carátulas"
 
-#: ui/preferences/Preferences.cpp:3253
+#: ui/preferences/Preferences.cpp:3252
 msgid "Enter the genre to disable"
 msgstr "Introduzca el género a desactivar"
 
-#: ui/preferences/Preferences.cpp:3454 ui/preferences/Preferences.cpp:3485
+#: ui/preferences/Preferences.cpp:3453 ui/preferences/Preferences.cpp:3484
 msgid "Filter"
 msgstr "Filtro"
 
-#: ui/preferences/Preferences.cpp:3455
+#: ui/preferences/Preferences.cpp:3454
 msgid "Enter the text to filter"
 msgstr "Introduzca el texto a filtrar"
 
-#: ui/preferences/Preferences.cpp:3485
+#: ui/preferences/Preferences.cpp:3484
 msgid "Edit the text to filter"
 msgstr "Editar el texto a filtrar"
 
-#: ui/preferences/Preferences.cpp:3987
+#: ui/preferences/Preferences.cpp:3986
 msgid "Select path"
 msgstr "Selecionar una ruta"
 
-#: ui/preferences/Preferences.cpp:4165
+#: ui/preferences/Preferences.cpp:4164
 msgid "Key used by '"
 msgstr "Combinación usada por '"
 
@@ -4836,15 +4836,15 @@ msgstr "MiBytes"
 msgid "GiBytes"
 msgstr "GiBytes"
 
-#: db/DbLibrary.cpp:804
+#: db/DbLibrary.cpp:761
 msgid "Recently added tracks"
 msgstr "Pistas recientemente añadidas"
 
-#: db/DbLibrary.cpp:812
+#: db/DbLibrary.cpp:769
 msgid "Last played tracks"
 msgstr "Ultimas pistas reproducidas"
 
-#: db/DbLibrary.cpp:819
+#: db/DbLibrary.cpp:776
 msgid "Best rated tracks"
 msgstr "Pistas más valoradas"
 

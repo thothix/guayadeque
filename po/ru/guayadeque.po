@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Guayadeque\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-30 19:44-0300\n"
+"POT-Creation-Date: 2025-12-01 16:18-0300\n"
 "PO-Revision-Date: 2013-11-20 10:37+0000\n"
 "Last-Translator: anonbeat <anonbeat@gmail.com>\n"
 "Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/"
@@ -45,7 +45,7 @@ msgstr "Подтверждение"
 #: ui/mediaviewer/library/AlListBox.cpp:247
 #: ui/mediaviewer/library/DiBrowser.cpp:249
 #: ui/mediaviewer/library/AAListBox.cpp:133 ui/MainFrame.cpp:1478
-#: ui/MainFrame.cpp:4307 ui/player/PlayList.cpp:1708
+#: ui/MainFrame.cpp:4311 ui/player/PlayList.cpp:1708
 #: ui/preferences/Preferences.cpp:126 ui/filebrowser/FileBrowser.cpp:329
 #: ui/filebrowser/FileBrowser.cpp:992 misc/Accelerators.cpp:128
 msgid "Preferences"
@@ -789,7 +789,7 @@ msgstr "Метки"
 #: ui/mediaviewer/audiocd/AudioCdPanel.cpp:362
 #: ui/mediaviewer/library/SoListBox.cpp:70
 #: ui/mediaviewer/library/SoListBox.cpp:561 ui/trackedit/TrackEdit.cpp:262
-#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3253
+#: ui/player/PlayList.cpp:1802 ui/preferences/Preferences.cpp:3252
 #: ui/filebrowser/FileRenamer.cpp:86 ui/radios/RadioPanel.cpp:568
 #: ui/radios/ShoutcastRadio.cpp:140
 msgid "Genre"
@@ -1469,33 +1469,33 @@ msgstr "Импорт файлов в коллекцию"
 msgid "Collection"
 msgstr "Коллекция"
 
-#: ui/mediaviewer/MediaViewer.cpp:1144 ui/preferences/Preferences.cpp:2852
+#: ui/mediaviewer/MediaViewer.cpp:1144 ui/preferences/Preferences.cpp:2851
 msgid "Select library path"
 msgstr "Выбор пути к фонотеке"
 
-#: ui/mediaviewer/MediaViewer.cpp:1174
+#: ui/mediaviewer/MediaViewer.cpp:1181
 msgid "This Path is already in the library"
 msgstr "Этот путь уже содержится в фонотеке"
 
-#: ui/mediaviewer/MediaViewer.cpp:1175
+#: ui/mediaviewer/MediaViewer.cpp:1182
 msgid "Adding path error"
 msgstr "Ошибка добавления пути"
 
-#: ui/mediaviewer/MediaViewer.cpp:1352 ui/mediaviewer/MediaViewer.cpp:1371
-#: ui/mediaviewer/MediaViewer.cpp:1386
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3191
+#: ui/mediaviewer/MediaViewer.cpp:1358 ui/mediaviewer/MediaViewer.cpp:1377
+#: ui/mediaviewer/MediaViewer.cpp:1392
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3195
 #: ui/preferences/Preferences.cpp:811
 msgid "track"
 msgstr "дорожку"
 
-#: ui/mediaviewer/MediaViewer.cpp:1352 ui/mediaviewer/MediaViewer.cpp:1371
-#: ui/mediaviewer/MediaViewer.cpp:1386
-#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3191
+#: ui/mediaviewer/MediaViewer.cpp:1358 ui/mediaviewer/MediaViewer.cpp:1377
+#: ui/mediaviewer/MediaViewer.cpp:1392
+#: ui/mediaviewer/importfiles/ImportFiles.cpp:326 ui/MainFrame.cpp:3195
 #: ui/preferences/Preferences.cpp:925
 msgid "tracks"
 msgstr "дорожек"
 
-#: ui/mediaviewer/MediaViewer.cpp:1449 ui/cover/SelCoverFile.cpp:42
+#: ui/mediaviewer/MediaViewer.cpp:1455 ui/cover/SelCoverFile.cpp:42
 msgid ""
 "Could not find the Album in the songs library.\n"
 "You should update the library."
@@ -1503,29 +1503,29 @@ msgstr ""
 "Не получается найти альбом в фонотеке.\n"
 "Возможно нужно обновить фонотеку."
 
-#: ui/mediaviewer/MediaViewer.cpp:1450 ui/cover/SelCoverFile.cpp:43
+#: ui/mediaviewer/MediaViewer.cpp:1456 ui/cover/SelCoverFile.cpp:43
 #: ui/filebrowser/FileBrowser.cpp:574
 msgid "Error"
 msgstr "Ошибка"
 
-#: ui/mediaviewer/MediaViewer.cpp:2092
+#: ui/mediaviewer/MediaViewer.cpp:2098
 msgid "smart playlist"
 msgstr "интеллектуальный плейлист"
 
-#: ui/mediaviewer/MediaViewer.cpp:2102
+#: ui/mediaviewer/MediaViewer.cpp:2108
 msgid "Playlist"
 msgstr "Плейлист"
 
-#: ui/mediaviewer/MediaViewer.cpp:2136
+#: ui/mediaviewer/MediaViewer.cpp:2142
 msgid "The best of"
 msgstr ""
 
-#: ui/mediaviewer/MediaViewer.cpp:2159
+#: ui/mediaviewer/MediaViewer.cpp:2165
 #, fuzzy, c-format
 msgid "No tracks found for %s."
 msgstr "Текст не найден"
 
-#: ui/mediaviewer/MediaViewer.cpp:2162
+#: ui/mediaviewer/MediaViewer.cpp:2168
 #, c-format
 msgid "Best tracks for '%s' not found."
 msgstr ""
@@ -2172,8 +2172,8 @@ msgstr "Обложка:"
 msgid "Welcome to Guayadeque"
 msgstr "Добро пожаловать в Guayadeque"
 
-#: ui/MainFrame.cpp:209 ui/MainFrame.cpp:398 ui/MainFrame.cpp:2084
-#: ui/MainFrame.cpp:2795 ui/MainFrame.cpp:2812 ui/player/PlayList.cpp:230
+#: ui/MainFrame.cpp:209 ui/MainFrame.cpp:398 ui/MainFrame.cpp:2088
+#: ui/MainFrame.cpp:2799 ui/MainFrame.cpp:2816 ui/player/PlayList.cpp:230
 #: ui/radios/RadioPanel.cpp:315
 msgid "Now Playing"
 msgstr "Сейчас звучит"
@@ -2182,7 +2182,7 @@ msgstr "Сейчас звучит"
 msgid "My Music"
 msgstr "Моя музыка"
 
-#: ui/MainFrame.cpp:394 ui/MainFrame.cpp:1406 ui/MainFrame.cpp:4124
+#: ui/MainFrame.cpp:394 ui/MainFrame.cpp:1406 ui/MainFrame.cpp:4128
 msgid "VU Meters"
 msgstr "Уровень сигнала"
 
@@ -2227,7 +2227,7 @@ msgstr "Обновить радиостанции"
 msgid "Set the radio preferences"
 msgstr "Настройки радио"
 
-#: ui/MainFrame.cpp:1069 ui/MainFrame.cpp:2519
+#: ui/MainFrame.cpp:1069 ui/MainFrame.cpp:2523
 msgid "Radio"
 msgstr "Радио"
 
@@ -2267,7 +2267,7 @@ msgstr "Обновить добавленные подкасты"
 msgid "Set the podcasts preferences"
 msgstr "Настроить подкасты"
 
-#: ui/MainFrame.cpp:1106 ui/MainFrame.cpp:2700 ui/MainFrame.cpp:3405
+#: ui/MainFrame.cpp:1106 ui/MainFrame.cpp:2704 ui/MainFrame.cpp:3409
 #: ui/podcasts/PodcastsPanel.cpp:916 ui/preferences/Preferences.cpp:260
 #: ui/preferences/Preferences.cpp:1625 ui/locationpanel/LocationPanel.cpp:208
 msgid "Podcasts"
@@ -2277,7 +2277,7 @@ msgstr "Подкасты"
 msgid "Set the podcasts visible panels"
 msgstr "Настроить видимые панели подкастов"
 
-#: ui/MainFrame.cpp:1117 ui/MainFrame.cpp:1948 misc/Accelerators.cpp:127
+#: ui/MainFrame.cpp:1117 ui/MainFrame.cpp:1952 misc/Accelerators.cpp:127
 msgid "Play Stream"
 msgstr "Воспроизвести поток"
 
@@ -2285,7 +2285,7 @@ msgstr "Воспроизвести поток"
 msgid "Play a online music stream"
 msgstr "Воспроизвести поток онлайн"
 
-#: ui/MainFrame.cpp:1123 ui/MainFrame.cpp:2646
+#: ui/MainFrame.cpp:1123 ui/MainFrame.cpp:2650
 #: ui/locationpanel/LocationPanel.cpp:213
 #, fuzzy
 msgid "Audio CD"
@@ -2382,7 +2382,7 @@ msgstr "Показать дерево"
 msgid "View the collection playlists"
 msgstr "Показать плейлисты коллекции"
 
-#: ui/MainFrame.cpp:1371 ui/MainFrame.cpp:3658 misc/Accelerators.cpp:140
+#: ui/MainFrame.cpp:1371 ui/MainFrame.cpp:3662 misc/Accelerators.cpp:140
 msgid "Save Layout"
 msgstr "Сохранить схему"
 
@@ -2398,7 +2398,7 @@ msgstr "Список воспроизведения"
 msgid "Show/Hide the player playlist panel"
 msgstr "Показать / Скрыть панель плейлистов"
 
-#: ui/MainFrame.cpp:1390 ui/MainFrame.cpp:1664 ui/MainFrame.cpp:4142
+#: ui/MainFrame.cpp:1390 ui/MainFrame.cpp:1664 ui/MainFrame.cpp:4146
 #: ui/preferences/Preferences.cpp:1316
 msgid "Sources"
 msgstr "Источники"
@@ -2419,7 +2419,7 @@ msgstr "Показать / Скрыть панель фильтров плеер
 msgid "Show/Hide the player vumeter"
 msgstr "Показать / Скрыть уровни сигнала"
 
-#: ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4158
+#: ui/MainFrame.cpp:1414 ui/MainFrame.cpp:4162
 msgid "Cover"
 msgstr "Обложка"
 
@@ -2427,7 +2427,7 @@ msgstr "Обложка"
 msgid "Show/Hide the cover"
 msgstr "Показать/Скрыть обложку"
 
-#: ui/MainFrame.cpp:1425 ui/MainFrame.cpp:2733
+#: ui/MainFrame.cpp:1425 ui/MainFrame.cpp:2737
 #: ui/locationpanel/LocationPanel.cpp:268
 msgid "File Browser"
 msgstr "Файлы"
@@ -2436,7 +2436,7 @@ msgstr "Файлы"
 msgid "Show/Hide the file browser panel"
 msgstr "Показать/Скрыть панель файлов"
 
-#: ui/MainFrame.cpp:1433 ui/MainFrame.cpp:2619
+#: ui/MainFrame.cpp:1433 ui/MainFrame.cpp:2623
 msgid "Last.fm"
 msgstr "Last.fm"
 
@@ -2444,7 +2444,7 @@ msgstr "Last.fm"
 msgid "Show/Hide the Last.fm panel"
 msgstr "Показать/Скрыть панель Last.fm"
 
-#: ui/MainFrame.cpp:1441 ui/MainFrame.cpp:2673 ui/trackedit/TrackEdit.cpp:407
+#: ui/MainFrame.cpp:1441 ui/MainFrame.cpp:2677 ui/trackedit/TrackEdit.cpp:407
 #: ui/preferences/Preferences.cpp:250 ui/locationpanel/LocationPanel.cpp:280
 msgid "Lyrics"
 msgstr "Тексты песен"
@@ -2615,82 +2615,82 @@ msgstr "Вид"
 msgid "Controls"
 msgstr "Управление"
 
-#: ui/MainFrame.cpp:1947
+#: ui/MainFrame.cpp:1951
 msgid "Stream:"
 msgstr "Поток:"
 
-#: ui/MainFrame.cpp:2119
+#: ui/MainFrame.cpp:2123
 msgid "Select destination directory"
 msgstr "Выберите каталог назначения"
 
-#: ui/MainFrame.cpp:2134 ui/MainFrame.cpp:2170 ui/MainFrame.cpp:2213
-#: ui/MainFrame.cpp:2246 ui/MainFrame.cpp:4310
+#: ui/MainFrame.cpp:2138 ui/MainFrame.cpp:2174 ui/MainFrame.cpp:2217
+#: ui/MainFrame.cpp:2250 ui/MainFrame.cpp:4314
 #: ui/preferences/Preferences.cpp:280
 msgid "Copy to"
 msgstr "Копировать в:"
 
-#: ui/MainFrame.cpp:3150
+#: ui/MainFrame.cpp:3154
 msgid "station"
 msgstr "радиостанция"
 
-#: ui/MainFrame.cpp:3150
+#: ui/MainFrame.cpp:3154
 msgid "stations"
 msgstr "радиостанции"
 
-#: ui/MainFrame.cpp:3159
+#: ui/MainFrame.cpp:3163
 msgid "podcast"
 msgstr "подкаст"
 
-#: ui/MainFrame.cpp:3159
+#: ui/MainFrame.cpp:3163
 msgid "podcasts"
 msgstr "подкасты"
 
-#: ui/MainFrame.cpp:3174
+#: ui/MainFrame.cpp:3178
 msgid "dir"
 msgstr "каталог"
 
-#: ui/MainFrame.cpp:3174
+#: ui/MainFrame.cpp:3178
 msgid "dirs"
 msgstr "каталоги"
 
-#: ui/MainFrame.cpp:3176
+#: ui/MainFrame.cpp:3180
 msgid "file"
 msgstr "файл"
 
-#: ui/MainFrame.cpp:3176
+#: ui/MainFrame.cpp:3180
 msgid "files"
 msgstr "файлы"
 
-#: ui/MainFrame.cpp:3558 ui/MainFrame.cpp:3564 ui/MainFrame.cpp:3567
+#: ui/MainFrame.cpp:3562 ui/MainFrame.cpp:3568 ui/MainFrame.cpp:3571
 msgid "Load this user defined layout"
 msgstr "Загрузить пользовательскую схему"
 
-#: ui/MainFrame.cpp:3559
+#: ui/MainFrame.cpp:3563
 msgid "Delete this user defined layout"
 msgstr "Удалить эту пользовательскую схему"
 
-#: ui/MainFrame.cpp:3564 ui/MainFrame.cpp:3567
+#: ui/MainFrame.cpp:3568 ui/MainFrame.cpp:3571
 msgid "No Layouts Defined"
 msgstr "Схемы не определены"
 
-#: ui/MainFrame.cpp:3659
+#: ui/MainFrame.cpp:3663
 msgid "Layout:"
 msgstr "Схема:"
 
-#: ui/MainFrame.cpp:3659
+#: ui/MainFrame.cpp:3663
 #, fuzzy, c-format
 msgid "Layout %lu"
 msgstr "Схема %u"
 
-#: ui/MainFrame.cpp:4277 ui/MainFrame.cpp:4298
+#: ui/MainFrame.cpp:4281 ui/MainFrame.cpp:4302
 msgid "Copy the current selected songs to a directory or device"
 msgstr "Копировать выделенные дорожки в каталог или на внешнее устройство"
 
-#: ui/MainFrame.cpp:4307
+#: ui/MainFrame.cpp:4311
 msgid "Add 'Copy to' patterns in preferences"
 msgstr "Настроить шаблоны копирования"
 
-#: ui/MainFrame.cpp:4310
+#: ui/MainFrame.cpp:4314
 msgid "Copy the selected tracks to a folder or device"
 msgstr "Скопировать выбранные дорожки в другое место или на внешнее устройство"
 
@@ -3454,9 +3454,9 @@ msgstr "Битрейт текущей дорожки"
 msgid "Buffering..."
 msgstr "Буферизация..."
 
-#: ui/player/PlayerPanel.cpp:1401 db/DbLibrary.cpp:444 db/DbLibrary.cpp:456
-#: db/DbLibrary.cpp:1904 db/DbLibrary.cpp:1917 db/DbLibrary.cpp:1978
-#: db/DbLibrary.cpp:1991
+#: ui/player/PlayerPanel.cpp:1401 db/DbLibrary.cpp:401 db/DbLibrary.cpp:413
+#: db/DbLibrary.cpp:1861 db/DbLibrary.cpp:1874 db/DbLibrary.cpp:1935
+#: db/DbLibrary.cpp:1948
 msgid "Unknown"
 msgstr "Неизвестно"
 
@@ -3833,7 +3833,7 @@ msgstr "Количество дорожек добавляемых за один
 msgid "Max played tracks kept in playlist"
 msgstr "Максимальное количество дорожек в плейлисте"
 
-#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3326
+#: ui/preferences/Preferences.cpp:908 ui/preferences/Preferences.cpp:3325
 #, fuzzy
 msgid "Don't repeat last"
 msgid_plural "Don't repeat last"
@@ -3841,7 +3841,7 @@ msgstr[0] "Не добавлять в список последних"
 msgstr[1] "Не добавлять в список последних"
 msgstr[2] "Не добавлять в список последних"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3326
 #, fuzzy
 msgid "artist"
 msgid_plural "artists"
@@ -3849,7 +3849,7 @@ msgstr[0] "Исполнитель"
 msgstr[1] "Исполнитель"
 msgstr[2] "Исполнитель"
 
-#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3327
+#: ui/preferences/Preferences.cpp:917 ui/preferences/Preferences.cpp:3326
 #: ui/filebrowser/FileRenamer.cpp:86
 msgid "or"
 msgstr "или"
@@ -4217,40 +4217,40 @@ msgstr "Клавиша"
 msgid "Enter the collection name"
 msgstr "Введите имя коллекции"
 
-#: ui/preferences/Preferences.cpp:2830
+#: ui/preferences/Preferences.cpp:2829
 msgid "Change library path"
 msgstr "Изменить путь к фонотеке"
 
-#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
+#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
 msgid "Word"
 msgstr "Слово"
 
-#: ui/preferences/Preferences.cpp:2908 ui/preferences/Preferences.cpp:2928
+#: ui/preferences/Preferences.cpp:2907 ui/preferences/Preferences.cpp:2927
 msgid "Enter the text to find covers"
 msgstr "Ввод текста для поиска обложек"
 
-#: ui/preferences/Preferences.cpp:3253
+#: ui/preferences/Preferences.cpp:3252
 #, fuzzy
 msgid "Enter the genre to disable"
 msgstr "Ввод текста для фильтрации"
 
-#: ui/preferences/Preferences.cpp:3454 ui/preferences/Preferences.cpp:3485
+#: ui/preferences/Preferences.cpp:3453 ui/preferences/Preferences.cpp:3484
 msgid "Filter"
 msgstr "Фильтр"
 
-#: ui/preferences/Preferences.cpp:3455
+#: ui/preferences/Preferences.cpp:3454
 msgid "Enter the text to filter"
 msgstr "Ввод текста для фильтрации"
 
-#: ui/preferences/Preferences.cpp:3485
+#: ui/preferences/Preferences.cpp:3484
 msgid "Edit the text to filter"
 msgstr "Редактирование текста для фильтрации"
 
-#: ui/preferences/Preferences.cpp:3987
+#: ui/preferences/Preferences.cpp:3986
 msgid "Select path"
 msgstr "Выберите путь"
 
-#: ui/preferences/Preferences.cpp:4165
+#: ui/preferences/Preferences.cpp:4164
 msgid "Key used by '"
 msgstr "Клавиша используется '"
 
@@ -4848,15 +4848,15 @@ msgstr "Мегабайт"
 msgid "GiBytes"
 msgstr "Гигабайт"
 
-#: db/DbLibrary.cpp:804
+#: db/DbLibrary.cpp:761
 msgid "Recently added tracks"
 msgstr "Недавние дорожки"
 
-#: db/DbLibrary.cpp:812
+#: db/DbLibrary.cpp:769
 msgid "Last played tracks"
 msgstr "Последние дорожки"
 
-#: db/DbLibrary.cpp:819
+#: db/DbLibrary.cpp:776
 msgid "Best rated tracks"
 msgstr "Наивысший рейтинг"
 
