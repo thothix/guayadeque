@@ -24,7 +24,7 @@ namespace Guayadeque {
 #define GU__STRINGIFY(x) #x
 #define GU_STRINGIFY(x) GU__STRINGIFY(x)
 
-#define GUAYADEQUE_FINAL_RELEASE    0
+#define GUAYADEQUE_FINAL_RELEASE    1
 
 #define GUAYADEQUE_RELEASE          "0.7.4"
 #define GUAYADEQUE_BUILD            0
