@@ -36,21 +36,18 @@ namespace Guayadeque {
 guTVSoListBox::guTVSoListBox( wxWindow * parent, guMediaViewer * mediaviewer, wxString confname, int style ) :
              guSoListBox( parent, mediaviewer, confname, style | guLISTVIEW_ALLOWDRAG )
 {
-//    guConfig * Config = ( guConfig * ) guConfig::Get();
-//    m_TracksOrder = Config->ReadNum( wxT( "TracksOrder" ), 0, confname );
-//    m_TracksOrderDesc = Config->ReadBool( wxT( "TracksOrderDesc" ), 0, confname );
+    //m_TracksOrder = m_TracksMultiOrder[0];
+    //m_TracksOrderDesc = m_TracksMultiOrderDesc[0];
 
     CreateAcceleratorTable();
-
     ReloadItems();
 }
 
 // -------------------------------------------------------------------------------- //
 guTVSoListBox::~guTVSoListBox()
 {
-//    guConfig * Config = ( guConfig * ) guConfig::Get();
-//    Config->WriteNum( wxT( "TracksOrder" ), m_TracksOrder, m_ConfName );
-//    Config->WriteBool( wxT( "TracksOrderDesc" ), m_TracksOrderDesc, m_ConfName );
+    //m_TracksMultiOrder = {m_TracksOrder};
+    //m_TracksMultiOrderDesc = {m_TracksOrderDesc};
 }
 
 // -------------------------------------------------------------------------------- //
@@ -89,16 +86,23 @@ void guTVSoListBox::GetItemsList( void )
 {
     m_Items.Empty();
 
-    if( m_Filters.Count() )
-    {
-        m_Db->GetSongs( m_Filters, &m_Items, m_TextFilters, m_TracksOrder, m_TracksOrderDesc );
-    }
+    if (m_Filters.Count())
+        ////m_Db->GetSongs(m_Filters, &m_Items, m_TextFilters, {m_TracksOrder}, {m_TracksOrderDesc});
+        m_Db->GetSongs(m_Filters, &m_Items, m_TextFilters, m_TracksMultiOrder, m_TracksMultiOrderDesc);
 
     SetItemCount( m_Items.Count() );
 
     wxCommandEvent event( wxEVT_MENU, ID_MAINFRAME_UPDATE_SELINFO );
     AddPendingEvent( event );
 }
+
+// void guTVSoListBox::SetTracksOrder(const int order)
+// {
+//     if( m_TracksOrder != order )
+//         m_TracksOrder = order;
+//     else
+//         m_TracksOrderDesc = !m_TracksOrderDesc;
+// }
 
 // -------------------------------------------------------------------------------- //
 void guTVSoListBox::SetFilters( guTreeViewFilterArray &filters )
@@ -161,5 +165,3 @@ wxString guTVSoListBox::GetSearchText( int item ) const
 }
 
 }
-
-// -------------------------------------------------------------------------------- //
