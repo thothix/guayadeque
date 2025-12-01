@@ -1719,7 +1719,11 @@ void guMainFrame::OnPreferences( wxCommandEvent &event )
             guConfig * Config = ( guConfig * ) guConfig::Get();
             Config->SendConfigChangedEvent( PrefDialog->GetVisiblePanels() );
 
-            //m_Db->ConfigChanged();
+            if (PrefDialog->GetLibPathsChanged())
+            {
+                wxCommandEvent Event(wxEVT_MENU, ID_COLLECTIONS_BASE + guCOLLECTION_ACTION_RESCAN_LIBRARY);
+                wxPostEvent(this, Event);
+            }
         }
         PrefDialog->Destroy();
     }
