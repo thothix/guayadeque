@@ -25,8 +25,13 @@ Changelog
  Artist, Year, Album  | Artist, Year, Album, Disk, Albumid, Song number
  Artist, Year, Album, Song number | Artist, Year, Album, Song number, Disk, Albumid 
 
+  * Changed the Preferences dialog to do a automatic library rescan after edited the
+    collections paths.   
+
 ### Bugfixes
-  * Fixed loading of files not in the library from command line. Closes #81. 
+  * Fixed loading of files not in the library from command line. Closes #81.
+  * Fixed the Source->Collection->Add Path that wasn't scanning the path after the first 
+    addition and wasn't updating the library panels.
 
 0.7.3 (2025-11-25)
 ------------------
