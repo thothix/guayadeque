@@ -1033,13 +1033,14 @@ int wxCMPFUNC_CONV CompareFileTypeD( guFileItem ** item1, guFileItem ** item2 )
         return -1;
 }
 
-wxString JoinFromArrayInt(const wxArrayInt &intArray, const wxChar &delimiter)
+wxString JoinFromArrayInt(const wxArrayInt &arr, const wxChar &delimiter)
 {
     wxString result;
-    size_t count = intArray.GetCount();
+    size_t count = arr.GetCount();
 
-    for (size_t i = 0; i < count; ++i) {
-        result += wxString::Format(wxT("%i"), intArray[i]);
+    for (size_t i = 0; i < count; ++i)
+    {
+        result += wxString::Format(wxT("%i"), arr[i]);
 
         // Append the delimiter if it's not the last element
         if (i < count - 1)
