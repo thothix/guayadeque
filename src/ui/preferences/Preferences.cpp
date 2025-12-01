@@ -2718,41 +2718,40 @@ void guPrefDialog::OnLibCollectDClicked( wxCommandEvent& event )
 void guPrefDialog::OnLibAddCollectClick( wxCommandEvent& event )
 {
     wxTextEntryDialog * EntryDialog = new wxTextEntryDialog(this, wxString::Format("%s: ", _("Collection")), _("Enter the collection name"), wxEmptyString);
-    if( EntryDialog )
+    if (!EntryDialog)
+    	return;
+
+    if (EntryDialog->ShowModal() == wxID_OK)
     {
-        if( EntryDialog->ShowModal() == wxID_OK )
+        wxString NewName = EntryDialog->GetValue();
+        if (!NewName.IsEmpty() && (m_LibCollectListBox->FindString(NewName) == wxNOT_FOUND))
         {
-            wxString NewName = EntryDialog->GetValue();
-            if( !NewName.IsEmpty() && ( m_LibCollectListBox->FindString( NewName ) == wxNOT_FOUND ) )
+            m_LibCollectListBox->Append(NewName);
+            guMediaCollection * Collection = new guMediaCollection();
+            Collection->m_Name = NewName;
+            if (m_Collections.Count())
+                Collection->m_CoverWords = m_Collections[0].m_CoverWords;
+            else
             {
-                m_LibCollectListBox->Append( NewName );
-                guMediaCollection * Collection = new guMediaCollection();
-                Collection->m_Name = NewName;
-                if( m_Collections.Count() )
-                    Collection->m_CoverWords = m_Collections[ 0 ].m_CoverWords;
-                else
-                {
-                    Collection->m_CoverWords.Add( wxT( "cover" ) );
-                    Collection->m_CoverWords.Add( wxT( "front" ) );
-                    Collection->m_CoverWords.Add( wxT( "folder" ) );
-                }
-                Collection->m_UpdateOnStart = false;
-                Collection->m_ScanPlaylists = true;
-                Collection->m_ScanFollowSymLinks = false;
-                Collection->m_ScanEmbeddedCovers = true;
-                Collection->m_EmbeddMetadata = false;
-                Collection->m_CollationSearch = false;
-                Collection->m_LastUpdate = wxNOT_FOUND;
-                m_Collections.Add( Collection );
-
-                m_CollectSelected = m_LibCollectListBox->GetCount() - 1;
-                m_LibCollectListBox->SetSelection( m_CollectSelected );
-                OnLibOptionsLoadControls();
-
+                Collection->m_CoverWords.Add(wxT("cover"));
+                Collection->m_CoverWords.Add(wxT("front"));
+                Collection->m_CoverWords.Add(wxT("folder"));
             }
+            Collection->m_UpdateOnStart = false;
+            Collection->m_ScanPlaylists = true;
+            Collection->m_ScanFollowSymLinks = false;
+            Collection->m_ScanEmbeddedCovers = true;
+            Collection->m_EmbeddMetadata = false;
+            Collection->m_CollationSearch = false;
+            Collection->m_LastUpdate = wxNOT_FOUND;
+            m_Collections.Add(Collection);
+
+            m_CollectSelected = m_LibCollectListBox->GetCount() - 1;
+            m_LibCollectListBox->SetSelection(m_CollectSelected);
+            OnLibOptionsLoadControls();
         }
-        EntryDialog->Destroy();
     }
+    EntryDialog->Destroy();
 }
 
 // -------------------------------------------------------------------------------- //
