@@ -1814,13 +1814,13 @@ guPodcastListBox::guPodcastListBox( wxWindow * parent, guDbPodcasts * db ) :
     m_Images[ guPODCAST_STATUS_DELETED ] = new wxImage( guImage( guIMAGE_INDEX_tiny_status_error ) );
     m_Images[ guPODCAST_STATUS_ERROR ] = new wxImage( guImage( guIMAGE_INDEX_tiny_status_error ) );
 
-    int count = m_ColumnNames.Count();
+    int count = m_ColumnNames.GetCount();
     for( int index = 0; index < count; index++ )
     {
-        int ColId = Config->ReadNum( wxString::Format( wxT( "id%u" ), index ), index, wxT( "podcasts/columns/ids" ) );
-        wxString ColName = m_ColumnNames[ ColId ];
-
-        ColName += ( ( ColId == m_Order ) ? ( m_OrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString );
+        int ColId = Config->ReadNum(wxString::Format(wxT("id%u"), index), index, wxT("podcasts/columns/ids"));
+        wxString ColName = m_ColumnNames[ColId];
+        if (ColId == m_Order)
+            ColName += m_OrderDesc ? guTRACKS_SORT_COLUMN_DESC : guTRACKS_SORT_COLUMN_ASC;
 
         guListViewColumn * Column = new guListViewColumn(
             ColName,
@@ -2120,13 +2120,13 @@ void guPodcastListBox::SetOrder( int columnid )
 
     //m_Db->SetPodcastOrder( m_Order );
 
-    int count = m_ColumnNames.Count();
+    int count = m_ColumnNames.GetCount();
+
     for( int index = 0; index < count; index++ )
     {
         int CurColId = GetColumnId( index );
-        SetColumnLabel( index,
-            m_ColumnNames[ CurColId ]  + ( ( CurColId == m_Order ) ?
-                ( m_OrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString ) );
+        wxString col_order = ((CurColId == m_Order) ? (m_OrderDesc ? wxT(guTRACKS_SORT_COLUMN_DESC) : wxT(guTRACKS_SORT_COLUMN_ASC)) : wxEmptyString);
+        SetColumnLabel(index,m_ColumnNames[CurColId] + col_order);
     }
 
     ReloadItems();

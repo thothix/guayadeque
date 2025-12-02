@@ -368,16 +368,14 @@ guCdTracksListBox::guCdTracksListBox( wxWindow * parent ) :
     m_Order = Config->ReadNum( CONFIG_KEY_AUDIOCD_ORDER, 0, CONFIG_PATH_AUDIOCD );
     m_OrderDesc = Config->ReadNum( CONFIG_KEY_AUDIOCD_ORDERDESC, false, CONFIG_PATH_AUDIOCD );
 
-    int ColId;
-    wxString ColName;
-    int Count = m_ColumnNames.Count();
+    int Count = m_ColumnNames.GetCount();
+
     for( int Index = 0; Index < Count; Index++ )
     {
-        ColId = Config->ReadNum( wxString::Format( wxT( "id%u" ), Index ), Index, wxT( "audiocd/columns/ids" ) );
-
-        ColName = m_ColumnNames[ ColId ];
-
-        ColName += ( ( ColId == m_Order ) ? ( m_OrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString );
+        int ColId = Config->ReadNum(wxString::Format(wxT("id%u"), Index), Index, wxT("audiocd/columns/ids"));
+        wxString ColName = m_ColumnNames[ColId];
+        if (ColId == m_Order)
+            ColName += m_OrderDesc ? guTRACKS_SORT_COLUMN_DESC : guTRACKS_SORT_COLUMN_ASC;
 
         guListViewColumn * Column = new guListViewColumn(
             ColName,
@@ -721,14 +719,13 @@ void guCdTracksListBox::SetOrder( int columnid )
     else
         m_OrderDesc = !m_OrderDesc;
 
-    int CurColId;
-    int count = m_ColumnNames.Count();
+    int count = m_ColumnNames.GetCount();
+
     for( int Index = 0; Index < count; Index++ )
     {
-        CurColId = GetColumnId( Index );
-        SetColumnLabel( Index,
-            m_ColumnNames[ CurColId ]  + ( ( CurColId == m_Order ) ?
-                ( m_OrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString ) );
+        int CurColId = GetColumnId( Index );
+        wxString col_order = ((CurColId == m_Order) ? (m_OrderDesc ? wxT(guTRACKS_SORT_COLUMN_DESC) : wxT(guTRACKS_SORT_COLUMN_ASC)) : wxEmptyString);
+        SetColumnLabel( Index, m_ColumnNames[CurColId] + col_order);
     }
 
     ReloadItems();

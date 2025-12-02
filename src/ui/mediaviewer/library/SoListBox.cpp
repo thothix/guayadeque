@@ -81,19 +81,17 @@ guSoListBox::guSoListBox( wxWindow * parent, guMediaViewer * mediaviewer, wxStri
     m_ColumnNames.Add( _( "Path" ) );
     m_ColumnNames.Add( _( "Offset" ) );
 
-    int ColId, col_pos;
-    int Count = m_ColumnNames.Count();
-    wxString ColName;
+    int Count = m_ColumnNames.GetCount();
 
     for (int Index = 0; Index < Count; Index++)
     {
-        ColId = Config->ReadNum(wxString::Format(wxT("id%u"), Index), Index, m_ConfName + wxT("/columns/ids"));
-        ColName = m_ColumnNames[ColId];
-        col_pos = m_TracksMultiOrder.Index(ColId);
+        int ColId = Config->ReadNum(wxString::Format(wxT("id%u"), Index), Index, m_ConfName + wxT("/columns/ids"));
+        int col_pos = m_TracksMultiOrder.Index(ColId);
+        wxString ColName = m_ColumnNames[ColId];
 
         if (style & guLISTVIEW_COLUMN_SORTING)
             if (col_pos != wxNOT_FOUND)
-                ColName += (m_TracksMultiOrderDesc[col_pos] ? wxT(" ▼") : wxT(" ▲")) + GetSuperscriptNumber(col_pos + 1);
+                ColName += (m_TracksMultiOrderDesc[col_pos] ? guTRACKS_SORT_COLUMN_DESC : guTRACKS_SORT_COLUMN_ASC) + GetSuperscriptNumber(col_pos + 1);
 
         guListViewColumn * Column = new guListViewColumn(
             ColName,
@@ -1006,125 +1004,24 @@ void guSoListBox::HandleMultiColumnOrder(const int order)
     }
 }
 
-void guSoListBox::HandleMultiColumnOrderKeepSelections(const int order)
-{
-    bool already_ordered = false;
-
-    // not wxNOT_FOUND or -2 (restore order)
-    if (order >= 0)
-    {
-        // New column
-        if (m_TracksMultiOrder.Index(order) == wxNOT_FOUND)
-        {
-            // Handle first column
-            if (m_TracksMultiOrder.Count() == 0 || m_TracksMultiOrder[0] != wxNOT_FOUND)
-            {
-                already_ordered = true;
-                m_TracksMultiOrder.Add(order);
-                m_TracksMultiOrderDesc.Add(false);
-            }
-        }
-
-        // Other that last one
-        if (m_TracksOrder != order)
-        {
-            if (!already_ordered)
-            {
-                // Reset selections
-                // m_TracksMultiOrder.Clear();
-                // m_TracksMultiOrderDesc.Clear();
-                // m_TracksMultiOrder.Add(order);
-                // m_TracksMultiOrderDesc.Add(false);
-
-                int cur_order = m_TracksMultiOrder.Index(order);
-
-                if (!m_TracksMultiOrderDesc[cur_order])
-                {
-                    m_TracksMultiOrderDesc[cur_order] = m_TracksMultiOrderDesc[cur_order] ? 0 : 1;
-                    m_TracksOrderDesc = m_TracksMultiOrderDesc[cur_order];
-                }
-                else
-                {
-                    m_TracksMultiOrder.RemoveAt(cur_order);
-                    m_TracksMultiOrderDesc.RemoveAt(cur_order);
-                }
-            }
-            else
-            {
-                m_TracksOrder = order;
-                m_Db->SetTracksOrder(m_TracksOrder);
-
-            }
-            m_Db->SetTracksMultiOrder(m_TracksMultiOrder);
-            m_Db->SetTracksMultiOrderDesc(m_TracksMultiOrderDesc);
-        }
-        else
-        {
-            int last_order = m_TracksMultiOrder.Count() - 1;
-
-            if (!m_TracksMultiOrderDesc[last_order])
-            {
-                m_TracksMultiOrderDesc[last_order] = m_TracksMultiOrderDesc[last_order] ? 0 : 1;
-                m_TracksOrderDesc = m_TracksMultiOrderDesc[last_order];
-            }
-            else
-            {
-                if (last_order >= 0)
-                {
-                    if (last_order > 0)
-                    {
-                        m_TracksMultiOrder.RemoveAt(last_order);
-                        m_TracksMultiOrderDesc.RemoveAt(last_order);
-                    }
-                    last_order--;
-                }
-                else
-                    m_TracksMultiOrderDesc[last_order] = m_TracksMultiOrderDesc[last_order] ? 0 : 1;
-
-                if (last_order < 0)
-                {
-                    m_TracksOrder = wxNOT_FOUND;
-                    m_TracksOrderDesc = false;
-                    m_TracksMultiOrder[0] = wxNOT_FOUND;
-                    m_TracksMultiOrderDesc[0] = 0;
-                    last_order = wxNOT_FOUND;
-                }
-                else
-                {
-                    m_TracksOrder = m_TracksMultiOrder[last_order];
-                    m_TracksOrderDesc = m_TracksMultiOrderDesc[last_order];
-                }
-
-                m_Db->SetTracksOrder(m_TracksOrder);
-                m_Db->SetTracksMultiOrder(m_TracksMultiOrder);
-            }
-
-            m_Db->SetTracksOrderDesc(m_TracksOrderDesc);
-            m_Db->SetTracksMultiOrderDesc(m_TracksMultiOrderDesc);
-        }
-    }
-}
-
 void guSoListBox::SetTracksOrder( const int order )
 {
     HandleMultiColumnOrder(order);
-    //HandleMultiColumnOrderKeepSelections(order);
 
     // Create the Columns
-    int CurColId, col_pos;
-    int Count = m_ColumnNames.Count();
-    wxString title;
+    int Count = m_ColumnNames.GetCount();
 
     for (int Index = 0; Index < Count; Index++)
     {
-        CurColId = GetColumnId(Index);
-        title = m_ColumnNames[CurColId];
+        int CurColId = GetColumnId(Index);
+        wxString title = m_ColumnNames[CurColId];
 
         if (order != wxNOT_FOUND)
         {
-            col_pos = m_TracksMultiOrder.Index(CurColId);
+            int col_pos = m_TracksMultiOrder.Index(CurColId);
             if (col_pos != wxNOT_FOUND)
-                title += (m_TracksMultiOrderDesc[col_pos] ? wxT(" ▼") : wxT(" ▲")) + GetSuperscriptNumber(col_pos + 1);
+                title += (m_TracksMultiOrderDesc[col_pos] ? guTRACKS_SORT_COLUMN_DESC : guTRACKS_SORT_COLUMN_ASC)
+                        + GetSuperscriptNumber(col_pos + 1);
         }
 
         SetColumnLabel(Index, title);
