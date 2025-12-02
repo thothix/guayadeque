@@ -1063,7 +1063,7 @@ wxArrayInt SplitToArrayInt(const wxString &data, const wxChar &delimiter)
 
 wxString GetSuperscriptNumber(int number)
 {
-    const wxArrayString ss_digits = {"\u2070", "\u00b9", "\u00b2", "\u00b3", "\u2074", "\u2075", "\u2076", "\u2077", "\u2078", "\u2079"};
+    std::vector<wxString> ss_digits = {"\u2070", "\u00b9", "\u00b2", "\u00b3", "\u2074", "\u2075", "\u2076", "\u2077", "\u2078", "\u2079"};
     const wxString str_number = wxString::Format(wxT("%u"), number);
     wxString result;
 
