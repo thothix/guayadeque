@@ -49,7 +49,7 @@ guSoListBox::guSoListBox( wxWindow * parent, guMediaViewer * mediaviewer, wxStri
     m_ItemsLast = wxNOT_FOUND;
     m_LastColumnRightClicked = wxNOT_FOUND;
 
-    wxString tracks_order = Config->ReadStr(wxT( "TracksOrder" ), "0", confname);
+    wxString tracks_order = Config->ReadStr(wxT( "TracksOrder" ), "2", confname);
     m_TracksMultiOrder = SplitToArrayInt(tracks_order);
     m_TracksOrder = m_TracksMultiOrder.Last();
 
