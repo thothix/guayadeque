@@ -55,7 +55,6 @@ class guSoListBox : public guListView
 {
   private:
     void                        HandleMultiColumnOrder(const int order);
-    void                        HandleMultiColumnOrderKeepSelections(const int order);
 
   protected :
     guMediaViewer *             m_MediaViewer;
