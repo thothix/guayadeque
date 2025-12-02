@@ -700,16 +700,15 @@ guFilesListBox::guFilesListBox( wxWindow * parent, guDbLibrary * db ) :
     m_Order = Config->ReadNum( CONFIG_KEY_FILE_BROWSER_ORDER, 0, CONFIG_PATH_FILE_BROWSER );
     m_OrderDesc = Config->ReadNum( CONFIG_KEY_FILE_BROWSER_ORDERDESC, false, CONFIG_PATH_FILE_BROWSER );
 
-    int ColId;
-    wxString ColName;
     wxArrayString ColumnNames = GetColumnNames();
-    int count = ColumnNames.Count();
+    int count = ColumnNames.GetCount();
+
     for( int index = 0; index < count; index++ )
     {
-        ColId = Config->ReadNum( wxString::Format( wxT( "Id%u" ), index ), index, CONFIG_PATH_FILE_BROWSER_COLUMNS_IDS );
-
-        ColName = ColumnNames[ ColId ];
-        ColName += ( ( ColId == m_Order ) ? ( m_OrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString );
+        int ColId = Config->ReadNum(wxString::Format(wxT("Id%u"), index), index, CONFIG_PATH_FILE_BROWSER_COLUMNS_IDS);
+        wxString ColName = ColumnNames[ColId];
+        if (ColId == m_Order)
+            ColName += m_OrderDesc ? guTRACKS_SORT_COLUMN_DESC : guTRACKS_SORT_COLUMN_ASC;
 
         guListViewColumn * Column = new guListViewColumn(
             ColName,
@@ -1125,14 +1124,13 @@ void guFilesListBox::SetOrder( int columnid )
         m_OrderDesc = !m_OrderDesc;
 
     wxArrayString ColumnNames = GetColumnNames();
-    int CurColId;
-    int count = ColumnNames.Count();
+    int count = ColumnNames.GetCount();
+
     for( int index = 0; index < count; index++ )
     {
-        CurColId = GetColumnId( index );
-        SetColumnLabel( index,
-            ColumnNames[ CurColId ]  + ( ( CurColId == m_Order ) ?
-                ( m_OrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString ) );
+        int CurColId = GetColumnId(index);
+        wxString col_order = ((CurColId == m_Order) ? (m_OrderDesc ? wxT(guTRACKS_SORT_COLUMN_DESC) : wxT(guTRACKS_SORT_COLUMN_ASC)) : wxEmptyString);
+        SetColumnLabel(index, ColumnNames[CurColId] + col_order);
     }
 
     ReloadItems();

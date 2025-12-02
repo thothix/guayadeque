@@ -39,16 +39,18 @@ namespace Guayadeque {
                "song_addedtime, song_lastplay, song_filesize " \
                "FROM songs " )
 
-#define GUCOVER_THUMB_SIZE      38
-#define GUCOVER_IMAGE_SIZE      100
+#define GUCOVER_THUMB_SIZE          38
+#define GUCOVER_IMAGE_SIZE          100
 
     // PLAYLISTS
-#define guPLAYLIST_TYPE_STATIC       0
-#define guPLAYLIST_TYPE_DYNAMIC      1
+#define guPLAYLIST_TYPE_STATIC      0
+#define guPLAYLIST_TYPE_DYNAMIC     1
 
 extern unsigned long DynPLDateOption2[];
 
 #define guTRACK_TYPE_STOP_HERE      0x80000000
+#define guTRACKS_SORT_COLUMN_ASC    " ▲"
+#define guTRACKS_SORT_COLUMN_DESC   " ▼"
 
     enum guTrackType
     {

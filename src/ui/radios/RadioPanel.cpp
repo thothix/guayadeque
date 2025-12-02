@@ -225,13 +225,14 @@ guRadioStationListBox::guRadioStationListBox( wxWindow * parent, guRadioPanel * 
     wxArrayString ColumnNames = GetColumnNames();
 
     // Create the Columns
-    int count = ColumnNames.Count();
+    int count = ColumnNames.GetCount();
+
     for( int index = 0; index < count; index++ )
     {
-        int ColId = Config->ReadNum( wxString::Format( wxT( "id%u" ), index ), index, wxT( "radios/columns/ids" ) );
-        wxString ColName = ColumnNames[ ColId ];
-
-        ColName += ( ( ColId == m_StationsOrder ) ? ( m_StationsOrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString );
+        int ColId = Config->ReadNum(wxString::Format(wxT("id%u"), index), index, wxT("radios/columns/ids"));
+        wxString ColName = ColumnNames[ColId];
+        if (ColId == m_StationsOrder)
+            ColName += m_StationsOrderDesc ? guTRACKS_SORT_COLUMN_DESC : guTRACKS_SORT_COLUMN_ASC;
 
         guListViewColumn * Column = new guListViewColumn(
             ColName,
@@ -477,12 +478,13 @@ void guRadioStationListBox::SetStationsOrder( int order )
     m_RadioPanel->SetStationsOrder( m_StationsOrder, m_StationsOrderDesc );
 
     wxArrayString ColumnNames = GetColumnNames();
-    int count = ColumnNames.Count();
+    int count = ColumnNames.GetCount();
+
     for( int index = 0; index < count; index++ )
     {
-        int CurColId = GetColumnId( index );
-        SetColumnLabel( index,
-            ColumnNames[ CurColId ]  + ( ( order == CurColId ) ? ( m_StationsOrderDesc ? wxT( " ▼" ) : wxT( " ▲" ) ) : wxEmptyString ) );
+        int CurColId = GetColumnId(index);
+        wxString col_order = ((order == CurColId) ? (m_StationsOrderDesc ? wxT(guTRACKS_SORT_COLUMN_DESC) : wxT(guTRACKS_SORT_COLUMN_ASC)) : wxEmptyString);
+        SetColumnLabel(index, ColumnNames[CurColId] + col_order);
     }
 
     ReloadItems();
