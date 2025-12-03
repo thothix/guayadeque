@@ -930,7 +930,7 @@ void guSoListBox::HandleMultiColumnOrder(const int order)
 {
     bool already_ordered = false;
 
-    // not wxNOT_FOUND or -2 (restore order)
+    // not wxNOT_FOUND or guTRACKS_SORT_COLUMNS_RESTORE (restore order)
     if (order >= 0)
     {
         if (m_TracksMultiOrder.Index(order) == wxNOT_FOUND)
