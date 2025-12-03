@@ -141,7 +141,7 @@ void guPLSoListBox::SetPlayList( const wxArrayInt &ids, const wxArrayInt &types 
     if( m_DisableSorting )
     {
         m_DisableSorting = false;
-        SetTracksOrder(-2);     // Reactivate Orders without update it
+        SetTracksOrder(guTRACKS_SORT_COLUMNS_RESTORE);      // Reactivate Orders without update it
         return;
     }
 
