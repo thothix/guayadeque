@@ -77,42 +77,38 @@ sudo pacman -S wxgtk3 gstreamer gst-plugins-base gst-plugins-good sqlite wxsqlit
 sudo dnf install gstreamer1-devel gstreamer1-plugins-base-devel sqlite-devel wxsqlite3-devel libcurl-devel taglib-devel dbus-devel jsoncpp-devel libicu-devel cmake
 ```
 
----
+## Optional dependencies
 
-### Optional dependencies
-
-#### Extra audio playback support
+### Extra audio playback support
 
 - `gstreamer1.0-libav`: Provides support for a wide range of audio and video codecs, enabling Guayadeque to play more media formats (like `DSD/DSF`).
 - `gstreamer1.0-plugins-bad`: Includes additional GStreamer plugins for enhanced functionality, but may have stability or licensing issues.
 - `gstreamer1.0-plugins-ugly`: Offers support for certain audio and video formats that may have distribution or patent issues in some countries.
 
-#### Other
+### Other
 
 - `libgpod-dev`: Offers comprehensive support for managing and interacting with iPod devices.
 - `gvfs`: Allows Guayadeque to access and manage files through GVFS (GNOME Virtual File System), which is useful for handling remote or virtual file systems.
 
-##### Debian, Ubuntu, Linux Mint
+#### Debian, Ubuntu, Linux Mint
 
 ```bash
 sudo apt install libgpod-dev gstreamer1.0-libav gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
 ```
 
-##### Arch Linux
+#### Arch Linux
 
 ```bash
 sudo pacman -S libgpod gst-libav gst-plugins-bad gst-plugins-ugly gvfs
 ```
 
-##### Fedora 43
+#### Fedora 43
 
 ```bash
 sudo dnf install libgpod-devel gstreamer1-plugin-libav gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free
 ```
 
----
-
-## Build
+## Sources build
 
 After the dependencies has been installed, get Guayadeque sources from Github before begin the build process.
 

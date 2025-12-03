@@ -4,7 +4,17 @@ Guayadeque Music Player
 Changelog
 =========
 
-0.7.4 (2025-12-01)
+0.7.5 (2026-01-__)
+------------------
+###### Madredeus
+
+### Enhancements
+  * Small refactorings.
+
+### Bugfixes
+  * Fixed build for (old) systems with GStreamer < 1.20.
+
+0.7.4 (2025-12-02)
 ------------------
 ###### Autumn
 
@@ -32,8 +42,7 @@ Changelog
   * Fixed loading of files not in the library from command line. Closes #81.
   * Fixed the Source->Collection->Add Path that wasn't scanning the path after the first 
     addition and wasn't updating the library panels.
-  * Renamed preferences key "TextSearchEnterRelax" to "TextSearchEnterEnabled". 
-    Wiki updated as well. 
+  * Renamed preferences key "TextSearchEnterRelax" to "TextSearchEnterEnabled".
 
 0.7.3 (2025-11-25)
 ------------------
@@ -153,6 +162,8 @@ Changelog
 0.6.3 (2025-01-24)
 ------------------
 
+### Build broken with wxWidgets < 3.2.4
+
 ### Features
   * Audio formats support:
     * Added support for DSF files in the library (without tagging support by now).
@@ -175,6 +186,8 @@ Changelog
 
 0.6.2 (2024-12-11)
 ------------------
+
+### Build broken with wxWidgets < 3.2.4
 
 ### Features
   * Check/set the proper default commands for the current desktop manager.
