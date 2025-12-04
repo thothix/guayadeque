@@ -9,6 +9,8 @@ Changelog
 ###### Madredeus
 
 ### Enhancements
+  * org.guayadeque.guayadeque.desktop renamed to org.guayadeque.Guayadeque.desktop for
+    freedesktop compatibility.
   * Small refactorings.
 
 ### Bugfixes
