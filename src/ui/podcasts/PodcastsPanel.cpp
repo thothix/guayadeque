@@ -2125,8 +2125,8 @@ void guPodcastListBox::SetOrder( int columnid )
     for( int index = 0; index < count; index++ )
     {
         int CurColId = GetColumnId( index );
-        wxString col_order = ((CurColId == m_Order) ? (m_OrderDesc ? wxT(guTRACKS_SORT_COLUMN_DESC) : wxT(guTRACKS_SORT_COLUMN_ASC)) : wxEmptyString);
-        SetColumnLabel(index,m_ColumnNames[CurColId] + col_order);
+        wxString col_order = (CurColId == m_Order ? (m_OrderDesc ? wxT(guTRACKS_SORT_COLUMN_DESC) : wxT(guTRACKS_SORT_COLUMN_ASC)) : wxEmptyString);
+        SetColumnLabel(index, m_ColumnNames[CurColId] + col_order);
     }
 
     ReloadItems();

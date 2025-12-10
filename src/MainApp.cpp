@@ -492,7 +492,7 @@ int guMainApp::OnExit()
 void guMainApp::OnFatalException()
 {
 #if USE_WXQA
-    guLogMessage(wxT("wxQA is enabled. Generating debug report..."));
+    guLogMessage(wxT("wxQA is enabled. Enabling debug report generation..."));
     wxDebugReport Report;
     wxDebugReportPreviewStd Preview;
 
