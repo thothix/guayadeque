@@ -724,7 +724,7 @@ void guCdTracksListBox::SetOrder( int columnid )
     for( int Index = 0; Index < count; Index++ )
     {
         int CurColId = GetColumnId( Index );
-        wxString col_order = ((CurColId == m_Order) ? (m_OrderDesc ? wxT(guTRACKS_SORT_COLUMN_DESC) : wxT(guTRACKS_SORT_COLUMN_ASC)) : wxEmptyString);
+        wxString col_order = (CurColId == m_Order ? (m_OrderDesc ? wxT(guTRACKS_SORT_COLUMN_DESC) : wxT(guTRACKS_SORT_COLUMN_ASC)) : wxEmptyString);
         SetColumnLabel( Index, m_ColumnNames[CurColId] + col_order);
     }
 
