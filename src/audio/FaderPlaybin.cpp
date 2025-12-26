@@ -57,7 +57,7 @@ static char ProxyPass[ 200 ] = "";
 // -------------------------------------------------------------------------------- //
 static gboolean gst_bus_async_callback( GstBus * bus, GstMessage * message, guFaderPlaybin::WeakPtr * wpp )
 {
-    if( wpp == NULL)
+    if( wpp == nullptr)
     {
         guLogTrace( "Gst async fail: parent fader playbin is null" );
         return FALSE;
@@ -118,7 +118,7 @@ static gboolean gst_bus_async_callback( GstBus * bus, GstMessage * message, guFa
 
         case GST_MESSAGE_BUFFERING :
         {
-            gint        Percent;
+            gint Percent;
             gst_message_parse_buffering( message, &Percent );
 
             guLogDebug( wxT( "Buffering (%li): %i%%" ), ctrl->GetId(), Percent );
@@ -129,9 +129,8 @@ static gboolean gst_bus_async_callback( GstBus * bus, GstMessage * message, guFa
                     ctrl->Pause();
             }
             else
-            {
                 ctrl->Play();
-            }
+
             ctrl->SetBuffering( Percent != 100 );
 
             guMediaEvent event( guEVT_MEDIA_BUFFERING );
@@ -157,7 +156,7 @@ static gboolean gst_bus_async_callback( GstBus * bus, GstMessage * message, guFa
 
             ctrl->GetPlayer()->ScheduleCleanUp();
             guLogDebug( wxT( "***** EOS received..." ) );
-          break;
+            break;
         }
 
         case GST_MESSAGE_TAG :
@@ -192,9 +191,7 @@ static gboolean gst_bus_async_callback( GstBus * bus, GstMessage * message, guFa
                 ctrl->SendEvent( event );
             }
             else
-            {
                 delete RadioTagInfo;
-            }
 
             if( gst_tag_list_get_string( tags, GST_TAG_AUDIO_CODEC, &audio_codec ) )
             {
@@ -229,7 +226,7 @@ static gboolean gst_bus_async_callback( GstBus * bus, GstMessage * message, guFa
                 const GstStructure * s = gst_message_get_structure( message );
                 const gchar * name = gst_structure_get_name( s );
 
-                // guLogDebug( wxT( "MESSAGE_ELEMENT %s" ), wxString( name ).c_str() );
+                //guLogDebug( wxT( "MESSAGE_ELEMENT %s" ), wxString( name ).c_str() );
                 if( !strcmp( name, "level" ) )
                 {
                     guLevelInfo * LevelInfo = new guLevelInfo();
@@ -304,7 +301,6 @@ static gboolean gst_bus_async_callback( GstBus * bus, GstMessage * message, guFa
                         LevelInfo->m_OutTime = timestamp / GST_MSECOND;
                     }
 
-
     //                //guLogDebug( wxT( "    RMS: %f dB, peak: %f dB, decay: %f dB" ),
     //                    event.m_LevelInfo.m_RMS_L,
     //                    event.m_LevelInfo.m_Peak_L,
@@ -321,32 +317,26 @@ static gboolean gst_bus_async_callback( GstBus * bus, GstMessage * message, guFa
             break;
         }
 
-        //
         case GST_MESSAGE_APPLICATION :
         {
-            const GstStructure * Struct;
+            const GstStructure * gst_struct;
             const char * Name;
 
-            Struct = gst_message_get_structure( message );
-            Name = gst_structure_get_name( Struct );
+            gst_struct = gst_message_get_structure( message );
+            Name = gst_structure_get_name( gst_struct );
             // guLogDebug( wxT( "Got Application Message %s" ), GST_TO_WXSTRING( Name ).c_str() );
 
             if( !strcmp( Name, guFADERPLAYBIN_MESSAGE_FADEIN_START ) )
             {
                 if( !ctrl->EmittedStartFadeIn() )
-                {
                     ctrl->FadeInStart();
-                }
             }
             else if( !strcmp( Name, guFADERPLAYBIN_MESSAGE_FADEOUT_DONE ) )
             {
                 if( !ctrl->EmittedStartFadeIn() )
-                {
                     ctrl->FadeInStart();
-                }
                 ctrl->FadeOutDone();
             }
-
             break;
         }
 
@@ -376,13 +366,9 @@ static void gst_about_to_finish( GstElement * playbin, guFaderPlaybin::WeakPtr *
 
     guFaderPlaybin * ctrl = (*sp);
     if( !ctrl->NextUri().IsEmpty() )
-    {
         ctrl->AboutToFinish();
-    }
     else if( !ctrl->EmittedStartFadeIn() )
-    {
         ctrl->FadeInStart();
-    }
 }
 
 // -------------------------------------------------------------------------------- //
