@@ -125,6 +125,7 @@ int wxCMPFUNC_CONV CompareFileTypeD( guFileItem ** item1, guFileItem ** item2 );
 wxString JoinFromArrayInt(const wxArrayInt &arr, const wxChar &delimiter = ',');
 wxArrayInt SplitToArrayInt(const wxString &data, const wxChar &delimiter = ',');
 wxString GetSuperscriptNumber(int number);
+wxString GetAppVersion();
 
 std::mt19937        guSRandom();
 extern std::mt19937 rng_default_generator;
