@@ -4,18 +4,24 @@ Guayadeque Music Player
 Changelog
 =========
 
+---
 0.7.5 (2026-01-__)
 ------------------
 ###### Madredeus
 
 ### Enhancements
-  * org.guayadeque.guayadeque.desktop renamed to org.guayadeque.Guayadeque.desktop for
-    freedesktop compatibility.
+  * Metadata changes for better freedesktop compatibility:
+    * org.guayadeque.guayadeque.desktop renamed to org.guayadeque.Guayadeque.desktop.
+    * org.guayadeque.guayadeque.metainfo.xml changes:
+      * Renamed to org.guayadeque.Guayadeque.metainfo.xml;
+      * ID changed to org.guayadeque.Guayadeque;
+      * launchable type changed to org.guayadeque.Guayadeque.desktop;
   * Small refactorings.
 
 ### Bugfixes
   * Fixed build for (old) systems with GStreamer < 1.20.
 
+---
 0.7.4 (2025-12-02)
 ------------------
 ###### Autumn
@@ -46,6 +52,7 @@ Changelog
     addition and wasn't updating the library panels.
   * Renamed preferences key "TextSearchEnterRelax" to "TextSearchEnterEnabled".
 
+---
 0.7.3 (2025-11-25)
 ------------------
 ###### After Forever
@@ -74,6 +81,7 @@ Changelog
   * Removed support to DSF files in the library cause scan issues due lacking of tag support.
   * Removed useless SEARCH_LIBS variable from the build script.
 
+---
 0.7.2 (2025-06-07)
 ------------------
 ###### Marduk, the cat
@@ -108,6 +116,7 @@ Changelog
     included headers caused by duplicated headers filenames.
     Closes PR #64. Thanks to @barracuda156.
 
+---
 0.7.1 (2025-05-14)
 ------------------
 
@@ -129,6 +138,7 @@ Changelog
   * Fixed the "Rename" context menu option, in the File Browser directory tree, 
     that wasn't refreshing the modified item tree.
 
+---
 0.7.0 (2025-02-22)
 ------------------
 
@@ -144,6 +154,7 @@ Changelog
   * Removed the build option CXX11_RNG. The srand is now fully replaced by the
     C++11 random number generator.
 
+---
 0.6.5 (2025-02-20)
 ------------------
 
@@ -161,6 +172,7 @@ Changelog
   * Fix compatibility with wxWidgets prior to 3.2 (regression from 0.6.2)
   * Fix bug in conversion of preferences commands (introduced in 0.6.2)
 
+---
 0.6.3 (2025-01-24)
 ------------------
 
@@ -186,6 +198,7 @@ Changelog
 ### Bugfixes
   * Added missing Croatian language to preferences.
 
+---
 0.6.2 (2024-12-11)
 ------------------
 
@@ -214,6 +227,7 @@ Changelog
   * Updated Portuguese and Brazilian Portuguese translations.
   * Small UI adjustments (playlist context menu, taskbar menu, preferences).
 
+---
 0.6.1 (2024-11-12)
 ------------------
 
@@ -233,6 +247,7 @@ Changelog
 ### Removed
   * Removed deprecated collection database index.
 
+---
 0.6.0 (2024-10-25)
 ------------------
 
@@ -271,6 +286,7 @@ Changelog
     The Preferences -> General option "Show CD cover frame in the player" was
     renamed to "Show CD cover frame in the cover editor".
 
+---
 0.5.3 (2024-10-02)
 ------------------
 
@@ -285,6 +301,7 @@ Changelog
   * Fixed the display of several icons that were not shown (Source panel,
     Radio panel->Genres, File Browser->Directories, Library->Treeview/Playlists).
 
+---
 0.5.2 (2024-09-28)
 ------------------
 
@@ -298,6 +315,7 @@ Changelog
 ### Removed
   * Removed disabled code for Amazon cover fetcher.
 
+---
 0.5.1 (2024-09-24)
 ------------------
 
@@ -313,6 +331,7 @@ Changelog
 ### Removed
   * Removed unavailable community and home site links, updated splash screen.
 
+---
 0.5.0 (2024-09-22)
 ------------------
 
@@ -334,6 +353,7 @@ Changelog
   * Fixed restoring mouse cursor after access several places in radio and podcasts panels.
   * Reviewed the use of Lock() all over the application.
 
+---
 0.5.0 Beta 4 (2024-09-11)
 -------------------------
 
@@ -356,6 +376,7 @@ Changelog
     the current selection anymore. This turned impossible to apply any action in
     the selection through the context menu.
 
+---
 0.5.0 Beta 3 (2024-09-07)
 -------------------------
 
@@ -369,6 +390,7 @@ Changelog
   * Fixed bug that crashed Guayadeque when clicking the cover panel to open the
     fullscreen cover window.
 
+---
 0.5.0 Beta 2 (2024-09-05)
 -------------------------
 ###### Thanks to @NullPointerArchitect
@@ -398,6 +420,7 @@ Changelog
   * Fixed bug that crashed Guayadeque when scanning AAC files tags (AAC files
     does not support tags right now).
 
+---
 0.5.0 Beta 1 (2023-11-23)
 -------------------------
 ###### Thanks to @openmonk
@@ -413,6 +436,7 @@ Changelog
 ### Removed
   * Removed libindicate support.
 
+---
 0.4.7 (2023-02-24)
 ------------------
 
@@ -424,16 +448,19 @@ Changelog
   * UI changes.
   * Bugfixes.
 
+---
 0.4.6 (2019-06-05)
 ------------------
 
   * Bugfixes.
 
+---
 0.4.5 (2017-01-08)
 ------------------
 
   * Added proxy support. Configure it from Preferences -> Online.
 
+---
 0.4.3 (2016-11-17)
 ------------------
 
@@ -449,6 +476,7 @@ Changelog
   * Updated to gstreamer 1.0.
   * Fixed some Config constructor calls.
 
+---
 0.3.7 (2014-02-20)
 ------------------
 
@@ -465,6 +493,7 @@ Changelog
   * Added Seeked mpris2 signal.
   * Fixed amazon cover download engine.
 
+---
 0.3.5 (2012-02-03)
 ------------------
 
@@ -476,6 +505,7 @@ Changelog
     by any criteria.
   * Added collections support. You can define as many collections as you want.
 
+---
 0.3.1 (2011-05-13)
 ------------------
 
@@ -489,6 +519,7 @@ Changelog
   * Sound menu integration in Ubuntu 11.04 natty.
   * Added shortcuts configurable from preferences.
 
+---
 0.2.9 (2011-02-17)
 ------------------
 
@@ -540,6 +571,7 @@ Changelog
   * Added Jamendo support.
   * Added network buffer size option in Preferences -> Online.
 
+---
 0.2.7 (2010-08-26)
 ------------------
 
@@ -600,6 +632,7 @@ Changelog
   * Updated the no cover image. Thanks mrmotinjo.
   * Fix parsing podcasts that contains comments before the channel tag.
 
+---
 0.2.5 (2010-03-12)
 ------------------
 
@@ -686,6 +719,7 @@ linked to Guayadeque and for this we are grateful and humbled.
   * When some preferences are modified the settings are propagated where its needed.
   * Fixed bug in smart play mode.
 
+---
 0.2.3 (2010-01-15)
 ------------------
 
@@ -738,6 +772,7 @@ linked to Guayadeque and for this we are grateful and humbled.
   * Fixed bug with cmake 2.8.0.
   * Added posibility in progressbar to show counters instead of percent.
 
+---
 0.2.1 (2009-11-27)
 ------------------
 
@@ -757,6 +792,7 @@ linked to Guayadeque and for this we are grateful and humbled.
   * Fixed bug creating the podcast default dir.
   * Fixed bug deleting old podcasts.
 
+---
 0.2.0 (2009-11-05)
 ------------------
 
@@ -784,6 +820,7 @@ linked to Guayadeque and for this we are grateful and humbled.
   * Added LeoLyrics lyric search http://leoslyrics.com/.
   * Fixed bug in radio stations list box ordering.
 
+---
 0.1.5 (2009-08-04)
 ------------------
 
@@ -807,6 +844,7 @@ linked to Guayadeque and for this we are grateful and humbled.
   * Fixed crash when using 'Edit labes' in artists or songs with no artist
     or no songs selected.
 
+---
 0.1.1 (2009-06-25)
 ------------------
 
@@ -835,6 +873,7 @@ linked to Guayadeque and for this we are grateful and humbled.
   * Create ~/.guayadeque/LinkIcons dir if doesnt exists to store the
     Links Icons.
 
+---
 0.1.0 (2009-06-09)
 ------------------
 
@@ -878,6 +917,7 @@ linked to Guayadeque and for this we are grateful and humbled.
     not all program will read ID3 v2.4 tags. For example if you use easytag
     you should use the v2.1.1 or later.
 
+---
 0.0.3 Beta (2009-05-12)
 -----------------------
 
@@ -885,6 +925,7 @@ linked to Guayadeque and for this we are grateful and humbled.
     so if you had an older version you need to remove ~/.guayadeque/guayadeque.db.
   * Fixed some minor bugs.
 
+---
 0.0.2 Beta (2009-04-06)
 -----------------------
 
@@ -893,6 +934,7 @@ linked to Guayadeque and for this we are grateful and humbled.
   * Added support to translations.
   * Fixed bug in ListBox colors.
 
+---
 0.0.1 Beta (2009-03-11)
 -----------------------
 
