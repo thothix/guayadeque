@@ -1073,4 +1073,14 @@ wxString GetSuperscriptNumber(int number)
     return result;
 }
 
+wxString GetAppVersion()
+{
+    wxString gu_version = wxT(GUAYADEQUE_VERSION);
+    wxString gu_revision = wxT(GUAYADEQUE_REVISION);
+    if (!gu_revision.IsEmpty())
+        gu_version = gu_version + "-" + gu_revision;
+
+    return gu_version;
+}
+
 }
