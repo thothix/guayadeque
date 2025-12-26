@@ -90,14 +90,15 @@ guMainFrame::guMainFrame(wxWindow * parent, guDbCache * dbcache)
     //
     // guMainFrame GUI components
     //
+    wxString gu_version = wxT("Guayadeque Music Player ") + GetAppVersion();
+
     wxPoint MainWindowPos;
     MainWindowPos.x = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_POSX, 1, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
     MainWindowPos.y = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_POSY, 1, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
     wxSize MainWindowSize;
     MainWindowSize.x = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_WIDTH, 800, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
     MainWindowSize.y = Config->ReadNum( CONFIG_KEY_MAIN_WINDOW_POSITIONS_HEIGHT, 600, CONFIG_PATH_MAIN_WINDOW_POSITIONS );
-    Create( parent, wxID_ANY, wxT( "Guayadeque Music Player " GUAYADEQUE_VERSION_REVISION ),
-            MainWindowPos, MainWindowSize, wxDEFAULT_FRAME_STYLE );
+    Create(parent, wxID_ANY, gu_version, MainWindowPos, MainWindowSize, wxDEFAULT_FRAME_STYLE);
     m_AuiManager.SetManagedWindow( this );
     m_AuiManager.SetArtProvider( new guAuiDockArt() );
     m_AuiManager.SetFlags( wxAUI_MGR_ALLOW_FLOATING |
@@ -1787,9 +1788,10 @@ void guMainFrame::OnUpdateTrack( wxCommandEvent &event )
     wxString title, tooltip;
     guTrack * Track = (guTrack *) event.GetClientData();
 
-    title = wxT("Guayadeque Music Player " GUAYADEQUE_VERSION_REVISION);
+    title = wxT("Guayadeque Music Player ") + GetAppVersion();
+
     if (m_TaskBarIcon)
-        tooltip = wxT("Guayadeque Music Player " GUAYADEQUE_VERSION_REVISION);
+        tooltip = title;
 
     if (Track)
     {
@@ -3331,7 +3333,10 @@ void guMainFrame::CreateTaskBarIcon( void )
             {
                 m_TaskBarIcon = new guTaskBarIcon( this, m_PlayerPanel );
                 if ( m_TaskBarIcon )
-                    m_TaskBarIcon->SetIcon( m_AppIcon, wxT( "Guayadeque Music Player " GUAYADEQUE_VERSION_REVISION ) );
+                {
+                    wxString gu_version = wxT("Guayadeque Music Player ") + GetAppVersion();
+                    m_TaskBarIcon->SetIcon(m_AppIcon, gu_version);
+                }
             }
         }
     }
