@@ -1,4 +1,4 @@
-# Guayadeque Music Player
+# Guayadeque Music Player Installation
 
 Guayadeque is a lightweight and easy-to-use music player and music collection organizer
 that can easily manage large music collections and supports smart playlists.
@@ -26,37 +26,37 @@ First of all, install the dependencies for your system.
 ### Ubuntu (pre 20.04):
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake g++ binutils git
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libwxgtk3.0-gtk3-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake g++ binutils git
 ```
 
-### Ubuntu 20.04, Linux Mint 20
+### Ubuntu 20.04 (focal), Linux Mint 20
 
 ```bash
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake g++ binutils git
 ```
 
-### Ubuntu 22.04, Linux Mint 21
+### Ubuntu 22.04 (jammy), Linux Mint 21
 
 ```bash
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libwxsqlite3-3.0-dev libwxbase3.0-dev libtag1-dev libtag-extras-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev gettext cmake g++ binutils git
 ```
 
-### Ubuntu 24.04, Linux Mint 22
+### Ubuntu 24.04 (noble), Linux Mint 22
 
 ```bash
 sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev gettext cmake g++ binutils git
 ```
 
-### Debian 12
+### Debian 12 (bookworm)
 
 ```bash
-sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake git
+sudo apt install libgdk-pixbuf2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-good libwxsqlite3-3.2-dev libtag1-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake git
 ```
 
-### Debian 13
+### Debian 13 (trixie)
 
 ```bash
-sudo apt install libgdk-pixbuf-2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-good libwxsqlite3-3.2-dev libtag2 libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake git
+sudo apt install libgdk-pixbuf-2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-good libwxsqlite3-3.2-dev libtag-dev libcurl4-gnutls-dev libdbus-1-dev libjsoncpp-dev libicu-dev cmake git
 ```
 
 ### Mageia 9
