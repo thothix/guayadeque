@@ -1244,7 +1244,7 @@ void guPlayerPanel::OnPlayListDClick( wxCommandEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::LoadMedia( guFADERPLAYBIN_PLAYTYPE playtype, const bool forceskip )
 {
-    guLogDebug( wxT( "LoadMedia  %li  %li  (%i)" ), m_CurTrackId, m_NextTrackId, m_SavedPlayedTrack );
+    guLogDebug( wxT( "guPlayerPanel::LoadMedia  %li  %li  (%i)" ), m_CurTrackId, m_NextTrackId, m_SavedPlayedTrack );
     if( !forceskip && ( m_MediaSong.m_Type & guTRACK_TYPE_STOP_HERE ) )
     {
         m_MediaSong.m_Type = guTrackType( int( m_MediaSong.m_Type ) ^ guTRACK_TYPE_STOP_HERE );
@@ -1769,7 +1769,7 @@ void guPlayerPanel::OnMediaCodec( guMediaEvent &event )
 // -------------------------------------------------------------------------------- //
 void guPlayerPanel::OnMediaLoaded( guMediaEvent &event )
 {
-    guLogMessage( wxT( "OnMediaLoaded Cur: %i %i   %li" ), m_PlayListCtrl->GetCurItem(), event.GetInt(), m_NextTrackId );
+    guLogMessage( wxT( "guPlayerPanel::OnMediaLoaded Cur: %i %i   %li" ), m_PlayListCtrl->GetCurItem(), event.GetInt(), m_NextTrackId );
 
     try {
         if( event.GetInt() )
