@@ -85,6 +85,10 @@ bool guIsValidAudioFile( const wxString &filename )
 
         guSupportedFormats.Add( wxT( "mpc"  ) );
 
+        // mod, s3m test
+        guSupportedFormats.Add( wxT( "mod"  ) );
+        guSupportedFormats.Add( wxT( "s3m"  ) );
+
         //guSupportedFormats.Add( wxT( "dsf"  ) );  // >= 2.0
         //guSupportedFormats.Add( wxT( "rmj"  ) );  // Real Media Jukebox
     }
@@ -141,7 +145,7 @@ guTagInfo * guGetTagInfoHandler( const wxString &filename )
 
         case 18 : return new guMpcTagInfo( filename );
 
-        case 19 : return new guMp3TagInfo( filename );     // DSD, DSF - TODO: Create a custom TagInfo
+        //case 19 : return new guMp3TagInfo( filename );     // DSD, DSF - TODO: Create a custom TagInfo
 
         default :
             break;
