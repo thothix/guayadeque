@@ -163,7 +163,7 @@ add_subdirectory(po)
 # freedesktop.org-specific files
 install(FILES defconfig/guayadeque.png DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/64x64/apps/)
 install(FILES defconfig/org.guayadeque.Guayadeque.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
-install(FILES defconfig/org.guayadeque.guayadeque.metainfo.xml DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo)
+install(FILES defconfig/org.guayadeque.Guayadeque.metainfo.xml DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo)
 
 # program-specific files
 install(FILES defconfig/guayadeque.default.conf DESTINATION ${CMAKE_INSTALL_DATADIR}/guayadeque)
