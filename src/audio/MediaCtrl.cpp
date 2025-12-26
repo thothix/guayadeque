@@ -155,12 +155,11 @@ guMediaCtrl::~guMediaCtrl()
 // -------------------------------------------------------------------------------- //
 void guMediaCtrl::CleanUp( void )
 {
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
         delete m_FaderPlayBins[ Index ];
-
-    Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -175,8 +174,9 @@ void guMediaCtrl::UpdatePosition( void )
 	gint64 Pos = -1;
 	gint64 Duration = -1;
 
-	Lock();
-	if( m_CurrentPlayBin )
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
+    if( m_CurrentPlayBin )
 	{
 	    m_CurrentPlayBin->Lock();
 
@@ -204,7 +204,6 @@ void guMediaCtrl::UpdatePosition( void )
         //guLogDebug( wxT( "Current fade volume: %0.2f" ), m_CurrentPlayBin->GetFaderVolume() );
         m_CurrentPlayBin->Unlock();
 	}
-	Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -213,16 +212,16 @@ bool guMediaCtrl::RemovePlayBin( guFaderPlaybin * playbin )
     guLogDebug( wxT( "guMediaCtrl::RemovePlayBin (%li)" ), playbin->m_Id );
     bool RetVal = false;
 
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     if( m_CurrentPlayBin == playbin )
-        m_CurrentPlayBin = NULL;
+        m_CurrentPlayBin = nullptr;
 
     if( m_FaderPlayBins.Index( playbin ) != wxNOT_FOUND )
     {
         m_FaderPlayBins.Remove( playbin );
         RetVal = true;
     }
-    Unlock();
     return RetVal;
 }
 
@@ -230,23 +229,19 @@ bool guMediaCtrl::RemovePlayBin( guFaderPlaybin * playbin )
 wxFileOffset guMediaCtrl::Position( void )
 {
     wxFileOffset Pos = 0;
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
     if( m_CurrentPlayBin )
         Pos = m_CurrentPlayBin->Position();
-
-    Unlock();
     return Pos;
 }
 
 // -------------------------------------------------------------------------------- //
 wxFileOffset guMediaCtrl::Length( void )
 {
-    Lock();
     wxFileOffset Len = 0;
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
     if( m_CurrentPlayBin )
         Len = m_CurrentPlayBin->Length();
-
-    Unlock();
     return Len;
 }
 
@@ -255,12 +250,12 @@ bool guMediaCtrl::SetVolume( double volume )
 {
     guLogDebug( wxT( "MediaCtrl::SetVolume( %0.5f )" ), volume );
     m_Volume = volume;
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
         m_FaderPlayBins[ Index ]->SetVolume( volume );
 
-    Unlock();
     return true;
 }
 
@@ -268,26 +263,22 @@ bool guMediaCtrl::SetVolume( double volume )
 void guMediaCtrl::SetEqualizerBand( const int band, const int value )
 {
     m_EqBands[ band ] = value;
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_FaderPlayBins[ Index ]->SetEqualizerBand( band, value );
-    }
-    Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
 bool guMediaCtrl::SetEqualizer( const wxArrayInt &eqbands )
 {
     m_EqBands = eqbands;
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_FaderPlayBins[ Index ]->SetEqualizer( eqbands );
-    }
-    Unlock();
     return true;
 }
 
@@ -296,24 +287,21 @@ void guMediaCtrl::ResetEqualizer( void )
 {
     int Count = m_EqBands.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_EqBands[ Index ] = 0;
-    }
 
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
-    {
         m_FaderPlayBins[ Index ]->SetEqualizer( m_EqBands );
-    }
-    Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
 guMediaState guMediaCtrl::GetState( void )
 {
     guMediaState State = guMEDIASTATE_STOPPED;
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     if( m_CurrentPlayBin )
     {
         guLogDebug( wxT( "guMediaCtrl::GetState %i" ), m_CurrentPlayBin->GetState() );
@@ -339,7 +327,6 @@ guMediaState guMediaCtrl::GetState( void )
                 break;
         }
     }
-    Unlock();
     return State;
 }
 
@@ -398,7 +385,9 @@ long guMediaCtrl::Load( const wxString &uri, guFADERPLAYBIN_PLAYTYPE playtype, c
                     guLogDebug( wxT( "guMediaCtrl::Load The current playbin has no error...Replacing it" ) );
                     m_CurrentPlayBin->m_PlayType = guFADERPLAYBIN_PLAYTYPE_REPLACE;
                     m_CurrentPlayBin->m_State = guFADERPLAYBIN_STATE_WAITING;
+
                     m_CurrentPlayBin->Load( uri, true, startpos );
+
                     m_CurrentPlayBin->SetBuffering( false );
                     m_CurrentPlayBin->SetFaderVolume( 1.0 );
                     Result = m_CurrentPlayBin->GetId();
@@ -743,7 +732,6 @@ bool guMediaCtrl::Seek( wxFileOffset where, const bool accurate )
     wxMutexLocker Lock(m_FaderPlayBinsMutex);
     if( m_CurrentPlayBin )
         Result = m_CurrentPlayBin->Seek( where, accurate );
-
     return Result;
 }
 
@@ -791,7 +779,8 @@ void guMediaCtrl::FadeInStart( void )
 {
     guLogDebug( wxT( "guMediaCtrl::FadeInStart" ) );
 
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
 #ifdef guSHOW_DUMPFADERPLAYBINS
     DumpFaderPlayBins( m_FaderPlayBins, m_CurrentPlayBin );
 #endif
@@ -818,7 +807,6 @@ void guMediaCtrl::FadeInStart( void )
             break;
         }
     }
-    Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -880,9 +868,8 @@ void guMediaCtrl::FadeOutDone( guFaderPlaybin * faderplaybin )
 bool guMediaCtrl::EnableRecord( const wxString &recfile, const int format, const int quality )
 {
     guLogDebug( wxT( "guMediaCtrl::EnableRecord" ) );
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
     m_IsRecording = ( m_CurrentPlayBin && m_CurrentPlayBin->EnableRecord( recfile, format, quality ) );
-    Unlock();
     return  m_IsRecording;
 }
 
@@ -891,11 +878,9 @@ void guMediaCtrl::DisableRecord( void )
 {
     guLogDebug( wxT( "guMediaCtrl::DisableRecord" ) );
     m_IsRecording = false;
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
     if( m_CurrentPlayBin )
         m_CurrentPlayBin->DisableRecord();
-
-    Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
@@ -903,9 +888,8 @@ bool guMediaCtrl::SetRecordFileName( const wxString &filename )
 {
     guLogDebug( "guMediaCtrl::SetRecordFileName  '%s'", filename );
 
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
     bool Result = m_CurrentPlayBin && m_CurrentPlayBin->SetRecordFileName( filename );
-    Unlock();
     return Result;
 }
 
@@ -915,7 +899,8 @@ void guMediaCtrl::DoCleanUp( void )
     guLogDebug( wxT( "guMediaCtrl::DoCleanUp" ) );
 	wxArrayPtrVoid ToDelete;
 
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
 #ifdef guSHOW_DUMPFADERPLAYBINS
     DumpFaderPlayBins( m_FaderPlayBins, m_CurrentPlayBin );
 #endif
@@ -945,7 +930,6 @@ void guMediaCtrl::DoCleanUp( void )
 #ifdef guSHOW_DUMPFADERPLAYBINS
     DumpFaderPlayBins( m_FaderPlayBins, m_CurrentPlayBin );
 #endif
-	Unlock();
 
 	Count = ToDelete.Count();
 	for( int Index = 0; Index < Count; Index++ )
@@ -1034,7 +1018,8 @@ wxString guMediaCtrl::ProxyServer() const
 void guMediaCtrl::ToggleEqualizer()
 {
     guLogDebug("guMediaCtrl::ToggleEqualizer <<" );
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
     {
@@ -1043,14 +1028,14 @@ void guMediaCtrl::ToggleEqualizer()
             FaderPlaybin->ToggleEqualizer();
     }
     m_EnableEq = !m_EnableEq;
-    Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
 void guMediaCtrl::ToggleVolCtl()
 {
     guLogDebug("guMediaCtrl::ToggleVolCtl <<" );
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
     {
@@ -1061,14 +1046,14 @@ void guMediaCtrl::ToggleVolCtl()
     m_EnableVolCtls = !m_EnableVolCtls;
     guConfig * Config = ( guConfig * ) guConfig::Get();
     m_ForceGapless = m_EnableVolCtls ? Config->ReadBool( CONFIG_KEY_CROSSFADER_FORCE_GAPLESS, false, CONFIG_PATH_CROSSFADER ) : true;
-    Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
 void guMediaCtrl::ReconfigureRG()
 {
     guLogDebug("guMediaCtrl::ReconfigureRG <<" );
-    Lock();
+    wxMutexLocker Locker(m_FaderPlayBinsMutex);
+
     int Count = m_FaderPlayBins.Count();
     for( int Index = 0; Index < Count; Index++ )
     {
@@ -1076,7 +1061,6 @@ void guMediaCtrl::ReconfigureRG()
         if( FaderPlaybin->IsOk() )
             FaderPlaybin->ReconfigureRG();
     }
-    Unlock();
 }
 
 // -------------------------------------------------------------------------------- //
