@@ -370,63 +370,65 @@ namespace Guayadeque {
     // -------------------------------------------------------------------------------- //
     bool guTrack::ReadFromFile(const wxString &filename)
     {
-        bool RetVal = false;
         guTagInfo *TagInfo;
 
         TagInfo = guGetTagInfoHandler(filename);
-        if (TagInfo)
+        if (!TagInfo)
         {
-            m_PathId = wxNOT_FOUND;
-            m_Path = GetPathAddTrailSep(wxPathOnly(filename));
-
-            if (TagInfo->Read())
-            {
-                m_Composer = TagInfo->m_Composer;
-                m_ArtistName = TagInfo->m_ArtistName;
-                m_AlbumArtist = TagInfo->m_AlbumArtist;
-                m_AlbumName = TagInfo->m_AlbumName;
-                m_GenreName = TagInfo->m_GenreName;
-                m_SongName = TagInfo->m_TrackName;
-
-                m_Number = TagInfo->m_Track;
-                m_Year = TagInfo->m_Year;
-                m_Length = TagInfo->m_Length;
-                m_Bitrate = TagInfo->m_Bitrate;
-                m_Comments = TagInfo->m_Comments;
-                m_Disk = TagInfo->m_Disk;
-            } else
-                guLogError(wxT("guTrack.ReadFromFile: Cannot read tags from '%s'"), filename.c_str());
-
-            if (m_ArtistName.IsEmpty())
-                m_ArtistName = _("Unknown");
-            m_ArtistId = wxNOT_FOUND;
-
-            m_AlbumArtistId = wxNOT_FOUND;;
-
-            if (m_AlbumName.IsEmpty() && !m_Path.IsEmpty())
-                m_AlbumName = m_Path.BeforeLast(wxT('/')).AfterLast(wxT('/'));
-            m_AlbumId = wxNOT_FOUND;;
-
-            m_CoverId = 0;
-
-            if (m_GenreName.IsEmpty())
-                m_GenreName = _("Unknown");
-            m_GenreId = wxNOT_FOUND;;
-
-            m_FileName = filename;
+            m_SongName = m_FileName.AfterLast(wxT('/'));
+            m_AlbumName = m_FileName.BeforeLast(wxT('/'));
             m_FileSize = guGetFileSize(filename);
-
-            if (m_SongName.IsEmpty())
-                m_SongName = m_FileName.AfterLast(wxT('/')).BeforeLast(wxT('.'));
-
-            m_SongId = wxNOT_FOUND;
-            m_Rating = wxNOT_FOUND;
-
-            RetVal = true;
-            delete TagInfo;
+            return false;
         }
 
-        return RetVal;
+        m_PathId = wxNOT_FOUND;
+        m_Path = GetPathAddTrailSep(wxPathOnly(filename));
+
+        if (TagInfo->Read())
+        {
+            m_Composer = TagInfo->m_Composer;
+            m_ArtistName = TagInfo->m_ArtistName;
+            m_AlbumArtist = TagInfo->m_AlbumArtist;
+            m_AlbumName = TagInfo->m_AlbumName;
+            m_GenreName = TagInfo->m_GenreName;
+            m_SongName = TagInfo->m_TrackName;
+
+            m_Number = TagInfo->m_Track;
+            m_Year = TagInfo->m_Year;
+            m_Length = TagInfo->m_Length;
+            m_Bitrate = TagInfo->m_Bitrate;
+            m_Comments = TagInfo->m_Comments;
+            m_Disk = TagInfo->m_Disk;
+        } else
+            guLogError(wxT("guTrack.ReadFromFile: Cannot read tags from '%s'"), filename.c_str());
+
+        if (m_ArtistName.IsEmpty())
+            m_ArtistName = _("Unknown");
+        m_ArtistId = wxNOT_FOUND;
+
+        m_AlbumArtistId = wxNOT_FOUND;;
+
+        if (m_AlbumName.IsEmpty() && !m_Path.IsEmpty())
+            m_AlbumName = m_Path.BeforeLast(wxT('/')).AfterLast(wxT('/'));
+        m_AlbumId = wxNOT_FOUND;;
+
+        m_CoverId = 0;
+
+        if (m_GenreName.IsEmpty())
+            m_GenreName = _("Unknown");
+        m_GenreId = wxNOT_FOUND;;
+
+        m_FileName = filename;
+        m_FileSize = guGetFileSize(filename);
+
+        if (m_SongName.IsEmpty())
+            m_SongName = m_FileName.AfterLast(wxT('/')).BeforeLast(wxT('.'));
+
+        m_SongId = wxNOT_FOUND;
+        m_Rating = wxNOT_FOUND;
+
+        delete TagInfo;
+        return true;
     }
 
 
