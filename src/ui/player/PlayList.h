@@ -166,7 +166,7 @@ class guPlayList : public guListView
 
     void                        AddItem( const guTrack &NewItem, const int pos = wxNOT_FOUND );
     //void                        AddItem( const guTrack * NewItem );
-    void                        AddPlayListItem(const wxString &FileName, guTrack track, const int afterCurrent, const int pos);
+    void                        AddPlayListItem(const wxString &FileName, guTrack track, const int afterCurrent, const int pos, const int index = wxNOT_FOUND);
 
     virtual void                ReloadItems( bool reset = true );
 

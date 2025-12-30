@@ -1430,7 +1430,7 @@ void guPlayList::AddToPlayList(const guTrackArray &items, const bool deleteOld, 
 }
 
 // -------------------------------------------------------------------------------- //
-void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const int afterCurrent, const int pos)
+void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const int afterCurrent, const int pos, const int index)
 {
     wxString newFileName;
     guPodcastItem PodcastItem;
@@ -1546,7 +1546,12 @@ void guPlayList::AddPlayListItem(const wxString &fileName, guTrack track, const 
                         if (track.ReadFromFile(newFileName))
                             track.m_Type = guTRACK_TYPE_NOTDB;
                         else
+                        {
                             guLogError(wxT("Could not read tags from file '%s'"), newFileName.c_str());
+                            track.m_Type = guTRACK_TYPE_NOTDB;
+                            track.m_Number = index;
+                            track.m_SongId = index;
+                        }
                     }
                 }
 
@@ -2894,7 +2899,7 @@ void guPlayList::LoadPlaylistTracks()
             if ((tracks[index].m_Type == guTRACK_TYPE_RADIOSTATION))
                 m_Items.Add(new guTrack(tracks[index]));
             else
-                AddPlayListItem(tracks[index].m_FileName, tracks[index], guINSERT_AFTER_CURRENT_NONE, wxNOT_FOUND);
+                AddPlayListItem(tracks[index].m_FileName, tracks[index], guINSERT_AFTER_CURRENT_NONE, wxNOT_FOUND, index);
         }
 
         m_CurItem = curItem > count ? wxNOT_FOUND : curItem;
