@@ -85,9 +85,13 @@ bool guIsValidAudioFile( const wxString &filename )
 
         guSupportedFormats.Add( wxT( "mpc"  ) );
 
-        // mod, s3m test
-        //guSupportedFormats.Add( wxT( "mod"  ) );
-        //guSupportedFormats.Add( wxT( "s3m"  ) );
+        // TODO: Modules audio testing
+        // guSupportedFormats.Add( wxT( "mod"  ) );
+        // guSupportedFormats.Add( wxT( "s3m"  ) );
+        // guSupportedFormats.Add( wxT( "xm"  ) );
+        // guSupportedFormats.Add( wxT( "it"  ) );
+        // guSupportedFormats.Add( wxT( "mtm"  ) );
+        // guSupportedFormats.Add( wxT( "669"  ) );
 
         //guSupportedFormats.Add( wxT( "dsf"  ) );  // >= 2.0
         //guSupportedFormats.Add( wxT( "rmj"  ) );  // Real Media Jukebox
