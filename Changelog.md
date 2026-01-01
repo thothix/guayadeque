@@ -15,7 +15,7 @@ Changelog
     * org.guayadeque.guayadeque.metainfo.xml changes:
       * Renamed to org.guayadeque.Guayadeque.metainfo.xml;
       * ID changed to org.guayadeque.Guayadeque;
-      * launchable type changed to org.guayadeque.Guayadeque.desktop;
+  * Updated copyright year in all files.
   * Small refactorings.
 
 ### Bugfixes
