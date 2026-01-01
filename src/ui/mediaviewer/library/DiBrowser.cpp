@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2024-2025 Tiago T Barrionuevo <thothix@protonmail.com>
+   Copyright (C) 2024-2026 Tiago T Barrionuevo <thothix@protonmail.com>
 
    This file is part of Guayadeque Music Player.
 
