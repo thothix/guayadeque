@@ -1,3 +1,16 @@
+# NOTICE
+
+---
+
+# Guayadeque project has been migrated to Codeberg.
+## The new project repository is at:
+
+# https://codeberg.org/thothix/guayadeque
+
+## This repository is deprecated and was archived.
+
+---
+
 # Guayadeque Music Player
 
 Guayadeque is a lightweight and easy-to-use music player and music collection organizer
